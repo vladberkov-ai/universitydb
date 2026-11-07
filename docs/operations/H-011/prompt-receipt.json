@@ -1,0 +1,34 @@
+{
+  "method": "Extracted actual received user entry from supported OMX root session export; not copied from H-package or starter.",
+  "native_session": "01a1b795-f546-7ca2-a1d8-6efb937b6ff4",
+  "source_export_sha256": "e7c6280da6ee473cfc0f8718a439b769cbab637cc3047548e13f8ce4f60f72c4",
+  "source_entry_timestamp": "2026-11-07T19:57:08.393Z",
+  "source_line": 9,
+  "source_text_sha256": "999cad715c2711a6015ce69f6f4fbe5f385bcf3abc357f418fdb23730860a713",
+  "projection_path": "docs/ai/omx/H-011-actual-prompt.txt",
+  "projection_sha256": "df37e69f2fed9c0ce21c4f16a7c3e2e40ffb16e80ed761a84d052aa6160edbda",
+  "redactions": [
+    {
+      "from": "private vault absolute prefix",
+      "to": "<PRIVATE_VAULT>",
+      "count": 3
+    }
+  ],
+  "terminal_lf_added": true,
+  "export_entries": 5,
+  "skipped_records": 0,
+  "read_context": [
+    "H-011 v2 package and inputs",
+    "H-010 context",
+    "accepted primary sources",
+    "installed skills"
+  ],
+  "omissions": [
+    "Initial AGENTS/environment instruction bundle not exported wholesale",
+    "Attached ultragoal skill is read context, not actual task",
+    "system/developer/reasoning and tools excluded from this default export",
+    "Later progress, final response, full child transcripts not included"
+  ],
+  "child_coverage": "One actual explore child with read-only initial task and two follow-ups; result summaries in readiness evidence. No implementation/review role impersonation. Checkpoint doc review lanes, if launched later, recorded separately.",
+  "full_transcript_claim": false
+}

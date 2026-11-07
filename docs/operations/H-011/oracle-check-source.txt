@@ -1,0 +1,34 @@
+import hashlib,itertools,json,sqlite3,tempfile
+from pathlib import Path
+from decimal import Decimal,ROUND_HALF_UP
+root=Path('/home/dev/projects/universitydb');out=root/'docs/operations/H-011';f=json.loads((out/'frozen-oracle.json').read_text());checks=[]
+with tempfile.TemporaryDirectory(prefix='H-011-oracle-') as t:
+ p=Path(t)/'oracle.db'
+ with sqlite3.connect(p) as c:
+  c.executescript((root/'resources/schema.sql').read_text());c.executescript((root/'resources/seed.sql').read_text())
+  source=c.execute('SELECT student_id,offering_id,grade_units FROM Enrollments ORDER BY student_id,offering_id').fetchall()
+  assert sorted(map(tuple,f['enrollments']))==source
+  cols={'student_id':'e.student_id','course_id':'o.course_id','teacher_id':'o.teacher_id','semester_id':'o.semester_id'}
+  base=' FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id'
+  projection='SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*)'
+  for a in f['mean_expected']:
+   scope=a['scope'];sql=projection+base+(' WHERE '+' AND '.join(cols[k]+'=:'+k for k in scope) if scope else '')
+   actual=list(c.execute(sql,scope).fetchone());assert actual==a['raw'];mean=str((Decimal(actual[0])/100/actual[1]).quantize(Decimal('.01'),rounding=ROUND_HALF_UP)) if actual[1] else None;assert mean==a['mean'];checks.append({'kind':'manual_mean','sql':sql,'parameters':scope,'expected':a['raw'],'actual':actual,'display':mean})
+  by_off={x[0]:x[1:] for x in f['offerings']};records=[{'student_id':s,'course_id':by_off[o][0],'teacher_id':by_off[o][1],'semester_id':by_off[o][2],'offering_id':o,'grade':g} for s,o,g in f['enrollments']]
+  sample={'student_id':2,'course_id':1,'teacher_id':10,'semester_id':'S1'}
+  for mask in itertools.product((False,True),repeat=4):
+   scope={k:v for (k,v),on in zip(sample.items(),mask) if on};selected=[e for e in records if all(e[k]==v for k,v in scope.items())];expected=[sum(e['grade'] for e in selected if e['grade'] is not None),sum(e['grade'] is not None for e in selected),len(selected)]
+   sql=projection+base+(' WHERE '+' AND '.join(cols[k]+'=:'+k for k in scope) if scope else '');actual=list(c.execute(sql,scope).fetchone());assert actual==expected;checks.append({'kind':'filter_subset','sql':sql,'parameters':scope,'expected':expected,'actual':actual})
+  for key,col in {**cols,'offering_id':'o.offering_id'}.items():
+   selected=[e for e in records if e['semester_id']=='S1'];expected=[]
+   for group in sorted({e[key] for e in selected}):
+    rows=[e for e in selected if e[key]==group];expected.append([group,sum(e['grade'] for e in rows if e['grade'] is not None),sum(e['grade'] is not None for e in rows),len(rows)])
+   sql='SELECT '+col+',COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*)'+base+' WHERE o.semester_id=:semester_id GROUP BY '+col+' ORDER BY '+col;actual=[list(x) for x in c.execute(sql,{'semester_id':'S1'})];assert actual==expected;checks.append({'kind':'group_'+key,'sql':sql,'parameters':{'semester_id':'S1'},'expected':expected,'actual':actual})
+  sql='SELECT COUNT(*),COUNT(e.grade_units),COUNT(DISTINCT e.student_id)'+base+' WHERE o.course_id=1 AND o.semester_id=\'S1\'';actual=list(c.execute(sql).fetchone());assert actual==[4,3,3];checks.append({'kind':'counts','sql':sql,'parameters':{},'expected':[4,3,3],'actual':actual})
+  sql='SELECT e.student_id,e.offering_id,e.grade_units,s.name,k.code,k.title,t.name,o.semester_id'+base+' JOIN Students s ON s.student_id=e.student_id JOIN Courses k ON k.course_id=o.course_id JOIN Teachers t ON t.teacher_id=o.teacher_id WHERE o.course_id=1 AND o.semester_id=\'S1\' ORDER BY e.offering_id,e.student_id';actual=[list(x) for x in c.execute(sql)];expected=[[1,1,9000,'Alex','C1','DB','Kim','S1'],[2,1,6000,'Bea','C1','DB','Kim','S1'],[3,1,None,'Alex','C1','DB','Kim','S1'],[2,5,10000,'Bea','C1','DB','Kim','S1']];assert actual==expected;checks.append({'kind':'labelled_listing','sql':sql,'parameters':{},'expected':expected,'actual':actual})
+  sql='SELECT o.course_id,COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*)'+base+" WHERE o.semester_id='S1' GROUP BY o.course_id ORDER BY o.course_id";raw=[list(x) for x in c.execute(sql)];assert raw==f['course_S1'];checks.append({'kind':'baseline_top_candidates','sql':sql,'parameters':{},'expected':f['course_S1'],'actual':raw})
+  for s,o,g in f['tie_mutation']['updates']:c.execute('UPDATE Enrollments SET grade_units=? WHERE student_id=? AND offering_id=?',(g,s,o))
+  raw=[list(x) for x in c.execute(sql)];expected=[[1,27000,3,4],[2,9000,1,1],[3,0,0,1]];assert raw==expected;assert raw[0][1]*raw[1][2]==raw[1][1]*raw[0][2];assert 25000 != 8333*3;checks.append({'kind':'exact_tie_mutation','sql':sql,'parameters':{},'expected':expected,'actual':raw})
+  c.execute('DELETE FROM Enrollments');c.execute('INSERT INTO Enrollments VALUES(1,1,0)');actual=list(c.execute(projection+base).fetchone());assert actual==[0,1,1];checks.append({'kind':'isolated_zero','sql':projection+base,'parameters':{},'expected':[0,1,1],'actual':actual})
+result={'source':'Independent preparation-only manual fixture and stdlib SQLite validation; no application import/provider/formatter. NOT I2 graph/SQL generation tests.','source_file_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'schema_sha256':hashlib.sha256((root/'resources/schema.sql').read_bytes()).hexdigest(),'seed_sha256':hashlib.sha256((root/'resources/seed.sql').read_bytes()).hexdigest(),'sqlite_version':sqlite3.sqlite_version,'checks':checks,'exit_code':0,'passed':len(checks)}
+(out/'oracle-validation.json').write_text(json.dumps(result,indent=2)+'\n');print('Independent fixture/SQL checks passed:',len(checks))

@@ -1,0 +1,150 @@
+{
+  "created_at_utc": "2026-11-07T20:05:47.279267+00:00",
+  "scope": "H011 partial preparation only; unchanged baseline I1 source verification, NOT I2 product acceptance",
+  "tested_source_identity": {
+    "HEAD": "5c8669ffb2e629ea00878734385fff99b53d7adc",
+    "source_test_resource_hashes": {
+      "resources/schema.sql": "2d459c3592bdf9d0baea14d546540d55be650bb619d3762ee63b85cca9be70f8",
+      "resources/seed.sql": "c355537acc89af8a2ec7b96b65fdab3f37366185539ae16c1b0b9fe62c0d1acb",
+      "src/universitydb/__init__.py": "f4783354578e7b9ed2f99a68b5454ac621abd61d76b07062a05bf5887dd72dd7",
+      "src/universitydb/agent.py": "acd0cf8d88e1a7a9f559a49814a9893c2935b50ccfbb57600a5e954201778db0",
+      "src/universitydb/config.py": "508b2bef52d2c81c5114b885a6be56f5b22b18774ae5a48674679ea1fdd6b263",
+      "src/universitydb/contracts.py": "2b8f71b2da216cb56c51c5fc529b73d7404ac9531b7d5a74cdd4a68c42ffd955",
+      "src/universitydb/db.py": "5832575398b37ded9409c3dbf8743d2616cced4d243b9a7ae3e16d31ddc99b4a",
+      "src/universitydb/db_worker.py": "d668c0da4899e3ee6c2bfcbe85226b2f2aff7279447b4a4e4ab830e8465d9c2c",
+      "src/universitydb/domain.py": "6af213291338f92d6353a6561afe78488be6b36ab0835032286b4eb02dfb3f6a",
+      "src/universitydb/llm.py": "4b8c80075748a669cb70397ad8aecbad2efbb9dd3ce2a7e9680e918ba10157cb",
+      "src/universitydb/llm_worker.py": "ba0abec6f45197814068c70aa86fb747e4de070cc84f08f1caa6b537b3a5bf9d",
+      "src/universitydb/prompts/plan.txt": "24d1d41b946b85397fe863523a2fec18f4371f665b11ae21f7eadf5c7c9a6db8",
+      "src/universitydb/prompts/sql.txt": "c485c9e4fd66ad6345861e15c35212f01399f4598f04408e3de7aa922a0b11d3",
+      "src/universitydb/tracing.py": "7655d8eb5932eb9466536ced1c9e85a34e38c3bee3d4a7bda95ddb79acd58858",
+      "src/universitydb/ui.py": "96be9e6fa9f72375bd9a6237352ad05f47307a850556852452b1cee83a2e3a6a",
+      "tests/conftest.py": "46131f0dc3214ea8c1364efa4579539bd1f6c8d85367585c3544eab3f7155989",
+      "tests/test_bounds.py": "08ce4aa953be0188ca5588b426eb3b1f3ffe61d7449ef7fe5f01ac7561b03218",
+      "tests/test_db_domain.py": "bea5452a16496b183a5a5eb790219e4d3009ffe9478fc886e616b13e78c4bfda",
+      "tests/test_graph.py": "cee3f4be1eb92d900355a5ebcd3d9257bedfdb571d5f8e7afff3832959babb3d",
+      "tests/test_practical_budget.py": "710a064e1ce59977aeebcca6f994ace65015a17e65e9b83b386ec3cfd44c125a",
+      "tests/test_provider_worker.py": "92a5b390e89ecac1f41ac58b6872fc80d1e038d4a44a592ed619ea08fbf56c34",
+      "tests/test_sol_profile.py": "3b6846cf5f708d2287c0f2322d781d74ad12a71b6dfe4ee6d3da317750c5d96c",
+      "tests/test_ui.py": "34dcd5d9d4b1fce07e2a512b64b955ed90ae7a8368c02d8085982add70c51c56"
+    },
+    "new_I2_product_code": false
+  },
+  "commands": [
+    {
+      "command": "python3 /tmp/H-011-validate-preparation.py",
+      "exit": 0,
+      "outcome": "37 independent temporary SQLite fixture/SQL checks passed",
+      "receipt": "oracle-validation.json",
+      "source": "oracle-check-source.txt"
+    },
+    {
+      "command": "env -u OPENAI_API_KEY UNIVERSITYDB_LIVE_APPROVED=no LANGSMITH_TRACING=false LANGCHAIN_TRACING_V2=false .venv/bin/python -m pytest -q --ignore=tests/test_ui.py",
+      "exit": 0,
+      "outcome": "129 passed in 6.85s; baseline source, no AppTest; temporary DB/ledgers only"
+    },
+    {
+      "command": ".venv/bin/ruff check src tests",
+      "exit": 0,
+      "outcome": "All checks passed"
+    },
+    {
+      "command": ".venv/bin/ruff format --check src tests",
+      "exit": 0,
+      "outcome": "19 files already formatted"
+    },
+    {
+      "command": ".venv/bin/mypy src/universitydb --ignore-missing-imports",
+      "exit": 0,
+      "outcome": "Success: no issues found in 11 source files"
+    },
+    {
+      "command": ".venv/bin/python -m compileall -q src tests",
+      "exit": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit": 0
+    },
+    {
+      "command": "stdlib JSON/UTF8, baseline HEAD blob/input hash/preservation checks",
+      "exit": 0
+    }
+  ],
+  "not_run": [
+    "New I2 query generation, typed contracts, checkpoint/resume, failure, full-wire and UI implementation/tests",
+    "AppTest: existing test writes repo runtime; no isolation code introduced before workflow gate",
+    "Full prescribed uv run --locked pytest command: intentionally not run with unsafe baseline AppTest",
+    "Real offline browser screenshots and compiled I2 graph traces",
+    "I2 final cleaner/product code-reviewer/architect/strict checkpoint gates",
+    "API generation/count/credentials/push/I3-I5/defense"
+  ],
+  "preservation": [
+    {
+      "path": "runtime/spending.json",
+      "baseline": "2753fe2fdf1dc366ffecdb5a86dcd9cf184d83707a00da0de62a8a4e4963f125",
+      "actual": "2753fe2fdf1dc366ffecdb5a86dcd9cf184d83707a00da0de62a8a4e4963f125",
+      "unchanged": true
+    },
+    {
+      "path": ".omx-state-locks.identity.json",
+      "baseline": "50d956e3fbf97b265862cefdbfb54fd809b03ef55b3f7ccd9997864b70d62711",
+      "actual": "50d956e3fbf97b265862cefdbfb54fd809b03ef55b3f7ccd9997864b70d62711",
+      "unchanged": true
+    },
+    {
+      "path": ".omx-state-locks/655a20b082786cf4e05f99e0da122d6dc803270e08f859022ac44d1302358bc8.mutex",
+      "baseline": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": ".omx-state-locks/3102cbda72779bbf780705d49e74806858334b4de02a46d2ee2a37802e26125c.mutex",
+      "baseline": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": ".omx/ultragoal/brief.md",
+      "baseline": "0ff09bb7638889aa742f75070ece675573391187b5568b2be010b59fe22b5191",
+      "actual": "0ff09bb7638889aa742f75070ece675573391187b5568b2be010b59fe22b5191",
+      "unchanged": true
+    },
+    {
+      "path": ".omx/ultragoal/ledger.jsonl",
+      "baseline": "980675a8f5b3a288809d7c98c3fb539ba1d51e43a6beb64dfb30d85c09d1e380",
+      "actual": "980675a8f5b3a288809d7c98c3fb539ba1d51e43a6beb64dfb30d85c09d1e380",
+      "unchanged": true
+    },
+    {
+      "path": ".omx/ultragoal/goals.json",
+      "baseline": "8e3383ac22651fbc8cbad2d49181e91957e747dee35ac9de7f1ba8b7f6a7e0ef",
+      "actual": "8e3383ac22651fbc8cbad2d49181e91957e747dee35ac9de7f1ba8b7f6a7e0ef",
+      "unchanged": true
+    }
+  ],
+  "protected_file_count": 166,
+  "input_manifest_pairs_match": 73,
+  "input_manifest_count": 73,
+  "listeners": {
+    "method": "Read /proc/net/tcp and tcp6; no socket creation",
+    "8501_listening": false,
+    "errors": [],
+    "scope": "current process network namespace; no host-namespace universal assertion",
+    "owned_server_started": false
+  },
+  "paid_calls": 0,
+  "independent_oracle_limits": "37 fixture validation checks do not prove I2 implementation. Q10/Q11 and full Q12 per-filter/group mutations remain unimplemented. No production query generator/formatter used.",
+  "documentation": {
+    "checked_file_count": 28,
+    "local_links_checked": 216,
+    "JSON_UTF8_privacy_English_pass": true,
+    "duplicate_paragraphs_count_each": 1,
+    "independent_reviews": {
+      "code-reviewer": "APPROVE partial preparation only",
+      "architect": "CLEAR partial preparation only",
+      "I2_final_product_approval": false,
+      "configured_gates": []
+    }
+  }
+}

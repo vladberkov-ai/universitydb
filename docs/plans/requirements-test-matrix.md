@@ -1,3 +1,6 @@
+## Current H-011 mapping (all original R/U rows retained below)
+I1 complete; accepted I2-offline improves R01–04/06–09/11–14 with mean/count/list/group/top, four optional filters, typed contracts, corruption/safety, checkpoint clarification, failures, complete trace/UI and offline independent reviews. Implementation evidence pending; offline tests are not live accuracy. R04 multi-step and R05 dependent/second-schema proof → I3. R10 production notes remain at the implemented I1 baseline until I2 exists; no production claim. R15 publication pending (push forbidden). R16/R17 defense after service. U01 prompt coverage stays partial with actual root/child records; U04 accepted scoped ADR011; U03 separate supported OMX scope; U05 vault read-only; U06 CP1–CP4 explicit staging/receipts; U02 exact deadline open; U07 historical verified; U08 deferred. Old 48/48/$2/Luna proposals below are not current acceptance.
+
 # Requirements → future evidence
 
 Proposed test mapping, 2026-11-07. Not a single line of R is covered by this design review. Source: accepted matrix (PDF/explicit instructions; secure [snapshot](../chat/requirements.md)); U-07 previously verified, U-08 procedure proposed. Save actual future results with tested commit SHA, versions and failures; the paths below do not yet exist. The exact fixtures/scenarios are revealed in [test-plan](test-plan.md).

@@ -1,0 +1,937 @@
+{
+  "source": "Independent preparation-only manual fixture and stdlib SQLite validation; no application import/provider/formatter. NOT I2 graph/SQL generation tests.",
+  "source_file_sha256": "5cd77b23dacdeb2816842d79a56859b68ae06d606a0c245c8ccec0082be96e5c",
+  "schema_sha256": "2d459c3592bdf9d0baea14d546540d55be650bb619d3762ee63b85cca9be70f8",
+  "seed_sha256": "c355537acc89af8a2ec7b96b65fdab3f37366185539ae16c1b0b9fe62c0d1acb",
+  "sqlite_version": "3.45.1",
+  "checks": [
+    {
+      "kind": "manual_mean",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id",
+      "parameters": {},
+      "expected": [
+        50000,
+        6,
+        8
+      ],
+      "actual": [
+        50000,
+        6,
+        8
+      ],
+      "display": "83.33"
+    },
+    {
+      "kind": "manual_mean",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.semester_id=:semester_id",
+      "parameters": {
+        "semester_id": "S1"
+      },
+      "expected": [
+        35000,
+        4,
+        6
+      ],
+      "actual": [
+        35000,
+        4,
+        6
+      ],
+      "display": "87.50"
+    },
+    {
+      "kind": "manual_mean",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.course_id=:course_id",
+      "parameters": {
+        "course_id": 1
+      },
+      "expected": [
+        40000,
+        5,
+        6
+      ],
+      "actual": [
+        40000,
+        5,
+        6
+      ],
+      "display": "80.00"
+    },
+    {
+      "kind": "manual_mean",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.teacher_id=:teacher_id",
+      "parameters": {
+        "teacher_id": 10
+      },
+      "expected": [
+        25000,
+        3,
+        5
+      ],
+      "actual": [
+        25000,
+        3,
+        5
+      ],
+      "display": "83.33"
+    },
+    {
+      "kind": "manual_mean",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE e.student_id=:student_id",
+      "parameters": {
+        "student_id": 1
+      },
+      "expected": [
+        26000,
+        3,
+        3
+      ],
+      "actual": [
+        26000,
+        3,
+        3
+      ],
+      "display": "86.67"
+    },
+    {
+      "kind": "manual_mean",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE e.student_id=:student_id AND o.course_id=:course_id AND o.teacher_id=:teacher_id AND o.semester_id=:semester_id",
+      "parameters": {
+        "student_id": 2,
+        "course_id": 1,
+        "teacher_id": 10,
+        "semester_id": "S1"
+      },
+      "expected": [
+        16000,
+        2,
+        2
+      ],
+      "actual": [
+        16000,
+        2,
+        2
+      ],
+      "display": "80.00"
+    },
+    {
+      "kind": "manual_mean",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE e.student_id=:student_id AND o.course_id=:course_id AND o.teacher_id=:teacher_id AND o.semester_id=:semester_id",
+      "parameters": {
+        "student_id": 1,
+        "course_id": 1,
+        "teacher_id": 10,
+        "semester_id": "S1"
+      },
+      "expected": [
+        9000,
+        1,
+        1
+      ],
+      "actual": [
+        9000,
+        1,
+        1
+      ],
+      "display": "90.00"
+    },
+    {
+      "kind": "manual_mean",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE e.student_id=:student_id AND o.course_id=:course_id",
+      "parameters": {
+        "student_id": 1,
+        "course_id": 1
+      },
+      "expected": [
+        16000,
+        2,
+        2
+      ],
+      "actual": [
+        16000,
+        2,
+        2
+      ],
+      "display": "80.00"
+    },
+    {
+      "kind": "manual_mean",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE e.student_id=:student_id AND o.course_id=:course_id AND o.semester_id=:semester_id",
+      "parameters": {
+        "student_id": 1,
+        "course_id": 1,
+        "semester_id": "S2"
+      },
+      "expected": [
+        7000,
+        1,
+        1
+      ],
+      "actual": [
+        7000,
+        1,
+        1
+      ],
+      "display": "70.00"
+    },
+    {
+      "kind": "manual_mean",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.course_id=:course_id AND o.semester_id=:semester_id",
+      "parameters": {
+        "course_id": 2,
+        "semester_id": "S2"
+      },
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "display": null
+    },
+    {
+      "kind": "manual_mean",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.course_id=:course_id AND o.semester_id=:semester_id",
+      "parameters": {
+        "course_id": 3,
+        "semester_id": "S1"
+      },
+      "expected": [
+        0,
+        0,
+        1
+      ],
+      "actual": [
+        0,
+        0,
+        1
+      ],
+      "display": null
+    },
+    {
+      "kind": "filter_subset",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id",
+      "parameters": {},
+      "expected": [
+        50000,
+        6,
+        8
+      ],
+      "actual": [
+        50000,
+        6,
+        8
+      ]
+    },
+    {
+      "kind": "filter_subset",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.semester_id=:semester_id",
+      "parameters": {
+        "semester_id": "S1"
+      },
+      "expected": [
+        35000,
+        4,
+        6
+      ],
+      "actual": [
+        35000,
+        4,
+        6
+      ]
+    },
+    {
+      "kind": "filter_subset",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.teacher_id=:teacher_id",
+      "parameters": {
+        "teacher_id": 10
+      },
+      "expected": [
+        25000,
+        3,
+        5
+      ],
+      "actual": [
+        25000,
+        3,
+        5
+      ]
+    },
+    {
+      "kind": "filter_subset",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.teacher_id=:teacher_id AND o.semester_id=:semester_id",
+      "parameters": {
+        "teacher_id": 10,
+        "semester_id": "S1"
+      },
+      "expected": [
+        25000,
+        3,
+        5
+      ],
+      "actual": [
+        25000,
+        3,
+        5
+      ]
+    },
+    {
+      "kind": "filter_subset",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.course_id=:course_id",
+      "parameters": {
+        "course_id": 1
+      },
+      "expected": [
+        40000,
+        5,
+        6
+      ],
+      "actual": [
+        40000,
+        5,
+        6
+      ]
+    },
+    {
+      "kind": "filter_subset",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.course_id=:course_id AND o.semester_id=:semester_id",
+      "parameters": {
+        "course_id": 1,
+        "semester_id": "S1"
+      },
+      "expected": [
+        25000,
+        3,
+        4
+      ],
+      "actual": [
+        25000,
+        3,
+        4
+      ]
+    },
+    {
+      "kind": "filter_subset",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.course_id=:course_id AND o.teacher_id=:teacher_id",
+      "parameters": {
+        "course_id": 1,
+        "teacher_id": 10
+      },
+      "expected": [
+        25000,
+        3,
+        4
+      ],
+      "actual": [
+        25000,
+        3,
+        4
+      ]
+    },
+    {
+      "kind": "filter_subset",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.course_id=:course_id AND o.teacher_id=:teacher_id AND o.semester_id=:semester_id",
+      "parameters": {
+        "course_id": 1,
+        "teacher_id": 10,
+        "semester_id": "S1"
+      },
+      "expected": [
+        25000,
+        3,
+        4
+      ],
+      "actual": [
+        25000,
+        3,
+        4
+      ]
+    },
+    {
+      "kind": "filter_subset",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE e.student_id=:student_id",
+      "parameters": {
+        "student_id": 2
+      },
+      "expected": [
+        24000,
+        3,
+        3
+      ],
+      "actual": [
+        24000,
+        3,
+        3
+      ]
+    },
+    {
+      "kind": "filter_subset",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE e.student_id=:student_id AND o.semester_id=:semester_id",
+      "parameters": {
+        "student_id": 2,
+        "semester_id": "S1"
+      },
+      "expected": [
+        16000,
+        2,
+        2
+      ],
+      "actual": [
+        16000,
+        2,
+        2
+      ]
+    },
+    {
+      "kind": "filter_subset",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE e.student_id=:student_id AND o.teacher_id=:teacher_id",
+      "parameters": {
+        "student_id": 2,
+        "teacher_id": 10
+      },
+      "expected": [
+        16000,
+        2,
+        2
+      ],
+      "actual": [
+        16000,
+        2,
+        2
+      ]
+    },
+    {
+      "kind": "filter_subset",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE e.student_id=:student_id AND o.teacher_id=:teacher_id AND o.semester_id=:semester_id",
+      "parameters": {
+        "student_id": 2,
+        "teacher_id": 10,
+        "semester_id": "S1"
+      },
+      "expected": [
+        16000,
+        2,
+        2
+      ],
+      "actual": [
+        16000,
+        2,
+        2
+      ]
+    },
+    {
+      "kind": "filter_subset",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE e.student_id=:student_id AND o.course_id=:course_id",
+      "parameters": {
+        "student_id": 2,
+        "course_id": 1
+      },
+      "expected": [
+        24000,
+        3,
+        3
+      ],
+      "actual": [
+        24000,
+        3,
+        3
+      ]
+    },
+    {
+      "kind": "filter_subset",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE e.student_id=:student_id AND o.course_id=:course_id AND o.semester_id=:semester_id",
+      "parameters": {
+        "student_id": 2,
+        "course_id": 1,
+        "semester_id": "S1"
+      },
+      "expected": [
+        16000,
+        2,
+        2
+      ],
+      "actual": [
+        16000,
+        2,
+        2
+      ]
+    },
+    {
+      "kind": "filter_subset",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE e.student_id=:student_id AND o.course_id=:course_id AND o.teacher_id=:teacher_id",
+      "parameters": {
+        "student_id": 2,
+        "course_id": 1,
+        "teacher_id": 10
+      },
+      "expected": [
+        16000,
+        2,
+        2
+      ],
+      "actual": [
+        16000,
+        2,
+        2
+      ]
+    },
+    {
+      "kind": "filter_subset",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE e.student_id=:student_id AND o.course_id=:course_id AND o.teacher_id=:teacher_id AND o.semester_id=:semester_id",
+      "parameters": {
+        "student_id": 2,
+        "course_id": 1,
+        "teacher_id": 10,
+        "semester_id": "S1"
+      },
+      "expected": [
+        16000,
+        2,
+        2
+      ],
+      "actual": [
+        16000,
+        2,
+        2
+      ]
+    },
+    {
+      "kind": "group_student_id",
+      "sql": "SELECT e.student_id,COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.semester_id=:semester_id GROUP BY e.student_id ORDER BY e.student_id",
+      "parameters": {
+        "semester_id": "S1"
+      },
+      "expected": [
+        [
+          1,
+          19000,
+          2,
+          2
+        ],
+        [
+          2,
+          16000,
+          2,
+          2
+        ],
+        [
+          3,
+          0,
+          0,
+          1
+        ],
+        [
+          4,
+          0,
+          0,
+          1
+        ]
+      ],
+      "actual": [
+        [
+          1,
+          19000,
+          2,
+          2
+        ],
+        [
+          2,
+          16000,
+          2,
+          2
+        ],
+        [
+          3,
+          0,
+          0,
+          1
+        ],
+        [
+          4,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "kind": "group_course_id",
+      "sql": "SELECT o.course_id,COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.semester_id=:semester_id GROUP BY o.course_id ORDER BY o.course_id",
+      "parameters": {
+        "semester_id": "S1"
+      },
+      "expected": [
+        [
+          1,
+          25000,
+          3,
+          4
+        ],
+        [
+          2,
+          10000,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          1
+        ]
+      ],
+      "actual": [
+        [
+          1,
+          25000,
+          3,
+          4
+        ],
+        [
+          2,
+          10000,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "kind": "group_teacher_id",
+      "sql": "SELECT o.teacher_id,COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.semester_id=:semester_id GROUP BY o.teacher_id ORDER BY o.teacher_id",
+      "parameters": {
+        "semester_id": "S1"
+      },
+      "expected": [
+        [
+          10,
+          25000,
+          3,
+          5
+        ],
+        [
+          11,
+          10000,
+          1,
+          1
+        ]
+      ],
+      "actual": [
+        [
+          10,
+          25000,
+          3,
+          5
+        ],
+        [
+          11,
+          10000,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "kind": "group_semester_id",
+      "sql": "SELECT o.semester_id,COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.semester_id=:semester_id GROUP BY o.semester_id ORDER BY o.semester_id",
+      "parameters": {
+        "semester_id": "S1"
+      },
+      "expected": [
+        [
+          "S1",
+          35000,
+          4,
+          6
+        ]
+      ],
+      "actual": [
+        [
+          "S1",
+          35000,
+          4,
+          6
+        ]
+      ]
+    },
+    {
+      "kind": "group_offering_id",
+      "sql": "SELECT o.offering_id,COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.semester_id=:semester_id GROUP BY o.offering_id ORDER BY o.offering_id",
+      "parameters": {
+        "semester_id": "S1"
+      },
+      "expected": [
+        [
+          1,
+          15000,
+          2,
+          3
+        ],
+        [
+          2,
+          10000,
+          1,
+          1
+        ],
+        [
+          4,
+          0,
+          0,
+          1
+        ],
+        [
+          5,
+          10000,
+          1,
+          1
+        ]
+      ],
+      "actual": [
+        [
+          1,
+          15000,
+          2,
+          3
+        ],
+        [
+          2,
+          10000,
+          1,
+          1
+        ],
+        [
+          4,
+          0,
+          0,
+          1
+        ],
+        [
+          5,
+          10000,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "kind": "counts",
+      "sql": "SELECT COUNT(*),COUNT(e.grade_units),COUNT(DISTINCT e.student_id) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.course_id=1 AND o.semester_id='S1'",
+      "parameters": {},
+      "expected": [
+        4,
+        3,
+        3
+      ],
+      "actual": [
+        4,
+        3,
+        3
+      ]
+    },
+    {
+      "kind": "labelled_listing",
+      "sql": "SELECT e.student_id,e.offering_id,e.grade_units,s.name,k.code,k.title,t.name,o.semester_id FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id JOIN Students s ON s.student_id=e.student_id JOIN Courses k ON k.course_id=o.course_id JOIN Teachers t ON t.teacher_id=o.teacher_id WHERE o.course_id=1 AND o.semester_id='S1' ORDER BY e.offering_id,e.student_id",
+      "parameters": {},
+      "expected": [
+        [
+          1,
+          1,
+          9000,
+          "Alex",
+          "C1",
+          "DB",
+          "Kim",
+          "S1"
+        ],
+        [
+          2,
+          1,
+          6000,
+          "Bea",
+          "C1",
+          "DB",
+          "Kim",
+          "S1"
+        ],
+        [
+          3,
+          1,
+          null,
+          "Alex",
+          "C1",
+          "DB",
+          "Kim",
+          "S1"
+        ],
+        [
+          2,
+          5,
+          10000,
+          "Bea",
+          "C1",
+          "DB",
+          "Kim",
+          "S1"
+        ]
+      ],
+      "actual": [
+        [
+          1,
+          1,
+          9000,
+          "Alex",
+          "C1",
+          "DB",
+          "Kim",
+          "S1"
+        ],
+        [
+          2,
+          1,
+          6000,
+          "Bea",
+          "C1",
+          "DB",
+          "Kim",
+          "S1"
+        ],
+        [
+          3,
+          1,
+          null,
+          "Alex",
+          "C1",
+          "DB",
+          "Kim",
+          "S1"
+        ],
+        [
+          2,
+          5,
+          10000,
+          "Bea",
+          "C1",
+          "DB",
+          "Kim",
+          "S1"
+        ]
+      ]
+    },
+    {
+      "kind": "baseline_top_candidates",
+      "sql": "SELECT o.course_id,COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.semester_id='S1' GROUP BY o.course_id ORDER BY o.course_id",
+      "parameters": {},
+      "expected": [
+        [
+          1,
+          25000,
+          3,
+          4
+        ],
+        [
+          2,
+          10000,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          1
+        ]
+      ],
+      "actual": [
+        [
+          1,
+          25000,
+          3,
+          4
+        ],
+        [
+          2,
+          10000,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "kind": "exact_tie_mutation",
+      "sql": "SELECT o.course_id,COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id WHERE o.semester_id='S1' GROUP BY o.course_id ORDER BY o.course_id",
+      "parameters": {},
+      "expected": [
+        [
+          1,
+          27000,
+          3,
+          4
+        ],
+        [
+          2,
+          9000,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          1
+        ]
+      ],
+      "actual": [
+        [
+          1,
+          27000,
+          3,
+          4
+        ],
+        [
+          2,
+          9000,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "kind": "isolated_zero",
+      "sql": "SELECT COALESCE(SUM(e.grade_units),0),COUNT(e.grade_units),COUNT(*) FROM Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id",
+      "parameters": {},
+      "expected": [
+        0,
+        1,
+        1
+      ],
+      "actual": [
+        0,
+        1,
+        1
+      ]
+    }
+  ],
+  "exit_code": 0,
+  "passed": 37
+}

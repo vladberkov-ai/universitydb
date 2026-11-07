@@ -47,5 +47,3 @@ live evidence and screenshots are linked from examples/README.md; these are sepa
 sources, not a replay or fabricated record of the owner's actions.
 
 The questions above are English translations for reviewer use. The preserved live evidence contains the original Russian questions; no new English live pass is claimed. Offline acceptance of the English default question is checked separately.
-
-The questions above are English translations for reviewer use. The preserved live evidence contains the original Russian questions; no new English live pass is claimed. Offline acceptance of the English default question is checked separately.

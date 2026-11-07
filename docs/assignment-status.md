@@ -1,3 +1,6 @@
+## Current accepted work
+I1 complete. H-011 v2 / CHAT-043 accepts I2-offline implementation and CP1–CP4; passing implementation evidence pending. Live/API generation and push prohibited, not conditions of offline completion. I3–I5 and defense remain pending. The audit below describes baseline I1, not new I2 results.
+
 # Assignment deliverables and current gaps
 
 Audit date2026-11-07. Checked against the original four-page assignment. Original

@@ -1,3 +1,6 @@
+## H-011 current coverage
+[Actual received prompt](omx/H-011-actual-prompt.txt), [provenance/cutoff](../operations/H-011/prompt-receipt.json), [I2 readiness report](../reports/H-011-I2-offline.md). Preparation only; no I2 runtime prompt/model consumption or full transcript claim. Earlier stage cutoffs below are preserved.
+
 # Prompt provenance and coverage
 
 **Current navigation:** [prompt catalogue](PROMPTS.md) lists runtime prompts, actual live requests and saved development records. I1 is complete; earlier not-created/no-live statements below are historical cutoffs. Full transcript coverage remains partial.

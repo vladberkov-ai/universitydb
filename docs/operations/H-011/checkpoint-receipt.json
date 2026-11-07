@@ -1,0 +1,25 @@
+{
+  "status": "pending_verified_local_commit",
+  "baseline_HEAD": "5c8669ffb2e629ea00878734385fff99b53d7adc",
+  "fresh_remote_main": "5c8669ffb2e629ea00878734385fff99b53d7adc",
+  "CP1": {
+    "status": "partial preparation only; no new goal/application implementation",
+    "sha": null
+  },
+  "CP2": {
+    "status": "not-run",
+    "sha": null
+  },
+  "CP3": {
+    "status": "not-run",
+    "sha": null
+  },
+  "CP4": {
+    "status": "not-run",
+    "sha": null
+  },
+  "native_completion": "not-run; no goal created",
+  "strict_checkpoint": "not-run; no new plan",
+  "push": "not-run/prohibited",
+  "receipt_commit_SHA": "Not preclaimed; final response can identify actual later HEAD."
+}

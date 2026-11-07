@@ -1,3 +1,6 @@
+## Current H-011 execution plan
+I1 complete. Accepted I2-offline: CP1 decisions/independent oracle → CP2 query breadth/typed contracts → CP3 real checkpoint clarification/failures/UI → CP4 cleaner/full offline regression/independent APPROVE+CLEAR/invariant audit, then actual native closeout and separate receipt commit. Live and push not-run and not offline completion blockers. I3 dependent reasoning/second schema, I4 eval and I5 delivery/defense pending. Scope and DoD: [I2 brief](I2-offline-brief.md). Historical questions and numeric/model recommendations below are not current gates.
+
 # Plan for future implementation - proposed, without execution handoff
 
 Goal: compact working and explainable demonstrator according to [matrix](requirements-test-matrix.md), not production service. The current B ends up returning to chat. scope/simple screen/dependent scenario/second schema accepted; domain semantics, stack and eval gate are just recommendations. A don't repeat. This document does not allow installation, paid calls, remote or push creation.

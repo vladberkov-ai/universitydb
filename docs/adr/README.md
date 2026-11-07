@@ -1,3 +1,6 @@
+## Current H-011 scope
+I1 is complete (native completion and strict checkpoint recorded in H009 postcheckpoint receipt). ADR-CHAT-006 is accepted for I2-offline by CHAT-043; [ADR011](ADR-OMX-011-I2-offline-semantics.md) adopts only that scope. ADR003–007 remain proposed, not blanket approvals. No live or push authority.
+
 # Decision index
 
 Owner: repo. Updated: 2026-11-07. Application architecture: **not yet approved**.

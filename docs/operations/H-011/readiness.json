@@ -1,0 +1,119 @@
+{
+  "date_utc": "2026-11-07T20:03:14.284242+00:00",
+  "canonical_root": "/home/dev/projects/universitydb",
+  "baseline_HEAD": "5c8669ffb2e629ea00878734385fff99b53d7adc",
+  "branch": "main",
+  "origin": "https://github.com/vladberkov-ai/universitydb.git",
+  "remote": {
+    "initial_cmd": "git ls-remote origin refs/heads/main",
+    "initial_exit": 128,
+    "initial_error": "Could not resolve host: github.com",
+    "supported_specific_permission_retry": "GIT_TERMINAL_PROMPT=0 git ls-remote origin refs/heads/main",
+    "retry_exit": 0,
+    "actual_fresh_main": "5c8669ffb2e629ea00878734385fff99b53d7adc",
+    "push": "not-run"
+  },
+  "PATH": {
+    "codex": "/home/dev/.nvm/versions/node/v22.23.2/bin/codex",
+    "omx": ".omx/runtime/bin/omx",
+    "interactive_matches": true
+  },
+  "versions": {
+    "codex": "0.162.1",
+    "omx": "0.21.46",
+    "node": "22.23.2",
+    "source_hashes": {
+      "dist/cli/ultragoal.js": "413cec602692f98437032c6a6d36adc95c58dc008e52deafe76b3f760e80c558",
+      "dist/ultragoal/artifacts.js": "fd6b92c207705c4953b46076342e1124314cc1ffd48b917fd4e179bb27257d3a",
+      "dist/mcp/state-paths.js": "4e42a9209da125fc08081f21825eac67220d39e310f8523ee0a58c1a15bf6ad3",
+      "dist/ultragoal/__tests__/artifacts.test.js": "14884f1b4187ccad947ae609391f844fb8fe6e015bba0b72a8ee6ea9b5c2b378"
+    }
+  },
+  "goal_before": {
+    "goal": null,
+    "source": "actual root get_goal tool, before any create"
+  },
+  "old_plan_status": {
+    "aggregate": "complete",
+    "stories": "4/4 complete",
+    "resumed": false,
+    "overwritten": false
+  },
+  "quality_gates": {
+    "stage": "code-review",
+    "gates": [],
+    "exit": 0
+  },
+  "nested_cwd": "docs/operations/H-011/workflow",
+  "activation_attempt": {
+    "command": "omx ultragoal create-goals --brief-file /home/dev/projects/universitydb/docs/plans/I2-offline-brief.md --json",
+    "exit": 1,
+    "stderr": "[ultragoal] Refusing a durable ultragoal mutation before writable lifecycle authority is restored: Cannot resolve writable state scope: OMX_SESSION_ID is not bound to session.json. Restore the authoritative session binding so OMX_SESSION_ID matches the current session.json before retrying; see docs/troubleshooting.md (stale session pointer recovery).",
+    "goals_created": false
+  },
+  "hypothesis_tests": [
+    {
+      "hypothesis": "Root create-goals can preserve completed I1 automatically",
+      "result": "False: refuses any existing plan; --force overwrites brief/goals and truncates ledger. Not attempted.",
+      "evidence": "dist/ultragoal/artifacts.js:717-759"
+    },
+    {
+      "hypothesis": "Separate nested-cwd plan is supported",
+      "result": "Yes: artifacts and aggregate objective scoped to cwd; installed coexistence tests. Scope selected, one actual create refused before mutation.",
+      "evidence": "artifacts.js:31-60; __tests__/artifacts.test.js:2757-2852"
+    },
+    {
+      "hypothesis": "Nested lookup misses canonical runtime; OMX_ROOT can fix lookup",
+      "result": "Read-only resolver comparison: nested absent/unbound; OMX_ROOT selects canonical stale-dead root and resolver succeeds. No activation retry.",
+      "evidence": "dist/mcp/state-paths.js:215-255,286-303,752-811"
+    },
+    {
+      "hypothesis": "Resolver acceptance certifies current native ownership",
+      "result": "No: stale-dead recovery uses inherited OMX_SESSION_ID and unchanged pointer, without current-native identity comparison. Historical root state differs from current hook-created native scope; compatibility evidence alone is not authority.",
+      "evidence": "state-paths.js:632-669,780-804; artifacts.js:551-565,598-625"
+    }
+  ],
+  "safe_state_observations": {
+    "default_read": "historical planning state at13:58:24Z under omx session, old owner/thread",
+    "explicit_current_native_read": "hook-created planning state at19:57:07Z for actual current native session",
+    "current_scope_certified_for_new_plan_write": false,
+    "session_lock_inspect": {
+      "status": "absent",
+      "safeToRecover": false
+    },
+    "state_or_ID_edits": false,
+    "pointer_recovery": false,
+    "force_used": false,
+    "native_goal_created": false
+  },
+  "constraints": {
+    "credentials_loaded": false,
+    "paid_generation_calls": 0,
+    "count_calls": 0,
+    "monetary_changes": false,
+    "vault_writes": false,
+    "OMX_repairs_or_updates": false,
+    "push": false
+  },
+  "coverage": {
+    "root": "Required package/source text, complete src/tests/prompts/resources and specified repo docs read; manifests parsed and hashes compared; entire uv.lock TOML parsed (77 packages,468 artifacts), no downloads. PDF bytes hashed, all four pages read via supplied extracted.txt; no PDF visual render/tool available. Recent log entries only, not wholesale raw history.",
+    "child": "Actual explore read-only installed CLI/source/tests/resolver lookup; no product implementation/reviews implied."
+  },
+  "validation_observations": [
+    {
+      "command": "python (initial manifest check)",
+      "exit": 127,
+      "reason": "python unavailable; retried with python3 successfully"
+    },
+    {
+      "command": "omx ultragoal create-goals --help",
+      "exit": 1,
+      "reason": "Subcommand help position not handled; no brief. Correct global --help read."
+    },
+    {
+      "command": "ss -ltn sport=:8501",
+      "exit": "no listener evidence usable",
+      "reason": "netlink socket permission denied; next check reads /proc/net/tcp without socket mutation"
+    }
+  ]
+}
