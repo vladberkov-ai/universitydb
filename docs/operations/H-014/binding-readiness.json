@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-11-07T22:53:22.321Z",
+  "passed": true,
+  "canonical": {
+    "status": "usable",
+    "liveness": "usable",
+    "rootSource": "session-authority",
+    "recordedCwd": "/home/dev/projects/universitydb"
+  },
+  "currentNative": {
+    "ownerEvidenceStatus": "usable",
+    "actualNativeMatches": true,
+    "threadMatches": true,
+    "processIdentitySame": true
+  },
+  "writableScope": {
+    "source": "session",
+    "canonicalOwnerMatches": true
+  },
+  "pointerNativeMatchesCurrent": false,
+  "explanation": "Previous live native alias retained by canonical pointer. Installed ultragoal authority uses current OMX owner/canonical writable scope, not CODEX_SESSION_ID. Current native exact nofollow owner sidecar independently verified usable and identical live process identity; no rebinding performed.",
+  "artifactsDisjoint": true,
+  "mutations": false
+}

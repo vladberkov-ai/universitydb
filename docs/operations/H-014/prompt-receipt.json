@@ -1,0 +1,17 @@
+{
+  "method": "installed omx session export; exact selected received user entry, private vault prefix redacted only",
+  "entry_index": 1,
+  "line_number": 9,
+  "timestamp": "2026-11-07T22:51:06.235Z",
+  "export_sha256": "8af62af4e0ff53d37c772f3dbeb397ffa7d6246723f3f0e51b998318da9dee54",
+  "received_text_sha256": "7799bc5be1cbbffe22ba52c4ef38e777b1c527d2b89415a12bac663b2c0bc3cd",
+  "saved_sha256": "4eff1d686e9bd04692a6c86f1cf8b3faed689b2ef7001701b2379bf5a42c4db7",
+  "redactions": [
+    "private vault prefix"
+  ],
+  "normalization": "one terminal LF",
+  "read_context": "H-014 v2 and listed inputs, not substituted actual prompt",
+  "coverage": "selected actual root user task only; not complete system/developer/tool/reasoning/child transcript",
+  "entries_exported": 4,
+  "skipped_records": 0
+}

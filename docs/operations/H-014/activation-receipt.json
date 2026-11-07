@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-11-07T22:55:56.877891+00:00",
+  "binding": "binding-readiness.json",
+  "new_plan": "workflow/.omx/ultragoal/goals.json",
+  "native_before": null,
+  "native_after": "actual root create_goal matching supported aggregate objective active",
+  "stories": 5,
+  "first_command": "no process: nested cwd absent before command launch; no artifacts modified",
+  "permission_review": "combined create+complete-goals rejected before execution due to interpretation that complete-goals finishes stories; independent source showed startNextUltragoal only sets next in_progress; separate create and supported handoff approved",
+  "installed_source_evidence": {
+    "cli/ultragoal.js": "466-467 maps complete-goals to startNextUltragoal",
+    "ultragoal/artifacts.js": "1420-1450 sets next pending in_progress, does not complete"
+  },
+  "source_hashes": {
+    "cli/ultragoal.js": "413cec602692f98437032c6a6d36adc95c58dc008e52deafe76b3f760e80c558",
+    "ultragoal/artifacts.js": "fd6b92c207705c4953b46076342e1124314cc1ffd48b917fd4e179bb27257d3a",
+    "hooks/session.js": "7239b214f98e044f51fcbe51e2e24fdf98f6655bd411c723c23cd696bbea455f",
+    "mcp/state-paths.js": "4e42a9209da125fc08081f21825eac67220d39e310f8523ee0a58c1a15bf6ad3"
+  },
+  "historical_goals": "completed I1/H013 unchanged; not resumed",
+  "force_manual_ID_pointer_lock_runtime_changes": false,
+  "live_calls": 0
+}
