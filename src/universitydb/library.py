@@ -110,18 +110,28 @@ class Library:
                 "Specify open/unreturned loans; other Library metrics are unsupported.",
             )
         if catalog:
-            named = re.search(r"\b(?i:loans?)\s+(?:(?i:for)\s+)?([A-Z][\w-]*)", question)
+            named_targets = re.finditer(
+                r"\b(?i:loans?)\s+(?i:for|of)\s+([A-Za-z][\w-]*)"
+                r"|\b(?i:does)\s+([A-Za-z][\w-]*)\s+(?i:have)\b"
+                r"|\b([A-Za-z][\w-]*)['’]s\s+(?i:open\s+|unreturned\s+)?(?i:loans?)\b"
+                r"|\b(?i:loans?)\s+((?!(?i:does)\b)[A-Z][\w-]*)",
+                question,
+            )
             known = {str(entry["label"]).casefold() for entry in catalog.get("reader_id", [])}
-            if named and named.group(1).casefold() not in known | {
-                "per",
-                "by",
-                "for",
-                "all",
-                "reader",
-                "readers",
-                "reader_id",
-                "count",
-            }:
+            for named in named_targets:
+                token = next(group for group in named.groups() if group).casefold()
+                if token in known | {
+                    "not",
+                    "per",
+                    "by",
+                    "for",
+                    "all",
+                    "reader",
+                    "readers",
+                    "reader_id",
+                    "count",
+                }:
+                    continue
                 raise Failure(
                     "INVALID_INPUT", "Unknown reader name; use a catalog name or reader_id."
                 )

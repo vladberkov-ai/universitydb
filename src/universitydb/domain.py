@@ -242,11 +242,14 @@ class University:
         if catalog:
             # Recognize a bounded name-bearing shorthand instead of silently turning
             # an unknown requested person into an unfiltered global aggregate.
-            named = re.search(
-                r"\b(?:mean|average)(?:\s+(?:for|of))?\s+([A-Za-z][\w-]*)", question, re.IGNORECASE
+            named_targets = re.finditer(
+                r"\b(?:mean|average)(?:\s+grades?)?(?:\s+(?:for|of))?\s+([A-Za-z][\w-]*)"
+                r"|\b([A-Za-z][\w-]*)['’]s\s+(?:mean|average|grades?)\b",
+                question,
+                re.IGNORECASE,
             )
-            if named:
-                token = named.group(1).casefold()
+            for named in named_targets:
+                token = (named.group(1) or named.group(2)).casefold()
                 semantic = {
                     "all",
                     "across",

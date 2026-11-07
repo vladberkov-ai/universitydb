@@ -1,0 +1,80 @@
+FF..                                                                     [100%]
+=================================== FAILURES ===================================
+_ test_named_scope_compiled_graph[university-What is the average grade for Zoe?-None] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-942/test_named_scope_compiled_grap0')
+kind = 'university', question = 'What is the average grade for Zoe?'
+known_id = None
+
+    @pytest.mark.parametrize(
+        "kind,question,known_id",
+        [
+            ("university", "What is the average grade for Zoe?", None),
+            ("library", "How many open loans does Zoe have?", None),
+            ("university", "What is the average grade for Bea?", 2),
+            ("library", "How many open loans does Ada have?", 1),
+        ],
+    )
+    def test_named_scope_compiled_graph(tmp_path, kind, question, known_id):
+        domain = University() if kind == "university" else Library()
+        spec = make_spec("grade_mean") if kind == "university" else LIBRARY_SPEC
+        field = "student_id" if kind == "university" else "reader_id"
+        resources = Path(__file__).resolve().parents[1] / "resources"
+        database = tmp_path / "data.db"
+        db.initialize(database, resources if kind == "university" else resources / "library")
+        # A valid unfiltered proposal would previously produce misleading global success.
+        scope = {} if known_id is None else {field: known_id}
+        sql, params = domain.query(spec, scope)
+        provider = ScriptedProvider(list(scripted_step(spec, sql, params)))
+        agent = Agent(domain, database, provider, tmp_path / "trace")
+        result = agent.run(question)
+        if known_id is None:
+>           assert result["status"] == "error", result
+E           AssertionError: {'version': '1', 'run_id': '5b94882d-8446-47f4-8890-cb780f705c65', 'trace_id': '5b94882d-8446-47f4-8890-cb780f705c65', 'status': 'ok', ...}
+E           assert 'ok' == 'error'
+E
+E             - error
+E             + ok
+
+tests/test_readiness_scope.py:40: AssertionError
+_ test_named_scope_compiled_graph[library-How many open loans does Zoe have?-None] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-942/test_named_scope_compiled_grap1')
+kind = 'library', question = 'How many open loans does Zoe have?'
+known_id = None
+
+    @pytest.mark.parametrize(
+        "kind,question,known_id",
+        [
+            ("university", "What is the average grade for Zoe?", None),
+            ("library", "How many open loans does Zoe have?", None),
+            ("university", "What is the average grade for Bea?", 2),
+            ("library", "How many open loans does Ada have?", 1),
+        ],
+    )
+    def test_named_scope_compiled_graph(tmp_path, kind, question, known_id):
+        domain = University() if kind == "university" else Library()
+        spec = make_spec("grade_mean") if kind == "university" else LIBRARY_SPEC
+        field = "student_id" if kind == "university" else "reader_id"
+        resources = Path(__file__).resolve().parents[1] / "resources"
+        database = tmp_path / "data.db"
+        db.initialize(database, resources if kind == "university" else resources / "library")
+        # A valid unfiltered proposal would previously produce misleading global success.
+        scope = {} if known_id is None else {field: known_id}
+        sql, params = domain.query(spec, scope)
+        provider = ScriptedProvider(list(scripted_step(spec, sql, params)))
+        agent = Agent(domain, database, provider, tmp_path / "trace")
+        result = agent.run(question)
+        if known_id is None:
+>           assert result["status"] == "error", result
+E           AssertionError: {'version': '1', 'run_id': 'fc67b561-0394-450e-a20f-24e66a397e15', 'trace_id': 'fc67b561-0394-450e-a20f-24e66a397e15', 'status': 'ok', ...}
+E           assert 'ok' == 'error'
+E
+E             - error
+E             + ok
+
+tests/test_readiness_scope.py:40: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_readiness_scope.py::test_named_scope_compiled_graph[university-What is the average grade for Zoe?-None]
+FAILED tests/test_readiness_scope.py::test_named_scope_compiled_graph[library-How many open loans does Zoe have?-None]
+2 failed, 2 passed in 1.48s
