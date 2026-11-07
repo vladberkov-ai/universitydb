@@ -1,0 +1,16 @@
+{
+  "candidate_sha": "98345ad6ce5757c71d44ba1ce59a683d46e0d910",
+  "files_privacy_links_json_checked": 12,
+  "result": "PASS",
+  "package_hashes_verified": 17,
+  "original7invariants": "unchanged",
+  "code": "actualAPPROVE0",
+  "architect": "actualCLEAR0",
+  "configured_gates": [],
+  "boundedofflineDoD": "achieved",
+  "native_strict": "pending root actual postconditions",
+  "newproductrunbydocslane": false,
+  "live_count_credentials_spending_push": "not-run",
+  "cp3": "418e4785f93df34756430bcc7ad46e8da2ac3874",
+  "cp4": "94a0e97383e02e8382a0e3cd0217db4558e93511"
+}

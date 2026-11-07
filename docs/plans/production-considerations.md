@@ -67,7 +67,7 @@ public authentication or durable cross-restart exactly-once guarantees.
 The [bounded readiness report](../reports/H-014-readiness-offline.md) records clean
 tracked-only installation, scoped fail-closed named-target repair and the future
 [live evaluation protocol](H-014-live-eval-protocol.md)/[budget](H-014-live-eval-budget.md),
-with final verification explicitly pending until receipts arrive. Safe accepted SQL
+with final exact983technical evidence and independent APPROVE/CLEAR now received. Safe accepted SQL
 can still answer the wrong semantic question: current guard recognizes bounded
 supported forms, not universal language. Offline injected tests are not model accuracy.
 
@@ -86,7 +86,7 @@ or relaxed semantics/ceilings are introduced by H014.
 
 Fresh tracked-only frozen install and clean full485tests/static/157oracle plus actual
 six-class browser passed at98345ad6ce5757c71d44ba1ce59a683d46e0d910. Typed rows are
-visible without Streamlit return-value help/None; final independent/native gates
+visible without Streamlit return-value help/None; final independent APPROVE/CLEAR received; root native/strict
 remain pending. This closes technical clean-run/UI verification, not production
 readiness, multi-user security, durable recovery, real-model accuracy or publication.
 [Current source/preservation evidence](../operations/H-014/final-983-preservation-remote.json).

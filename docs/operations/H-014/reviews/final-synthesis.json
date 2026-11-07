@@ -1,0 +1,29 @@
+{
+  "candidate_sha": "98345ad6ce5757c71d44ba1ce59a683d46e0d910",
+  "scope": "bounded H014offline DoD and reviewable proposed live package, not live acceptance/publication/defense",
+  "code_review": {
+    "verdict": "APPROVE",
+    "unresolved": 0,
+    "artifact": "docs/operations/H-014/reviews/final-code-review.md",
+    "actual_delivery": "genuine independent native reviewer received by root"
+  },
+  "architect": {
+    "verdict": "CLEAR",
+    "unresolved": 0,
+    "artifact": "docs/operations/H-014/reviews/final-architect.json",
+    "actual_delivery": "genuine independent native architect received by root"
+  },
+  "configured_gates": {
+    "result": [],
+    "fresh": "Root refreshed installed CLI after both actual final verdicts"
+  },
+  "verification": "Exact983485tests80.36s/all7commands0/157oracle;28clean53browserhashes45sourceblobs17eval;6classes7captures",
+  "independent_code_checks": "34primaryfiles;3actualmagicPASS1.07s;scopedstatic/source/evidence/preservation",
+  "invariants": "seven original text obligations mapped unchanged; functionalR01\u201314/U01/U03\u201306 covered",
+  "prior_findings": "initial/interimBLOCK,REQUESTCHANGES and revoked preliminary draft preserved; source-level scoped repairs and fresh proofs close blockers",
+  "cleaner": "bounded summary with pre-edit locks, no masking fallback/newdeps/ceilingchange",
+  "offline_DoD": "achieved",
+  "native_COMPLETE_strict": "pending actual root postconditions; not asserted",
+  "live": "48not-run; proposed44/48and7/8each, no approved newcap",
+  "push": "not-run"
+}

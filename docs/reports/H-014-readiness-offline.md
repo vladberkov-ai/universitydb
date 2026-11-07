@@ -1,6 +1,6 @@
 # H-014 v2 — offline readiness report
 
-**Offline verification PASS at exact98345ad; architect CLEAR; final code-reviewer and root native/strict closeout pending.**
+**Bounded offline DoD achieved at exact98345ad:485tests/157oracle, fresh clean/browser, independent APPROVE+CLEAR and configured gates clear. Root native COMPLETE/strict remain pending actual postconditions.**
 This is the bounded I4 + verification-I5 **offline** readiness task, not full live
 acceptance, publication or owner defense. No live generation/access/count calls,
 credential loading, monetary ledger/cap/hold changes, push or vault writes are
@@ -18,7 +18,7 @@ permitted. Accepted ADR-CHAT-006 semantics and Sol high/medium/medium are unchan
   The first final clean attempt passed457tests/static92.09s but readiness E2E
   found a new regression: `Show mean grade grouped by course across all enrollments`
   returned INVALID_INPUT before provider dispatch. Candidate **not accepted**;
-  failed attempt preserved; subsequent c631repair is frozen, full rerun pending.
+  failed attempt preserved; subsequent repairs and exact983full run now verified.
 - Rejected visual candidate: `c631c0c62bebd7c291429e26783dbfc442bde3af`.
   Repair preserves registered group/exclusion/all-five-axis/count prose and Library
   each/every forms while keeping bare unknown names fail-closed. Final focused39
@@ -39,7 +39,7 @@ permitted. Accepted ADR-CHAT-006 semantics and Sol high/medium/medium are unchan
   Docs-only `ac998a9b411b6d15b7d4a555523e653c1f124197` is not tested product983.
   Fresh exact983full/browser/regression assertions PASS:485tests80.36s,
   all seven pipeline exits0,157oracle and six actual browser classes/seven captures.
-  Independent final verdicts and root native/strict closeout remain pending.
+  Independent final APPROVE+CLEAR received; root native/strict postconditions pending.
 - Later evidence/documentation commits are not newly full-tested product identities.
 
 ## Independent audit and repair
@@ -140,10 +140,10 @@ history-preserving approval/migration is required; no cap migration is applied.
 | R03 | Real compiled LangGraph→SQLite→formatter; offline injected provider only, broad real NL quality not-run |
 | R04 | All16filter scopes, five group grains, three count objects, NULL≠zero, exact ties, all-semester equal enrollment weights; M1 actual typed result bindings; clean regression/trace PASS |
 | R05 | Library unit1/zero/schema isolation on same core; fresh983clean/browser PASS |
-| R06 | Ordered same-run nodes/SQL/bindings/raw/adapted rows/answer-or-error trace; fresh983browser/trace PASS; final independent verdict pending |
+| R06 | Ordered same-run nodes/SQL/bindings/raw/adapted rows/answer-or-error trace; fresh983browser/trace PASS; independent APPROVE+CLEAR |
 | R07 | Grounded ambiguity, session-bound expiry/conflict/replay, bounded repair, corruption/safety/provider/accounting failures; named-target regression repaired |
 | R08 | 485offline/static/157oracle/AppTest/fresh983browser PASS; eval harness33PASS does not replace live48 |
-| R09 | Existing adapter/core separation; independent final review pending |
+| R09 | Existing adapter/core separation; independent APPROVE+CLEAR |
 | R10 | [Production boundaries](../plans/production-considerations.md), not production-ready |
 | R12/R13/R14 | Tracked code/tests/ADR/prompts/examples and exact candidate receipts, exact candidate receipts and public links checked |
 | R15 | Previously published baseline remains; new publication awaiting separate authority, push not-run |
@@ -159,7 +159,7 @@ Preserve DAG≤3,≤5generation calls/run,≤4SQL attempts,180s active,60/45s ca
 32768output; checkpoint≤2pauses/900s,in-process only; read-only validated SQL and
 DELETE-only DB mode. Typed dependency values never become SQL fragments. Runtime
 prompt hashes and locked dependencies remain unchanged. Final independent architect invariant
-review CLEAR; code-reviewer verdict pending, not inferred from count of tests or historical H013 verdicts.
+review CLEAR and code-reviewer APPROVE, not inferred from count of tests or historical H013 verdicts.
 
 ## Provenance, preservation and privacy
 
@@ -198,8 +198,23 @@ Credentials were not loaded; no secrets belong in public evidence.
 
 Final independent architect **CLEAR**, zero unresolved blockers:
 [actual receipt](../operations/H-014/reviews/final-architect.json). Final independent
-code-reviewer verdict remains **pending**, not inferred from preliminary drafts or H013. Cleaner/invariant technical evidence updated to485PASS; independent final reviews
-and final native COMPLETE/strict: pending,
+code-reviewer **APPROVE**, zero unresolved blockers: [actual review](../operations/H-014/reviews/final-code-review.md).
+Earlier [REQUEST CHANGES/revoked draft](../operations/H-014/reviews/ui-visual-block-code-review.md)
+is preserved, not substituted as final approval. Refreshed configured review gates
+returned `[]` after both actual verdicts. Cleaner/invariant technical evidence PASS;
+final native COMPLETE/strict remain pending,
 root-owned. Live/API/count/access/credential loading/monetary mutation/push and owner
 defense: **not-run**. Missing live/push authority does not block this bounded offline
-DoD, but final independent approvals/native postconditions are still pending at this cutoff.
+DoD. Bounded offline DoD is now achieved; root native/strict postconditions are
+separate pending steps, not preclaimed here.
+
+## Verified local checkpoints and independent synthesis
+
+- CP-R3 exact983clean/browser receipts: `418e4785f93df34756430bcc7ad46e8da2ac3874`.
+- CP-R4 proposed live package/invariant audit: `94a0e97383e02e8382a0e3cd0217db4558e93511`.
+- Earlier failed-candidate/doc receipts: `5f4bd767eec569416f85c8e449896a9ade532966`,
+  `4b9c2e47e1187ecd7ac61071dc1a6d71ebd779ce`,
+  `33043cdd24e389264ac4786c7d080661dd0ab841`; they do not change tested983identity.
+- [Final independent synthesis](../operations/H-014/reviews/final-synthesis.json):
+  actual APPROVE/CLEAR, no unresolved blockers, configured gates empty. New final
+  docs receipt commit records its SHA separately, never self-identifies in its content.

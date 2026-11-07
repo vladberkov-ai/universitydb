@@ -4,7 +4,8 @@ Exact tested candidate under final verification: `98345ad6ce5757c71d44ba1ce59a68
 Later docs-only `ac998a9b411b6d15b7d4a555523e653c1f124197` does not mean a different
 full product test. Final full clean/browser technical evidence **PASS**:485tests80.36s/all7commands0/
 157oracle/28clean+53browserhashes, visible typed raw/adapted UI with nohelp/noNone.
-Independent final verdicts and native/strict are **pending**.
+Independent final code-reviewer **APPROVE** and architect **CLEAR**, zero unresolved
+blockers; refreshed configured review gates empty. Root native/strict pending.
 This audit copies the seven original obligations unchanged, then maps actual source,
 tests and bounded evidence. Read-only workflow brief is not modified by this lane.
 Accepted ADR006/Sol profile stays unchanged; offline providers are not model accuracy.
@@ -16,7 +17,7 @@ Accepted ADR006/Sol profile stays unchanged; offline providers are not model acc
 - Source anchors: `src/universitydb/domain.py; domain_support.py; resources/schema.sql`.
 - Tests: `tests/test_i2_domains.py (all16filter subsets/five groups/counts), test_i2_oracle.py, test_readiness_scope.py`.
 - Evidence/cutoff: 157oracle and group/top/M1 artifacts in clean-run-final-attempt2; unknown/known targets39focusedPASS. Exact983full485PASS,157oracle.
-- Independent final verdict: pending; original findings retained, not waived.
+- Independent final verdict: APPROVE/CLEAR; original findings retained and resolved, not waived.
 
 ## I02 — original obligation
 
@@ -25,7 +26,7 @@ Accepted ADR006/Sol profile stays unchanged; offline providers are not model acc
 - Source anchors: `src/universitydb/contracts.py; agent.py typed reference materialization; domain.py`.
 - Tests: `test_i2_contracts.py; test_i3_dependencies.py::test_m1_actual_dependency_sensitivity, test_invalid_actual_upstream_stops_before_any_downstream_dispatch`.
 - Evidence/cutoff: c631M1 F1/F2/tie/empty/oversize/partial failures; fresh983full/M1 actual reference proofPASS.
-- Independent final verdict: pending; original findings retained, not waived.
+- Independent final verdict: APPROVE/CLEAR; original findings retained and resolved, not waived.
 
 ## I03 — original obligation
 
@@ -34,7 +35,7 @@ Accepted ADR006/Sol profile stays unchanged; offline providers are not model acc
 - Source anchors: `src/universitydb/agent.py InMemorySaver/interrupt/context registry`.
 - Tests: `test_i2_continuation.py::test_real_pause_resume_and_replay, test_resume_rejections_before_provider, test_two_pauses_wait_excluded_and_third_pause_terminal; test_review_repairs.py`.
 - Evidence/cutoff: c631same-run resume/replay traces preserved; fresh983full/browserPASS.
-- Independent final verdict: pending; original findings retained, not waived.
+- Independent final verdict: APPROVE/CLEAR; original findings retained and resolved, not waived.
 
 ## I04 — original obligation
 
@@ -43,7 +44,7 @@ Accepted ADR006/Sol profile stays unchanged; offline providers are not model acc
 - Source anchors: `src/universitydb/config.py; llm.py; agent.py provider attempt accounting`.
 - Tests: `test_bounds.py; test_practical_budget.py; test_provider_worker.py; test_i3_dependencies.py::test_transient_and_repair_share_remaining_calls`.
 - Evidence/cutoff: Frozen source unchanged except two UI branches from c631. Full request practical estimate is NOT strict token/invoice proof; original monetary ledger untouched.983full485/staticPASS.
-- Independent final verdict: pending; original findings retained, not waived.
+- Independent final verdict: APPROVE/CLEAR; original findings retained and resolved, not waived.
 
 ## I05 — original obligation
 
@@ -52,7 +53,7 @@ Accepted ADR006/Sol profile stays unchanged; offline providers are not model acc
 - Source anchors: `src/universitydb/sql_policy.py; db.py; db_worker.py`.
 - Tests: `test_db_domain.py; test_bounds.py; test_review_repairs.py`.
 - Evidence/cutoff: c631bothDBinit/safe repeat hash, corruption/DELETE-only/read-only regressions; independent oracle157;983full485/staticPASS.
-- Independent final verdict: pending; original findings retained, not waived.
+- Independent final verdict: APPROVE/CLEAR; original findings retained and resolved, not waived.
 
 ## I06 — original obligation
 
@@ -61,7 +62,7 @@ Accepted ADR006/Sol profile stays unchanged; offline providers are not model acc
 - Source anchors: `src/universitydb/library.py; resources/library/schema.sql and seed.sql; shared core modules`.
 - Tests: `test_library.py::test_library_baseline_zero_returned_mutations_and_scale; test_i2_ui.py::test_dataset_switch_clears_answer_and_uses_separate_db`.
 - Evidence/cutoff: c631portability-proof and LibraryAda1/Bob1;983fresh browserPASS typedraw/zero/unit.
-- Independent final verdict: pending; original findings retained, not waived.
+- Independent final verdict: APPROVE/CLEAR; original findings retained and resolved, not waived.
 
 ## I07 — original obligation
 
@@ -70,7 +71,7 @@ Accepted ADR006/Sol profile stays unchanged; offline providers are not model acc
 - Source anchors: `src/universitydb/tracing.py; agent.py; ui.py explicit rendering branches`.
 - Tests: `test_readiness_ui_magic.py; test_ui.py; test_i2_ui.py::test_m1_ui_all_actual_step_rows_bindings_and_final_means`.
 - Evidence/cutoff: c631visualBLOCK despite mechanical capturePASS; actual magic3pre-fail then15serializedPASS6.00s after983fix. New actual983browser/nohelp/noNone/typedrows assertionsPASS.
-- Independent final verdict: pending; original findings retained, not waived.
+- Independent final verdict: APPROVE/CLEAR; original findings retained and resolved, not waived.
 
 ## Whole requirement coverage and remaining authority
 
@@ -92,7 +93,7 @@ contextual registered grammar39tests; then actual c631visualBLOCK → actual mag
 3failure lock → two explicit UI branches plus browser assertions. c631482PASS/
 157oracle/browser screenshots do not waive that visual blocker. Preserve all failed
 attempts and initial/interim reviewer findings. Exact983full485/static157oracle and strengthened actual browser now close the
-technical finding; independent final review/native completion remain pending.
+technical finding; independent APPROVE/CLEAR received; root native/strict pending.
 
 No live/count/access/credential operation, spending migration, judge/fallback,
 accepted-semantics change, new dependency, global magic override, screenshot masking
@@ -109,4 +110,4 @@ disclosed orchestration recovery.17eval package hashes and28clean/53browser hash
 verified. Owned server/browser stopped, temporary ledger absent, disposable tracked
 checkout clean. These technical receipts do not invent final reviewer approval.
 
-Independent architect final **CLEAR**, zero unresolved blockers: [actual receipt](reviews/final-architect.json). Final code-reviewer/native remain pending; no reused H013 verdict.
+Independent architect final **CLEAR**, zero unresolved blockers: [actual receipt](reviews/final-architect.json). Actual final code-reviewer [APPROVE](reviews/final-code-review.md), zero unresolved blockers; native/strict root-owned pending, no reused H013 verdict.

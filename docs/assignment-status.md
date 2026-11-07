@@ -12,7 +12,7 @@ prompt preservation is an additional owner requirement.
 | Schema-independent core | Library resources/adapter and final same-core proof | SQLite only |
 | Full traces and debugging | examples/,H-013 m1-final and browser JSONL/screenshots | No fabricated live records |
 | SQL/data/empty/ambiguity failures | Typed validation, clarification, bounded repair, negative/replay tests | Runtime safety is not full semantic proof |
-| Query/JOIN/NL-SQL/E2E tests |410offline tests,157oracle,AppTest,actual browser | Clean-environment readiness and expanded live eval pending |
+| Query/JOIN/NL-SQL/E2E tests |410offline tests,157oracle,AppTest,actual browser | H014clean readinessPASS485; expanded live eval pending |
 | Modular code | agent/contracts/db/domain/library/provider/tracing/UI | Local process design |
 | Production discussion | plans/production-considerations.md | No production deployment claim |
 | Design decisions and rationale | adr/README.md; ADR008–012 scoped decisions | Earlier ADR003–007 proposals remain labeled |
@@ -38,7 +38,7 @@ Candidate331eb5a clean457tests/static passed but fresh group-by E2E failed; it i
 not accepted. Subsequent c631passed482tests/157oracle but architect visualBLOCK
 required UI repair. Current source98345ad fixes magic rendering with15targetedPASS;
 final full485tests80.36s/static157oracle/browser typedrows/nohelp PASS. Independent
-final reviews/native pending; no final verdict inferred.
+final APPROVE/CLEAR received, configured gates clear; native/strict pending.
 R01–14/U01/U03–06 are mapped in the report; R15 new publication awaits authority,
 R16/17 owner defense deferred, U02 deadline unknown. I4 real-model/I5 live acceptance
 not-run: proposed24×2/48cases and44/48,≥7/8/category await approval, not an accuracy
