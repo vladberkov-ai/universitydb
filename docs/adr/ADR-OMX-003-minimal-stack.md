@@ -1,26 +1,26 @@
-# ADR-OMX-003 — Минимальный локальный стек
+# ADR-OMX-003 - Minimal Local Stack
 
-Дата: 2026-11-07. Owner: repo. **Status: proposed**, до chat review. Не execution authorization.
+Date:2026-11-07. Owner: repo. **Status: proposed**, pending owner review. Not execution authorization.
 
-## Контекст
-Нужны настоящий LangGraph, SQL, простой экран и полная трасса, срок ограничен. Продуктовых dependencies пока нет.
+## Context
+We need real LangGraph, SQL, a simple screen and a full trace, limited time. There are no product dependencies yet.
 
-## Варианты
+## Options
 SQLite/direct LangGraph/OpenAI SDK/Streamlit/local JSONL; PostgreSQL+API/UI+LangSmith; CLI-only.
 
-## Рекомендация
-Первый вариант; кандидат Python3.13/LangGraph1.2.20/openai3.46.0/Streamlit1.67.0, compatibility ещё проверить. Luna baseline, snapshot Mini или Sol отдельные evaluation profiles.
+## Recommendation
+First option; candidate Python3.13/LangGraph1.2.20/openai3.46.0/Streamlit1.67.0, still check compatibility. Luna baseline, snapshot Mini or Sol individual evaluation profiles.
 
-## Обоснование
-Минимум сервисов и явная диагностируемость. CLI не покрывает экран; серверный вариант viable, но избыточен сейчас.
+## Rationale
+A minimum of services and obvious diagnosability. The CLI doesn't cover the screen; The server option is viable, but redundant now.
 
-## Последствия
-Собственный trace contract, отсутствие HA/remote auth и stable model alias; key/access/budget неизвестны. Prices/pins из dated research, не guarantee.
+## Consequences
+Own trace contract, lack of HA/remote auth and stable model alias; key/access/budget unknown. Prices/pins from dated research, not a guarantee.
 
-## Проверка
-Clean lock/install+security audit, реальный vertical slice S6, версии/usage/trace, full E2E. До live explicit budget; никаких calls в B.
+## Verification
+Clean lock/install+security audit, real vertical slice S6, versions/usage/trace, full E2E. An explicit budget is required before live execution; no calls are made during B.
 
-## Пересмотр
-Concurrent writers/remote users, measured low Luna quality, изменившиеся API/цены или restart requirement.
+## Revision triggers
+Concurrent writers/remote users, measured low Luna quality, changed API/prices or restart requirement.
 
-Связанные [архитектура](../plans/architecture-proposal.md), [контракты](../plans/contracts.md), [проверки](../plans/test-plan.md). Это будущие относительные пути после упаковки из reviewed planning baseline.
+Related [architecture](../plans/architecture-proposal.md), [contracts](../plans/contracts.md), [checks](../plans/test-plan.md). These are future relative paths after packaging from the reviewed planning baseline.

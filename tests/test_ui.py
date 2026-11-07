@@ -17,9 +17,9 @@ def test_actual_streamlit_app_offline_and_stale_clear(tmp_path, monkeypatch):
     assert not app.exception
     assert app.success and "80.00" in app.success[0].value
     assert [e.label for e in app.expander] == [
-        "SQL и безопасные параметры",
+        "SQL and safe parameters",
         "DB typed rows",
-        "Полный same-run trace",
+        "Full same-run trace",
     ]
     assert app.code and any("16000" in e.value for e in app.json)
     app.text_area[0].set_value("unsupported")

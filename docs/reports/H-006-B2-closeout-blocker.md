@@ -1,79 +1,79 @@
-# H-006 B2 — реальные reviews завершены, post-closeout blocker
+# H-006 B2 - real reviews completed, post-closeout blocker
 
-Дата: 2026-11-07. Итог: **blocker; B не завершён, коммит B отсутствует**.
-Это новая попытка после ремонта OMX, не продолжение отменённого поколения.
-Основание: H-006-v5 и отдельный прямой пользовательский вызов Advisory;
-[свежая диагностика D2](H-006-v5-readiness-2.md) использована, A не повторялся.
+Date: 2026-11-07. Result: **blocker; B is not complete, there is no commit B**.
+This is a new attempt after the OMX overhaul, not a continuation of the canceled generation.
+Base: H-006-v5 and separate direct user call Advisory;
+[fresh diagnostics D2](H-006-v5-readiness-2.md) used, A was not repeated.
 
-## Git и сохранность
+## Git and preservation
 
-- A/HEAD: `8931d832d49311ac0d63c3a7a359b4293058da89`, ветка `main`, правильный Git root.
-- Все **97** файлов pre-B baseline, включая исходные незакоммиченные документы и D2, сохранили SHA-256.
-  Ещё **9** исторических private research/evidence файлов и **2** файла отменённого поколения неизменны.
-- Все **25** входов Obsidian совпадают с актуальными hashes при начале B. Старые frozen-manifest
-  расхождения по пяти обновлённым материалам уже объяснены D2/CHAT-022, это не новые изменения.
-  PDF прочитан непосредственно; Obsidian не изменялся.
-- Индекс Git неизменен, staging пуст, remotes отсутствуют. Нет commit B, push или публикации.
-  Новые файлы — только диагностические документы; существующие индексы docs/AGENTS/wiki не менялись.
-- Подробные hashes и команды: [preservation-and-validation.json](../operations/H-006-B2-closeout-blocker-evidence-2/preservation-and-validation.json).
+- A/HEAD: `8931d832d49311ac0d63c3a7a359b4293058da89`, branch `main`, correct Git root.
+- All **97** pre-B baseline files, including raw uncommitted documents and D2, retain SHA-256.
+Another **9** historical private research/evidence files and **2** files of the canceled generation are unchanged.
+- All **25** Obsidian inputs match the actual hashes at the start of B. Old frozen-manifest
+the discrepancies in the five updated materials have already been explained by D2/CHAT-022, these are not new changes.
+The PDF is read directly; Obsidian has not changed.
+- Git index is unchanged, staging is empty, remotes are missing. No commit B, push or publish.
+New files are diagnostic documents only; the existing docs/AGENTS/wiki indexes were not changed.
+- Detailed hashes and commands: [preservation-and-validation.json](../operations/H-006-B2-closeout-blocker-evidence-2/preservation-and-validation.json).
 
-## Активация и настоящие роли
+## Activation and real roles
 
-Прямой native hook активировал `workflow_variant=advisory`:
+Direct native hook activated `workflow_variant=advisory`:
 
 - generation: `ec3e1f0b-d751-4088-bfb2-ec386c08549c`;
 - OMX session: `omx-1794046506930-56sf8c`;
 - native root: `01a1b581-446d-70b0-84ac-3e5b449c1437`;
 - native activation turn: `01a1b58c-206e-7472-bebe-165fab7636bc`.
 
-Отменённое `0748daa2-4c89-4a84-a305-486ed1f480a3` не возобновлялось.
-Codex 0.162.1, OMX 0.21.46 с локальным ремонтом, Node 22.23.2; обновлений/setup/repair не выполнялось.
-Native `agent_type` использован для установленных `planner`, `architect`, `critic`; модели не навязывались.
+The canceled `0748daa2-4c89-4a84-a305-486ed1f480a3` was not renewed.
+Codex 0.162.1, OMX 0.21.46 with local repair, Node 22.23.2; no updates/setup/repair were performed.
+Native `agent_type` is used for installed `planner`, `architect`, `critic`; models were not imposed.
 
-| Итерация | Planner | Отдельный Architect | Отдельный Critic |
+| Iteration | Planner | Individual Architect | Separate Critic |
 |---|---|---|---|
-| 1 | Draft завершён | ITERATE | ITERATE: текущая редакция отклонена |
-| 2 | Revision завершена | ITERATE | ITERATE |
-| 3 | Revision завершена | APPROVE, 0 blocking | APPROVE, 0 blocking |
+| 1 | Draft completed | ITERATE | ITERATE: current revision rejected |
+| 2 | Revision completed ITERATE | ITERATE |
+| 3 | Revision completed| APPROVE, 0 blocking | APPROVE, 0 blocking |
 
-Planner переиспользован для трёх итераций, reviewers — шесть отдельных native children, строго
-Architect→Critic последовательно. Для **7/7** детей проверены настоящие native parent/root/role/generation
-и `completion_source=native_stop_event`; поздние notify не потеряли completion в tracker.
-Это локальная lifecycle evidence, не host-issued authority. Дополнительные настроенные gates: **[]**,
-проверены после Critic; фиктивных gate verdicts нет.
+Planner reused for three iterations, reviewers - six separate native children, strictly
+Architect→Critic sequentially. For **7/7** children, real native parents/root/role/generation have been verified
+and `completion_source=native_stop_event`; later notify did not lose completion in the tracker.
+This is local lifecycle evidence, not host-issued authority. Additional configured gates: **[]**,
+tested after Critic; There are no fictitious gate verdicts.
 
-Исправлены: различие статического DAG и runtime bindings, конечный типизированный ResultSpec,
-точная агрегатная семантика/ничьи, отделение injected faults от real-model оценки, полный SQL/DB/trace
-в UI, различие no_rows/no_grades/real_zero и COALESCE вне SUM для пустого входа.
-Старые researcher/dependency-expert результаты прочитаны и переиспользованы как исторические входы,
-их exports/hashes проверены; они не выданы за новые исследования/reviewer approvals.
-Новых research-пробелов, требующих дополнительных агентов, не обнаружено.
+Fixed: difference between static DAG and runtime bindings, final typed ResultSpec,
+precise aggregate semantics/draws, separation of injected faults from real-model evaluation, full SQL/DB/trace
+in the UI, diff no_rows/no_grades/real_zero and COALESCE outside SUM for empty input.
+Old researcher/dependency-expert results are read and reused as historical inputs,
+their exports/hashes are checked; they are not issued as new studies/reviewer approvals.
+No new research gaps requiring additional agents were discovered.
 
 [Native completions](../operations/H-006-B2-closeout-blocker-evidence-2/native-role-completions.json),
-[точные review-проекции](../operations/H-006-B2-closeout-blocker-evidence-2/review-evidence.json).
+[accurate review projections](../operations/H-006-B2-closeout-blocker-evidence-2/review-evidence.json).
 
-## Что подготовлено, но не упаковано как завершённая архитектура
+## What is prepared, but not packaged as a complete architecture
 
-Финальные **proposed** документы остаются в `.omx/plans/H-006-B2/iteration-3/`:
+The final **proposed** documents remain in `.omx/plans/H-006-B2/iteration-3/`:
 `architecture-proposal.md`, `contracts.md`, `test-plan.md`, `requirements-test-matrix.md`,
 `implementation-plan.md`, `production-considerations.md`, ADR-OMX-003…007, additions/changelogs.
-Полный bundle: `.omx/plans/H-006-B2/iteration-3/plan-bundle.md`.
+Full bundle: `.omx/plans/H-006-B2/iteration-3/plan-bundle.md`.
 Raw SHA-256: `e4d91f3e04113d4f973bb4e578c98a243040c7d05f725f164c6b11a62ece53b8`.
 Manifest SHA-256: `f903b9ca80b4fb74f4f17c04ae8b69004abccd879dd065dcd53e1c9cebf891d8`.
-Проверены все manifest entries трёх неизменённых редакций: **13/14/15**, без несовпадений.
+All manifest entries of three unchanged editions were checked: **13/14/15**, without any discrepancies.
 Reviews: `.omx/plans/H-006-B2/reviews/iteration-{1,2,3}-{architect,critic}.md`.
-Raw SHA-256 и domain-separated official Advisory digests — разные алгоритмы представления;
-это не повреждение файлов.
+Raw SHA-256 and domain-separated official Advisory digests are different presentation algorithms;
+This is not file corruption.
 
-Рекомендации (не принятые решения): SQLite/direct LangGraph/OpenAI SDK/Streamlit/local JSONL;
-целочисленные сотые оценок, отдельный NULL, все пересдачи, равные веса enrollment, точные ничьи;
-ограниченный граф, конечный реестр результатов и второй Library-адаптер без изменения ядра.
-Версии/provider/model/budget — кандидаты, не установленный и не live-проверенный стек.
-Все новые ADR остаются **proposed до обсуждения в чате**.
+Recommendations (unaccepted solutions): SQLite/direct LangGraph/OpenAI SDK/Streamlit/local JSONL;
+integer hundredths of grades, separate NULL, all retakes, equal enrollment weights, exact ties;
+a limited graph, a final result registry, and a second Library adapter without changing the kernel.
+Versions/provider/model/budget - candidates, not installed and not live-tested stack.
+All new ADRs remain **proposed until discussed in the chat**.
 
-## Штатное закрытие и новое противоречие
+## Regular closure and new controversy
 
-Команда выполнена **один раз**, через поддержанное разрешение host:
+The command is executed **once**, via supported host permission:
 
 ```text
 /home/dev/.omx/runtime/bin/omx ralplan advisory complete --json
@@ -81,54 +81,54 @@ exit=0
 {"ok":true,"status":"closed","host_verified":false,"consensus_gate_complete":false,"execution_handoff_authorized":false,"return_to_caller":true}
 ```
 
-Штатный append-event reader показывает `closed`, journal `committed`, `approved+proven`,
+The standard append-event reader shows `closed`, journal `committed`, `approved+proven`,
 `corruption:null`. Mode `active:false/current_phase:complete`, run `active:false`;
 review lifecycle `complete:true/sequence_valid:true/iteration:3`.
 Evidence bundle digest: `57ddd777824da540443657e5f843e8fbd292ef1a528c7112080cd809e7ba5a90`.
-Host verification, consensus gate и execution handoff явно **false** — для standalone Advisory это ожидаемо.
+Host verification, consensus gate and execution handoff are clearly **false** - this is expected for standalone Advisory.
 
-**Но после обычных следующих tool calls session `skill-active-state.json` снова содержит
-`active:true`, `phase:reviewing`, то же поколение/root/turn и сохранённый `completed_at`.**
-Journal назначил ему `active:false`, а `updated_at` уже позднее closeout.
-`omx status` одновременно показывает `ralplan: inactive (phase: complete)` и `skill-active: ACTIVE`.
-Это post-closeout несовместимость, а не отсутствие reviewer approvals.
+**But after the usual next tool calls session `skill-active-state.json` again contains
+`active:true`, `phase:reviewing`, same generation/root/turn and saved `completed_at`.**
+Journal assigned him `active:false`, and `updated_at` later closeout.
+`omx status` simultaneously shows `ralplan: inactive (phase: complete)` and `skill-active: ACTIVE`.
+This is a post-closeout incompatibility, not a lack of reviewer approvals.
 
-Raw base `fence.json` остаётся `pending_closeout` намеренно: append-only `fence-event-0001.json`
-задаёт закрытую effective projection. Первая проверка ошибочно потребовала terminal от raw base
-и получила AssertionError; правильный официальный reader подтвердил закрытие без повторного complete.
+Raw base `fence.json` remains `pending_closeout` intentionally: append-only `fence-event-0001.json`
+specifies a closed effective projection. The first check erroneously required terminal from raw base
+and received an AssertionError; the correct official reader confirmed the closure without re-complete.
 
-[Команда](../operations/H-006-B2-closeout-blocker-evidence-2/closeout-command.json),
+[Team](../operations/H-006-B2-closeout-blocker-evidence-2/closeout-command.json),
 [terminal/current snapshots](../operations/H-006-B2-closeout-blocker-evidence-2/terminal-projections.json),
 [status](../operations/H-006-B2-closeout-blocker-evidence-2/status-command.json).
 
-Гипотеза по установленному коду: notify→`syncSkillStateFromTurn` заново выводит фазу из текста
-assistant и присваивает active, не проверяя terminal Ralplan в этой функции. Точный triggering payload
-не трассировался, поэтому причинность не объявляется доказанной.
-Следующий ограниченный тест для сопровождающего интеграцию: isolated fixture с terminal Advisory
-и late authorized notify; все mode/run/session-skill должны остаться inactive.
-[Фрагменты кода и ограничения вывода](../operations/H-006-B2-closeout-blocker-evidence-2/source-guided-hypothesis.json).
-В этом workspace тест/ремонт/replay не запускались.
+Hypothesis on the established code: notify→`syncSkillStateFromTurn` re-infers the phase from the text
+assistant and assigns active without checking the terminal Ralplan in this function. Accurate triggering payload
+was not traced, so causality is not declared proven.
+The following limited test for the integration maintainer: isolated fixture with terminal Advisory
+and late authorized notify; all mode/run/session-skills must remain inactive.
+[Code snippets and output restrictions](../operations/H-006-B2-closeout-blocker-evidence-2/source-guided-hypothesis.json).
+Test/repair/replay did not run in this workspace.
 
-## Prompt coverage, проверки и остановка
+## Prompt coverage, checks and stopping
 
 - [Actual task + received-task projections](../ai/omx/H-006-B2-blocker-actual-prompts-2.json),
-  [coverage/cutoffs](../ai/omx/H-006-B2-blocker-prompt-coverage-2.json): все 7 запущенных детей,
-  три хода Planner, actual пользовательский B prompt. Private exports сохранены, skipped records=0.
-- Root actual prompt извлечён из native transcript и hash совпадает с activation. Child assignments
-  сохранены как self-projections фактически полученного текста; parent tool arguments зашифрованы,
-  plaintext byte equality с ciphertext не заявляется. System/developer/reasoning и полный inherited
-  контекст не публикуются. Private vault/repair-output paths redacted; полные transcripts не экспортированы в docs.
-- JSON/links/privacy/preservation checks: [финальная проверка](../operations/H-006-B2-closeout-blocker-evidence-2/document-checks.json).
-  Первая сборка диагностического экспорта остановилась на старой форме iteration1 observation;
-  её частичные unsuffixed outputs сохранены и помечены incomplete. Канонический полный набор — suffix `-2`.
-- Продуктовые tests/evals **not-run**: приложения/schema/seed нет. Изолированные schema-free
-  SQLite `:memory:` SELECT probes Architect2/Critic2 и документальные расчёты не являются
-  product tests, доказательством DB integration или real-model E2E.
-- Credentials проверялись только на наличие: OPENAI_API_KEY отсутствовал. Значения не сохранялись.
-  Доступ к аккаунту/модели, бюджет, совместимость зависимостей, public delivery, defense и production
-  не доказаны. R-15 открыт; остальные будущие acceptance evidence не подменены планом.
+[coverage/cutoffs](../ai/omx/H-006-B2-blocker-prompt-coverage-2.json): all 7 neglected children,
+three moves Planner, actual custom B prompt. Private exports saved, skipped records=0.
+- Root actual prompt is extracted from the native transcript and hash matches activation. Child assignments
+stored as self-projections of the actual text received; parent tool arguments are encrypted,
+plaintext byte equality with ciphertext is not declared. System/developer/reasoning and full inherited
+context is not published. Private vault/repair-output paths redacted; full transcripts are not exported to docs.
+- JSON/links/privacy/preservation checks: [final check](../operations/H-006-B2-closeout-blocker-evidence-2/document-checks.json).
+The first build of the diagnostic export stopped at the old form iteration1 observation;
+its partial unsuffixed outputs are saved and marked incomplete. The canonical complete set is suffix `-2`.
+- Product tests/evals **not-run**: no applications/schema/seed. Isolated schema-free
+SQLite `:memory:` SELECT probes Architect2/Critic2 and documentary calculations are not
+product tests, DB integration proof or real-model E2E.
+- Credentials were only checked for presence: OPENAI_API_KEY was missing. The values ​​were not saved.
+Account/model access, budget, dependency compatibility, public delivery, defense and production
+not proven. R-15 open; the remaining future acceptance evidence is not replaced by the plan.
 
-**По stop-правилу пользователя упаковка устойчивой архитектуры в docs/ и commit B не начаты.**
-Нет повторных запусков, повторного closeout, ручной правки IDs/tracker/state, отмены закрытого поколения
-или execution authorization/handoff. Исходные материалы, research и approved private design сохранены.
-После отчёта — остановка для отдельного обращения пользователя.
+**According to the user's stop rule, packaging of the sustainable architecture in docs/ and commit B has not been started.**
+No restarts, repeated closeout, manual editing of IDs/tracker/state, cancellation of closed generation
+or execution authorization/handoff. Source materials, research and approved private design are preserved.
+After the report, a stop for a separate user request.

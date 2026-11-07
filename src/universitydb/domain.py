@@ -190,8 +190,8 @@ class University:
         )
         label = "; ".join(f"{key}={value}" for key, value in scope.items())
         return {
-            "text": f"{label}: средняя {average if graded else 'не определена'} "
-            f"({graded} оценок; {count} записей).",
+            "text": f"{label}: mean {average if graded else 'undefined'} "
+            f"({graded} grades; {count} enrollments).",
             "columns": [
                 {"name": "average", "type": "decimal"},
                 {"name": "graded_count", "type": "integer"},

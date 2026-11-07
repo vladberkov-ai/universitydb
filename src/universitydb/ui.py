@@ -13,8 +13,8 @@ from universitydb.domain import University
 from universitydb.llm import OpenAIProvider, Provider, ScriptedProvider
 
 QUESTION = (
-    "Какова средняя оценка студента Bea (student_id=2) по курсу DB (course_id=1) "
-    "у преподавателя Kim (teacher_id=10) в семестре S1?"
+    "What is the average grade for Bea (student_id=2) in DB (course_id=1) "
+    "with Kim (teacher_id=10) in semester S1?"
 )
 
 
@@ -35,8 +35,8 @@ def main() -> None:
         f"Execution profile: {selected.profile}. Offline/injected is not live model accuracy."
     )
     with st.form("question"):
-        question = st.text_area("Вопрос", QUESTION)
-        submitted = st.form_submit_button("Выполнить")
+        question = st.text_area("Question", QUESTION)
+        submitted = st.form_submit_button("Run")
     if submitted:
         st.session_state.pop("result", None)
         try:
@@ -56,18 +56,18 @@ def main() -> None:
         else:
             st.error(f"{result['error']['code']}: {result['error']['message']}")
         events = result["events"]
-        with st.expander("SQL и безопасные параметры", expanded=True):
+        with st.expander("SQL and safe parameters", expanded=True):
             queries = [e for e in events if e["kind"] in ("sql_validated", "sql_attempt")]
             if not queries:
-                st.write("SQL не выполнялся.")
+                st.write("SQL was not executed.")
             for event in queries:
                 st.caption(f"seq={event['seq']} attempt={event['attempt']} {event['kind']}")
                 st.code(event["payload"]["sql"], language="sql")
                 st.json(event["payload"]["parameters"])
         with st.expander("DB typed rows", expanded=True):
             results = [e["payload"] for e in events if e["kind"] == "db_result"]
-            st.json(results) if results else st.write("DB query не выполнялся.")
-        with st.expander("Полный same-run trace", expanded=True):
+            st.json(results) if results else st.write("DB query was not executed.")
+        with st.expander("Full same-run trace", expanded=True):
             st.json(events, expanded=True)
             st.download_button(
                 "JSONL trace",

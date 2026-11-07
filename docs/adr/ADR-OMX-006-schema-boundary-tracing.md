@@ -1,26 +1,26 @@
-# ADR-OMX-006 — Schema boundary и собственные traces
+# ADR-OMX-006 - Schema boundary and own traces
 
-Дата: 2026-11-07. Owner: repo. **Status: proposed**, до chat review. Не execution authorization.
+Date:2026-11-07. Owner: repo. **Status: proposed**, pending owner review. Not execution authorization.
 
-## Контекст
-R05/R06 требуют адаптируемость и полную Input→Nodes→SQL→Results→Answer цепь; не требуют определённой платформы.
+## Context
+R05/R06 require adaptability and a complete Input→Nodes→SQL→Results→Answer chain; do not require a specific platform.
 
-## Варианты
-Domain names embedded in core; descriptor+domain adapter; generic arbitrary-dialect abstraction. JSONL или LangSmith.
+## Options
+Domain names embedded in core; descriptor+domain adapter; generic arbitrary-dialect abstraction. JSONL or LangSmith.
 
-## Рекомендация
-Минимальный ResultSpec+domain result adapter: metric/group keys/typed aliases/unit/scale/components, точные sum_units+graded_count для averages/ties; nonnull integer sum_units через aggregate-level COALESCE(SUM(grade_units),0), различение пустоты/NULL-only/настоящего0 по denominator/enrollment_count; core не угадывает University по именам. SQLite-specific DB adapter, schema-agnostic core и University/Library descriptors; local versioned JSONL по contracts с full synthetic rows, redaction/public export отдельные.
+## Recommendation
+Minimum ResultSpec+domain result adapter: metric/group keys/typed aliases/unit/scale/components, exact sum_units+graded_count for averages/ties; nonnull integer sum_units via aggregate-level COALESCE(SUM(grade_units),0), distinguishing void/NULL-only/real0 by denominator/enrollment_count; core doesn't guess University by names. SQLite-specific DB adapter, schema-agnostic core and University/Library descriptors; local versioned JSONL by contracts with full synthetic rows, redaction/public export separate.
 
-## Обоснование
-Вторая схема — реальный ограниченный transfer test; не заявлять поддержку всех dialects. Локальные traces не требуют account/network service.
+## Rationale
+The second schema is a real limited transfer test; do not claim support for all dialects. Local traces do not require an account/network service.
 
-## Последствия
-Своя completeness проверка/retention, library scope только тот же dialect. Полные реальные PII не допустимы в demo. LangSmith требует отдельного billing/retention решения.
+## Consequences
+Its own completeness check/retention, library scope is just the same dialect. Full real PII is not allowed in demo. LangSmith requires a separate billing/retention solution.
 
-## Проверка
-L1 same core hash+DB+live+E2E; V1–V2 units/grain/denominator failures; DB-Z actual raw components и отдельно UNIT-Z нормализация трёх zero cases; T1/T2+UI1 chain/completeness/screen access/secret exclusion; trace failure не success.
+## Verification
+L1 same core hash+DB+live+E2E; V1–V2 units/grain/denominator failures; DB-Z actual raw components and separately UNIT-Z normalization of three zero cases; T1/T2+UI1 chain/completeness/screen access/secret exclusion; trace failure not success.
 
-## Пересмотр
-Новый dialect, real personal data, remote centralized tracing/retention/SLO requirement.
+## Revision triggers
+New dialect, real personal data, remote centralized tracing/retention/SLO requirement.
 
-Связанные [архитектура](../plans/architecture-proposal.md), [контракты](../plans/contracts.md), [проверки](../plans/test-plan.md). Это будущие относительные пути после упаковки из reviewed planning baseline.
+Related [architecture](../plans/architecture-proposal.md), [contracts](../plans/contracts.md), [checks](../plans/test-plan.md). These are future relative paths after packaging from the reviewed planning baseline.

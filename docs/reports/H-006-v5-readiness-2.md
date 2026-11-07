@@ -1,27 +1,27 @@
-# H-006-v5 D2 — готовность после локального ремонта OMX
+# H-006-v5 D2 - readiness after local OMX repair
 
-Дата: 2026-11-07T10:22:48.750545+00:00. Режим: solo diagnostics. **ready-for-direct-invocation**, не выполненный B.
+Date: 2026-11-07T10:22:48.750545+00:00. Mode: solo diagnostics. **ready-for-direct-invocation**, not executed B.
 
-- Git root `/home/dev/projects/universitydb`, `main`, HEAD `8931d832d49311ac0d63c3a7a359b4293058da89`. A не повторялся. Staging пуст, remotes нет; рабочее дерево исходно dirty.
-- Все **78/78** исходных файлов ремонтного baseline, включая research/blocker/evidence, неизменны. Семь обязательных SHA-256 сохранены; Git index совпадает с ремонтным baseline. Старые документы и Obsidian не менялись.
-- Codex **0.162.1**, OMX **0.21.46 + local compatibility patch**, Node **22.23.2**. Repo launcher и `/home/dev/.omx/runtime/bin/omx` идентичны и указывают на проверенный установленный runtime.
-- В sandbox doctor: **17/0/3**, `spawnSync EPERM`, PID не виден, `stale-dead/bad_selectors=CODEX_SESSION_ID`. Штатная разрешённая read-only проверка host: **20/0/0**; binding `session-authority/usable`, тот же owner PID и identity проверены. Это различие контекстов, не текущий ID mismatch. Ни selectors, ни pointer/tracker не исправлялись.
-- Native hooks **9/9** зарегистрированы, включены и имеют совпадающие trust hashes, включая `UserPromptSubmit`, `SubagentStart`, `SubagentStop`. Actual D triage доставлен; встроенный минимальный doctor smoke успешен. `hooks status` отдельно показывает 0 plugins и не заменяет native checks.
-- Planner, Architect, Critic, researcher, dependency-expert: TOML установлены/валидны; роли присутствуют в текущей native `agent_type` schema. **Никто не запускался в D**. Adapted-authority preflight неприменим.
-- Local ralplan/plan прочитаны. Дополнительные quality gates: `[]`; обязательные последовательные reviewers этим не отменяются.
-- Новый Ralplan state отсутствует — нормально до прямого вызова. Старое поколение `0748daa2-4c89-4a84-a305-486ed1f480a3` cancelled/abandoned, не возобновлялось. Current tracker leader совпадает с native ID нового pointer.
+- Git root `/home/dev/projects/universitydb`, `main`, HEAD `8931d832d49311ac0d63c3a7a359b4293058da89`. A was not repeated. Staging is empty, there are no remotes; The working tree is initially dirty.
+- All **78/78** source files of the repair baseline, including research/blocker/evidence, are unchanged. Seven mandatory SHA-256s are retained; Git index matches the repair baseline. The old documents and Obsidian have not changed.
+- Codex **0.162.1**, OMX **0.21.46 + local compatibility patch**, Node **22.23.2**. Repo launcher and `/home/dev/.omx/runtime/bin/omx` are identical and point to a verified installed runtime.
+- In sandbox doctor: **17/0/3**, `spawnSync EPERM`, PID not visible, `stale-dead/bad_selectors=CODEX_SESSION_ID`. Standard allowed read-only host check: **20/0/0**; binding `session-authority/usable`, the same owner PID and identity are checked. This is a context difference, not a current ID mismatch. Neither selectors nor pointer/tracker were fixed.
+- Native hooks **9/9** are registered, enabled and have matching trust hashes, including `UserPromptSubmit`, `SubagentStart`, `SubagentStop`. Actual D triage delivered; built-in minimal doctor smoke is successful. `hooks status` separately shows 0 plugins and does not replace native checks.
+- Planner, Architect, Critic, researcher, dependency-expert: TOML installed/valid; the roles are present in the current native `agent_type` schema. **Nobody started in D**. Adapted-authority preflight is not applicable.
+- Local ralplan/plan have been read. Additional quality gates: `[]`; Mandatory sequential reviewers are not canceled by this.
+- There is no new Ralplan state - normal until a direct call. The old generation `0748daa2-4c89-4a84-a305-486ed1f480a3` canceled/abandoned, was not renewed. Current tracker leader matches the native ID of the new pointer.
 
-## Ограничения и наблюдения
+## Limitations and Observations
 
-Из 8 installed-manifest hashes совпали 7; единственное семантическое дополнение config после ремонта — `service_tier=fast`; hooks/trust не изменены. Замороженный vault manifest совпал 20/25: пять status/workflow/index/review/question страниц содержат последующий CHAT-022 о research и отмене. Их текущие hashes сохранены; требования/контракт/PDF без drift. Старый next-step в этих страницах исторический относительно текущего прямого поручения о ремонте. Полное предметное чтение/PDF отложено до B.
+Of the 8 installed-manifest hashes, 7 matched; the only semantic addition to config after repair is `service_tier=fast`; hooks/trust are not changed. The frozen vault manifest matched 20/25: five status/workflow/index/review/question pages contain a follow-up CHAT-022 about research and cancellation. Their current hashes are saved; requirements/contract/PDF without drift. The old next-step in these pages is historical regarding the current direct order for repairs. Full Subject Reading/PDF delayed until B.
 
-Новая Advisory activation, реальные reviewers и весь closeout после ремонта **ещё не проверены**. Успех doctor не доказывает весь lifecycle. После отдельного прямого вызова в этой же ведущей сессии нужно подтвердить новый advisory variant/generation/session/root/turn до Planner. IDs вручную не назначать. Права на будущий B commit не проверялись записью.
+New Advisory activation, real reviewers and the entire closeout after the renovation **not yet verified**. The doctor's success does not prove the entire lifecycle. After a separate direct call in the same leading session, you need to confirm the new advisory variant/generation/session/root/turn to Planner. IDs should not be assigned manually. The rights to the future B commit were not checked by the record.
 
-## Артефакты и граница
+## Artifacts and border
 
-- [Структурированная диагностика](../operations/H-006-v5-readiness-2.json).
-- [Baseline и исходные SHA-256](../operations/H-006-v5-readiness-2-evidence/baseline.json).
+- [Structured diagnostics](../operations/H-006-v5-readiness-2.json).
+- [Baseline and original SHA-256](../operations/H-006-v5-readiness-2-evidence/baseline.json).
 - [Host binding/hooks/roles](../operations/H-006-v5-readiness-2-evidence/host-binding-hooks-roles.json), [host doctor](../operations/H-006-v5-readiness-2-evidence/host-doctor-command.json), [sandbox commands](../operations/H-006-v5-readiness-2-evidence/commands.json).
 - [Actual prompt](../ai/omx/H-006-v5-D2-actual-prompt.txt), [coverage/redactions](../ai/omx/H-006-v5-D2-prompt-coverage.json).
 
-Сохранено локально, **не закоммичено**, не pushed/public. Setup/update/repair, активация, субагенты, проектирование, приложение и paid/live calls не выполнялись. Продуктовые тесты not-run: D не создаёт приложения. Блокеров для прямого вызова не выявлено; диагностические ограничения выше сохранены. **Остановка до отдельного прямого вызова.**
+Saved locally, **not committed**, not pushed/public. Setup/update/repair, activation, subagents, design, application and paid/live calls were not performed. Product tests not-run: D does not create applications. No blockers for direct calls have been identified; the diagnostic restrictions above are retained. **Stops until separate direct call.**

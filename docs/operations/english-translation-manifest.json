@@ -1,0 +1,199 @@
+{
+  "source_commit": "de7bde2e1b9d5608eb796de903cf9e84467df168",
+  "method": "Machine-assisted translation of already-public prose followed by terminology review; prompt gaps translated manually after service rate limit, no further network requests",
+  "documents": [
+    {
+      "path": "README.md",
+      "source_sha256": "747cb10f23fbe02d33ba4eda6d63ed378985352840c73f573fe43991a271b810",
+      "translation_sha256": "a9626cfb9d1de93b42da46ef9553e67ef4d5ed610d8e1d13beb61d76a299bde8"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-003-minimal-stack.md",
+      "source_sha256": "99fbeb2d67733842e8f7e22ced6c6c551fd020a4c51406a1bed7810261af2c1a",
+      "translation_sha256": "007dbb30d4e7c4a594748706722cb5e0685683ec24ea2cfc47f45b79e8688829"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-004-domain-semantics.md",
+      "source_sha256": "d043be3921dd2ef365c473a34427be2bc455a89b60d82b23acd1bc298593815f",
+      "translation_sha256": "8c1b036b54b7f83f6a5686263340d4a282c6efd6cf96e934a22bfb15fbe75d5c"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-005-bounded-graph-contracts.md",
+      "source_sha256": "7489030464715be1c2b2e8af38ad53f5b027f5b40b5a7ee011973665d5658f3c",
+      "translation_sha256": "0992181ae8b98b0de71bdb05415cb53500a8e1b568bf5fbb4d31ad6f0814e544"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-006-schema-boundary-tracing.md",
+      "source_sha256": "b22250f9479a016dba730ec13bd12a85add6fea517b2e431179be970cf1939da",
+      "translation_sha256": "de59f313c7435d3dc060a7d43a17f41eed4aa8fc16a99c40c1926f5aed953612"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-007-verification-delivery.md",
+      "source_sha256": "f6dffa29a675a9ba9aa415cf10be6430d148cdfe7e99750662cbe43ea38d55c2",
+      "translation_sha256": "34ddce3281dd69aee3bbd6726fb159cd336718c9357f6e4d50a13bfbb40c369f"
+    },
+    {
+      "path": "docs/adr/H-006-B2-index-additions.md",
+      "source_sha256": "1015c314d8559631fd366bfaf15920143278da9d8ffffca9ffad6c96fe615247",
+      "translation_sha256": "96c879a6242d67daf18f5fcc3309852698642c4a64b8149c17d8d464f369e2b7"
+    },
+    {
+      "path": "docs/ai/PROMPTS.md",
+      "source_sha256": "e6738e5427be55a2ea33e33e4617d1895f3b1f694047954bb91226c66cac9756",
+      "translation_sha256": "b7f50ef1d91b5b4478d848c4f934e81bfbfc99fdd95ba78ac6f7f17a82a933b5"
+    },
+    {
+      "path": "docs/ai/omx/H-006-B2-iteration-2-changes.md",
+      "source_sha256": "4e36899151149311d13ba0ad5e2a1fda24052849e76e47e4c93127f861fbe339",
+      "translation_sha256": "23b9a40b9aa7106ae7d3a0c7df043213f514a32f105b8716e3dc7b1809f4051f"
+    },
+    {
+      "path": "docs/ai/omx/H-006-B2-iteration-3-changes.md",
+      "source_sha256": "a887a8db9fc48cb05218191dc8f50ae0663ff8ef64001d9ae99cffc1243134f9",
+      "translation_sha256": "ddda9a3045abd3af85f0b50252b966296c29b7201f75259e6bc04b4927796f0c"
+    },
+    {
+      "path": "docs/ai/omx/H-006-B2-iteration-3-plan-bundle.md",
+      "source_sha256": "ddb04c68ded4a77e923c4de659faf9bb7c74a3e35f009ec6a8023aa0869debb4",
+      "translation_sha256": "31aa84e21af43c4ece585ebce79e6c502a5c19a32c2306e277738cab7db69f67"
+    },
+    {
+      "path": "docs/chat/decisions/ADR-CHAT-001-memory-ownership.md",
+      "source_sha256": "2f68a94298b86c7c96372102167aaa5b0e055e95024b704ca71ba560703a0cf0",
+      "translation_sha256": "4c04e8f00962a275dd3f5e96fdf65ded3a1d0af04583fc96e1544daf83302577"
+    },
+    {
+      "path": "docs/chat/decisions/ADR-CHAT-002-result-scope.md",
+      "source_sha256": "a9ddf57dcb88d5610d751eb8ba9429178e728e5c23f2aa6d4ca030020d42defe",
+      "translation_sha256": "3a482e5ca2197e397354cf425ce796cf066cb57509c1bf91f618e73cef503766"
+    },
+    {
+      "path": "docs/chat/planning/acceptance-contract.md",
+      "source_sha256": "ff8dd0a1354480e7fd83caac3219e5d885b4582fe33474ac51f223a75c7ac5fb",
+      "translation_sha256": "ff4fe42010e889d208e3015b693afbde0a08740d89f6c6bc6ce788fbb6d05046"
+    },
+    {
+      "path": "docs/chat/requirements.md",
+      "source_sha256": "cf1822681cab3f6d46c444cb4e6aa94267abb589793f6866411d348d25b57936",
+      "translation_sha256": "c97ee70f6ad86003715016e304cf4126859e0ad44f5e00af358fe1625b7f15fd"
+    },
+    {
+      "path": "docs/manual-e2e.md",
+      "source_sha256": "1221fad0e589468bfae6af97ee76241cdfaa5dfbfa63b1a89b68f05d21847c75",
+      "translation_sha256": "3f66453ed75c903af29444654d577c0f59fc2659e3772754a1f9661d05311416"
+    },
+    {
+      "path": "docs/plans/architecture-proposal.md",
+      "source_sha256": "06b29d33b9be9f88e679af094c3b007c93ebbc753d0d7664f15b6cf43682aeda",
+      "translation_sha256": "bdeeaaa9da6f7c00d4ca99b6d035faceba4e76bb2108e0569d859cbbe481216d"
+    },
+    {
+      "path": "docs/plans/contracts.md",
+      "source_sha256": "fc6b18c174ebb3ba0bf5e296481f1276836f1812e5a6e9628776bb2f0d2f0da3",
+      "translation_sha256": "3e637657150191e3deee4a3ea851c6241eaef44b5a8e86ef64edd91a4bee0a62"
+    },
+    {
+      "path": "docs/plans/implementation-plan.md",
+      "source_sha256": "798c2eab357ccb61b8958661b0e774abcebc6d918822899a81a79b3141376ff4",
+      "translation_sha256": "b954f0855996cf0cb29dad8a742877ff545cface5e6922ab9f67e01bfbe52edf"
+    },
+    {
+      "path": "docs/plans/production-considerations.md",
+      "source_sha256": "37398572bfd2c83a338fd63f822ad6b9bb8c05a8afd24e34c20bac68f4537d52",
+      "translation_sha256": "13e87b6e4a97514235de570b70f433e2936d7440e4fca56726761f0cc14c6898"
+    },
+    {
+      "path": "docs/plans/requirements-test-matrix.md",
+      "source_sha256": "fdd549c61920ab1a923276e09c36c4bc4be5ea74d2ded095cff8c7a793b98479",
+      "translation_sha256": "53c1e69e9aa504869c115d177e8a1790d01bb3b2a52ce9b73950f33eaa08d60c"
+    },
+    {
+      "path": "docs/plans/test-plan.md",
+      "source_sha256": "450bc0175695dd57e35e92dde7fdfb068e3c5156064682fa05d611e53ac365e7",
+      "translation_sha256": "193feecf98391849414d8d9d255f48d5b46cd891ca1a788d422e75fbf9dcac54"
+    },
+    {
+      "path": "docs/reports/H-004-repository-preparation.md",
+      "source_sha256": "1af672ce1e7107464ac201c84ff1286ad901d793ebc904ba115fa5635e1e1c48",
+      "translation_sha256": "e6f0c5efdebd81b57afd352af78d815b914b61c24993699cc346785b7163b286"
+    },
+    {
+      "path": "docs/reports/H-005-preparation-completion.md",
+      "source_sha256": "e2ee430e40dd4ba4b4e14a0294f951b915c03a11860e0ff63944dac146ab8463",
+      "translation_sha256": "a3334b8e7ae4f15ee48a09d8e798c70d1efcd03fcf2eb36dabea6c9153e32b8e"
+    },
+    {
+      "path": "docs/reports/H-006-B2-closeout-blocker.md",
+      "source_sha256": "a869475cf453ea25afc8f3e3a1551924e464265265f19dcb6d266dc141be62b9",
+      "translation_sha256": "fe4cb0bec21bfec32d7f95a12cd06a3bb77341e6e3c6c79c00e1c8ddf0981593"
+    },
+    {
+      "path": "docs/reports/H-006-B2-reviews/iteration-1-architect.md",
+      "source_sha256": "4e73f630e2a9eef80caa3a89a9a5d7b3d11da955cdae9510e14f2163efd74291",
+      "translation_sha256": "3beb470911adbe64eba3d892227218458cc59d06f97d3f3c1bb14e4d3da5d4a8"
+    },
+    {
+      "path": "docs/reports/H-006-B2-reviews/iteration-1-critic.md",
+      "source_sha256": "31b76cb76bf9a033b03dbf46ed1c2e5e4adf0b043f45e639fc8e973946d2a22e",
+      "translation_sha256": "ffe8dcca8435d8cb79bd90b8d942bc7c273ed0f5cb64ebb8cb9862efd6b0f70b"
+    },
+    {
+      "path": "docs/reports/H-006-B2-reviews/iteration-2-architect.md",
+      "source_sha256": "fd7580a1187870025a19224925e540c7b8c02cfca5b11dfa139eb00e76740ed4",
+      "translation_sha256": "4178dc70e2d8ecfb6056e14706e78c58cb7fdcc6648537b4ac023cd34e652212"
+    },
+    {
+      "path": "docs/reports/H-006-B2-reviews/iteration-2-critic.md",
+      "source_sha256": "d7d2dc602af90aa299beba4c21f1d86560168e4211ee161b8f6af054d224726d",
+      "translation_sha256": "47185069d9ba411a26f4b3edd1e218fd9c89751c9bf674f59448e376afac3506"
+    },
+    {
+      "path": "docs/reports/H-006-B2-reviews/iteration-3-architect.md",
+      "source_sha256": "35b89c295311df683a922c319849af360ab25924b64a12b264dff5e07dd429b3",
+      "translation_sha256": "5edda3178ba17dd4d0f4f5cdf4b8a99a209f9652ab770900b09d3f3c293bad0b"
+    },
+    {
+      "path": "docs/reports/H-006-B2-reviews/iteration-3-critic.md",
+      "source_sha256": "d085935946e56c26bbb26963c7f8f8d64440b09a21effde7a581e15a428ae249",
+      "translation_sha256": "a0381029be84219fd7c742093c748a1235383c6a0c537b6f372778948ee11d5f"
+    },
+    {
+      "path": "docs/reports/H-006-architecture-review.md",
+      "source_sha256": "73d6c30ba0fc31be42d759a70e315bdb3c932f4e2e337c0ea16d19bc0f74eec3",
+      "translation_sha256": "707de0dc468f9092de3ac13ddf1d1dc7bdc881fd8ca740a146e43f05bc8d0ce8"
+    },
+    {
+      "path": "docs/reports/H-006-v5-readiness-2.md",
+      "source_sha256": "0d82ef25d5d4e5969a93d763ccc099e6037cb0c5a459ff3f2600870a5ea88ac8",
+      "translation_sha256": "0a45f2b11d259b505ab9a22c0c37f343bbb8e9f511c3339d089640b73a7e8579"
+    }
+  ],
+  "preserved_original_evidence": "JSON/JSONL provenance/execution records, actual source prompts and screenshots retain original bytes/language",
+  "prompt_bundles": [
+    "docs/ai/PROMPTS-RU.md",
+    "docs/ai/PROMPTS-EN.md"
+  ],
+  "private_material_sent": false,
+  "review": "Checked protected Markdown link targets, status/provenance boundaries, domain terminology, English example wording, headings and unchanged runtime instructions; English UI copy synchronized with tests.",
+  "ui_changes": [
+    "src/universitydb/ui.py",
+    "src/universitydb/domain.py",
+    "tests/test_ui.py"
+  ],
+  "limitations": "Historical raw JSON/JSONL, source prompt records and screenshots intentionally retain original language. Full session/child prompt history remains partial. Machine-assisted historical prose is not a certified translation.",
+  "validation": {
+    "pytest": "131 passed in 8.88s",
+    "ruff": "pass",
+    "format": "19 files pass",
+    "mypy": "11 sources pass",
+    "reviewer_links": 133,
+    "runtime_prompt_bytes_unchanged": true,
+    "tracked_markdown_cyrillic": 0,
+    "live_calls": 0,
+    "source_commit": "de7bde2e1b9d5608eb796de903cf9e84467df168"
+  },
+  "prompt_bundles_sha256": {
+    "docs/ai/PROMPTS-RU.md": "c6f4c1a778b6a3954d7e50868135739bb0f73c311d86e2a1bf312b063231f08d",
+    "docs/ai/PROMPTS-EN.md": "bf194c713aa24ed0b0f4ed020e63a41bef1372e20044709b1b8b6777f34d9e16"
+  }
+}

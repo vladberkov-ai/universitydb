@@ -1,171 +1,171 @@
 <!-- BEGIN_CRITIC_REVIEW -->
 # Critic review — H-006 B2, iteration 1
 
-**REJECT текущую редакцию; workflow verdict: `iterate`.**
+**REJECT current edition; workflow verdict: `iterate`.**
 
-Пакет содержателен, но пока не позволяет реализовать обязательные сценарии без догадок. Независимо подтверждены три blocking findings Architect; ещё один пробел касается уже принятого состава демонстрационного экрана. Требуется документальная Planner revision и новый полный Architect → Critic цикл. Этот review не разрешает реализацию, публикацию, paid calls или execution handoff.
+The package is comprehensive, but does not yet allow you to implement the required scenarios without guesswork. Three blocking findings by Architect have been independently confirmed; Another gap concerns the already accepted composition of the demo screen. A documentary Planner revision and a new complete Architect → Critic cycle are required. This review does not allow implementation, publication, paid calls or execution handoff.
 
-## Проверенное основание
+## Proven foundation
 
-Полностью прочитаны actual task, grounded context, authoritative H-006-v5 пакет, актуальные требования и acceptance contract, все 12 constituent documents в bundle, завершённый Architect review, сохранённые researcher/dependency-expert final texts. Исследования использованы как **исторические входы от 2026-11-07**, не новые исследования или approvals.
+The actual task, grounded context, authoritative H-006-v5 package, current requirements and acceptance contract, all 12 constituent documents in the bundle, completed Architect review, saved researcher/dependency-expert final texts have been fully read. Research used as **historical entries from 2026-11-07**, not new research or approvals.
 
-Read-only проверки:
+Read-only checks:
 
-- Все **13/13** raw hashes и размеры из `iteration-1/manifest.json` совпали.
-- Все **12/12** constituent documents byte-equivalent соответствующим разделам bundle.
-- Raw SHA-256 bundle до завершения review:
+- All **13/13** raw hashes and sizes from `iteration-1/manifest.json` matched.
+- All **12/12** constituent documents byte-equivalent to the corresponding sections of the bundle.
+- Raw SHA-256 bundle until review is complete:
   `b83dadcc0ea53f63afea1e2bfe7da3b562dba5313cc06cbe8b6c114961755fc6`.
-- Raw SHA-256 прочитанного Architect review:
+- Raw SHA-256 read by Architect review:
   `2b6aec6d1b8b68926e53c5ba42d08e7a3df81e03825ec4a5fed35bfba73b9e3e`.
-- **25/25** текущих vault hashes совпали с `inputs-observed.json.current_sha256`. Пять отличий от исторического manifest уже объяснены D2; это не новые изменения требований.
-- HEAD остаётся `8931d832d49311ac0d63c3a7a359b4293058da89`.
-- В matrix присутствуют **17 R + 8 U** строк.
-- `omx quality-gates list --stage ralplan --json` вернул `gates:[]`. Это не заменяет обязательные reviews.
-- Прочитана реализация установленного `digestAdvisoryArtifacts`: штатные artifact/manifest digests используют domain-separated `hashParts`, поэтому не обязаны равняться raw `sha256sum`. Различие baseline digest и raw hash **не является найденной подменой**.
+- **25/25** current vault hashes coincided with `inputs-observed.json.current_sha256`. Five differences from the historical manifest are already explained by D2; These are not new requirements changes.
+- HEAD remains `8931d832d49311ac0d63c3a7a359b4293058da89`.
+- Matrix contains **17 R + 8 U** rows.
+- `omx quality-gates list --stage ralplan --json` returned `gates:[]`. This does not replace the required reviews.
+- Read the implementation of the installed `digestAdvisoryArtifacts`: standard artifact/manifest digests use domain-separated `hashParts`, so they do not have to be equal to raw `sha256sum`. The difference between baseline digest and raw hash **is not a substitute found**.
 
-Независимо пересчитаны documentary fixtures целочисленной/рациональной арифметикой:
+Documentary fixtures are independently recalculated using integer/rational arithmetic:
 
-- S1–S6: суммы в физических hundredths `50000/35000/40000/25000/26000/16000`; counts и averages соответствуют таблице.
-- M1/F1: top C2, cohort `{1}`, результат `95.00`.
-- M1/F2: top C1, cohort `{1,2,3}`, результаты `{95.00,80.00,50.00}`.
-- Tie mutation: top `{C1,C2}`, результаты `{90.00,90.00,null}`.
+- S1–S6: amounts in physical hundredths `50000/35000/40000/25000/26000/16000`; counts and averages correspond to the table.
+- M1/F1: top C2, cohort `{1}`, result `95.00`.
+- M1/F2: top C1, cohort `{1,2,3}`, results `{95.00,80.00,50.00}`.
+- Tie mutation: top `{C1,C2}`, results `{90.00,90.00,null}`.
 
-Это **не выполнение SQL, приложения или продуктовых тестов**. Original PDF повторно самостоятельно не декодировал: использован явно предоставленный leader receipt чтения четырёх страниц, сверенный по hash PDF. Файлы, Git, tracker, state и Obsidian мною не изменялись; субагенты не запускались.
+This is **not running SQL, application or product tests**. The Original PDF was not decoded again on its own: the explicitly provided leader receipt for reading four pages was used, verified against the PDF hash. The files, Git, tracker, state and Obsidian were not changed by me; subagents did not start.
 
-Далее `P/` означает `.omx/plans/H-006-B2/iteration-1/`.
+Further `P/` means `.omx/plans/H-006-B2/iteration-1/`.
 
 ## Summary
 
-- **Clarity:** основные решения конкретны; фазы dependency validation и семантика передаваемого результата неоднозначны.
-- **Verifiability:** независимые fixtures и sensitivity сильные; live fault cases пока не воспроизводимы.
-- **Completeness:** документы и все R/U строки присутствуют; четыре указанных стыка ещё не закрыты.
-- **Big Picture:** компактный локальный demonstrator соответствует принятому направлению; proposed/accepted/actually-tested разделены правильно.
-- **Principle/Option Consistency:** **fail локально** — unit/grain boundary не обеспечивает заявленную независимость core; смешение live generation и injected faults ослабляет принцип разделения доказательств.
-- **Alternatives Depth:** **pass** — минимальный локальный и серверный варианты рассмотрены содержательно; CLI справедливо исключён как единственный интерфейс.
-- **Risk/Verification Rigor:** **fail до B1–B4**; ограничения безопасности, semantic correctness и public delivery в остальном описаны честно.
-- **Deliberate Additions:** три credible pre-mortem и расширенный unit/DB/mock/live/E2E/observability/manual/public/defense план **присутствуют**. Их наличие не устраняет противоречия конкретных сценариев.
+- **Clarity:** the main decisions are specific; The dependency validation phases and the semantics of the transmitted result are ambiguous.
+- **Verifiability:** independent fixtures and sensitivity are strong; live fault cases are not yet reproducible.
+- **Completeness:** documents and all R/U lines are present; The four indicated joints are not yet closed.
+- **Big Picture:** compact local demonstrator corresponds to the accepted direction; proposed/accepted/actually-tested are separated correctly.
+- **Principle/Option Consistency:** **fail locally** - unit/grain boundary does not provide the declared independence of the core; mixing live generation and injected faults weakens the principle of evidence separation.
+- **Alternatives Depth:** **pass** - minimal local and server options are considered in detail; The CLI is rightly excluded as the only interface.
+- **Risk/Verification Rigor:** **fail to B1–B4**; Security restrictions, semantic correctness, and public delivery are otherwise described fairly.
+- **Deliberate Additions:** three credible pre-mortem and extended unit/DB/mock/live/E2E/observability/manual/public/defense plan **present**. Their presence does not eliminate the contradictions of specific scenarios.
 
 ## Blocking findings
 
-### B1 — Полный зависимый план противоречит правилу «references только к завершённым steps»
+### B1 - A complete dependent plan contradicts the “references only to completed steps” rule
 
-**Evidence:** `P/contracts.md:27,45–46`; `P/architecture-proposal.md`, раздел «Граф и содержательный dependent path».
+**Evidence:** `P/contracts.md:27,45–46`; `P/architecture-proposal.md`, section “Graph and meaningful dependent path”.
 
-`PlanProposal` создаётся до выполнения SQL и содержит весь DAG. Однако references разрешены только к завершённым steps и существующим typed columns; `Step` даже не объявляет выходную схему.
+`PlanProposal` is created before the SQL is executed and contains the entire DAG. However, references are only allowed on completed steps and existing typed columns; `Step` doesn't even declare an output circuit.
 
-**Симуляция:** при приёме M1 корректная ссылка второго шага на первый ещё не может указывать на завершённый результат. Буквальная реализация отвергнет M1; другая реализация отложит проверку по собственному усмотрению.
+**Simulation:** when receiving M1, the correct link of the second step to the first cannot yet indicate a completed result. A literal implementation will reject M1; another implementation will defer the check at its own discretion.
 
-**Минимальное исправление Planner:**
+**Minimum Planner fix:**
 
-1. Разделить static plan validation и runtime result binding.
-2. В static фазе разрешить unresolved symbolic references к предшественникам DAG, проверяя IDs, ацикличность, направление и объявленные output columns/types.
-3. Перед dependent SQL требовать завершённый нетранкированный результат и материализовать typed values.
-4. Назначить точные failure codes и фазу отказа для missing column/type mismatch/truncated dependency.
-5. Добавить конкретный валидный M1 plan и отрицательные cycle/missing-column/runtime-overflow examples.
+1. Separate static plan validation and runtime result binding.
+2. In the static phase, resolve unresolved symbolic references to DAG predecessors, checking IDs, acyclicity, direction and declared output columns/types.
+3. Before dependent SQL, require a completed non-trunked result and materialize typed values.
+4. Assign exact failure codes and failure phase for missing column/type mismatch/truncated dependency.
+5. Add a specific valid M1 plan and negative cycle/missing-column/runtime-overflow examples.
 
-**Pass:** M1 план принимается до SQL; его ссылки связываются только после соответствующих результатов; каждый отрицательный пример останавливается на указанной фазе без downstream call.
+**Pass:** M1 plan is accepted before SQL; its links are linked only after matching results; each negative example stops at the specified phase without a downstream call.
 
-С Architect B1 **согласен по собственному чтению**.
+With Architect B1 **I agree based on my own reading**.
 
-### B2 — Metric/grain/unit не связаны с результатом, хотя formatter обязан их проверять
+### B2 - Metric/grain/unit are not related to the result, although the formatter is required to check them
 
-**Evidence:** `P/contracts.md:28–30,42,45,47–48`; `P/architecture-proposal.md`, разделы предметной арифметики и schema-agnostic boundary.
+**Evidence:** `P/contracts.md:28–30,42,45,47–48`; `P/architecture-proposal.md`, sections of subject arithmetic and schema-agnostic boundary.
 
-`Metric` имеет описание/unit/grain, но ни Step, ни SQLProposal, ни DBResult нормативно не связывают конкретный результат с этой метрикой. `expected_columns` задаёт только имена. Formatter при этом должен проверять grain, units, counts и выполнять нормализацию.
+`Metric` has a description of /unit/grain, but neither Step, nor SQLProposal, nor DBResult normatively associate a specific result with this metric. `expected_columns` specifies only names. Formatter must check grain, units, counts and perform normalization.
 
-**Симуляция S6:** DBResult с колонкой `average` и decimal-строкой не сообщает, означают ли числа physical hundredths или внешние оценки. Из уже округлённого среднего нельзя восстановить точное сравнение ties. Library count требует другого правила, но место его реализации не определено.
+**Simulation S6:** DBResult with column `average` and decimal row does not tell whether the numbers mean physical hundredths or external estimates. It is impossible to reconstruct an exact comparison of ties from an already rounded average. Library count requires another rule, but where to implement it is not defined.
 
-**Минимальное исправление Planner:**
+**Minimum Planner fix:**
 
-- Добавить небольшой result specification либо явный domain-result-adapter contract: metric/result-shape ID, group keys, typed aliases, unit/scale, необходимые aggregate components.
-- Для average/top закрепить integer `sum_units` и `graded_count`, владельца exact comparisons и финального rounding, zero-denominator/NULL поведение.
-- Не переносить University-specific проверки в core через распознавание имён колонок.
-- Показать concrete messages и expected для S6, M1/ties, Library count и ошибок wrong unit/missing denominator/wrong grain.
+- Add a small result specification or an explicit domain-result-adapter contract: metric/result-shape ID, group keys, typed aliases, unit/scale, necessary aggregate components.
+- For average/top, fix integer `sum_units` and `graded_count`, owner of exact comparisons and final rounding, zero-denominator/NULL behavior.
+- Do not transfer University-specific checks to core through column name recognition.
+- Show concrete messages and expected for S6, M1/ties, Library count and wrong unit/missing denominator/wrong grain errors.
 
-**Pass:** сообщения однозначно преобразуются в `80.00`, корректный набор ties и Library counts без эвристик по имени `average`. Неверные формы дают указанную ошибку, не plausible answer.
+**Pass:** messages are unambiguously converted to `80.00`, the correct set of ties and Library counts without heuristics named `average`. Invalid forms give the specified error, not a plausible answer.
 
-С Architect B2 **согласен**. Полный typed SQL compiler не требуется.
+I **agree** with Architect B2. A full typed SQL compiler is not required.
 
-### B3 — Live generation suite требует ошибок, которые нельзя воспроизводимо получить от модели
+### B3 - Live generation suite requires errors that cannot be reproducibly obtained from the model
 
-**Evidence:** `P/test-plan.md:64–72,82–92`; связанные `P/requirements-test-matrix.md` R-07/R-08, `P/ADR-OMX-007-verification-delivery.md`.
+**Evidence:** `P/test-plan.md:64–72,82–92`; related `P/requirements-test-matrix.md` R-07/R-08, `P/ADR-OMX-007-verification-delivery.md`.
 
-E3 deterministic refusal/incomplete/malformed responses включены затем в full E2E с actual model. Категория `failure/refusal/invalid SQL` также входит в обязательные 24 held-out cases ×2, но механизм воздействия не определён.
+E3 deterministic refusal/incomplete/malformed responses are then included in full E2E with the actual model. Category `failure/refusal/invalid SQL` is also included in the mandatory 24 held-out cases ×2, but the mechanism of action is not defined.
 
-**Контрпример:** настоящая модель генерирует корректный SQL вместо ошибочного. Обработка SQL-ошибки не была проверена, но это не дефект NL→SQL. Подменить ответ transport fixture и засчитать его как live generation — обратная методологическая ошибка.
+**Counterexample:** the real model generates correct SQL instead of incorrect one. SQL error handling has not been tested, but this is not a NL→SQL defect. Replacing the transport fixture answer and counting it as live generation is a reverse methodological error.
 
-**Минимальное исправление Planner:**
+**Minimum Planner fix:**
 
-1. Все provider/SQL failure branches оставить обязательными controlled injected tests.
-2. Отдельно определить UI/E2E fault-injection lane с provenance воздействия; не включать его в live generation score.
-3. Live negative cases задавать пользовательскими запросами с конкретными допустимыми outcomes, не требованием намеренно получить ошибочную генерацию.
-4. Явно обозначить unexpected provider failures как неудачные live attempts.
-5. Согласовать категории, denominator, repetitions, budget и ADR/matrix после разделения.
+1. Leave all provider/SQL failure branches as mandatory controlled injected tests.
+2. Separately identify UI/E2E fault-injection lane with provenance of impact; do not include it in the live generation score.
+3. Live negative cases should be specified by user queries with specific acceptable outcomes, not a requirement to intentionally obtain an erroneous generation.
+4. Explicitly designate unexpected provider failures as unsuccessful live attempts.
+5. Agree on categories, denominator, repetitions, budget and ADR/matrix after separation.
 
-**Pass:** для каждого negative case ясно, какой компонент реальный, что именно инъецировано и какое свойство доказывает результат. Mocks/injections не считаются NL→SQL accuracy.
+**Pass:** for each negative case it is clear which component is real, what exactly is injected and which property the result proves. Mocks/injections are not considered NL→SQL accuracy.
 
-С Architect B3 **согласен**. Сам предложенный strict small-suite threshold не отвергаю: он честно proposed и не назван статистической гарантией.
+I **agree** with Architect B3. I do not reject the proposed strict small-suite threshold itself: it is honestly proposed and is not called a statistical guarantee.
 
-### B4 — Экран с одним trace ID не покрывает уже принятые SQL/данные/полную трассу
+### B4 - Screen with one trace ID does not cover already received SQL/data/full trace
 
-**Evidence:** accepted `docs/chat/decisions/ADR-CHAT-002-result-scope.md`, раздел «Решение»; `P/test-plan.md:84,102`; `P/requirements-test-matrix.md` R-06/R-17.
+**Evidence:** accepted `docs/chat/decisions/ADR-CHAT-002-result-scope.md`, section “Solution”; `P/test-plan.md:84,102`; `P/requirements-test-matrix.md` R-06/R-17.
 
-Принятый scope включает экран с ответом, SQL, данными и полной трассой. Конкретный screen acceptance перечисляет question/answer/clarification/error/**trace ID**, но не просмотр SQL, typed DB rows и всей цепи событий.
+The accepted scope includes a screen with the response, SQL, data and the full trace. The specific acceptance screen lists question/answer/clarification/error/**trace ID**, but not viewing SQL, typed DB rows and the entire chain of events.
 
-**Контрпример:** экран показывает правильный ответ и непрозрачный ID; JSONL существует на диске, но демонстратор не даёт открыть его из согласованного интерфейса. Текущий screen checklist допускает такой результат.
+**Counterexample:** the screen shows the correct answer and an opaque ID; The JSONL exists on disk, but the demonstrator prevents it from being opened from the consistent interface. The current screen checklist allows this result.
 
-Это Architect A3, которое я **поднимаю до blocking** из-за прямого accepted scope, а не нового предпочтения UI.
+This is Architect A3, which I'm **raising to blocking** due to straight accepted scope rather than a new UI preference.
 
-**Минимальное исправление Planner:**
+**Minimum Planner fix:**
 
-- Нормативно указать простой локальный expander/view либо доступную ссылку, открывающую SQL с безопасными bindings, DB columns/rows и полный trace того же run.
-- Добавить manual/E2E pass-fail для success, clarification/resume и error с несколькими attempts.
-- Согласовать R-06/R-17, implementation I1/I4 и scope walkthrough.
+- It is standard to specify a simple local expander/view or an accessible link that opens SQL with secure bindings, DB columns/rows and a full trace of the same run.
+- Add manual/E2E pass-fail for success, clarification/resume and error with multiple attempts.
+- Agree on R-06/R-17, implementation I1/I4 and scope walkthrough.
 
-**Pass:** наблюдатель из экрана может проследить конкретный вопрос до SQL, фактических строк и ответа/ошибки; совпадают run/trace IDs; trace ID без доступного содержимого — fail. Отдельная tracing platform и UI implementation в B не нужны.
+**Pass:** A screen observer can trace a specific question back to the SQL, the actual lines, and the answer/error; run/trace IDs match; trace ID without available content - fail. A separate tracing platform and UI implementation are not needed in B.
 
-## Advisory, не самостоятельные blockers
+## Advisory, not independent blockers
 
-1. **Strict provider wire representation.** `P/contracts.md:3,27,48`: closed objects и динамический parameter map требуют явного wire/domain mapping до compatibility smoke. Полезен небольшой пример bounded list bindings с deterministic conversion; конкретное представление выбирает Planner. По архивному research нельзя заявлять, что candidate stack уже установлен или заведомо несовместим.
+1. **Strict provider wire representation.** `P/contracts.md:3,27,48`: closed objects and dynamic parameter map require explicit wire/domain mapping before compatibility smoke. A small example of bounded list bindings with deterministic conversion is useful; the specific view is selected by Planner. According to archival research, one cannot state that the candidate stack is already installed or is obviously incompatible.
 
-2. **Resource boundary coverage.** `P/contracts.md:33–34`; `P/production-considerations.md`: добавить отдельные будущие boundary tests для input-token limit, SQL/parameter size и большого одиночного DB value. Timeout/result caps не выдавать за hard memory isolation; текущий residual risk обозначен честно.
+2. **Resource boundary coverage.** `P/contracts.md:33–34`; `P/production-considerations.md`: Add separate future boundary tests for input-token limit, SQL/parameter size and large single DB value. Timeout/result caps should not be passed off as hard memory isolation; the current residual risk is indicated honestly.
 
-Новые внешние research calls для B1–B4 не требуются. Если revision выбирает новый parser, tokenizer или provider-fault mechanism, фактуру по нему следует отдельно проверить, а не добавлять из памяти.
+No new external research calls are required for B1–B4. If revision selects a new parser, tokenizer or provider-fault mechanism, the invoice for it should be checked separately, and not added from memory.
 
-## Проверка покрытия пакета
+## Packet coverage check
 
-| Область | Оценка |
+| Region | Evaluation |
 |---|---|
-| R-01/02: ERD, имена, offerings, semesters, grades | Достаточный предложенный дизайн и конкретные fixtures; domain правила не выданы за PDF |
-| R-03/04: LangGraph, JOIN/filters, dependent reasoning | Oracle/sensitivity сильные; B1/B2 блокируют однозначный контракт выполнения |
-| R-05: переносимость | Конкретная Library schema и unchanged-core проверка есть; result boundary требует B2 |
-| R-06: полные traces | Содержание/attempts/errors/redaction предусмотрены; экранная демонстрация требует B4 |
-| R-07/08: ошибки, SQL/NL/E2E | Уровни в основном разделены правильно; B3 нарушает воспроизводимость live отрицательных сценариев |
-| R-09/10: модули и production | Ответственности и пять production тем раскрыты; production-ready не заявляется |
-| R-11..15: комплект и public delivery | Будущие evidence/clean clone/SHA/anonymous access предусмотрены; local commit не подменяет public proof |
-| R-16/17: объяснимый demonstrator/защита | Наблюдаемая owner rehearsal предусмотрена; B4 нужен для полного демонстрационного scope |
-| U-01 | Actual/template/read-context и omissions различены; приложенная received-task projection не означает full native transcript coverage |
-| U-02 | Даты сохранены; точный час честно open |
-| U-03 | Реальный lifecycle должен подтвердить лидер; reviews не заменены prompt labels |
-| U-04 | ADR003–007 содержат варианты/обоснование/последствия/проверку/пересмотр |
-| U-05/06 | Ownership, сохранение A/истории, отдельный B commit и запрет remote/push отражены |
-| U-07 | Исторический verified переход не выдан за новый результат B |
-| U-08 | Будущий глубокий разбор/самостоятельное объяснение предусмотрены, но ещё не выполнены |
+| R-01/02: ERD, names, offerings, semesters, grades | Sufficient suggested design and concrete fixtures; domain rules are not passed off as PDF |
+| R-03/04: LangGraph, JOIN/filters, dependent reasoning | Oracle/sensitivity strong; B1/B2 block unambiguous execution contract |
+| R-05: portability | There is a specific Library schema and unchanged-core check; result boundary requires B2 |
+| R-06: full traces | Contents/attempts/errors/redaction provided; screen demo requires B4 |
+| R-07/08: errors, SQL/NL/E2E | The levels are mostly separated correctly; B3 breaks reproducibility of live negative scenarios |
+| R-09/10: modules and production | Responsibilities and five production topics are revealed; production-ready is not declared |
+| R-11..15: kit and public delivery | Future evidence/clean clone/SHA/anonymous access is provided; local commit does not replace public proof |
+| R-16/17: explainable demonstrator/defense | Observable owner rehearsal is provided; B4 is needed for full demo scope |
+| U-01 | Actual/template/read-context and omissions are distinguished; the attached received-task projection does not mean full native transcript coverage |
+| U-02 | Dates saved; exact hour honestly open |
+| U-03 | The real lifecycle must be confirmed by the leader; reviews are not replaced by prompt labels |
+| U-04 | ADR003–007 contain options/rationale/consequences/test/revision |
+| U-05/06 | Ownership, saving A/history, separate B commit and remote/push ban reflected |
+| U-07 | Historical verified transition is not given as a new result B |
+| U-08 | Future deep dive/self-explanation envisioned but not yet completed |
 
-Отсутствие credentials, owner acceptance и public authority **не блокирует documentary B**; оно блокирует соответствующие будущие live/public действия. Proposed domain decisions сами по себе не недостаток: рекомендации и альтернативы представлены.
+Lack of credentials, owner acceptance and public authority **does not block documentary B**; it blocks corresponding future live/public actions. Proposed domain decisions are not a disadvantage in themselves: recommendations and alternatives are presented.
 
-## Сильнейшая альтернатива и синтез
+## Strongest alternative and synthesis
 
-Steelman против усиления контрактов: маленькому учебному SQL agent могут быть достаточны read-only SQL, независимые oracle и прозрачные traces; слишком богатый IR превратит демонстратор в собственный query compiler и нарушит минимальность.
+Steelman against strengthening contracts: for a small training SQL agent, read-only SQL, independent Oracle and transparent traces may be sufficient; too rich an IR will turn the demonstrator into its own query compiler and break minimality.
 
-Реальное напряжение: свободный SQL даёт простоту и выразительность, но свободные units/grain/references вынуждают downstream угадывать. Полный compiler чрезмерен.
+Real tension: free SQL gives simplicity and expressiveness, but free units/grain/references forces the downstream to guess. The full compiler is overkill.
 
-**Синтез:** сохранить предложенный стек и свободную SQL generation, добавить только двухфазные references и небольшой result contract для поддерживаемых shapes. Независимый oracle остаётся обязательным; runtime validation не объявляется доказательством произвольной NL semantics.
+**Synthesis:** keep the proposed stack and free SQL generation, add only two-phase references and a small result contract for supported shapes. An independent oracle remains required; runtime validation is not declared as proof of arbitrary NL semantics.
 
-## Stop condition и handoff
+## Stop condition Andhandoff
 
-Передать **полный этот review и завершённый Architect review Planner**. Исправить B1–B4 в новой immutable iteration, согласовав contracts/examples/test-plan/matrix/ADR/implementation, затем выполнить новый отдельный Architect → отдельный Critic цикл и актуальные configured gates. Не patch-ить reviewed baseline.
+Submit **this complete review and completed Architect review Planner**. Fix B1–B4 in a new immutable iteration, agreeing on contracts/examples/test-plan/matrix/ADR/implementation, then execute a new separate Architect → separate Critic cycle and actual configured gates. Do not patch reviewed baseline.
 
-**Approval текущей iteration отсутствует.** До passing reviews не считать B согласованным и не закрывать его как approved/proven архитектуру. Поддерживаемый closeout, native completion/provenance, prompt packaging и commit проверяет лидер. Никакой execution authorization не создано.
+**There is no approval for the current iteration.** Until passing reviews, do not consider B approved and do not close it as an approved/proven architecture. Supported closeout, native completion/provenance, prompt packaging and commit are checked by the leader. No execution authorization has been created.
 
 <!-- END_CRITIC_REVIEW -->

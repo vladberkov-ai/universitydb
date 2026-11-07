@@ -2,140 +2,140 @@
 # Architect review — H-006 B2, iteration 3
 
 **Verdict: `approve`.**
-**Scope:** документальное архитектурное предложение; отдельный Architect, не Critic.
-**Blocking findings:** отсутствуют. Обязательных исправлений до следующего review не требуется. Все архитектурные решения остаются **proposed**.
+**Scope:** documentary architectural proposal; separate Architect, not Critic.
+**Blocking findings:** none. Mandatory corrections are not required until the next review. All architectural solutions remain **proposed**.
 
-Далее `P/` означает `.omx/plans/H-006-B2/iteration-3/`.
+Further `P/` means `.omx/plans/H-006-B2/iteration-3/`.
 
 ## Summary
 
-B2-R1 исправлен: нормативная aggregate-level нормализация соответствует non-null integer ResultSpec, а отсутствие записей, отсутствие оценок и настоящая нулевая оценка имеют различные, согласованные normal outcomes. Полное повторное чтение пакета не выявило новых блокирующих противоречий; прежние исправления dependency binding, domain boundary, live/injected evidence и экранного scope сохранены.
+B2-R1 corrected: normative aggregate-level normalization matches non-null integer ResultSpec, and no records, no grades, and true zero grade have different, consistent normal outcomes. A full re-read of the packet revealed no new blocking inconsistencies; previous fixes to dependency binding, domain boundary, live/injected evidence and screen scope have been retained.
 
-Approval относится только к архитектурной согласованности документов. Он не означает принятия решений владельцем, выполнения продуктовых проверок или разрешения реализации.
+Approval refers only to the architectural consistency of documents. It does not involve the owner making decisions, performing product inspections, or authorizing sales.
 
-## Проверенное основание
+## Proven foundation
 
-Полностью прочитан `P/plan-bundle.md`: **773 строки, 124495 bytes**, все **14 constituent documents**, включая обе changes mappings. Прочитаны actual task/context, полный H-006-v5 handoff, актуальные requirements/acceptance contract, принятый scope, локальные planning instructions, D2 report, manifest, baseline receipt, Planner3 completion observation и полные Architect/Critic reviews iterations 1–2.
+Completely read by `P/plan-bundle.md`: **773 lines, 124495 bytes**, all **14 constituent documents**, including both changes mappings. The actual task/context, complete H-006-v5 handoff, current requirements/acceptance contract, accepted scope, local planning instructions, D2 report, manifest, baseline receipt, Planner3 completion observation and complete Architect/Critic reviews iterations 1–2 have been read.
 
-Сохранённые researcher/dependency-expert final texts прочитаны как **датированные reused inputs от 2026-11-07**, не новые исследования или reviewer approvals. Их применимость к неизменившемуся предложенному стеку сохраняется; нового конкретного research gap не обнаружено. Candidate pins не считаются установленными, совместно проверенными или прошедшими security audit.
+Saved researcher/dependency-expert final texts read as **dated reused inputs from 2026-11-07**, not new studies or reviewer approvals. Their applicability to the unchanged proposed stack remains; no new specific research gap was discovered. Candidate pins are not considered installed, co-verified, or security audited.
 
-### Свежие read-only проверки
+### Fresh read-only checks
 
-- **15/15** manifest entries iteration 3 совпали по размеру и raw SHA-256.
-- **14/14** constituent documents byte-equivalent соответствующим разделам bundle.
-- Manifest entries iterations 1 и 2 сохранены: **13/13** и **14/14**.
-- Все **12 fenced JSON blocks** синтаксически разобраны.
-- Полный M1 проверен статически: топологические зависимости и типы references допустимы без runtime values.
-- Три Z-пары проверены на integer/non-null raw components, counts, normalized rows и empty reasons.
-- Матрица содержит **17 R + 8 U**.
-- **25/25** текущих vault hashes совпали с `inputs-observed.json.current_sha256`.
-- `omx quality-gates list --stage ralplan --json` вернул `gates:[]`; это не заменяет reviewers.
-- Git root — текущий UniversityDB, branch `main`, HEAD **`8931d832d49311ac0d63c3a7a359b4293058da89`**; staging и список remotes пусты.
+- **15/15** manifest entries iteration 3 matched in size and raw SHA-256.
+- **14/14** constituent documents byte-equivalent to the corresponding sections of the bundle.
+- Manifest entries iterations 1 and 2 saved: **13/13** and **14/14**.
+- All **12 fenced JSON blocks** are parsed.
+- Full M1 is statically checked: topological dependencies and references types are allowed without runtime values.
+- Three Z-pairs checked for integer/non-null raw components, counts, normalized rows and empty reasons.
+- The matrix contains **17 R + 8 U**.
+- **25/25** current vault hashes coincided with `inputs-observed.json.current_sha256`.
+- `omx quality-gates list --stage ralplan --json` returned `gates:[]`; it does not replace reviewers.
+- Git root - current UniversityDB, branch `main`, HEAD **`8931d832d49311ac0d63c3a7a359b4293058da89`**; staging and the remotes list are empty.
 
-Raw SHA-256 bundle до и после проверки:
+Raw SHA-256 bundle before and after checks:
 
 `e4d91f3e04113d4f973bb4e578c98a243040c7d05f725f164c6b11a62ece53b8`
 
-Штатный baseline receipt использует domain-separated lifecycle digest; raw hash manifest не подменяет этот digest. Native lifecycle observation Planner прочитан как evidence лидера, не как независимо выполненный мною host audit.
+The standard baseline receipt uses domain-separated lifecycle digest; raw hash manifest does not replace this digest. Native lifecycle observation Planner is read as evidence of the leader, not as an independently performed host audit by me.
 
-Original PDF самостоятельно повторно не декодировал: использован атрибутированный leader receipt четырёх страниц; текущий PDF hash сверён среди 25 inputs.
+The Original PDF was not re-decoded on its own: the attributed leader receipt of four pages was used; the current PDF hash is checked among 25 inputs.
 
-## B2-R1: исправление подтверждено
+## B2-R1: fix confirmed
 
-### Root cause и устранение
+### Root cause and elimination
 
-Прежняя проблема находилась на границе SQL aggregate → typed result: row-level COALESCE не обеспечивал non-null sum для relation без строк.
+The previous problem was at the SQL aggregate → typed result boundary: row-level COALESCE did not provide a non-null sum for a relation without rows.
 
-Теперь `P/contracts.md:58,250–284` задаёт:
+Now `P/contracts.md:58,250–284` sets:
 
-- `COALESCE(SUM(grade_units),0)` с integer zero;
-- `COUNT(grade_units)` для denominator;
-- `COUNT(*)` по scoped enrollment relation для enrollment count;
-- запрет исправлять nullable raw sum молча в formatter;
-- различение scalar aggregate row count и числа исходных enrollments;
-- отсутствие обещания автоматически создавать отсутствующие GROUP BY группы.
+- `COALESCE(SUM(grade_units),0)` with integer zero;
+- `COUNT(grade_units)` for denominator;
+- `COUNT(*)` by scoped enrollment relation for enrollment count;
+- ban on correcting nullable raw sum silently in formatter;
+- distinguishing between scalar aggregate row count and the number of initial enrollments;
+- no promise to automatically create missing GROUP BY groups.
 
-Concrete examples согласованы:
+Concrete examples agreed:
 
-| Случай | Raw components | Normalized outcome |
+| Case | Raw components | Normalized outcome |
 |---|---|---|
-| Нет enrollments | `[0,0,0]` | `average=null`, `no_rows` |
-| Enrollment есть, grade NULL | `[0,0,1]` | `average=null`, `no_grades` |
-| Настоящий grade 0 | `[0,1,1]` | `average="0.00"`, `empty_reason=null` |
+| Noenrollments | `[0,0,0]` | `average=null`, `no_rows` |
+| Enrollment There is,grade NULL | `[0,0,1]` | `average=null`, `no_grades` |
+| Real grade 0 | `[0,1,1]` | `average="0.00"`, `empty_reason=null` |
 
-Typed DBResult и Answer представлены полностью, без расширения nullable-контракта или эвристического восстановления потерянных данных.
+Typed DBResult and Answer are presented in full, without extending the nullable contract or heuristically recovering lost data.
 
-**Verification boundary исправлена также:** `P/test-plan.md:45,112,125,134–137` согласует S10/N1–N3/V1 и отдельно требует:
+**Verification boundary has also been corrected:** `P/test-plan.md:45,112,125,134–137` matches S10/N1–N3/V1 and separately requires:
 
-- **DB-Z:** действительные raw SQLite outputs/types до adapter;
-- **UNIT-Z:** чистое преобразование трёх typed messages и отклонение `sum_units=null`.
+- **DB-Z:** valid raw SQLite outputs/types to adapter;
+- **UNIT-Z:** pure conversion of three typed messages and rejection of `sum_units=null`.
 
-Одна проверка явно не заменяет другую. ADR006 закрепляет ту же границу: `P/ADR-OMX-006-schema-boundary-tracing.md:11–21`.
+One test clearly does not replace the other. ADR006 fixes the same boundary: `P/ADR-OMX-006-schema-boundary-tracing.md:11–21`.
 
-Новый SQL probe не потребовался. Здесь выполнена документальная проверка; DB-Z/UNIT-Z остаются **not-run**.
+No new SQL probe was required. A documentary check has been carried out here; DB-Z/UNIT-Z remain **not-run**.
 
-## Полный архитектурный cross-check
+## Full architectural cross-check
 
-| Область | Вывод и evidence |
+| Region | Conclusion and evidence |
 |---|---|
-| **ERD и предметные правила** | Course/Offering, обязательные связи, nonunique имена со стабильными IDs, integer hundredths, NULL, all-retakes, равные веса, exact ties и all-semesters scope согласованы с fixtures. Правила явно proposed, не приписаны PDF. `P/architecture-proposal.md:25–34`; `P/ADR-OMX-004-domain-semantics.md:5–24`. |
-| **Static DAG → runtime binding** | `validate_plan` принимает typed symbolic references по declared outputs; `bind_results` требует completed/domain-validated/nontruncated данные. `GraphState.results` содержит выбранные dependency rows, а raw candidates сохраняются отдельно в trace. Cycle/missing alias/type/truncation имеют конкретные stops до downstream calls. `P/contracts.md:54–61,64–201,229–236,247`; `P/test-plan.md:109–111`. |
-| **Metric/unit/grain boundary** | Конечный ResultSpec registry и DomainResultAdapter исключают необходимость распознавать University semantics в core по именам колонок. Integer components сохраняют точное сравнение ties; Library count не масштабируется как grade. Shape validation не выдаётся за доказательство SQL semantics. `P/contracts.md:54–58,204–236,247`; `P/test-plan.md:112–113`. |
-| **Clarification/resume и бюджеты** | Session-bound resume, replay/conflict/stale/expiry branches, side-effect-free interrupt и общие counters через resume согласованы. Plan calls, transient retry и repair входят в лимит; sixth call не скрывается. `P/contracts.md:5–13,32–35,44–49`; `P/test-plan.md:59–70`. |
-| **Safety/resources** | Read-only/authorizer/allowlists отделены от semantic oracle. Closed Binding array и placeholder checks конкретны. Byte gate не объявлен exact tokenizer; watchdog не объявлен memory isolation. Residual memory risk явно сохранён. `P/contracts.md:29–39,238–244`; `P/test-plan.md:74,114–116`; `P/production-considerations.md:13–17`. |
-| **Portability** | Library имеет конкретные данные, expected counts и zero-return variant; требуется unchanged-core evidence плюс DB/mock/live/UI проверки. Arbitrary-dialect portability не обещана. `P/architecture-proposal.md:41–42`; `P/test-plan.md:76–84`. |
-| **Live versus injected evidence** | EI1–EI3 явно injected, с provenance и нулём paid calls; real-model denominator — 48 conversations, включая continuation. N1–N4 требуют no-data outcomes, а не намеренной ошибки модели. Unexpected failures учитываются; disclosed examples не названы готовым sealed suite. `P/test-plan.md:87–92,118–127`; `P/ADR-OMX-007-verification-delivery.md:11–24`. |
-| **Экран и полная трасса** | SQL/bindings, typed DB rows и все same-run events/attempts доступны из экрана. Success, clarification/resume, repair и terminal error имеют pass/fail; opaque ID и старые rows другого run — fail. `P/architecture-proposal.md:22–23`; `P/test-plan.md:129–131`; `P/requirements-test-matrix.md:12,23`. |
-| **Delivery и требования** | Все R/U привязаны к соответствующим будущим DB/app/live/manual/public/defense/provenance доказательствам. Local commit не закрывает R-15; исторический U-07 не присвоен B. `P/requirements-test-matrix.md:3–33`. |
-| **Реализация и production** | Первый реальный vertical slice предшествует дальнейшему расширению. Owner decisions, budget, compatibility и public authority вынесены в будущие gates. Пять production тем раскрыты без заявления production-ready. `P/implementation-plan.md:5–26`; `P/production-considerations.md:3–17`. |
+| **ERD and Subject Rules** | Course/Offering, mandatory connections, nonunique names with stable IDs, integer hundredths, NULL, all-retakes, equal weights, exact ties and all-semesters scope are consistent with fixtures. The rules are explicitly proposed, not attributed to PDF. `P/architecture-proposal.md:25–34`; `P/ADR-OMX-004-domain-semantics.md:5–24`. |
+| **Static DAG → runtime binding** | `validate_plan` accepts typed symbolic references by declared outputs; `bind_results` requires completed/domain-validated/nontruncated data. `GraphState.results` contains the selected dependency rows, and the raw candidates are stored separately in the trace. Cycle/missing alias/type/truncation have specific stops before downstream calls. `P/contracts.md:54–61,64–201,229–236,247`; `P/test-plan.md:109–111`. |
+| **Metric/unit/grain boundary** | The final ResultSpec registry and DomainResultAdapter eliminate the need to recognize University semantics in core by column names. Integer components preserve exact comparison of ties; Library count does not scale like grade. Shape validation is not passed off as proof of SQL semantics. `P/contracts.md:54–58,204–236,247`; `P/test-plan.md:112–113`. |
+| **Clarification/resume and budgets** | Session-bound resume, replay/conflict/stale/expiry branches, side-effect-free interrupt and common counters through resume are consistent. Plan calls, transient retry and repair are included in the limit; sixth call is not hidden. `P/contracts.md:5–13,32–35,44–49`; `P/test-plan.md:59–70`. |
+| **Safety/resources** | Read-only/authorizer/allowlists are separated from semantic oracle. Closed Binding array and placeholder checks are specific. Byte gate is not declared as an exact tokenizer; watchdog is not declared memory isolation. Residual memory risk is clearly preserved. `P/contracts.md:29–39,238–244`; `P/test-plan.md:74,114–116`; `P/production-considerations.md:13–17`. |
+| **Portability** | Library has specific data, expected counts and zero-return variant; unchanged-core evidence plus DB/mock/live/UI checks are required. Arbitrary-dialect portability is not promised. `P/architecture-proposal.md:41–42`; `P/test-plan.md:76–84`. |
+| **Live versus injected evidence** | EI1–EI3 are clearly injected, with provenance and zero paid calls; real-model denominator - 48 conversations, including continuation. N1–N4 require no-data outcomes rather than intentional model error. Unexpected failures are taken into account; disclosed examples are not called a ready-made sealed suite. `P/test-plan.md:87–92,118–127`; `P/ADR-OMX-007-verification-delivery.md:11–24`. |
+| **Screen and full track** | SQL/bindings, typed DB rows and all same-run events/attempts are available from the screen. Success, clarification/resume, repair and terminal error have pass/fail; opaque ID and old rows of another run - fail. `P/architecture-proposal.md:22–23`; `P/test-plan.md:129–131`; `P/requirements-test-matrix.md:12,23`. |
+| **Delivery and requirements** | All R/U are linked to the corresponding future DB/app/live/manual/public/defense/provenance evidence. Local commit does not close R-15; historical U-07 is not assigned to B. `P/requirements-test-matrix.md:3–33`. |
+| **Implementation and production** | The first real vertical slice precedes further expansion. Owner decisions, budget, compatibility and public authority are included in future gates. Five production topics are covered without the production-ready statement. `P/implementation-plan.md:5–26`; `P/production-considerations.md:3–17`. |
 
-### Независимая арифметическая сверка fixtures
+### Independent arithmetic reconciliation of fixtures
 
-Целочисленный/рациональный пересчёт документальных строк подтвердил:
+Integer/rational recalculation of document strings confirmed:
 
-- S1–S6: суммы hundredths `50000/35000/40000/25000/26000/16000` и соответствующие counts/averages.
+- S1–S6: sums hundredths `50000/35000/40000/25000/26000/16000` and corresponding counts/averages.
 - M1/F1: top `{2}`, cohort `{1}`, answer `95.00`.
 - M1/F2: top `{1}`, cohort `{1,2,3}`, answers `{95.00,80.00,50.00}`.
 - M1/tie fixture: top `{1,2}`, cohort `{1,2,3}`, answers `{90.00,90.00,null}`.
-- Предложенная token-rate арифметика — `$1.056`; это не измерение стоимости и не spending permission.
+- The proposed token-rate arithmetic is `$1.056`; it is not a measurement of value or a spending permission.
 
-Это **проверка документов, не SQL/application/E2E tests**.
+This is **document testing, not SQL/application/E2E tests**.
 
-## Deliberate principles и риски
+## Deliberate principles and risks
 
-Пять principles, три drivers, содержательные альтернативы и три pre-mortem присутствуют: `P/architecture-proposal.md:5–14,44–49`. Расширенный test plan охватывает unit, actual DB, mocked graph, live NL, UI E2E, observability, manual/public/defense проверки.
+Five principles, three drivers, meaningful alternatives and three pre-mortems are present: `P/architecture-proposal.md:5–14,44–49`. The extended test plan covers unit, actual DB, mocked graph, live NL, UI E2E, observability, manual/public/defense checks.
 
-**Новых нарушений principles не обнаружено.** Прежнее противоречие B2-R1 устранено без разрастания архитектуры. Принцип «вычисляет БД, не модель» сохраняется: SQL возвращает проверяемые компоненты, domain adapter выполняет точную нормализацию/сравнение, а не придумывает числа.
+**No new violations of principles were found.** The previous B2-R1 contradiction was eliminated without expanding the architecture. The principle of “computes the database, not the model” remains: SQL returns the components being checked, the domain adapter performs accurate normalization/comparison, rather than making up numbers.
 
-## Advisory observations — не обязательные исправления
+## Advisory observations - optional fixes
 
-1. **Сохранить конечный размер registry при реализации.** ResultSpec решает конкретные units/grain/dependency задачи; превращение его в универсальный SQL compiler нарушило бы минимальность. Новые метрики должны иметь собственные domain tests, а не эвристики в core.
-2. **Не повысить уровень доказанности при упаковке.** Candidate pins, документальные walkthroughs, fixture arithmetic и этот approval нельзя переименовать в compatibility, executed E2E или production evidence.
-3. **Сохранить предложенный порядок I0→I1.** Credentials, бюджет, owner acceptance, SDK smoke и public authority остаются будущими gates, но не являются самостоятельными blockers документального B.
+1. **Keep the final size of the registry during implementation.** ResultSpec solves specific units/grain/dependency problems; turning it into a generic SQL compiler would violate minimality. New metrics should have their own domain tests, not heuristics in core.
+2. **Do not increase the level of evidence when packaging.** Candidate pins, documentary walkthroughs, fixture arithmetic and this approval cannot be renamed compatibility, executed E2E or production evidence.
+3. **Keep the proposed order I0→I1.** Credentials, budget, owner acceptance, SDK smoke and public authority remain future gates, but are not independent blockers of documentary B.
 
-Withdrawn `27/30` не восстановлен. Новый `48/48` остаётся явно **proposed**, не статистической гарантией и не заменой обязательных требований.
+Withdrawn `27/30` is not restored. The new `48/48` remains clearly **proposed**, not a statistical guarantee and not a replacement for mandatory requirements.
 
-## Trade-offs и consensus addendum
+## Trade-offs and consensus to be added
 
-**Antithesis — strongest steelman:** маленькому учебному demonstrator могли бы быть достаточны свободный read-only SQL, независимый oracle и прозрачная трасса. Избыточный typed IR увеличивает реализацию и может отложить первый настоящий сквозной запуск.
+**Antithesis - strongest steelman:** For a small educational demonstrator, free read-only SQL, an independent oracle and a transparent trace could be sufficient. A redundant typed IR increases implementation and may delay the first true end-to-end launch.
 
-**Tradeoff tension:** свободные result columns проще генерировать, но они заставляют downstream угадывать units/grain/NULL/dependencies. Строгий контракт устраняет угадывание, однако требует аккуратного согласования SQL edge cases.
+**Tradeoff tension:** free result columns are easier to generate, but they force downstream to guess units/grain/NULL/dependencies. A strong contract eliminates guesswork but requires careful negotiation of SQL edge cases.
 
-| Вариант | Плюс | Цена |
+| Option | Plus | Price |
 |---|---|---|
-| Свободный SQL/result shape | Меньше адаптерного кода | Неоднозначная downstream семантика |
-| Полный typed query compiler | Более сильная структурная проверка | Избыточный scope и ограничение выразимости |
-| **Конечный ResultSpec + domain adapter** | Явные границы при сохранении настоящей SQL generation | Небольшой registry и обязательные boundary tests |
+| Free SQL/result shape | Less adapter code | Ambiguous downstream semantics |
+| Full typed query compiler | Stronger structural check | Excessive scope and expressibility limitation |
+| **Final ResultSpec + domain adapter** | Explicit boundaries while maintaining true SQL generation | Small registry and mandatory boundary tests |
 
-**Synthesis:** текущий пакет реализует достаточный компромисс: конечные shapes, двухфазные references, точная арифметика и теперь корректная empty-sum normalization. Независимый semantic oracle остаётся необходимым; runtime shape и readonly checks не доказывают правильность произвольного SQL.
+**Synthesis:** the current package implements a sufficient compromise: finite shapes, two-phase references, exact arithmetic and now correct empty-sum normalization. An independent semantic oracle remains necessary; runtime shape and readonly checks do not prove the correctness of arbitrary SQL.
 
 ## Stop condition
 
-**Architect review завершён: `approve`, blocking findings 0.**
+**Architect review completed: `approve`, blocking findings 0.**
 
-Следующий шаг лидера — проверить native completion этого агента, затем передать immutable iteration 3 и этот полный review **отдельному Critic3**, после него — configured gates. Мой verdict не заменяет Critic, lifecycle closeout или owner acceptance.
+The next step of the leader is to check the native completion of this agent, then transfer immutable iteration 3 and this full review to a separate Critic3**, after which configured gates. My verdict does not replace Critic, lifecycle closeout or owner acceptance.
 
-Native provenance/completion, supported terminal closeout, `active:false`, отсутствие execution handoff, prompt packaging и commit B остаются обязанностью лидера. Я их не присваиваю.
+Native provenance/completion, supported terminal closeout, `active:false`, lack of execution handoff, prompt packaging and commit B remain the responsibility of the leader. I don't assign them.
 
-Файлы, Git, state, IDs, tracker и Obsidian не изменял; детей не запускал. Application tests, SDK compatibility, live eval, UI execution, public delivery и owner rehearsal — **not-run**. Execution authorization отсутствует.
+Files, Git, state, IDs, tracker and Obsidian did not change; didn't let the kids in. Application tests, SDK compatibility, live eval, UI execution, public delivery and owner rehearsal - **not-run**. There is no Execution authorization.
 <!-- END_ARCHITECT_REVIEW -->

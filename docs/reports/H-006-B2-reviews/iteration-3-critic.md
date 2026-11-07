@@ -3,47 +3,47 @@
 
 **OKAY. Workflow verdict: `approve`.**
 
-**Blocking findings: 0. Обязательных исправлений нет.** Новых проблем, препятствующих принятию документального пакета B для обсуждения в чате, не обнаружено.
+**Blocking findings: 0. No required fixes.** No new issues were found that would prevent Document Package B from being accepted for chat discussion.
 
-B2-R1 исправлен; прежние исправления B1/B2/B3/B4 сохранены. Пакет достаточно конкретен и внутренне согласован для последующего отдельного поручения реализации после принятия решений владельцем. Это **не разрешение реализации**, не подтверждение работоспособности приложения и не завершение lifecycle.
+B2-R1 fixed; previous fixes B1/B2/B3/B4 have been retained. The package is sufficiently specific and internally consistent for subsequent separate assignment of implementation after decisions are made by the owner. This is **not an implementation permission**, not a confirmation of the application's functionality, and not the end of the lifecycle.
 
-Далее `P/` означает `.omx/plans/H-006-B2/iteration-3/`.
+Further `P/` means `.omx/plans/H-006-B2/iteration-3/`.
 
-## Проверенное основание
+## Proven foundation
 
-Полностью прочитаны:
+Read in full:
 
-- `P/plan-bundle.md`: **773 строки, 124495 bytes**, все **14 составляющих документов**, включая обе changes mappings;
-- manifest и baseline receipt iteration 3;
-- actual user task, grounded context, authoritative H-006-v5 пакет, текущие requirements/acceptance contract и принятый scope;
-- применимые инструкции проекта, локальные ralplan/plan skills, свежий D2 report;
-- полные Architect/Critic reviews iterations 1–2 и завершённый **Architect3 `approve`**;
-- сохранённые researcher/dependency-expert final texts как **датированные reused research inputs 2026-11-07**, не новые исследования или reviewer verdicts.
+- `P/plan-bundle.md`: **773 lines, 124495 bytes**, all **14 constituent documents**, including both changes mappings;
+- manifest Andbaseline receipt iteration 3;
+- actual user task, grounded context, authoritative H-006-v5 package, current requirements/acceptance contract and accepted scope;
+- applicable project instructions, local ralplan/plan skills, latest D2 report;
+- complete Architect/Critic reviews iterations 1–2 and completed **Architect3 `approve`**;
+- saved researcher/dependency-expert final texts as **dated reused research inputs 2026-11-07**, not new studies or reviewer verdicts.
 
-Конкретного нового external-research gap не выявлено. Candidate pins не считаются установленными, совместно проверенными или прошедшими security audit.
+No specific new external-research gap has been identified. Candidate pins are not considered installed, co-verified, or security audited.
 
-### Свежие read-only проверки
+### Fresh read-only checks
 
-| Проверка | Результат |
+| Check | Result |
 |---|---|
-| Raw hashes и размеры manifest iteration 3 | **15/15 совпали** |
-| Составляющие документы против соответствующих разделов bundle | **14/14 byte-equivalent** |
-| Fenced JSON examples | **12/12 синтаксически разобраны** |
-| Полный M1: топология и типы symbolic references | **pass**, без необходимости runtime values |
-| Три Z-пары raw DBResult → Answer | **pass documentary consistency** |
-| Текущие vault hashes против `inputs-observed.json.current_sha256` | **25/25 совпали** |
-| Предыдущие iterations 1/2 против их manifests | **13/13 и 14/14 сохранены** |
-| Матрица требований | **17 R + 8 U** |
-| Исходные non-runtime файлы против B2 baseline | **95/95 неизменны** |
-| Git index против baseline | **неизменен** |
-| Git | canonical root, `main`, HEAD A сохранён; staging/remotes пусты |
-| Дополнительные quality gates | CLI вернул `{"gates":[],"stage":"ralplan"}` |
+| Raw hashes and dimensions manifest iteration 3 | **15/15 matched** |
+| Constituent documents versus corresponding bundle sections | **14/14 byte-equivalent** |
+| Fenced JSON examples | **12/12 parsed** |
+| Full M1: topology and types symbolic references | **pass**, no need for runtime values ​​|
+| ThreeZ-couplesraw DBResult → Answer | **pass documentary consistency** |
+| Current vault hashes against `inputs-observed.json.current_sha256` | **25/25 matches** |
+| Previous iterations 1/2 vs their manifests | **13/13 and 14/14 saved** |
+| Requirements Matrix | **17 R + 8 U** |
+| Non-runtime source files vs B2 baseline | **95/95 unchanged** |
+| Git index vs. baseline | **unchanged** |
+| Git | canonical root, `main`, HEAD A saved; staging/remotes are empty |
+| Additional quality gates | CLI returned `{"gates":[],"stage":"ralplan"}` |
 
-Raw SHA-256 bundle до завершения review:
+Raw SHA-256 bundle before completion review:
 
 `e4d91f3e04113d4f973bb4e578c98a243040c7d05f725f164c6b11a62ece53b8`
 
-Raw SHA-256 прочитанного Architect3 review:
+Raw SHA-256 read by Architect3 review:
 
 `0914935a942be1c89c0c56d26f0be4371b795a674c590662ccd0939d3df4ce00`
 
@@ -51,118 +51,118 @@ HEAD:
 
 `8931d832d49311ac0d63c3a7a359b4293058da89`
 
-Manifest содержит raw hashes; штатный baseline — domain-separated lifecycle digest. Различие этих представлений не принимается за подмену.
+Manifest contains raw hashes; regular baseline - domain-separated lifecycle digest. The difference between these ideas is not taken as a substitution.
 
-Original PDF самостоятельно повторно не декодировал: использован явно атрибутированный `.omx/context/H-006-B2/pdf-read-receipt.json` лидера о четырёх страницах; текущий PDF hash сверён. Architect3 completion observation прочитан как evidence лидера, не выдан за самостоятельно выполненный host lifecycle audit.
+Original PDF did not re-decode on its own: the leader's clearly attributed `.omx/context/H-006-B2/pdf-read-receipt.json` about four pages was used; the current PDF hash has been verified. Architect3 completion observation is read as evidence of the leader, and is not passed off as an independently completed host lifecycle audit.
 
-Файлы, Git, state, IDs, tracker и Obsidian мною не изменялись. Детей не запускал.
+The files, Git, state, IDs, tracker and Obsidian were not changed by me. Didn't let the kids in.
 
 ## Summary
 
-- **Clarity:** pass — роли компонентов, типы, фазы проверки, ошибки и границы выполнения определены.
-- **Verifiability:** pass — независимые fixtures, exact expected, отрицательные mutations, pass/fail и будущие evidence paths конкретны.
-- **Completeness:** pass — требуемые документы и все 25 R/U строк присутствуют; обнаруженные ранее blocking gaps устранены.
-- **Big Picture:** pass — компактный локальный demonstrator соответствует принятому scope; proposed/accepted/actually-tested не смешаны.
-- **Principle/Option Consistency:** pass — рекомендации согласованы с минимальностью, schema-agnostic boundary и разделением safety/semantics/evidence.
-- **Alternatives Depth:** pass — локальный и серверный варианты рассмотрены честно; CLI не выдан за достаточный принятый экран.
-- **Risk/Verification Rigor:** pass — границы retries/resources, недостаточность shape/read-only checks, live/injected distinction и public delivery раскрыты.
-- **Deliberate Additions:** pass — три credible pre-mortem и расширенные unit/actual-DB/mocked-graph/live-NL/UI-E2E/trace/manual/public/defense проверки присутствуют.
+- **Clarity:** pass - component roles, types, verification phases, errors and execution boundaries are defined.
+- **Verifiability:** pass - independent fixtures, exact expected, negative mutations, pass/fail and future evidence paths are specific.
+- **Completeness:** pass - the required documents and all 25 R/U lines are present; previously detected blocking gaps have been eliminated.
+- **Big Picture:** pass — compact local demonstrator corresponds to the accepted scope; proposed/accepted/actually-tested are not mixed.
+- **Principle/Option Consistency:** pass - recommendations are consistent with minimalism, schema-agnostic boundary and safety/semantics/evidence separation.
+- **Alternatives Depth:** pass - local and server options are considered fairly; The CLI is not issued as a sufficiently accepted screen.
+- **Risk/Verification Rigor:** pass - retries/resources boundaries, shape/read-only checks insufficiency, live/injected distinction and public delivery are disclosed.
+- **Deliberate Additions:** pass - three credible pre-mortem and extended unit/actual-DB/mocked-graph/live-NL/UI-E2E/trace/manual/public/defense checks are present.
 
-## Проверка предыдущих замечаний
+## Verification previous comments
 
-| Finding | Результат Critic3 и evidence |
+| Finding | Result Critic3 and evidence |
 |---|---|
-| **B1: static DAG против runtime binding** | **Исправлено.** `P/contracts.md`, раздел «Двухфазный DAG…»: `validate_plan` принимает typed symbolic references предшественников; `bind_results` требует completed/domain-validated/nontruncated данные. Полный M1, cycle/missing-alias mutations и D1–D3 имеют точные фазы отказа и запрет downstream calls. `GraphState.results` хранит выбранные dependency rows, raw candidates остаются в trace. |
-| **B2: metric/unit/grain/result boundary** | **Исправлено.** Конечный ResultSpec registry и DomainResultAdapter закрепляют integer components, unit/scale, group keys, exact ties и half-up2. Library count не проходит grade normalization. Wrong unit/denominator/grain имеют определённые ошибки. Evidence: `P/contracts.md`, ResultSpec/registry и JSON examples; `P/test-plan.md`, V1–V2. |
-| **B2-R1: пустой scalar SUM** | **Исправлено полностью на уровне документов.** Нормативная формула — `COALESCE(SUM(grade_units),0)`, не row-level COALESCE. Z1/Z2/Z3 содержат полные typed raw messages и нормализованные Answer. DB-Z и UNIT-Z проверяют разные границы. Evidence: `P/contracts.md`, «B2-R1…»; `P/test-plan.md`, S10/N1–N3/V1 и заключительный раздел; `P/ADR-OMX-006-schema-boundary-tracing.md`. |
-| **B3: live accuracy против injected failures** | **Исправлено.** EI1–EI3 явно injected, имеют provenance и 0 paid calls. Live denominator — 48 real-model conversations с continuation; N1–N4 проверяют no-data outcomes. Unexpected failures учитываются, не удаляются из denominator. Раскрытые prototypes не названы уже созданным sealed suite. Evidence: `P/test-plan.md`, live gate и «Две разные negative lanes»; ADR007. |
-| **B4: принятый экран** | **Исправлено.** SQL/bindings, typed DB rows и полные same-run events/attempts доступны из экрана. UI1 различает success, pause/resume, repair и terminal error; opaque ID, исчезнувшие attempts и rows другого run — fail. Evidence: `P/architecture-proposal.md`, компоненты; `P/test-plan.md`, UI1; matrix R06/R17; implementation I1/I4. |
-| **A1: provider bindings** | **Достаточно для documentary B.** Closed bounded array, discriminator/type checks, deterministic SQLite mapping, duplicate/placeholder checks описаны. Actual SDK smoke остаётся future. |
-| **A2: resource boundaries** | **Достаточно с явным residual risk.** W1–W3 различают request/SQL/bindings/value boundaries и byte/token accounting. Watchdog не выдан за hard memory isolation; production gap сохранён. |
+| **B1: static DAG vs runtime binding** | **Fixed.** `P/contracts.md`, "Two-Phase DAG..." section: `validate_plan` accepts typed symbolic references of predecessors; `bind_results` requires completed/domain-validated/nontruncated data. Full M1, cycle/missing-alias mutations and D1–D3 have precise failure phases and prohibit downstream calls. `GraphState.results` stores the selected dependency rows, raw candidates remain in the trace. |
+| **B2: metric/unit/grain/result boundary** | **Fixed.** The final ResultSpec registry and DomainResultAdapter fix integer components, unit/scale, group keys, exact ties and half-up2. Library count does not pass grade normalization. Wrong unit/denominator/grain have certain errors. Evidence: `P/contracts.md`, ResultSpec/registry and JSON examples; `P/test-plan.md`, V1–V2. |
+| **B2-R1: empty scalar SUM** | **Corrected completely at the document level.** Regulatory formula - `COALESCE(SUM(grade_units),0)`, not row-level COALESCE. Z1/Z2/Z3 contain full typed raw messages and normalized Answer. DB-Z and UNIT-Z test different boundaries. Evidence: `P/contracts.md`, “B2-R1...”; `P/test-plan.md`, S10/N1–N3/V1 and final section; `P/ADR-OMX-006-schema-boundary-tracing.md`. |
+| **B3: live accuracy vs injected failures** | **Fixed.** EI1–EI3 are clearly injected, have provenance and 0 paid calls. Live denominator — 48 real-model conversations with continuation; N1–N4 check no-data outcomes. Unexpected failures are taken into account and are not removed from the denominator. Revealed prototypes are not named by the already created sealed suite. Evidence: `P/test-plan.md`, live gate and “Two different negative lanes”; ADR007. |
+| **B4: received screen** | **Fixed.** SQL/bindings, typed DB rows and full same-run events/attempts are available from the screen. UI1 distinguishes between success, pause/resume, repair and terminal error; opaque ID, disappeared attempts and rows of another run - fail. Evidence: `P/architecture-proposal.md`, components; `P/test-plan.md`, UI1; matrix R06/R17; implementation I1/I4. |
+| **A1: provider bindings** | **Enough fordocumentary B.** Closed bounded array, discriminator/type checks, deterministic SQLite mapping, duplicate/placeholder checks described. Actual SDK smoke remainsfuture. |
+| **A2: resource boundaries** | **Enough with obvious residual risk.** W1–W3 distinguish between request/SQL/bindings/value boundaries and byte/token accounting. Watchdog is not issued for hard memory isolation; production gap saved. |
 
-### B2-R1: независимая проверка согласованности
+### B2-R1: Independent consistency check
 
-| Случай | Raw `[sum_units,graded_count,enrollment_count]` | Normalized Answer |
+| Case | Raw `[sum_units,graded_count,enrollment_count]` | Normalized Answer |
 |---|---|---|
-| Нет enrollments | `[0,0,0]` | `average=null`, `empty_reason=no_rows` |
-| Enrollment существует, grade NULL | `[0,0,1]` | `average=null`, `empty_reason=no_grades` |
-| Настоящая оценка 0 | `[0,1,1]` | `average="0.00"`, `empty_reason=null` |
+| Noenrollments | `[0,0,0]` | `average=null`, `empty_reason=no_rows` |
+| Enrollment exists, grade NULL | `[0,0,1]` | `average=null`, `empty_reason=no_grades` |
+| Real rating 0 | `[0,1,1]` | `average="0.00"`, `empty_reason=null` |
 
-Во всех трёх raw examples sum/counts — non-null integers, scalar `row_count=1`. Число aggregate rows не подменяет количество исходных enrollments. Отсутствующие GROUP BY группы не обещаны автоматически. Nullable raw sum запрещён, а не молча исправляется formatter-ом.
+In all three raw examples sum/counts are non-null integers, scalar `row_count=1`. The number of aggregate rows does not replace the number of original enrollments. Missing GROUP BY groups are not automatically promised. Nullable raw sum is prohibited and is not silently corrected by the formatter.
 
-Будущая **DB-Z** требует действительных SQLite components/types до adapter; **UNIT-Z** отдельно проверяет преобразование и отклонение `sum_units=null`. Это устраняет прежнюю возможность подтвердить formatter, не подтвердив raw query result.
+Future **DB-Z** requires valid SQLite components/types before adapter; **UNIT-Z** checks the conversion and deviation of `sum_units=null` separately. This removes the previous ability to validate the formatter without validating the raw query result.
 
-Нового SQL probe не потребовалось. Эти проверки остаются **документальными**, DB-Z/UNIT-Z — **not-run**.
+No new SQL probe was required. These checks remain **documented**, DB-Z/UNIT-Z is **not-run**.
 
-## Репрезентативные implementation walkthroughs
+## Representative implementation walkthroughs
 
-### 1. M1: зависимость, мутация и ties
+### 1. M1: dependency, mutation and ties
 
-Полный план принимается до SQL. F1 top adapter выбирает course2, runtime binding получает cohort `{1}`, final mean — `95.00`. F2 меняет top на course1, cohort — `{1,2,3}`, ответы — `{95.00,80.00,50.00}`. Tie fixture выбирает оба курса и union cohort, ответы — `{90.00,90.00,null}`.
+The full plan is accepted before the SQL. F1 top adapter selects course2, runtime binding gets cohort `{1}`, final mean - `95.00`. F2 changes top to course1, cohort - `{1,2,3}`, answers - `{95.00,80.00,50.00}`. Tie fixture selects both courses and union cohort, answers - `{90.00,90.00,null}`.
 
-Truncated/corrupted dependency останавливает следующий provider/SQL call. Core не подставляет все raw candidates вместо выбранных top IDs.
+Truncated/corrupted dependency stops the next provider/SQL call. Core does not substitute all raw candidates for the selected top IDs.
 
-**Вывод:** исполнителю не требуется угадывать фазу разрешения references или семантику промежуточного результата.
+**Conclusion:** the executor does not need to guess the references resolution phase or the semantics of the intermediate result.
 
-### 2. Scalar mean: пустота, NULL и настоящий ноль
+### 2. Scalar mean: emptiness, NULL and real zero
 
-Приём ResultSpec, raw integer components и normal output теперь согласованы для всех трёх случаев. SQL отвечает за aggregate components, domain adapter — за точную нормализацию/rounding; модель не придумывает числа. Несоответствующий raw shape отвергается.
+Reception of ResultSpec, raw integer components and normal output are now consistent for all three cases. SQL is responsible for aggregate components, domain adapter is responsible for precise normalization/rounding; the model doesn't come up with numbers. Inappropriate raw shape is rejected.
 
-**Вывод:** прежний обязательный no-rows сценарий больше не требует нарушить контракт.
+**Conclusion:** the former mandatory no-rows scenario no longer requires breaking the contract.
 
-### 3. Library и экранный failure path
+### 3. Library and screen failure path
 
-Library заменяет DB/descriptor/domain adapter, не core. Counts `1/1` и all-returned `0/0` не масштабируются как grades. Unchanged-core hash, actual DB, mocked graph, live NL и UI evidence остаются отдельными будущими проверками.
+Library replaces DB/descriptor/domain adapter, not core. Counts `1/1` and all-returned `0/0` do not scale as grades. Unchanged-core hash, actual DB, mocked graph, live NL and UI evidence remain separate future checks.
 
-Injected refusal показывает отсутствие SQL/DB; injected repair показывает обе попытки и финальные typed results. Ни один такой результат не становится live accuracy evidence.
+Injected refusal indicates the absence of SQL/DB; injected repair shows both attempts and the final typed results. No such result becomes live accuracy evidence.
 
-**Вывод:** portability и UI/error acceptance проверяемы без расширения B до реализации.
+**Conclusion:** portability and UI/error acceptance are verifiable without extension B before implementation.
 
-### Независимая арифметическая сверка
+### Independent arithmetic reconciliation
 
-Целочисленный/рациональный пересчёт документальных fixtures подтвердил:
+Integer/rational recalculation of documentary fixtures confirmed:
 
-- S1–S6 sums в hundredths: `50000/35000/40000/25000/26000/16000`;
-- соответствующие graded/enrollment counts и averages;
-- M1/F1, M1/F2 и tie outcomes, перечисленные выше.
+- S1–S6 sums Vhundredths: `50000/35000/40000/25000/26000/16000`;
+- corresponding graded/enrollment counts and averages;
+- M1/F1, M1/F2 and tie outcomes listed above.
 
-Это вычисление expected по документальным строкам, **не SQL/application/E2E test**.
+This is an expected calculation based on document strings, **not SQL/application/E2E test**.
 
-## Полнота требований и границ
+## Completeness of requirements and boundaries
 
-- **R01–R04:** ERD/имена/offerings/semesters/grades, четыре фильтра, JOIN duplication trap, unequal groups, retakes и содержательный M1 покрыты.
-- **R05–R08:** Library unchanged-core transfer, полная trace chain, ambiguity/resume, controlled errors, actual-model NL и E2E разведены.
-- **R09–R10:** обязанности DB/agent/prompts/tracing/UI и все пять production тем раскрыты без production-ready claim.
-- **R11–R15:** schema/seed/code/tests/examples/public комплект, clean clone, remote SHA и anonymous access остаются будущими обязательствами; local B commit их не закрывает.
-- **R16–R17:** самостоятельная owner rehearsal и простой экран предусмотрены, согласие агентов не заменяет защиту.
-- **U01–U08:** actual/template/read-context и omissions различены; deadline hour открыт; native lifecycle проверяет лидер; ADR/history/ownership/A/B сохранены; исторический U07 не присвоен B; глубокое понимание ещё предстоит наблюдать.
+- **R01–R04:** ERD/names/offerings/semesters/grades, four filters, JOIN duplication trap, unequal groups, retakes and meaningful M1 are covered.
+- **R05–R08:** Library unchanged-core transfer, full trace chain, ambiguity/resume, controlled errors, actual-model NL and E2E separated.
+- **R09–R10:** DB/agent/prompts/tracing/UI responsibilities and all five production topics are covered without a production-ready claim.
+- **R11–R15:** schema/seed/code/tests/examples/public kit, clean clone, remote SHA and anonymous access remain future commitments; local B commit does not close them.
+- **R16–R17:** independent owner rehearsal and simple screen are provided, agent consent does not replace protection.
+- **U01–U08:** actual/template/read-context and omissions are distinguished; deadline hour is open; native lifecycle is checked by the leader; ADR/history/ownership/A/B saved; historical U07 not assigned to B; deep understanding remains to be seen.
 
-Owner acceptance, credentials/budget, будущий compatibility smoke и public authority — gates соответствующих будущих действий, **не самостоятельные blockers documentary B**.
+Owner acceptance, credentials/budget, future compatibility smoke and public authority are gates of relevant future actions, **not independent blockers documentary B**.
 
-Отозванный `27/30` не восстановлен. Новый `48/48` явно proposed, имеет ограниченное small-suite назначение и не объявлен статистической гарантией.
+The recalled `27/30` has not been reinstated. The new `48/48` is clearly proposed, has a limited small-suite purpose and is not declared as a statistical guarantee.
 
-## Alternatives, tradeoff и synthesis
+## Alternatives, tradeoff Andsynthesis
 
-**Сильнейшая альтернатива:** для маленького demonstrator свободный read-only SQL с независимым oracle и прозрачными traces проще; чрезмерный typed IR способен превратить задание в собственный compiler и задержать первый настоящий vertical slice.
+**Strongest alternative:** for a small demonstrator, free read-only SQL with independent oracle and transparent traces is simpler; An overly typed IR can turn the job into its own compiler and delay the first real vertical slice.
 
-**Реальное напряжение:** свободные result columns уменьшают адаптерный код, но вынуждают downstream угадывать units/grain/dependencies. Строгий ResultSpec снимает угадывание ценой registry и boundary tests.
+**Real stress:** free result columns reduce adapter code, but force downstream to guess units/grain/dependencies. Strict ResultSpec takes the guesswork out of registry and boundary tests.
 
-**Синтез текущего пакета достаточен:** конечные shapes/domain adapters, двухфазные references и точная арифметика при сохранении настоящей SQL generation. Универсальный query compiler не вводится. Независимый semantic oracle остаётся необходимым: model/shape/read-only/trace completeness не доказывают правильность SQL.
+**Synthesis of the current package is sufficient:** final shapes/domain adapters, two-phase references and precise arithmetic while maintaining real SQL generation. A universal query compiler is not introduced. An independent semantic oracle remains necessary: ​​model/shape/read-only/trace completeness does not prove the correctness of SQL.
 
-## Advisory observations — не обязательные исправления
+## Advisory observations - optional fixes
 
-1. Сохранить конечный размер ResultSpec registry при реализации; новые метрики добавлять через domain adapter и tests, не University heuristics в core.
-2. При упаковке не повышать уровень доказанности: candidate pins, walkthroughs, fixture arithmetic и review approval не превращать в executed compatibility/E2E/security evidence.
-3. Сохранить I0→I1 и ранний настоящий vertical slice; не заменять его предварительным строительством универсальных абстракций.
+1. Save the final size of the ResultSpec registry during implementation; add new metrics via domain adapter and tests, not University heuristics in core.
+2. When packaging, do not increase the level of evidence: candidate pins, walkthroughs, fixture arithmetic and review approval do not turn into executed compatibility/E2E/security evidence.
+3. Save I0→I1 and the early real vertical slice; do not replace it with the preliminary construction of universal abstractions.
 
 ## Stop condition
 
-**Critic3 review завершён: `approve`, обязательных исправлений 0.**
+**Critic3 review completed: `approve`, required corrections 0.**
 
-Лидер далее проверяет реальное native completion этого агента, фиксирует результат configured gates и выполняет supported Advisory closeout. Пустой список дополнительных gates не заменяет reviews.
+The leader then checks the real native completion of this agent, records the result of configured gates and performs a supported Advisory closeout. An empty list of additional gates does not replace reviews.
 
-Terminal state, `active:false`, explicit отсутствие execution authorization/handoff, prompt coverage, public-safe packaging, link/privacy/diff checks и отдельный docs-коммит B **ещё должен подтвердить лидер**. Этот verdict не присваивает их результаты.
+Terminal state, `active:false`, explicit absence of execution authorization/handoff, prompt coverage, public-safe packaging, link/privacy/diff checks and a separate docs commit B **to be confirmed by the leader**. This verdict does not take credit for their results.
 
-Application tests, actual SDK compatibility, live eval, UI execution, public delivery и owner rehearsal — **not-run**. Все новые архитектурные решения остаются **proposed до обсуждения в чате**.
+Application tests, actual SDK compatibility, live eval, UI execution, public delivery and owner rehearsal - **not-run**. All new architectural solutions remain **proposed until discussed in the chat**.
 
 <!-- END_CRITIC_REVIEW -->

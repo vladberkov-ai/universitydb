@@ -1,5 +1,5 @@
 ---
-title: "ADR-CHAT-002: объём конечного результата"
+title: "ADR-CHAT-002: scope of the final result"
 updated: 2026-11-06
 status: accepted
 owner: chat
@@ -7,34 +7,34 @@ visibility: public-ready
 sources: ["CHAT-006", "CHAT-005"]
 ---
 
-# ADR-CHAT-002: объём конечного результата
+# ADR-CHAT-002: scope of final result
 
-Источник принятия: CHAT-006 (частный источник; не экспортирован), пользователь, 2026-11-06.
-Требования: R-03..09, R-13..17, U-04. Основание предложения: brief (частный источник; не экспортирован).
+Acceptance source: CHAT-006 (private source; not exported), user, 2026-11-06.
+Requirements: R-03..09, R-13..17, U-04. Reason for offer: brief (private source; not exported).
 
-## Решение
-Принят объём: небольшое локальное приложение с простым демонстрационным экраном,
-ответом/SQL/данными/полной трассой, зависимым многошаговым сценарием, уточнением неоднозначности,
-диагностикой сбоев и проверкой переноса ядра на вторую небольшую схему.
-Обязательный комплект сдачи сохраняется целиком.
+## Solution
+Accepted scope: a small local application with a simple demo screen,
+response/SQL/data/full trace, dependent multi-step script, ambiguity clarification,
+diagnosing failures and checking the transfer of the kernel to a second small circuit.
+The required delivery kit is retained in its entirety.
 
-## Варианты и обоснование
-Только CLI был бы проще по UI, но экран облегчает совместный показ ответа и доказательств.
-Переносимость только по архитектурному описанию дешевле, но вторая схема даёт проверяемое свидетельство.
-Большой продукт с дополнительной инфраструктурой не нужен для обязательных требований и ограниченного срока.
-Выбран компактный демонстрируемый объём, покрывающий сложные вопросы, отладку и переносимость.
-Это обоснование предложения ассистента; пользователь подтвердил объём, не формулировал эти причины дословно.
+## Options and rationale
+Only the CLI would be simpler in terms of UI, but the screen makes it easier to show the answer and proof together.
+Portability by architectural description alone is cheaper, but the second design provides verifiable evidence.
+A large product with additional infrastructure is not needed for mandatory requirements and limited time.
+A compact demonstration volume has been chosen to cover complex issues, debugging and portability.
+This is the rationale for the assistant's suggestion; the user confirmed the volume, but did not formulate these reasons verbatim.
 
-## Границы принятия и проверка
-Не утверждены этим ответом конкретный стек, предметная семантика, численные пороги eval,
-бюджет и Git-протокол. Их согласование продолжается в текущем этапе.
-Принятие scope не закрывает реализацию R-03..09: нужны код, результаты и traces.
-Проверка принятого результата — сценарии brief, автоматические и ручные прогоны, публичный комплект.
-Следующий шаг: [предметные правила и приёмка](../planning/acceptance-contract.md).
+## Acceptance boundaries and verification
+The specific stack, domain semantics, eval numerical thresholds are not approved by this answer.
+budget and Git protocol. Their coordination continues at the current stage.
+Accepting scope does not close the implementation of R-03..09: code, results and traces are needed.
+Checking the accepted result - brief scripts, automatic and manual runs, public kit.
+Next step: [subject rules and acceptance](../planning/acceptance-contract.md).
 
-## Проекция и история
-Public projection pending-review; commit/push не выполнялись. Предыдущих решений не заменяет.
+## Projection and history
+Public projection pending-review; commit/push were not executed. Does not replace previous solutions.
 
 
 ---
-Проекция H-004 v2: производный chat-owned снимок, не редактируемый оригинал. Частные зависимости не экспортированы; SHA-256 и журнал изменений — в repo receipt. Статусы выполнения приложения этой проекцией не изменены.
+Projection H-004 v2: derivative chat-owned shot, unedited original. Private dependencies are not exported; SHA-256 and change log are in the repo receipt. Application execution statuses are not changed by this projection.

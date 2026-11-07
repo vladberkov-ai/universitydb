@@ -21,7 +21,7 @@ complete distinction between delivered artifacts and missing functionality.
 | SQL schema and synthetic seed | [schema.sql](resources/schema.sql), [seed.sql](resources/seed.sql), [database guide](docs/database.md) |
 | LangGraph agent and domain adapter | [agent.py](src/universitydb/agent.py), [domain.py](src/universitydb/domain.py) |
 | DB, model and tracing layers | [db.py](src/universitydb/db.py), [llm.py](src/universitydb/llm.py), [tracing.py](src/universitydb/tracing.py) |
-| Runtime and development prompts | [prompt catalogue](docs/ai/PROMPTS.md), [provenance/coverage](docs/ai/README.md) |
+| Runtime and development prompts | [English prompts](docs/ai/PROMPTS-EN.md), [Russian prompts](docs/ai/PROMPTS-RU.md), [provenance/coverage](docs/ai/README.md) |
 | Tests | [tests](tests), [manual E2E](docs/manual-e2e.md) |
 | Design decisions | [ADR index](docs/adr/README.md); implemented scope: [ADR008](docs/adr/ADR-OMX-008-I1-scoped-implementation.md), [ADR009](docs/adr/ADR-OMX-009-Sol-operation-profile.md), [ADR010](docs/adr/ADR-OMX-010-I1-practical-budget-policy.md) |
 | Queries, outputs and execution traces | [examples](examples/README.md) |
@@ -88,7 +88,7 @@ intentional rotation. Never commit or print your key. `.env` is **not** auto-loa
 
 Before enabling requests, explicitly accept the practical spending policy and review
 applicable current API rates. The shipped rate values **5.50/M input and11/M output**
-are a conservative dated envelope, documented [on2026-11-07](docs/operations/H-009/api-references.md),
+are a conservative dated envelope, documented [on 2026-11-07](docs/operations/H-009/api-references.md),
 not a permanent provider tariff. If the applicable rates differ, configure them before
 first use; an existing ledger's monetary profile is pinned and must not be reset to change it.
 Only after that review and your own spending authorization:
@@ -121,7 +121,7 @@ Full copy/paste questions and expectations are in [manual-e2e.md](docs/manual-e2
 | Check | Expected | Mode |
 | --- | --- | --- |
 | Default Bea/student2, DB/course1, Kim/teacher10, S1 | **80.00**, raw16000/2/2 | offline or live |
-| Alex/student1, same course/teacher/semester | **90.00**, raw9000/1/1 | live only |
+| Alex/student1, same course/teacher/semester | **90.00**, raw 9000/1/1 | live only |
 | Expand SQL, typed rows, trace; download JSONL | Four bound filters, consistent rows and one run_id | both |
 | Submit `unsupported` after success | `INVALID_INPUT`; previous answer disappears | both; this failure makes0LLM calls |
 
@@ -153,7 +153,13 @@ The core graph avoids University table names; domain-specific schema, scope and 
 rules live in `domain.py`. A second-schema adaptation has **not** been demonstrated.
 SQLGlot checks one tightly restricted SELECT; SQLite authorizer/read-only mode and worker
 timeouts add protection. This is a synthetic loopback demo, not a general SQL sandbox.
-Output32768tokens, ≤5attempts/run, plan60s/SQL-repair45s/run180s; synchronous local I/O
-assumes a responsive filesystem, so180s is not a universal hard deadline. These limits
+Output: 32768 tokens, ≤5attempts/run, plan 60s / SQL-repair 45s / run 180s; synchronous local I/O
+assumes a responsive filesystem, so 180s is not a universal hard deadline. These limits
 have been measured for I1 cases, not all workloads. No authentication, remote deployment,
 hard memory isolation, multi-step orchestration or durable conversational resume is claimed.
+
+## Documentation language and provenance
+
+Reviewer documentation and UI are in English. Prompt texts are collected separately in English and Russian. Original prompt files, machine-readable execution/provenance records and screenshots retain the language actually used; they are evidence, not translated replay results. Historical document hashes refer to the original pre-translation versions in Git. See the [translation record](docs/operations/english-translation-manifest.json). Translated chat snapshots are a presentation layer; they do not change the private authoritative wiki or create an automatic two-way sync.
+
+Reviewer documentation and UI are in English. Prompt texts are collected separately in English and Russian. Original prompt files, machine-readable execution/provenance records and screenshots retain the language actually used; they are evidence, not translated replay results. Historical document hashes refer to the original pre-translation versions in Git. See the [translation record](docs/operations/english-translation-manifest.json). Translated chat snapshots are a presentation layer; they do not change the private authoritative wiki or create an automatic two-way sync.

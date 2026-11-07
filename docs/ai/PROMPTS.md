@@ -1,5 +1,7 @@
 # Prompt catalogue
 
+Read the consolidated prompt texts in **[English](PROMPTS-EN.md)** or **[Russian](PROMPTS-RU.md)**. Each entry links to the authoritative original; translations are not claims of actual model input. Structured child/session records remain in the provenance index below.
+
 Current I1,2026-11-07. Historical coverage records remain in [README](README.md).
 This catalogue indexes actual saved files; it is not a claim of complete transcripts.
 

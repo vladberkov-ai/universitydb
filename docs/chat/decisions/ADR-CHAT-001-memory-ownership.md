@@ -1,5 +1,5 @@
 ---
-title: "ADR-CHAT-001: владение памятью"
+title: "ADR-CHAT-001: Memory Mastery"
 updated: 2026-11-06
 status: accepted
 owner: chat
@@ -7,25 +7,25 @@ visibility: public-ready
 sources: ["chat:2026-11-06"]
 ---
 
-# ADR-CHAT-001: владение памятью
+# ADR-CHAT-001: memory ownership
 
-## Контекст и источник
-CHAT-003 (частный источник; не экспортирован): требуется сохранять результаты чата в UniversityDB и избежать дублирования OMX.
+## Context and source
+CHAT-003 (private source; not exported): Want to store chat results in UniversityDB and avoid OMX duplication.
 
-## Решение
-Vault — авторитетный оригинал результатов чата. Repo — оригинал кода и результатов OMX.
-Для сдачи выбранные страницы чата переносятся в repo как проверенные снимки с указанием источника и хеша.
+## Solution
+Vault is the authoritative original of chat results. Repo - original OMX code and results.
+For delivery, selected chat pages are transferred to the repo as verified snapshots indicating the source and hash.
 
-## Рассмотренные варианты
-1. Копировать всю работу в оба места: отклонено из-за расхождения двух редактируемых версий.
-2. Хранить всё только в repo: не соответствует выбранному пользователем Obsidian.
-3. Разделить владельцев и использовать ссылки/снимки: выбранный способ реализации требования.
+## Options considered
+1. Copy the entire work in both places: rejected due to discrepancies between the two edited versions.
+2. Store everything only in repo: does not correspond to the one selected by the Obsidian user.
+3. Separate owners and use links/snapshots: the chosen way to implement the requirement.
 
-## Последствия и проверка
-OMX не редактирует экспортированные chat-страницы. Чат не переписывает OMX ADR.
-При изменении исходника снимок становится stale, пока хеши не сверены вновь.
-Проверка на передаче: источник, owner, destination, SHA-256, commit, push result.
-Требование о границах принято пользователем; конкретные интервалы commit/push остаются предложением протокола.
+## Consequences and verification
+OMX does not edit exported chat pages. Chat does not overwrite OMX ADR.
+When the source changes, the snapshot becomes stale until the hashes are verified again.
+Check on transfer: source, owner, destination, SHA-256, commit, push result.
+The boundary requirement is accepted by the user; specific commit/push intervals remain a protocol proposal.
 
 ---
-Проекция H-004 v2: производный chat-owned снимок, не редактируемый оригинал. Частные зависимости не экспортированы; SHA-256 и журнал изменений — в repo receipt. Статусы выполнения приложения этой проекцией не изменены.
+Projection H-004 v2: derivative chat-owned shot, unedited original. Private dependencies are not exported; SHA-256 and change log are in the repo receipt. Application execution statuses are not changed by this projection.

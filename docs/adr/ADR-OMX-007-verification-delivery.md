@@ -1,26 +1,26 @@
-# ADR-OMX-007 — Независимые oracle, live gate и delivery evidence
+# ADR-OMX-007 - Independent oracle, live gate and delivery evidence
 
-Дата: 2026-11-07. Owner: repo. **Status: proposed**, до chat review. Не execution authorization.
+Date:2026-11-07. Owner: repo. **Status: proposed**, pending owner review. Not execution authorization.
 
-## Контекст
-Mocked graph не измеряет NL-SQL. Ранее предложенный27/30 снят; процент не заменяет обязательные R/U. Saved/committed/public различны.
+## Context
+Mocked graph does not measure NL-SQL. Previously proposed 27/30 withdrawn; percentage does not replace mandatory R/U. Saved/committed/public are different.
 
-## Варианты
-Единый success percentage; только unit mocks; layered checks+independent fixtures+small strict live suite/manual/public gates.
+## Options
+Singlesuccess percentage; onlyunit mocks; layered checks+independent fixtures+small strict live suite/manual/public gates.
 
-## Рекомендация
-S/C/E/T/L+D/V/W/UI1 mandatory tests; EI1–EI3 deterministic injected UI lane с provenance и0 paid calls отдельно, 24dev+24heldout×2 counted runs; proposed48/48 **real-model conversations** semantic passes, включая4negative-data cases×2, без injected faults в denominator без unsafe/privacy failures; <=$2 approved cap; ручная защита и public SHA отдельно.
+## Recommendation
+S/C/E/T/L+D/V/W/UI1 mandatory tests; EI1–EI3 deterministic injected UI lane with provenance and 0 paid calls separately, 24dev+24heldout×2 counted runs; proposed48/48 **real-model conversations** semantic passes, including 4negative-data cases×2, without injected faults in denominator without unsafe/privacy failures; <=$2 approved cap; manual protection and public SHA separately.
 
-## Обоснование
-Малый демонстратор должен воспроизводить каждый обещанный сценарий; strict повторение обнаруживает нестабильность, но не статистическая гарантия на произвольные вопросы.
+## Rationale
+The small demonstrator must reproduce every promised scenario; strict repetition detects instability, but is not a statistical guarantee for arbitrary questions.
 
-## Последствия
-Gate может потребовать prompt/model refinement и свежих heldout; нельзя best-of/relabel failures. Budget/key/public authority ещё отсутствуют; B только docs.
+## Consequences
+Gate may require prompt/model refinement and fresh heldout; best-of/relabel failures are not allowed. Budget/key/public authority are missing yet; B docs only.
 
-## Проверка
-test-plan oracle/manual раскрытый SQL/DB/full trace path, N1–N4 real-model no-data outcomes vs injected E1–E7/EI1–EI3; unexpected provider failures count failed live attempts, all attempts+hashes/usage, clean clone, remote SHA anonymous access, observed owner explanation; current application checks not-run.
+## Verification
+test-plan oracle/manual disclosedSQL/DB/full trace path, N1–N4 real-model no-data outcomes vs injected E1–E7/EI1–EI3; unexpected provider failures count failed live attempts, all attempts+hashes/usage, clean clone, remote SHA anonymous access, observed owner explanation; current application checks not-run.
 
-## Пересмотр
-Owner-approved revised scope до eval, token-rate changes, dataset contamination, новый model/prompt/schema или наблюдаемый failure pattern.
+## Revision triggers
+Owner-approved revised scope to eval, token-rate changes, dataset contamination, new model/prompt/schema or observed failure pattern.
 
-Связанные [архитектура](../plans/architecture-proposal.md), [контракты](../plans/contracts.md), [проверки](../plans/test-plan.md). Это будущие относительные пути после упаковки из reviewed planning baseline.
+Related [architecture](../plans/architecture-proposal.md), [contracts](../plans/contracts.md), [checks](../plans/test-plan.md). These are future relative paths after packaging from the reviewed planning baseline.

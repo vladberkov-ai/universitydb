@@ -2,177 +2,177 @@
 # Architect review — H-006 B2, iteration 1
 
 **Verdict: `iterate`**
-**Роль:** отдельный Architect; не Critic.
-**Статус решений:** proposed; этот review не разрешает реализацию или закрытие Advisory.
+**Role:** individual Architect; not Critic.
+**Decision status:** proposed; this review does not authorize the implementation or closure of the Advisory.
 
 ## Summary
 
-Рекомендованный минимальный стек, предметная модель и большая часть независимых эталонов архитектурно обоснованы. Однако три стыка требуют документального исправления: валидация зависимого плана, передача семантики агрегатов между адаптерами и воспроизводимость отрицательных live/E2E-проверок. Поэтому **APPROVE сейчас не даю**.
+The recommended minimum stack, domain model, and most independent benchmarks are architecturally sound. However, three interfaces require documented fixes: dependent plan validation, transfer of aggregate semantics between adapters, and reproducibility of negative live/E2E checks. That's why I'm not giving **APPROVE** now.
 
-## Проверенный baseline и границы evidence
+## Verified baseline and evidence boundaries
 
-Полностью прочитан `.omx/plans/H-006-B2/iteration-1/plan-bundle.md`: 465 строк, все 12 составляющих документов.
+Read `.omx/plans/H-006-B2/iteration-1/plan-bundle.md` in full: 465 lines, all 12 constituent documents.
 
 **Raw SHA-256:**
 `b83dadcc0ea53f63afea1e2bfe7da3b562dba5313cc06cbe8b6c114961755fc6`
 
-Проверены:
+Verified:
 
-- `.omx/plans/H-006-B2/iteration-1/manifest.json`: все **13/13** файлов совпадают по размеру и SHA-256; включает bundle.
-- Все **12/12** constituent documents совпадают с соответствующими разделами bundle.
-- Повторный raw hash bundle перед завершением review совпал.
-- **25/25** текущих vault inputs совпадают с `current_sha256` в `.omx/context/H-006-B2/inputs-observed.json`.
-- Текущий HEAD: `8931d832d49311ac0d63c3a7a359b4293058da89`.
-- Прочитаны полный authoritative H-006-v5 handoff, actual task, context/activation/Planner completion/baseline receipts, свежая D2, принятая актуальная R/U matrix, acceptance contract, scope/ownership ADR и оба сохранённых research-final.
-- Original PDF независимо повторно не декодировал: использован предоставленный лидером `.omx/context/H-006-B2/pdf-read-receipt.json`, фиксирующий чтение четырёх страниц. Это **не собственная повторная PDF-проверка Architect**.
-- Researcher/dependency-expert материалы от 2026-11-07 использованы как **ранее выполненное исследование**, не новые исследования или reviewer approvals.
+- `.omx/plans/H-006-B2/iteration-1/manifest.json`: all **13/13** files are the same size and SHA-256; includes bundle.
+- All **12/12** constituent documents match the corresponding sections of the bundle.
+- Repeated raw hash bundle before completing review matched.
+- **25/25** current vault inputs match `current_sha256` to `.omx/context/H-006-B2/inputs-observed.json`.
+- Current HEAD: `8931d832d49311ac0d63c3a7a359b4293058da89`.
+- Read the full authoritative H-006-v5 handoff, actual task, context/activation/Planner completion/baseline receipts, fresh D2, accepted current R/U matrix, acceptance contract, scope/ownership ADR and both saved research-final.
+- Original PDF was not independently re-decoded: the leader-provided `.omx/context/H-006-B2/pdf-read-receipt.json` was used, capturing the reading of four pages. This is **not Architect's own PDF revalidation**.
+- Researcher/dependency-expert materials from 2026-11-07 are used as **previously completed research**, not new research or reviewer approvals.
 
-Выполнен независимый пересчёт документальных fixtures посредством целочисленной/рациональной арифметики — **не SQL, не продуктовый тест**. Подтверждены S1–S6, M1/F1 `95.00`, M1/F2 `{95.00,80.00,50.00}` и tie mutation `{90.00,90.00,null}`.
+Performed independent recalculation of documentary fixtures using integer/rational arithmetic - **not SQL, not product test**. S1–S6, M1/F1 `95.00`, M1/F2 `{95.00,80.00,50.00}` and tie mutation `{90.00,90.00,null}` were confirmed.
 
-Файлы, Git, runtime state, tracker и Obsidian мною не изменялись. Review передаётся лидеру текстом для сохранения отдельного immutable artifact.
+The files, Git, runtime state, tracker and Obsidian were not changed by me. Review is transmitted to the leader by text to save a separate immutable artifact.
 
-## Положительные архитектурные выводы
+## Positive architectural implications
 
-1. **Предметная модель согласована с большинством эталонов.** Course отделён от Offering; имена не являются ключами; NULL, пересдачи между offerings, равные веса, all-semesters default и exact ties явно proposed. Fixtures различают среднее по строкам и среднее средних, а M1 проверяется изменением данных, меняющим промежуточный cohort.
+1. **The subject model is consistent with most standards.** Course is separated from Offering; names are not keys; NULL, mulligans between offerings, equal weights, all-semesters default and exact ties explicitly proposed. Fixtures distinguishes between a row average and an average of averages, and M1 is tested by changing the data, changing the intermediate cohort.
    Evidence: `.omx/plans/H-006-B2/iteration-1/architecture-proposal.md:25–39`; `.omx/plans/H-006-B2/iteration-1/test-plan.md:27–52`.
 
-2. **Оркестрация действительно bounded на уровне проекта.** Есть общие call/SQL/repair/clarification budgets, отключение SDK retries, отдельные provider branches, session-bound resume, replay protection, restart expiry и запрет побочных эффектов перед interrupt. Известная особенность повторного запуска interrupt-node учтена.
+2. **Orchestration is truly bounded at the project level.** There are common call/SQL/repair/clarification budgets, disabling SDK retries, separate provider branches, session-bound resume, replay protection, restart expiry and prohibition of side effects before interrupt. The well-known feature of restarting interrupt-node has been taken into account.
    Evidence: `.omx/plans/H-006-B2/iteration-1/contracts.md:5–13,32–35,44–49`.
 
-3. **Безопасность не выдана за семантическую правильность.** Read-only, authorizer, allowlists и watchdog отделены от oracle-based проверки правильности ответа; plausible wrong SELECT честно остаётся ограничением. Trace failure не превращается в success.
+3. **Security is not passed off as semantic correctness.** Read-only, authorizer, allowlists and watchdog are separated from oracle-based response validation; plausible wrong SELECT honestly remains a limitation. Trace failure does not turn into success.
    Evidence: `.omx/plans/H-006-B2/iteration-1/contracts.md:29–39`; `.omx/plans/H-006-B2/iteration-1/test-plan.md:64–74`.
 
-4. **Переносимость имеет проверяемый ограниченный scope.** Library — конкретная вторая схема, с expected и zero-return variant; предусмотрены неизменность core hash, реальные DB/live/E2E проверки. Не заявляется поддержка произвольных SQL dialects.
+4. **Porportability has a verifiable limited scope.** Library is a specific second scheme, with expected and zero-return variant; the immutability of the core hash and real DB/live/E2E checks are provided. Support for arbitrary SQL dialects is not stated.
    Evidence: `.omx/plans/H-006-B2/iteration-1/architecture-proposal.md:41–42`; `.omx/plans/H-006-B2/iteration-1/test-plan.md:76–84`.
 
-5. **Документальный lifecycle не смешан с продуктовой готовностью.** Все 17 R и 8 U имеют строки будущих доказательств; public access, owner defense, реальные prompts и Git отдельно от приложения. ADR003–007 содержат варианты, причины, последствия, проверки и условия пересмотра. Три pre-mortem и расширенные уровни проверок присутствуют.
+5. **Documentary lifecycle is not mixed with product readiness.** All 17 R and 8 U have future evidence lines; public access, owner defense, real prompts and Git separately from the application. ADR003–007 contain options, causes, consequences, tests, and revision conditions. Three pre-mortem and extended levels of checks are present.
    Evidence: `.omx/plans/H-006-B2/iteration-1/requirements-test-matrix.md:3–33`; `.omx/plans/H-006-B2/iteration-1/architecture-proposal.md:44–49`; `.omx/plans/H-006-B2/iteration-1/plan-bundle.md:6–165`.
 
 ## Blocking findings
 
-### B1 — Не разделены статическая проверка DAG и runtime binding результатов
+### B1 - Static checking of DAG and runtime binding results are not separated
 
-**Приоритет:** P1. **Исправление:** небольшое/среднее, документальное.
+**Priority:** P1. **Correction:** minor/medium, documented.
 
 **Evidence:**
 `.omx/plans/H-006-B2/iteration-1/contracts.md:27,45–46`
 `.omx/plans/H-006-B2/iteration-1/architecture-proposal.md:37–39`
 
-Контракт требует, чтобы references указывали только на уже завершённые steps, запрещает future references и требует существующие typed columns. Одновременно единственный начальный `PlanProposal` должен содержать весь план до SQL-выполнения, а `Step` не объявляет схему своего результата.
+The contract requires that references point only to already completed steps, prohibits future references, and requires existing typed columns. At the same time, the only initial `PlanProposal` must contain the entire plan before SQL execution, and `Step` does not declare the schema of its result.
 
-**Контрпример:** обязательный M1 должен заранее содержать зависимость step2 от `step1.course_id`, а step3 — от `step2.student_id`. В момент принятия `PlanProposal` ни один результат ещё не существует. Буквальная проверка контракта отклонит корректный M1; другая реализация молча отложит проверку, хотя нормативный момент её выполнения не определён.
+**Counterexample:** the required M1 must contain in advance the dependency step2 on `step1.course_id`, and step3 on `step2.student_id`. At the moment of accepting `PlanProposal`, no result exists yet. A literal check of the contract will reject a valid M1; another implementation will silently defer the check, although the normative moment for its execution is not defined.
 
-Это не требование заранее знать будущие **значения**. Требуется различить плановую ссылку и разрешённую для выполнения привязку.
+This is not a requirement to know future **values** in advance. It is necessary to distinguish between a planned link and a binding that is allowed to be executed.
 
-**Минимальная поправка:**
+**Minimum correction:**
 
-- При приёме плана проверять уникальные IDs, DAG, топологическое направление и объявленные выходные имена/типы предыдущих steps.
-- Будущие результаты предыдущих по DAG steps разрешать как **unresolved symbolic references**.
-- Непосредственно перед генерацией/исполнением зависимого SQL требовать завершённый, непротиворечивый, нетранкированный результат и материализовать reference в типизированные значения.
-- Определить failure code для отсутствующей/неверно типизированной колонки и запрет downstream calls при ошибке.
-- Добавить валидный полный M1 PlanProposal, invalid cycle, missing column и runtime truncated-reference examples с expected.
+- When accepting a plan, check the unique IDs, DAG, topological direction and declared output names/types of previous steps.
+- Resolve future results of previous DAG steps as **unresolved symbolic references**.
+- Immediately before generating/executing dependent SQL, require a complete, consistent, untrunked result and materialize the reference into typed values.
+- Define a failure code for a missing/incorrectly typed column and prohibit downstream calls in case of an error.
+- Add valid full M1 PlanProposal, invalid cycle, missing column and runtime truncated-reference examples with expected.
 
-**Проверка исправления:** документальный M1 проходит обе фазы, но cycle, отсутствующая колонка и oversized cohort останавливаются на явно указанной фазе без следующего SQL.
+**Checking the fix:** Documentary M1 goes through both phases, but cycle, missing column and oversized cohort stop at the explicitly stated phase without the following SQL.
 
-### B2 — Formatter/validator обещают семантические проверки, но результат не связан с metric/grain/unit
+### B2 - Formatter/validator promise semantic checks, but the result is not related to metric/grain/unit
 
-**Приоритет:** P1. **Исправление:** среднее, без смены стека.
+**Priority:** P1. **Correction:** average, no stack change.
 
 **Evidence:**
 `.omx/plans/H-006-B2/iteration-1/contracts.md:27–30,42,45–48`
 `.omx/plans/H-006-B2/iteration-1/architecture-proposal.md:32,42`
 
-Formatter должен проверять grain, scoped IDs, `graded<=enrollment`, диапазоны и переводить `sum_units/count/100`. Но нормативные `SQLProposal`/`DBResult` несут свободные имена колонок и scalar types, не обязательную связь с метрикой, единицей, агрегатными компонентами или grain. `Metric` содержит описание, но результат не указывает, к какой записи Metric он относится.
+Formatter should check grain, scoped IDs, `graded<=enrollment`, ranges and translate `sum_units/count/100`. But the normative `SQLProposal`/`DBResult` carry free names of columns and scalar types, not a mandatory connection with a metric, unit, aggregate components or grain. `Metric` contains a description, but the result does not indicate which Metric record it applies to.
 
-**Контрпример:** `expected_columns=["average"]` и decimal result допустимы по контракту. Из них нельзя определить, содержит колонка среднее в физических hundredths, уже нормализованную оценку или другую decimal-метрику. Нельзя восстановить точные `sum/count` для tie comparison, если вернулся только округлённый average. Аналогично не определено, какой adapter обязан реализовать University-specific проверки, чтобы core не начал распознавать названия `grade`/`graded_count`.
+**Counterexample:** `expected_columns=["average"]` and decimal result are legal by contract. From them it is impossible to determine whether the column contains the average in physical hundredths, an already normalized estimate, or another decimal metric. It is impossible to restore the exact `sum/count` for a tie comparison if only the rounded average is returned. Likewise, it is not defined which adapter must implement University-specific checks so that the core does not begin to recognize the names `grade`/`graded_count`.
 
-Это **не** требование доказать произвольную NL→SQL семантику. Речь о заявленных детерминированных правилах единиц, результата и domain boundaries.
+This is **not** a requirement to prove arbitrary NL→SQL semantics. We are talking about the stated deterministic rules of units, results and domain boundaries.
 
-**Минимальная поправка — один из двух вариантов:**
+**Minimum correction - one of two options:**
 
-1. Небольшой `ResultSpec` у шага: metric/result-shape identifier, group keys, typed aliases, unit/scale и требуемые aggregate components; либо
-2. Явный контракт domain result adapter, который получает проверенную спецификацию и DBResult, выполняет domain validation/normalization и возвращает унифицированный Answer.
+1. Small `ResultSpec` at the step: metric/result-shape identifier, group keys, typed aliases, unit/scale and required aggregate components; or
+2. Explicit domain result adapter contract, which receives the verified specification and DBResult, performs domain validation/normalization and returns a unified Answer.
 
-Для average/top определить обязательные integer `sum_units` и `graded_count`, владельца точного сравнения/финального округления, правила нулевого знаменателя. Core не должен реализовывать University-specific семантику по названиям колонок.
+For average/top, define the required integers `sum_units` and `graded_count`, owner of exact comparison/final rounding, zero denominator rules. Core should not implement University-specific semantics for column names.
 
-**Проверка исправления:** показать concrete messages для S6, M1/ties и Library count, включая неверную единицу/недостающий denominator/неожиданный grain. Они должны иметь однозначные результаты без эвристик по свободному имени колонки.
+**Fix check:** show concrete messages for S6, M1/ties and Library count, including invalid unit/missing denominator/unexpected grain. They should have unambiguous results without heuristics based on the free column name.
 
-**Принципы:** сейчас не завершено обеспечение принципов 2 и 5 — «вычисляет БД, не модель» и schema-agnostic core. Это проектный пробел границы, не доказанный дефект существующего кода.
+**Principles:** The provision of principles 2 and 5 - “computes the database, not the model” and schema-agnostic core - has not yet been completed. This is a design boundary gap, an unproven defect in existing code.
 
-### B3 — Отрицательные live/E2E cases не имеют воспроизводимого механизма воздействия
+### B3 - Negative live/E2E cases do not have a reproducible mechanism of action
 
-**Приоритет:** P1. **Исправление:** небольшое/среднее, test-plan.
+**Priority:** P1. **Correction:** minor/medium, test-plan.
 
 **Evidence:**
 `.omx/plans/H-006-B2/iteration-1/test-plan.md:64–72,82–92`
 
-E3 требует refusal/incomplete/malformed output. Эти случаи корректно предусмотрены для scripted-provider graph tests. Однако затем E3 включён в **full E2E с actual model**, а category `failure/refusal/invalid SQL` включена в обязательные 24 held-out real-model cases с двумя успешными повторениями.
+E3 requires refusal/incomplete/malformed output. These cases are correctly provided for by scripted-provider graph tests. However, then E3 is included in **full E2E with actual model**, and category `failure/refusal/invalid SQL` is included in the required 24 held-out real-model cases with two successful repetitions.
 
-Не указано, какие faults вызываются настоящим provider, какие вводятся тестовым transport/adapter и какие являются обычными отрицательными пользовательскими вопросами. Намеренно получить invalid SQL или refusal от настоящей модели — не воспроизводимый fault-injection контракт.
+It is not specified which faults are caused by the real provider, which are introduced by the test transport/adapter, and which are normal negative user issues. Intentionally receiving invalid SQL or refusal from a real model is a non-reproducible fault-injection contract.
 
-**Контрпример:** настоящий provider отвечает корректным structured proposal вместо ожидаемой искусственной SQL-ошибки. Проверка обработки ошибок формально не состоялась, но это не свидетельствует о плохом NL→SQL. Обратная ошибка — подменить response и затем засчитать результат как live generation evidence.
+**Counterexample:** a real provider responds with a correct structured proposal instead of the expected artificial SQL error. The error handling check did not formally take place, but this does not indicate bad NL→SQL. The reverse error is to replace the response and then count the result as live generation evidence.
 
-**Минимальная поправка:**
+**Minimum correction:**
 
-- Оставить все E3 branches в обязательных deterministic injected tests.
-- Для UI/E2E явно маркировать injected provider/transport faults и сохранять источник воздействия; не включать их в real-model generation score.
-- В live suite определить конкретные negative-user-request classes и допустимые наблюдаемые outcomes; не требовать от модели сгенерировать ошибочный SQL ради прохождения теста.
-- Если нужен отдельный live provider-failure experiment, описать механизм, expected и стоимость; не обещать неподтверждённое поведение API.
-- Уточнить denominator/category mapping и бюджет после разделения. Сам proposed строгий порог не отвергается.
+- Leave all E3 branches in mandatory deterministic injected tests.
+- For UI/E2E, explicitly mark injected provider/transport faults and save the source of the impact; do not include them in the real-model generation score.
+- In the live suite, define specific negative-user-request classes and acceptable observable outcomes; Don't require the model to generate erroneous SQL in order to pass the test.
+- If you need a separate live provider-failure experiment, describe the mechanism, expected and cost; Do not promise unverified API behavior.
+- Clarify denominator/category mapping and budget after division. The proposed strict threshold itself is not rejected.
 
-**Проверка исправления:** для каждого отрицательного case понятно, что реально вызывается, что подменяется и какое именно свойство доказывается.
+**Checking the correction:** for each negative case it is clear what is actually being called, what is being replaced, and what property is being proven.
 
-**Принцип:** текущее смешение рискует нарушить принцип 4 — разделение безопасности, семантики и доказательств.
+**Principle:** The current mix risks violating Principle 4 - separation of security, semantics and evidence.
 
 ## Advisory findings
 
-### A1 — Strict provider schema mapping следует определить явно
+### A1 - Strict provider schema mapping should be defined explicitly
 
-`contracts.md:3` объявляет закрытые JSON objects, а `contracts.md:48` использует динамический `parameters` map. Уже прочитанное research предупреждает о подмножестве JSON Schema и закрытых объектах.
+`contracts.md:3` declares private JSON objects, and `contracts.md:48` uses a dynamic `parameters` map. The research I've already read warns about the JSON Schema subset and private objects.
 
-Разделение external/provider schema признано, но преобразование ещё не описано. Рекомендуется explicit wire representation — например, ограниченный массив `{name,value}` с проверкой уникальности — и deterministic conversion в DB bindings. Нужен пример strict SQLProposal schema/normalization и будущий compatibility smoke. Это **не утверждение**, что выбранные candidate packages уже несовместимы.
+The external/provider schema split is recognized, but the conversion has not yet been described. Explicit wire representation is recommended - for example, a limited array `{name,value}` with uniqueness check - and deterministic conversion in DB bindings. We need an example of strict SQLProposal schema/normalization and future compatibility smoke. This is **not a statement** that the selected candidate packages are no longer compatible.
 
-### A2 — Ресурсные пределы требуют отдельных будущих boundary tests
+### A2 - Resource limits require separate future boundary tests
 
-`contracts.md:33–34` хорошо ограничивает calls, время и возвращаемые bytes, но эти caps сами по себе не ограничивают память SQLite до выдачи первой строки. `production-considerations.md:13` честно оставляет hard memory enforcement отдельной работой.
+`contracts.md:33–34` does a good job of limiting calls, timing, and bytes returned, but these caps themselves do not limit SQLite memory before the first row is returned. `production-considerations.md:13` honestly leaves hard memory enforcement as a separate job.
 
-До I1 следует выбрать scoped SQLite limits/worker resource policy либо явно сохранить остаточный риск. Добавить тесты input-token overflow, SQL/parameter size и очень крупного одиночного значения. Не считать прохождение обычного timeout теста доказательством memory isolation.
+Before I1, you should select scoped SQLite limits/worker resource policy or explicitly retain the residual risk. Add tests for input-token overflow, SQL/parameter size and very large single value. Do not consider passing the regular timeout test as proof of memory isolation.
 
-### A3 — Уточнить видимость SQL/данных/trace на демонстрационном экране
+### A3 — Clarify the visibility of SQL/data/trace on the demo screen
 
-`test-plan.md:84` перечисляет trace ID, но принятый scope включает показ ответа, SQL, данных и полной трассы (`docs/chat/decisions/ADR-CHAT-002-result-scope.md`, раздел «Решение»). Простого ID недостаточно для практического walkthrough без определённого способа открыть соответствующие события. Достаточен локальный expander/просмотр или явная доступная ссылка; отдельная tracing platform не нужна.
+`test-plan.md:84` lists the trace ID, but the accepted scope includes showing the response, SQL, data and the full trace (`docs/chat/decisions/ADR-CHAT-002-result-scope.md`, Solution section). A simple ID is not enough for a practical walkthrough without a specific way to open the corresponding events. A local expander/view or an explicit accessible link is sufficient; A separate tracing platform is not needed.
 
 ## Root cause
 
-Документы хорошо описывают компоненты по отдельности, но местами заменяют **контракт передачи между компонентами** обещанием поведения: «проверить typed reference», «проверить grain», «показать real-provider failure». Нужна не новая архитектура, а несколько нормативных связок с конкретными сообщениями и фазами проверки.
+The documents describe the components individually well, but in some places they replace the **transfer contract between components** with a promise of behavior: “check typed reference”, “check grain”, “show real-provider failure”. What is needed is not a new architecture, but several normative links with specific messages and verification phases.
 
-## Trade-offs и consensus addendum
+## Trade-offs and consensus to be added
 
 ### Antithesis — strongest steelman
 
-Для небольшого учебного демонстратора свободный read-only SQL agent, независимые fixtures и прозрачная трасса могут быть достаточны. Добавление богатого typed query/result IR рискует превратить короткий проект в собственный SQL compiler и ухудшить принцип минимальности. Нельзя требовать универсального доказательства NL-семантики, которое сам план справедливо не обещает.
+For a small training demonstrator, a free read-only SQL agent, independent fixtures and a transparent route may be sufficient. Adding a rich typed query/result IR risks turning a short project into its own SQL compiler and worsening the principle of minimalism. One cannot demand a universal proof of NL semantics, which the plan itself rightly does not promise.
 
-### Реальное tradeoff tension
+### Real tradeoff tension
 
-| Вариант | Польза | Цена |
+| Option | Benefit | Price |
 |---|---|---|
-| Свободный SQL и свободные result columns | Минимум адаптерного кода, широкий NL scope | Неоднозначные units/grain/dependencies; formatter вынужден угадывать |
-| Полный typed query IR с генерацией SQL | Сильная структурная проверяемость | Существенный объём, ограничение выразимости, риск scope creep |
-| **Минимальный ResultSpec + двухфазные references** | Ясные units/aggregate outputs и зависимые переходы; сохраняет настоящий NL→SQL | Небольшой дополнительный контракт и domain adapter tests |
+| Free SQL and free result columns | Minimum adapter code, wide NL scope | Ambiguous units/grain/dependencies; formatter is forced to guess |
+| Full typed query IR with SQL generation | Strong structural verifiability | Significant volume, expressibility limitation, scope creep risk |
+| **Minimum ResultSpec + two-phase references** | Clear units/aggregate outputs and dependent transitions; saves real NL→SQL | Small additional contract and domain adapter tests |
 
 ### Synthesis
 
-Сохранить предложенный минимальный стек и свободную генерацию SQL внутри проверяемого безопасного subset. Добавить только небольшой result contract для поддерживаемых метрик и разделить symbolic plan references от runtime bindings. Semantic oracle остаётся независимым от модели; никакой контракт не объявляется доказательством произвольной правильности SQL.
+Keep the proposed minimum stack and free SQL generation inside a verifiable secure subset. Add only a small result contract for supported metrics and separate symbolic plan references from runtime bindings. Semantic oracle remains model independent; no contract is claimed to be proof of arbitrary SQL correctness.
 
-Proposed owner decisions — scale, retakes, default semester, model, budget, strict small-suite gate — **сами по себе не blockers**: рекомендации, альтернативы и условия пересмотра представлены.
+Proposed owner decisions - scale, retakes, default semester, model, budget, strict small-suite gate - **not blockers in themselves**: recommendations, alternatives and revision conditions are presented.
 
-## Рекомендации и stop condition
+## Recommendations and stop condition
 
-1. Исправить B1/B2 в контрактах и согласовать M1/S6/Library examples; не создавать приложение или executable schema.
-2. Исправить B3 в test-plan и соответствующих matrix/ADR references.
-3. Передать этот review отдельному Critic текущего цикла; мой verdict не заменяет его проверку. Последующую revision проводить через предусмотренный полный цикл.
-4. Дополнительное research для указанных документальных исправлений не требуется. Выбор конкретного parser/tokenizer или нового provider-failure механизма потребует отдельного scoped verification, если Planner решит его добавить.
+1. Correct B1/B2 in contracts and agree on M1/S6/Library examples; do not create an application or executable schema.
+2. Correct B3 in test-plan and corresponding matrix/ADR references.
+3. Transfer this review to a separate Critic of the current cycle; my verdict does not replace his verification. The subsequent revision should be carried out through the provided full cycle.
+4. No additional research is required for these documented corrections. Choosing a specific parser/tokenizer or a new provider-failure mechanism will require a separate scoped verification if Planner decides to add it.
 
-**Review завершён; verdict `iterate`.** Продуктовые tests/live/API compatibility/security execution — **not-run**. Terminal lifecycle, native completion и closeout проверяет лидер после фактического завершения этого агента. Execution authorization отсутствует.
+**Review completed; verdict `iterate`.** Product tests/live/API compatibility/security execution - **not-run**. Terminal lifecycle, native completion and closeout are checked by the leader after the actual completion of this agent. There is no Execution authorization.
 
 <!-- END_ARCHITECT_REVIEW -->
