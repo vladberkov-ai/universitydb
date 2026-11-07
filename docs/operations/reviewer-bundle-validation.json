@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-07",
+  "scope": "reviewer documentation and offline fixture; no application behavior changes",
+  "original_assignment": "all four extracted PDF pages read",
+  "checks": {
+    "pytest": "131 passed in 7.10s",
+    "ruff": "pass",
+    "format": "19 files already formatted",
+    "mypy": "11 source files pass",
+    "compileall": "pass",
+    "diff_check": "pass",
+    "local_document_links_before_final_additions": 115,
+    "seed_rows": [
+      4,
+      2,
+      3,
+      2,
+      5,
+      8
+    ],
+    "offline_fixture_graph_sqlite": "80.00",
+    "unsupported_input": "INVALID_INPUT"
+  },
+  "paid_calls": 0,
+  "server_started": false,
+  "limitations": [
+    "No clean machine installation claimed; existing locked environment used",
+    "No new live model/browser test; earlier H009 and owner acceptance remain evidence",
+    "Functional gaps explicitly open in docs/assignment-status.md",
+    "Prompt history remains partial; no missing transcript reconstruction"
+  ]
+}

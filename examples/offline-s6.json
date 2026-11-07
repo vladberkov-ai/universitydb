@@ -1,0 +1,111 @@
+[
+  {
+    "version": "1",
+    "steps": [
+      {
+        "step_id": "s6",
+        "depends_on": [],
+        "purpose": "Mean",
+        "result_refs": [],
+        "result_spec": {
+          "metric_id": "u.grade_mean.v1",
+          "shape": "aggregate",
+          "group_keys": [],
+          "columns": [
+            {
+              "name": "sum_units",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "graded_count",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "enrollment_count",
+              "type": "integer",
+              "nullable": false
+            }
+          ],
+          "components": {
+            "sum": "sum_units",
+            "denominator": "graded_count",
+            "count": "enrollment_count"
+          },
+          "unit": "grade_hundredth",
+          "scale": 100
+        }
+      }
+    ],
+    "needs_clarification": false,
+    "clarification_field": null
+  },
+  {
+    "version": "1",
+    "step_id": "s6",
+    "result_spec": {
+      "metric_id": "u.grade_mean.v1",
+      "shape": "aggregate",
+      "group_keys": [],
+      "columns": [
+        {
+          "name": "sum_units",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "graded_count",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "enrollment_count",
+          "type": "integer",
+          "nullable": false
+        }
+      ],
+      "components": {
+        "sum": "sum_units",
+        "denominator": "graded_count",
+        "count": "enrollment_count"
+      },
+      "unit": "grade_hundredth",
+      "scale": 100
+    },
+    "sql": "SELECT COALESCE(SUM(e.grade_units),0) AS sum_units,\nCOUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count\nFROM Enrollments e JOIN Offerings o ON e.offering_id = o.offering_id\nWHERE e.student_id = :student_id AND o.course_id = :course_id\nAND o.teacher_id = :teacher_id AND o.semester_id = :semester_id",
+    "parameters": [
+      {
+        "name": "student_id",
+        "type": "integer",
+        "integer_value": 2,
+        "text_value": null
+      },
+      {
+        "name": "course_id",
+        "type": "integer",
+        "integer_value": 1,
+        "text_value": null
+      },
+      {
+        "name": "teacher_id",
+        "type": "integer",
+        "integer_value": 10,
+        "text_value": null
+      },
+      {
+        "name": "semester_id",
+        "type": "text",
+        "integer_value": null,
+        "text_value": "S1"
+      }
+    ],
+    "expected_columns": [
+      "sum_units",
+      "graded_count",
+      "enrollment_count"
+    ],
+    "result_kind": "aggregate",
+    "explanation": "Scoped mean"
+  }
+]

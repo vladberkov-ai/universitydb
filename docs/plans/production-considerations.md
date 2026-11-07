@@ -1,4 +1,12 @@
-# Production considerations — проект
+# Production considerations — current I1 and future work
+
+## Implemented I1 baseline (2026-11-07)
+
+The application now exists. The proposal below is retained as design history, not an implementation checklist already completed. Current reliability includes typed contracts, bounded attempts and subprocess watchdogs; current storage is read-only SQLite during generated queries. JSONL traces and UI inspection work. Security is limited to synthetic loopback use, SQL allowlists/authorizer and local credentials. Dependency versions are locked and reviewer run instructions are in the root README. Conversational checkpoint/resume, multi-user scaling, auth, hard memory isolation and production deployment are not implemented.
+
+Before production: test failure/recovery and durable state; benchmark concurrency and quotas; centralize protected tracing/alerts; add authentication/authorization/resource isolation; define hardened deployment/rollback and backups. The five-topic proposal below expands these tasks. The implemented provider/DB process kill does not guarantee wall-clock limits under arbitrary parent filesystem stalls.
+
+## Historical proposed design
 
 Proposed 2026-11-07; приложение ещё не создано, **не production-ready**. «В задании» ниже означает план, не выполненное свойство.
 

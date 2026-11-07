@@ -1,5 +1,7 @@
 # Prompt provenance and coverage
 
+**Current navigation:** [prompt catalogue](PROMPTS.md) lists runtime prompts, actual live requests and saved development records. I1 is complete; earlier not-created/no-live statements below are historical cutoffs. Full transcript coverage remains partial.
+
 Owner: repo. Updated: 2026-11-07. Current stage: H-006 B documentary delivery; H-004/H-005 and earlier blocker cutoffs below are historical.
 
 OMX session: `omx-1794006222700-y9rw23`.
