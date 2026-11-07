@@ -1,0 +1,24 @@
+{
+  "inputs": [
+    {
+      "source_vault_relative": "raw/chat/CHAT-034.md",
+      "expected": "a0f8b4eff0d27bfd8a697eaf2c15a5ec5737e4de565a6e787afe1c9b189d91f6",
+      "actual": "a0f8b4eff0d27bfd8a697eaf2c15a5ec5737e4de565a6e787afe1c9b189d91f6",
+      "matches": true
+    },
+    {
+      "source_vault_relative": "wiki/decisions/ADR-CHAT-005-I1-practical-budget.md",
+      "expected": "f7c6ab0cbacd2df0de7201904095a18b4f16458121dd62cfe4b0e6775f1d2a11",
+      "actual": "f7c6ab0cbacd2df0de7201904095a18b4f16458121dd62cfe4b0e6775f1d2a11",
+      "matches": true
+    },
+    {
+      "source_vault_relative": "handoffs/H-009-start-prompt.txt",
+      "expected": "5cb20245821ee73f9f29f69937ea06a56bd9fb0493984a3ef424a7cec9835bc6",
+      "actual": "5cb20245821ee73f9f29f69937ea06a56bd9fb0493984a3ef424a7cec9835bc6",
+      "matches": true
+    }
+  ],
+  "all_match": true,
+  "history": "H007/H008 hashes remain historical baselines, not current equality gates. Private inputs not copied."
+}

@@ -29,3 +29,6 @@ Architecture recommendations passed separate Architect/Critic reviews, not owner
 
 ## H-008 accepted model configuration
 [ADR-OMX-009 — Sol operation profile](ADR-OMX-009-Sol-operation-profile.md) implements accepted ADR-CHAT-004 / CHAT-029 for this limited I1. Model/effort accepted; bounded limits provisional and live adequacy unproven. Supersedes only ADR008's prior unknown-model/old-limit clauses, preserving history and unrelated proposals.
+
+## H-009 practical I1 spending policy
+[ADR-OMX-010](ADR-OMX-010-I1-practical-budget-policy.md) adopts accepted ADR-CHAT-005 / CHAT-034 for I1 only: total10, new-dispatch threshold8, contingency2, explicit estimate-based residual uncertainty. Supersedes the old strict input/count-fee proof, not a claim it was achieved; live/final gates and unrelated ADR proposals remain unchanged.

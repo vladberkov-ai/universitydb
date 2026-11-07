@@ -1,0 +1,24 @@
+{
+  "protected_baseline_count": 234,
+  "authorized_existing_doc_changes": [
+    "docs/adr/ADR-OMX-009-Sol-operation-profile.md",
+    "docs/adr/README.md",
+    "docs/ai/README.md",
+    "omx_wiki/index.md"
+  ],
+  "unexpected_protected_changes": [],
+  "preserved_untracked_count": 11,
+  "preserved_untracked_drift": [],
+  "implementation_hash_drift": [],
+  "checked_markdown_links": [
+    "README.md",
+    "AGENTS.md",
+    "docs/adr/ADR-OMX-010-I1-practical-budget-policy.md",
+    "docs/reports/H-009-practical-budget-I1.md",
+    "docs/ai/README.md",
+    "docs/operations/H-009/api-references.md"
+  ],
+  "broken_links": [],
+  "application_prompts_unchanged": true,
+  "spending_ledger_exists": false
+}

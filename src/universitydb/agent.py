@@ -179,6 +179,8 @@ class Agent:
                     {"code": exc.code, "message": exc.message, **exc.details},
                     self.calls,
                 )
+                if exc.details.get("accounting_stop"):
+                    raise
                 if exc.code == "PROVIDER_TRANSIENT" and not transient_retried and not self.retried:
                     transient_retried = self.retried = True
                     time.sleep(1)

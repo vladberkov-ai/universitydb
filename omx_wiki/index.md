@@ -28,3 +28,7 @@ Historical H005/H006 entries above remain provenance; no closed Advisory is repe
 - [H008 report](../docs/reports/H-008-sol-profile-I1-continuation.md): offline configuration is not live I1 completion; account/cap/billing and native control gaps remain separate.
 
 - [H-008 cap10 / native-resume blocker](../docs/reports/H-008-cap10-native-resume-blocker.md): one total 10 USD authority recorded; root still observes native blocked, no paid requests, I1 not complete. Earlier missing-cap observations remain historical, not current authority.
+
+## H-009 practical-policy offline continuation
+- [Current report](../docs/reports/H-009-practical-budget-I1.md), [scoped ADR010](../docs/adr/ADR-OMX-010-I1-practical-budget-policy.md), [prompt coverage](../docs/operations/H-009/prompt-coverage.json).
+- Owner replaces strict count/input billing proof with practical USD10 total/USD8 admission/USD2 contingency and accepted invoice uncertainty. No count endpoint. Native blocked permits offline edits, not live. Exact owner action after verified offline checkpoint: `/goal resume` in this same session. Existing G004 only; I1/live/final gate still pending. Historical entries above are preserved, not current prohibitions or completed live proof.

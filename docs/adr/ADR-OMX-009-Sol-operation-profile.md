@@ -23,3 +23,6 @@ Required live follow-up only after account/cap/billing gates and supported exist
 
 ## H-008 independent-review correction
 Initial code REQUEST CHANGES2MEDIUM / architect BLOCK (SDK ordering HIGH, stale flags MEDIUM) showed installed Responses.parse could eagerly reject truncated/incomplete or invalid-completed JSON before exposing known response status/usage. Two actual installed-SDK MockTransport regressions first failed. Use primary Responses.create with explicit strict text.format schema, capture safe status/usage/model/tier, then strict Pydantic validation only for completed output. This is not a permissive fallback or relaxed schema. Parent records known failed usage before rejection, sets known/true trace flags; missing usage preserves primary error and safe metadata with unknown hold, true timeout stays unknown/null. No dependencies/rates/cap/history change. Initial findings/checkpoint remain preserved; fresh re-review required.
+
+## H-009 scoped supersession
+The prior strict input-bound/count-fee proof and old BILLING_VERIFIED gate are historical requirements, replaced by accepted [ADR010 practical policy](ADR-OMX-010-I1-practical-budget-policy.md), not retrospectively proven. Model/efforts, output/time/call ceilings, safe failure metadata, accounting history and live/final acceptance remain.

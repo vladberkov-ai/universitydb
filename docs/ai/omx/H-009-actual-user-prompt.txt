@@ -1,0 +1,9 @@
+$ultragoal Продолжи существующий I1/G004 по [PRIVATE_VAULT]/handoffs/H-009-practical-budget-I1.md в /home/dev/projects/universitydb (UbuntuD).
+
+Я утвердил практический контроль: общий cap $10, порог новых вызовов $8, запас $2. Принимаю, что это не строгая гарантия итогового счёта. Новое поручение явно заменяет требование strict input-bound/count-fee proof из H-008. Модель прежняя: gpt-6.1-sol, plan high, SQL/repair medium.
+
+Сначала прочитай пакет, измени бюджетную policy/config/tests/ADR и проверь offline; это разрешено при blocked native goal. Не подменяй старую гарантию флагом BILLING_VERIFIED. Сохрани историю, commits и evidence; не создавай новый план/цель и не повторяй завершённые этапы.
+
+Live — после проверок и свежего get_goal=active той же цели. Если blocked, заверши offline checkpoint и сообщи мне, что нужно ввести /goal resume в этой сессии; не зацикливай проверки. После возобновления выполни live S6/mutation/UI и приёмку G004 по пакету.
+
+Никаких I2–I5, remote/push или обновления OMX. В конце — фактический отчёт и остановка.

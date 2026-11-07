@@ -1,0 +1,13 @@
+{
+  "baseline": {"command": ".venv/bin/pytest -q", "exit_code": 0, "result": "108 passed in 9.87s", "before_implementation": true},
+  "red_first": {"command": ".venv/bin/pytest -q tests/test_practical_budget.py", "exit_code": 1, "result": "4 failed in 0.09s", "cause": "Spending.__init__ unexpected keyword argument practical", "before_implementation": true},
+  "intermediate": [
+    {"result": "5 failed, 35 passed in 2.74s", "cause": "new endpoint assertion, obsolete billing-gate fixture, duplicated test line; corrected directly affected assertions"},
+    {"result": "41 passed in 2.28s", "ruff": "2 import-order findings fixed", "mypy": "11 source files clean"},
+    {"result": "129 passed in 8.75s", "ruff": "pass", "format": "19 files", "mypy": "11 source files clean"},
+    {"result": "22 passed in 0.47s", "command": ".venv/bin/pytest -q tests/test_practical_budget.py"}
+  ],
+  "network_calls": 0,
+  "credentials_access": false,
+  "coverage": "Offline regression evidence only, not model access/live accuracy/UI evidence."
+}

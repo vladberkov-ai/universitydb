@@ -1,0 +1,21 @@
+{
+  "source": "Actual installed metadata read by root, relayed to documents performer; no app/provider/client instantiation.",
+  "python": "3.12.3",
+  "packages": {
+    "openai": "3.46.0",
+    "langgraph": "1.2.20",
+    "streamlit": "1.67.0",
+    "sqlglot": "30.30.0",
+    "pydantic": "2.14.3",
+    "pytest": "9.2.0",
+    "ruff": "0.17.4",
+    "mypy": "1.20.2"
+  },
+  "unchanged_dependency_files_sha256": {
+    "pyproject.toml": "00522db5a7513ed6a19804487591996a65a31c5f1b40559362d6587dbbfe9644",
+    "uv.lock": "de36cab6c73d37bde70cc13e019b9eb2552a0747e46fe5c8c3b7cedf5338378d"
+  },
+  "dependency_install_or_update": false,
+  "omx_update": false,
+  "config_hashes_receipt": "implementation-validation.json"
+}

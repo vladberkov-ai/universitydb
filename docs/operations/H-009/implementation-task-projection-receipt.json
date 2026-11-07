@@ -1,0 +1,18 @@
+{
+  "source_sha256": "5404b74d84675bd84ea6b14e1701c1025190e58330e8f3c9c2b8461932687f9a",
+  "destination_sha256": "a18a117a9a3dacc69f04ea6ffdb2a2d7ba006bd43256b0c221e4766cf6b1c4d1",
+  "artifact": "docs/operations/H-009/implementation-task.txt",
+  "substitutions": [
+    {
+      "kind": "private vault prefix to [PRIVATE_VAULT]",
+      "count": 1
+    },
+    {
+      "kind": "coverage header declares documented redaction instead of unqualified exact text",
+      "count": 1
+    }
+  ],
+  "task_body_other_bytes_unchanged": true,
+  "terminal_lf_preserved": true,
+  "source_retention": "Original task remains native received message; no private full export created. Source digest records pre-redaction artifact, not encrypted parent arguments."
+}

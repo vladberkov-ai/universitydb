@@ -1,0 +1,58 @@
+{
+  "checks": [
+    {
+      "command": ".venv/bin/pytest -q",
+      "exit_code": 0,
+      "seconds": 11.957,
+      "stdout": "........................................................................ [ 54%]\n...........................................................              [100%]\n131 passed in 10.76s\n",
+      "stderr": ""
+    },
+    {
+      "command": ".venv/bin/ruff check src tests",
+      "exit_code": 0,
+      "seconds": 0.014,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "command": ".venv/bin/ruff format --check src tests",
+      "exit_code": 0,
+      "seconds": 0.012,
+      "stdout": "19 files already formatted\n",
+      "stderr": ""
+    },
+    {
+      "command": ".venv/bin/mypy src",
+      "exit_code": 0,
+      "seconds": 7.363,
+      "stdout": "Success: no issues found in 11 source files\n",
+      "stderr": ""
+    },
+    {
+      "command": ".venv/bin/python -m compileall -q src tests",
+      "exit_code": 0,
+      "seconds": 0.041,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "seconds": 0.006,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    ".env.example": "1cd314ad6c6c9438048e997c40787ff395ab7e5a199fab36b0de0dfeac6b0026",
+    "src/universitydb/config.py": "508b2bef52d2c81c5114b885a6be56f5b22b18774ae5a48674679ea1fdd6b263",
+    "src/universitydb/llm.py": "4b8c80075748a669cb70397ad8aecbad2efbb9dd3ce2a7e9680e918ba10157cb",
+    "src/universitydb/llm_worker.py": "ba0abec6f45197814068c70aa86fb747e4de070cc84f08f1caa6b537b3a5bf9d",
+    "src/universitydb/agent.py": "acd0cf8d88e1a7a9f559a49814a9893c2935b50ccfbb57600a5e954201778db0",
+    "tests/test_provider_worker.py": "92a5b390e89ecac1f41ac58b6872fc80d1e038d4a44a592ed619ea08fbf56c34",
+    "tests/test_sol_profile.py": "3b6846cf5f708d2287c0f2322d781d74ad12a71b6dfe4ee6d3da317750c5d96c",
+    "tests/test_practical_budget.py": "710a064e1ce59977aeebcca6f994ace65015a17e65e9b83b386ec3cfd44c125a"
+  },
+  "network_calls": 0,
+  "live_evidence": false
+}

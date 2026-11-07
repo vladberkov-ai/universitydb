@@ -1,0 +1,38 @@
+{
+  "source": "Actual received root message; this is root-attributed verification, not documents performer command execution.",
+  "checks": [
+    {
+      "command": ".venv/bin/pytest -q",
+      "result": "131 passed in 10.65s",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/ruff check src tests",
+      "result": "All checks passed",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/ruff format --check src tests",
+      "result": "19 files already formatted",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/mypy src/universitydb --ignore-missing-imports",
+      "result": "no issues in 11 source files",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/python -m compileall -q src",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "network_calls": 0,
+  "notes": [
+    "Root removed inherited API key for offline checks; no private credentials file sourced.",
+    "Core independent author run separately recorded 131 passed in 10.76s."
+  ]
+}

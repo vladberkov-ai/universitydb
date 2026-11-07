@@ -45,7 +45,9 @@ def test_exact_sdk_payload(logical, effort, index):
                 "input": "{}",
             }
         )
-    sdk.assert_called_once_with(max_retries=0, timeout=policy.timeout)
+    sdk.assert_called_once_with(
+        max_retries=0, timeout=policy.timeout, base_url="https://api.openai.com/v1"
+    )
     client.responses.create.assert_called_once_with(
         model=PROFILE.model,
         store=False,
@@ -88,7 +90,8 @@ def test_worker_invalid_before_client(operation, model):
         "OPENAI_API_KEY",
         "UNIVERSITYDB_CAP_USD",
         "UNIVERSITYDB_LIVE_APPROVED",
-        "UNIVERSITYDB_BILLING_VERIFIED",
+        "UNIVERSITYDB_BUDGET_POLICY",
+        "UNIVERSITYDB_RATES_CONFIRMED",
     ],
 )
 def test_live_gate_zero_dispatch(tmp_path, monkeypatch, missing):

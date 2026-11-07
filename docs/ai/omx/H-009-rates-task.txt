@@ -1,0 +1,20 @@
+H-009 rates research — actual delegated task
+
+Date: 2026-11-07
+Native task routing label: /root/h009_rates
+Parent: /root
+Session context supplied by runtime: omx-1794051468714-2djff9
+The session/routing labels are provenance, not independent ownership or execution authority.
+
+BEGIN ACTUAL DELEGATED TASK (verbatim)
+Bounded official-docs research for H009 practical budget in /home/dev/projects/universitydb, no app/API/provider/count calls, credential/env reads, runtime/goal/Git writes. Read openai-docs skill and obey docs-first officialsearch/open. Exactmodel gpt-6.1-sol defaulttier, planhigh/sqlrepairmedium. Need current official input ordinary/cached/cachewrite(30m/12h), regional10%, longcontextthreshold/outputreasoning rates. Prior H008 freshreceipt docs/operations/H-008/live-preflight/api-billing-references.md cites5.50/M maxshortinput and11/Moutput; refresh applicable actual publicdefaultendpoint /v1/responses, tier and endpoint not liveaccountproof. H009 explicitly REMOVES strict input-bound/count-fee proof, prohibits count endpoint and further freecountresearch. Owner total10USD, new-dispatchthreshold8,buffer2, residualinvoiceuncertaintyaccepted. Local payload+strictschema+framing engineeringestimate allowed. No modelchange/fallback. Own only NEW docs/operations/H-009/api-references.md and docs/ai/omx/H-009-rates-task.txt; capture actualdelegatedtask verbatim withcoverage/limits. Read H009 handoff/ADR005 read-only ifnecessary AFTER docsfirst. Report concretecurrentrates/sources/date/endpoint applicability caveats promptly to /root and /root/h009_policy. Do not editanythingelse or spawnotheragents. Youarenotalone; preserveco-workerchanges. No newdependencies.
+END ACTUAL DELEGATED TASK
+
+Coverage and limitations
+- This is the complete initial delegated task, not a template, original user prompt or full session transcript.
+- System/developer/runtime instructions, inherited repository instructions, tool outputs and later status messages are not reproduced.
+- No redactions were necessary within the delegated task. No credential material or private credential path was read or captured.
+- Research followed the installed openai-docs skill: official-domain search, fetched official pages, then read the prior H-008 receipt. No local implementation inspection or execution was performed.
+- Output: docs/operations/H-009/api-references.md. The research supports published rates and API semantics, not live access, account routing, final invoice or application success.
+- No count endpoint was called or researched; no further free-count investigation was performed. Historical H-008 evidence was only read and remains unchanged.
+- Writes were restricted to this task record and the new rate receipt; no subagents were spawned.

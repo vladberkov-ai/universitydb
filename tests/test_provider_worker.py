@@ -20,8 +20,9 @@ def configure(monkeypatch):
         "OPENAI_API_KEY": "offline-test-not-a-real-key",
         "UNIVERSITYDB_MODEL": "gpt-6.1-sol",
         "UNIVERSITYDB_LIVE_APPROVED": "yes",
-        "UNIVERSITYDB_BILLING_VERIFIED": "yes",
-        "UNIVERSITYDB_CAP_USD": ".1",
+        "UNIVERSITYDB_BUDGET_POLICY": "practical-v1",
+        "UNIVERSITYDB_RATES_CONFIRMED": "yes",
+        "UNIVERSITYDB_CAP_USD": "10",
         "UNIVERSITYDB_INPUT_USD_PER_MILLION": "1",
         "UNIVERSITYDB_OUTPUT_USD_PER_MILLION": "1",
     }.items():

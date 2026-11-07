@@ -7,7 +7,7 @@ from typing import Any
 from openai import APIConnectionError, APIStatusError, APITimeoutError, OpenAI
 from pydantic import ValidationError
 
-from universitydb.config import PROFILE
+from universitydb.config import API_BASE_URL, PROFILE, wire_payload
 from universitydb.contracts import Failure, PlanProposal, SQLProposal
 
 
@@ -21,23 +21,11 @@ def request(payload: dict[str, Any]) -> dict[str, Any]:
         raise Failure("PROVIDER_UNAVAILABLE", "Unsupported worker configuration.")
     output_type = PlanProposal if operation == "plan" else SQLProposal
     try:
-        with OpenAI(max_retries=0, timeout=payload["timeout"]) as client:
+        with OpenAI(max_retries=0, timeout=payload["timeout"], base_url=API_BASE_URL) as client:
             response = client.responses.create(
-                model=payload["model"],
-                store=False,
-                max_output_tokens=policy.output_tokens,
-                reasoning={"effort": policy.effort},
-                service_tier=PROFILE.service_tier,
-                instructions=payload["prompt"],
-                input=payload["input"],
-                text={
-                    "format": {
-                        "type": "json_schema",
-                        "name": output_type.__name__,
-                        "strict": True,
-                        "schema": output_type.model_json_schema(),
-                    }
-                },
+                **wire_payload(
+                    operation, logical, payload["model"], payload["prompt"], payload["input"]
+                )
             )
     except (APITimeoutError, APIConnectionError) as exc:
         raise Failure(

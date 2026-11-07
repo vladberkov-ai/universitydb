@@ -1,0 +1,33 @@
+{
+  "stage": "H-009 offline practical policy",
+  "native_thread": "01a1b649-9f9b-7e32-8c71-138ac3328f7e",
+  "root_user_task": "docs/ai/omx/H-009-actual-user-prompt.txt",
+  "root_user_task_source": "Actual inherited user message in the current native conversation, self-projected by documents performer; not an independent full exporter receipt or starter reconstruction.",
+  "documents_received_task": "docs/ai/omx/H-009-documents-received-task.txt",
+  "documents_task_source": "Actual received NEW_TASK payload, self-projected; not byte equality to encrypted parent delegation arguments.",
+  "redactions": [
+    "Private vault prefix replaced with [PRIVATE_VAULT]. Terminal LF normalized.",
+    "Policy task vault prefix redacted in documented second pass; source/destination hashes and exact transformations in dedicated receipt."
+  ],
+  "omissions": [
+    "Full native history, tools, system/developer instructions, reasoning and full inherited AGENTS/skill context not exported.",
+    "Private raw chat and accepted ADR read/hash evidence only; not copied.",
+    "Later reviews/final/commit prompts and results outside this initial cutoff; append their actual artifacts when available."
+  ],
+  "u01": "partial, not globally closed",
+  "application_prompts": "Existing versioned plan/sql templates remain separate from actual live requests. No live requests in this offline cutoff.",
+  "other_actual_role_tasks": {
+    "policy": "docs/operations/H-009/implementation-task.txt",
+    "rates": "docs/ai/omx/H-009-rates-task.txt"
+  },
+  "verification_sources": [
+    "docs/operations/H-009/implementation-validation.json",
+    "docs/operations/H-009/root-verification-receipt.json"
+  ],
+  "policy_task_projection_receipt": "docs/operations/H-009/implementation-task-projection-receipt.json",
+  "independent_review_coverage": {
+    "code": "docs/operations/H-009/reviews/code-review-receipt.json",
+    "architect": "docs/operations/H-009/reviews/architecture-review-receipt.json",
+    "method": "Actual reviewer finals relayed by root, summary receipts; full review tasks/tool transcripts/inherited context not exported. No invented full child coverage."
+  }
+}
