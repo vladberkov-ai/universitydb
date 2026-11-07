@@ -23,3 +23,6 @@ Architecture recommendations passed separate Architect/Critic reviews, not owner
 - [ADR-OMX-007-verification-delivery](ADR-OMX-007-verification-delivery.md) — **proposed**.
 
 [Architecture review / closeout / limitations](../reports/H-006-architecture-review.md). Historical accepted scope and preparation ADR001/002 are unchanged.
+
+## H-007 limited implementation authority
+[ADR-OMX-008 — scoped I1 choices](ADR-OMX-008-I1-scoped-implementation.md) is adopted provisionally for S6 by the new user task only. It does not promote ADR003–007 or accept the full project design. Model/access/spending and real live/UI acceptance remain independent gates.

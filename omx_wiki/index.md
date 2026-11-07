@@ -14,3 +14,9 @@ This is OMX's own memory, not a copy or replacement of the authoritative Obsidia
 - [Git checkpoints](../docs/operations/git-checkpoints.md)
 
 - [H-006-v4 preparation checkpoint](../docs/reports/H-006-preparation-checkpoint.md) — current A, then conditional documentary advisory B; no implementation.
+
+## H-007 limited I1 implementation
+- [Scoped I1 decision](../docs/adr/ADR-OMX-008-I1-scoped-implementation.md)
+- [Preparation and capability limits](../docs/operations/H-007/preparation.md)
+- [Actual prompt coverage](../docs/ai/omx/H-007-prompt-coverage.json)
+Historical H005/H006 entries above remain provenance; no closed Advisory is repeated. I1 is not complete at the preparation checkpoint; live model/access/cap gates remain open.

@@ -1,0 +1,67 @@
+{
+  "observed_at": "2026-11-07T11:46:32.461843+00:00",
+  "status": "B docs committed locally; postcommit receipt saved separately and not included in its own referenced commit",
+  "commit_A": "8931d832d49311ac0d63c3a7a359b4293058da89",
+  "commit_B": "7d8348ade98cd75b5987cb47e1de40535cebb289",
+  "parent_of_B": "8931d832d49311ac0d63c3a7a359b4293058da89",
+  "branch": "main",
+  "commit_file_count": 113,
+  "committed_paths_exact_allowlist": true,
+  "committed_blobs_match_worktree": true,
+  "delivery_manifest_file": "docs/operations/H-006-B2-delivery/delivery-manifest.json",
+  "delivery_manifest_sha256": "515e72cbf8e80628cee915c663d61084cb421685b43bd17cf3f7143e9c64fbd7",
+  "manifest_hashes_matched": 112,
+  "original_baseline_unchanged_except_three_documented_indices": 165,
+  "historical_evidence_and_original_plans_reviews": "unchanged",
+  "closeout": "closed approved+proven; mode/run/skill inactive; execution_handoff_authorized=false",
+  "permission_evidence": {
+    "ordinary_explicit_git_add_exit": 128,
+    "ordinary_git_add_error": "EROFS .git/index.lock",
+    "supported_exact_staging_permission": "succeeded for 113 paths",
+    "supported_local_commit_permission": "succeeded; no remotes/push"
+  },
+  "checks": [
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "--format=",
+        "--check",
+        "HEAD"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "remote_count": 0,
+  "push": "not-run",
+  "public_delivery": "not-proven; R-15 open",
+  "product_tests_evals_build_lint_typecheck": "not-run, no application/dependencies created",
+  "architecture_status": "all new ADR003-007 proposed; no execution handoff",
+  "postcommit_receipt_git_status": "untracked by design; SHA-bearing postcommit receipt cannot be in its own commit",
+  "other_untracked": "pre-existing .omx-state-locks.identity.json and .omx-state-locks/ left untouched",
+  "tracked_and_staged_changes": "none",
+  "next_action": "Return to orchestrator/chat and stop; no additional workflow"
+}

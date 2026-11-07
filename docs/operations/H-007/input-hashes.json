@@ -1,0 +1,216 @@
+{
+  "handoff_sha256": "0ff09bb7638889aa742f75070ece675573391187b5568b2be010b59fe22b5191",
+  "matches": 30,
+  "inputs": [
+    {
+      "group": "Vault inputs SHA-256",
+      "path": "AGENTS.md",
+      "expected": "5ff0a366131939264d02ee9aed7386be0e8e321f5d96c83bca48d65c3064bd36",
+      "actual": "5ff0a366131939264d02ee9aed7386be0e8e321f5d96c83bca48d65c3064bd36",
+      "match": true
+    },
+    {
+      "group": "Vault inputs SHA-256",
+      "path": "SCHEMA.md",
+      "expected": "598e5ba595b3f6c0e604f5cf8599d92ede3a9859f0bc2ca20f4d1417617d5769",
+      "actual": "598e5ba595b3f6c0e604f5cf8599d92ede3a9859f0bc2ca20f4d1417617d5769",
+      "match": true
+    },
+    {
+      "group": "Vault inputs SHA-256",
+      "path": "raw/assignment/HW Task 1.pdf",
+      "expected": "f60e6212307812a27430b2e28ad3bb027b752f50609f76d0bcb8578116ed7550",
+      "actual": "f60e6212307812a27430b2e28ad3bb027b752f50609f76d0bcb8578116ed7550",
+      "match": true
+    },
+    {
+      "group": "Vault inputs SHA-256",
+      "path": "raw/chat/CHAT-026.md",
+      "expected": "d519be23c843dcaefc29ef9263d8d55ab398d9ed593d24ccff5cc37ff057634c",
+      "actual": "d519be23c843dcaefc29ef9263d8d55ab398d9ed593d24ccff5cc37ff057634c",
+      "match": true
+    },
+    {
+      "group": "Vault inputs SHA-256",
+      "path": "raw/chat/CHAT-027.md",
+      "expected": "2b8215e1085adfc29cae458fb34b7c973bccd8098d569c81474e5d5b8031760b",
+      "actual": "2b8215e1085adfc29cae458fb34b7c973bccd8098d569c81474e5d5b8031760b",
+      "match": true
+    },
+    {
+      "group": "Vault inputs SHA-256",
+      "path": "wiki/overview.md",
+      "expected": "1b7769c88d1e8c9328f33c6a18e71af5a263d2e8e4616a4b999d17610459071c",
+      "actual": "1b7769c88d1e8c9328f33c6a18e71af5a263d2e8e4616a4b999d17610459071c",
+      "match": true
+    },
+    {
+      "group": "Vault inputs SHA-256",
+      "path": "wiki/requirements.md",
+      "expected": "9426dee0a0ac81a73fb84514fc81b2cea0f869f306f5acaf0570bdf76f621a44",
+      "actual": "9426dee0a0ac81a73fb84514fc81b2cea0f869f306f5acaf0570bdf76f621a44",
+      "match": true
+    },
+    {
+      "group": "Vault inputs SHA-256",
+      "path": "wiki/planning/acceptance-contract.md",
+      "expected": "a0307bea7adfea9e7d0ab140ef4a062e91705f9a3709650c0b0ca0f656f6ba12",
+      "actual": "a0307bea7adfea9e7d0ab140ef4a062e91705f9a3709650c0b0ca0f656f6ba12",
+      "match": true
+    },
+    {
+      "group": "Vault inputs SHA-256",
+      "path": "wiki/planning/stages.md",
+      "expected": "dd308a4b410e282c4217b7a1657e297264ef5cbfebc0192c0097d380f2ed66bf",
+      "actual": "dd308a4b410e282c4217b7a1657e297264ef5cbfebc0192c0097d380f2ed66bf",
+      "match": true
+    },
+    {
+      "group": "Vault inputs SHA-256",
+      "path": "wiki/operations/omx-workflow.md",
+      "expected": "286024152311f82f22548f4023e6ca25461f40f29a0babd52afeed8c03243972",
+      "actual": "286024152311f82f22548f4023e6ca25461f40f29a0babd52afeed8c03243972",
+      "match": true
+    },
+    {
+      "group": "Vault inputs SHA-256",
+      "path": "wiki/operations/git-protocol.md",
+      "expected": "d7aa9bc0b8de8859cb3c922e8f1d84ed399f068cde8ba947864ae02367afa644",
+      "actual": "d7aa9bc0b8de8859cb3c922e8f1d84ed399f068cde8ba947864ae02367afa644",
+      "match": true
+    },
+    {
+      "group": "Vault inputs SHA-256",
+      "path": "wiki/operations/repo-map.md",
+      "expected": "360a9e616b04c73dd05a94d11fd4eb1604b3288788de32f63f6f131cc2531b9c",
+      "actual": "360a9e616b04c73dd05a94d11fd4eb1604b3288788de32f63f6f131cc2531b9c",
+      "match": true
+    },
+    {
+      "group": "Vault inputs SHA-256",
+      "path": "wiki/operations/result-understanding.md",
+      "expected": "4a241a0a81e733dcbe6fc9d28375cfa193ff4ffa9e7bafd9d0b3efbcdfe34bd8",
+      "actual": "4a241a0a81e733dcbe6fc9d28375cfa193ff4ffa9e7bafd9d0b3efbcdfe34bd8",
+      "match": true
+    },
+    {
+      "group": "Vault inputs SHA-256",
+      "path": "handoffs/H-007-start-prompt.txt",
+      "expected": "128040488ea23605c620a5aeee0f4ee6710b99973e98193131063fcb7df83a48",
+      "actual": "128040488ea23605c620a5aeee0f4ee6710b99973e98193131063fcb7df83a48",
+      "match": true
+    },
+    {
+      "group": "Repo inputs SHA-256",
+      "path": "AGENTS.md",
+      "expected": "b88d909239bfa69562dabf780dc36a92f80bca0eca336c47336db3d9e9fc3783",
+      "actual": "b88d909239bfa69562dabf780dc36a92f80bca0eca336c47336db3d9e9fc3783",
+      "match": true
+    },
+    {
+      "group": "Repo inputs SHA-256",
+      "path": "docs/plans/architecture-proposal.md",
+      "expected": "06b29d33b9be9f88e679af094c3b007c93ebbc753d0d7664f15b6cf43682aeda",
+      "actual": "06b29d33b9be9f88e679af094c3b007c93ebbc753d0d7664f15b6cf43682aeda",
+      "match": true
+    },
+    {
+      "group": "Repo inputs SHA-256",
+      "path": "docs/plans/contracts.md",
+      "expected": "fc6b18c174ebb3ba0bf5e296481f1276836f1812e5a6e9628776bb2f0d2f0da3",
+      "actual": "fc6b18c174ebb3ba0bf5e296481f1276836f1812e5a6e9628776bb2f0d2f0da3",
+      "match": true
+    },
+    {
+      "group": "Repo inputs SHA-256",
+      "path": "docs/plans/test-plan.md",
+      "expected": "450bc0175695dd57e35e92dde7fdfb068e3c5156064682fa05d611e53ac365e7",
+      "actual": "450bc0175695dd57e35e92dde7fdfb068e3c5156064682fa05d611e53ac365e7",
+      "match": true
+    },
+    {
+      "group": "Repo inputs SHA-256",
+      "path": "docs/plans/requirements-test-matrix.md",
+      "expected": "fdd549c61920ab1a923276e09c36c4bc4be5ea74d2ded095cff8c7a793b98479",
+      "actual": "fdd549c61920ab1a923276e09c36c4bc4be5ea74d2ded095cff8c7a793b98479",
+      "match": true
+    },
+    {
+      "group": "Repo inputs SHA-256",
+      "path": "docs/plans/implementation-plan.md",
+      "expected": "798c2eab357ccb61b8958661b0e774abcebc6d918822899a81a79b3141376ff4",
+      "actual": "798c2eab357ccb61b8958661b0e774abcebc6d918822899a81a79b3141376ff4",
+      "match": true
+    },
+    {
+      "group": "Repo inputs SHA-256",
+      "path": "docs/plans/production-considerations.md",
+      "expected": "a38c8de03295671e3e860f6b61a19699e434527a58b3e5f067d2b64e0289889e",
+      "actual": "a38c8de03295671e3e860f6b61a19699e434527a58b3e5f067d2b64e0289889e",
+      "match": true
+    },
+    {
+      "group": "Repo inputs SHA-256",
+      "path": "docs/adr/README.md",
+      "expected": "1c0c08f7e6d0b6c1ba812631f799f86ca7e32626e467173a34d3351f4099fb5f",
+      "actual": "1c0c08f7e6d0b6c1ba812631f799f86ca7e32626e467173a34d3351f4099fb5f",
+      "match": true
+    },
+    {
+      "group": "Repo inputs SHA-256",
+      "path": "docs/reports/H-006-architecture-review.md",
+      "expected": "73d6c30ba0fc31be42d759a70e315bdb3c932f4e2e337c0ea16d19bc0f74eec3",
+      "actual": "73d6c30ba0fc31be42d759a70e315bdb3c932f4e2e337c0ea16d19bc0f74eec3",
+      "match": true
+    },
+    {
+      "group": "Repo inputs SHA-256",
+      "path": "docs/operations/H-006-B2-delivery/postcloseout-repair-report.md",
+      "expected": "10dcd754f7dd11b79fdc69387c142d68455d4a04d3e9da67a6102b2e574d9ba8",
+      "actual": "10dcd754f7dd11b79fdc69387c142d68455d4a04d3e9da67a6102b2e574d9ba8",
+      "match": true
+    },
+    {
+      "group": "Repo inputs SHA-256",
+      "path": "docs/operations/H-006-B2-commit-receipt.json",
+      "expected": "cbba1e4a6d7b06cc2dadae38299bffccab87f25a87b666100651df5a7ca3a9f4",
+      "actual": "cbba1e4a6d7b06cc2dadae38299bffccab87f25a87b666100651df5a7ca3a9f4",
+      "match": true
+    },
+    {
+      "group": "Repo inputs SHA-256",
+      "path": "docs/adr/ADR-OMX-005-bounded-graph-contracts.md",
+      "expected": "7489030464715be1c2b2e8af38ad53f5b027f5b40b5a7ee011973665d5658f3c",
+      "actual": "7489030464715be1c2b2e8af38ad53f5b027f5b40b5a7ee011973665d5658f3c",
+      "match": true
+    },
+    {
+      "group": "Repo inputs SHA-256",
+      "path": "docs/adr/ADR-OMX-003-minimal-stack.md",
+      "expected": "99fbeb2d67733842e8f7e22ced6c6c551fd020a4c51406a1bed7810261af2c1a",
+      "actual": "99fbeb2d67733842e8f7e22ced6c6c551fd020a4c51406a1bed7810261af2c1a",
+      "match": true
+    },
+    {
+      "group": "Repo inputs SHA-256",
+      "path": "docs/adr/ADR-OMX-007-verification-delivery.md",
+      "expected": "f6dffa29a675a9ba9aa415cf10be6430d148cdfe7e99750662cbe43ea38d55c2",
+      "actual": "f6dffa29a675a9ba9aa415cf10be6430d148cdfe7e99750662cbe43ea38d55c2",
+      "match": true
+    },
+    {
+      "group": "Repo inputs SHA-256",
+      "path": "docs/adr/ADR-OMX-004-domain-semantics.md",
+      "expected": "d043be3921dd2ef365c473a34427be2bc455a89b60d82b23acd1bc298593815f",
+      "actual": "d043be3921dd2ef365c473a34427be2bc455a89b60d82b23acd1bc298593815f",
+      "match": true
+    },
+    {
+      "group": "Repo inputs SHA-256",
+      "path": "docs/adr/ADR-OMX-006-schema-boundary-tracing.md",
+      "expected": "b22250f9479a016dba730ec13bd12a85add6fea517b2e431179be970cf1939da",
+      "actual": "b22250f9479a016dba730ec13bd12a85add6fea517b2e431179be970cf1939da",
+      "match": true
+    }
+  ]
+}

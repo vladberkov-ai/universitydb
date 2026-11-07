@@ -1,0 +1,85 @@
+{
+  "version": "oh-my-codex v0.21.46\nNode.js v22.23.2\nPlatform: linux x64",
+  "launcher": "/home/dev/projects/universitydb/.omx/runtime/bin/omx",
+  "launcher_sha256": "97f8cffbab25d59a9c3265146161b86ab666009175672b505258d9f92f3f5ba1",
+  "latest_patched_bytes": [
+    {
+      "target": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/scripts/codex-native-hook.js",
+      "manifest": "/home/dev/.omx/repairs/20261107-lifecycle/installed-manifest.json",
+      "expected": "f48a6ba442d6aeacd9dcc3c63fc191b6b83ab8fea1ef20cab15b61d0578f3a2c",
+      "actual": "f48a6ba442d6aeacd9dcc3c63fc191b6b83ab8fea1ef20cab15b61d0578f3a2c",
+      "match": true
+    },
+    {
+      "target": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/src/scripts/codex-native-hook.ts",
+      "manifest": "/home/dev/.omx/repairs/20261107-lifecycle/installed-manifest.json",
+      "expected": "e6479e458547615e4e74d548f88ac6a4ec991db6e1e252c1d289e7b9eeb732d9",
+      "actual": "e6479e458547615e4e74d548f88ac6a4ec991db6e1e252c1d289e7b9eeb732d9",
+      "match": true
+    },
+    {
+      "target": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/scripts/notify-hook.js",
+      "manifest": "/home/dev/.omx/repairs/20261107-postcloseout/installed-manifest.json",
+      "expected": "3857483f184b87ae26bb369a5a9ac0e011dc521e7dc7e167924ebff38e4b7c82",
+      "actual": "3857483f184b87ae26bb369a5a9ac0e011dc521e7dc7e167924ebff38e4b7c82",
+      "match": true
+    },
+    {
+      "target": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/config/codex-hooks.js",
+      "manifest": "/home/dev/.omx/repairs/20261107-lifecycle/installed-manifest.json",
+      "expected": "6cfce2febc94c81f9a35f5d9807c0ecf7921d03ea1a1a8724de4bd8f28ca6c72",
+      "actual": "6cfce2febc94c81f9a35f5d9807c0ecf7921d03ea1a1a8724de4bd8f28ca6c72",
+      "match": true
+    },
+    {
+      "target": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/config/__tests__/codex-hooks.test.js",
+      "manifest": "/home/dev/.omx/repairs/20261107-lifecycle/installed-manifest.json",
+      "expected": "63e5bf2dc3841ed62ab9c8728b38e3cdd0ff0ed84e649707031ca6ca818d48bc",
+      "actual": "63e5bf2dc3841ed62ab9c8728b38e3cdd0ff0ed84e649707031ca6ca818d48bc",
+      "match": true
+    },
+    {
+      "target": "/home/dev/.codex/hooks.json",
+      "manifest": "/home/dev/.omx/repairs/20261107-lifecycle/installed-manifest.json",
+      "expected": "4f9ca3760191352c5acd448e9c60e2d5d11c78f08df5460c002af36214e6368d",
+      "actual": "4f9ca3760191352c5acd448e9c60e2d5d11c78f08df5460c002af36214e6368d",
+      "match": true
+    },
+    {
+      "target": "/home/dev/.codex/config.toml",
+      "manifest": "/home/dev/.omx/repairs/20261107-lifecycle/installed-manifest.json",
+      "expected": "931103595bc2e0026a773911bc75d4e5402a894ea39046d599c4aa561385d160",
+      "actual": "521da12a6104d89c37ebd3da85e87b3b4a1c3de20cb9967a6b99fb212bec042f",
+      "match": false
+    },
+    {
+      "target": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/cli/doctor.js",
+      "manifest": "/home/dev/.omx/repairs/20261107-lifecycle/installed-manifest.json",
+      "expected": "21f456b72becab777015f111f050db68c98dff1c73cac708343cb97db034cdcf",
+      "actual": "21f456b72becab777015f111f050db68c98dff1c73cac708343cb97db034cdcf",
+      "match": true
+    },
+    {
+      "target": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/scripts/notify-hook/auto-nudge.js",
+      "manifest": "/home/dev/.omx/repairs/20261107-postcloseout/installed-manifest.json",
+      "expected": "e2bd1a3a49e2064401fb5e1c74d5b606c3f96565437c1f9eecbea0feb348d992",
+      "actual": "e2bd1a3a49e2064401fb5e1c74d5b606c3f96565437c1f9eecbea0feb348d992",
+      "match": true
+    },
+    {
+      "target": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/src/scripts/notify-hook/auto-nudge.ts",
+      "manifest": "/home/dev/.omx/repairs/20261107-postcloseout/installed-manifest.json",
+      "expected": "f77d7d0abf1fd1300d3e2975d53c08a9e4020f84ecb505014e4d2edfd14e8955",
+      "actual": "f77d7d0abf1fd1300d3e2975d53c08a9e4020f84ecb505014e4d2edfd14e8955",
+      "match": true
+    },
+    {
+      "target": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/src/scripts/notify-hook.ts",
+      "manifest": "/home/dev/.omx/repairs/20261107-postcloseout/installed-manifest.json",
+      "expected": "9b9ff115ea3b297f288be213e01d71b19e23565f254efd73f29d39b02a734860",
+      "actual": "9b9ff115ea3b297f288be213e01d71b19e23565f254efd73f29d39b02a734860",
+      "match": true
+    }
+  ],
+  "all_match": false
+}

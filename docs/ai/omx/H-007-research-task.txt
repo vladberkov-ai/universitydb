@@ -1,0 +1,21 @@
+H-007 I1 researcher task record
+Date: 2026-11-07
+Lane: native researcher /root/api_reference
+Scope: actual delegated task messages only; not a private session transcript.
+Redactions: none in these task messages. Secrets: none supplied.
+
+INITIAL ACTUAL TASK (verbatim)
+H-007 I1 bounded research only; do not write product/runtime state or invoke workflows. Read openai-docs skill (already loaded in parent but follow docs-first). Establish current official OpenAI Python SDK structured-output interface, explicit retries/timeouts and usage/token cap options; no provider calls and no model selection/paid authorization. Also official LangGraph StateGraph compile/invoke and Streamlit APIs needed for minimal local S6. Report citations, candidate package versions verifiable from official upstream/PyPI (versions not proof of account availability). You are not alone; no edits outside an optional new docs/operations/H-007-api-references.md safe research note. Respect closed H006 and vault read-only. Record exact actual task and source coverage in your report; do not recursively delegate.
+
+PERSISTENCE FOLLOW-UP (verbatim)
+Please persist your completed safe API research result and exact actual task as new docs/operations/H-007-api-references.md and docs/ai/omx/H-007-research-task.txt. You own only these2 paths. Not alone; do not revert others or touch prior evidence/runtime/Obsidian. No new research/model recommendation needed; cite fetched pages and retrieval limitations. Main now Conductor (supported Ultragoal handoff) and cannot write product/docs itself. Report file hashes. No Git staging yet (performer will own safe docs checkpoint).
+
+COVERAGE AND OMISSIONS
+The installed openai-docs skill was read. Official OpenAI, LangGraph, and
+Streamlit documentation plus PyPI publisher metadata were consulted. Findings,
+retrieval failures, version drift, and source links are recorded separately in
+docs/operations/H-007-api-references.md. No model was selected. No provider calls,
+credential access, installation, compatibility tests, application edits, vault
+access, advisory restart, runtime-state mutation, recursive delegation, Git
+staging, or Git commit were performed by this research lane. Only the two
+explicitly assigned new documentation paths were written.

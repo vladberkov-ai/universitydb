@@ -1,0 +1,23 @@
+{
+  "native_session": "01a1b649-9f9b-7e32-8c71-138ac3328f7e",
+  "source_sha256": "afa1dc123228351944053f1a477ba0f97b0ffa15515726979a028eab310537bd",
+  "actual_task_line": 9,
+  "actual_task_timestamp": "2026-11-07T13:56:27.906Z",
+  "actual_task_utf8_sha256": "007f1080f391386c4c6e500a29ceec6f45da1d8363b4e33e8727fa5adc84fa66",
+  "public_prompt_sha256": "1e64863681601c6e94cab54b4d2907258a9977c5debfac556890f2855f89e700",
+  "cutoff_last_line": 102,
+  "selected_entries": 3,
+  "redaction": "private vault prefix replaced with [PRIVATE_VAULT]; terminal LF added to prompt file",
+  "omissions": [
+    "initial AGENTS/environment user bundle",
+    "attached skill message",
+    "system/developer instructions",
+    "reasoning",
+    "tools (not requested)",
+    "later messages and final response",
+    "child sessions (separate records required)"
+  ],
+  "source": "installed omx session export exact native session; not starter-template reconstruction",
+  "children": "research actual task and persistence follow-up separately recorded; performer and reviewer coverage pending final checkpoint",
+  "runtime_prompts": "not-created at G001 checkpoint"
+}

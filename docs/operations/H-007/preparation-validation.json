@@ -1,0 +1,38 @@
+{
+  "status": "pass",
+  "scope": "G001 pre-code documentation only",
+  "tracked_originals_unchanged": 148,
+  "append_only_indices": [
+    "AGENTS.md",
+    "docs/adr/README.md",
+    "docs/ai/README.md",
+    "omx_wiki/index.md"
+  ],
+  "new_local_links_resolved": 17,
+  "json_syntax": "pass",
+  "targeted_secret_scan": "pass; manual content review required too",
+  "hashes": {
+    "AGENTS.md": "6a47632a91aed77928e417bb2482b3dfd5104edca58bb9f2a44392179635341a",
+    "docs/adr/ADR-OMX-008-I1-scoped-implementation.md": "df54a4cb373451cf362ae6de269fc42a1fd4b9889b39fc6696c7b42203384d2c",
+    "docs/adr/README.md": "d3b75097beebf577faf90237ddd73bb2d49b7b981664dedd25a114e922d1cb13",
+    "docs/ai/README.md": "7a257f5dc68bace2e25f18725e7713b8d422424e8cc52a4218eaeedd928eacb1",
+    "docs/ai/omx/H-007-actual-prompt.txt": "1e64863681601c6e94cab54b4d2907258a9977c5debfac556890f2855f89e700",
+    "docs/ai/omx/H-007-leader-cutoff.json": "57853dd854b49a61568a18003ecbbe68225089105cc9f024f4a944cee16f7488",
+    "docs/ai/omx/H-007-prompt-coverage.json": "6cb36bce1f9fc28acffd987cebe7543bb411d6998a57e3163a09cd3110e7966c",
+    "docs/ai/omx/H-007-research-task.txt": "56ca836e134d182b1497d08e9b29664e41937cc5d102ae20bbfe1f444ec8ef3e",
+    "docs/operations/H-006-B2-commit-receipt.json": "cbba1e4a6d7b06cc2dadae38299bffccab87f25a87b666100651df5a7ca3a9f4",
+    "docs/operations/H-007-api-references.md": "67a541bd9e24e20d2eb1c5294099ace4e094f5b785cd452bcc32d0363343bafc",
+    "docs/operations/H-007/baseline.json": "3fdc77d0194eadbcdfc39509bcfa8f3e133dfb7124c03480ab18df13a0e19b4d",
+    "docs/operations/H-007/input-hashes.json": "4d57072757e174fe98872fdb79e159fa644194072164755668e9e131517b41a0",
+    "docs/operations/H-007/omx-identity.json": "0406d167fd032f6243c4fc8125f8e29f6bc686bd987946fe639745dedf526676",
+    "docs/operations/H-007/precode-review.md": "ea45609507b67fb538de07dfcdf6cb30e541598891788940393fa4a20e4b923a",
+    "docs/operations/H-007/preparation.md": "718db95c719ca3b636bd27d88c3aeaa475965c58f88952bdf01bfd63b8988803",
+    "omx_wiki/index.md": "3253285714eb2df8fce0d820225cb9295687d02bbee5fb3ce98f90982093c76d"
+  },
+  "not_run": [
+    "application tests/build/lint/typecheck (no code at G001)",
+    "live provider/model",
+    "browser/UI E2E"
+  ],
+  "git_diff_check_exit": 0
+}
