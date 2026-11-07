@@ -15,7 +15,10 @@ permitted. Accepted ADR-CHAT-006 semantics and Sol high/medium/medium are unchan
 - CP-R1 audit/baseline: `8a9cd5d` (initial REQUEST CHANGES, not final approval).
 - Scoped repair: `dc715201c32585b4845456cf7f6a115cd04ac278`.
 - CP-R2 frozen tracked-only candidate: **`331eb5a61648bccb7fa66eecb58d9cc284eda2a0`**.
-  Final clean full-suite identity/results are pending; this freeze alone is not a test pass.
+  The first final clean attempt passed457tests/static92.09s but readiness E2E
+  found a new regression: `Show mean grade grouped by course across all enrollments`
+  returned INVALID_INPUT before provider dispatch. Candidate **not accepted**;
+  preserved failed attempt and new scoped repair/re-freeze/full rerun are required.
 - Later evidence/documentation commits are not newly full-tested product identities.
 
 ## Independent audit and repair
@@ -29,6 +32,15 @@ trace and no fabricated success. [ADR013](../adr/ADR-OMX-013-readiness-scope-bou
 records alternatives and the bounded language limitation; no universal NL claim.
 
 ## Clean-run and evidence cutoff
+
+**New blocking evidence:** first corrected-candidate331eb5a clean run passed
+457tests/static92.09s, then fresh readiness E2E rejected
+`Show mean grade grouped by course across all enrollments` with INVALID_INPUT and
+zero provider calls. The baseline6cc runner had passed this case. Candidate is **not
+accepted**, not waived by457tests; preserve the failed attempt, add a failing
+regression, minimally repair/re-freeze and rerun full clean gates. Root/repair lane
+own this continuation; final reviews/native completion remain pending.
+
 
 [Verifier scope](../operations/H-014/clean-run-scope.md),
 [environment](../operations/H-014/clean-run-environment.json) and
@@ -53,6 +65,8 @@ eval harness tests, cached diff check. Those 33 tests are not live model accurac
 [planned runs](../operations/H-014/eval/planned-runs-v1.json) define 24 held-out
 candidate cases, six categories × four cases × two repeats = 48 conversations;
 maximum 240 generation calls, separate optional six-conversation smoke maximum30.
+No evaluator-level reruns/best-of: existing one shared transient provider retry
+and bounded SQL repair are internal attempts charged within the same run ceiling.
 All48 are **not-run**. Scorer validation uses synthetic/dev fixtures only. Held-out
 exposure is disclosed in protocol; do not claim an unseen sealed dataset. Questions
 are separated from oracle answers, failures stay in denominator, no best-of/retry

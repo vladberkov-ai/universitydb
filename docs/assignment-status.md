@@ -34,7 +34,8 @@ for this stage: new push and live calls are forbidden. Defense follows readiness
 offline-readiness status, distinct from historical H013 product410tests/157oracle.
 Named-target scope-loss defect repaired with14regressions; frozen candidate
 331eb5a61648bccb7fa66eecb58d9cc284eda2a0 adds readiness/eval harness33tests.
-Final corrected-candidate clean full regression/browser/independent reviews are pending.
+Candidate331eb5a clean457tests/static passed but fresh group-by E2E failed; it is
+not accepted. Scoped repair/re-freeze/final clean/browser/independent reviews pending.
 R01–14/U01/U03–06 are mapped in the report; R15 new publication awaits authority,
 R16/17 owner defense deferred, U02 deadline unknown. I4 real-model/I5 live acceptance
 not-run: proposed24×2/48cases and44/48,≥7/8/category await approval, not an accuracy

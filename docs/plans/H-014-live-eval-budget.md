@@ -15,7 +15,10 @@ classes, full denominator or44/48and7/8thresholds. If smoke cases are also later
 collected in full, count their actual costs separately; do not reuse smoke results
 as untouched full observations or hide duplicated spending. Smoke+full max270calls.
 Internal planning/SQL/one repair across a bounded DAG share max5calls per
-conversation, max4SQL attempts,180seconds active. No automatic retries/best-of.
+conversation, max4SQL attempts,180seconds active. No evaluator-level reruns or best-of selection. Existing single shared
+PROVIDER_TRANSIENT retry and bounded SQL repair remain permitted internal behavior,
+consume the same max5generation-call/max4SQL-attempt budget and stay in each
+conversation record; they are not extra observations or a fresh budget.
 
 ## Reservation arithmetic and uncertainty
 

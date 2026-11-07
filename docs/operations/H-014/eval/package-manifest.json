@@ -4,7 +4,7 @@
   "sha256": {
     "tools/eval/harness.py": "a14f11835ff3c67aa6ef6e7a95716613982a3c1799bfa2d734f4038c95a1c811",
     "tests/test_eval_harness.py": "0e077f83f5b236139cf44ad3f295658b034947b37aee19e8b2573ce1064b0d60",
-    "docs/plans/H-014-live-eval-budget.md": "4f4866907a4df5a9af50d2a05f5bc4353e72c4b51612a04f6a52285498e26956",
+    "docs/plans/H-014-live-eval-budget.md": "2bb0e1f3632769981af6fbddfac88d84c9301d9c13d88583b8023e9bf0c312e4",
     "docs/plans/H-014-live-eval-protocol.md": "00950a2e651351ccdf3b0ab996e65829f76fac5719fb6b4722ebe3137792bec7",
     "docs/operations/H-014/eval/planned-runs-v1.json": "972c134e4fa82682f0a16d87b71c0c1ed693888248d662f63280cde4fcff3424",
     "docs/operations/H-014/eval/dev-v1.json": "0915ca1f5c3a2c199e6bd85b1ff34ad859c61676d8c6d0713e2748f8a16803ff",
@@ -21,5 +21,6 @@
     "docs/operations/H-014/eval/official-rates.md": "ec798d19ee634eafdb44e4560169d94df5ccfbec6d41497581f4a6d62c575b2e"
   },
   "candidate_sha": "331eb5a61648bccb7fa66eecb58d9cc284eda2a0",
-  "pre_registration": "Proposed before live results; all48 planned/not-run; reviewer/author/root exposure disclosed, not sealed untouched holdout; independently replace if required."
+  "pre_registration": "Proposed before live results; all48 planned/not-run; reviewer/author/root exposure disclosed, not sealed untouched holdout; independently replace if required.",
+  "candidate_status": "331eb5a superseded for readiness acceptance: clean457/static passed but fresh group-by E2E regression; new repaired exact candidate must be pinned before future live approval"
 }
