@@ -196,6 +196,9 @@ def run(out, full):
                             page.get_by_test_id("stStatusWidget").wait_for(state="hidden")
                             body = page.inner_text("body")
                             assert "offline/injected" in body and run_id in body
+                            assert "DeltaGenerator" not in body
+                            assert page.get_by_test_id("stDocstring").count() == 0
+                            assert not any(line.strip() == "None" for line in body.splitlines())
                             if status == "error":
                                 assert (
                                     page.get_by_test_id("stAlert").filter(has_text="80.00").count()
@@ -222,7 +225,47 @@ def run(out, full):
                                 section = (
                                     page.get_by_test_id("stExpander").filter(has_text=label).first
                                 )
+                                assert section.locator("details").get_attribute("open") is not None
                                 section.scroll_into_view_if_needed()
+                                assert section.is_visible()
+                                if panel in ("db", "adapted"):
+                                    assert "DeltaGenerator" not in section.inner_text()
+                                    assert not any(
+                                        line.strip() == "None"
+                                        for line in section.inner_text().splitlines()
+                                    )
+                                    if status == "ok":
+                                        raw_results = [
+                                            e["payload"] for e in events if e["kind"] == "db_result"
+                                        ]
+                                        assert raw_results
+                                        assert section.get_by_test_id("stJson").count() > 0
+                                        # Inspect expanded JSON strings, not only the alert/trace.
+                                        # Each raw result must expose its column names and values.
+                                        panel_text = section.inner_text()
+                                        assert "rows" in panel_text
+                                        if panel == "db":
+                                            for raw in raw_results:
+                                                for column in raw["columns"]:
+                                                    assert column["name"] in panel_text
+                                                for row in raw["rows"]:
+                                                    for value in row:
+                                                        rendered = (
+                                                            json.dumps(value)
+                                                            if value is None
+                                                            or isinstance(value, bool)
+                                                            else str(value)
+                                                        )
+                                                        assert rendered in panel_text
+                                        else:
+                                            assert "dependency_rows" in panel_text
+                                    else:
+                                        empty_message = (
+                                            "DB query was not executed."
+                                            if panel == "db"
+                                            else "No adapted step results yet."
+                                        )
+                                        assert empty_message in section.inner_text()
                                 page.screenshot(path=str(out / f"{case}-{panel}.png"))
                             (out / f"{case}-visible.txt").write_text(body)
                             receipt["cases"][case] = {
@@ -234,6 +277,8 @@ def run(out, full):
                                 "screenshot_sha256": digest(out / f"{case}.png"),
                                 "current_question_run_outcome_verified": True,
                                 "render_settled_before_screenshots": True,
+                                "no_magic_help_or_none": True,
+                                "focused_open_typed_rows_verified": status == "ok",
                             }
                             return events
 

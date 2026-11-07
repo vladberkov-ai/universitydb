@@ -1,0 +1,141 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+______ test_actual_magic_success_then_refusal_has_rows_trace_without_help ______
+
+isolated_app = (PosixPath('<isolated-pytest-root>/pytest-965/test_actual_magic_success_then0/app'), PosixPath('<isolated-pytest-root>/pytest-965/test_actual_magic_success_then0/injected.json'))
+
+    def test_actual_magic_success_then_refusal_has_rows_trace_without_help(isolated_app):
+        _, fixture = isolated_app
+        app = app_with(
+            fixture,
+            outputs()
+            + [{"injected_error": {"code": "PROVIDER_REFUSAL", "message": "Offline refusal."}}],
+        )
+        app.button[0].click().run()
+        assert app.success and "80.00" in app.success[0].value
+        result = app.session_state["result"]
+        db_panel = next(e for e in app.expander if e.label == "DB typed rows")
+        expected = [e["payload"] for e in result["events"] if e["kind"] == "db_result"]
+        assert [json.loads(block.value) for block in db_panel.json] == [expected]
+        adapted = next(e for e in app.expander if e.label.startswith("Adapted step"))
+        assert "dependency_rows" in adapted.json[0].value
+        trace = next(e for e in app.expander if e.label == "Full same-run trace")
+        assert json.loads(trace.json[0].value) == result["events"]
+        assert result["events"][-1]["kind"] == "run_end"
+>       assert_no_magic_returns(app)
+
+tests/test_readiness_ui_magic.py:33:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+app = AppTest(
+    _script_path='<canonical-repo>/src/universitydb/ui.py',
+    default_timeout=30,
+    _sessi...SpecialBlock(
+            type='sidebar'
+        ),
+        2: SpecialBlock(
+            type='event'
+        )
+    }
+)
+
+    def assert_no_magic_returns(app):
+        assert not app.exception
+>       assert not app.get("help_info"), "Bare UI return value rendered API help"
+E       AssertionError: Bare UI return value rendered API help
+E       assert not [Help(name='st.json(results) if results else st.write("DB query was not executed.")'), Help(name='st.json(results) if results else st.write("No adapted step results yet.")')]
+E        +  where [Help(name='st.json(results) if results else st.write("DB query was not executed.")'), Help(name='st.json(results) if results else st.write("No adapted step results yet.")')] = get('help_info')
+E        +    where get = AppTest(\n    _script_path='<canonical-repo>/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).get
+
+tests/test_readiness_ui_magic.py:11: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 01:24:15.494 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+__________ test_actual_magic_clarification_empty_panels_without_none ___________
+
+isolated_app = (PosixPath('<isolated-pytest-root>/pytest-965/test_actual_magic_clarificatio0/app'), PosixPath('<isolated-pytest-root>/pytest-965/test_actual_magic_clarificatio0/injected.json'))
+
+    def test_actual_magic_clarification_empty_panels_without_none(isolated_app):
+        _, fixture = isolated_app
+        app = app_with(fixture, outputs())
+        app.text_area[0].set_value("What is the average grade for Alex?")
+        app.button[0].click().run()
+        assert app.session_state["result"]["status"] == "clarification"
+        assert not app.success
+        assert app.session_state["agent"].provider.calls == 0
+>       assert_no_magic_returns(app)
+
+tests/test_readiness_ui_magic.py:56:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+app = AppTest(
+    _script_path='<canonical-repo>/src/universitydb/ui.py',
+    default_timeout=30,
+    _sessi...SpecialBlock(
+            type='sidebar'
+        ),
+        2: SpecialBlock(
+            type='event'
+        )
+    }
+)
+
+    def assert_no_magic_returns(app):
+        assert not app.exception
+        assert not app.get("help_info"), "Bare UI return value rendered API help"
+>       assert all(block.value.strip().strip("`") != "None" for block in app.markdown)
+E       assert False
+E        +  where False = all(<generator object assert_no_magic_returns.<locals>.<genexpr> at 0x7a10f78739f0>)
+
+tests/test_readiness_ui_magic.py:12: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 01:24:16.070 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+_____________ test_actual_magic_refusal_empty_panels_without_none ______________
+
+isolated_app = (PosixPath('<isolated-pytest-root>/pytest-965/test_actual_magic_refusal_empt0/app'), PosixPath('<isolated-pytest-root>/pytest-965/test_actual_magic_refusal_empt0/injected.json'))
+
+    def test_actual_magic_refusal_empty_panels_without_none(isolated_app):
+        _, fixture = isolated_app
+        app = app_with(
+            fixture,
+            [{"injected_error": {"code": "PROVIDER_REFUSAL", "message": "Offline refusal."}}],
+        )
+        app.button[0].click().run()
+        assert not app.success and "PROVIDER_REFUSAL" in app.error[0].value
+>       assert_no_magic_returns(app)
+
+tests/test_readiness_ui_magic.py:67:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+app = AppTest(
+    _script_path='<canonical-repo>/src/universitydb/ui.py',
+    default_timeout=30,
+    _sessi...SpecialBlock(
+            type='sidebar'
+        ),
+        2: SpecialBlock(
+            type='event'
+        )
+    }
+)
+
+    def assert_no_magic_returns(app):
+        assert not app.exception
+        assert not app.get("help_info"), "Bare UI return value rendered API help"
+>       assert all(block.value.strip().strip("`") != "None" for block in app.markdown)
+E       assert False
+E        +  where False = all(<generator object assert_no_magic_returns.<locals>.<genexpr> at 0x7a10f78ea670>)
+
+tests/test_readiness_ui_magic.py:12: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 01:24:16.231 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+=========================== short test summary info ============================
+FAILED tests/test_readiness_ui_magic.py::test_actual_magic_success_then_refusal_has_rows_trace_without_help
+FAILED tests/test_readiness_ui_magic.py::test_actual_magic_clarification_empty_panels_without_none
+FAILED tests/test_readiness_ui_magic.py::test_actual_magic_refusal_empty_panels_without_none
+3 failed in 1.17s

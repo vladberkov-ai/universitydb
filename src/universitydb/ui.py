@@ -84,14 +84,20 @@ def render_result(result: dict[str, Any]) -> None:
             st.json(query["parameters"])
     with st.expander("DB typed rows", expanded=True):
         results = [e["payload"] for e in events if e["kind"] == "db_result"]
-        st.json(results) if results else st.write("DB query was not executed.")
+        if results:
+            st.json(results)
+        else:
+            st.write("DB query was not executed.")
     with st.expander("Adapted step results and dependency bindings", expanded=True):
         results = [
             {"node": e["node"], "seq": e["seq"], "payload": e["payload"]}
             for e in events
             if e["node"] in ("inspect_result", "bind_results") and e["kind"] == "node_end"
         ]
-        st.json(results) if results else st.write("No adapted step results yet.")
+        if results:
+            st.json(results)
+        else:
+            st.write("No adapted step results yet.")
     with st.expander("Full same-run trace", expanded=True):
         st.json(events, expanded=True)
         st.download_button(

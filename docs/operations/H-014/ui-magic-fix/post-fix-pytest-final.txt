@@ -1,0 +1,258 @@
+F..FF.F.FF.FFF.                                                          [100%]
+=================================== FAILURES ===================================
+______ test_actual_magic_success_then_refusal_has_rows_trace_without_help ______
+
+isolated_app = (PosixPath('<isolated-pytest-root>/pytest-967/test_actual_magic_success_then0/app'), PosixPath('<isolated-pytest-root>/pytest-967/test_actual_magic_success_then0/injected.json'))
+
+    def test_actual_magic_success_then_refusal_has_rows_trace_without_help(isolated_app):
+        _, fixture = isolated_app
+        app = app_with(
+            fixture,
+            outputs()
+            + [{"injected_error": {"code": "PROVIDER_REFUSAL", "message": "Offline refusal."}}],
+        )
+        app.button[0].click().run()
+>       assert app.success and "80.00" in app.success[0].value
+E       AssertionError: assert (ElementList())
+E        +  where ElementList() = AppTest(\n    _script_path='<canonical-repo>/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).success
+
+tests/test_readiness_ui_magic.py:24: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 01:27:16.279 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+_____________________ test_agent_retained_across_ui_rerun ______________________
+
+isolated_app = (PosixPath('<isolated-pytest-root>/pytest-967/test_agent_retained_across_ui_0/app'), PosixPath('<isolated-pytest-root>/pytest-967/test_agent_retained_across_ui_0/injected.json'))
+
+    def test_agent_retained_across_ui_rerun(isolated_app):
+        _, fixture = isolated_app
+        app = app_with(fixture, outputs())
+        initial_agent = app.session_state["agent"]
+        app.button[0].click().run()
+>       assert not app.exception and app.success and "80.00" in app.success[0].value
+E       AssertionError: assert (not ElementList() and ElementList())
+E        +  where ElementList() = AppTest(\n    _script_path='<canonical-repo>/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).exception
+E        +  and   ElementList() = AppTest(\n    _script_path='<canonical-repo>/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).success
+
+tests/test_i2_ui.py:55: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 01:28:11.770 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+____________ test_dataset_switch_clears_answer_and_uses_separate_db ____________
+
+isolated_app = (PosixPath('<isolated-pytest-root>/pytest-967/test_dataset_switch_clears_ans0/app'), PosixPath('<isolated-pytest-root>/pytest-967/test_dataset_switch_clears_ans0/injected.json'))
+
+    def test_dataset_switch_clears_answer_and_uses_separate_db(isolated_app):
+        root, fixture = isolated_app
+        lib = Library()
+        app = app_with(
+            fixture,
+            {
+                "university-v1": outputs(),
+                "library-v1": [plan(step(LIBRARY_SPEC)), proposal(lib, LIBRARY_SPEC, {})],
+            },
+        )
+        app.button[0].click().run()
+>       assert app.success and "80.00" in app.success[0].value
+E       AssertionError: assert (ElementList())
+E        +  where ElementList() = AppTest(\n    _script_path='<canonical-repo>/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).success
+
+tests/test_i2_ui.py:75: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 01:28:28.775 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+__ test_real_checkpoint_pause_resume_retained_same_run_and_no_replayed_calls ___
+
+isolated_app = (PosixPath('<isolated-pytest-root>/pytest-967/test_real_checkpoint_pause_res0/app'), PosixPath('<isolated-pytest-root>/pytest-967/test_real_checkpoint_pause_res0/injected.json'))
+
+    def test_real_checkpoint_pause_resume_retained_same_run_and_no_replayed_calls(isolated_app):
+        from universitydb.domain import University, make_spec
+
+        _, fixture = isolated_app
+        spec = make_spec("grade_mean")
+        app = app_with(fixture, [plan(step(spec)), proposal(University(), spec, {"student_id": 1})])
+        app.text_area[0].set_value("What is the average grade for Alex?")
+        app.button[0].click().run()
+        assert not app.exception and not app.success
+        paused = app.session_state["result"]
+        agent = app.session_state["agent"]
+        assert paused["status"] == "clarification"
+        assert [option["value"] for option in paused["clarification"]["options"]] == [1, 3]
+        assert agent.provider.calls == 0
+        assert not any(e["kind"] == "sql_attempt" for e in paused["events"])
+        assert app.selectbox[1].options == ["Alex (ID: 1)", "Alex (ID: 3)"]
+        app.button[1].click().run()
+>       assert not app.exception and app.success and "86.67" in app.success[0].value
+E       AssertionError: assert (not ElementList() and ElementList())
+E        +  where ElementList() = AppTest(\n    _script_path='<canonical-repo>/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).exception
+E        +  and   ElementList() = AppTest(\n    _script_path='<canonical-repo>/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).success
+
+tests/test_i2_ui.py:129: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 01:28:51.467 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+_____________ test_current_semester_selection_uses_actual_same_run _____________
+
+isolated_app = (PosixPath('<isolated-pytest-root>/pytest-967/test_current_semester_selectio0/app'), PosixPath('<isolated-pytest-root>/pytest-967/test_current_semester_selectio0/injected.json'))
+
+    def test_current_semester_selection_uses_actual_same_run(isolated_app):
+        from universitydb.domain import University, make_spec
+
+        _, fixture = isolated_app
+        spec = make_spec("grade_mean")
+        app = app_with(fixture, [plan(step(spec)), proposal(University(), spec, {"semester_id": "S1"})])
+        app.text_area[0].set_value("What is the average grade in the current semester?")
+        app.button[0].click().run()
+        run_id = app.session_state["result"]["run_id"]
+        app.button[1].click().run()
+>       assert not app.exception and app.success and "87.50" in app.success[0].value
+E       AssertionError: assert (not ElementList() and ElementList())
+E        +  where ElementList() = AppTest(\n    _script_path='<canonical-repo>/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).exception
+E        +  and   ElementList() = AppTest(\n    _script_path='<canonical-repo>/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).success
+
+tests/test_i2_ui.py:167: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 01:29:13.628 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+______ test_library_ambiguity_and_schema_switch_cannot_resume_foreign_run ______
+
+isolated_app = (PosixPath('<isolated-pytest-root>/pytest-967/test_library_ambiguity_and_sch0/app'), PosixPath('<isolated-pytest-root>/pytest-967/test_library_ambiguity_and_sch0/injected.json'))
+
+    def test_library_ambiguity_and_schema_switch_cannot_resume_foreign_run(isolated_app):
+        import sqlite3
+
+        _, fixture = isolated_app
+        app = app_with(
+            fixture,
+            {
+                "university-v1": outputs(),
+                "library-v1": [
+                    plan(step(LIBRARY_SPEC)),
+                    proposal(Library(), LIBRARY_SPEC, {"reader_id": 2}),
+                ],
+            },
+        )
+        app.selectbox[0].select("Library").run()
+        assert "Bea" not in app.text_area[0].value
+        agent = app.session_state["agent"]
+        with sqlite3.connect(agent.database) as connection:
+            connection.execute("UPDATE Readers SET name='Ada' WHERE reader_id=2")
+        app.text_area[0].set_value("How many open loans for Ada?")
+        app.button[0].click().run()
+        paused = app.session_state["result"]
+        assert paused["status"] == "clarification" and agent.provider.calls == 0
+        # Form values are delivered with its submit, not a forced pre-submit rerun.
+        app.selectbox[1].select(1)
+        app.button[1].click().run()
+>       assert not app.exception and app.success, app.session_state["result"].get("error")
+E       AssertionError: {'code': 'SQL_TIMEOUT', 'message': 'Database worker exceeded watchdog and was terminated.', 'failed_node': 'execute', 'retryable': False}
+E       assert (not ElementList() and ElementList())
+E        +  where ElementList() = AppTest(\n    _script_path='<canonical-repo>/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).exception
+E        +  and   ElementList() = AppTest(\n    _script_path='<canonical-repo>/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).success
+
+tests/test_i2_ui.py:197: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 01:29:25.986 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+_______________ test_missing_database_safe_error_no_stale_answer _______________
+
+isolated_app = (PosixPath('<isolated-pytest-root>/pytest-967/test_missing_database_safe_err0/app'), PosixPath('<isolated-pytest-root>/pytest-967/test_missing_database_safe_err0/injected.json'))
+
+    def test_missing_database_safe_error_no_stale_answer(isolated_app):
+        _, fixture = isolated_app
+        app = app_with(fixture, outputs() + outputs())
+        app.button[0].click().run()
+>       assert app.success
+E       AssertionError: assert ElementList()
+E        +  where ElementList() = AppTest(\n    _script_path='<canonical-repo>/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).success
+
+tests/test_i2_ui.py:247: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 01:29:42.930 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+_________ test_m1_ui_all_actual_step_rows_bindings_and_final_means[F1] _________
+
+isolated_app = (PosixPath('<isolated-pytest-root>/pytest-967/test_m1_ui_all_actual_step_row0/app'), PosixPath('<isolated-pytest-root>/pytest-967/test_m1_ui_all_actual_step_row0/injected.json'))
+fixture_name = 'F1'
+
+    @pytest.mark.parametrize("fixture_name", ["F1", "F2"])
+    def test_m1_ui_all_actual_step_rows_bindings_and_final_means(isolated_app, fixture_name):
+        import sqlite3
+
+        from ui_fixtures import m1_outputs
+
+        root, fixture = isolated_app
+        oracle = json.loads((ROOT / "docs/operations/H-013/frozen-oracle.json").read_text())["m1"][
+            fixture_name
+        ]
+        app = app_with(fixture, m1_outputs(oracle["top_course_ids"], oracle["cohort_student_ids"]))
+        if fixture_name == "F2":
+            with sqlite3.connect(root / "runtime/university-v1.db") as connection:
+                connection.execute("INSERT INTO Enrollments VALUES(3,2,5000)")
+        app.text_area[0].set_value(
+            "For students of the course with the highest mean in S1, show their mean across all S1 courses."
+        )
+        app.button[0].click().run()
+>       assert not app.exception and app.success, app.session_state["result"].get("error")
+E       AssertionError: {'code': 'SQL_TIMEOUT', 'message': 'Database worker exceeded watchdog and was terminated.', 'failed_node': 'execute', 'retryable': False}
+E       assert (not ElementList() and ElementList())
+E        +  where ElementList() = AppTest(\n    _script_path='<canonical-repo>/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).exception
+E        +  and   ElementList() = AppTest(\n    _script_path='<canonical-repo>/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).success
+
+tests/test_i2_ui.py:272: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 01:29:52.829 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+_________ test_m1_ui_all_actual_step_rows_bindings_and_final_means[F2] _________
+
+isolated_app = (PosixPath('<isolated-pytest-root>/pytest-967/test_m1_ui_all_actual_step_row1/app'), PosixPath('<isolated-pytest-root>/pytest-967/test_m1_ui_all_actual_step_row1/injected.json'))
+fixture_name = 'F2'
+
+    @pytest.mark.parametrize("fixture_name", ["F1", "F2"])
+    def test_m1_ui_all_actual_step_rows_bindings_and_final_means(isolated_app, fixture_name):
+        import sqlite3
+
+        from ui_fixtures import m1_outputs
+
+        root, fixture = isolated_app
+        oracle = json.loads((ROOT / "docs/operations/H-013/frozen-oracle.json").read_text())["m1"][
+            fixture_name
+        ]
+        app = app_with(fixture, m1_outputs(oracle["top_course_ids"], oracle["cohort_student_ids"]))
+        if fixture_name == "F2":
+            with sqlite3.connect(root / "runtime/university-v1.db") as connection:
+                connection.execute("INSERT INTO Enrollments VALUES(3,2,5000)")
+        app.text_area[0].set_value(
+            "For students of the course with the highest mean in S1, show their mean across all S1 courses."
+        )
+        app.button[0].click().run()
+>       assert not app.exception and app.success, app.session_state["result"].get("error")
+E       AssertionError: {'code': 'SQL_TIMEOUT', 'message': 'Database worker exceeded watchdog and was terminated.', 'failed_node': 'execute', 'retryable': False}
+E       assert (not ElementList() and ElementList())
+E        +  where ElementList() = AppTest(\n    _script_path='<canonical-repo>/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).exception
+E        +  and   ElementList() = AppTest(\n    _script_path='<canonical-repo>/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).success
+
+tests/test_i2_ui.py:272: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 01:30:02.277 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+=========================== short test summary info ============================
+FAILED tests/test_readiness_ui_magic.py::test_actual_magic_success_then_refusal_has_rows_trace_without_help
+FAILED tests/test_i2_ui.py::test_agent_retained_across_ui_rerun - AssertionEr...
+FAILED tests/test_i2_ui.py::test_dataset_switch_clears_answer_and_uses_separate_db
+FAILED tests/test_i2_ui.py::test_real_checkpoint_pause_resume_retained_same_run_and_no_replayed_calls
+FAILED tests/test_i2_ui.py::test_current_semester_selection_uses_actual_same_run
+FAILED tests/test_i2_ui.py::test_library_ambiguity_and_schema_switch_cannot_resume_foreign_run
+FAILED tests/test_i2_ui.py::test_missing_database_safe_error_no_stale_answer
+FAILED tests/test_i2_ui.py::test_m1_ui_all_actual_step_rows_bindings_and_final_means[F1]
+FAILED tests/test_i2_ui.py::test_m1_ui_all_actual_step_rows_bindings_and_final_means[F2]
+9 failed, 6 passed in 200.02s (0:03:20)

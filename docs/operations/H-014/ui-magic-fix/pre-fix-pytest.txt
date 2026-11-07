@@ -1,0 +1,43 @@
+F.                                                                       [100%]
+=================================== FAILURES ===================================
+______ test_actual_magic_success_then_refusal_has_rows_trace_without_help ______
+
+isolated_app = (PosixPath('<isolated-pytest-root>/pytest-964/test_actual_magic_success_then0/app'), PosixPath('<isolated-pytest-root>/pytest-964/test_actual_magic_success_then0/injected.json'))
+
+    def test_actual_magic_success_then_refusal_has_rows_trace_without_help(isolated_app):
+        _, fixture = isolated_app
+        app = app_with(
+            fixture,
+            outputs()
+            + [{"injected_error": {"code": "PROVIDER_REFUSAL", "message": "Offline refusal."}}],
+        )
+        app.button[0].click().run()
+        assert app.success and "80.00" in app.success[0].value
+        result = app.session_state["result"]
+        db_panel = next(e for e in app.expander if e.label == "DB typed rows")
+        expected = [e["payload"] for e in result["events"] if e["kind"] == "db_result"]
+        assert [json.loads(block.value) for block in db_panel.json] == [expected]
+        adapted = next(e for e in app.expander if e.label.startswith("Adapted step"))
+        assert "dependency_rows" in adapted.json[0].value
+        trace = next(e for e in app.expander if e.label == "Full same-run trace")
+        assert json.loads(trace.json[0].value) == result["events"]
+        assert result["events"][-1]["kind"] == "run_end"
+        assert_no_magic_returns(app)
+        app.button[0].click().run()
+        assert not app.success and "PROVIDER_REFUSAL" in app.error[0].value
+        db_panel = next(e for e in app.expander if e.label == "DB typed rows")
+        assert not db_panel.json
+>       assert [block.value for block in db_panel.markdown] == ["DB query was not executed."]
+E       AssertionError: assert ['DB query wa...d.', '`None`'] == ['DB query was not executed.']
+E
+E         Left contains one more item: '`None`'
+E         Use -v to get more diff
+
+tests/test_readiness_ui_magic.py:38: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 01:23:52.435 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+=========================== short test summary info ============================
+FAILED tests/test_readiness_ui_magic.py::test_actual_magic_success_then_refusal_has_rows_trace_without_help
+1 failed, 1 passed in 1.19s
