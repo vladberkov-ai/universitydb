@@ -51,3 +51,21 @@ The earlier live I1 checks (80.00/90.00 and error/no-stale-result) remain in
 [historical live report](reports/H-009-live-I1-closeout.md) and
 [owner acceptance](reports/I1-owner-manual-acceptance.md). Their original Russian
 questions are preserved; no English expanded-service live pass is implied.
+
+## H-014 clean offline readiness verification
+
+Use the exact frozen committed candidate and portable
+[clean-run driver](operations/H-014/clean_run.py),
+[targeted compiled-graph checks](operations/H-014/readiness_e2e.py) and
+[actual browser driver](operations/H-014/browser_ui.py) with the documented
+[isolated scope](operations/H-014/clean-run-scope.md). Read script CLI/README before
+execution; never copy original runtime, spending ledger, .env or untracked evidence.
+Both DBs initialize from tracked seeds; repeat init must refuse without mutation.
+Registry install retries/cache/browser reuse are disclosed, not clean-download claims.
+Keep OPENAI_API_KEY absent, UNIVERSITYDB_LIVE_APPROVED=no and tracing disabled.
+Inspect current input/run/SQL/bindings/raw/adapted rows/full same-run trace for success,
+group/top, clarification resume, M1 actual dependencies, Library, repair and terminal
+error/no stale success. Normal profile must reject hidden test injection. Stop only
+owned UI/browser. [Current receipts and gaps](reports/H-014-readiness-offline.md)
+separate final corrected-candidate runs from historical H013 captures and initial
+clean baseline; injected providers are never real-model accuracy.

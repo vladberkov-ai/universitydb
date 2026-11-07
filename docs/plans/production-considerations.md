@@ -61,3 +61,23 @@ future work. Server-session request registry keeps32 immutable IDs/tombstones an
 8unexpired contexts; capacity/900s inclusive expiry fail closed, with explicit new
 session recovery rather than automatic identity eviction. These are demo bounds, not
 public authentication or durable cross-restart exactly-once guarantees.
+
+## H-014 readiness, not production certification
+
+The [bounded readiness report](../reports/H-014-readiness-offline.md) records clean
+tracked-only installation, scoped fail-closed named-target repair and the future
+[live evaluation protocol](H-014-live-eval-protocol.md)/[budget](H-014-live-eval-budget.md),
+with final verification explicitly pending until receipts arrive. Safe accepted SQL
+can still answer the wrong semantic question: current guard recognizes bounded
+supported forms, not universal language. Offline injected tests are not model accuracy.
+
+The deployment path remains locked reproducibility → failure/recovery and durable
+state design → concurrency measurement/admission → protected observability/retention
+→ authentication/tenant/OS isolation → hardened deployment/rollback. None of that
+extra platform is implemented here. Single-process session lifetime/900s/two pauses,
+DELETE-only read-only SQLite and no concurrency guarantee remain intentional local
+limits; restart invalidates continuation. A clean local run does not certify remote
+authentication, memory isolation, production reliability or billing correctness.
+Historical completed checks remain intact; new live/publication/owner defense require
+separate decisions. No new dependencies, judge/verbalizer, automatic budget migration
+or relaxed semantics/ceilings are introduced by H014.

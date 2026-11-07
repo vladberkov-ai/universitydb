@@ -24,6 +24,18 @@ prompt preservation is an additional owner requirement.
 [H-013 delivery report](reports/H-013-I2-I3-offline.md) remains the detailed source:
 tested product f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0, APPROVE/CLEAR, native
 COMPLETE/strict PASS13/13. Historical partial cutoffs remain in Git/reports; they do
-not describe today's functionality. Next: independent readiness/clean run and a
-pre-registered real-model evaluation after separate spending approval. Publishing
-this checkpoint is authorized; new live calls are not. Defense follows readiness.
+not describe today's functionality. H-014 now audits readiness/clean reproduction and prepares the separate live
+decision; see the current section below. Prior publication authority is exhausted
+for this stage: new push and live calls are forbidden. Defense follows readiness.
+
+## H-014 v2 current readiness cutoff
+
+[Report](reports/H-014-readiness-offline.md) is the authoritative current bounded
+offline-readiness status, distinct from historical H013 product410tests/157oracle.
+Named-target scope-loss defect repaired with14regressions; frozen candidate
+331eb5a61648bccb7fa66eecb58d9cc284eda2a0 adds readiness/eval harness33tests.
+Final corrected-candidate clean full regression/browser/independent reviews are pending.
+R01–14/U01/U03–06 are mapped in the report; R15 new publication awaits authority,
+R16/17 owner defense deferred, U02 deadline unknown. I4 real-model/I5 live acceptance
+not-run: proposed24×2/48cases and44/48,≥7/8/category await approval, not an accuracy
+claim. [Protocol](plans/H-014-live-eval-protocol.md), [budget](plans/H-014-live-eval-budget.md).

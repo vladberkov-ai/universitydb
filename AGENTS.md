@@ -61,3 +61,16 @@ The actual H-011 user task and accepted ADR-CHAT-006 / CHAT-043 authorize I2-off
 
 ## H-013 — current I2 + I3 offline authority (2026-11-07)
 The actual H-013 task/CHAT-045 authorize one continuous I2+I3 offline block with CP-A–CP-E and early Library. This supersedes only H-011's single-step/no-Library restrictions; H-011 partial evidence/history, completed I1, ADR003–007 proposed status and accepted ADR006/Sol profile remain unchanged. Read [whole brief](docs/plans/I2-I3-offline-brief.md), [contract](docs/plans/I2-I3-offline-contract.md), [ADR012](docs/adr/ADR-OMX-012-I2-I3-offline-contracts.md). New scoped workflow requires supported actual current-native-owner writable binding; OMX_ROOT alone is not ownership. Root owns lifecycle, one leader, no manual IDs/pointers/locks/--force or I1 resume. Real DB/compiled graph, typed step contracts, bounded clarification/repair, actual-result M1 dependencies and Library same-core proof, complete trace/UI, isolated AppTest/offline browser and independent APPROVE+CLEAR/configured gates are mandatory. Offline scripted tests are not real-model accuracy. No live/count/credential loading, spending-ledger/hold/cap changes, vault writes, runtime update/repair, remote/push, I4+verification-I5 or defense. Use temporary offline DB/runtime/ledger; stop owned UI. Local scoped verified CP commits are authorized, with originals/untracked evidence preserved. Continue internal checkpoints without repeated approval requests, stop after whole offline DoD/report or exact supported-activation blocker. Historical restrictions above retain their original scoped meaning.
+
+## H-014 v2 — bounded offline readiness authority (2026-11-08)
+The actual H-014 task authorizes one continuous CP-R1–R5 offline readiness workflow,
+independent audit, clean tracked-only reproduction, scoped defect fixes, offline
+harness/pre-registration and reviewable future live budget/protocol. Starting published
+main6cc7ad3 and historical fully tested H013 productf4b775c remain distinct.
+Use docs/reports/H-014-readiness-offline.md for the current evidence cutoff; do not
+resume completed I1/H013, edit IDs/pointers/locks or use --force. Accepted ADR006/Sol
+high/medium/medium unchanged. Local explicit-path checkpoints authorized, push forbidden.
+No live/API/access/count calls, credentials, monetary cap/hold/ledger changes, vault
+writes or runtime repair. Test DB/runtime/ledger isolated; stop owned UI/browser.
+Proposed44/48 and≥7/8/category are not accepted. Missing live/push authority does
+not block bounded offline completion; live acceptance/publication/defense stay separate.

@@ -7,6 +7,13 @@ schemas, seed data, tests, decisions, prompt collections and execution evidence.
 
 ## Current status
 
+**H-014 offline readiness checkpoint:** [current report](docs/reports/H-014-readiness-offline.md)
+tracks the independent audit, scoped named-target repair, clean reproduction and
+[proposed live protocol](docs/plans/H-014-live-eval-protocol.md)/[budget](docs/plans/H-014-live-eval-budget.md).
+Final clean candidate/browser/review gates are pending at this documentation cutoff.
+New live calls and push are forbidden; historical results below remain unchanged.
+
+
 **I2+I3 implementation is complete and verified offline.** University supports
 means, enrollment/graded/distinct-student counts, JOIN listings, grouping, exact
 top-course ties, optional student/course/teacher/semester filters, ambiguous-name

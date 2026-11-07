@@ -492,3 +492,27 @@ Bounded SQLite generation policy v2. Generate one read-only SELECT for the suppl
 ### Current publication request (reader translation)
 
 Before starting the next stage, publish all results to GitHub. Record the result in LLM-Wiki; update README with service status, launch instructions and E2E checks; include all assignment deliverables, including prompts and database seed. Put prompts in the two existing Russian and English files. Translate README and other documentation to English and push that version.
+
+## H-014 v2 — complete root task, reader translation
+
+Source: [actual Russian task](omx/H-014-actual-prompt.txt),
+[receipt](../operations/H-014/prompt-receipt.json). This English translation is for
+readers, **not an actual English model input**. Private vault prefix is redacted.
+
+```text
+$ultragoal
+
+Achieve the second block's goal within its authorized offline part: independent I2+I3 readiness verification, clean-checkout reproducibility, repair of discovered defects and preparation of a reviewable live-eval protocol/budget. Execute all of <PRIVATE_VAULT>/handoffs/H-014-v2-readiness-offline.md and its listed inputs. Canonical repository: /home/dev/projects/universitydb, WSL UbuntuD. Obsidian is read-only.
+
+Starting published main and origin/main: 6cc7ad3af426d0da6818281b035c5e683806f357. Recheck Git/status/remote; preserve new changes, do not roll back to earlier899e2ef/5c8669f. Product tested SHA remains f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0: I2+I3 COMPLETE/strict PASS13/13,410offline tests/157oracle; the publication docs commit additionally passed59targeted E2E. Do not represent a docs SHA as a new full product run.
+
+Create a separate bounded offline-readiness goal through the installed ultragoal skill after checking current-native-owner binding. H-013 passed supported binding; do not revive the old H-012 blocker without a new fact. Do not resume/overwrite completed I1/H-013, change IDs/pointers/locks or use --force. Preserve the ledger, untracked evidence and original results.
+
+Run one continuous CP-R1–R5 workflow: independent audit → clean isolated installation and University+Library startup → complex/negative/clarification/M1/browser/regression checks → eval harness and pre-fixed cases/expected/rubric/threshold/budget → independent final reviews and evidence. Repair defects within accepted scope and make local checkpoints without repeated “continue?” questions. Do not reconfirm accepted architecture, ADR006 or Sol high/medium/medium.
+
+Live/API generation, count calls, credential loading, monetary ledger/cap/hold changes and push are forbidden. Previous publication permission for6cc7ad3 does not extend to this stage. Offline/injected tests are not real-model accuracy. The44/48 and≥7/8per-category thresholds remain proposed, not accepted; prepare a concrete future live decision package before results, without running it. Isolate test DB/runtime/ledger and stop owned UI/browser after checks.
+
+The goal ends with the full H-014v2 offline DoD and a reviewable live package; missing live/push authority does not block this bounded goal. Full live acceptance, publication of new changes and defense remain outside it. Record native COMPLETE/strict only on actual achievement of the offline DoD.
+
+Preserve this actual received prompt and identify the H-package as read context. Return docs/reports/H-014-readiness-offline.md, exact tested SHA, clean-run/browser/trace evidence, checks and not-run checks, actual independent verdicts, local checkpoint SHAs, preservation hashes and fresh remote status; push not-run. Public docs English, prompts in existing RU/EN bundles, original evidence unchanged.
+```

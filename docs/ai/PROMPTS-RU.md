@@ -495,3 +495,26 @@ Source: [sql](../../src/universitydb/prompts/sql.txt), SHA-256 `79fb9fb583d9e459
 
 
 Промпты - помести в два уже имеющихся в репозитории файла: на русском языке и на английском. README.md и всё остальное переведи на английский и отправь на GitHub именно в таком виде.
+
+## H-014 v2 — фактически полученный prompt (полный безопасный original)
+
+Источник: [actual task](omx/H-014-actual-prompt.txt), [receipt](../operations/H-014/prompt-receipt.json).
+Заменён только private vault-prefix; handoff — read context, не этот prompt.
+
+```text
+$ultragoal
+
+Достигни цели второго блока в разрешённой offline-части: независимая проверка готовности I2+I3, воспроизводимость из чистой checkout, исправление обнаруженных дефектов и подготовка готового к согласованию live-eval protocol/budget. Выполни целиком <PRIVATE_VAULT>/handoffs/H-014-v2-readiness-offline.md и перечисленные там входы. Canonical repo: /home/dev/projects/universitydb, WSL UbuntuD. Obsidian — только читать.
+
+Стартовый опубликованный main и origin/main: 6cc7ad3af426d0da6818281b035c5e683806f357. Перепроверь Git/status/remote; сохраняй новые изменения, не откатывай к прежним899e2ef/5c8669f. Product tested SHA остаётся f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0: I2+I3 COMPLETE/strict PASS13/13,410offline tests/157oracle; публикационный docs commit дополнительно проверен59targeted E2E. Не выдавай docs SHA за новый полный прогон продукта.
+
+Создай отдельную bounded offline-readiness цель по установленному ultragoal skill после проверки актуального current-native-owner binding. H-013 успешно прошёл supported binding; не возвращай старый H-012 blocker без нового факта. Не resume/overwrite завершённые I1/H-013, не меняй IDs/pointers/locks и не используй --force. Сохраняй ledger, untracked evidence и оригинальные результаты.
+
+Веди один непрерывный workflow CP-R1–R5: независимый audit → чистая изолированная установка и запуск University+Library → сложные/негативные/clarification/M1/browser/regression проверки → eval harness и предварительно фиксируемые cases/expected/рубрика/порог/бюджет → независимые final reviews и evidence. Исправляй дефекты в принятом scope и делай локальные checkpoints без повторных вопросов «продолжать?». Принятые архитектуру, ADR006 и Sol high/medium/medium не переутверждать.
+
+Live/API generation, count calls, загрузка credentials, изменение monetary ledger/cap/holds и push запрещены. Прошлое разрешение публикации6cc7ad3 не распространяется на этот этап. Offline/injected tests не являются real-model accuracy. Порог44/48 и≥7/8 per category пока proposed, не accepted; подготовь конкретный пакет будущего live решения до результатов, не запускай его. Изолируй тестовые DB/runtime/ledger, останови свои UI/browser после проверки.
+
+Цель завершается полным offline DoD H-014 v2 и готовым reviewable live package; отсутствие live/push authority не блокирует эту ограниченную цель. Полный live acceptance, публикация новых изменений и защита остаются вне неё. Native COMPLETE/strict фиксируй только по фактическому достижению offline DoD.
+
+Сохрани именно этот фактически полученный prompt, H-пакет как read context. Верни docs/reports/H-014-readiness-offline.md, exact tested SHA, clean-run/browser/trace evidence, проверки и not-run, реальные independent verdicts, локальные checkpoint SHAs, preservation hashes и свежий remote status; push not-run. Public docs English, prompts в существующих RU/EN bundles, original evidence неизменны.
+```

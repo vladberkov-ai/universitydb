@@ -1,0 +1,40 @@
+{
+  "tested_sha": "6cc7ad3af426d0da6818281b035c5e683806f357",
+  "databases": {
+    "university": {
+      "sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+      "rows": {
+        "Courses": 3,
+        "Enrollments": 8,
+        "Offerings": 5,
+        "Semesters": 2,
+        "Students": 4,
+        "Teachers": 2
+      },
+      "repeat_init": "refused DB_UNAVAILABLE; hash unchanged",
+      "resource_hashes": {
+        "schema.sql": "2d459c3592bdf9d0baea14d546540d55be650bb619d3762ee63b85cca9be70f8",
+        "seed.sql": "c355537acc89af8a2ec7b96b65fdab3f37366185539ae16c1b0b9fe62c0d1acb"
+      }
+    },
+    "library": {
+      "sha256": "a8dcc9b77ccea2f6f1726a4ef649ee0c576e88f1643b1f981be9eb38cf38d217",
+      "rows": {
+        "Books": 2,
+        "Loans": 3,
+        "Readers": 2
+      },
+      "repeat_init": "refused DB_UNAVAILABLE; hash unchanged",
+      "resource_hashes": {
+        "schema.sql": "b7ea3103b689d4f0797bf398a278c1738ee97bac81cb785a72a9d25081b870f1",
+        "seed.sql": "a81701bd8c62379f03f101081739b52e451ffdd0fd74d11f23217b6ecaf9400a"
+      }
+    }
+  },
+  "oracle": {
+    "checks": 157,
+    "product_imports": false,
+    "status": "passed"
+  },
+  "runtime_absent": true
+}

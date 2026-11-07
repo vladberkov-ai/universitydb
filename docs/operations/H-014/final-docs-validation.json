@@ -1,0 +1,11 @@
+{
+  "phase": "WIP documentation checkpoint, final clean/browser/review/native pending",
+  "links_checked": 12,
+  "missing_links": [],
+  "private_prefix_current_docs_matches": [],
+  "manifest_hashes_verified": 17,
+  "eval_tests": "33passed0.07s",
+  "planned_runs": "48not-run records validated only; no heldout execution",
+  "diff_check": "PASS",
+  "historical_privacy_limit": "Initial local8a9cd5d task projection preceded redaction; no history-wide absence claim"
+}

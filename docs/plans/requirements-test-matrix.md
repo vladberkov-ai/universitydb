@@ -60,3 +60,16 @@ independent code-reviewer APPROVE and architect CLEAR received; root native COMP
 NL accuracy/live/count/credentials/spending/push claim; I4+verification-I5/publication/
 defense remain later.
 [Exact-process structured proofs](../operations/H-013/m1-final/manifest.json).
+
+## H-014 v2 — current offline-readiness extension
+
+[Full current R01–14/U01/U03–06 audit](../reports/H-014-readiness-offline.md#requirement-and-invariant-audit)
+links initial independent audit, named-target failing regression/repair, tracked-only
+clean install/init/static/oracle/compiled-graph/browser and proposed future live eval.
+The historical documentary/H013 cutoffs above are not current no-implementation
+claims. Final corrected candidate331eb5a full clean/browser/reviews remain pending
+at this checkpoint. Future real-model runs remain48not-run, not offline passes.
+Proposed44/48 overall and≥7/8/category plus mandatory safety/behavior gates need
+owner approval before results; no retroactive threshold change. R15 new publication
+awaits separate authority; R16/17 owner defense deferred; U02 exact deadline unknown.
+No live/count/credential/spending/push action is performed by this readiness matrix.

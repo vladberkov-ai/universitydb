@@ -1,0 +1,20 @@
+COMMAND: uv run --locked pytest -q --basetemp=/tmp/universitydb-h014-initial-pytest
+........................................................................ [ 17%]
+........................................................................ [ 35%]
+........................................................................ [ 52%]
+........................................................................ [ 70%]
+........................................................................ [ 87%]
+..................................................                       [100%]
+410 passed in 120.69s (0:02:00)
+EXIT: 0
+COMMAND: uv run --locked ruff check src tests
+All checks passed!
+EXIT: 0
+COMMAND: uv run --locked ruff format --check src tests
+32 files already formatted
+EXIT: 0
+COMMAND: uv run --locked mypy src/universitydb --ignore-missing-imports
+Success: no issues found in 14 source files
+EXIT: 0
+COMMAND: uv run --locked python -m compileall -q src tests
+EXIT: 0

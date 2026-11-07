@@ -4,12 +4,22 @@
   "sha256": {
     "tools/eval/harness.py": "a14f11835ff3c67aa6ef6e7a95716613982a3c1799bfa2d734f4038c95a1c811",
     "tests/test_eval_harness.py": "0e077f83f5b236139cf44ad3f295658b034947b37aee19e8b2573ce1064b0d60",
-    "docs/plans/H-014-live-eval-budget.md": "488521ab41c1ef17e9d0bce7d9768a02e44f5bc3ac4fb5760860838406959378",
+    "docs/plans/H-014-live-eval-budget.md": "4f4866907a4df5a9af50d2a05f5bc4353e72c4b51612a04f6a52285498e26956",
     "docs/plans/H-014-live-eval-protocol.md": "00950a2e651351ccdf3b0ab996e65829f76fac5719fb6b4722ebe3137792bec7",
     "docs/operations/H-014/eval/planned-runs-v1.json": "972c134e4fa82682f0a16d87b71c0c1ed693888248d662f63280cde4fcff3424",
     "docs/operations/H-014/eval/dev-v1.json": "0915ca1f5c3a2c199e6bd85b1ff34ad859c61676d8c6d0713e2748f8a16803ff",
     "docs/operations/H-014/eval/validation.json": "68b6b83591c107d39463b9d4abfe95172b58b2b5fba73aad869728f60be48b4f",
     "docs/operations/H-014/eval/heldout-candidate-v1.json": "af1c7cafce466f58065fb96de9dd997565b2e3b940855fb9f48faa4559753ae5",
-    "docs/operations/H-014/eval/cleanup-plan.md": "c1d8e1ab130170572df3b4cededa162d7c1186bf85e166ba110c1616a1a24851"
-  }
+    "docs/operations/H-014/eval/cleanup-plan.md": "c1d8e1ab130170572df3b4cededa162d7c1186bf85e166ba110c1616a1a24851",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "resources/schema.sql": "2d459c3592bdf9d0baea14d546540d55be650bb619d3762ee63b85cca9be70f8",
+    "resources/seed.sql": "c355537acc89af8a2ec7b96b65fdab3f37366185539ae16c1b0b9fe62c0d1acb",
+    "resources/library/schema.sql": "b7ea3103b689d4f0797bf398a278c1738ee97bac81cb785a72a9d25081b870f1",
+    "resources/library/seed.sql": "a81701bd8c62379f03f101081739b52e451ffdd0fd74d11f23217b6ecaf9400a",
+    "uv.lock": "de36cab6c73d37bde70cc13e019b9eb2552a0747e46fe5c8c3b7cedf5338378d",
+    "docs/operations/H-014/eval/official-rates.md": "ec798d19ee634eafdb44e4560169d94df5ccfbec6d41497581f4a6d62c575b2e"
+  },
+  "candidate_sha": "331eb5a61648bccb7fa66eecb58d9cc284eda2a0",
+  "pre_registration": "Proposed before live results; all48 planned/not-run; reviewer/author/root exposure disclosed, not sealed untouched holdout; independently replace if required."
 }

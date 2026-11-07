@@ -1,6 +1,6 @@
 ## Current reader bundle update — 2026-11-08
 
-Full current runtime templates and H-011/H-013 root tasks are included in both existing language bundles below. English translations and Russian runtime translations are reader derivatives, not newly submitted model inputs. Original task/receipt bytes remain unchanged. H-013 child task projections stay linked with explicit coverage; missing private/opaque messages are not reconstructed. Publication is now authorized; historical no-push statements describe past tasks.
+Full current runtime templates and H-011/H-013 root tasks are included in both existing language bundles below. English translations and Russian runtime translations are reader derivatives, not newly submitted model inputs. Original task/receipt bytes remain unchanged. H-013 child task projections stay linked with explicit coverage; missing private/opaque messages are not reconstructed. The H013 publication authority was exercised; H014 has no new push/live authority.
 
 ## H-011 current coverage
 [Actual received prompt](omx/H-011-actual-prompt.txt), [provenance/cutoff](../operations/H-011/prompt-receipt.json), [I2 readiness report](../reports/H-011-I2-offline.md). Preparation only; no I2 runtime prompt/model consumption or full transcript claim. Earlier stage cutoffs below are preserved.
@@ -149,3 +149,21 @@ separates selected actual root/child task projections from templates/read contex
 RU original/EN synopsis and opaque reviewer task transport (metadata only, no
 plaintext/equality/decryption claim). Full hidden/private history remains omitted;
 final independent verdict/lifecycle evidence is separately attributed.
+
+## H-014 v2 actual task and bounded delegation coverage
+
+[Actual received root task](omx/H-014-actual-prompt.txt) is pinned by the
+[prompt receipt](../operations/H-014/prompt-receipt.json): supported exact selected
+user-entry export, private vault-prefix substitution and terminal LF only. The v2
+handoff and listed sources are read context hashed in the baseline, not the prompt.
+The RU bundle includes the exact safe original; EN is a labeled reader translation,
+not an actual English model input. Existing runtime plan/sql templates remain
+unchanged and are not newly consumed by a live provider in H014.
+
+Initial independent audit, clean verifier, eval and documentation task projections
+record bounded role coverage; they are not full hidden/tool/instruction transcripts.
+[Documentation projection](../operations/H-014/final-docs-task-coverage.json) explicitly
+separates received task from followups and whole-root input coverage. No fictitious
+model transcript, full private export or globally complete U01 history is claimed.
+Current public text redacts private vault prefixes; the initial local audit commit
+preceded redaction, so Git-history-wide private-path absence is not claimed.

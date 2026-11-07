@@ -1,0 +1,30 @@
+{
+  "role": "executor documentation/Git checkpoint lane",
+  "received_task_projection": "Own H-014 documentation integration/Git checkpoints ONLY: report, README, assignment status, manual E2E, requirements matrix, production notes, AGENTS newest boundary, ADR index, prompt README and existing RU/EN bundles, final docs/invariant/CP receipts. Root owns runtime/native lifecycle/state/ledger. Preserve other lanes. Read actual root prompt and private H014v2 inputs relevant, H013 report/current assignment/matrix/production/provenance. Public docs English, evidence immutable. No live/count/credentials/monetary/cap/holds/push/vault/runtime repair. First explicitly stage and locally checkpoint stable readiness/eval candidate after Ruff/33eval tests/privacy/diff; report SHA immediately. No source edits after freeze unless new finding. Then WIP docs with explicit pending clean/browser/reviews/native; integrate root supplied facts. Full R01\u201314/U01/U03\u201306 mapping; R15 publication pending, R16/17 defense deferred, U02 deadline unknown. RU original/EN reader translation, bounded child coverage. Supported exact Git permissions only; no blanket staging/amend/reset/push. Save received coverage, redact private prefix; no recursive delegation.",
+  "projection_note": "Selected task responsibility projection, not byte-for-byte full parent tool argument or hidden transcript. Private prefix omitted; source root task separately pinned by prompt receipt.",
+  "followups": [
+    "Root noted historical local8a9cd5d contains nonsecret vault prefix; dc7152 corrects current audit, no history-wide absence claim.",
+    "Root confirms331eb5a frozen; initial clean6cc410/static157/both init safe refusal; final corrected full pending."
+  ],
+  "read_coverage": [
+    "actual root prompt",
+    "full H014v2 handoff",
+    "baseline-indexed relevant private wiki/read context, read only",
+    "full H013 report",
+    "assignment/matrix/production/current prompts/provenance",
+    "initial audit and ADR013",
+    "eval validation/protocol/budget"
+  ],
+  "omissions": "No full private chat history or hidden/system/tool transcripts; no credentials; no independent native lifecycle certification; no real-model execution. Root owns all-input register and original evidence preservation.",
+  "freeze": {
+    "sha": "331eb5a61648bccb7fa66eecb58d9cc284eda2a0",
+    "checks": [
+      "Ruff format five files PASS",
+      "Ruff check five files PASS",
+      "33 eval tests PASS",
+      "cached diff check PASS"
+    ],
+    "git_permission": "ordinary index write EROFS; supported escalated exact-path commit succeeded",
+    "push": "not-run"
+  }
+}

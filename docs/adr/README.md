@@ -38,3 +38,9 @@ Architecture recommendations passed separate Architect/Critic reviews, not owner
 
 ## H-013 — current combined offline scope
 [ADR-OMX-012](ADR-OMX-012-I2-I3-offline-contracts.md) records adopted scoped implementation choices before dependent code: per-step registry, static bounded DAG then typed actual-result binding, in-memory session-bound continuation, early Library adapter and unchanged dependencies/bounds. Actual H-013 / CHAT-045 expands accepted ADR006/ADR011 only beyond single-step/no-Library; ADR003–007 remain proposed. Full I2+I3 offline proof is pending, not conferred by this decision. [Whole brief](../plans/I2-I3-offline-brief.md), [acceptance contract](../plans/I2-I3-offline-contract.md).
+
+## H-014 scoped repair
+[ADR-OMX-013](ADR-OMX-013-readiness-scope-boundary.md) records the independently found named-target scope-loss defect,
+failing regressions and existing adapter-owned fail-closed guard repair. This is
+not reacceptance of proposed ADR003–007 or a new architecture/domain decision.
+Final readiness proof is tracked in the [H014 report](../reports/H-014-readiness-offline.md).

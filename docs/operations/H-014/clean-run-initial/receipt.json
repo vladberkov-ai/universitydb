@@ -1,0 +1,23 @@
+{
+  "tested_sha": "6cc7ad3af426d0da6818281b035c5e683806f357",
+  "historical_product_sha": "f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0",
+  "meaning": "New clean-environment baseline at published docs SHA; not a defect-free claim or final repaired candidate verification",
+  "clone_git_status": "clean after checks",
+  "offline_tests": 410,
+  "oracle_checks": 157,
+  "ruff_check": "passed",
+  "ruff_format": "32 files already formatted",
+  "mypy": "no issues in14source files",
+  "compileall": "passed",
+  "commands_all_exit": 0,
+  "files_sha256": {
+    "commands.txt": "42db5dc6a85672fafc18bd00e6ff7f55f28d96a926fabdbea5a116e34510fd33",
+    "init-oracle.json": "c03f44154f28b5b73461661adf656c3e240b848eb3829b98751e7bc301810836"
+  },
+  "api_generation": "not-run",
+  "count": "not-run",
+  "credentials_loaded": false,
+  "ledger_copied": false,
+  "ui_browser": "not-run initial baseline; final candidate browser pending",
+  "processes": "Initial shell and dependent command process exited0; no owned UI/browser started"
+}
