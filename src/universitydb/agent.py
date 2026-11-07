@@ -12,6 +12,7 @@ from langgraph.graph import END, START, StateGraph
 from pydantic import ValidationError
 
 from universitydb import db
+from universitydb.config import PROFILE, logical_operation
 from universitydb.contracts import Failure, PlanProposal, SQLProposal
 from universitydb.llm import Provider
 from universitydb.tracing import Trace
@@ -123,7 +124,7 @@ class Agent:
         transient_retried = False
         while True:
             self._check_deadline()
-            if self.calls >= 5:
+            if self.calls >= PROFILE.calls:
                 raise Failure("BUDGET_EXCEEDED", "Provider call budget exceeded.")
             payload = {
                 "question": state["question"],
@@ -132,8 +133,14 @@ class Agent:
                 "plan": state.get("plan"),
                 "previous_error": state.get("repair_error"),
             }
-            if len(json.dumps(payload, ensure_ascii=False).encode()) > 12000:
+            if len(json.dumps(payload, ensure_ascii=False).encode()) > PROFILE.input_bytes:
                 raise Failure("RESOURCE_LIMIT", "Provider payload exceeds byte gate.")
+            logical = logical_operation(operation, payload)
+            policy = PROFILE.operation(logical)
+            projected = PROFILE.input_tokens + policy.output_tokens
+            if self.reserved_tokens + projected > PROFILE.run_tokens:
+                raise Failure("BUDGET_EXCEEDED", "Run token reservation limit exceeded.")
+            self.reserved_tokens += projected
             self.calls += 1
             self.trace.emit(
                 operation,
@@ -142,6 +149,14 @@ class Agent:
                     "execution_profile": self.provider.profile,
                     "real_provider_called": False,
                     "phase": "application_attempt_before_dispatch",
+                    "logical_operation": logical,
+                    "requested_model": PROFILE.model
+                    if self.provider.profile == "live"
+                    else "scripted-test",
+                    "reasoning_effort": policy.effort,
+                    "service_tier": PROFILE.service_tier,
+                    "max_output_tokens": policy.output_tokens,
+                    "reserved_run_tokens": self.reserved_tokens,
                 },
                 self.calls,
             )
@@ -150,7 +165,7 @@ class Agent:
                     operation,
                     payload,
                     output_type,
-                    timeout=min(15.0, self.deadline - time.monotonic()),
+                    timeout=min(policy.timeout, self.deadline - time.monotonic()),
                 )
                 self._check_deadline()
                 self.trace.emit(
@@ -249,8 +264,8 @@ class Agent:
     def run(self, question: str) -> dict[str, Any]:
         run_id = str(uuid.uuid4())
         self.trace = Trace(self.trace_directory, run_id)
-        self.deadline = time.monotonic() + 60
-        self.calls = self.sql_attempts = 0
+        self.deadline = time.monotonic() + PROFILE.run_seconds
+        self.calls = self.sql_attempts = self.reserved_tokens = 0
         self.retried = False
         self.repaired = False
         answer: dict[str, Any] | None = None

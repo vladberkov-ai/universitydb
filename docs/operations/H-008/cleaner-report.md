@@ -1,0 +1,9 @@
+# H-008 bounded cleaner report
+
+Writer: delegated performer, not independent approval. [Plan](cleanup-plan.md) was written before source edits; baseline behavior locked by75passed tests9.86s. No recursive orchestration or dependencies.
+
+Fallback inventory: grounded explicit counted transient retry/syntax repair, fail-closed missing config/ledger/trace, explicit test injection. No hidden model fallback, compatibility shim, swallowed corruption or invented answer. Unknown operation/schema/model rejected before client. Known response errors preserve usage; unknown timeouts retain holds. No unrelated dead code selected. Duplicate operation policy literals centralized; old Spending default bounds remain deliberately as tested old-policy continuation, while production explicitly passes new limits. Naming/error pass exposes logical repair and effective reasoning/default tier; UI/design untouched.
+
+Regression reinforcement and final quality evidence: [validation](validation.json) records102offline tests passed13.47s, Ruff lint/format18files, strict mypy11files, compileall and diff-check all0; baseline preservation hashes alltrue. Includes real provider/DB stalled-child kill/reap, typed schemas, full graph/DB S6/oracles, retry/repair trace, missing live gates, old/new monetary-policy continuation, wrong returned model/tier, missing and failed-response usage. Static dangerous-construct scan is bounded, not a vulnerability-database audit. No live adequacy/accuracy or I1 completion claim. Independent root-owned code/architecture reviewers assess this writer's plan/source/evidence separately; author does not approve itself.
+
+Remaining risks: provisional output/time envelopes, heuristic token bound requiring actual billing preflight, conservative cost estimate not provider invoice/enforcement, responsive trusted parent I/O, narrow explicit-ID NL resolver. Existing architecture WATCH concerns remain visible. No production/full48/I2–I5 scope.

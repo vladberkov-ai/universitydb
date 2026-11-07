@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-07",
+  "scope": "H008 offline only; no paid calls, live compatibility or accuracy proof",
+  "baseline_tests": "75 passed9.86s",
+  "checks": [
+    {
+      "command": ".venv/bin/pytest -q",
+      "exit_code": 0,
+      "stdout": "........................................................................ [ 70%]\n..............................                                           [100%]\n102 passed in 13.47s\n",
+      "stderr": ""
+    },
+    {
+      "command": ".venv/bin/ruff check src tests",
+      "exit_code": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "command": ".venv/bin/ruff format --check src tests",
+      "exit_code": 0,
+      "stdout": "18 files already formatted\n",
+      "stderr": ""
+    },
+    {
+      "command": ".venv/bin/mypy src/universitydb --ignore-missing-imports",
+      "exit_code": 0,
+      "stdout": "Success: no issues found in 11 source files\n",
+      "stderr": ""
+    },
+    {
+      "command": ".venv/bin/python -m compileall -q src",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "hashes": {
+    ".env.example": "1a4c1f4dc52f8f8e5b95470d3d3aa2613b12d5a5db2eb2d35e6a18a9e7c59692",
+    "AGENTS.md": "a9d7ddbdd30a340bf076d8c3f8d947aa84a86822a5d6e123fcb35007e4b14f51",
+    "README.md": "1bf9a67e36ab21aa66fbd47c4032f4c74e696f02acd81310b24cea6c9220c2d5",
+    "pyproject.toml": "00522db5a7513ed6a19804487591996a65a31c5f1b40559362d6587dbbfe9644",
+    "resources/schema.sql": "2d459c3592bdf9d0baea14d546540d55be650bb619d3762ee63b85cca9be70f8",
+    "resources/seed.sql": "c355537acc89af8a2ec7b96b65fdab3f37366185539ae16c1b0b9fe62c0d1acb",
+    "src/universitydb/__init__.py": "f4783354578e7b9ed2f99a68b5454ac621abd61d76b07062a05bf5887dd72dd7",
+    "src/universitydb/agent.py": "3f32c70182bf56e9b5b741c30dff0255605c5091a7fa22193e691faf1d210844",
+    "src/universitydb/config.py": "d3f5f5ae9cfcadaf028f332cde9651198d929616db29ecfd473bb0f66de2ba6e",
+    "src/universitydb/contracts.py": "2b8f71b2da216cb56c51c5fc529b73d7404ac9531b7d5a74cdd4a68c42ffd955",
+    "src/universitydb/db.py": "5832575398b37ded9409c3dbf8743d2616cced4d243b9a7ae3e16d31ddc99b4a",
+    "src/universitydb/db_worker.py": "d668c0da4899e3ee6c2bfcbe85226b2f2aff7279447b4a4e4ab830e8465d9c2c",
+    "src/universitydb/domain.py": "2f1f84d6d36339a136d91085eee90c80ab4568395f6991041890c1b166badedf",
+    "src/universitydb/llm.py": "208b09f493b22a2d7e18f4a7a74ab65f4d17c4214ca0ee72138b13eaf403eaf7",
+    "src/universitydb/llm_worker.py": "4892d88d0e0968bd2cbe396f40effb4c978f7157dbcbf3dbd560f50f335426ec",
+    "src/universitydb/prompts/plan.txt": "24d1d41b946b85397fe863523a2fec18f4371f665b11ae21f7eadf5c7c9a6db8",
+    "src/universitydb/prompts/sql.txt": "c485c9e4fd66ad6345861e15c35212f01399f4598f04408e3de7aa922a0b11d3",
+    "src/universitydb/tracing.py": "7655d8eb5932eb9466536ced1c9e85a34e38c3bee3d4a7bda95ddb79acd58858",
+    "src/universitydb/ui.py": "11072ecb1a0a52c63301993381d7ce1af8a61cbce53c7fd7de6e6755dc99c3b0",
+    "tests/conftest.py": "46131f0dc3214ea8c1364efa4579539bd1f6c8d85367585c3544eab3f7155989",
+    "tests/test_bounds.py": "08ce4aa953be0188ca5588b426eb3b1f3ffe61d7449ef7fe5f01ac7561b03218",
+    "tests/test_db_domain.py": "bea5452a16496b183a5a5eb790219e4d3009ffe9478fc886e616b13e78c4bfda",
+    "tests/test_graph.py": "cee3f4be1eb92d900355a5ebcd3d9257bedfdb571d5f8e7afff3832959babb3d",
+    "tests/test_provider_worker.py": "0358516375262c8de48e3e8bef2c745eb2c36970fcf5b01d847a068b917eb6ec",
+    "tests/test_sol_profile.py": "0cdc41b5f1df84a1d1ded70ba87b6cbd261a6fe65597d8367d6d6bb3f7a3f688",
+    "tests/test_ui.py": "2ea23c34a85405ac43ae2d14a1f97a79d1b88dc8db77eb501dbcb75764017a73",
+    "uv.lock": "de36cab6c73d37bde70cc13e019b9eb2552a0747e46fe5c8c3b7cedf5338378d"
+  },
+  "baseline_preserved": {
+    ".omx-state-locks.identity.json": true,
+    "docs/operations/H-007/final-commit-receipt.json": true,
+    "docs/operations/H-007/postcheckpoint-goal-receipt.json": true,
+    ".omx-state-locks/655a20b082786cf4e05f99e0da122d6dc803270e08f859022ac44d1302358bc8.mutex": true,
+    ".omx-state-locks/3102cbda72779bbf780705d49e74806858334b4de02a46d2ee2a37802e26125c.mutex": true
+  },
+  "live_ledger_present": false,
+  "paid_calls": 0,
+  "dependencies_updated": false,
+  "static_scan": {
+    "shell\\s*=\\s*True": [],
+    "verify\\s*=\\s*False": [],
+    "\\beval\\(": [],
+    "\\bexec\\(": [],
+    "pickle\\.loads": []
+  },
+  "static_scan_limit": "targeted dangerous-construct scan only; no vulnerability-database audit"
+}

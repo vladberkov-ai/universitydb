@@ -22,3 +22,7 @@ This is OMX's own memory, not a copy or replacement of the authoritative Obsidia
 Historical H005/H006 entries above remain provenance; no closed Advisory is repeated. I1 is not complete at the preparation checkpoint; live model/access/cap gates remain open.
 
 - [H007 I1 offline partial report](../docs/reports/H-007-first-vertical-slice.md) —75offline tests and actual injected browser evidence; independent code APPROVE offline/architect WATCH, combined COMMENT; live gate missing, no I2–I5 or publication.
+
+## H-008 existing-I1 continuation
+- [Sol profile ADR009](../docs/adr/ADR-OMX-009-Sol-operation-profile.md): owner model/efforts accepted, limits provisional.
+- [H008 report](../docs/reports/H-008-sol-profile-I1-continuation.md): offline configuration is not live I1 completion; account/cap/billing and native control gaps remain separate.

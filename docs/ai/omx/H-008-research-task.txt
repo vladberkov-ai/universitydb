@@ -1,0 +1,28 @@
+H-008 research task record
+Date: 2026-11-07
+Role: researcher; native child /root/h008_api_research
+Parent: /root
+Session: omx-1794051468714-2djff9 (provided runtime context; not ownership proof)
+Record type: actual delegated task, not a template or application runtime prompt.
+
+Exact actual task received:
+H008 bounded official API research, not implementation. Workspace /home/dev/projects/universitydb. Read installed /home/dev/.codex/skills/.system/openai-docs/SKILL.md and follow docs-first before repo lookup. User already APPROVED exact model gpt-6.1-sol, plan reasoning high, sql/repair medium; no model reselection, no paid probes or livecalls. Verify current official Responses reasoning={effort}, strict structuredparse, storeFalse, how max_output_tokens counts reasoning, timeout guidance for high, service_tier defaults/no premium. Installed openai3.46.0 not to upgrade without necessity. Need grounded bounded operation budgets recommendations (offline provisional, not accuracy proof) and input reservation caveat schema/framing tokens. Access/cap absent; rates only if useful dated official standardtier reference, NOT payment authorization and must refresh aftercap. Also narrow investigate documented root/user native Codex goal BLOCKED->active resume surface: current native get_goal blocked, create_goal prohibited replacement, update_goal schema ONLYcomplete/blocked/paused noactive/resume; user explicit resume did not change returned status. Do not conflate codex session resume with goal resume; if no authoritative specific action established say unavailable and minimal owner native goal-control step without invented slashcommands. Do not touch runtime/IDs or hiddenAPIs or CLI repairs. You own only new docs/operations/H-008/api-references.md and docs/ai/omx/H-008-research-task.txt (no older evidence edits); record exact actual task/coverage/citations/retrieval limits. Not alone; preserve others. No recursive agents, no git staging. Return key findings to root promptly.
+
+Coverage:
+- Installed OpenAI Docs skill read before research.
+- Exact-model official documentation searched and fetched before destination existence checks.
+- Official Responses structured parsing, reasoning/output limits, storage caveats, tiers, SDK retries/timeouts, pricing, input accounting and native goal-control distinction researched.
+- Research-only candidate operation limits marked provisional; no adequacy or accuracy claim.
+- Citations, retrieval date and limitations recorded in docs/operations/H-008/api-references.md.
+- Parent received prompt findings on explicit standard tier, reasoning accounting, blocked-goal ambiguity and cache-write reservation risk.
+
+Omissions / redactions:
+- No full chat/transcript export. Only this actual delegated task is recorded.
+- No credentials, private account details, live calls, repository-usage inspection, SDK upgrade, source edits, runtime writes, ID changes, CLI repair, goal mutation, git staging, or child delegation.
+- Installed SDK version and leader goal status are caller-provided facts, not independently probed by this child.
+- Main Responses create page could not be fetched due size; alternate CLI route timed out; Markdown fetch unsupported; bounded shell fetch yielded no file. Smaller fetched official pages support the retained claims.
+- No authoritative specific blocked-to-active transition was verified. No inferred lifecycle action was executed.
+
+Validation scope:
+Only the two newly assigned documentation files; parent owns integration, application/SDK validation and git actions.
+Fresh validation: python3 checked UTF-8 readability, nonempty content, final newlines, no trailing whitespace/NULs, requested topic markers, and official citation domains (20 citations, 13 unique URLs): PASS. Initial invocation using python failed because that executable is absent; python3 succeeded. git diff --check returned no errors, but both files were untracked, so the explicit content checks provide the relevant new-file whitespace evidence. No product tests were run by this documentation-only child.

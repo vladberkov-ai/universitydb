@@ -1,0 +1,14 @@
+{
+  "head": "470bc3ea83bcf9413cd19557d27bccbd8406fdf4",
+  "status": "?? .omx-state-locks.identity.json\n?? .omx-state-locks/\n?? docs/ai/omx/H-008-research-task.txt\n?? docs/operations/H-007/final-commit-receipt.json\n?? docs/operations/H-007/postcheckpoint-goal-receipt.json\n?? docs/operations/H-008/\n",
+  "preserved_hashes": {
+    ".omx-state-locks.identity.json": "50d956e3fbf97b265862cefdbfb54fd809b03ef55b3f7ccd9997864b70d62711",
+    "docs/operations/H-007/final-commit-receipt.json": "f709e09f26da37ba82f89705211cc4297a097f1641ca0c611c160aa1acaab350",
+    "docs/operations/H-007/postcheckpoint-goal-receipt.json": "5ab47a5c2b42693e51c38f83b5415ce8316e1348cdff4c6f9edd7c7d17f152dc",
+    ".omx-state-locks/655a20b082786cf4e05f99e0da122d6dc803270e08f859022ac44d1302358bc8.mutex": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".omx-state-locks/3102cbda72779bbf780705d49e74806858334b4de02a46d2ee2a37802e26125c.mutex": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "baseline_tests": "75 passed in9.86s",
+  "live_ledger_present": false,
+  "provenance": "Performer baseline captured before product edits after root startup; status can include concurrently-created H008 documentation. Root true initial status had exactly four untracked baseline paths: locks identity, lock directory, two H007 receipts. H008 research files are independently-owned concurrent work, not preexisting user files."
+}

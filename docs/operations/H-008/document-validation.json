@@ -1,0 +1,7 @@
+{
+  "scoped_markdown_links_checked": 100,
+  "broken": [],
+  "new_files_utf8_final_lf_no_trailing_whitespace": true,
+  "privacy_review": "Explicit changed product/docs/test files reviewed; no key values/account IDs/private raw transcripts, .omx/runtime/DB/venv/locks staged. Offline test key is explicitly fake. No vault export.",
+  "not_run": "Vulnerability-database audit; live calls/accuracy; new browser/UI capture; remote/push/publication; strict final I1 gate"
+}

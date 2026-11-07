@@ -26,3 +26,6 @@ Architecture recommendations passed separate Architect/Critic reviews, not owner
 
 ## H-007 limited implementation authority
 [ADR-OMX-008 — scoped I1 choices](ADR-OMX-008-I1-scoped-implementation.md) is adopted provisionally for S6 by the new user task only. It does not promote ADR003–007 or accept the full project design. Model/access/spending and real live/UI acceptance remain independent gates.
+
+## H-008 accepted model configuration
+[ADR-OMX-009 — Sol operation profile](ADR-OMX-009-Sol-operation-profile.md) implements accepted ADR-CHAT-004 / CHAT-029 for this limited I1. Model/effort accepted; bounded limits provisional and live adequacy unproven. Supersedes only ADR008's prior unknown-model/old-limit clauses, preserving history and unrelated proposals.

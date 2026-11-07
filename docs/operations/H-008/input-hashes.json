@@ -1,0 +1,163 @@
+[
+  {
+    "group": "Vault inputs SHA-256",
+    "path": "AGENTS.md",
+    "expected": "5ff0a366131939264d02ee9aed7386be0e8e321f5d96c83bca48d65c3064bd36",
+    "actual": "5ff0a366131939264d02ee9aed7386be0e8e321f5d96c83bca48d65c3064bd36",
+    "match": true
+  },
+  {
+    "group": "Vault inputs SHA-256",
+    "path": "wiki/overview.md",
+    "expected": "412edbd05abed316a8c1decd77333d231ef844493d54f30fa9becd6f0c3a4d79",
+    "actual": "412edbd05abed316a8c1decd77333d231ef844493d54f30fa9becd6f0c3a4d79",
+    "match": true
+  },
+  {
+    "group": "Vault inputs SHA-256",
+    "path": "wiki/requirements.md",
+    "expected": "9426dee0a0ac81a73fb84514fc81b2cea0f869f306f5acaf0570bdf76f621a44",
+    "actual": "9426dee0a0ac81a73fb84514fc81b2cea0f869f306f5acaf0570bdf76f621a44",
+    "match": true
+  },
+  {
+    "group": "Vault inputs SHA-256",
+    "path": "wiki/decisions/ADR-CHAT-004-service-model-profile.md",
+    "expected": "1396cc7450fe088575e3b60a28f3f292bb9a9e846a6d3dd70928acda1b2195e5",
+    "actual": "1396cc7450fe088575e3b60a28f3f292bb9a9e846a6d3dd70928acda1b2195e5",
+    "match": true
+  },
+  {
+    "group": "Vault inputs SHA-256",
+    "path": "wiki/operations/omx-workflow.md",
+    "expected": "286024152311f82f22548f4023e6ca25461f40f29a0babd52afeed8c03243972",
+    "actual": "286024152311f82f22548f4023e6ca25461f40f29a0babd52afeed8c03243972",
+    "match": true
+  },
+  {
+    "group": "Vault inputs SHA-256",
+    "path": "wiki/operations/git-protocol.md",
+    "expected": "d7aa9bc0b8de8859cb3c922e8f1d84ed399f068cde8ba947864ae02367afa644",
+    "actual": "d7aa9bc0b8de8859cb3c922e8f1d84ed399f068cde8ba947864ae02367afa644",
+    "match": true
+  },
+  {
+    "group": "Vault inputs SHA-256",
+    "path": "wiki/planning/stages.md",
+    "expected": "d912c98fd50ffc8e5f75ef308633263d2973b359828cb2b6cd2bc66d9255eb13",
+    "actual": "d912c98fd50ffc8e5f75ef308633263d2973b359828cb2b6cd2bc66d9255eb13",
+    "match": true
+  },
+  {
+    "group": "Vault inputs SHA-256",
+    "path": "raw/chat/CHAT-029.md",
+    "expected": "6a8c8a41af7f27b45e7a92b427f4d195fb9cb66b0d57be60f67a41d475d4f1c7",
+    "actual": "6a8c8a41af7f27b45e7a92b427f4d195fb9cb66b0d57be60f67a41d475d4f1c7",
+    "match": true
+  },
+  {
+    "group": "Vault inputs SHA-256",
+    "path": "handoffs/H-007-first-vertical-slice.md",
+    "expected": "0ff09bb7638889aa742f75070ece675573391187b5568b2be010b59fe22b5191",
+    "actual": "0ff09bb7638889aa742f75070ece675573391187b5568b2be010b59fe22b5191",
+    "match": true
+  },
+  {
+    "group": "Vault inputs SHA-256",
+    "path": "handoffs/H-008-start-prompt.txt",
+    "expected": "73a771d0b4c3a427c3554f1d30a77294623da4750bb130ed627c11cdfd931284",
+    "actual": "73a771d0b4c3a427c3554f1d30a77294623da4750bb130ed627c11cdfd931284",
+    "match": true
+  },
+  {
+    "group": "Repo baseline inputs SHA-256",
+    "path": "AGENTS.md",
+    "expected": "6a47632a91aed77928e417bb2482b3dfd5104edca58bb9f2a44392179635341a",
+    "actual": "6a47632a91aed77928e417bb2482b3dfd5104edca58bb9f2a44392179635341a",
+    "match": true
+  },
+  {
+    "group": "Repo baseline inputs SHA-256",
+    "path": "README.md",
+    "expected": "3d5575b3f9b511847c6ef15ab4b586be669f2609b6608a21dff0715f8dd9410b",
+    "actual": "3d5575b3f9b511847c6ef15ab4b586be669f2609b6608a21dff0715f8dd9410b",
+    "match": true
+  },
+  {
+    "group": "Repo baseline inputs SHA-256",
+    "path": ".env.example",
+    "expected": "057963754582779e486add03f94e1fbfb76f774159386454dcbfce0e3309d14e",
+    "actual": "057963754582779e486add03f94e1fbfb76f774159386454dcbfce0e3309d14e",
+    "match": true
+  },
+  {
+    "group": "Repo baseline inputs SHA-256",
+    "path": "pyproject.toml",
+    "expected": "00522db5a7513ed6a19804487591996a65a31c5f1b40559362d6587dbbfe9644",
+    "actual": "00522db5a7513ed6a19804487591996a65a31c5f1b40559362d6587dbbfe9644",
+    "match": true
+  },
+  {
+    "group": "Repo baseline inputs SHA-256",
+    "path": "uv.lock",
+    "expected": "de36cab6c73d37bde70cc13e019b9eb2552a0747e46fe5c8c3b7cedf5338378d",
+    "actual": "de36cab6c73d37bde70cc13e019b9eb2552a0747e46fe5c8c3b7cedf5338378d",
+    "match": true
+  },
+  {
+    "group": "Repo baseline inputs SHA-256",
+    "path": "src/universitydb/agent.py",
+    "expected": "f9266b5624e29b1640d1c5f3d006037b63f64e0943b1193325790a3c7f86f17b",
+    "actual": "f9266b5624e29b1640d1c5f3d006037b63f64e0943b1193325790a3c7f86f17b",
+    "match": true
+  },
+  {
+    "group": "Repo baseline inputs SHA-256",
+    "path": "src/universitydb/llm.py",
+    "expected": "085d5e9ba2acab669c44d0ba980eca3388fb5169902ce05b49ee583e58b5d30c",
+    "actual": "085d5e9ba2acab669c44d0ba980eca3388fb5169902ce05b49ee583e58b5d30c",
+    "match": true
+  },
+  {
+    "group": "Repo baseline inputs SHA-256",
+    "path": "src/universitydb/llm_worker.py",
+    "expected": "e8f1b9ff199785e7eb2f8117d43e5f3d15bba951a93bde25be7cb0bf5fe2c50d",
+    "actual": "e8f1b9ff199785e7eb2f8117d43e5f3d15bba951a93bde25be7cb0bf5fe2c50d",
+    "match": true
+  },
+  {
+    "group": "Repo baseline inputs SHA-256",
+    "path": "docs/reports/H-007-first-vertical-slice.md",
+    "expected": "0da0a2ac846050bc8a26b7a265c82120ad74f800b18a5921fbf2e55c597759e8",
+    "actual": "0da0a2ac846050bc8a26b7a265c82120ad74f800b18a5921fbf2e55c597759e8",
+    "match": true
+  },
+  {
+    "group": "Repo baseline inputs SHA-256",
+    "path": "docs/plans/contracts.md",
+    "expected": "fc6b18c174ebb3ba0bf5e296481f1276836f1812e5a6e9628776bb2f0d2f0da3",
+    "actual": "fc6b18c174ebb3ba0bf5e296481f1276836f1812e5a6e9628776bb2f0d2f0da3",
+    "match": true
+  },
+  {
+    "group": "Repo baseline inputs SHA-256",
+    "path": "docs/plans/production-considerations.md",
+    "expected": "a38c8de03295671e3e860f6b61a19699e434527a58b3e5f067d2b64e0289889e",
+    "actual": "a38c8de03295671e3e860f6b61a19699e434527a58b3e5f067d2b64e0289889e",
+    "match": true
+  },
+  {
+    "group": "Repo baseline inputs SHA-256",
+    "path": "docs/operations/H-007/final-commit-receipt.json",
+    "expected": "f709e09f26da37ba82f89705211cc4297a097f1641ca0c611c160aa1acaab350",
+    "actual": "f709e09f26da37ba82f89705211cc4297a097f1641ca0c611c160aa1acaab350",
+    "match": true
+  },
+  {
+    "group": "Repo baseline inputs SHA-256",
+    "path": "docs/operations/H-007/postcheckpoint-goal-receipt.json",
+    "expected": "5ab47a5c2b42693e51c38f83b5415ce8316e1348cdff4c6f9edd7c7d17f152dc",
+    "actual": "5ab47a5c2b42693e51c38f83b5415ce8316e1348cdff4c6f9edd7c7d17f152dc",
+    "match": true
+  }
+]

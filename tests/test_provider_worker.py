@@ -18,8 +18,9 @@ from universitydb.llm import OpenAIProvider
 def configure(monkeypatch):
     for key, value in {
         "OPENAI_API_KEY": "offline-test-not-a-real-key",
-        "UNIVERSITYDB_MODEL": "offline-test",
+        "UNIVERSITYDB_MODEL": "gpt-6.1-sol",
         "UNIVERSITYDB_LIVE_APPROVED": "yes",
+        "UNIVERSITYDB_BILLING_VERIFIED": "yes",
         "UNIVERSITYDB_CAP_USD": ".1",
         "UNIVERSITYDB_INPUT_USD_PER_MILLION": "1",
         "UNIVERSITYDB_OUTPUT_USD_PER_MILLION": "1",
@@ -46,7 +47,7 @@ def test_stalled_sdk_process_killed_reaped_cost_retained(tmp_path, monkeypatch):
     with pytest.raises(ProcessLookupError):
         os.kill(children[0], 0)
     ledger = json.loads((tmp_path / "spending.json").read_text())
-    assert ledger["calls"] == 1 and ledger["reserved_usd"] == "0.014"
+    assert ledger["calls"] == 1 and ledger["reserved_usd"] == "0.044768"
 
 
 def test_whole_graph_deadline_bounds_stalled_provider(database, tmp_path, monkeypatch):
@@ -87,7 +88,8 @@ def test_offline_sdk_worker_response_parse_and_usage(tmp_path, monkeypatch):
     response = {
         "output": outputs()[0],
         "usage": {
-            "returned_model": "offline-test",
+            "returned_model": "gpt-6.1-sol",
+            "returned_service_tier": "default",
             "input_tokens": 100,
             "output_tokens": 50,
             "total_tokens": 150,

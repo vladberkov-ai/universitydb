@@ -16,7 +16,8 @@ from typing import Any, NamedTuple, Protocol, TypeVar
 
 from pydantic import BaseModel, ValidationError
 
-from universitydb.contracts import Failure
+from universitydb.config import PROFILE, logical_operation
+from universitydb.contracts import Failure, PlanProposal, SQLProposal
 
 T = TypeVar("T", bound=BaseModel)
 
@@ -30,7 +31,7 @@ class Provider(Protocol):
         payload: dict[str, Any],
         output_type: type[T],
         *,
-        timeout: float = 15.0,
+        timeout: float = PROFILE.run_seconds,
     ) -> tuple[T, dict[str, Any]]: ...
 
 
@@ -152,8 +153,10 @@ class Spending:
                 "BUDGET_EXCEEDED", "Spending ledger unavailable or invalid; dispatch stopped."
             ) from exc
 
-    def reserve(self) -> Reservation:
-        amount = (12000 * self.input_rate + 2000 * self.output_rate) / 1000000
+    def reserve(self, input_tokens: int = 12000, output_tokens: int = 2000) -> Reservation:
+        if any(type(v) is not int or v <= 0 for v in (input_tokens, output_tokens)):
+            raise Failure("BUDGET_EXCEEDED", "Invalid reservation token bounds.")
+        amount = (input_tokens * self.input_rate + output_tokens * self.output_rate) / 1000000
         attempt_id = str(uuid.uuid4())
         with self._transaction() as record:
             if Decimal(record["effective_usd"]) + amount > self.cap:
@@ -200,17 +203,26 @@ class OpenAIProvider:
         payload: dict[str, Any],
         output_type: type[T],
         *,
-        timeout: float = 15.0,
+        timeout: float = PROFILE.run_seconds,
     ) -> tuple[T, dict[str, Any]]:
+        logical = logical_operation(operation, payload)
+        policy = PROFILE.operation(logical)
+        expected = PlanProposal if operation == "plan" else SQLProposal
+        if output_type is not expected:
+            raise Failure("PROVIDER_UNAVAILABLE", "Operation output schema mismatch.")
         # Check before client construction or any network operation; no credential values are logged.
         model = os.environ.get("UNIVERSITYDB_MODEL", "")
-        if not os.environ.get("OPENAI_API_KEY") or not model:
+        if not os.environ.get("OPENAI_API_KEY") or model != PROFILE.model:
             raise Failure(
                 "PROVIDER_UNAVAILABLE",
                 "Missing API key or explicitly approved model; no network call.",
             )
         if os.environ.get("UNIVERSITYDB_LIVE_APPROVED") != "yes":
             raise Failure("PROVIDER_UNAVAILABLE", "Live spending is not explicitly enabled.")
+        if os.environ.get("UNIVERSITYDB_BILLING_VERIFIED") != "yes":
+            raise Failure(
+                "PROVIDER_UNAVAILABLE", "Conservative rates and input coverage unverified."
+            )
         try:
             spending = Spending(
                 self.budget_path,
@@ -225,19 +237,32 @@ class OpenAIProvider:
             ) from exc
         prompt = (self.prompts / f"{operation}.txt").read_text()
         encoded = json.dumps(payload, ensure_ascii=False)
-        if len((prompt + encoded).encode()) > 12000:
+        schema = json.dumps(output_type.model_json_schema(), ensure_ascii=False)
+        if len((prompt + encoded + schema).encode()) + 1024 > PROFILE.input_bytes:
             raise Failure("RESOURCE_LIMIT", "Provider input exceeds byte gate.")
-        reservation = spending.reserve()
+        reservation = spending.reserve(PROFILE.input_tokens, policy.output_tokens)
         reserved = reservation.amount
         dispatch = {
             "requested_model": model,
+            "logical_operation": logical,
+            "reasoning_effort": policy.effort,
+            "service_tier": PROFILE.service_tier,
+            "max_output_tokens": policy.output_tokens,
             "prompt_sha256": hashlib.sha256(prompt.encode()).hexdigest(),
             "reserved_usd": reserved,
             "usage_status": "unknown",
             "dispatch_attempted": True,
             "real_provider_called": None,
         }
-        request = {"operation": operation, "model": model, "prompt": prompt, "input": encoded}
+        wall_timeout = max(0.001, min(policy.timeout, timeout))
+        request = {
+            "operation": operation,
+            "logical_operation": logical,
+            "model": model,
+            "prompt": prompt,
+            "input": encoded,
+            "timeout": wall_timeout,
+        }
         try:
             with subprocess.Popen(
                 [sys.executable, "-m", "universitydb.llm_worker"],
@@ -247,9 +272,7 @@ class OpenAIProvider:
                 text=True,
             ) as worker:
                 try:
-                    output, _ = worker.communicate(
-                        json.dumps(request), timeout=max(0.001, min(15.0, timeout))
-                    )
+                    output, _ = worker.communicate(json.dumps(request), timeout=wall_timeout)
                 except subprocess.TimeoutExpired as exc:
                     worker.kill()
                     worker.communicate()
@@ -268,15 +291,16 @@ class OpenAIProvider:
             raise Failure("PROVIDER_UNAVAILABLE", "Provider worker unavailable.") from exc
         try:
             data = json.loads(output)
-            if "error" in data:
+            if "error" in data and "usage" not in data:
                 raise Failure(data["error"], data["message"], details=dispatch)
-            parsed = output_type.model_validate(data["output"])
             usage = data["usage"]
             if any(
                 type(usage[k]) is not int or usage[k] < 0
                 for k in ("input_tokens", "output_tokens", "total_tokens")
             ):
-                raise Failure("PROVIDER_INVALID_OUTPUT", "Invalid provider usage.")
+                raise Failure(
+                    "PROVIDER_INVALID_OUTPUT", "Invalid provider usage.", details=dispatch
+                )
         except (ValueError, KeyError, TypeError) as exc:
             raise Failure(
                 "PROVIDER_INVALID_OUTPUT", "Provider worker response invalid.", details=dispatch
@@ -287,15 +311,41 @@ class OpenAIProvider:
             )
         except Failure as exc:
             raise Failure(exc.code, exc.message, details={**dispatch, "usage": usage}) from exc
-        if usage["input_tokens"] > 12000 or usage["output_tokens"] > 2000:
+        if (
+            usage["input_tokens"] > PROFILE.input_tokens
+            or usage["output_tokens"] > policy.output_tokens
+        ):
             raise Failure(
                 "BUDGET_EXCEEDED",
                 "Provider usage exceeded bounds; reservation retained.",
                 details={**dispatch, "usage": usage},
             )
+        if (
+            usage.get("returned_model") != model
+            or usage.get("returned_service_tier") != PROFILE.service_tier
+        ):
+            raise Failure(
+                "PROVIDER_UNAVAILABLE",
+                "Returned provider profile mismatch; charge retained.",
+                details={**dispatch, "usage": usage},
+            )
+        if "error" in data:
+            raise Failure(data["error"], data["message"], details={**dispatch, "usage": usage})
+        try:
+            parsed = output_type.model_validate(data["output"])
+        except (ValueError, KeyError, TypeError) as exc:
+            raise Failure(
+                "PROVIDER_INVALID_OUTPUT",
+                "Provider output invalid.",
+                details={**dispatch, "usage": usage},
+            ) from exc
         return parsed, {
             **usage,
             "requested_model": model,
+            "logical_operation": logical,
+            "reasoning_effort": policy.effort,
+            "service_tier": PROFILE.service_tier,
+            "max_output_tokens": policy.output_tokens,
             "prompt_sha256": hashlib.sha256(prompt.encode()).hexdigest(),
             "reserved_usd": reserved,
             "accounting": "conservative reservation retained including unused tokens",
@@ -323,7 +373,7 @@ class ScriptedProvider:
         payload: dict[str, Any],
         output_type: type[T],
         *,
-        timeout: float = 15.0,
+        timeout: float = PROFILE.run_seconds,
     ) -> tuple[T, dict[str, Any]]:
         self.calls += 1
         try:
