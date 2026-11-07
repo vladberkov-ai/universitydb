@@ -93,3 +93,74 @@ documentation and registry pages, and returned the findings to the parent.
 Only this note and its task record were subsequently created on explicit parent
 instruction. No Obsidian access, advisory restart, workflow-state mutation,
 child delegation, paid call, Git staging, or Git commit was performed by this lane.
+
+## Addendum — SQLGlot SQLite AST reference, 2026-11-07
+
+### Request and evidence boundary
+
+This follow-up documents the performer's already selected narrow AST parser;
+it is not a dependency comparison, architecture approval, or security verdict.
+No package was installed or executed by this research lane. Previous research
+above is preserved unchanged. The exact follow-up appears in the task record.
+
+### Official API facts
+
+- `parse(sql, read="sqlite")` returns a collection of syntax trees. Current
+  `parse_one` documentation describes a single tree for one statement and a
+  `Block` for multiple statements; do not infer one-statement enforcement from
+  its name. Specify the source dialect instead of relying on SQLGlot's generic
+  dialect. The FAQ explicitly warns that parsing is lenient and is not SQL
+  validation. Comments are preserved only on a best-effort basis.
+  [SQLGlot API and FAQ](https://sqlglot.com/sqlglot.html)
+- `Select` includes `expressions`, `from_`, `with_`, `into`, and query modifiers.
+  `Join` includes `this`, `on`, `side`, `kind`, `using`, and `method`, among other
+  arguments. Recognizing these classes alone does not restrict their arguments.
+  [Query expression API](https://sqlglot.com/sqlglot/expressions/query.html)
+- `Column` carries column identity and optional `table`, `db`, and `catalog`.
+  `EQ` is a binary predicate with left/right operands. `Placeholder` is distinct
+  from `Parameter`; its `name` is the stored name or `?`. Check the installed
+  parser's representation of the exact placeholder syntax accepted by the app.
+  [Core expression API](https://sqlglot.com/sqlglot/expressions/core.html)
+- SQLite has its own dialect and tokenizer behavior, including comment and
+  identifier handling. Generic-dialect acceptance does not prove SQLite
+  acceptance. [SQLite dialect API](https://sqlglot.com/sqlglot/dialects/sqlite.html)
+- Python `sqlite3.execute(sql, parameters)` binds values and accepts a single
+  statement; multiple statements raise `ProgrammingError`. `executescript` is
+  the multi-statement interface and is not appropriate for model query
+  execution. Named placeholders use dictionaries, qmark placeholders sequences.
+  [Python 3.12 sqlite3](https://docs.python.org/3.12/library/sqlite3.html)
+
+### Application-policy implications (inferences, not SQLGlot guarantees)
+
+For the scoped S6 contract, require exactly one nonempty parsed statement with
+an approved `Select` root and validate the complete allowed structure: projection,
+known tables and aliases, join conditions/types, and the four required predicates
+with their exact typed parameters. Reject unapproved AST arguments and nested
+constructs rather than accepting every query composed of familiar node classes.
+A bag of four `EQ` nodes is insufficient: boolean structure, operand identities,
+and placeholder mapping determine whether those filters actually constrain rows.
+
+Do not strip comments with an ad-hoc regular expression or treat absent AST
+comments as proof that the input had none. If comments are prohibited by policy,
+check that separately using an appropriately tested lexical boundary. Test
+comment-only suffixes, extra/empty statements, quoted delimiters, and the exact
+SQLite placeholder forms. SQL text must not be interpolated with user values;
+parameter binding is distinct from identifier/AST validation. Preserve SQLite
+read-only/authorizer and resource-limit defenses independently of parser success.
+These are review/test implications for the performer, not a claimed implementation.
+
+### Version and retrieval caveats
+
+[Publisher registry release sqlglot 30.30.0](https://pypi.org/project/sqlglot/30.30.0/)
+was observed as the latest release, dated November 6, 2026, requiring Python
+>=3.9. The registry reported no upload provenance for this release; this is a
+registry observation, not a vulnerability finding or adoption decision.
+Moving API documentation may differ from an installed version. In particular,
+recheck `parse_one` multiple-statement behavior and AST argument names against
+the actual pin in offline tests. No source-file claims requiring a pinned Git
+SHA are made; evidence here is official generated API documentation and PyPI.
+
+The unversioned Python sqlite3 documentation initially resolved to 3.15.2; the
+3.12 documentation was then explicitly fetched for a version-specific reference.
+No provider calls, product edits, runtime-state changes, vault access, staging,
+or commits were performed during this follow-up.

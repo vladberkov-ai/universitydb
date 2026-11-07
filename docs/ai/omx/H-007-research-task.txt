@@ -19,3 +19,15 @@ credential access, installation, compatibility tests, application edits, vault
 access, advisory restart, runtime-state mutation, recursive delegation, Git
 staging, or Git commit were performed by this research lane. Only the two
 explicitly assigned new documentation paths were written.
+
+SQLGLOT FOLLOW-UP ACTUAL TASK (verbatim; 2026-11-07)
+Bounded followup official sqlglot docs/upstream for narrow SQLite AST safety policy: parse/parse_one AST Select/Join/Column/EQ/Placeholder and dialect behavior; latest concrete version candidate from publisher registry, security caveats parameters and comments/multiple statements. No dependency comparison needed; H007 explicitly product deps permitted and performer selected narrow AST parser with rationale. Communicate to performer/root, append NEW dated addendum docs/operations/H-007-api-references.md (do not overwrite old evidence), actual followup task append task record. No product edits/live/runtime/Git. Not alone.
+
+FOLLOW-UP COVERAGE
+Fetched official SQLGlot API/FAQ, expression query/core API, SQLite dialect API,
+PyPI sqlglot release metadata, and Python sqlite3 documentation (unversioned
+3.15.2 initially, then explicitly 3.12). Reported API facts separately from
+application-policy inferences. No installed-version assertions or source-file
+claims; no dependency comparison, provider calls, product edits, runtime changes,
+Git operations, vault access, or recursive delegation. Appended only the two
+assigned documentation files; preserved all earlier bytes.

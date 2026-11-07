@@ -1,0 +1,14 @@
+{
+  "profile": "offline/injected",
+  "real_provider_called": false,
+  "s6": "80.00",
+  "raw": [
+    16000,
+    2,
+    2
+  ],
+  "sql_db_trace_panels": "expanded and visible",
+  "failure": "INVALID_INPUT; no stale success",
+  "browser": "cached Chromium1228 via Playwright",
+  "live_acceptance": "not-proven"
+}

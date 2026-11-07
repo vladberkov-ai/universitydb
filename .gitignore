@@ -43,3 +43,9 @@ build/
 *.sqlite3-*
 *.duckdb
 *.log
+
+# I1 application-local generated traces and cost ledger
+/runtime/
+
+# Isolated same-checkout lock reproduction environment
+/.venv-repro/
