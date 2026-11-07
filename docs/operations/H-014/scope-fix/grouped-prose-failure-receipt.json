@@ -1,0 +1,23 @@
+[
+  {
+    "original_local_log": "docs/operations/H-014/scope-fix/grouped-prose-pre-fix.log",
+    "original_sha256": "6e0a4683f31fb81635fd962b8643583e5a6b3d295ec31d0ab29b821d749df7c2",
+    "tracked_whitespace_normalized_copy": "docs/operations/H-014/scope-fix/grouped-prose-pre-fix.txt",
+    "copy_sha256": "40da1ee4c233a8d7afeed6471f1ed137cf01f9a0b81e5d392656cb5966bab7a2",
+    "pytest_exit": 1
+  },
+  {
+    "original_local_log": "docs/operations/H-014/scope-fix/grouped-quantifier-pre-fix.log",
+    "original_sha256": "450c2a3b670916129e0a1adb57a1694983f8769af015b8767e202c35cdaf8380",
+    "tracked_whitespace_normalized_copy": "docs/operations/H-014/scope-fix/grouped-quantifier-pre-fix.txt",
+    "copy_sha256": "864842ae31d264721d7977a8296f7ab511c8d6e9bafe88963d2810509f1930cb",
+    "pytest_exit": 1
+  },
+  {
+    "original_local_log": "docs/operations/H-014/scope-fix/bare-grade-pre-fix.log",
+    "original_sha256": "b1341c5b98aa38c9f9b628655d610d703bb0c9ef2741262c7e6f2561b8e6f130",
+    "tracked_whitespace_normalized_copy": "docs/operations/H-014/scope-fix/bare-grade-pre-fix.txt",
+    "copy_sha256": "6d581aabe8a89ee69c058351cea8ea0c3a36de1274155da1b03be56895428170",
+    "pytest_exit": 1
+  }
+]

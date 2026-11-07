@@ -1,0 +1,249 @@
+..............FFFFF.........                                             [100%]
+=================================== FAILURES ===================================
+_ test_university_supported_grade_group_prose[Show mean grade grouped by course across all enrollments-grade_mean-course_id] _
+
+database = PosixPath('/tmp/pytest-of-dev/pytest-955/test_university_supported_grad0/fixture.db')
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-955/test_university_supported_grad0')
+question = 'Show mean grade grouped by course across all enrollments'
+metric = 'grade_mean', group = 'course_id'
+
+    @pytest.mark.parametrize(
+        "question,metric,group",
+        [
+            ("Show mean grade grouped by course across all enrollments", "grade_mean", "course_id"),
+            ("Show mean grades grouped by student across all enrollments", "grade_mean", "student_id"),
+            (
+                "Show average grade grouped by teacher across all enrollments",
+                "grade_mean",
+                "teacher_id",
+            ),
+            (
+                "Show average grades grouped by offering across all enrollments",
+                "grade_mean",
+                "offering_id",
+            ),
+            ("Show mean grade grouped by semester across all enrollments", "grade_mean", "semester_id"),
+            ("Count enrollments grouped by course", "enrollment_counts", "course_id"),
+            ("Count graded enrollments grouped by student", "enrollment_counts", "student_id"),
+            ("Count distinct students grouped by teacher", "enrollment_counts", "teacher_id"),
+            ("Count enrollments grouped by offering", "enrollment_counts", "offering_id"),
+            ("Count enrollments grouped by semester", "enrollment_counts", "semester_id"),
+            ("Show mean grade across all enrollments", "grade_mean", None),
+            ("Show average grades overall", "grade_mean", None),
+            ("What is the mean grade?", "grade_mean", None),
+            ("What is the average grade in all semesters?", "grade_mean", None),
+        ],
+    )
+    def test_university_supported_grade_group_prose(database, tmp_path, question, metric, group):
+        domain = University()
+        spec = make_spec(metric, group)
+        sql, params = domain.query(spec, {})
+        provider = ScriptedProvider(list(scripted_step(spec, sql, params)))
+        result = Agent(domain, database, provider, tmp_path / "trace").run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '24696364-6da8-4df0-b765-bff704ea74bd', 'trace_id': '24696364-6da8-4df0-b765-bff704ea74bd', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E
+E         - ok
+E         + error
+
+tests/test_readiness_scope.py:111: AssertionError
+_ test_university_supported_grade_group_prose[Show mean grades grouped by student across all enrollments-grade_mean-student_id] _
+
+database = PosixPath('/tmp/pytest-of-dev/pytest-955/test_university_supported_grad1/fixture.db')
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-955/test_university_supported_grad1')
+question = 'Show mean grades grouped by student across all enrollments'
+metric = 'grade_mean', group = 'student_id'
+
+    @pytest.mark.parametrize(
+        "question,metric,group",
+        [
+            ("Show mean grade grouped by course across all enrollments", "grade_mean", "course_id"),
+            ("Show mean grades grouped by student across all enrollments", "grade_mean", "student_id"),
+            (
+                "Show average grade grouped by teacher across all enrollments",
+                "grade_mean",
+                "teacher_id",
+            ),
+            (
+                "Show average grades grouped by offering across all enrollments",
+                "grade_mean",
+                "offering_id",
+            ),
+            ("Show mean grade grouped by semester across all enrollments", "grade_mean", "semester_id"),
+            ("Count enrollments grouped by course", "enrollment_counts", "course_id"),
+            ("Count graded enrollments grouped by student", "enrollment_counts", "student_id"),
+            ("Count distinct students grouped by teacher", "enrollment_counts", "teacher_id"),
+            ("Count enrollments grouped by offering", "enrollment_counts", "offering_id"),
+            ("Count enrollments grouped by semester", "enrollment_counts", "semester_id"),
+            ("Show mean grade across all enrollments", "grade_mean", None),
+            ("Show average grades overall", "grade_mean", None),
+            ("What is the mean grade?", "grade_mean", None),
+            ("What is the average grade in all semesters?", "grade_mean", None),
+        ],
+    )
+    def test_university_supported_grade_group_prose(database, tmp_path, question, metric, group):
+        domain = University()
+        spec = make_spec(metric, group)
+        sql, params = domain.query(spec, {})
+        provider = ScriptedProvider(list(scripted_step(spec, sql, params)))
+        result = Agent(domain, database, provider, tmp_path / "trace").run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '3922fcf2-a33e-4181-9fed-51f8a6f8ef9f', 'trace_id': '3922fcf2-a33e-4181-9fed-51f8a6f8ef9f', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E
+E         - ok
+E         + error
+
+tests/test_readiness_scope.py:111: AssertionError
+_ test_university_supported_grade_group_prose[Show average grade grouped by teacher across all enrollments-grade_mean-teacher_id] _
+
+database = PosixPath('/tmp/pytest-of-dev/pytest-955/test_university_supported_grad2/fixture.db')
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-955/test_university_supported_grad2')
+question = 'Show average grade grouped by teacher across all enrollments'
+metric = 'grade_mean', group = 'teacher_id'
+
+    @pytest.mark.parametrize(
+        "question,metric,group",
+        [
+            ("Show mean grade grouped by course across all enrollments", "grade_mean", "course_id"),
+            ("Show mean grades grouped by student across all enrollments", "grade_mean", "student_id"),
+            (
+                "Show average grade grouped by teacher across all enrollments",
+                "grade_mean",
+                "teacher_id",
+            ),
+            (
+                "Show average grades grouped by offering across all enrollments",
+                "grade_mean",
+                "offering_id",
+            ),
+            ("Show mean grade grouped by semester across all enrollments", "grade_mean", "semester_id"),
+            ("Count enrollments grouped by course", "enrollment_counts", "course_id"),
+            ("Count graded enrollments grouped by student", "enrollment_counts", "student_id"),
+            ("Count distinct students grouped by teacher", "enrollment_counts", "teacher_id"),
+            ("Count enrollments grouped by offering", "enrollment_counts", "offering_id"),
+            ("Count enrollments grouped by semester", "enrollment_counts", "semester_id"),
+            ("Show mean grade across all enrollments", "grade_mean", None),
+            ("Show average grades overall", "grade_mean", None),
+            ("What is the mean grade?", "grade_mean", None),
+            ("What is the average grade in all semesters?", "grade_mean", None),
+        ],
+    )
+    def test_university_supported_grade_group_prose(database, tmp_path, question, metric, group):
+        domain = University()
+        spec = make_spec(metric, group)
+        sql, params = domain.query(spec, {})
+        provider = ScriptedProvider(list(scripted_step(spec, sql, params)))
+        result = Agent(domain, database, provider, tmp_path / "trace").run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'cd6d45cb-7ada-4fdf-8f41-43e36260e380', 'trace_id': 'cd6d45cb-7ada-4fdf-8f41-43e36260e380', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E
+E         - ok
+E         + error
+
+tests/test_readiness_scope.py:111: AssertionError
+_ test_university_supported_grade_group_prose[Show average grades grouped by offering across all enrollments-grade_mean-offering_id] _
+
+database = PosixPath('/tmp/pytest-of-dev/pytest-955/test_university_supported_grad3/fixture.db')
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-955/test_university_supported_grad3')
+question = 'Show average grades grouped by offering across all enrollments'
+metric = 'grade_mean', group = 'offering_id'
+
+    @pytest.mark.parametrize(
+        "question,metric,group",
+        [
+            ("Show mean grade grouped by course across all enrollments", "grade_mean", "course_id"),
+            ("Show mean grades grouped by student across all enrollments", "grade_mean", "student_id"),
+            (
+                "Show average grade grouped by teacher across all enrollments",
+                "grade_mean",
+                "teacher_id",
+            ),
+            (
+                "Show average grades grouped by offering across all enrollments",
+                "grade_mean",
+                "offering_id",
+            ),
+            ("Show mean grade grouped by semester across all enrollments", "grade_mean", "semester_id"),
+            ("Count enrollments grouped by course", "enrollment_counts", "course_id"),
+            ("Count graded enrollments grouped by student", "enrollment_counts", "student_id"),
+            ("Count distinct students grouped by teacher", "enrollment_counts", "teacher_id"),
+            ("Count enrollments grouped by offering", "enrollment_counts", "offering_id"),
+            ("Count enrollments grouped by semester", "enrollment_counts", "semester_id"),
+            ("Show mean grade across all enrollments", "grade_mean", None),
+            ("Show average grades overall", "grade_mean", None),
+            ("What is the mean grade?", "grade_mean", None),
+            ("What is the average grade in all semesters?", "grade_mean", None),
+        ],
+    )
+    def test_university_supported_grade_group_prose(database, tmp_path, question, metric, group):
+        domain = University()
+        spec = make_spec(metric, group)
+        sql, params = domain.query(spec, {})
+        provider = ScriptedProvider(list(scripted_step(spec, sql, params)))
+        result = Agent(domain, database, provider, tmp_path / "trace").run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '6b1cd2e0-5b7a-441f-9412-01f44f11f2bf', 'trace_id': '6b1cd2e0-5b7a-441f-9412-01f44f11f2bf', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E
+E         - ok
+E         + error
+
+tests/test_readiness_scope.py:111: AssertionError
+_ test_university_supported_grade_group_prose[Show mean grade grouped by semester across all enrollments-grade_mean-semester_id] _
+
+database = PosixPath('/tmp/pytest-of-dev/pytest-955/test_university_supported_grad4/fixture.db')
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-955/test_university_supported_grad4')
+question = 'Show mean grade grouped by semester across all enrollments'
+metric = 'grade_mean', group = 'semester_id'
+
+    @pytest.mark.parametrize(
+        "question,metric,group",
+        [
+            ("Show mean grade grouped by course across all enrollments", "grade_mean", "course_id"),
+            ("Show mean grades grouped by student across all enrollments", "grade_mean", "student_id"),
+            (
+                "Show average grade grouped by teacher across all enrollments",
+                "grade_mean",
+                "teacher_id",
+            ),
+            (
+                "Show average grades grouped by offering across all enrollments",
+                "grade_mean",
+                "offering_id",
+            ),
+            ("Show mean grade grouped by semester across all enrollments", "grade_mean", "semester_id"),
+            ("Count enrollments grouped by course", "enrollment_counts", "course_id"),
+            ("Count graded enrollments grouped by student", "enrollment_counts", "student_id"),
+            ("Count distinct students grouped by teacher", "enrollment_counts", "teacher_id"),
+            ("Count enrollments grouped by offering", "enrollment_counts", "offering_id"),
+            ("Count enrollments grouped by semester", "enrollment_counts", "semester_id"),
+            ("Show mean grade across all enrollments", "grade_mean", None),
+            ("Show average grades overall", "grade_mean", None),
+            ("What is the mean grade?", "grade_mean", None),
+            ("What is the average grade in all semesters?", "grade_mean", None),
+        ],
+    )
+    def test_university_supported_grade_group_prose(database, tmp_path, question, metric, group):
+        domain = University()
+        spec = make_spec(metric, group)
+        sql, params = domain.query(spec, {})
+        provider = ScriptedProvider(list(scripted_step(spec, sql, params)))
+        result = Agent(domain, database, provider, tmp_path / "trace").run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '653b3884-4e42-4549-8ce6-21794e110532', 'trace_id': '653b3884-4e42-4549-8ce6-21794e110532', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E
+E         - ok
+E         + error
+
+tests/test_readiness_scope.py:111: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_readiness_scope.py::test_university_supported_grade_group_prose[Show mean grade grouped by course across all enrollments-grade_mean-course_id]
+FAILED tests/test_readiness_scope.py::test_university_supported_grade_group_prose[Show mean grades grouped by student across all enrollments-grade_mean-student_id]
+FAILED tests/test_readiness_scope.py::test_university_supported_grade_group_prose[Show average grade grouped by teacher across all enrollments-grade_mean-teacher_id]
+FAILED tests/test_readiness_scope.py::test_university_supported_grade_group_prose[Show average grades grouped by offering across all enrollments-grade_mean-offering_id]
+FAILED tests/test_readiness_scope.py::test_university_supported_grade_group_prose[Show mean grade grouped by semester across all enrollments-grade_mean-semester_id]
+5 failed, 23 passed in 4.66s

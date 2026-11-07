@@ -242,14 +242,20 @@ class University:
         if catalog:
             # Recognize a bounded name-bearing shorthand instead of silently turning
             # an unknown requested person into an unfiltered global aggregate.
+            group_nouns = "|".join(key.removesuffix("_id") for key in GROUPS)
             named_targets = re.finditer(
-                r"\b(?:mean|average)(?:\s+grades?)?(?:\s+(?:for|of))?\s+([A-Za-z][\w-]*)"
+                r"\b(?:mean|average)(?:\s+grades?)?\s+(?:for|of)\s+([A-Za-z][\w-]*)"
+                r"|\b(?:mean|average)\s+(grades?)\s+(?:grouped\s+by\s+"
+                rf"(?:{group_nouns})(?:s|_id)?"
+                r"|excluding\s+ungraded\s+enrollments?)\b"
+                r"|\b(?:mean|average)\s+grades?\s+([A-Za-z][\w-]*)"
+                r"|\b(?:mean|average)\s+([A-Za-z][\w-]*)"
                 r"|\b([A-Za-z][\w-]*)['’]s\s+(?:mean|average|grades?)\b",
                 question,
                 re.IGNORECASE,
             )
             for named in named_targets:
-                token = (named.group(1) or named.group(2)).casefold()
+                token = next(group for group in named.groups() if group).casefold()
                 semantic = {
                     "all",
                     "across",

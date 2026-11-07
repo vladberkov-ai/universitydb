@@ -111,7 +111,7 @@ class Library:
             )
         if catalog:
             named_targets = re.finditer(
-                r"\b(?i:loans?)\s+(?i:for|of)\s+([A-Za-z][\w-]*)"
+                r"\b(?i:loans?)\s+(?i:for|of)\s+(?:(?i:each|every)\s+)?([A-Za-z][\w-]*)"
                 r"|\b(?i:does)\s+([A-Za-z][\w-]*)\s+(?i:have)\b"
                 r"|\b([A-Za-z][\w-]*)['’]s\s+(?i:open\s+|unreturned\s+)?(?i:loans?)\b"
                 r"|\b(?i:loans?)\s+((?!(?i:does)\b)[A-Z][\w-]*)",

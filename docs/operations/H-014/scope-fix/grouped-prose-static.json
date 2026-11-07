@@ -1,0 +1,11 @@
+{
+  "scope": ["src/universitydb/domain.py", "src/universitydb/library.py", "tests/test_readiness_scope.py"],
+  "checks": [
+    {"command": ".venv/bin/ruff check src/universitydb/domain.py src/universitydb/library.py tests/test_readiness_scope.py", "exit": 0, "result": "All checks passed!"},
+    {"command": ".venv/bin/ruff format --check src/universitydb/domain.py src/universitydb/library.py tests/test_readiness_scope.py", "exit": 0, "result": "3 files already formatted"},
+    {"command": ".venv/bin/mypy src/universitydb --ignore-missing-imports", "exit": 0, "result": "Success: no issues found in 14 source files"},
+    {"command": ".venv/bin/python -m compileall -q src tests", "exit": 0}
+  ],
+  "live_api_count_credential_loading": "not-run",
+  "push": "not-run"
+}

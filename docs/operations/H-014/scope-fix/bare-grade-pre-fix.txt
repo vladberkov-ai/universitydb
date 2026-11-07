@@ -1,0 +1,102 @@
+...FF................................                                    [100%]
+=================================== FAILURES ===================================
+_______ test_named_scope_compiled_graph[university-Mean grade Zoe-None] ________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-959/test_named_scope_compiled_grap3')
+kind = 'university', question = 'Mean grade Zoe', known_id = None
+
+    @pytest.mark.parametrize(
+        "kind,question,known_id",
+        [
+            ("university", "What is the average grade for Zoe?", None),
+            ("library", "How many open loans does Zoe have?", None),
+            ("university", "What is the mean of Zoe?", None),
+            ("university", "Mean grade Zoe", None),
+            ("university", "Average grades Zoe", None),
+            ("university", "Mean grade Bea", 2),
+            ("university", "Average grades Bea", 2),
+            ("university", "What is Zoe's average grade?", None),
+            ("library", "Count open loans of Zoe", None),
+            ("library", "Count open loans for each Zoe", None),
+            ("library", "Count open loans for every Zoe", None),
+            ("library", "Count Zoe's open loans", None),
+            ("university", "What is Bea's average grade?", 2),
+            ("library", "Count Ada's open loans", 1),
+            ("university", "What is the average grade for Bea?", 2),
+            ("library", "How many open loans does Ada have?", 1),
+        ],
+    )
+    def test_named_scope_compiled_graph(tmp_path, kind, question, known_id):
+        domain = University() if kind == "university" else Library()
+        spec = make_spec("grade_mean") if kind == "university" else LIBRARY_SPEC
+        field = "student_id" if kind == "university" else "reader_id"
+        resources = Path(__file__).resolve().parents[1] / "resources"
+        database = tmp_path / "data.db"
+        db.initialize(database, resources if kind == "university" else resources / "library")
+        # A valid unfiltered proposal would previously produce misleading global success.
+        scope = {} if known_id is None else {field: known_id}
+        sql, params = domain.query(spec, scope)
+        provider = ScriptedProvider(list(scripted_step(spec, sql, params)))
+        agent = Agent(domain, database, provider, tmp_path / "trace")
+        result = agent.run(question)
+        if known_id is None:
+>           assert result["status"] == "error", result
+E           AssertionError: {'version': '1', 'run_id': 'bc251bda-89d6-48ed-9d78-7a3fcef535e5', 'trace_id': 'bc251bda-89d6-48ed-9d78-7a3fcef535e5', 'status': 'ok', ...}
+E           assert 'ok' == 'error'
+E
+E             - error
+E             + ok
+
+tests/test_readiness_scope.py:52: AssertionError
+_____ test_named_scope_compiled_graph[university-Average grades Zoe-None] ______
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-959/test_named_scope_compiled_grap4')
+kind = 'university', question = 'Average grades Zoe', known_id = None
+
+    @pytest.mark.parametrize(
+        "kind,question,known_id",
+        [
+            ("university", "What is the average grade for Zoe?", None),
+            ("library", "How many open loans does Zoe have?", None),
+            ("university", "What is the mean of Zoe?", None),
+            ("university", "Mean grade Zoe", None),
+            ("university", "Average grades Zoe", None),
+            ("university", "Mean grade Bea", 2),
+            ("university", "Average grades Bea", 2),
+            ("university", "What is Zoe's average grade?", None),
+            ("library", "Count open loans of Zoe", None),
+            ("library", "Count open loans for each Zoe", None),
+            ("library", "Count open loans for every Zoe", None),
+            ("library", "Count Zoe's open loans", None),
+            ("university", "What is Bea's average grade?", 2),
+            ("library", "Count Ada's open loans", 1),
+            ("university", "What is the average grade for Bea?", 2),
+            ("library", "How many open loans does Ada have?", 1),
+        ],
+    )
+    def test_named_scope_compiled_graph(tmp_path, kind, question, known_id):
+        domain = University() if kind == "university" else Library()
+        spec = make_spec("grade_mean") if kind == "university" else LIBRARY_SPEC
+        field = "student_id" if kind == "university" else "reader_id"
+        resources = Path(__file__).resolve().parents[1] / "resources"
+        database = tmp_path / "data.db"
+        db.initialize(database, resources if kind == "university" else resources / "library")
+        # A valid unfiltered proposal would previously produce misleading global success.
+        scope = {} if known_id is None else {field: known_id}
+        sql, params = domain.query(spec, scope)
+        provider = ScriptedProvider(list(scripted_step(spec, sql, params)))
+        agent = Agent(domain, database, provider, tmp_path / "trace")
+        result = agent.run(question)
+        if known_id is None:
+>           assert result["status"] == "error", result
+E           AssertionError: {'version': '1', 'run_id': '6a3f75ea-7497-4d9d-9198-ec0138d525b4', 'trace_id': '6a3f75ea-7497-4d9d-9198-ec0138d525b4', 'status': 'ok', ...}
+E           assert 'ok' == 'error'
+E
+E             - error
+E             + ok
+
+tests/test_readiness_scope.py:52: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_readiness_scope.py::test_named_scope_compiled_graph[university-Mean grade Zoe-None]
+FAILED tests/test_readiness_scope.py::test_named_scope_compiled_graph[university-Average grades Zoe-None]
+2 failed, 35 passed in 6.77s

@@ -1,0 +1,7 @@
+{
+  "reviewed_at": "2026-11-07T23:09:59.957887+00:00",
+  "reviewer": "root integration judgment separate from executor author",
+  "plan_sha256": "e95f3ff3b51b0d98892c3183a8db86eff71740b187ab107cf51ebe60062ecb8e",
+  "verdict": "APPROVE bounded regression-first plan, not final candidate approval",
+  "reason": "Independent clean E2E and architect comparison identify false positives in previously supported grouped/excluding and each/every-reader prose; split explicit target grammar from immediate shorthand without globally allowing arbitrary unknown names. Preserve all unknown-name fail-closed controls and accepted semantics."
+}
