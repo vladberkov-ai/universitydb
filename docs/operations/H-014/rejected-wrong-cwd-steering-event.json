@@ -1,0 +1,35 @@
+{
+  "ts": "2026-11-07T23:13:43.757Z",
+  "event": "steering_rejected",
+  "evidence": "## Architecture invariants\n- Equal graded-enrollment weights; every offering/retake; NULL distinct from zero; absent filters explicitly all including semesters; count objects distinct. Exact rational top ties before HALF_UP two decimals. Known catalog IDs/names only; ambiguous/current/conflicting/unknown scope explicit.\n- Every accepted step has a registered exact ResultSpec: shape, columns/types/nullability, components, grain, unit/scale. No first-row inference. Static DAG \u22643 steps, missing/cyclic/forward-invalid refs rejected before execution; materialized refs are checked typed bound values only, never SQL text. Preserve exact top selection and union de-duplication. Fail closed on truncated/oversized upstream and never silently remove empty filters.\n- Actual in-memory LangGraph saver/interrupt, server session/run/checkpoint/clarification/schema/data/policy identity; \u22642 pauses, TTL900s. Exact replay idempotent; changed same-ID payload conflicts; invalid/stale/foreign/expired rejected before calls. Human wait excluded from active180s, other counters persist across resume; process restart expires explicitly.\n- Exact gpt-6.1-sol plan high, SQL/repair medium, no fallback/judge. Existing \u22645 calls/run, \u22644 SQL attempts/run, plan60s/SQL45s, output32768; one repair spends shared remainder. Payload\u226412000 UTF8 bytes, SQL\u22648000 bytes/chars, \u2264100 bindings, encoded bindings\u22648192 bytes/text\u22642000 bytes, results\u2264100 rows/64KiB, retained\u2264128KiB, trace\u22641MiB. Never raise ceilings silently. Unknown usage/holds accounting remains terminal and unchanged.\n- AST allowlist + read-only SQLite authorizer + bound values/watchdog/integrity scan, unchanged DB hash. Safe SELECT is not semantic correctness: independent oracle detects wrong JOIN/aggregation. No hard memory-isolation or universal SQL claim.\n- Library: Readers/Books/Loans, open=returned false; per-reader count includes zero, unit count scale1, separate schema/seed/descriptor/registry/result adapter/domain policy. Common core/DB safety/provider/graph/tracing/UI; both schemas exercise shared contracts early.\n- Trace all input/nodes/attempts/SQL/bindings/raw typed rows/adapted results/dependency binds/answer-or-error in one run, including resume. English UI reveals full trace and every step; failure/new question clears prior answer. Trace failure cannot produce untraced success.\n\n## Evidence boundary\nAll seven original invariants retained unchanged for explicit strict extraction. No completion proof is claimed by this annotation.",
+  "message": "Installed strict extractor requires architecture/domain-qualified invariant heading; original generic Invariants heading retained byte-for-byte, reassert original obligations through supported append-only annotation rather than edit artifacts or weaken gate.",
+  "mutationKind": "annotate_ledger",
+  "steering": {
+    "kind": "annotate_ledger",
+    "source": "cli",
+    "targetGoalIds": [],
+    "evidence": "## Architecture invariants\n- Equal graded-enrollment weights; every offering/retake; NULL distinct from zero; absent filters explicitly all including semesters; count objects distinct. Exact rational top ties before HALF_UP two decimals. Known catalog IDs/names only; ambiguous/current/conflicting/unknown scope explicit.\n- Every accepted step has a registered exact ResultSpec: shape, columns/types/nullability, components, grain, unit/scale. No first-row inference. Static DAG \u22643 steps, missing/cyclic/forward-invalid refs rejected before execution; materialized refs are checked typed bound values only, never SQL text. Preserve exact top selection and union de-duplication. Fail closed on truncated/oversized upstream and never silently remove empty filters.\n- Actual in-memory LangGraph saver/interrupt, server session/run/checkpoint/clarification/schema/data/policy identity; \u22642 pauses, TTL900s. Exact replay idempotent; changed same-ID payload conflicts; invalid/stale/foreign/expired rejected before calls. Human wait excluded from active180s, other counters persist across resume; process restart expires explicitly.\n- Exact gpt-6.1-sol plan high, SQL/repair medium, no fallback/judge. Existing \u22645 calls/run, \u22644 SQL attempts/run, plan60s/SQL45s, output32768; one repair spends shared remainder. Payload\u226412000 UTF8 bytes, SQL\u22648000 bytes/chars, \u2264100 bindings, encoded bindings\u22648192 bytes/text\u22642000 bytes, results\u2264100 rows/64KiB, retained\u2264128KiB, trace\u22641MiB. Never raise ceilings silently. Unknown usage/holds accounting remains terminal and unchanged.\n- AST allowlist + read-only SQLite authorizer + bound values/watchdog/integrity scan, unchanged DB hash. Safe SELECT is not semantic correctness: independent oracle detects wrong JOIN/aggregation. No hard memory-isolation or universal SQL claim.\n- Library: Readers/Books/Loans, open=returned false; per-reader count includes zero, unit count scale1, separate schema/seed/descriptor/registry/result adapter/domain policy. Common core/DB safety/provider/graph/tracing/UI; both schemas exercise shared contracts early.\n- Trace all input/nodes/attempts/SQL/bindings/raw typed rows/adapted results/dependency binds/answer-or-error in one run, including resume. English UI reveals full trace and every step; failure/new question clears prior answer. Trace failure cannot produce untraced success.\n\n## Evidence boundary\nAll seven original invariants retained unchanged for explicit strict extraction. No completion proof is claimed by this annotation.",
+    "rationale": "Installed strict extractor requires architecture/domain-qualified invariant heading; original generic Invariants heading retained byte-for-byte, reassert original obligations through supported append-only annotation rather than edit artifacts or weaken gate.",
+    "invariant": {
+      "structuralInvariantAccepted": false,
+      "evidenceBackedNecessity": true,
+      "noEasierCompletion": true,
+      "accepted": false,
+      "rejectedReasons": [
+        "Cannot steer an already completed aggregate ultragoal plan."
+      ],
+      "reasons": [
+        "Cannot steer an already completed aggregate ultragoal plan."
+      ]
+    }
+  },
+  "projection": {
+    "source_sha256": "3d6078b8a34cb2790de7376904c6705e91cc1218eddb2e02f411e550625cef0d",
+    "method": "Selected actual CLI rejection-event fields; not a reconstructed event",
+    "omissions": [
+      "before-plan snapshots in root and steering (contain historical private native goal metadata)",
+      "full serialized directiveText (duplicated input metadata)"
+    ],
+    "raw_preserved": "ignored root orchestration artifacts, not public transcript"
+  }
+}

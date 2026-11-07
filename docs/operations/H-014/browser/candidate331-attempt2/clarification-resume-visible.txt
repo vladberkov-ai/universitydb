@@ -1,0 +1,2026 @@
+Skip to main content
+Deploy
+University Database + LangGraph QA Agent
+
+Local synthetic University and Library data. Offline fixtures are not model accuracy.
+
+Dataset
+
+Execution profile: offline/injected. Offline/injected is not live model accuracy.
+
+Question
+
+Run
+
+Run: 1866824e-ea3f-4fea-96f6-45a8288b1d4b; profile: offline/injected
+
+student_id=1; course_id=all; teacher_id=all; semester_id=all: mean 86.67 (3 grades; 3 enrollments).
+
+{
+"text":"student_id=1; course_id=all; teacher_id=all; semester_id=all: mean 86.67 (3 grades; 3 enrollments)."
+"columns":[
+0:{
+"name":"average"
+"type":"decimal"
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+}
+]
+"rows":[
+0:[
+0:"86.67"
+1:3
+2:3
+]
+]
+"scope":"student_id=1; course_id=all; teacher_id=all; semester_id=all"
+"empty_reason":NULL
+"row_reasons":[
+0:NULL
+]
+"truncated":false
+}
+keyboard_arrow_down
+
+SQL and safe parameters
+
+seq=26 attempt=0 proposal (not proof of execution); step=query
+
+SELECT COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count FROM Enrollments e JOIN Offerings o ON e.offering_id = o.offering_id WHERE e.student_id = :student_id
+[
+0:{
+"name":"student_id"
+"type":"integer"
+"integer_value":1
+"text_value":NULL
+}
+]
+
+seq=28 attempt=0 sql_validated; step=see accepted step in trace
+
+SELECT COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count FROM Enrollments e JOIN Offerings o ON e.offering_id = o.offering_id WHERE e.student_id = :student_id
+{
+"student_id":1
+}
+
+seq=31 attempt=1 sql_attempt; step=see accepted step in trace
+
+SELECT COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count FROM Enrollments e JOIN Offerings o ON e.offering_id = o.offering_id WHERE e.student_id = :student_id
+{
+"student_id":1
+}
+keyboard_arrow_down
+
+DB typed rows
+
+[
+0:{
+"result_spec":{
+"metric_id":"u.grade_mean.v1"
+"shape":"aggregate"
+"group_keys":[]
+"columns":[
+0:{
+"name":"sum_units"
+"type":"integer"
+"nullable":false
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+"nullable":false
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+"nullable":false
+}
+]
+"components":{
+"sum":"sum_units"
+"denominator":"graded_count"
+"count":"enrollment_count"
+}
+"unit":"grade_hundredth"
+"scale":100
+}
+"step_id":"query"
+"columns":[
+0:{
+"name":"sum_units"
+"type":"integer"
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+}
+]
+"rows":[
+0:[
+0:26000
+1:3
+2:3
+]
+]
+"row_count":1
+"truncated":false
+"elapsed_ms":0
+}
+]
+st.json(results) if results else st.write("DB query was not executed.")DeltaGeneratorDeltaGenerator(_provided_cursor=LockedCursor(_transient_elements=SparseList({}), _parent_path=(9,)), _parent=ExpanderContainer(_provided_cursor=RunningCursor(_transient_elements=SparseList({}), _parent_path=(9,), _index=1), _parent=DeltaGenerator(), _block_type='expandable', _form_data=FormData(form...
+Creator of Delta protobuf messages.
+
+Parameters
+----------
+root_container: BlockPath_pb2.BlockPath.ContainerValue or None
+  The root container for this DeltaGenerator. If None, this is a null
+  DeltaGenerator which doesn't print to the app at all (useful for
+  testing).
+
+cursor: cursor.Cursor or None
+  This is either:
+  - None: if this is the running DeltaGenerator for a top-level
+    container (MAIN or SIDEBAR)
+  - RunningCursor: if this is the running DeltaGenerator for a
+    non-top-level container (created with dg.container())
+  - LockedCursor: if this is a locked DeltaGenerator returned by some
+    other DeltaGenerator method. E.g. the dg returned in dg =
+    st.text("foo").
+
+parent: DeltaGenerator
+  To support the `with dg` notation, DGs are arranged as a tree. Each DG
+  remembers its own parent, and the root of the tree is the main DG.
+
+block_type: None or "vertical" or "horizontal" or "column" or "expandable"
+  If this is a block DG, we track its type to prevent nested columns/expanders
+dgproperty	The associated DeltaGenerator.
+altair_chartmethod	Display a chart using the Vega-Altair library.
+area_chartmethod	Display an area chart.
+audiomethod	Display an audio player.
+audio_inputmethod	Display a widget that returns an audio recording from the user's microphone.
+badgemethod	Display a colored badge with an icon and label.
+balloonsmethod	Draw celebratory balloons.
+bar_chartmethod	Display a bar chart.
+buttonmethod	Display a button widget.
+camera_inputmethod	Display a widget that returns pictures from the user's webcam.
+captionmethod	Display text in small font.
+chat_inputmethod	Display a chat input widget.
+chat_messagemethod	Insert a chat message container.
+checkboxmethod	Display a checkbox widget.
+codemethod	Display a code block with optional syntax highlighting.
+color_pickermethod	Display a color picker widget.
+columnsmethod	Insert containers laid out as side-by-side columns.
+containermethod	Insert a multi-element container.
+data_editormethod	Display a data editor widget.
+dataframemethod	Display a dataframe as an interactive table.
+date_inputmethod	Display a date input widget.
+datetime_inputmethod	Display a date and time input widget.
+dividermethod	Display a horizontal rule.
+download_buttonmethod	Display a download button widget.
+echarts_chartmethod	Display an interactive Apache ECharts chart.
+emptymethod	Insert a single-element container.
+errormethod	Display error message.
+exceptionmethod	Display an exception.
+expandermethod	Insert a multi-element container that can be expanded/collapsed.
+feedbackmethod	Display a feedback widget.
+file_uploadermethod	Display a file uploader widget.
+formmethod	Create a form that batches elements together with a "Submit" button.
+form_submit_buttonmethod	Display a form submit button.
+graphviz_chartmethod	Display a graph using the d3-graphviz library and Graphviz WASM.
+gridmethod	Insert a responsive grid container.
+headermethod	Display text in header formatting.
+helpmethod	Display help and other information for a given object.
+htmlmethod	Insert HTML into your app.
+iframemethod	Embed content in an iframe.
+imagemethod	Display an image or list of images.
+infomethod	Display an informational message.
+jsonmethod	Display an object or string as a pretty-printed, interactive JSON string.
+latexmethod	Display mathematical expressions formatted as LaTeX.
+line_chartmethod	Display a line chart.
+link_buttonmethod	Display a link button element.
+mapmethod	Display a map with a scatterplot overlaid onto it.
+markdownmethod	Display string formatted as Markdown.
+menu_buttonmethod	Display a dropdown menu button widget.
+mermaid_chartmethod	Display a Mermaid diagram.
+metricmethod	Display a metric in big bold font, with an optional indicator of how the metric changed.
+multiselectmethod	Display a multiselect widget.
+number_inputmethod	Display a numeric input widget.
+page_linkmethod	Display a link to another page in a multipage app or to an external page.
+paginationmethod	Display a pagination widget for navigating through pages of content.
+pdfmethod	Display a PDF viewer.
+pillsmethod	Display a pills widget.
+plotly_chartmethod	Display an interactive Plotly chart.
+popovermethod	Insert a popover container.
+progressmethod	Display a progress bar.
+pydeck_chartmethod	Draw a chart using the PyDeck library.
+pyplotmethod	Display a matplotlib.pyplot figure as a static image.
+radiomethod	Display a radio button widget.
+scatter_chartmethod	Display a scatterplot chart.
+segmented_controlmethod	Display a segmented control widget.
+select_slidermethod	Display a slider widget to select items from a list.
+selectboxmethod	Display a select widget.
+skeletonmethod	Display a skeleton loading placeholder.
+slidermethod	Display a slider widget.
+snowmethod	Draw celebratory snowfall.
+spacemethod	Add vertical or horizontal space.
+spinnermethod	Display a loading spinner while executing a block of code.
+statusmethod	Insert a status container to display output from long-running tasks.
+subheadermethod	Display text in subheader formatting.
+successmethod	Display a success message.
+tablemethod	Display a static table.
+tabsmethod	Insert containers separated into tabs.
+textmethod	Write text without Markdown or HTML parsing.
+text_areamethod	Display a multi-line text input widget.
+text_inputmethod	Display a single-line text input widget.
+time_inputmethod	Display a time input widget.
+titlemethod	Display text in title formatting.
+toastmethod	Display a short message, known as a notification "toast".
+togglemethod	Display a toggle widget.
+vega_lite_chartmethod	Display a chart using the Vega-Lite library.
+videomethod	Display a video player.
+warningmethod	Display warning message.
+writemethod	Displays arguments in the app.
+write_streammethod	Stream a generator, iterable, or stream-like sequence to the app.
+keyboard_arrow_down
+
+Adapted step results and dependency bindings
+
+[
+0:{
+"node":"bind_results"
+"seq":22
+"payload":{
+"resolved_refs":{}
+"repair_error":{}
+"repair_needed":false
+"skip_step":false
+}
+}
+1:{
+"node":"inspect_result"
+"seq":36
+"payload":{
+"answer":{
+"text":"student_id=1; course_id=all; teacher_id=all; semester_id=all: mean 86.67 (3 grades; 3 enrollments)."
+"columns":[
+0:{
+"name":"average"
+"type":"decimal"
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+}
+]
+"rows":[
+0:[
+0:"86.67"
+1:3
+2:3
+]
+]
+"scope":"student_id=1; course_id=all; teacher_id=all; semester_id=all"
+"empty_reason":NULL
+"row_reasons":[
+0:NULL
+]
+"truncated":false
+}
+"completed":{
+"query":{
+"result_spec":{
+"metric_id":"u.grade_mean.v1"
+"shape":"aggregate"
+"group_keys":[]
+"columns":[
+0:{
+"name":"sum_units"
+"type":"integer"
+"nullable":false
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+"nullable":false
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+"nullable":false
+}
+]
+"components":{
+"sum":"sum_units"
+"denominator":"graded_count"
+"count":"enrollment_count"
+}
+"unit":"grade_hundredth"
+"scale":100
+}
+"step_id":"query"
+"columns":[
+0:{
+"name":"sum_units"
+"type":"integer"
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+}
+]
+"rows":[
+0:[
+0:26000
+1:3
+2:3
+]
+]
+"row_count":1
+"truncated":false
+"elapsed_ms":0
+}
+}
+"step_results":[
+0:{
+"step_id":"query"
+"raw":{
+"result_spec":{
+"metric_id":"u.grade_mean.v1"
+"shape":"aggregate"
+"group_keys":[]
+"columns":[
+0:{
+"name":"sum_units"
+"type":"integer"
+"nullable":false
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+"nullable":false
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+"nullable":false
+}
+]
+"components":{
+"sum":"sum_units"
+"denominator":"graded_count"
+"count":"enrollment_count"
+}
+"unit":"grade_hundredth"
+"scale":100
+}
+"step_id":"query"
+"columns":[
+0:{
+"name":"sum_units"
+"type":"integer"
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+}
+]
+"rows":[
+0:[
+0:26000
+1:3
+2:3
+]
+]
+"row_count":1
+"truncated":false
+"elapsed_ms":0
+}
+"answer":{
+"text":"student_id=1; course_id=all; teacher_id=all; semester_id=all: mean 86.67 (3 grades; 3 enrollments)."
+"columns":[
+0:{
+"name":"average"
+"type":"decimal"
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+}
+]
+"rows":[
+0:[
+0:"86.67"
+1:3
+2:3
+]
+]
+"scope":"student_id=1; course_id=all; teacher_id=all; semester_id=all"
+"empty_reason":NULL
+"row_reasons":[
+0:NULL
+]
+"truncated":false
+}
+"dependency_rows":[
+0:[
+0:26000
+1:3
+2:3
+]
+]
+}
+]
+"step_index":1
+}
+}
+]
+st.json(results) if results else st.write("No adapted step results yet.")DeltaGeneratorDeltaGenerator(_provided_cursor=LockedCursor(_transient_elements=SparseList({}), _parent_path=(10,)), _parent=ExpanderContainer(_provided_cursor=RunningCursor(_transient_elements=SparseList({}), _parent_path=(10,), _index=1), _parent=DeltaGenerator(), _block_type='expandable', _form_data=FormData(fo...
+Creator of Delta protobuf messages.
+
+Parameters
+----------
+root_container: BlockPath_pb2.BlockPath.ContainerValue or None
+  The root container for this DeltaGenerator. If None, this is a null
+  DeltaGenerator which doesn't print to the app at all (useful for
+  testing).
+
+cursor: cursor.Cursor or None
+  This is either:
+  - None: if this is the running DeltaGenerator for a top-level
+    container (MAIN or SIDEBAR)
+  - RunningCursor: if this is the running DeltaGenerator for a
+    non-top-level container (created with dg.container())
+  - LockedCursor: if this is a locked DeltaGenerator returned by some
+    other DeltaGenerator method. E.g. the dg returned in dg =
+    st.text("foo").
+
+parent: DeltaGenerator
+  To support the `with dg` notation, DGs are arranged as a tree. Each DG
+  remembers its own parent, and the root of the tree is the main DG.
+
+block_type: None or "vertical" or "horizontal" or "column" or "expandable"
+  If this is a block DG, we track its type to prevent nested columns/expanders
+dgproperty	The associated DeltaGenerator.
+altair_chartmethod	Display a chart using the Vega-Altair library.
+area_chartmethod	Display an area chart.
+audiomethod	Display an audio player.
+audio_inputmethod	Display a widget that returns an audio recording from the user's microphone.
+badgemethod	Display a colored badge with an icon and label.
+balloonsmethod	Draw celebratory balloons.
+bar_chartmethod	Display a bar chart.
+buttonmethod	Display a button widget.
+camera_inputmethod	Display a widget that returns pictures from the user's webcam.
+captionmethod	Display text in small font.
+chat_inputmethod	Display a chat input widget.
+chat_messagemethod	Insert a chat message container.
+checkboxmethod	Display a checkbox widget.
+codemethod	Display a code block with optional syntax highlighting.
+color_pickermethod	Display a color picker widget.
+columnsmethod	Insert containers laid out as side-by-side columns.
+containermethod	Insert a multi-element container.
+data_editormethod	Display a data editor widget.
+dataframemethod	Display a dataframe as an interactive table.
+date_inputmethod	Display a date input widget.
+datetime_inputmethod	Display a date and time input widget.
+dividermethod	Display a horizontal rule.
+download_buttonmethod	Display a download button widget.
+echarts_chartmethod	Display an interactive Apache ECharts chart.
+emptymethod	Insert a single-element container.
+errormethod	Display error message.
+exceptionmethod	Display an exception.
+expandermethod	Insert a multi-element container that can be expanded/collapsed.
+feedbackmethod	Display a feedback widget.
+file_uploadermethod	Display a file uploader widget.
+formmethod	Create a form that batches elements together with a "Submit" button.
+form_submit_buttonmethod	Display a form submit button.
+graphviz_chartmethod	Display a graph using the d3-graphviz library and Graphviz WASM.
+gridmethod	Insert a responsive grid container.
+headermethod	Display text in header formatting.
+helpmethod	Display help and other information for a given object.
+htmlmethod	Insert HTML into your app.
+iframemethod	Embed content in an iframe.
+imagemethod	Display an image or list of images.
+infomethod	Display an informational message.
+jsonmethod	Display an object or string as a pretty-printed, interactive JSON string.
+latexmethod	Display mathematical expressions formatted as LaTeX.
+line_chartmethod	Display a line chart.
+link_buttonmethod	Display a link button element.
+mapmethod	Display a map with a scatterplot overlaid onto it.
+markdownmethod	Display string formatted as Markdown.
+menu_buttonmethod	Display a dropdown menu button widget.
+mermaid_chartmethod	Display a Mermaid diagram.
+metricmethod	Display a metric in big bold font, with an optional indicator of how the metric changed.
+multiselectmethod	Display a multiselect widget.
+number_inputmethod	Display a numeric input widget.
+page_linkmethod	Display a link to another page in a multipage app or to an external page.
+paginationmethod	Display a pagination widget for navigating through pages of content.
+pdfmethod	Display a PDF viewer.
+pillsmethod	Display a pills widget.
+plotly_chartmethod	Display an interactive Plotly chart.
+popovermethod	Insert a popover container.
+progressmethod	Display a progress bar.
+pydeck_chartmethod	Draw a chart using the PyDeck library.
+pyplotmethod	Display a matplotlib.pyplot figure as a static image.
+radiomethod	Display a radio button widget.
+scatter_chartmethod	Display a scatterplot chart.
+segmented_controlmethod	Display a segmented control widget.
+select_slidermethod	Display a slider widget to select items from a list.
+selectboxmethod	Display a select widget.
+skeletonmethod	Display a skeleton loading placeholder.
+slidermethod	Display a slider widget.
+snowmethod	Draw celebratory snowfall.
+spacemethod	Add vertical or horizontal space.
+spinnermethod	Display a loading spinner while executing a block of code.
+statusmethod	Insert a status container to display output from long-running tasks.
+subheadermethod	Display text in subheader formatting.
+successmethod	Display a success message.
+tablemethod	Display a static table.
+tabsmethod	Insert containers separated into tabs.
+textmethod	Write text without Markdown or HTML parsing.
+text_areamethod	Display a multi-line text input widget.
+text_inputmethod	Display a single-line text input widget.
+time_inputmethod	Display a time input widget.
+titlemethod	Display text in title formatting.
+toastmethod	Display a short message, known as a notification "toast".
+togglemethod	Display a toggle widget.
+vega_lite_chartmethod	Display a chart using the Vega-Lite library.
+videomethod	Display a video player.
+warningmethod	Display warning message.
+writemethod	Displays arguments in the app.
+write_streammethod	Stream a generator, iterable, or stream-like sequence to the app.
+keyboard_arrow_down
+
+Full same-run trace
+
+[
+0:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"5aac190c-2b7b-4358-b537-6848f04e7b63"
+"seq":1
+"parent_event_id":NULL
+"request_id":"8c0f098e-794b-40ef-813c-ebdb19a5fd0a"
+"node":"input"
+"kind":"input"
+"attempt":0
+"timestamp":"2026-11-07T23:08:30.954564+00:00"
+"duration_ms":NULL
+"payload":{
+"question":"What is the average grade for Alex?"
+"execution_profile":"offline/injected"
+"real_provider_called":false
+"fixture_sha256":"400a1b6d84df6602767f2153bf24ccc9c917cb2fb217a7fecd16a4cea4758c11"
+}
+}
+1:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"ad1d9ede-8d7e-4a9b-a196-1c89860a9689"
+"seq":2
+"parent_event_id":NULL
+"request_id":"8c0f098e-794b-40ef-813c-ebdb19a5fd0a"
+"node":"validate_input"
+"kind":"node_start"
+"attempt":0
+"timestamp":"2026-11-07T23:08:30.960103+00:00"
+"duration_ms":NULL
+"payload":{}
+}
+2:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"fe5f9f0b-7ec3-4f87-9629-54e618a4c6f8"
+"seq":3
+"parent_event_id":NULL
+"request_id":"8c0f098e-794b-40ef-813c-ebdb19a5fd0a"
+"node":"validate_input"
+"kind":"node_end"
+"attempt":0
+"timestamp":"2026-11-07T23:08:30.963060+00:00"
+"duration_ms":NULL
+"payload":{}
+}
+3:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"f946a89e-4981-4a9b-85ea-69992c7935bc"
+"seq":4
+"parent_event_id":NULL
+"request_id":"8c0f098e-794b-40ef-813c-ebdb19a5fd0a"
+"node":"load_schema"
+"kind":"node_start"
+"attempt":0
+"timestamp":"2026-11-07T23:08:30.965638+00:00"
+"duration_ms":NULL
+"payload":{}
+}
+4:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"651b95d2-086e-4cb6-a76d-11e03df0ea2f"
+"seq":5
+"parent_event_id":NULL
+"request_id":"8c0f098e-794b-40ef-813c-ebdb19a5fd0a"
+"node":"load_schema"
+"kind":"node_end"
+"attempt":0
+"timestamp":"2026-11-07T23:08:30.969422+00:00"
+"duration_ms":NULL
+"payload":{
+"descriptor":{
+"version":"I2-I3-1"
+"schema_id":"university-v1"
+"dialect":"sqlite"
+"tables":{
+"Students":[
+0:"student_id"
+1:"name"
+]
+"Teachers":[
+0:"teacher_id"
+1:"name"
+]
+"Courses":[
+0:"course_id"
+1:"code"
+2:"title"
+]
+"Semesters":[
+0:"semester_id"
+1:"starts_on"
+2:"ends_on"
+]
+"Offerings":[
+0:"offering_id"
+1:"course_id"
+2:"teacher_id"
+3:"semester_id"
+4:"section"
+]
+"Enrollments":[
+0:"student_id"
+1:"offering_id"
+2:"grade_units"
+]
+}
+"allowed_functions":[
+0:"sum"
+1:"count"
+2:"coalesce"
+]
+"registry":{
+"mean_template":{
+"metric_id":"u.grade_mean.v1"
+"shape":"aggregate"
+"group_keys":[]
+"columns":[
+0:{
+"name":"sum_units"
+"type":"integer"
+"nullable":false
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+"nullable":false
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+"nullable":false
+}
+]
+"components":{
+"sum":"sum_units"
+"denominator":"graded_count"
+"count":"enrollment_count"
+}
+"unit":"grade_hundredth"
+"scale":100
+}
+"groups":[
+0:"course_id"
+1:"student_id"
+2:"teacher_id"
+3:"offering_id"
+4:"semester_id"
+]
+"count_template":{
+"metric_id":"u.enrollment_counts.v1"
+"shape":"aggregate"
+"group_keys":[]
+"columns":[
+0:{
+"name":"enrollment_count"
+"type":"integer"
+"nullable":false
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+"nullable":false
+}
+2:{
+"name":"distinct_student_count"
+"type":"integer"
+"nullable":false
+}
+]
+"components":{
+"sum":NULL
+"denominator":NULL
+"count":"enrollment_count"
+}
+"unit":"count"
+"scale":1
+}
+"other":[
+0:{
+"metric_id":"u.top_course.v1"
+"shape":"top"
+"group_keys":[
+0:"course_id"
+]
+"columns":[
+0:{
+"name":"course_id"
+"type":"integer"
+"nullable":false
+}
+1:{
+"name":"sum_units"
+"type":"integer"
+"nullable":false
+}
+2:{
+"name":"graded_count"
+"type":"integer"
+"nullable":false
+}
+3:{
+"name":"enrollment_count"
+"type":"integer"
+"nullable":false
+}
+]
+"components":{
+"sum":"sum_units"
+"denominator":"graded_count"
+"count":"enrollment_count"
+}
+"unit":"grade_hundredth"
+"scale":100
+}
+1:{
+"metric_id":"u.enrollment_rows.v1"
+"shape":"rows"
+"group_keys":[
+0:"student_id"
+1:"offering_id"
+]
+"columns":[
+0:{
+"name":"student_id"
+"type":"integer"
+"nullable":false
+}
+1:{
+"name":"student_name"
+"type":"string"
+"nullable":false
+}
+2:{
+"name":"offering_id"
+"type":"integer"
+"nullable":false
+}
+3:{
+"name":"course_id"
+"type":"integer"
+"nullable":false
+}
+4:{
+"name":"course_title"
+"type":"string"
+"nullable":false
+}
+5:{
+"name":"teacher_id"
+"type":"integer"
+"nullable":false
+}
+6:{
+"name":"teacher_name"
+"type":"string"
+"nullable":false
+}
+7:{
+"name":"semester_id"
+"type":"string"
+"nullable":false
+}
+8:{
+"name":"grade_units"
+"type":"integer"
+"nullable":true
+}
+]
+"components":{
+"sum":NULL
+"denominator":NULL
+"count":NULL
+}
+"unit":"grade_hundredth"
+"scale":100
+}
+2:{
+"metric_id":"u.student_ids.v1"
+"shape":"rows"
+"group_keys":[
+0:"student_id"
+]
+"columns":[
+0:{
+"name":"student_id"
+"type":"integer"
+"nullable":false
+}
+]
+"components":{
+"sum":NULL
+"denominator":NULL
+"count":NULL
+}
+"unit":"identifier"
+"scale":1
+}
+]
+}
+"policy":"Equal graded enrollments, NULL excluded, all offerings/retakes. Absent filters mean all including semesters. Mean projections COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count. Base Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id. Optional equality predicates named student_id/course_id/teacher_id/semester_id; group keys e.student_id or o.course_id/teacher_id/offering_id/semester_id. For rows GROUP BY key ORDER BY key. Top returns ALL course components, adapter selects exact maximum ties. student_ids uses SELECT DISTINCT e.student_id ORDER BY e.student_id. Dependency course_ids/student_ids bind named <ref>_0,<ref>_1 etc in IN clause. Empty ref WHERE 0=1. Listing adds Students s,Courses c,Teachers t joins on IDs and ordered declared projections; ORDER BY e.offering_id,e.student_id."
+}
+"startup":{
+"db_sha256":"63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+"sqlite_version":"3.45.1"
+"lock_sha256":"de36cab6c73d37bde70cc13e019b9eb2552a0747e46fe5c8c3b7cedf5338378d"
+"schema_sha256":"89b7c664b89f0229c71a78f61c4fb58a8468bc8e089968c70a1b8f485bb265e7"
+}
+}
+}
+5:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"e290599c-a1e8-4b0d-881f-33e7ce394ca6"
+"seq":6
+"parent_event_id":NULL
+"request_id":"8c0f098e-794b-40ef-813c-ebdb19a5fd0a"
+"node":"resolve_scope"
+"kind":"node_start"
+"attempt":0
+"timestamp":"2026-11-07T23:08:30.973648+00:00"
+"duration_ms":NULL
+"payload":{}
+}
+6:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"1d6b73e7-1fcf-497f-980a-32128cc12eb3"
+"seq":7
+"parent_event_id":NULL
+"request_id":"8c0f098e-794b-40ef-813c-ebdb19a5fd0a"
+"node":"clarify"
+"kind":"clarification_required"
+"attempt":0
+"timestamp":"2026-11-07T23:08:30.976132+00:00"
+"duration_ms":NULL
+"payload":{
+"field":"student_id"
+"options":[
+0:{
+"value":1
+"label":"Alex"
+}
+1:{
+"value":3
+"label":"Alex"
+}
+]
+"prompt":"Choose the intended student identity."
+"clarification_id":"96e2b051-3517-4918-a457-b1739a2dbe38"
+}
+}
+7:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"7087d687-b87a-454b-ae8d-cbccbb219094"
+"seq":8
+"parent_event_id":NULL
+"request_id":"8c0f098e-794b-40ef-813c-ebdb19a5fd0a"
+"node":"resolve_scope"
+"kind":"node_end"
+"attempt":0
+"timestamp":"2026-11-07T23:08:30.979579+00:00"
+"duration_ms":NULL
+"payload":{
+"clarification":{
+"field":"student_id"
+"options":[
+0:{
+"value":1
+"label":"Alex"
+}
+1:{
+"value":3
+"label":"Alex"
+}
+]
+"prompt":"Choose the intended student identity."
+"clarification_id":"96e2b051-3517-4918-a457-b1739a2dbe38"
+}
+}
+}
+8:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"81cbb950-f25d-43a8-af6a-524f1f6db471"
+"seq":9
+"parent_event_id":NULL
+"request_id":"8c0f098e-794b-40ef-813c-ebdb19a5fd0a"
+"node":"clarify"
+"kind":"checkpoint_paused"
+"attempt":0
+"timestamp":"2026-11-07T23:08:30.984011+00:00"
+"duration_ms":NULL
+"payload":{
+"field":"student_id"
+"options":[
+0:{
+"value":1
+"label":"Alex"
+}
+1:{
+"value":3
+"label":"Alex"
+}
+]
+"prompt":"Choose the intended student identity."
+"clarification_id":"96e2b051-3517-4918-a457-b1739a2dbe38"
+"session_id":"dc1c0071-f830-47b0-8d62-015215a0ae99"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"checkpoint_id":"1f1db002-6093-6b43-8003-f0da8c445ae2"
+"schema_sha256":"89b7c664b89f0229c71a78f61c4fb58a8468bc8e089968c70a1b8f485bb265e7"
+"data_sha256":"63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+"policy_sha256":"dc784f6a7bb00f099fde0ecb9dc3a647d889e3d4229056ce23a173eb94b2433d"
+"expires_at":1794093810.9544942
+}
+}
+9:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"f6e4238b-aa1b-433f-81e8-d2383e174b6e"
+"seq":10
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"resume"
+"kind":"resume"
+"attempt":0
+"timestamp":"2026-11-07T23:08:31.931224+00:00"
+"duration_ms":NULL
+"payload":{
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+}
+}
+10:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"19abf645-16b8-4002-9580-ceba592ed8d6"
+"seq":11
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"clarify"
+"kind":"clarification_resumed"
+"attempt":0
+"timestamp":"2026-11-07T23:08:31.937866+00:00"
+"duration_ms":NULL
+"payload":{
+"field":"student_id"
+"selection":1
+}
+}
+11:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"841d7ab9-97e5-4331-9d40-1a4a4304e437"
+"seq":12
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"resolve_scope"
+"kind":"node_start"
+"attempt":0
+"timestamp":"2026-11-07T23:08:31.941398+00:00"
+"duration_ms":NULL
+"payload":{}
+}
+12:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"5f544734-8d4a-4c5d-8db1-43ee598bff9d"
+"seq":13
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"resolve_scope"
+"kind":"node_end"
+"attempt":0
+"timestamp":"2026-11-07T23:08:31.944908+00:00"
+"duration_ms":NULL
+"payload":{
+"scope":{
+"student_id":1
+}
+"clarification":NULL
+}
+}
+13:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"3d0bba05-b4ee-4ded-a233-d2fbe279e330"
+"seq":14
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"plan"
+"kind":"node_start"
+"attempt":0
+"timestamp":"2026-11-07T23:08:31.947769+00:00"
+"duration_ms":NULL
+"payload":{}
+}
+14:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"1da16abb-4e25-4ba8-813e-802542343743"
+"seq":15
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"plan"
+"kind":"llm_attempt"
+"attempt":1
+"timestamp":"2026-11-07T23:08:31.952535+00:00"
+"duration_ms":NULL
+"payload":{
+"execution_profile":"offline/injected"
+"real_provider_called":false
+"phase":"application_attempt_before_dispatch"
+"logical_operation":"plan"
+"requested_model":"scripted-test"
+"reasoning_effort":"high"
+"service_tier":"default"
+"max_output_tokens":32768
+"reserved_run_tokens":44768
+}
+}
+15:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"0d0f44f9-18cc-47f5-b83c-f1e3924c37de"
+"seq":16
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"plan"
+"kind":"llm_attempt"
+"attempt":1
+"timestamp":"2026-11-07T23:08:31.954796+00:00"
+"duration_ms":NULL
+"payload":{
+"phase":"response"
+"usage":{
+"fixture_sha256":"400a1b6d84df6602767f2153bf24ccc9c917cb2fb217a7fecd16a4cea4758c11"
+"injection_point":"provider_transport"
+"fault_case":"scripted_fixture"
+"requested_model":"scripted-test"
+"returned_model":"scripted-test"
+"input_tokens":0
+"output_tokens":0
+"total_tokens":0
+"real_provider_called":false
+}
+}
+}
+16:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"b48a106a-2d16-4c90-a87d-c12b681a3fb2"
+"seq":17
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"plan"
+"kind":"node_end"
+"attempt":0
+"timestamp":"2026-11-07T23:08:31.956883+00:00"
+"duration_ms":NULL
+"payload":{
+"plan":{
+"version":"1"
+"steps":[
+0:{
+"step_id":"query"
+"depends_on":[]
+"purpose":"Offline injected UI scenario"
+"result_refs":[]
+"result_spec":{
+"metric_id":"u.grade_mean.v1"
+"shape":"aggregate"
+"group_keys":[]
+"columns":[
+0:{
+"name":"sum_units"
+"type":"integer"
+"nullable":false
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+"nullable":false
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+"nullable":false
+}
+]
+"components":{
+"sum":"sum_units"
+"denominator":"graded_count"
+"count":"enrollment_count"
+}
+"unit":"grade_hundredth"
+"scale":100
+}
+}
+]
+"needs_clarification":false
+"clarification_field":NULL
+}
+}
+}
+17:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"308df1ec-cb21-40f1-b856-b489306b932b"
+"seq":18
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"validate_plan"
+"kind":"node_start"
+"attempt":0
+"timestamp":"2026-11-07T23:08:31.959503+00:00"
+"duration_ms":NULL
+"payload":{}
+}
+18:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"c5773f5b-0548-4ac7-bf8c-2b03d8ecdde4"
+"seq":19
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"validate_plan"
+"kind":"node_end"
+"attempt":0
+"timestamp":"2026-11-07T23:08:31.961568+00:00"
+"duration_ms":NULL
+"payload":{
+"step_index":0
+"completed":{}
+"step_results":[]
+}
+}
+19:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"4092be7c-5c38-4eef-b273-9174b7c4e966"
+"seq":20
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"bind_results"
+"kind":"node_start"
+"attempt":0
+"timestamp":"2026-11-07T23:08:31.964664+00:00"
+"duration_ms":NULL
+"payload":{}
+}
+20:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"230d960d-5c53-4e09-b57e-02521d8ed617"
+"seq":21
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"bind_results"
+"kind":"dependency_bindings"
+"attempt":0
+"timestamp":"2026-11-07T23:08:31.966298+00:00"
+"duration_ms":NULL
+"payload":{
+"step_id":"query"
+"values":{}
+}
+}
+21:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"4255827a-1741-4ff9-8ab2-6b76b4a30731"
+"seq":22
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"bind_results"
+"kind":"node_end"
+"attempt":0
+"timestamp":"2026-11-07T23:08:31.967706+00:00"
+"duration_ms":NULL
+"payload":{
+"resolved_refs":{}
+"repair_error":{}
+"repair_needed":false
+"skip_step":false
+}
+}
+22:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"ce7c10cb-c70d-47c5-b033-cdde57add29e"
+"seq":23
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"generate_sql"
+"kind":"node_start"
+"attempt":0
+"timestamp":"2026-11-07T23:08:31.969627+00:00"
+"duration_ms":NULL
+"payload":{}
+}
+23:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"c175a92b-aec2-4dec-ba42-de54156d0b08"
+"seq":24
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"sql"
+"kind":"llm_attempt"
+"attempt":2
+"timestamp":"2026-11-07T23:08:31.974304+00:00"
+"duration_ms":NULL
+"payload":{
+"execution_profile":"offline/injected"
+"real_provider_called":false
+"phase":"application_attempt_before_dispatch"
+"logical_operation":"sql"
+"requested_model":"scripted-test"
+"reasoning_effort":"medium"
+"service_tier":"default"
+"max_output_tokens":32768
+"reserved_run_tokens":89536
+}
+}
+24:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"1cf33970-8f1b-4aa7-8029-1dd28d2e0619"
+"seq":25
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"sql"
+"kind":"llm_attempt"
+"attempt":2
+"timestamp":"2026-11-07T23:08:31.976314+00:00"
+"duration_ms":NULL
+"payload":{
+"phase":"response"
+"usage":{
+"fixture_sha256":"400a1b6d84df6602767f2153bf24ccc9c917cb2fb217a7fecd16a4cea4758c11"
+"injection_point":"provider_transport"
+"fault_case":"scripted_fixture"
+"requested_model":"scripted-test"
+"returned_model":"scripted-test"
+"input_tokens":0
+"output_tokens":0
+"total_tokens":0
+"real_provider_called":false
+}
+}
+}
+25:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"e8f0e17e-75f2-4f2f-8e19-17ffe18fc966"
+"seq":26
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"generate_sql"
+"kind":"node_end"
+"attempt":0
+"timestamp":"2026-11-07T23:08:31.979434+00:00"
+"duration_ms":NULL
+"payload":{
+"proposal":{
+"version":"1"
+"step_id":"query"
+"result_spec":{
+"metric_id":"u.grade_mean.v1"
+"shape":"aggregate"
+"group_keys":[]
+"columns":[
+0:{
+"name":"sum_units"
+"type":"integer"
+"nullable":false
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+"nullable":false
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+"nullable":false
+}
+]
+"components":{
+"sum":"sum_units"
+"denominator":"graded_count"
+"count":"enrollment_count"
+}
+"unit":"grade_hundredth"
+"scale":100
+}
+"sql":"SELECT COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count FROM Enrollments e JOIN Offerings o ON e.offering_id = o.offering_id WHERE e.student_id = :student_id"
+"parameters":[
+0:{
+"name":"student_id"
+"type":"integer"
+"integer_value":1
+"text_value":NULL
+}
+]
+"expected_columns":[
+0:"sum_units"
+1:"graded_count"
+2:"enrollment_count"
+]
+"result_kind":"aggregate"
+"explanation":"Offline injected proposal; database result is not supplied"
+}
+"repair_needed":false
+}
+}
+26:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"1ac0248f-0309-4ad5-a1af-9a5f56814e14"
+"seq":27
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"validate_sql"
+"kind":"node_start"
+"attempt":0
+"timestamp":"2026-11-07T23:08:31.982643+00:00"
+"duration_ms":NULL
+"payload":{}
+}
+27:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"568c3f6e-719c-4e9c-85a6-77373c2d634d"
+"seq":28
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"validate_sql"
+"kind":"sql_validated"
+"attempt":0
+"timestamp":"2026-11-07T23:08:31.987092+00:00"
+"duration_ms":NULL
+"payload":{
+"sql":"SELECT COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count FROM Enrollments e JOIN Offerings o ON e.offering_id = o.offering_id WHERE e.student_id = :student_id"
+"parameters":{
+"student_id":1
+}
+}
+}
+28:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"4a726ae5-05af-4898-a932-c075488666b9"
+"seq":29
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"validate_sql"
+"kind":"node_end"
+"attempt":0
+"timestamp":"2026-11-07T23:08:31.989068+00:00"
+"duration_ms":NULL
+"payload":{
+"parameters":{
+"student_id":1
+}
+}
+}
+29:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"77b4f59f-5c65-471c-b2f3-a2a084638ac5"
+"seq":30
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"execute"
+"kind":"node_start"
+"attempt":0
+"timestamp":"2026-11-07T23:08:31.991931+00:00"
+"duration_ms":NULL
+"payload":{}
+}
+30:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"4ab928ae-d0fe-47e8-a595-336761b985cf"
+"seq":31
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"execute"
+"kind":"sql_attempt"
+"attempt":1
+"timestamp":"2026-11-07T23:08:31.993850+00:00"
+"duration_ms":NULL
+"payload":{
+"sql":"SELECT COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count FROM Enrollments e JOIN Offerings o ON e.offering_id = o.offering_id WHERE e.student_id = :student_id"
+"parameters":{
+"student_id":1
+}
+}
+}
+31:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"098cf608-dfd6-4adf-8684-3dc64eb235fa"
+"seq":32
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"execute"
+"kind":"db_result"
+"attempt":1
+"timestamp":"2026-11-07T23:08:32.123529+00:00"
+"duration_ms":0
+"payload":{
+"result_spec":{
+"metric_id":"u.grade_mean.v1"
+"shape":"aggregate"
+"group_keys":[]
+"columns":[
+0:{
+"name":"sum_units"
+"type":"integer"
+"nullable":false
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+"nullable":false
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+"nullable":false
+}
+]
+"components":{
+"sum":"sum_units"
+"denominator":"graded_count"
+"count":"enrollment_count"
+}
+"unit":"grade_hundredth"
+"scale":100
+}
+"step_id":"query"
+"columns":[
+0:{
+"name":"sum_units"
+"type":"integer"
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+}
+]
+"rows":[
+0:[
+0:26000
+1:3
+2:3
+]
+]
+"row_count":1
+"truncated":false
+"elapsed_ms":0
+}
+}
+32:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"4d0ea08b-ca82-410f-8fa6-cb1d45d10365"
+"seq":33
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"execute"
+"kind":"node_end"
+"attempt":0
+"timestamp":"2026-11-07T23:08:32.126358+00:00"
+"duration_ms":NULL
+"payload":{
+"result":{
+"result_spec":{
+"metric_id":"u.grade_mean.v1"
+"shape":"aggregate"
+"group_keys":[]
+"columns":[
+0:{
+"name":"sum_units"
+"type":"integer"
+"nullable":false
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+"nullable":false
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+"nullable":false
+}
+]
+"components":{
+"sum":"sum_units"
+"denominator":"graded_count"
+"count":"enrollment_count"
+}
+"unit":"grade_hundredth"
+"scale":100
+}
+"step_id":"query"
+"columns":[
+0:{
+"name":"sum_units"
+"type":"integer"
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+}
+]
+"rows":[
+0:[
+0:26000
+1:3
+2:3
+]
+]
+"row_count":1
+"truncated":false
+"elapsed_ms":0
+}
+}
+}
+33:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"f3bd367d-1973-4270-a12a-22054593b2cb"
+"seq":34
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"inspect_result"
+"kind":"node_start"
+"attempt":0
+"timestamp":"2026-11-07T23:08:32.129068+00:00"
+"duration_ms":NULL
+"payload":{}
+}
+34:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"3e7ce964-0cb5-4d80-8736-92a72f35f046"
+"seq":35
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"inspect_result"
+"kind":"adapted_result"
+"attempt":0
+"timestamp":"2026-11-07T23:08:32.130657+00:00"
+"duration_ms":NULL
+"payload":{
+"step_id":"query"
+"answer":{
+"text":"student_id=1; course_id=all; teacher_id=all; semester_id=all: mean 86.67 (3 grades; 3 enrollments)."
+"columns":[
+0:{
+"name":"average"
+"type":"decimal"
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+}
+]
+"rows":[
+0:[
+0:"86.67"
+1:3
+2:3
+]
+]
+"scope":"student_id=1; course_id=all; teacher_id=all; semester_id=all"
+"empty_reason":NULL
+"row_reasons":[
+0:NULL
+]
+"truncated":false
+}
+"dependency_rows":[
+0:[
+0:26000
+1:3
+2:3
+]
+]
+}
+}
+35:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"0a78d43c-f8e8-4107-ad88-ecc008b74bc8"
+"seq":36
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"inspect_result"
+"kind":"node_end"
+"attempt":0
+"timestamp":"2026-11-07T23:08:32.131856+00:00"
+"duration_ms":NULL
+"payload":{
+"answer":{
+"text":"student_id=1; course_id=all; teacher_id=all; semester_id=all: mean 86.67 (3 grades; 3 enrollments)."
+"columns":[
+0:{
+"name":"average"
+"type":"decimal"
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+}
+]
+"rows":[
+0:[
+0:"86.67"
+1:3
+2:3
+]
+]
+"scope":"student_id=1; course_id=all; teacher_id=all; semester_id=all"
+"empty_reason":NULL
+"row_reasons":[
+0:NULL
+]
+"truncated":false
+}
+"completed":{
+"query":{
+"result_spec":{
+"metric_id":"u.grade_mean.v1"
+"shape":"aggregate"
+"group_keys":[]
+"columns":[
+0:{
+"name":"sum_units"
+"type":"integer"
+"nullable":false
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+"nullable":false
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+"nullable":false
+}
+]
+"components":{
+"sum":"sum_units"
+"denominator":"graded_count"
+"count":"enrollment_count"
+}
+"unit":"grade_hundredth"
+"scale":100
+}
+"step_id":"query"
+"columns":[
+0:{
+"name":"sum_units"
+"type":"integer"
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+}
+]
+"rows":[
+0:[
+0:26000
+1:3
+2:3
+]
+]
+"row_count":1
+"truncated":false
+"elapsed_ms":0
+}
+}
+"step_results":[
+0:{
+"step_id":"query"
+"raw":{
+"result_spec":{
+"metric_id":"u.grade_mean.v1"
+"shape":"aggregate"
+"group_keys":[]
+"columns":[
+0:{
+"name":"sum_units"
+"type":"integer"
+"nullable":false
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+"nullable":false
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+"nullable":false
+}
+]
+"components":{
+"sum":"sum_units"
+"denominator":"graded_count"
+"count":"enrollment_count"
+}
+"unit":"grade_hundredth"
+"scale":100
+}
+"step_id":"query"
+"columns":[
+0:{
+"name":"sum_units"
+"type":"integer"
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+}
+]
+"rows":[
+0:[
+0:26000
+1:3
+2:3
+]
+]
+"row_count":1
+"truncated":false
+"elapsed_ms":0
+}
+"answer":{
+"text":"student_id=1; course_id=all; teacher_id=all; semester_id=all: mean 86.67 (3 grades; 3 enrollments)."
+"columns":[
+0:{
+"name":"average"
+"type":"decimal"
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+}
+]
+"rows":[
+0:[
+0:"86.67"
+1:3
+2:3
+]
+]
+"scope":"student_id=1; course_id=all; teacher_id=all; semester_id=all"
+"empty_reason":NULL
+"row_reasons":[
+0:NULL
+]
+"truncated":false
+}
+"dependency_rows":[
+0:[
+0:26000
+1:3
+2:3
+]
+]
+}
+]
+"step_index":1
+}
+}
+36:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"504d72e6-d83e-42c5-91d2-3d0be2509897"
+"seq":37
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"answer"
+"kind":"node_start"
+"attempt":0
+"timestamp":"2026-11-07T23:08:32.133649+00:00"
+"duration_ms":NULL
+"payload":{}
+}
+37:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"95af2979-49f2-457d-97cb-de2ef6b2b99e"
+"seq":38
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"answer"
+"kind":"answer"
+"attempt":0
+"timestamp":"2026-11-07T23:08:32.135404+00:00"
+"duration_ms":NULL
+"payload":{
+"text":"student_id=1; course_id=all; teacher_id=all; semester_id=all: mean 86.67 (3 grades; 3 enrollments)."
+"columns":[
+0:{
+"name":"average"
+"type":"decimal"
+}
+1:{
+"name":"graded_count"
+"type":"integer"
+}
+2:{
+"name":"enrollment_count"
+"type":"integer"
+}
+]
+"rows":[
+0:[
+0:"86.67"
+1:3
+2:3
+]
+]
+"scope":"student_id=1; course_id=all; teacher_id=all; semester_id=all"
+"empty_reason":NULL
+"row_reasons":[
+0:NULL
+]
+"truncated":false
+}
+}
+38:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"5f4e2108-52cf-4378-b599-1225fe6e4b7d"
+"seq":39
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"answer"
+"kind":"node_end"
+"attempt":0
+"timestamp":"2026-11-07T23:08:32.136461+00:00"
+"duration_ms":NULL
+"payload":{}
+}
+39:{
+"version":"1"
+"trace_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"run_id":"1866824e-ea3f-4fea-96f6-45a8288b1d4b"
+"event_id":"3df844c6-72a9-45c3-9359-43e54d00de26"
+"seq":40
+"parent_event_id":NULL
+"request_id":"2e61aeaf-9cda-483f-982c-7b72fc53930f"
+"node":"end"
+"kind":"run_end"
+"attempt":0
+"timestamp":"2026-11-07T23:08:32.139796+00:00"
+"duration_ms":NULL
+"payload":{
+"status":"ok"
+"llm_calls":2
+"sql_attempts":1
+}
+}
+]
+
+JSONL trace

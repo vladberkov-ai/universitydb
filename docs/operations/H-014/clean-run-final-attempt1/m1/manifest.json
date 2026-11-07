@@ -1,0 +1,130 @@
+{
+  "evidence": "Fresh clean full suite457 passed at331eb5a; subsequent group readiness question failed",
+  "profile": "offline/injected; not real-model NL-to-SQL accuracy",
+  "source_sha256": {
+    "src/universitydb/agent.py": "af3191e82c247f647661411224383fced8456fd5142cb5a61e81f2a1d51edbd2",
+    "src/universitydb/contracts.py": "14715a2b7ed31457eba35acce6e568bcd67c72a55371822f6c9243bbacb619dc",
+    "src/universitydb/db.py": "a1650dad66a7c8ad49210bb3ab4850deff8e9f7bfc5c3f2ca65c84e632d80cc8",
+    "src/universitydb/db_worker.py": "64c17b84c0d68e97d5587c849734640fccd89ace1c12238f08105bf8201a2c05",
+    "src/universitydb/sql_policy.py": "f0d2c532ad9c053952cc6a4fefba9350585e9826d49f9b05b5d6171b035307ac",
+    "src/universitydb/config.py": "508b2bef52d2c81c5114b885a6be56f5b22b18774ae5a48674679ea1fdd6b263",
+    "src/universitydb/llm.py": "4b8c80075748a669cb70397ad8aecbad2efbb9dd3ce2a7e9680e918ba10157cb",
+    "src/universitydb/llm_worker.py": "ba0abec6f45197814068c70aa86fb747e4de070cc84f08f1caa6b537b3a5bf9d",
+    "src/universitydb/tracing.py": "32a8b49dc56b0e2acf59b836361ef03abb70c4c549c312a1c914c8b646e8a96b",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/domain.py": "0d4d9b2ab97e36bf3de59c1126c822b289aa46d0204475df8c9f08ce2994a0e7",
+    "src/universitydb/domain_support.py": "211407da912ca737bdc449ce68b098227efad5fdd551c8848796d5c041a71fae",
+    "src/universitydb/library.py": "dd2ba3a31638c005bb3a9c05d16c9b8cae0b35ce53e8709b3c38ff45aa7b292e",
+    "tests/test_i3_dependencies.py": "ec4c9a05e93e00443638b4567cdceff4e1f8cbc93e7ad84e0a8e1dcd000caf7d",
+    "docs/operations/H-013/frozen-oracle.json": "93c87371a125eeb09862e78664f8a3e31ef2015d80da7c5af4fa916029a9d5f2"
+  },
+  "cases": {
+    "F1": {
+      "proof": "F1.json",
+      "trace": "F1.jsonl",
+      "trace_sha256": "a8b51c765c5220b23dca73526da3f1be18afb4da25f14f9bf520d01bedb7622d",
+      "expected_top": [
+        2
+      ],
+      "actual_top": [
+        [
+          2,
+          10000,
+          1,
+          1
+        ]
+      ],
+      "actual_final": [
+        [
+          1,
+          "95.00",
+          2,
+          2
+        ]
+      ],
+      "provider_calls": 4
+    },
+    "F2": {
+      "proof": "F2.json",
+      "trace": "F2.jsonl",
+      "trace_sha256": "82ae33cce25e7a0b11b09af07ba6b269eee19f59e541073b7d55b25485d5dc82",
+      "expected_top": [
+        1
+      ],
+      "actual_top": [
+        [
+          1,
+          25000,
+          3,
+          4
+        ]
+      ],
+      "actual_final": [
+        [
+          1,
+          "95.00",
+          2,
+          2
+        ],
+        [
+          2,
+          "80.00",
+          2,
+          2
+        ],
+        [
+          3,
+          "50.00",
+          1,
+          2
+        ]
+      ],
+      "provider_calls": 4
+    },
+    "tie": {
+      "proof": "tie.json",
+      "trace": "tie.jsonl",
+      "trace_sha256": "4b7748a27956df200abe510ecc237d307b1e2f628016e8cbd375ae66f09d90fa",
+      "expected_top": [
+        1,
+        2
+      ],
+      "actual_top": [
+        [
+          1,
+          27000,
+          3,
+          4
+        ],
+        [
+          2,
+          9000,
+          1,
+          1
+        ]
+      ],
+      "actual_final": [
+        [
+          1,
+          "90.00",
+          2,
+          2
+        ],
+        [
+          2,
+          "90.00",
+          2,
+          2
+        ],
+        [
+          3,
+          null,
+          0,
+          1
+        ]
+      ],
+      "provider_calls": 4
+    }
+  }
+}

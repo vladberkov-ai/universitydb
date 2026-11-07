@@ -67,7 +67,8 @@ defense remain later.
 links initial independent audit, named-target failing regression/repair, tracked-only
 clean install/init/static/oracle/compiled-graph/browser and proposed future live eval.
 The historical documentary/H013 cutoffs above are not current no-implementation
-claims. Final corrected candidate331eb5a full clean/browser/reviews remain pending
+claims. Candidate331eb5a failed fresh group-by E2E despite457test/staticPASS; repaired
+frozen candidatec631c0c final full clean/browser/reviews remain pending
 at this checkpoint. Future real-model runs remain48not-run, not offline passes.
 Proposed44/48 overall and≥7/8/category plus mandatory safety/behavior gates need
 owner approval before results; no retroactive threshold change. R15 new publication

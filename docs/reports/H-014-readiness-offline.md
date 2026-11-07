@@ -14,11 +14,20 @@ permitted. Accepted ADR-CHAT-006 semantics and Sol high/medium/medium are unchan
   checkpoint's 59 targeted E2E checks were not another full product run.
 - CP-R1 audit/baseline: `8a9cd5d` (initial REQUEST CHANGES, not final approval).
 - Scoped repair: `dc715201c32585b4845456cf7f6a115cd04ac278`.
-- CP-R2 frozen tracked-only candidate: **`331eb5a61648bccb7fa66eecb58d9cc284eda2a0`**.
+- CP-R2 rejected tracked-only candidate: `331eb5a61648bccb7fa66eecb58d9cc284eda2a0`.
   The first final clean attempt passed457tests/static92.09s but readiness E2E
   found a new regression: `Show mean grade grouped by course across all enrollments`
   returned INVALID_INPUT before provider dispatch. Candidate **not accepted**;
-  preserved failed attempt and new scoped repair/re-freeze/full rerun are required.
+  failed attempt preserved; subsequent c631repair is frozen, full rerun pending.
+- Current frozen product/harness candidate: **`c631c0c62bebd7c291429e26783dbfc442bde3af`**.
+  Repair preserves registered group/exclusion/all-five-axis/count prose and Library
+  each/every forms while keeping bare unknown names fail-closed. Final focused39
+  passed6.94s; independent code-reviewer focused39passed76.72s and scoped static
+  checks passed. These are not the final full regression or a final verdict.
+  Serialized fresh full clean/browser verification is pending at this cutoff.
+- WIP docs checkpoints: `cd5a9493c81715bc9e59186ffb23279c683a1ff6`,
+  `6c50a4fac369c2958046512d3de2ba840e95d9b5`,
+  `91277b9cf0c9fee8419b29212f5040084e67f915`.
 - Later evidence/documentation commits are not newly full-tested product identities.
 
 ## Independent audit and repair
@@ -37,9 +46,22 @@ records alternatives and the bounded language limitation; no universal NL claim.
 457tests/static92.09s, then fresh readiness E2E rejected
 `Show mean grade grouped by course across all enrollments` with INVALID_INPUT and
 zero provider calls. The baseline6cc runner had passed this case. Candidate is **not
-accepted**, not waived by457tests; preserve the failed attempt, add a failing
-regression, minimally repair/re-freeze and rerun full clean gates. Root/repair lane
-own this continuation; final reviews/native completion remain pending.
+accepted**, not waived by457tests. Failing regressions and the subsequent c631c0c
+repair now address that regression; final corrected-candidate
+clean/browser evidence, final reviews and native completion remain pending.
+[Rejected clean attempt](../operations/H-014/clean-run-final-attempt1/receipt.json)
+and [failure summary](../operations/H-014/clean-run-final-attempt1/attempt-status.json)
+retain actual command exits, init hashes and failure trace. Independent
+[interim architect BLOCK](../operations/H-014/reviews/interim-architect.json) also
+identified the Library each/every regression; this is not a final verdict.
+
+Historical331browser attempt1 failed socket permission:
+[command](../operations/H-014/browser/candidate331-attempt1-command.txt).
+Supported retry attempt2 passed seven captures across six classes:
+[receipt](../operations/H-014/browser/candidate331-attempt2/browser-receipt.json),
+[same-run M1 trace](../operations/H-014/browser/candidate331-attempt2/m1.jsonl).
+Those screenshots/traces remain **rejected331candidate evidence**, not final c631
+browser proof; a browser pass did not waive the separate E2E blocker.
 
 
 [Verifier scope](../operations/H-014/clean-run-scope.md),
@@ -115,8 +137,22 @@ wording with private vault-prefix redaction only; the H014v2 handoff/listed inpu
 read context, not substituted prompts. [Baseline](../operations/H-014/baseline.json)
 records source and preservation hashes, including monetary ledger
 `2753fe2fdf1dc366ffecdb5a86dcd9cf184d83707a00da0de62a8a4e4963f125`.
-Original H013 results/failed attempts, completed I1/H013 workflows and untracked locks
-are not rewritten. Final fresh preservation/remote receipt is pending.
+Original H013 results/failed attempts and untracked locks are retained. Final fresh
+preservation/remote receipt is pending. Root disclosed a transient orchestration
+incident rather than asserting zero historical workflow writes:
+[recovery receipt](../operations/H-014/orchestration-recovery.json),
+[redacted rejected-event projection](../operations/H-014/rejected-wrong-cwd-steering-event.json).
+One supported annotate_ledger command ran from the wrong canonical cwd: it rejected
+completed I1 steering but appended one steering_rejected audit event. Under specific
+supported permission, root verified the original31-record prefix and archived only
+its own new rejected record, then removed only that append to restore original
+ledger SHA256`980675a8f5b3a288809d7c98c3fb539ba1d51e43a6beb64dfb30d85c09d1e380`.
+No original record, goal/brief/ID/pointer/lock or native goal state changed; monetary
+ledger never changed. This is disclosed recovery, not a completed-I1 resume or
+silent history rewrite. The correct annotation subsequently succeeded only inside
+the new H014 workflow, reasserting the same seven invariant lines because the
+original generic heading was not recognized by strict extraction; original brief
+remains unchanged.
 
 Privacy caveat: the initial local CP-R1 commit preserved a nonsecret private
 vault-prefix in a delegated-task projection before root redaction arrived. The next

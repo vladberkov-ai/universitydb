@@ -1,0 +1,11 @@
+{
+  "cutoff": "c631frozen; final clean/browser/reviews/native pending",
+  "files_checked": 81,
+  "link_errors": [],
+  "private_prefix_or_key_pattern_matches": [],
+  "manifest_sha256_verified": 17,
+  "rejected_event": "public bounded redacted projection only, exact raw retained ignored by root",
+  "rejected331evidence": "failed clean and browser attempts1/2 retained, not final c631proof",
+  "staged_source_scripts_tests": "none",
+  "push": "not-run"
+}

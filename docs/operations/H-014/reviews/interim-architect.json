@@ -1,0 +1,30 @@
+{
+  "received_at": "2026-11-07T23:10:29.290145+00:00",
+  "role": "architect",
+  "scope": "interim independent H-014331eb5a review; not final CP-R5",
+  "verdict": "BLOCK",
+  "candidate_sha": "331eb5a61648bccb7fa66eecb58d9cc284eda2a0",
+  "attribution": "Actual native final_architecture result received by root; selected bounded projection, not full hidden transcript",
+  "findings": [
+    {
+      "file": "src/universitydb/domain.py:245-289",
+      "issue": "Previously valid grouped/excluding grade prose rejects INVALID_INPUT due optional grade consumption"
+    },
+    {
+      "file": "src/universitydb/library.py:113-136",
+      "issue": "Previously valid Count open loans for each/every reader rejects quantifier as unknown name"
+    }
+  ],
+  "independent_evidence": [
+    "Frozen6cc/331 source comparison with temporary SQLite catalogs",
+    "47 targeted scope/eval tests passed2.09s",
+    "17 package manifest hashes match"
+  ],
+  "resolved_document_findings": [
+    "internal transient retries distinguished from evaluator reruns",
+    "clarification choices strict set then oracle-defined order",
+    "fresh official practical rates and proposed cap/migration package"
+  ],
+  "rereview_required": "Corrected exact candidate plus fresh full clean/browser/trace/preservation evidence",
+  "writes": "none by read-only reviewer; root persists this selected receipt"
+}

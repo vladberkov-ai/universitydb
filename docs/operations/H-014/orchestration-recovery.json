@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-11-07T23:16:00.410873+00:00",
+  "incident": "Root intended H014 append-only invariant annotation but command cwd was canonical root; installed CLI rejected completed I1 steering yet appended one steering_rejected audit record. No goal/brief/IDs/pointers/locks changed.",
+  "recovery": "Preserved exact new rejected event under current H014 evidence; removed only that verified own trailing append to restore historical ledger exact original hash. No historical record removed/changed, no goal state transition, no runtime patch.",
+  "before_sha256": "e9b7f75a7e8c7233443a21bba901b3a1f3acd031c1bae4d6fc817f632abb9af4",
+  "expected_original_sha256": "980675a8f5b3a288809d7c98c3fb539ba1d51e43a6beb64dfb30d85c09d1e380",
+  "restored_prefix_bytes": 194794,
+  "removed_own_event_sha256": "3d6078b8a34cb2790de7376904c6705e91cc1218eddb2e02f411e550625cef0d",
+  "removed_own_events": 1,
+  "archive": "Exact raw rejected suffix preserved in ignored root orchestration artifacts; public selected projection at docs/operations/H-014/rejected-wrong-cwd-steering-event.json",
+  "restored_sha256": "980675a8f5b3a288809d7c98c3fb539ba1d51e43a6beb64dfb30d85c09d1e380",
+  "original_records_unchanged": true,
+  "public_projection_sha256": "15029681ad3f18a08945443237bd4583e3f405a821bac0f3412f663ad4837afc",
+  "public_redactions": [
+    "before-plan snapshots in root and steering (contain historical private native goal metadata)",
+    "full serialized directiveText (duplicated input metadata)"
+  ]
+}

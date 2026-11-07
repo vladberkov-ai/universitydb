@@ -1,0 +1,21 @@
+{
+  "status": "failed",
+  "candidate": "331eb5a61648bccb7fa66eecb58d9cc284eda2a0",
+  "pytest": 457,
+  "static": "all5commands passed",
+  "failure": "ordinary grouped mean request refused INVALID_INPUT;0calls",
+  "source_changed_by_verifier": false,
+  "full_suite_failure": false,
+  "readiness_failure": true,
+  "m1_resume_trace_sha256": "b0387b54e14a4ef639ad3b9a9601305d52fa1822d29d2d6ecddfc01f8c284146",
+  "m1_resume_calls": 4,
+  "m1_resume_answer": [
+    [
+      1,
+      "95.00",
+      2,
+      2
+    ]
+  ],
+  "not_final_pass": true
+}
