@@ -1,0 +1,77 @@
+{
+  "method": "Read-only parse/assertions on actual execution artifacts; no app/provider/ledger access or rerun.",
+  "checks": [
+    {
+      "case": "s6",
+      "run_id": "75118ce9-163a-473e-94cc-e46514f33260",
+      "answer": "80.00",
+      "raw": [
+        16000,
+        2,
+        2
+      ],
+      "events": 30,
+      "sequential_same_run": true,
+      "terminal_ok": true,
+      "execution_profile": "live",
+      "db_unchanged": true,
+      "artifact_sha256": {
+        "receipt.json": "f2c1f236353ec55d862b70a81a3b631192a841e36504489a8aef3c84eb052a56",
+        "trace.jsonl": "8baff2f1695016328429a886e3a2e1fbd6505d70875857b0c6ad5eb8fed951aa",
+        "result.json": "8d6c6e2bcaa456c20d401aceda2584cd9f319ccfcc34b88b0b8045ec67695872"
+      },
+      "actual_provider_attempts": [
+        {
+          "returned_model": "gpt-6.1-sol",
+          "tier": "default",
+          "reasoning_effort": "high",
+          "input_tokens": 1014,
+          "output_tokens": 511
+        },
+        {
+          "returned_model": "gpt-6.1-sol",
+          "tier": "default",
+          "reasoning_effort": "medium",
+          "input_tokens": 1408,
+          "output_tokens": 439
+        }
+      ]
+    },
+    {
+      "case": "mutation",
+      "run_id": "4b088002-f522-463f-8260-7a0ec9fc28d5",
+      "answer": "90.00",
+      "raw": [
+        9000,
+        1,
+        1
+      ],
+      "events": 30,
+      "sequential_same_run": true,
+      "terminal_ok": true,
+      "execution_profile": "live",
+      "db_unchanged": true,
+      "artifact_sha256": {
+        "receipt.json": "99abf8a6cfff62767e23d873a7357223c8e93fda5da47006b90a28fceda70e20",
+        "trace.jsonl": "960e6aa0df5870fa465937ae6159096bbf3fe497b33b6c0d170499485148686e",
+        "result.json": "8135f999267b9b0024ac8a157f7aa1bf90407b26cc77dc76cb4d7da8e8c8514e"
+      },
+      "actual_provider_attempts": [
+        {
+          "returned_model": "gpt-6.1-sol",
+          "tier": "default",
+          "reasoning_effort": "high",
+          "input_tokens": 1014,
+          "output_tokens": 672
+        },
+        {
+          "returned_model": "gpt-6.1-sol",
+          "tier": "default",
+          "reasoning_effort": "medium",
+          "input_tokens": 1413,
+          "output_tokens": 334
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "stage": "H009 existing G004 live closeout",
+  "native_thread": "01a1b649-9f9b-7e32-8c71-138ac3328f7e",
+  "documents_received_task": "documents-received-task.txt",
+  "task_source": "Actual received NEW_TASK payload self-projection. No private paths occurred; task body retained, terminal LF added. Not encrypted parent-argument equality or a complete child export.",
+  "actual_live_prompts": "Graph S6/mutation actual shared wire-builder JSON captured in ../live/{s6,mutation}/request-*.json. Normal UI not intercepted: static actual prompt/schema snapshots plus full same-run inputs/plan/usage enable reconstruction, not byte-exact wire proof; see ../live/capture-coverage.json. No raw HTTP/auth/hidden model reasoning.",
+  "live_response_coverage": "Versioned safe response artifacts/usage plus full graph traces; no raw HTTP headers, authentication values or transport dumps.",
+  "application_prompt_templates": "src/universitydb/prompts/plan.txt and sql.txt remain separate versioned templates; actual wire instructions/schema/input recorded per request.",
+  "parent_prompt_coverage": "Earlier H009 actual user task and offline coverage retained; new owner resume/current root turn transcript not exported wholesale by this lane.",
+  "child_coverage": "Actual live executor task: docs/ai/omx/H-009-live-execution-task.txt (repository-relative attribution); full child tools/instructions/followups not exported. Fresh final review tasks/results must be added when actually available.",
+  "omissions": [
+    "System/developer/reasoning/private raw exports",
+    "Complete inherited AGENTS and skill context",
+    "All-tools/full-native history and encrypted delegation arguments",
+    "Private credential file/path/values and environment/headers"
+  ],
+  "u01": "partial, not globally closed",
+  "privacy": "No credential file read, sourced, hashed, sent to model or copied by documents lane. Private source chats/ADR are read context, not public transcript copies.",
+  "final_independent_reviews": {
+    "code": "reviews/final-code-review-receipt.json",
+    "architect": "reviews/final-architecture-review-receipt.json",
+    "method": "Actual fresh final reviewer results relayed by root, summarized with independent-vs-attributed check coverage. Full tasks/tools/child export not asserted."
+  }
+}

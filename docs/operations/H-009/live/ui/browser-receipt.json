@@ -1,0 +1,14 @@
+{
+  "profile": "live",
+  "s6": "80.00",
+  "raw": [
+    16000,
+    2,
+    2
+  ],
+  "sql_db_trace_panels": "expanded and visible",
+  "failure": "INVALID_INPUT; prior 80.00 cleared",
+  "browser": "cached Chromium1228 via cached isolated Playwright",
+  "scope": "one normal live S6 UI form submission then unsupported input",
+  "cleanup": "browser.close in finally"
+}

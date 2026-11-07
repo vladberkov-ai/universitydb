@@ -1,0 +1,19 @@
+{
+  "baseline_tracked_files": 283,
+  "authorized_changed_tracked": [
+    "AGENTS.md",
+    "README.md",
+    "docs/adr/ADR-OMX-010-I1-practical-budget-policy.md",
+    "docs/ai/README.md",
+    "omx_wiki/index.md"
+  ],
+  "unexpected_source_or_historical_changes": [],
+  "preserved_old_receipt_lock_files": 16,
+  "old_receipt_lock_drift": [],
+  "live_manifest_files_verified": 39,
+  "application_source_sql_prompts_dependencies_unchanged": true,
+  "privacy_findings": [],
+  "broken_markdown_links": [],
+  "json_parse": "pass",
+  "scope": "Current closeout docs + frozen live artifacts; ledger/credentials excluded. Native final transition/review receipts follow."
+}

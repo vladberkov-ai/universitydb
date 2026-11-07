@@ -1,0 +1,98 @@
+{
+  "parsed_output": {
+    "version": "1",
+    "step_id": "grade_mean",
+    "result_spec": {
+      "metric_id": "u.grade_mean.v1",
+      "shape": "aggregate",
+      "group_keys": [],
+      "columns": [
+        {
+          "name": "sum_units",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "graded_count",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "enrollment_count",
+          "type": "integer",
+          "nullable": false
+        }
+      ],
+      "components": {
+        "sum": "sum_units",
+        "denominator": "graded_count",
+        "count": "enrollment_count"
+      },
+      "unit": "grade_hundredth",
+      "scale": 100
+    },
+    "sql": "SELECT COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count FROM Enrollments e INNER JOIN Offerings o ON e.offering_id = o.offering_id WHERE e.student_id = :student_id AND o.course_id = :course_id AND o.teacher_id = :teacher_id AND o.semester_id = :semester_id",
+    "parameters": [
+      {
+        "name": "student_id",
+        "type": "integer",
+        "integer_value": 1,
+        "text_value": null
+      },
+      {
+        "name": "course_id",
+        "type": "integer",
+        "integer_value": 1,
+        "text_value": null
+      },
+      {
+        "name": "teacher_id",
+        "type": "integer",
+        "integer_value": 10,
+        "text_value": null
+      },
+      {
+        "name": "semester_id",
+        "type": "text",
+        "integer_value": null,
+        "text_value": "S1"
+      }
+    ],
+    "expected_columns": [
+      "sum_units",
+      "graded_count",
+      "enrollment_count"
+    ],
+    "result_kind": "aggregate",
+    "explanation": "Returns grade-mean components for the exact four-filter scope. NULL grades are excluded from graded_count but included in enrollment_count; no division is performed."
+  },
+  "usage": {
+    "budget_policy": "practical-v1",
+    "cap_usd": "10",
+    "dispatch_threshold_usd": "8",
+    "buffer_usd": "2",
+    "input_estimate_method": "UTF-8 full wire JSON bytes + 1024 framing; not a bound",
+    "payload_bytes": 6760,
+    "estimated_payload_input_tokens": 7784,
+    "reserved_input_tokens": 12000,
+    "api_base_url": "https://api.openai.com/v1",
+    "accounting_stop": false,
+    "requested_model": "gpt-6.1-sol",
+    "logical_operation": "sql",
+    "reasoning_effort": "medium",
+    "service_tier": "default",
+    "max_output_tokens": 32768,
+    "prompt_sha256": "c485c9e4fd66ad6345861e15c35212f01399f4598f04408e3de7aa922a0b11d3",
+    "reserved_usd": "0.426448",
+    "usage_status": "known",
+    "dispatch_attempted": true,
+    "real_provider_called": true,
+    "returned_model": "gpt-6.1-sol",
+    "returned_service_tier": "default",
+    "provider_request_id": "resp_0e89d7ecf61f862e016aef6417959887d29ffbb10806256863",
+    "input_tokens": 1413,
+    "output_tokens": 334,
+    "total_tokens": 1747,
+    "accounting": "practical estimate; max(reservation, usage) retained"
+  }
+}

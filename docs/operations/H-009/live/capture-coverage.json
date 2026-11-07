@@ -1,0 +1,12 @@
+{
+  "graph_runs": "RecordingProvider calls shared wire_payload and delegates unchanged OpenAIProvider. Exact instructions/input/strictschemas captured before dispatch; parsedresponsesandsafeusage after. Real disposable SDK worker unchanged. Not rawHTTP nor hiddenreasoning.",
+  "normal_UI": "Unchanged normal UI/OpenAIProvider; no boundary recorder. Exact static prompt/schema snapshots and full same-run trace inputs/scope/plan enable reconstruction, but not byte-exact intercepted wire proof. No auth/credentialheaders or secrets captured.",
+  "native_task": "Task/followup projections only; not full byte-exact native transcript. Parent owns rootexport and coverage.",
+  "helper_validation": "py_compile and no-network run_graph defaultmode; cached isolated Playwright import; initial UI pre-click rendering assertion corrected after verifying0newcalls.",
+  "prompt_hashes": {
+    "PlanProposal.schema.json": "dba37027f59e83a9bc935cbfe5727ca9eea34fbce98790b0e4670a2e9170718f",
+    "sql.txt": "c485c9e4fd66ad6345861e15c35212f01399f4598f04408e3de7aa922a0b11d3",
+    "plan.txt": "24d1d41b946b85397fe863523a2fec18f4371f665b11ae21f7eadf5c7c9a6db8",
+    "SQLProposal.schema.json": "307fe006e5068f6ff6f51d9f362fb7fdb28572f6cc5271a6aa024a88de790bd6"
+  }
+}

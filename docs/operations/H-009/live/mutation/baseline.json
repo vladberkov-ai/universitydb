@@ -1,0 +1,46 @@
+{
+  "started_at": "2026-11-07T17:46:55.296417+00:00",
+  "database_sha256_before": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+  "spending_ledger_present": true,
+  "spending_before": {
+    "profile": {
+      "version": 1,
+      "model": "gpt-6.1-sol",
+      "cap_usd": "10",
+      "input_rate": "5.50",
+      "output_rate": "11"
+    },
+    "attempts": [
+      {
+        "id": "a74c099e-3672-43b8-9901-a9abaa8ae86e",
+        "reserved_usd": "0.426448",
+        "observed_usd": "0.011198",
+        "input_tokens": 1014,
+        "output_tokens": 511
+      },
+      {
+        "id": "5ef9f7e4-0fca-49fe-93d8-dd534d85d8f9",
+        "reserved_usd": "0.426448",
+        "observed_usd": "0.012573",
+        "input_tokens": 1408,
+        "output_tokens": 439
+      }
+    ],
+    "reserved_usd": "0.852896",
+    "observed_usd": "0.023771",
+    "effective_usd": "0.852896",
+    "calls": 2,
+    "input_tokens": 2422,
+    "output_tokens": 950,
+    "policy": "practical-v1",
+    "stop": null
+  },
+  "question": "Какова средняя оценка студента Alex (student_id=1) по курсу DB (course_id=1) у преподавателя Kim (teacher_id=10) в семестре S1?",
+  "independent_oracle": {
+    "sum_units": 9000,
+    "graded_count": 1,
+    "enrollment_count": 1,
+    "answer": "90.00"
+  },
+  "capture_coverage": "Exact shared wire-builder payload before real provider call; typed outputs and safe usage after call. Not raw HTTP bytes/headers/credentials or hidden model reasoning."
+}

@@ -1,0 +1,82 @@
+{
+  "finished_at": "2026-11-07T17:47:08.782502+00:00",
+  "status": "ok",
+  "error": null,
+  "answer": {
+    "text": "student_id=1; course_id=1; teacher_id=10; semester_id=S1: средняя 90.00 (1 оценок; 1 записей).",
+    "columns": [
+      {
+        "name": "average",
+        "type": "decimal"
+      },
+      {
+        "name": "graded_count",
+        "type": "integer"
+      },
+      {
+        "name": "enrollment_count",
+        "type": "integer"
+      }
+    ],
+    "rows": [
+      [
+        "90.00",
+        1,
+        1
+      ]
+    ],
+    "scope": "student_id=1; course_id=1; teacher_id=10; semester_id=S1",
+    "empty_reason": null,
+    "truncated": false
+  },
+  "run_id": "4b088002-f522-463f-8260-7a0ec9fc28d5",
+  "database_sha256_after": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+  "database_unchanged": true,
+  "spending_after": {
+    "profile": {
+      "version": 1,
+      "model": "gpt-6.1-sol",
+      "cap_usd": "10",
+      "input_rate": "5.50",
+      "output_rate": "11"
+    },
+    "attempts": [
+      {
+        "id": "a74c099e-3672-43b8-9901-a9abaa8ae86e",
+        "reserved_usd": "0.426448",
+        "observed_usd": "0.011198",
+        "input_tokens": 1014,
+        "output_tokens": 511
+      },
+      {
+        "id": "5ef9f7e4-0fca-49fe-93d8-dd534d85d8f9",
+        "reserved_usd": "0.426448",
+        "observed_usd": "0.012573",
+        "input_tokens": 1408,
+        "output_tokens": 439
+      },
+      {
+        "id": "fdaaabd6-9a1d-428e-b51c-30b4dfd0ae72",
+        "reserved_usd": "0.426448",
+        "observed_usd": "0.012969",
+        "input_tokens": 1014,
+        "output_tokens": 672
+      },
+      {
+        "id": "90aa11ce-7f82-4473-b5e8-fdd1766fe155",
+        "reserved_usd": "0.426448",
+        "observed_usd": "0.0114455",
+        "input_tokens": 1413,
+        "output_tokens": 334
+      }
+    ],
+    "reserved_usd": "1.705792",
+    "observed_usd": "0.0481855",
+    "effective_usd": "1.705792",
+    "calls": 4,
+    "input_tokens": 4849,
+    "output_tokens": 1956,
+    "policy": "practical-v1",
+    "stop": null
+  }
+}

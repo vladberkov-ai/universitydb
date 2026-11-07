@@ -1,0 +1,12 @@
+{
+  "source": "Actual root independent executable audit relayed to documents performer after UI. These are root observations, not this performer's app or ledger access.",
+  "s6_mutation_ui_success": "Parsed each seq1..30, single run, terminal ok; two known response events plan high/SQL medium each",
+  "actual_provider_requests": {"unique_ids": 6, "returned_model": "gpt-6.1-sol", "tier": "default", "real_called": true},
+  "usage": {"input_tokens": 7277, "output_tokens": 2775, "calls": 6},
+  "monetary": {"observed_estimate_usd": "0.0705485", "sum_attempt_max_reservation_observed_usd": "2.558688", "ledger_effective_usd": "2.558688", "unknown_usage_holds": 0, "stop": null, "remaining_to_8_usd": "5.441312", "remaining_to_10_usd": "7.441312", "not_invoice_guarantee": true},
+  "failure_trace": "Zero llm_attempt events; terminal error; prior success cleared",
+  "runtime_database_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+  "database_unchanged": true,
+  "root_visual_review": ["SQL PNG: all four bound parameters visible", "DB PNG: typed16000/2/2 visible", "Trace PNG: same UI run terminal ok visible", "Failure PNG: INVALID_INPUT and no prior answer"],
+  "does_not_prove": ["Full-service or production readiness", "Provider invoice", "Full root/children prompt history", "Final independent review/native completion (separate gates)"]
+}

@@ -1,0 +1,78 @@
+{
+  "ui_success_run_id": "af149f9d-1213-40e1-ba10-b057f1df41e8",
+  "ui_failure_run_id": "0619b90d-0b6b-482b-a62a-6591be0f6e49",
+  "ui_success_events": 30,
+  "ui_failure_events": 10,
+  "success_actualraw": [
+    16000,
+    2,
+    2
+  ],
+  "success_answer": "80.00",
+  "failure": "INVALID_INPUT,noLLMattempts,nostale80.00",
+  "database_unchanged": true,
+  "spending_after": {
+    "profile": {
+      "version": 1,
+      "model": "gpt-6.1-sol",
+      "cap_usd": "10",
+      "input_rate": "5.50",
+      "output_rate": "11"
+    },
+    "attempts": [
+      {
+        "id": "a74c099e-3672-43b8-9901-a9abaa8ae86e",
+        "reserved_usd": "0.426448",
+        "observed_usd": "0.011198",
+        "input_tokens": 1014,
+        "output_tokens": 511
+      },
+      {
+        "id": "5ef9f7e4-0fca-49fe-93d8-dd534d85d8f9",
+        "reserved_usd": "0.426448",
+        "observed_usd": "0.012573",
+        "input_tokens": 1408,
+        "output_tokens": 439
+      },
+      {
+        "id": "fdaaabd6-9a1d-428e-b51c-30b4dfd0ae72",
+        "reserved_usd": "0.426448",
+        "observed_usd": "0.012969",
+        "input_tokens": 1014,
+        "output_tokens": 672
+      },
+      {
+        "id": "90aa11ce-7f82-4473-b5e8-fdd1766fe155",
+        "reserved_usd": "0.426448",
+        "observed_usd": "0.0114455",
+        "input_tokens": 1413,
+        "output_tokens": 334
+      },
+      {
+        "id": "2c0e0604-4d1b-4ddc-88a3-916c2757bc76",
+        "reserved_usd": "0.426448",
+        "observed_usd": "0.010912",
+        "input_tokens": 1014,
+        "output_tokens": 485
+      },
+      {
+        "id": "24fc4e47-be56-46a1-adc4-72bcfb98efd5",
+        "reserved_usd": "0.426448",
+        "observed_usd": "0.011451",
+        "input_tokens": 1414,
+        "output_tokens": 334
+      }
+    ],
+    "reserved_usd": "2.558688",
+    "observed_usd": "0.0705485",
+    "effective_usd": "2.558688",
+    "calls": 6,
+    "input_tokens": 7277,
+    "output_tokens": 2775,
+    "policy": "practical-v1",
+    "stop": null
+  },
+  "previous_attempts_preserved": true,
+  "known_usage_calls": 6,
+  "unknown_usage_holds": 0
+}

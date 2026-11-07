@@ -1,0 +1,68 @@
+{
+  "finished_at": "2026-11-07T17:45:30.009094+00:00",
+  "status": "ok",
+  "error": null,
+  "answer": {
+    "text": "student_id=2; course_id=1; teacher_id=10; semester_id=S1: средняя 80.00 (2 оценок; 2 записей).",
+    "columns": [
+      {
+        "name": "average",
+        "type": "decimal"
+      },
+      {
+        "name": "graded_count",
+        "type": "integer"
+      },
+      {
+        "name": "enrollment_count",
+        "type": "integer"
+      }
+    ],
+    "rows": [
+      [
+        "80.00",
+        2,
+        2
+      ]
+    ],
+    "scope": "student_id=2; course_id=1; teacher_id=10; semester_id=S1",
+    "empty_reason": null,
+    "truncated": false
+  },
+  "run_id": "75118ce9-163a-473e-94cc-e46514f33260",
+  "database_sha256_after": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+  "database_unchanged": true,
+  "spending_after": {
+    "profile": {
+      "version": 1,
+      "model": "gpt-6.1-sol",
+      "cap_usd": "10",
+      "input_rate": "5.50",
+      "output_rate": "11"
+    },
+    "attempts": [
+      {
+        "id": "a74c099e-3672-43b8-9901-a9abaa8ae86e",
+        "reserved_usd": "0.426448",
+        "observed_usd": "0.011198",
+        "input_tokens": 1014,
+        "output_tokens": 511
+      },
+      {
+        "id": "5ef9f7e4-0fca-49fe-93d8-dd534d85d8f9",
+        "reserved_usd": "0.426448",
+        "observed_usd": "0.012573",
+        "input_tokens": 1408,
+        "output_tokens": 439
+      }
+    ],
+    "reserved_usd": "0.852896",
+    "observed_usd": "0.023771",
+    "effective_usd": "0.852896",
+    "calls": 2,
+    "input_tokens": 2422,
+    "output_tokens": 950,
+    "policy": "practical-v1",
+    "stop": null
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "$defs": {
+    "Components": {
+      "additionalProperties": false,
+      "properties": {
+        "sum": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Sum"
+        },
+        "denominator": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Denominator"
+        },
+        "count": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Count"
+        }
+      },
+      "required": [
+        "sum",
+        "denominator",
+        "count"
+      ],
+      "title": "Components",
+      "type": "object"
+    },
+    "Reference": {
+      "additionalProperties": false,
+      "properties": {
+        "from_step": {
+          "title": "From Step",
+          "type": "string"
+        },
+        "column": {
+          "title": "Column",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "integer",
+            "string",
+            "boolean"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "bind_as": {
+          "title": "Bind As",
+          "type": "string"
+        }
+      },
+      "required": [
+        "from_step",
+        "column",
+        "type",
+        "bind_as"
+      ],
+      "title": "Reference",
+      "type": "object"
+    },
+    "ResultColumn": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "integer",
+            "string",
+            "boolean"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "nullable": {
+          "title": "Nullable",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "name",
+        "type",
+        "nullable"
+      ],
+      "title": "ResultColumn",
+      "type": "object"
+    },
+    "ResultSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "metric_id": {
+          "title": "Metric Id",
+          "type": "string"
+        },
+        "shape": {
+          "enum": [
+            "aggregate",
+            "rows",
+            "top"
+          ],
+          "title": "Shape",
+          "type": "string"
+        },
+        "group_keys": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Group Keys",
+          "type": "array"
+        },
+        "columns": {
+          "items": {
+            "$ref": "#/$defs/ResultColumn"
+          },
+          "title": "Columns",
+          "type": "array"
+        },
+        "components": {
+          "$ref": "#/$defs/Components"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "scale": {
+          "title": "Scale",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "metric_id",
+        "shape",
+        "group_keys",
+        "columns",
+        "components",
+        "unit",
+        "scale"
+      ],
+      "title": "ResultSpec",
+      "type": "object"
+    },
+    "Step": {
+      "additionalProperties": false,
+      "properties": {
+        "step_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Step Id",
+          "type": "string"
+        },
+        "depends_on": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Depends On",
+          "type": "array"
+        },
+        "purpose": {
+          "maxLength": 2000,
+          "title": "Purpose",
+          "type": "string"
+        },
+        "result_refs": {
+          "items": {
+            "$ref": "#/$defs/Reference"
+          },
+          "title": "Result Refs",
+          "type": "array"
+        },
+        "result_spec": {
+          "$ref": "#/$defs/ResultSpec"
+        }
+      },
+      "required": [
+        "step_id",
+        "depends_on",
+        "purpose",
+        "result_refs",
+        "result_spec"
+      ],
+      "title": "Step",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "1",
+      "title": "Version",
+      "type": "string"
+    },
+    "steps": {
+      "items": {
+        "$ref": "#/$defs/Step"
+      },
+      "maxItems": 1,
+      "minItems": 1,
+      "title": "Steps",
+      "type": "array"
+    },
+    "needs_clarification": {
+      "title": "Needs Clarification",
+      "type": "boolean"
+    },
+    "clarification_field": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Clarification Field"
+    }
+  },
+  "required": [
+    "version",
+    "steps",
+    "needs_clarification",
+    "clarification_field"
+  ],
+  "title": "PlanProposal",
+  "type": "object"
+}

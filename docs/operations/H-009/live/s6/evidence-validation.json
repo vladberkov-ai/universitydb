@@ -1,0 +1,14 @@
+{
+  "assertions": "real S6 80.00; raw16000/2/2; two known live exactmodel/default calls high/medium; ordered same-run terminal ok; unchangedDB receipt",
+  "passed": true,
+  "sha256": {
+    "baseline.json": "2e31a2f0bd51b953ca0fe3226de99689838c0fffcd4accf816f909574dc9bd34",
+    "receipt.json": "f2c1f236353ec55d862b70a81a3b631192a841e36504489a8aef3c84eb052a56",
+    "request-01.json": "f0aa3eac8541156518943d4f26ea4a7a9b9133afdbcb2d1d8f8c59c8996b82ce",
+    "request-02.json": "f21a7584691a7c012b0ba93809de02626be524783d99ff2bcca07f707e454e33",
+    "response-01.json": "e87c0021939eae1b9802e6e0c61140e75a931954eb8e8b9b1b1e08fa80e3e2d0",
+    "response-02.json": "425eff0ad247eca96c77cccf1b7765389ef8beec786ffb336682a0d73c0f1aec",
+    "result.json": "8d6c6e2bcaa456c20d401aceda2584cd9f319ccfcc34b88b0b8045ec67695872",
+    "trace.jsonl": "8baff2f1695016328429a886e3a2e1fbd6505d70875857b0c6ad5eb8fed951aa"
+  }
+}

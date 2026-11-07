@@ -1,0 +1,8 @@
+{
+  "initial_browser_session": 21652,
+  "outcome": "initial page body observed before Streamlit rendered; assertion failed BEFORE form click",
+  "provider_calls_before": 4,
+  "provider_calls_after": 4,
+  "correction": "wait for Execution profile live banner before asserting/clicking",
+  "product_change": false
+}

@@ -1,0 +1,12 @@
+{
+  "recorded_before_mutation": true,
+  "source": "root independent resources/seed.sql calculation supplied via native message",
+  "question": "Какова средняя оценка студента Alex (student_id=1) по курсу DB (course_id=1) у преподавателя Kim (teacher_id=10) в семестре S1?",
+  "oracle": {
+    "sum_units": 9000,
+    "graded_count": 1,
+    "enrollment_count": 1,
+    "answer": "90.00"
+  },
+  "reason": "Only offering1 matches all four predicates; offering2 course2 and offering3 teacher11/S2 excluded."
+}

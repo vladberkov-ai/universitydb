@@ -1,0 +1,244 @@
+{
+  "$defs": {
+    "Binding": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,63}$",
+          "title": "Name",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "integer",
+            "text",
+            "null"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "integer_value": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Integer Value"
+        },
+        "text_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Text Value"
+        }
+      },
+      "required": [
+        "name",
+        "type",
+        "integer_value",
+        "text_value"
+      ],
+      "title": "Binding",
+      "type": "object"
+    },
+    "Components": {
+      "additionalProperties": false,
+      "properties": {
+        "sum": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Sum"
+        },
+        "denominator": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Denominator"
+        },
+        "count": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Count"
+        }
+      },
+      "required": [
+        "sum",
+        "denominator",
+        "count"
+      ],
+      "title": "Components",
+      "type": "object"
+    },
+    "ResultColumn": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "integer",
+            "string",
+            "boolean"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "nullable": {
+          "title": "Nullable",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "name",
+        "type",
+        "nullable"
+      ],
+      "title": "ResultColumn",
+      "type": "object"
+    },
+    "ResultSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "metric_id": {
+          "title": "Metric Id",
+          "type": "string"
+        },
+        "shape": {
+          "enum": [
+            "aggregate",
+            "rows",
+            "top"
+          ],
+          "title": "Shape",
+          "type": "string"
+        },
+        "group_keys": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Group Keys",
+          "type": "array"
+        },
+        "columns": {
+          "items": {
+            "$ref": "#/$defs/ResultColumn"
+          },
+          "title": "Columns",
+          "type": "array"
+        },
+        "components": {
+          "$ref": "#/$defs/Components"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "scale": {
+          "title": "Scale",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "metric_id",
+        "shape",
+        "group_keys",
+        "columns",
+        "components",
+        "unit",
+        "scale"
+      ],
+      "title": "ResultSpec",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "1",
+      "title": "Version",
+      "type": "string"
+    },
+    "step_id": {
+      "maxLength": 128,
+      "minLength": 1,
+      "title": "Step Id",
+      "type": "string"
+    },
+    "result_spec": {
+      "$ref": "#/$defs/ResultSpec"
+    },
+    "sql": {
+      "maxLength": 8000,
+      "minLength": 1,
+      "title": "Sql",
+      "type": "string"
+    },
+    "parameters": {
+      "items": {
+        "$ref": "#/$defs/Binding"
+      },
+      "maxItems": 100,
+      "title": "Parameters",
+      "type": "array"
+    },
+    "expected_columns": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Expected Columns",
+      "type": "array"
+    },
+    "result_kind": {
+      "enum": [
+        "rows",
+        "aggregate"
+      ],
+      "title": "Result Kind",
+      "type": "string"
+    },
+    "explanation": {
+      "maxLength": 1000,
+      "title": "Explanation",
+      "type": "string"
+    }
+  },
+  "required": [
+    "version",
+    "step_id",
+    "result_spec",
+    "sql",
+    "parameters",
+    "expected_columns",
+    "result_kind",
+    "explanation"
+  ],
+  "title": "SQLProposal",
+  "type": "object"
+}

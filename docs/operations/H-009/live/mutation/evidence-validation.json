@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "oracle": "independently recorded before dispatch:9000/1/1 ->90.00",
+  "actual": [
+    [
+      "90.00",
+      1,
+      1
+    ]
+  ],
+  "response_efforts": [
+    "high",
+    "medium"
+  ]
+}

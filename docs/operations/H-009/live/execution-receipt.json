@@ -1,0 +1,44 @@
+{
+  "provider_calls": 6,
+  "observed_cost_estimate_usd": "0.0705485",
+  "retained_reservations_usd": "2.558688",
+  "accounted_effective_usd": "2.558688",
+  "unknown_usage_holds": 0,
+  "stop": null,
+  "remaining_to_dispatch_threshold_usd": "5.441312",
+  "remaining_to_total_cap_usd": "7.441312",
+  "not_invoice_or_strict_guarantee": true,
+  "handles": {
+    "S6": {
+      "session": 6813,
+      "exit": 0
+    },
+    "mutation": {
+      "session": 36813,
+      "exit": 0
+    },
+    "browser_initial_preclick": {
+      "session": 21652,
+      "exit": 1,
+      "new_generations": 0
+    },
+    "browser_capture": {
+      "session": 12711,
+      "exit": 0,
+      "browser_closed": true
+    },
+    "server": {
+      "session": 40809,
+      "exit": 0,
+      "stop": "Ctrl-C via exact session",
+      "port8509_no_proc_tcp_listener": true
+    }
+  },
+  "product_source_edits": false,
+  "no_further_calls_planned": true,
+  "validation_notes": [
+    "uv tool default tool-dir write failed EROFS; reused existing isolated cached Playwright interpreter without install",
+    "loopback socket probe denied EPERM; used read-only proc TCP listener table instead",
+    "helper Ruff UTC alias corrected after successful runs; no product source changes"
+  ]
+}

@@ -1,0 +1,40 @@
+# H-009 — existing I1/G004 live closeout
+
+2026-11-07. **All scoped application/live/verification/final independent review gates passed. Native completion and strict checkpoint are root-owned postconditions, not yet claimed in this pre-transition report.** Baseline local commit `1ae9a35132e6bd2d0c16583a5015cc2a34681cd0`; historical [offline H009 report](H-009-practical-budget-I1.md) and all H007/H008 evidence remain unchanged.
+
+## What actually ran
+
+Root observed the same native aggregate **active** after owner resume (updated1794073406), then used supported existing-G004 continuation. No replacement goal/plan or G001–G003 lifecycle repeated. Existing compiled LangGraph, OpenAIProvider and actual readonly SQLite ran, not a scripted provider.
+
+| Case | Actual evidence | Outcome |
+|---|---|---|
+| S6 Bea2/DB1/Kim10/S1 | [receipt](../operations/H-009/live/s6/receipt.json), [full trace](../operations/H-009/live/s6/trace.jsonl), [actual plan request](../operations/H-009/live/s6/request-01.json), [SQL request](../operations/H-009/live/s6/request-02.json) | run75118ce9-163a-473e-94cc-e46514f33260; sum16000/graded2/enrollments2→**80.00**; plan1014input/511output, SQL1408/439; Sol/default high/medium |
+| Independent changed input Alex1/DB1/Kim10/S1 | [pre-run oracle](../operations/H-009/live/mutation-planned-oracle.json), [receipt](../operations/H-009/live/mutation/receipt.json), [full trace](../operations/H-009/live/mutation/trace.jsonl) | run4b088002-f522-463f-8260-7a0ec9fc28d5; precomputed9000/1/1→**90.00**, actual matches; root independently confirmed |
+| Normal live Streamlit browser S6, expanded SQL/typed DB/full trace, then error/no stale answer | [browser receipt](../operations/H-009/live/ui/browser-receipt.json), [SQL screenshot](../operations/H-009/live/ui/live-ui-sql.png), [DB screenshot](../operations/H-009/live/ui/live-ui-db.png), [terminal trace screenshot](../operations/H-009/live/ui/live-ui-trace.png), [failure screenshot](../operations/H-009/live/ui/live-ui-failure.png), [success JSONL](../operations/H-009/live/ui/live-ui-success.jsonl) / [failure JSONL](../operations/H-009/live/ui/live-ui-failure.jsonl) | Live success af149f9d-1213-40e1-ba10-b057f1df41e8 has30events/raw16000/2/2→80.00; failure0619b90d-0b6b-482b-a62a-6591be0f6e49 has10events/INVALID_INPUT/0LLMcalls, prior80.00 cleared. Root independently viewed screenshots. |
+
+Both graph live runs preserved database SHA256 `63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2`. Model returns/usage were reconciled, no fallback/uncertain retry. Formatter, SQL validation/execution and independent oracle remain deterministic without extra LLMs. Application source unchanged from reviewed1ae9 policy checkpoint; only bounded evidence helpers/documentation added unless later documented.
+
+## Budget and actual accounting
+
+One shared total USD10 / dispatch threshold USD8 / contingency USD2, practical-v1; **not a strict invoice guarantee**. No count request, old BILLING_VERIFIED proof flag, budget reset or automatic contingency use. Final frozen [execution receipt](../operations/H-009/live/execution-receipt.json): **6 known generation calls**, input7277/output2775, observed conservative token-price estimate **USD0.0705485**, retained reservations/effective accounted **USD2.558688**, unknown-usage holds **0**, stop null. Remaining to admission threshold **USD5.441312**, remaining to total authority **USD7.441312**. This is local estimated accounting, not provider invoice confirmation. Successful unused reservation capacity is not refunded; effective includes retained known-call reservations and must not be summed twice with observed cost.
+
+The first browser page-render wait assertion failed **before clicking/submitting**, consumed0additional generations and is preserved in [correction receipt](../operations/H-009/live/ui/browser-initial-wait-correction.json). The helper waited for the live banner on the subsequent successful capture; no product code changed or hidden API retry occurred. Browser and exact Streamlit server sessions terminated normally (exit0), loopback port8509 no longer listening per execution receipt. No further calls planned.
+
+Actual credential handling and startup evidence belong to the live execution lane; documents lane never read/sourced/hashed the file or accessed env/headers. Values, private credential path and raw transport are absent from public evidence. New shell launch always reloads owner-provided private credential source with xtrace off and inherited stale key cleared.
+
+## Acceptance and final-gate evidence
+
+[Full requirement-derived invariant audit](../operations/H-009/closeout/invariant-audit.md) maps35 actual requirements, not merely parser-required fields. Installed strict-gate invariant extraction found0 brief/0steering invariants because its English-heading parser missed the Russian brief. **Empty extraction is not evidence of no invariants**; explicit H007/H008/H009/ADR audit remains mandatory.
+
+- Baseline: [283 tracked files +16 old receipt/lock hashes](../operations/H-009/closeout/baseline.json), captured before closeout edits; [preservation/link/privacy/manifest check](../operations/H-009/closeout/document-validation.json) passes: only5authorized tracked current-doc changes,16oldreceipt/lock bytes unchanged,39manifest members match. Actual commit ancestry recorded separately after commit.
+- Actual request/template/root/child [prompt coverage and omissions](../operations/H-009/closeout/prompt-coverage.json); U01 partial, not full-transcript closure.
+- [Closeout cleaner](../operations/H-009/closeout/cleaner-report.md): bounded no-op on frozen helpers/current docs, behavior lock56 targeted tests passed5.74s; helper Ruff/format/py_compile/diff passed. No product-source refactor.
+- [Actual root post-cleaner final verification](../operations/H-009/closeout/final-verification-receipt.json): **131 passed7.83s**, Ruff/format21files, mypy11sources, compileall src/tests,2helper compile and diff-check all pass; root byte comparison confirms unchanged lock/project/product modules versus1ae9. No reinstall required. Current preservation/JSON/links/privacy manifest checks pass; final newly added receipts rechecked before commit.
+- Fresh final independent code-reviewer **APPROVE**,0issues; [actual result/coverage](../operations/H-009/closeout/reviews/final-code-review-receipt.json),129independent tests6.62s (two AppTest omitted to avoid concurrent writes), Ruff/format21/diff and39artifact hashes pass. Root full131 inclUI/mypy/compile separately attributed. Fresh final architect **CLEAR** for limited I1 readiness; [actual result/coverage](../operations/H-009/closeout/reviews/final-architecture-review-receipt.json) includes39hashes/traces/model/usage/seed/screenshot checks. Combined final **APPROVE + CLEAR**, configuredgates[]. Old offline verdicts not reused; no broader service/production approval.
+- Safe local final commit is identified by the separate postcommit `docs/operations/H-009/closeout/final-commit-receipt.json`; actual native completion, fresh snapshot and `--strict` checkpoint must follow in root-owned postcheckpoint receipt. Neither transition is pre-claimed here.
+
+## Limits and stop boundary
+
+Application/live/review proof is only for required limited I1, not a complete NL→SQL service; root native lifecycle proof follows separately. Exact four-filter scalar grade_mean, narrow AST/readonly DB policy, synthetic loopback UI and responsive trusted local filesystem assumptions remain. No general intent/identity guarantee, second-schema portability, hard memory sandbox or hard180s under arbitrary parent I/O stalls. ADR003–007 remain proposed; ADR008–010 scoped rationale only. Additional LLM verbalizer/semantic review/judge must be assessed before production, not added now. I2–I5/Library/full48/defense/production remain out of scope/backlog.
+
+U04/R13 decisions documented; **R15/public delivery remains open**—local commit is not remote/push/public publication. No Obsidian writes, OMX update/repair or closed Advisory rerun. Stop after final report, no next stage automatically.

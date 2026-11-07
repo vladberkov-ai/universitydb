@@ -1,0 +1,48 @@
+{
+  "source": "Actual root post-cleaner command results relayed to documents performer; not performer command execution.",
+  "checks": [
+    {
+      "command": ".venv/bin/pytest -q",
+      "result": "131 passed in 7.83s",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/ruff check src tests docs/operations/H-009/live/run_graph.py docs/operations/H-009/live/browser_ui.py",
+      "result": "All checks passed",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/ruff format --check src tests docs/operations/H-009/live/run_graph.py docs/operations/H-009/live/browser_ui.py",
+      "result": "21 files already formatted",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/mypy src/universitydb --ignore-missing-imports",
+      "result": "No issues in 11 source files",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/python -m compileall -q src tests",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/python -m py_compile docs/operations/H-009/live/run_graph.py docs/operations/H-009/live/browser_ui.py",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    },
+    {
+      "command": "omx quality-gates list --stage code-review --json",
+      "result": {
+        "gates": []
+      },
+      "exit_code": 0
+    }
+  ],
+  "root_byte_comparison": "uv.lock,pyproject.toml,agent/config/llm/worker unchanged from1ae9; no reinstall required.",
+  "live_requests_for_checks": 0,
+  "independent_final_reviews": "Pending actual parallel reviewer/architect verdicts; not inferred from check success.",
+  "native_completion": "Not performed at this verification cutoff; separate postcheckpoint receipt required."
+}
