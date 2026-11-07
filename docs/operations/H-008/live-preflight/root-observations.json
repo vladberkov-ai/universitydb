@@ -1,0 +1,31 @@
+{
+  "source": "actual parent native MESSAGE to performer, 2026-11-07; attributed root observations, not performer execution",
+  "native_snapshot": {
+    "status": "active",
+    "tokensUsed": 1408314,
+    "timeUsedSeconds": 2486,
+    "updatedAt": 1794070504,
+    "identity": "same exact objective/thread, owner resumed"
+  },
+  "supported_runtime": {
+    "complete_goals_resumed": true,
+    "same_G004_reconciliation": "ok, no errors",
+    "steer_annotate_ledger": {
+      "accepted": true,
+      "idempotency_key": "H008-owner-resumed-billing-preflight-20261107",
+      "effect": "rationale annotation only; no decomposition/status mutation"
+    },
+    "configured_code_review_gates": []
+  },
+  "root_fresh_checks": {
+    "git_diff_check_exit": 0,
+    "staged_changes": false,
+    "spending_ledger_exists": false,
+    "spending_lock_exists": false,
+    "application_or_API_launches_this_continuation": 0,
+    "new_cost_usd": "0",
+    "new_holds_usd": "0",
+    "billing_verified_asserted": false
+  },
+  "limit": "root owns newer snapshots and final lifecycle/checkpoint; this record grants no runtime write authority"
+}

@@ -1,0 +1,12 @@
+{
+  "source": "actual native NEW_TASK message from /root to /root/g004_live_performer; initial delegation",
+  "coverage": "initial task verbatim except one private credential-path redaction; follow-ups remain selected paraphrase; full root/child history not exported",
+  "redactions": {
+    "count": 1,
+    "replacement": "[PRIVATE_CREDENTIALS_FILE]",
+    "reason": "private credential file location; no file contents or credential values received"
+  },
+  "artifact": "docs/ai/omx/H-008-g004-no-call-performer-task.txt",
+  "sha256": "0eb6ee2bfd8726ad735b8c58e742bcf843bb4636c409f3c0de99bb1696fb19cf",
+  "reconstruction_limit": "saved from received native task text, not independently exported transcript; original private path intentionally not recorded"
+}

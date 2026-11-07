@@ -1,0 +1,13 @@
+H-008 live billing research: actual delegated task record
+Date received and researched: 2026-11-07
+Sender: parent/root native agent
+Recipient: live_billing_research (researcher)
+Record kind: actual task, not a reusable prompt template or application runtime prompt.
+Coverage: exact delegated task below; surrounding private conversation, credentials, environment, and unrelated runtime state omitted. No secrets or private credential paths were supplied in this task.
+
+BEGIN ACTUAL DELEGATED TASK
+Current I1/G004 livepreflight official research ONLY, no API credentials/files/env reads, no app/provider calls or runtime/goal/Git mutations. Workspace /home/dev/projects/universitydb. User approved exactgpt-6.1-sol planhigh/sqlrepairmedium and ONEtotal10USD includingallpreviousholds/attempts/accesschecks. Rootfreshget_goal NOW ACTIVE (ownercontrol resolved). Need refresh current official rates for explicitservice_tierdefault smallcontext and allapplicable inputcategories cachewrite/regionpremiums; assess safeconservative input/outputrates forgloballedger. Read /home/dev/.codex/skills/.system/openai-docs/SKILL.md docs-first exacttopic; useonlyofficialsources, openfetchedpages. Need concrete fullrequestinputtoken count surface (`Responses input_tokens.count`? SDK openai3.46.0) coverageinstructions/input/text.format.jsonschema/reasoning/model/framing and billing (is count endpoint unbilled? quoteprimaryproof or uncertainty). Goal: prove fullrequestinput <=configured12000 before paidgeneration; no heuristicattestation. Determine modelaccessmetadata countresponse canverifycompatiblemodel but onlygenerationprovesstructuredcompat. Distinguish input count itself billable/unbilled/requestusage and howbudgetreserveifunknown. Currentoutputcap32768reasoning+visible, inputbytegate12000 schema+1024cushion NOTexactproof; BILLING_VERIFIEDyes onlyactualevidence. No dependencyupdates/newtokenizer unlessmandatory. You own only NEW docs/operations/H-008/live-preflight/api-billing-references.md and docs/ai/omx/H-008-live-billing-research-task.txt; notalone preserveolderresearch/history. Recordexacttask/source/date/limits/citations; send keyfindingspromptly so executorcanprepare no-call harness. Do not chooseothermodel/tier/promode/LLMs orresearchI2-I5.
+END ACTUAL DELEGATED TASK
+
+Execution boundary: documentation research and the two assigned new artifacts only. Parent's active-goal assertion is recorded as supplied context, not independently verified or used to mutate runtime state. No application/provider call was made.
+Output: docs/operations/H-008/live-preflight/api-billing-references.md
