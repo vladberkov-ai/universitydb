@@ -1,5 +1,7 @@
 # UniversityDB — limited I1/S6 demonstrator
 
+**Published checkpoint: I1 complete; I2–I5 pending.** Native completion and strict checkpoint are recorded in [the final receipt](docs/operations/H-009/closeout/postcheckpoint-goal-receipt.json). The owner subsequently reported all four manual live checks passed; [acceptance record](docs/reports/I1-owner-manual-acceptance.md). Historical phase instructions below describe their original execution context, not a requirement to reopen the completed I1 goal.
+
 **Limited I1 application/live acceptance gates passed.** Real compiled LangGraph → exact Sol plan/SQL → checked readonly SQLite → deterministic **80.00** passed, plus independent changed input **90.00**. Normal browser UI80.00, expanded SQL/typed DB/full trace and stale-answer failure checks passed; fresh final independent reviews APPROVE/CLEAR passed; root native completion/strict-checkpoint proof follows separately, not pre-claimed here. One total USD10 practical authority, USD8 new-dispatch threshold and USD2 contingency remain **not a strict invoice guarantee**. [Live closeout/evidence](docs/reports/H-009-live-I1-closeout.md); ADR003–007 stay proposed, [scoped ADR008](docs/adr/ADR-OMX-008-I1-scoped-implementation.md)/[ADR010](docs/adr/ADR-OMX-010-I1-practical-budget-policy.md). No I2–I5 or full-service acceptance.
 
 ## Install and verify (repository root, Python 3.12)
