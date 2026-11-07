@@ -59,7 +59,7 @@ def render_result(result: dict[str, Any]) -> None:
         st.success(result["answer"]["text"])
         st.json(result["answer"])
     elif result["status"] == "clarification":
-        st.info(result["clarification"].get("prompt", "Choose an option to continue this run."))
+        st.info(result["clarification"]["prompt"])
     else:
         st.error(f"{result['error']['code']}: {result['error']['message']}")
     events = result["events"]

@@ -1,0 +1,18 @@
+{
+  "stage": "CP-E cleanedcandidate",
+  "paths": [
+    "docs/operations/H-013/cleaner-report.md",
+    "docs/operations/H-013/core-cleaner.md",
+    "docs/operations/H-013/cp-d-commit-receipt.json",
+    "docs/operations/H-013/cp-e-candidate-source.json",
+    "docs/operations/H-013/cp-e-candidate-staged-paths.json",
+    "docs/operations/H-013/cp-e-schedule-receipt.json",
+    "src/universitydb/contracts.py",
+    "src/universitydb/ui.py",
+    "tests/test_i2_contracts.py",
+    "tests/test_i2_ui.py"
+  ],
+  "count": 10,
+  "checks": "explicitrootauthorizedpaths/privacy/noproductchangesoutside4known/sourcehash/preservation",
+  "no_blanket_staging": true
+}

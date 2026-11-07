@@ -287,3 +287,27 @@ def test_m1_ui_all_actual_step_rows_bindings_and_final_means(isolated_app, fixtu
     assert any("dependency_rows" in block.value for block in app.json)
     assert result["events"][-1]["kind"] == "run_end"
     assert app.session_state["agent"].provider.calls == 4
+
+
+def test_closed_clarification_requires_actual_prompt_before_ui_rendering():
+    from pydantic import ValidationError
+
+    from universitydb.contracts import Clarification
+
+    value = {
+        "field": "student_id",
+        "options": [{"value": 1, "label": "Alex"}, {"value": 3, "label": "Alex"}],
+        "prompt": "Choose a student.",
+        "clarification_id": "clarification-test",
+        "checkpoint_id": "checkpoint-test",
+        "session_id": "server-session-test",
+        "run_id": "run-test",
+        "schema_sha256": "0" * 64,
+        "data_sha256": "1" * 64,
+        "policy_sha256": "2" * 64,
+        "expires_at": 900.0,
+    }
+    assert Clarification.model_validate(value).prompt == "Choose a student."
+    del value["prompt"]
+    with pytest.raises(ValidationError, match="prompt"):
+        Clarification.model_validate(value)

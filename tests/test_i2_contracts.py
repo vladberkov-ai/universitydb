@@ -271,3 +271,14 @@ def test_public_nonstr_question_rejected_before_fingerprint_saver_or_db(tmp_path
     AgentOutput.model_validate(result)
     assert result["error"]["code"] == "INVALID_INPUT"
     assert provider.calls == 0 and not agent._runs and not agent._requests
+
+
+@pytest.mark.parametrize("row", [[], [1], [1, 1], [1, 1, 1, 1], None, {"0": 1}])
+@pytest.mark.parametrize("trusted", [False, True])
+def test_dependency_width_guard_precedes_value_materialization(row, trusted):
+    plan = plan_pair()
+    spec = plan.steps[0].result_spec
+    raw = complete_raw(spec, [row])
+    with pytest.raises(Failure) as error:
+        materialize_refs(plan.steps[1], {"s6": raw}, {"s6": spec} if trusted else None)
+    assert error.value.code == "DEPENDENCY_INVALID"

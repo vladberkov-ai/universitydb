@@ -1,0 +1,21 @@
+{
+  "checkpoint": "CP-D",
+  "status": "verified local committed actualdependencies/portability; finalofflineDoDpending",
+  "sha": "f4611ed592f6353471ab5786eed58d601d2a246e",
+  "parent": "b9f2eb66e20a3148485da2af62eaa4fc9d02d0cb",
+  "commit_exit": 0,
+  "path_count": 53,
+  "exact_paths_manifest": "cp-d-staged-paths.json",
+  "source_blob_match": {
+    "files": 37,
+    "result": "committed blobs exactly match root370-test/allstatic frozen-source hashes",
+    "receipt": "cp-d-verification.json"
+  },
+  "current_actual_M1_Library_proof": "m1-cp-d/manifest.json from exact370pass process, sourcehashesmatch",
+  "core_tree_sha256": "22af58a4aa2643d959b248fda604d7dd881ad79ab40a63cb43a675e7dd9e3d47",
+  "preservation": "7 ledger/I1/lock hashes match baseline; originalm1 evidenceunchanged",
+  "postcommit_status": "only originaluntrackedlocks before thislate receipt",
+  "native_checkpoint": "root-owned,notclaimedbychild",
+  "push": "not-run",
+  "receipt_commit": "latercheckpoint,no self-SHA"
+}

@@ -255,8 +255,6 @@ def materialize_refs(
                     raise Failure("DEPENDENCY_INVALID", "Dependency result type is invalid.")
         values: list[Any] = []
         for row in rows:
-            if not isinstance(row, list) or len(row) != len(spec.columns):
-                raise Failure("DEPENDENCY_INVALID", "Dependency row width is invalid.")
             value = row[index]
             if not _typed(value, ref.type):
                 raise Failure("DEPENDENCY_INVALID", "Dependency value has incorrect type.")
