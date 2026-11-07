@@ -35,7 +35,7 @@ Canonical repo: `/home/dev/projects/universitydb`, branch main, existing origin 
 
 | Boundary | Actual status |
 |---|---|
-| CP1 decisions/contracts | Partial safe preparation; local checkpoint result recorded separately after actual checks/commit. Not full I2 approval. |
+| CP1 decisions/contracts | Partial safe preparation committed as `6d28e0248ba4f8b22a5e4242f607ad192453cc91`; not full CP1 or I2 approval. |
 | CP2 query breadth | Not-run; no SHA |
 | CP3 clarification/failures/UI | Not-run; no SHA |
 | CP4 final offline product gates | Not-run; no SHA |
@@ -43,6 +43,6 @@ Canonical repo: `/home/dev/projects/universitydb`, branch main, existing origin 
 | Postcommit receipt | Separate actual [commit receipt](../operations/H-011/checkpoint-receipt.json) when saved; no invented self-SHA |
 | Push | **Not-run, prohibited** |
 
-Saved documents, local committed checkpoint and remote publication are distinct. Local HEAD after the preparation commit must come from the actual receipt/final response, not a self-referential SHA in this report. No reset/amend/blanket staging/remote change. All R01–17/U01–08 remain in the matrix; R05/multi-step/second schema→I3, R10 actual limited scope, R15 publication pending, R16/17 defense after service, U02 deadline open and U08 deferred.
+Saved documents, local committed checkpoint and remote publication are distinct. Verified preparation HEAD is `6d28e0248ba4f8b22a5e4242f607ad192453cc91` (parent is the baseline). A later receipt commit is deliberately not self-referenced; actual final HEAD is reported by root. No reset/amend/blanket staging/remote change. All R01–17/U01–08 remain in the matrix; R05/multi-step/second schema→I3, R10 actual limited scope, R15 publication pending, R16/17 defense after service, U02 deadline open and U08 deferred.
 
 **One next action:** the runtime owner must establish/attest a supported writable binding for this actual current native session while preserving the completed I1 scope, then continue the existing accepted H-011 brief—no semantics reapproval or identical restart loop. Live/push are still forbidden and are not needed for offline completion. No I3–I5/defense work. No server was started by this task; final listener check and any visibility gap are recorded in validation. Stop after reporting the blocker and checkpoint evidence.

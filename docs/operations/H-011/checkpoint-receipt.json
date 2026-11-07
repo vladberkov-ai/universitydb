@@ -1,10 +1,51 @@
 {
-  "status": "pending_verified_local_commit",
+  "status": "local_committed_partial_preparation; I2 offline incomplete",
+  "created_at_utc": "2026-11-07T20:08:34.295976+00:00",
+  "branch": "main",
   "baseline_HEAD": "5c8669ffb2e629ea00878734385fff99b53d7adc",
   "fresh_remote_main": "5c8669ffb2e629ea00878734385fff99b53d7adc",
+  "fresh_remote_source": "Actual postcheckpoint GIT_TERMINAL_PROMPT=0 git ls-remote origin refs/heads/main, supported specific permission, exit0",
   "CP1": {
-    "status": "partial preparation only; no new goal/application implementation",
-    "sha": null
+    "status": "partial preparation only, not full CP1/I2 approval",
+    "sha": "6d28e0248ba4f8b22a5e4242f607ad192453cc91",
+    "parent": "5c8669ffb2e629ea00878734385fff99b53d7adc",
+    "changed_paths": [
+      "AGENTS.md",
+      "README.md",
+      "docs/adr/ADR-OMX-011-I2-offline-semantics.md",
+      "docs/adr/README.md",
+      "docs/ai/PROMPTS-EN.md",
+      "docs/ai/PROMPTS-RU.md",
+      "docs/ai/README.md",
+      "docs/ai/omx/H-011-actual-prompt.txt",
+      "docs/assignment-status.md",
+      "docs/manual-e2e.md",
+      "docs/operations/H-011/baseline.json",
+      "docs/operations/H-011/checkpoint-receipt.json",
+      "docs/operations/H-011/cleaner-report.md",
+      "docs/operations/H-011/delegation-coverage.json",
+      "docs/operations/H-011/frozen-oracle.json",
+      "docs/operations/H-011/oracle-check-source.txt",
+      "docs/operations/H-011/oracle-validation.json",
+      "docs/operations/H-011/preparation-validation.json",
+      "docs/operations/H-011/prompt-receipt.json",
+      "docs/operations/H-011/readiness.json",
+      "docs/operations/H-011/reviews/architect.md",
+      "docs/operations/H-011/reviews/code-reviewer.md",
+      "docs/plans/I2-offline-brief.md",
+      "docs/plans/I2-offline-contract.md",
+      "docs/plans/README.md",
+      "docs/plans/implementation-plan.md",
+      "docs/plans/requirements-test-matrix.md",
+      "docs/reports/H-011-I2-offline.md"
+    ],
+    "committed_paths": 28,
+    "explicit_staging": true,
+    "staged_diff_privacy_check": true,
+    "ordinary_staging_attempt_exit": 128,
+    "ordinary_error": "Read-only .git/index.lock",
+    "specific_supported_permission_staging_exit": 0,
+    "commit_exit": 0
   },
   "CP2": {
     "status": "not-run",
@@ -18,8 +59,65 @@
     "status": "not-run",
     "sha": null
   },
-  "native_completion": "not-run; no goal created",
-  "strict_checkpoint": "not-run; no new plan",
+  "native_goal_fresh_snapshot": {
+    "goal": null,
+    "remainingTokens": null,
+    "completionBudgetReport": null
+  },
+  "native_goal_created_or_resumed": false,
+  "native_completion": "not-run; no native goal",
+  "strict_checkpoint": "not-run; no new durable plan",
+  "root_I1_plan_preserved": true,
+  "preservation": {
+    "runtime/spending.json": {
+      "expected": "2753fe2fdf1dc366ffecdb5a86dcd9cf184d83707a00da0de62a8a4e4963f125",
+      "actual": "2753fe2fdf1dc366ffecdb5a86dcd9cf184d83707a00da0de62a8a4e4963f125",
+      "unchanged": true
+    },
+    ".omx-state-locks.identity.json": {
+      "expected": "50d956e3fbf97b265862cefdbfb54fd809b03ef55b3f7ccd9997864b70d62711",
+      "actual": "50d956e3fbf97b265862cefdbfb54fd809b03ef55b3f7ccd9997864b70d62711",
+      "unchanged": true
+    },
+    ".omx-state-locks/655a20b082786cf4e05f99e0da122d6dc803270e08f859022ac44d1302358bc8.mutex": {
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    ".omx-state-locks/3102cbda72779bbf780705d49e74806858334b4de02a46d2ee2a37802e26125c.mutex": {
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    ".omx/ultragoal/brief.md": {
+      "expected": "0ff09bb7638889aa742f75070ece675573391187b5568b2be010b59fe22b5191",
+      "actual": "0ff09bb7638889aa742f75070ece675573391187b5568b2be010b59fe22b5191",
+      "unchanged": true
+    },
+    ".omx/ultragoal/ledger.jsonl": {
+      "expected": "980675a8f5b3a288809d7c98c3fb539ba1d51e43a6beb64dfb30d85c09d1e380",
+      "actual": "980675a8f5b3a288809d7c98c3fb539ba1d51e43a6beb64dfb30d85c09d1e380",
+      "unchanged": true
+    },
+    ".omx/ultragoal/goals.json": {
+      "expected": "8e3383ac22651fbc8cbad2d49181e91957e747dee35ac9de7f1ba8b7f6a7e0ef",
+      "actual": "8e3383ac22651fbc8cbad2d49181e91957e747dee35ac9de7f1ba8b7f6a7e0ef",
+      "unchanged": true
+    }
+  },
+  "vault_manifest_inputs_rechecked": true,
+  "preparation_reviews": {
+    "code-reviewer": "APPROVE safe partial preparation only",
+    "architect": "CLEAR safe partial preparation only",
+    "I2_product_review": false
+  },
+  "validation": "preparation-validation.json;129 unchanged baseline tests/37 independent fixture SQL checks; AppTest/I2 not-run",
+  "server": {
+    "owned_server_started": false,
+    "8501_listening_in_current_namespace": false,
+    "host_namespace_not_claimed": true
+  },
   "push": "not-run/prohibited",
-  "receipt_commit_SHA": "Not preclaimed; final response can identify actual later HEAD."
+  "saved_vs_committed": "28 own safe docs/evidence paths committed locally; this receipt is a subsequent saved artifact until its own commit succeeds. No publication.",
+  "receipt_commit_SHA": "Intentionally not self-referenced; actual subsequent Git HEAD reported by root after commit."
 }
