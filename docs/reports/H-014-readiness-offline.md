@@ -1,6 +1,6 @@
 # H-014 v2 — offline readiness report
 
-**WIP — c631 mechanical checks PASS, but independent visual review BLOCK; candidate not accepted.**
+**WIP — UI-repaired source983 frozen; final clean/browser and independent reviews pending.**
 This is the bounded I4 + verification-I5 **offline** readiness task, not full live
 acceptance, publication or owner defense. No live generation/access/count calls,
 credential loading, monetary ledger/cap/hold changes, push or vault writes are
@@ -19,7 +19,7 @@ permitted. Accepted ADR-CHAT-006 semantics and Sol high/medium/medium are unchan
   found a new regression: `Show mean grade grouped by course across all enrollments`
   returned INVALID_INPUT before provider dispatch. Candidate **not accepted**;
   failed attempt preserved; subsequent c631repair is frozen, full rerun pending.
-- Current frozen product/harness candidate: **`c631c0c62bebd7c291429e26783dbfc442bde3af`**.
+- Rejected visual candidate: `c631c0c62bebd7c291429e26783dbfc442bde3af`.
   Repair preserves registered group/exclusion/all-five-axis/count prose and Library
   each/every forms while keeping bare unknown names fail-closed. Final focused39
   passed6.94s; independent code-reviewer focused39passed76.72s and scoped static
@@ -32,6 +32,12 @@ permitted. Accepted ADR-CHAT-006 semantics and Sol high/medium/medium are unchan
 - WIP docs checkpoints: `cd5a9493c81715bc9e59186ffb23279c683a1ff6`,
   `6c50a4fac369c2958046512d3de2ba840e95d9b5`,
   `91277b9cf0c9fee8419b29212f5040084e67f915`.
+- Current frozen product/harness/UI candidate: **`98345ad6ce5757c71d44ba1ce59a683d46e0d910`**.
+  Two explicit if/else branches repair Streamlit magic; actual-magic3pre-fail and
+  serialized15targetedPASS6.00s, scoped static/mypy14PASS. Intermediate9fail/6pass
+  200.02s with SQL_TIMEOUT preserved, cause unproven; no ceilings raised.
+  Docs-only `ac998a9b411b6d15b7d4a555523e653c1f124197` is not tested product983.
+  Fresh exact983full/browser/regression assertions remain pending.
 - Later evidence/documentation commits are not newly full-tested product identities.
 
 ## Independent audit and repair
@@ -100,9 +106,15 @@ bare ternary expressions around `st.json`/`st.write` in `ui.py` trigger Streamli
 magic return-value rendering. Captures/automated checks did not prove a clean UI:
 **c631 is not accepted**. Preserve original screenshots; minimally repair explicit
 if/else rendering, lock behavior with AppTest/browser regression, freeze a new
-candidate and rerun full clean/browser gates. No global magic-disable or screenshot
-masking; no source edit in this documentation lane. Final CLEAR/APPROVE/native
-completion are not claimed.
+candidate and rerun full clean/browser gates. [Actual visual BLOCK](../operations/H-014/reviews/ui-visual-block-architect.json)
+is retained. The983source repair now uses explicit branches without global
+magic-disable/screenshot masking. New browser asserts no help/DeltaGenerator/stray
+None and visible typed raw/adapted dependency rows; fresh full/browser proof pending.
+Code-reviewer's preliminary draft approval was revoked/current REQUEST CHANGES;
+no final APPROVE was delivered. Final CLEAR/APPROVE/native are not claimed.
+[UI repair evidence](../operations/H-014/ui-magic-fix/report.md),
+[seven-invariant audit](../operations/H-014/invariant-audit.md),
+[bounded cleaner summary](../operations/H-014/cleaner-summary.md).
 CP-R2 candidate checks passed: Ruff format/check for five scripts/tests, 33 synthetic
 eval harness tests, cached diff check. Those 33 tests are not live model accuracy.
 

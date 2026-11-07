@@ -20,11 +20,12 @@
     "uv.lock": "de36cab6c73d37bde70cc13e019b9eb2552a0747e46fe5c8c3b7cedf5338378d",
     "docs/operations/H-014/eval/official-rates.md": "ec798d19ee634eafdb44e4560169d94df5ccfbec6d41497581f4a6d62c575b2e"
   },
-  "candidate_sha": "c631c0c62bebd7c291429e26783dbfc442bde3af",
+  "candidate_sha": "98345ad6ce5757c71d44ba1ce59a683d46e0d910",
   "pre_registration": "Proposed before live results; all48 planned/not-run; reviewer/author/root exposure disclosed, not sealed untouched holdout; independently replace if required.",
-  "candidate_status": "Current repaired product/harness freeze; focused39PASS, final serialized full clean/browser/reviews pending. Rejected331evidence retained; not live acceptance.",
+  "candidate_status": "UI two-if/else repaired source freeze; targeted15serializedPASS, final full clean/browser/reviews pending. c631visualBLOCK retained.",
   "normalization_review": "Before results: observer validates strict typed choice sets/duplicates then emits oracle-defined ordering. Scorer remains exact; frozenv1 unchanged, no case/product execution.",
   "candidate_history": [
-    "331eb5a61648bccb7fa66eecb58d9cc284eda2a0 rejected after clean457/staticPASS but group-by E2E regression; no live scores exist."
+    "331eb5a61648bccb7fa66eecb58d9cc284eda2a0 rejected after clean457/staticPASS but group-by E2E regression; no live scores exist.",
+    "c631c0c62bebd7c291429e26783dbfc442bde3af mechanical482/static157oraclePASS but independent visualBLOCK. UIrepair983; ac998a9 docs-only not new product identity."
   ]
 }

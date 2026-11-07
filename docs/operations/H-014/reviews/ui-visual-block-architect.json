@@ -1,0 +1,35 @@
+{
+  "received_at": "2026-11-07T23:23:42.999055+00:00",
+  "role": "architect",
+  "verdict": "BLOCK",
+  "candidate_sha": "c631c0c62bebd7c291429e26783dbfc442bde3af",
+  "scope": "Independent final H014 candidate review before UI repair; selected actual result projection",
+  "findings": [
+    {
+      "severity": "HIGH",
+      "file": "src/universitydb/ui.py:87,94",
+      "issue": "Standalone conditional st.json/st.write expressions are rewritten by Streamlit magic, displaying DeltaGenerator internal API help or None inside result panels. Actual success-db.png does not focus typed rows.",
+      "evidence": [
+        "browser/final-c631-attempt1/success-visible.txt:164-190,487-513",
+        "browser/final-c631-attempt1/success-db.png",
+        "browser/final-c631-attempt1/error.png",
+        "installed Streamlit runtime/scriptrunner/magic.py:68-77,114-125,194-201,223-224"
+      ],
+      "fix": "Two explicit if/else statements; regression AppTest+actual browser absence of help/object dumps and stray None, typed rows/trace retained. No global magic disable or screenshot masking."
+    }
+  ],
+  "otherwise_verified": {
+    "pytest": 482,
+    "seconds": 92.83,
+    "oracle": 157,
+    "clean_hashes": 28,
+    "browser_hashes": 53,
+    "source_manifests": 16,
+    "jsonl_traces": 15,
+    "screenshots_viewed": 10,
+    "preservation": 10
+  },
+  "earlier_scope_blockers": "resolved by c631 contextual GROUPS/name guard repair",
+  "final_status": "Re-review UI repair/new exact source and clean/browser evidence required; no final CLEAR",
+  "attribution": "Root received genuine native final_architecture result; selected projection not full transcript. Read-only role made no product/state/Git mutations."
+}

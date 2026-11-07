@@ -11,8 +11,9 @@ schemas, seed data, tests, decisions, prompt collections and execution evidence.
 tracks the independent audit, scoped named-target repair, clean reproduction and
 [proposed live protocol](docs/plans/H-014-live-eval-protocol.md)/[budget](docs/plans/H-014-live-eval-budget.md).
 The331eb5a clean run passed457tests/static but fresh group-by E2E found a
-blocking regression. Repaired candidatec631c0c is frozen; its final serialized
-clean/browser/review gates are pending. Old331browser captures are not final proof.
+blocking regression. Candidatec631 passed482tests/static/157oracle but independent
+visual review found UI magic/help output. UI-repaired source98345ad is frozen;
+its final clean/browser/review gates remain pending. Old captures are not final proof.
 New live calls and push are forbidden; historical results below remain unchanged.
 
 

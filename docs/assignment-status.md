@@ -35,8 +35,9 @@ offline-readiness status, distinct from historical H013 product410tests/157oracl
 Named-target scope-loss defect repaired with14regressions; frozen candidate
 331eb5a61648bccb7fa66eecb58d9cc284eda2a0 adds readiness/eval harness33tests.
 Candidate331eb5a clean457tests/static passed but fresh group-by E2E failed; it is
-not accepted. Scoped repaired candidatec631c0c is frozen with39focusedPASS; final
-full clean/browser/independent reviews remain pending. No final verdict is inferred.
+not accepted. Subsequent c631passed482tests/157oracle but architect visualBLOCK
+required UI repair. Current source98345ad fixes magic rendering with15targetedPASS;
+final full clean/browser/independent reviews pending. No final verdict inferred.
 R01–14/U01/U03–06 are mapped in the report; R15 new publication awaits authority,
 R16/17 owner defense deferred, U02 deadline unknown. I4 real-model/I5 live acceptance
 not-run: proposed24×2/48cases and44/48,≥7/8/category await approval, not an accuracy
