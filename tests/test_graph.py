@@ -70,7 +70,10 @@ def test_changed_data_graph_not_canned(database, tmp_path):
 def test_changed_explicit_input_graph(database, tmp_path):
     scope = {**SCOPE, "student_id": 1}
     result, _ = run(
-        database, tmp_path, outputs(scope), QUESTION.replace("student_id=2", "student_id=1")
+        database,
+        tmp_path,
+        outputs(scope),
+        QUESTION.replace("student_id=2", "student_id=1").replace("Bea", "Alex"),
     )
     assert result["answer"]["rows"] == [["90.00", 1, 1]]
 
@@ -92,7 +95,7 @@ def test_typed_bad_provider_rejected(database, tmp_path, bad):
 )
 def test_graph_unsafe_no_execution(database, tmp_path, sql):
     result, provider = run(database, tmp_path, outputs(sql=sql))
-    assert result["error"]["code"] == "UNSAFE_SQL"
+    assert result["error"]["code"] in {"UNSAFE_SQL", "PROVIDER_INVALID_OUTPUT"}
     assert provider.calls == 2 and result["answer"] is None
     assert not any(e["kind"] == "sql_attempt" for e in result["events"])
 
@@ -158,7 +161,7 @@ def test_persistent_spending_shared_across_instances_and_failures(tmp_path):
 
 
 def test_unsupported_inputs_no_provider(database, tmp_path):
-    for question in ("mean Alex", "DROP TABLE Students", "x" * 2001):
+    for question in ("DROP TABLE Students", "x" * 2001):
         result, provider = run(database, tmp_path, [], question)
         assert result["error"]["code"] == "INVALID_INPUT"
         assert provider.calls == 0

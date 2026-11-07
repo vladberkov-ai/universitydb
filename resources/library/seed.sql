@@ -1,0 +1,3 @@
+INSERT INTO Readers VALUES (1,'Ada'),(2,'Bob');
+INSERT INTO Books VALUES (10,'X'),(11,'Y');
+INSERT INTO Loans VALUES (1,1,10,0),(2,1,11,1),(3,2,10,0);

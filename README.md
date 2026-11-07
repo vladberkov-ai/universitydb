@@ -1,6 +1,21 @@
 # University Database + LangGraph QA Agent
 
-**Current release: working I1 demonstrator; the full assignment is not finished.**
+## H-013 local development — CP-B foundation
+
+The current local I2+I3-offline work adds per-step contracts, shared bounded DAG/result
+binding, University query adapters and an early Library adapter, plus an isolated
+offline UI dataset selector and retained server-session agent. This checkpoint is
+**not whole I2+I3 completion**: actual clarification/checkpoint continuation, full
+dependency/negative/UI browser proof and final independent gates are completed in
+subsequent internal checkpoints. See the [whole brief](docs/plans/I2-I3-offline-brief.md),
+[contract](docs/plans/I2-I3-offline-contract.md), [ADR012](docs/adr/ADR-OMX-012-I2-I3-offline-contracts.md).
+Scripted proposals execute a real compiled graph and SQLite; they do not measure
+real-model NL→SQL accuracy. Live/count calls, credentials, spending changes and push
+are not authorized by this offline task.
+
+## Historical published I1 baseline
+
+**Published I1 baseline: working demonstrator; the full assignment was not finished.**
 Real Sol + LangGraph + SQLite + Streamlit passed S6 **80.00**, an independent changed
 example **90.00**, full trace inspection and error/no-stale-answer checks. The owner
 also passed all four manual live checks. The recorded full suite has **131 tests**.
@@ -8,10 +23,10 @@ also passed all four manual live checks. The recorded full suite has **131 tests
 [owner acceptance](docs/reports/I1-owner-manual-acceptance.md) ·
 [completion receipt](docs/operations/H-009/closeout/postcheckpoint-goal-receipt.json).
 
-Today the supported question is **a scalar grade mean with four explicit filters**:
+At that historical I1 baseline the supported question was **a scalar grade mean with four explicit filters**:
 student, course, teacher and semester. Arbitrary natural-language questions, multiple
 dependent steps, conversational clarification/resume and a second database adapter
-are not implemented. See the [assignment audit](docs/assignment-status.md) for the
+were not implemented at that checkpoint. See the [assignment audit](docs/assignment-status.md) for the
 complete distinction between delivered artifacts and missing functionality.
 
 ## Reviewer navigation
@@ -45,16 +60,19 @@ uv run --locked pytest -q
 
 Run commands from the repository root: schema/seed and prompts are repository resources;
 installation as a standalone wheel outside the checkout is not a supported deployment.
-`uv.lock` pins dependencies. No external SQL server is required. The first submitted UI
-question creates `runtime/university.db` from the schema and seed if absent; it never
+`uv.lock` pins dependencies. No external SQL server is required. The UI dataset selection creates `runtime/university-v1.db` or `runtime/library-v1.db` from the schema and seed if absent; it never
 overwrites an existing DB. Runtime DB/traces, dependencies and credentials are not committed.
 
 ## Start without an API key (offline E2E)
 
 ```bash
+unset OPENAI_API_KEY
+export UNIVERSITYDB_LIVE_APPROVED=no LANGSMITH_TRACING=false LANGCHAIN_TRACING_V2=false
 export UNIVERSITYDB_TEST_MODE=1
 export UNIVERSITYDB_TEST_FIXTURE="$PWD/examples/offline-s6.json"
-export UNIVERSITYDB_ROOT="$PWD"
+offline_root="$(mktemp -d)"
+cp -R resources "$offline_root/resources"
+export UNIVERSITYDB_ROOT="$offline_root"
 uv run --locked streamlit run src/universitydb/ui.py \
   --server.address=127.0.0.1 --server.port=8501 --server.headless=true \
   --browser.gatherUsageStats=false
@@ -64,7 +82,10 @@ Open **http://localhost:8501** and keep the default question. Expect **80.00**.
 The banner must say `offline/injected`: the graph, SQL validator, SQLite, formatter
 and UI are real, but model responses are fixed. This is **not live NL-to-SQL accuracy**;
 the fixed fixture is for S6 only. Do not expect changing the student to test the model.
-Stop the foreground server with **Ctrl+C**. No goal, OMX installation or API key is needed.
+Stop the foreground server with **Ctrl+C**. The temporary root isolates DB/traces from
+the actual monetary ledger; remove only that owned temporary directory after stopping.
+No goal, OMX installation or API key is needed. Library needs its own explicit
+schema-keyed scripted fixture; the historical S6-only fixture is not a Library fixture.
 
 ## Start with real Sol (paid, optional)
 

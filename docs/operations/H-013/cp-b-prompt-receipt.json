@@ -1,0 +1,12 @@
+{
+  "stage": "CP-B foundation",
+  "version": "policy v2",
+  "source": "runtime prompt files, not actual live requests",
+  "files": {
+    "src/universitydb/prompts/plan.txt": "5e01dccf6c0d77531a32787946e055f0dfaa229274883cd621e532a608c9b1e3",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb"
+  },
+  "consumption": "offline ScriptedProvider tests only; live/API generation not-run",
+  "history": "I1 prompt evidence and previous RU/EN versions untouched",
+  "coverage": "source templates/hashes, not full root/child transcript; UI received task in ui-task.txt"
+}

@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from universitydb.contracts import Failure
+from universitydb.contracts import Failure, ResultSpec, validate_result
 
 
 def file_hash(path: Path) -> str:
@@ -61,6 +61,8 @@ def execute(
     timeout: float = 2.0,
     watchdog: float = 3.0,
     expected_hash: str | None = None,
+    result_spec: ResultSpec | None = None,
+    step_id: str = "query",
 ) -> dict[str, Any]:
     if not path.is_file():
         raise Failure("DB_UNAVAILABLE", "Database is missing.")
@@ -73,6 +75,8 @@ def execute(
         "tables": tables,
         "functions": functions,
         "timeout": timeout,
+        "result_spec": result_spec.model_dump() if result_spec is not None else None,
+        "step_id": step_id,
     }
     try:
         with subprocess.Popen(
@@ -100,4 +104,6 @@ def execute(
         raise Failure("DB_UNAVAILABLE", "Invalid database worker response.") from exc
     if "error" in result:
         raise Failure(result["error"], result["message"])
+    if result_spec is not None:
+        validate_result(result, result_spec)
     return result

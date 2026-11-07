@@ -47,3 +47,18 @@ live evidence and screenshots are linked from examples/README.md; these are sepa
 sources, not a replay or fabricated record of the owner's actions.
 
 The questions above are English translations for reviewer use. The preserved live evidence contains the original Russian questions; no new English live pass is claimed. Offline acceptance of the English default question is checked separately.
+
+## H-013 offline checkpoint foundation (current local development)
+The historical I1 instructions/results above remain preserved, not replayed. Current
+CP-B UI has a University/Library dataset selector, retained agent within the selected
+server session, and separate disposable DBs. Use the README's **temporary offline
+root** before AppTest/browser checks; never direct test setup at the actual runtime
+ledger. A normal profile never falls back to fixtures. Explicit test mode accepts a
+legacy scripted list or schema-keyed lists (`university-v1`, `library-v1`), and
+controlled `injected_error` objects are test-only failure provenance, not question inputs.
+
+Inspect SQL/bindings, raw typed DB rows, adapted step results/dependency bindings and
+full same-run JSONL. New questions/errors/dataset changes clear prior answers.
+Checkpoint clarification and browser M1/Library/repair/error proof are later H-013
+checkpoints, **not claimed by this foundation note**. The offline tests use real
+SQLite/compiled graph with scripted proposals; no real-model accuracy is inferred.

@@ -1,0 +1,82 @@
+{
+  "checkpoint": "CP-A",
+  "status": "local committed documentation/contracts/oracle; whole offline goal NOT complete",
+  "sha": "13411c8366d04b5300bbed5e4fbb7f22eb296cdb",
+  "parent": "125494101b2d2ce4e138580c76dc383fb5ab7290",
+  "commit_exit": 0,
+  "git_access": "ordinary sandbox EROFS; supported explicit path-limited staging and local-commit escalation approved/succeeded",
+  "paths": [
+    "AGENTS.md",
+    "docs/adr/ADR-OMX-012-I2-I3-offline-contracts.md",
+    "docs/adr/README.md",
+    "docs/ai/PROMPTS-EN.md",
+    "docs/ai/PROMPTS-RU.md",
+    "docs/ai/README.md",
+    "docs/ai/omx/H-013-actual-prompt.txt",
+    "docs/assignment-status.md",
+    "docs/operations/H-013/activation-receipt.json",
+    "docs/operations/H-013/baseline.json",
+    "docs/operations/H-013/binding-readiness.json",
+    "docs/operations/H-013/checkpoint-reference-task.txt",
+    "docs/operations/H-013/checkpoint-reference.md",
+    "docs/operations/H-013/cp-a-task.txt",
+    "docs/operations/H-013/cp-a-validation.json",
+    "docs/operations/H-013/frozen-oracle.json",
+    "docs/operations/H-013/independent_oracle.py",
+    "docs/operations/H-013/oracle-validation.json",
+    "docs/operations/H-013/prompt-receipt.json",
+    "docs/operations/H-013/workflow/.gitignore",
+    "docs/plans/I2-I3-offline-brief.md",
+    "docs/plans/I2-I3-offline-contract.md",
+    "docs/plans/implementation-plan.md",
+    "docs/plans/requirements-test-matrix.md"
+  ],
+  "verification": {
+    "independent_oracle_checks": 157,
+    "independent_oracle_exit": 0,
+    "append_only_navigation_files": 8,
+    "new_document_local_links": 11,
+    "historical_evidence_hashes": 85,
+    "staged_privacy_scan_exit": 0,
+    "staged_diff_check_exit": 0
+  },
+  "preservation": {
+    "runtime/spending.json": {
+      "sha256": "2753fe2fdf1dc366ffecdb5a86dcd9cf184d83707a00da0de62a8a4e4963f125",
+      "unchanged": true
+    },
+    ".omx-state-locks.identity.json": {
+      "sha256": "50d956e3fbf97b265862cefdbfb54fd809b03ef55b3f7ccd9997864b70d62711",
+      "unchanged": true
+    },
+    ".omx-state-locks/655a20b082786cf4e05f99e0da122d6dc803270e08f859022ac44d1302358bc8.mutex": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    ".omx-state-locks/3102cbda72779bbf780705d49e74806858334b4de02a46d2ee2a37802e26125c.mutex": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    ".omx/ultragoal/brief.md": {
+      "sha256": "0ff09bb7638889aa742f75070ece675573391187b5568b2be010b59fe22b5191",
+      "unchanged": true
+    },
+    ".omx/ultragoal/ledger.jsonl": {
+      "sha256": "980675a8f5b3a288809d7c98c3fb539ba1d51e43a6beb64dfb30d85c09d1e380",
+      "unchanged": true
+    },
+    ".omx/ultragoal/goals.json": {
+      "sha256": "8e3383ac22651fbc8cbad2d49181e91957e747dee35ac9de7f1ba8b7f6a7e0ef",
+      "unchanged": true
+    }
+  },
+  "postcommit_status": "only original untracked .omx-state-locks.identity.json and .omx-state-locks/",
+  "product_tests": "not-run CP-A; required during CP-B\u2013E",
+  "native_checkpoint": "root-owned, not claimed by performer",
+  "last_remote": {
+    "sha": "5c8669ffb2e629ea00878734385fff99b53d7adc",
+    "provenance": "root actual read-only ls-remote report around20:40UTC; initial DNS128 then supported specific-permission retry exit0; not rerun by child"
+  },
+  "push": "not-run",
+  "receipt_commit": "later commit; no self-SHA"
+}

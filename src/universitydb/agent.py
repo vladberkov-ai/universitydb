@@ -1,4 +1,4 @@
-"""Schema-agnostic real compiled LangGraph orchestration for one bounded scalar step."""
+"""Schema-agnostic real compiled LangGraph orchestration for bounded typed dependent steps."""
 
 import hashlib
 import json
@@ -12,9 +12,19 @@ from langgraph.graph import END, START, StateGraph
 from pydantic import ValidationError
 
 from universitydb import db
-from universitydb.config import PROFILE, logical_operation
-from universitydb.contracts import Failure, PlanProposal, SQLProposal
+from universitydb.config import PROFILE, logical_operation, payload_estimate, wire_payload
+from universitydb.contracts import (
+    Failure,
+    PlanProposal,
+    SQLProposal,
+    Step,
+    bindings,
+    materialize_refs,
+    validate_dag,
+    validate_result,
+)
 from universitydb.llm import Provider
+from universitydb.sql_policy import validate_sql as validate_safe_sql
 from universitydb.tracing import Trace
 
 
@@ -31,6 +41,11 @@ class State(TypedDict, total=False):
     error: dict[str, Any]
     repair_error: dict[str, str]
     repair_needed: bool
+    step_index: int
+    completed: dict[str, dict[str, Any]]
+    step_results: list[dict[str, Any]]
+    resolved_refs: dict[str, list[Any]]
+    skip_step: bool
 
 
 class Agent:
@@ -51,6 +66,7 @@ class Agent:
             "resolve_scope",
             "plan",
             "validate_plan",
+            "bind_results",
             "generate_sql",
             "validate_sql",
             "execute",
@@ -66,6 +82,7 @@ class Agent:
             "resolve_scope",
             "plan",
             "validate_plan",
+            "bind_results",
             "generate_sql",
             "validate_sql",
             "execute",
@@ -73,6 +90,19 @@ class Agent:
             "answer",
         ]
         for name, following in pairwise(flow):
+            if name == "bind_results":
+                graph.add_conditional_edges(
+                    name,
+                    lambda s: (
+                        "error"
+                        if s.get("error")
+                        else ("inspect_result" if s.get("skip_step") else "generate_sql")
+                    ),
+                )
+                continue
+            if name == "inspect_result":
+                graph.add_conditional_edges(name, self._after_result)
+                continue
             graph.add_conditional_edges(
                 name,
                 lambda s, n=following: (
@@ -82,6 +112,11 @@ class Agent:
         graph.add_edge("answer", END)
         graph.add_edge("error", END)
         return graph.compile()
+
+    def _after_result(self, state: State) -> str:
+        if state.get("error"):
+            return "error"
+        return "bind_results" if state["step_index"] < len(state["plan"]["steps"]) else "answer"
 
     def _node(self, name: str) -> Any:
         def invoke(state: State) -> State:
@@ -130,12 +165,22 @@ class Agent:
                 "question": state["question"],
                 "descriptor": state["descriptor"],
                 "scope": state["scope"],
-                "plan": state.get("plan"),
+                "step": state["plan"]["steps"][state.get("step_index", 0)]
+                if operation == "sql"
+                else None,
+                "resolved_refs": state.get("resolved_refs", {}),
                 "previous_error": state.get("repair_error"),
             }
             if len(json.dumps(payload, ensure_ascii=False).encode()) > PROFILE.input_bytes:
                 raise Failure("RESOURCE_LIMIT", "Provider payload exceeds byte gate.")
             logical = logical_operation(operation, payload)
+            prompt = (Path(__file__).parent / "prompts" / f"{operation}.txt").read_text()
+            wire = wire_payload(
+                operation, logical, PROFILE.model, prompt, json.dumps(payload, ensure_ascii=False)
+            )
+            _, estimated = payload_estimate(wire)
+            if estimated > PROFILE.input_bytes:
+                raise Failure("RESOURCE_LIMIT", "Full provider wire exceeds estimated input gate.")
             policy = PROFILE.operation(logical)
             projected = PROFILE.input_tokens + policy.output_tokens
             if self.reserved_tokens + projected > PROFILE.run_tokens:
@@ -197,6 +242,7 @@ class Agent:
             return {}
         if name == "load_schema":
             metadata = db.inspect(self.database, self.domain.tables)
+            self.domain.inspect_data(self.database)
             self.snapshot = metadata["db_sha256"]
             descriptor = self.domain.descriptor()
             lock = Path(__file__).resolve().parents[2] / "uv.lock"
@@ -211,12 +257,48 @@ class Agent:
                 },
             }
         if name == "resolve_scope":
-            return {"scope": self.domain.resolve(state["question"])}
+            return {
+                "scope": self.domain.resolve(state["question"], self.domain.catalog(self.database))
+            }
         if name == "plan":
             return {"plan": self._call("plan", state, PlanProposal).model_dump()}
         if name == "validate_plan":
-            self.domain.validate_plan(PlanProposal.model_validate(state["plan"]))
-            return {}
+            plan = PlanProposal.model_validate(state["plan"])
+            validate_dag(plan)
+            self.domain.validate_plan(plan)
+            if self.calls + len(plan.steps) > PROFILE.calls:
+                raise Failure("BUDGET_EXCEEDED", "Plan exceeds remaining call budget.")
+            return {"step_index": 0, "completed": {}, "step_results": []}
+        if name == "bind_results":
+            step = Step.model_validate(state["plan"]["steps"][state["step_index"]])
+            refs = materialize_refs(
+                step,
+                state["completed"],
+                {
+                    entry["step_id"]: Step.model_validate(entry).result_spec
+                    for entry in state["plan"]["steps"]
+                },
+            )
+            self.trace.emit(name, "dependency_bindings", {"step_id": step.step_id, "values": refs})
+            empty = any(not values for values in refs.values())
+            update: State = {
+                "resolved_refs": refs,
+                "repair_error": {},
+                "repair_needed": False,
+                "skip_step": empty,
+            }
+            if empty:
+                update["result"] = {
+                    "step_id": step.step_id,
+                    "result_spec": step.result_spec.model_dump(),
+                    "columns": [{"name": c.name, "type": c.type} for c in step.result_spec.columns],
+                    "rows": [],
+                    "row_count": 0,
+                    "truncated": False,
+                    "elapsed_ms": 0,
+                }
+                self.trace.emit(name, "dependency_empty", {"step_id": step.step_id})
+            return update
         if name == "generate_sql":
             return {
                 "proposal": self._call("sql", state, SQLProposal).model_dump(),
@@ -224,9 +306,20 @@ class Agent:
             }
         if name == "validate_sql":
             proposal = SQLProposal.model_validate(state["proposal"])
-            if proposal.step_id != state["plan"]["steps"][0]["step_id"]:
+            if proposal.step_id != state["plan"]["steps"][state["step_index"]]["step_id"]:
                 raise Failure("PROVIDER_INVALID_OUTPUT", "SQL step does not match accepted plan.")
-            parameters = self.domain.validate_sql(proposal, state["scope"])
+            step = Step.model_validate(state["plan"]["steps"][state["step_index"]])
+            if proposal.result_spec != step.result_spec:
+                raise Failure("RESULT_CONTRACT_INVALID", "SQL spec differs from accepted step.")
+            validate_safe_sql(
+                proposal.sql,
+                bindings(proposal.parameters),
+                self.domain.tables,
+                self.domain.functions,
+            )
+            parameters = self.domain.validate_sql(
+                proposal, state["scope"], step=step, resolved_refs=state["resolved_refs"]
+            )
             self.trace.emit(name, "sql_validated", {"sql": proposal.sql, "parameters": parameters})
             return {"parameters": parameters}
         if name == "execute":
@@ -246,18 +339,38 @@ class Agent:
                 self.domain.tables,
                 self.domain.functions,
                 expected_hash=self.snapshot,
+                result_spec=SQLProposal.model_validate(state["proposal"]).result_spec,
+                step_id=state["proposal"]["step_id"],
                 watchdog=min(3.0, self.deadline - time.monotonic()),
             )
             result["step_id"] = state["proposal"]["step_id"]
-            result["result_spec"] = self.domain.spec.model_dump()
+            result["result_spec"] = state["proposal"]["result_spec"]
             self.trace.emit(name, "db_result", result, self.sql_attempts)
             return {"result": result}
         if name == "inspect_result":
-            if state["result"]["columns"] != [
-                {"name": c.name, "type": c.type} for c in self.domain.spec.columns
-            ]:
-                raise Failure("RESULT_CONTRACT_INVALID", "DB columns do not match accepted spec.")
-            return {"answer": self.domain.answer(state["result"]["rows"], state["scope"])}
+            step = Step.model_validate(state["plan"]["steps"][state["step_index"]])
+            validate_result(state["result"], step.result_spec)
+            adapted = self.domain.adapt_result(
+                state["result"]["rows"], step.result_spec, state["scope"]
+            )
+            dependency = {
+                **state["result"],
+                "rows": adapted["dependency_rows"],
+                "row_count": len(adapted["dependency_rows"]),
+            }
+            completed = {**state["completed"], step.step_id: dependency}
+            if len(json.dumps(completed).encode()) > 131072:
+                raise Failure("RESOURCE_LIMIT", "Retained step results exceed byte limit.")
+            self.trace.emit(name, "adapted_result", {"step_id": step.step_id, **adapted})
+            return {
+                "answer": adapted["answer"],
+                "completed": completed,
+                "step_results": [
+                    *state["step_results"],
+                    {"step_id": step.step_id, "raw": state["result"], **adapted},
+                ],
+                "step_index": state["step_index"] + 1,
+            }
         if name == "answer":
             self.trace.emit(name, "answer", state["answer"])
             return {}
@@ -323,4 +436,5 @@ class Agent:
             "clarification": None,
             "events": self.trace.events,
             "execution_profile": self.provider.profile,
+            "step_results": state.get("step_results", []) if "state" in locals() else [],
         }

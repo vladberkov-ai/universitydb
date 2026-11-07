@@ -410,3 +410,6 @@ UniversityDB I1, SQL-промпт v1. Генерируй SQLite SQL, а не о�
 ## H-013 I2 + I3 offline — actual Russian task
 
 [Preserved actual received Russian prompt](omx/H-013-actual-prompt.txt), [root provenance/omissions](../operations/H-013/prompt-receipt.json), [actual CP-A delegation](../operations/H-013/cp-a-task.txt). H-013/H-011/H-012 handoff packages are read context, not replacements for this actual task. This navigation adds no translation or transcript-completeness claim. Existing historical RU prompt versions above remain unchanged.
+
+## H-013 policy v2 — Russian reader synopsis, not an actual Russian runtime input
+[Plan source](../../src/universitydb/prompts/plan.txt): план из 1–3 зарегистрированных шагов с точными ResultSpec и типизированными ссылками на предыдущие фактические результаты; без выдуманного ответа. [SQL source](../../src/universitydb/prompts/sql.txt): один read-only SELECT по принятому шагу, scope и фактическим dependency bindings, точная схема результата, явные empty/NULL semantics и ограниченное исправление синтаксиса/колонки. [Source hashes/provenance](../operations/H-013/cp-b-prompt-receipt.json). Это отдельно атрибутированный reader synopsis английских source templates, не фактически отправленный русский API-промпт и не live evidence; прежние оригиналы выше сохранены.

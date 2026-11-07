@@ -57,7 +57,17 @@ def run(payload: dict[str, Any]) -> dict[str, Any]:
                 }
                 for i, d in enumerate(cursor.description or [])
             ]
+            if payload.get("result_spec") is not None:
+                declared = payload["result_spec"]["columns"]
+                if [column["name"] for column in columns] != [c["name"] for c in declared]:
+                    raise Failure("RESULT_CONTRACT_INVALID", "Unexpected result column names.")
+                columns = [{"name": c["name"], "type": c["type"]} for c in declared]
             return {
+                **(
+                    {"result_spec": payload["result_spec"], "step_id": payload["step_id"]}
+                    if payload.get("result_spec") is not None
+                    else {}
+                ),
                 "columns": columns,
                 "rows": rows,
                 "row_count": len(rows),
