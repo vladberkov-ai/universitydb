@@ -1,0 +1,28 @@
+{
+  "scope": "explicit frozen review repairs and safe documentary evidence; final verification pending",
+  "count": 22,
+  "paths": [
+    "docs/adr/ADR-OMX-012-I2-I3-offline-contracts.md",
+    "docs/operations/H-013/cleaner-report.md",
+    "docs/operations/H-013/cleaner-review-repair-addendum.md",
+    "docs/operations/H-013/cleaner-review-repair-verdict.md",
+    "docs/operations/H-013/core-review-round1/m1-resume.json",
+    "docs/operations/H-013/core-review-round1/m1-resume.jsonl",
+    "docs/operations/H-013/core-review-round1/manifest.json",
+    "docs/operations/H-013/core-review-round1/receipt.md",
+    "docs/operations/H-013/core-task.txt",
+    "docs/operations/H-013/cp-e-976e-verification.json",
+    "docs/operations/H-013/cp-e-repair-candidate.json",
+    "docs/operations/H-013/cp-e-repair-paths.json",
+    "docs/operations/H-013/prompt-coverage.json",
+    "docs/operations/H-013/reviews/round1-architect.json",
+    "docs/operations/H-013/reviews/round1-code-reviewer.json",
+    "docs/operations/H-013/reviews/round1-task-transport-receipt.json",
+    "docs/plans/I2-I3-offline-contract.md",
+    "docs/reports/H-013-I2-I3-offline.md",
+    "src/universitydb/agent.py",
+    "src/universitydb/db.py",
+    "src/universitydb/db_worker.py",
+    "tests/test_review_repairs.py"
+  ]
+}

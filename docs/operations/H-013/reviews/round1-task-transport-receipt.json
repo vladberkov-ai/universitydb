@@ -1,0 +1,33 @@
+{
+  "source": "root-provided selected nativefunctioncall-argument transport artifact",
+  "source_sha256": "b70a0ef1069ec6a51903d442aba9e4e086501d57c43d530138cbde26b640d13c",
+  "selected_calls": 2,
+  "records": [
+    {
+      "lane": "final_code_review",
+      "agent_type": "code-reviewer",
+      "fork_turns": "none",
+      "transport_argument_sha256": "f26319d8b2b092a8ddf5c1f7006ba4f52f17bcd3780c0927752b2961cfeb2a42",
+      "declared_original_message_sha256": "f26319d8b2b092a8ddf5c1f7006ba4f52f17bcd3780c0927752b2961cfeb2a42",
+      "message_format": "opaque encrypted transport, not readable actual task",
+      "plaintext_task_coverage": false,
+      "private_prefix_redaction_verifiable": false
+    },
+    {
+      "lane": "final_architecture_review",
+      "agent_type": "architect",
+      "fork_turns": "none",
+      "transport_argument_sha256": "e77de650df127f08a2fb04697555c0d5abc42da858384919ef1a039a90ef86eb",
+      "declared_original_message_sha256": "e77de650df127f08a2fb04697555c0d5abc42da858384919ef1a039a90ef86eb",
+      "message_format": "opaque encrypted transport, not readable actual task",
+      "plaintext_task_coverage": false,
+      "private_prefix_redaction_verifiable": false
+    }
+  ],
+  "publication": "hash/role/fork metadata only; opaque message payloads NOT copied/published",
+  "coverage": "actual selected transport-call existence, not actual plaintext task/receivedprompt or encryptedargument equality",
+  "omissions": "readable initial reviewer tasks unavailable in this artifact; need reviewer receivedtask projection or safe actualplaintext from supported source",
+  "privacy": "no decryption/bypass attempted, no credential/nativeIDs/privateexports published",
+  "root_claim_correction": "artifact source method is attributed; encrypted bytes do not prove private-vault-prefix-only redaction or complete prompt coverage",
+  "root_correction": "root acknowledgedopaqueformat and retractedplaintext/redaction/hash-as-actual-messageclaim; receiptmetadataonly remains valid"
+}

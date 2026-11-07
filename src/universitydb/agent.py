@@ -8,7 +8,7 @@ from copy import deepcopy
 from itertools import pairwise
 from pathlib import Path
 from threading import RLock
-from typing import Any, TypedDict
+from typing import Any, NamedTuple, TypedDict
 
 from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.errors import GraphRecursionError
@@ -64,6 +64,12 @@ class State(TypedDict, total=False):
     request_id: str
 
 
+class RequestIdentity(NamedTuple):
+    fingerprint: str
+    run_id: str
+    expires_at: float
+
+
 class Agent:
     def __init__(
         self,
@@ -82,7 +88,8 @@ class Agent:
         self.session_id = session_id or str(uuid.uuid4())
         self.saver = InMemorySaver()
         self._runs: dict[str, dict[str, Any]] = {}
-        self._requests: dict[str, dict[str, Any]] = {}
+        self._requests: dict[str, RequestIdentity] = {}
+        self._responses: dict[str, dict[str, Any]] = {}
         self._mutex = RLock()
         self.input_tokens = self.output_tokens = self.pauses = self.graph_steps = 0
         self.compiled = self._compile()
@@ -597,21 +604,106 @@ class Agent:
         if not isinstance(request_id, str) or not 1 <= len(request_id) <= 128:
             raise Failure("INVALID_INPUT", "Invalid request identity.")
         existing = self._requests.get(request_id)
-        if existing:
-            if existing["fingerprint"] != self._fingerprint(payload):
+        if existing is not None:
+            if existing.fingerprint != self._fingerprint(payload):
                 raise Failure(
                     "REPLAY_CONFLICT", "Request identity was reused with a different payload."
                 )
-            return dict(deepcopy(existing["result"]))
+            if self._now() >= existing.expires_at or request_id not in self._responses:
+                raise Failure("RESUME_EXPIRED", "Accepted request has expired.")
+            return deepcopy(self._responses[request_id])
+        if len(self._requests) >= 32:
+            raise Failure(
+                "RESOURCE_LIMIT", "Session request registry is full; start a new session."
+            )
         return None
 
     def _remember(self, request_id: str, payload: dict[str, Any], result: dict[str, Any]) -> None:
-        self._requests[request_id] = {
-            "fingerprint": self._fingerprint(payload),
-            "result": deepcopy(result),
-        }
-        while len(self._requests) > 32:
-            del self._requests[next(iter(self._requests))]
+        # Identities are immutable tombstones: neither FIFO nor context cleanup forgets an ID.
+        if request_id in self._requests or len(self._requests) >= 32:
+            raise Failure("INTERNAL_CONTRACT", "Request identity cannot be replaced.")
+        context = self._runs[result["run_id"]]
+        self._requests[request_id] = RequestIdentity(
+            self._fingerprint(payload),
+            result["run_id"],
+            context["created_at"] + 900,
+        )
+        self._responses[request_id] = deepcopy(result)
+
+    def _owned_events(self, run_id: str) -> list[dict[str, Any]]:
+        """Read only an exact server-issued run retained in the immutable registry."""
+        path = self.trace_directory / (run_id + ".jsonl")
+        try:
+            with path.open("rb") as stream:
+                raw = stream.read(1048577)
+            if len(raw) > 1048576:
+                raise ValueError("Oversized persisted trace")
+            events = [json.loads(line) for line in raw.decode().splitlines()]
+            if (
+                not events
+                or not isinstance(events[-1], dict)
+                or events[-1].get("kind") != "run_end"
+                or any(
+                    not isinstance(event, dict)
+                    or event.get("run_id") != run_id
+                    or event.get("seq") != index
+                    for index, event in enumerate(events, 1)
+                )
+            ):
+                raise ValueError("Invalid owned trace")
+        except (OSError, ValueError, TypeError) as exc:
+            raise Failure("TRACE_UNAVAILABLE", "Owned trace could not be read.") from exc
+        return events
+
+    def _owner_rejection(
+        self,
+        code: str,
+        message: str,
+        run_id: str,
+        request_id: str,
+        *,
+        terminal: bool = False,
+    ) -> dict[str, Any]:
+        """Shared run/resume rejection. Call only after server ownership is established."""
+        result = self._failure(code, message, run_id)
+        context = self._runs.get(run_id)
+        try:
+            if context is not None:
+                trace = context["trace"]
+                if not trace.terminal:
+                    trace.request_id = (
+                        request_id
+                        if isinstance(request_id, str) and 1 <= len(request_id) <= 128
+                        else "invalid"
+                    )
+                    trace.emit("resume", "resume_rejected", result["error"])
+                    if terminal:
+                        trace.emit("end", "run_end", {"status": "error"})
+                        context["terminal"] = True
+                result["events"] = deepcopy(trace.events)
+                result["step_results"] = deepcopy(context.get("result", {}).get("step_results", []))
+            else:
+                result["events"] = self._owned_events(run_id)
+        except Failure:
+            result = self._failure("TRACE_UNAVAILABLE", "Rejection trace failed.", run_id)
+            if context is not None:
+                context["terminal"] = True
+                result["events"] = deepcopy(context["trace"].events)
+        return result
+
+    def _prune_expired_contexts(self) -> None:
+        for run_id, context in list(self._runs.items()):
+            if self._now() < context["created_at"] + 900:
+                continue
+            if not context.get("terminal"):
+                self._owner_rejection(
+                    "RESUME_EXPIRED", "Run expired.", run_id, context["request_id"], terminal=True
+                )
+            self.saver.delete_thread(run_id)
+            del self._runs[run_id]
+            for request_id, record in self._requests.items():
+                if record.run_id == run_id:
+                    self._responses.pop(request_id, None)
 
     def _restore(self, context: dict[str, Any]) -> None:
         self.trace = context["trace"]
@@ -785,45 +877,42 @@ class Agent:
         context = self._runs.get(run_id)
         if context is None:
             raise Failure("RESUME_EXPIRED", "Request context was evicted.")
-        if not context.get("terminal") and self._now() > context["created_at"] + 900:
+        if self._now() >= context["created_at"] + 900:
             raise Failure("RESUME_EXPIRED", "Paused request replay has expired.")
         if context.get("data_sha256"):
             schema, policy = self._identity()
             if schema != context["schema_sha256"] or policy != context["policy_sha256"]:
                 raise Failure("STALE_RESUME", "Schema or policy changed since request.")
-            if not self.database.is_file() or db.file_hash(self.database) != context["data_sha256"]:
-                raise Failure("DATA_INCONSISTENT", "Database changed since request.")
+            db.validate_identity(self.database, context["data_sha256"])
 
     def run(
-        self, question: str, *, request_id: str | None = None, session_id: str | None = None
+        self,
+        question: str,
+        *,
+        request_id: str | None = None,
+        session_id: str | None = None,
     ) -> dict[str, Any]:
         with self._mutex:
-            request_id = request_id or str(uuid.uuid4())
+            request_id = str(uuid.uuid4()) if request_id is None else request_id
             payload = {"kind": "run", "question": question, "session_id": self.session_id}
+            owner_run_id = ""
             try:
                 if session_id is not None and session_id != self.session_id:
                     raise Failure("RESUME_FORBIDDEN", "Request belongs to another server session.")
                 if not isinstance(question, str):
                     raise Failure("INVALID_INPUT", "Question must be a string.")
+                if isinstance(request_id, str) and request_id in self._requests:
+                    owner_run_id = self._requests[request_id].run_id
                 replay = self._request(request_id, payload)
                 if replay is not None:
                     self._validate_replay_binding(replay["run_id"])
                     return replay
-                # Retain at most eight session runs. Evict only exact owned terminal/expired threads.
+                self._prune_expired_contexts()
                 if len(self._runs) >= 8:
-                    candidates = [
-                        key
-                        for key, value in self._runs.items()
-                        if value.get("terminal") or self._now() > value["created_at"] + 900
-                    ]
-                    if not candidates:
-                        raise Failure("RESOURCE_LIMIT", "Too many pending session runs.")
-                    old = candidates[0]
-                    self.saver.delete_thread(old)
-                    del self._runs[old]
-                    for key in list(self._requests):
-                        if self._requests[key]["result"]["run_id"] == old:
-                            del self._requests[key]
+                    raise Failure(
+                        "RESOURCE_LIMIT",
+                        "Eight unexpired runs are retained; start a new session or wait for expiry.",
+                    )
                 run_id = str(uuid.uuid4())
                 context = {
                     "run_id": run_id,
@@ -845,11 +934,29 @@ class Agent:
                 )
                 self._remember(request_id, payload, result)
                 return result
-            except (Failure, TypeError, ValueError) as exc:
-                return self._failure(
-                    exc.code if isinstance(exc, Failure) else "INVALID_INPUT",
-                    exc.message if isinstance(exc, Failure) else "Invalid request.",
-                )
+            except (Failure, OSError, TypeError, ValueError) as exc:
+                code = exc.code if isinstance(exc, Failure) else "INVALID_INPUT"
+                message = exc.message if isinstance(exc, Failure) else "Invalid request."
+                if owner_run_id:
+                    rejected = self._owner_rejection(
+                        code,
+                        message,
+                        owner_run_id,
+                        request_id,
+                        terminal=code
+                        in {
+                            "RESUME_EXPIRED",
+                            "STALE_RESUME",
+                            "DATA_INCONSISTENT",
+                            "DB_UNAVAILABLE",
+                        },
+                    )
+                    if code == "RESUME_EXPIRED":
+                        self._prune_expired_contexts()
+                    return rejected
+                if code == "RESOURCE_LIMIT":
+                    self._prune_expired_contexts()
+                return self._failure(code, message)
 
     def resume(
         self,
@@ -868,7 +975,7 @@ class Agent:
                 if isinstance(submitted_run_id, str) and len(submitted_run_id) <= 128
                 else ""
             )
-            context: dict[str, Any] | None = None
+            owner_run_id = ""
             terminal_binding_failure = False
             try:
                 if (
@@ -880,12 +987,31 @@ class Agent:
                     raise Failure(
                         "RESUME_FORBIDDEN", "Continuation belongs to another server session."
                     )
+                if isinstance(request_id, str) and request_id in self._requests:
+                    owner_run_id = self._requests[request_id].run_id
+                    # Conflict/expiry is checked against immutable identity before any new effects.
+                    replay = self._request(
+                        request_id,
+                        {
+                            "kind": "resume",
+                            "continuation": continuation,
+                            "selection": selection,
+                            "session_id": self.session_id,
+                        },
+                    )
+                    if replay is not None:
+                        terminal_binding_failure = True
+                        self._validate_replay_binding(replay["run_id"])
+                        return replay
                 context = self._runs.get(run_id)
                 if context is None:
+                    if any(record.run_id == run_id for record in self._requests.values()):
+                        owner_run_id = run_id
                     raise Failure(
                         "RESUME_EXPIRED", "Checkpoint is absent or expired after restart."
                     )
-                if self._now() > context["created_at"] + 900:
+                owner_run_id = run_id
+                if self._now() >= context["created_at"] + 900:
                     raise Failure("RESUME_EXPIRED", "Clarification has expired.")
                 schema, policy = self._identity()
                 if context.get("schema_sha256") != schema or context.get("policy_sha256") != policy:
@@ -896,19 +1022,16 @@ class Agent:
                     or continuation.get("policy_sha256") != policy
                 ):
                     raise Failure("STALE_RESUME", "Submitted schema or policy identity is stale.")
-                if not self.database.is_file() or db.file_hash(self.database) != context.get(
-                    "data_sha256"
-                ):
-                    raise Failure("DATA_INCONSISTENT", "Database changed since checkpoint.")
+                db.validate_identity(self.database, context.get("data_sha256"))
                 payload = {
                     "kind": "resume",
                     "continuation": continuation,
                     "selection": selection,
                     "session_id": self.session_id,
                 }
-                replay = self._request(request_id, payload)
-                if replay is not None:
-                    return replay
+                self._request(
+                    request_id, payload
+                )  # Reserve capacity check before any accepted resume effects.
                 if context.get("terminal") or continuation != context.get("continuation"):
                     raise Failure(
                         "STALE_RESUME", "Continuation is not the latest pending checkpoint."
@@ -931,32 +1054,18 @@ class Agent:
                 self._remember(request_id, payload, result)
                 return result
             except (Failure, OSError, ValueError, KeyError, TypeError) as exc:
-                result = self._failure(
-                    exc.code if isinstance(exc, Failure) else "INVALID_SELECTION",
-                    exc.message if isinstance(exc, Failure) else "Invalid continuation.",
-                    run_id,
-                )
-                if context is not None:
-                    trace = context["trace"]
-                    if not trace.terminal:
-                        trace.request_id = (
-                            request_id
-                            if isinstance(request_id, str) and 1 <= len(request_id) <= 128
-                            else "invalid"
-                        )
-                        try:
-                            trace.emit("resume", "resume_rejected", result["error"])
-                            if terminal_binding_failure or result["error"]["code"] in {
-                                "RESUME_EXPIRED",
-                                "DATA_INCONSISTENT",
-                                "TRACE_UNAVAILABLE",
-                            }:
-                                trace.emit("end", "run_end", {"status": "error"})
-                                context["terminal"] = True
-                        except Failure:
-                            result = self._failure(
-                                "TRACE_UNAVAILABLE", "Rejection trace failed.", run_id
-                            )
-                            context["terminal"] = True
-                    result["events"] = deepcopy(trace.events)
-                return result
+                code = exc.code if isinstance(exc, Failure) else "INVALID_SELECTION"
+                message = exc.message if isinstance(exc, Failure) else "Invalid continuation."
+                if owner_run_id:
+                    rejected = self._owner_rejection(
+                        code,
+                        message,
+                        owner_run_id,
+                        request_id,
+                        terminal=terminal_binding_failure
+                        or code in {"RESUME_EXPIRED", "DATA_INCONSISTENT", "DB_UNAVAILABLE"},
+                    )
+                    if code == "RESUME_EXPIRED":
+                        self._prune_expired_contexts()
+                    return rejected
+                return self._failure(code, message, run_id if code != "RESUME_FORBIDDEN" else "")

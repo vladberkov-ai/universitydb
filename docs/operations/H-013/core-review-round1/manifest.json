@@ -1,0 +1,75 @@
+{
+  "verification": "Serialized root-authorized targeted review repairs + continuation + original accounting/deadline regressions:54 passed in16.13s; Ruff/format4/mypy3/diff pass",
+  "profile": "offline/injected; not real-model NL-to-SQL accuracy",
+  "source_sha256": {
+    "src/universitydb/__init__.py": "f4783354578e7b9ed2f99a68b5454ac621abd61d76b07062a05bf5887dd72dd7",
+    "src/universitydb/agent.py": "af3191e82c247f647661411224383fced8456fd5142cb5a61e81f2a1d51edbd2",
+    "src/universitydb/config.py": "508b2bef52d2c81c5114b885a6be56f5b22b18774ae5a48674679ea1fdd6b263",
+    "src/universitydb/contracts.py": "14715a2b7ed31457eba35acce6e568bcd67c72a55371822f6c9243bbacb619dc",
+    "src/universitydb/db.py": "a1650dad66a7c8ad49210bb3ab4850deff8e9f7bfc5c3f2ca65c84e632d80cc8",
+    "src/universitydb/db_worker.py": "64c17b84c0d68e97d5587c849734640fccd89ace1c12238f08105bf8201a2c05",
+    "src/universitydb/domain.py": "62bc0dda458579914b4396783856dc6f227fbda05f3f3f7cc401700c208a54ed",
+    "src/universitydb/domain_support.py": "211407da912ca737bdc449ce68b098227efad5fdd551c8848796d5c041a71fae",
+    "src/universitydb/library.py": "214f277ffeeda8672d00b69ae7d471fa66be42fdbcf0ef7452e04805c6eff7c4",
+    "src/universitydb/llm.py": "4b8c80075748a669cb70397ad8aecbad2efbb9dd3ce2a7e9680e918ba10157cb",
+    "src/universitydb/llm_worker.py": "ba0abec6f45197814068c70aa86fb747e4de070cc84f08f1caa6b537b3a5bf9d",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/sql_policy.py": "f0d2c532ad9c053952cc6a4fefba9350585e9826d49f9b05b5d6171b035307ac",
+    "src/universitydb/tracing.py": "32a8b49dc56b0e2acf59b836361ef03abb70c4c549c312a1c914c8b646e8a96b",
+    "src/universitydb/ui.py": "01aa37400817b7ea733bf5cd7ae316f1d21a9054cc1af56504d8614194045c8a",
+    "tests/test_i3_dependencies.py": "ec4c9a05e93e00443638b4567cdceff4e1f8cbc93e7ad84e0a8e1dcd000caf7d",
+    "tests/test_review_repairs.py": "b046f70137bb5b47e412ac2a6ad4a7be987225df15fa9a3e2ce75eebdf366e62"
+  },
+  "m1_resume": {
+    "proof": "m1-resume.json",
+    "trace": "m1-resume.jsonl",
+    "trace_sha256": "8dcf55dbedf05ab31ae566f9caca3381b0e20b6fd0c0c9bc21a5072837303e48",
+    "actual_answer": {
+      "text": "student_id=all; course_id=all; teacher_id=all; semester_id=S1: grade_mean: 1 rows.",
+      "columns": [
+        {
+          "name": "student_id",
+          "type": "integer"
+        },
+        {
+          "name": "average",
+          "type": "decimal"
+        },
+        {
+          "name": "graded_count",
+          "type": "integer"
+        },
+        {
+          "name": "enrollment_count",
+          "type": "integer"
+        }
+      ],
+      "rows": [
+        [
+          1,
+          "95.00",
+          2,
+          2
+        ]
+      ],
+      "scope": "student_id=all; course_id=all; teacher_id=all; semester_id=S1",
+      "empty_reason": null,
+      "row_reasons": [
+        null
+      ],
+      "truncated": false
+    },
+    "counters": {
+      "llm_calls": 4,
+      "sql_attempts": 3,
+      "repairs": 0,
+      "clarifications": 1,
+      "graph_steps": 23,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "reserved_tokens": 179072,
+      "transient_retries": 0
+    }
+  }
+}

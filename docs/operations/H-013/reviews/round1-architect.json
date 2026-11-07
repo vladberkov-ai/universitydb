@@ -1,0 +1,60 @@
+{
+  "round": 1,
+  "role": "independent architect",
+  "verdict": "BLOCK",
+  "candidate_SHA": "976e2207b4f8d553c96067380df2ef5c128d7dd6",
+  "source": "Actual root-delivered formal architect summary; bounded attribution, not full returned report or child-written file",
+  "findings": [
+    {
+      "severity": "HIGH",
+      "issue": "acceptedrequestID cache eviction permits reexecution",
+      "location_at_candidate": "agent.py596-614/812-826",
+      "note": "TTL equality included in identity/lifetime findings"
+    },
+    {
+      "severity": "MEDIUM",
+      "issue": "owned initial replay rejection loses run/trace/events",
+      "location_at_candidate": "agent.py784-795/808-852"
+    },
+    {
+      "severity": "HIGH",
+      "issue": "workeroperationalavailability failure maps repairableSQL_INVALID",
+      "location_at_candidate": "db_worker.py77-82 and agent.py247-260"
+    },
+    {
+      "severity": "HIGH",
+      "issue": "WAL-visibledata bypasses mainfile-only identityhash",
+      "location_at_candidate": "db.py14-15/29-53/69-72 and agent.py784-795/899-902"
+    },
+    {
+      "severity": "MEDIUM",
+      "issue": "missing direct real M1 interrupt/resume proof",
+      "location_at_candidate": "contracts.py27 and test_i3_dependencies.py113-160",
+      "required": "actual M1 checkpoint/resume proof, no fixedquery/nodecount substitute"
+    }
+  ],
+  "positives_verified": [
+    "strictregisteredResultSpecs",
+    "staticDAGvalidation separated from actualruntime refs",
+    "domainneutralcore",
+    "exactFractiontop/NULLversuszero",
+    "independentfrozenoracle",
+    "dynamicM1F1/F2/tie actualbindings",
+    "samecoreLibrary",
+    "full128KiBretainedbundle accounting",
+    "exactSolprofile",
+    "accountingfailclosed"
+  ],
+  "actual_probes": {
+    "WAL": "mainfile_hash_equal=true while visiblegrade changed1000 and WALexists",
+    "worker_mock": "OperationalError locked and unableopen ->SQL_INVALID"
+  },
+  "reviewer_side_effects": {
+    "heavy_tests": false,
+    "source_or_report_writes": false,
+    "Git_or_state_writes": false
+  },
+  "task_coverage": "originalreadable reviewer task not recovered from encryptedtransport; selected root-attributed scope/summary only; no fullnativehistoryclaim",
+  "disposition": "blocking; scoped sameaggregate repair/fresh fulltests/browser/M1proof and rereview required",
+  "approval": false
+}

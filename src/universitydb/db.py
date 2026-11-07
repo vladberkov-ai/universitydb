@@ -26,12 +26,35 @@ def initialize(path: Path, resources: Path) -> None:
             raise Failure("DATA_INCONSISTENT", "Foreign key integrity failed.")
 
 
+def _check_journal(connection: sqlite3.Connection) -> None:
+    if connection.execute("PRAGMA journal_mode").fetchone() != ("delete",):
+        raise Failure(
+            "DATA_INCONSISTENT", "Only DELETE journal mode is supported for snapshot identity."
+        )
+
+
+def validate_identity(path: Path, expected_hash: str | None = None) -> None:
+    """Main-file identity is meaningful only in the supported DELETE journal mode."""
+    if not path.is_file():
+        raise Failure("DB_UNAVAILABLE", "Database is missing.")
+    try:
+        with sqlite3.connect(
+            path.resolve().as_uri() + "?mode=ro", uri=True, timeout=0.5
+        ) as connection:
+            _check_journal(connection)
+    except sqlite3.Error as exc:
+        raise Failure("DB_UNAVAILABLE", "Database snapshot cannot be inspected.") from exc
+    if expected_hash is not None and file_hash(path) != expected_hash:
+        raise Failure("DATA_INCONSISTENT", "Database changed after startup.")
+
+
 def inspect(path: Path, tables: dict[str, list[str]]) -> dict[str, Any]:
     """Trusted startup scan, separate from generated SQL request attempts."""
     try:
         with sqlite3.connect(
             path.resolve().as_uri() + "?mode=ro", uri=True, timeout=0.5
         ) as connection:
+            _check_journal(connection)
             if connection.execute("PRAGMA integrity_check").fetchone() != ("ok",):
                 raise Failure("DATA_INCONSISTENT", "Database integrity failed.")
             if connection.execute("PRAGMA foreign_key_check").fetchall():
@@ -66,10 +89,7 @@ def execute(
     result_spec: ResultSpec | None = None,
     step_id: str = "query",
 ) -> dict[str, Any]:
-    if not path.is_file():
-        raise Failure("DB_UNAVAILABLE", "Database is missing.")
-    if expected_hash is not None and file_hash(path) != expected_hash:
-        raise Failure("DATA_INCONSISTENT", "Database changed after startup.")
+    validate_identity(path, expected_hash)
     payload = {
         "path": str(path.resolve()),
         "sql": sql,

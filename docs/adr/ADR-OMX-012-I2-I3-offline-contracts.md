@@ -63,3 +63,34 @@ Consequence: malformed oversized values fail typed validation before saver/SQL,
 without changing accepted IDs/grades/counts/scale variants, budgets or dependencies.
 Retained-payload regression fixtures must use otherwise valid typed values, not
 impossible huge integers that fail this independent boundary first.
+
+## CP-E independent-review repair — replay retention, TTL and locks
+Before code, adopt the current contract's bounded32 immutable accepted request-ID
+records/tombstones and8 unexpired contexts. Root cause: FIFO identity eviction permits
+old IDs to execute again; generic capacity reset or unexpired-context eviction is
+rejected. Explicit new server session is the bounded recovery path. Expired bulky
+contexts may use supported exact-owned checkpointer delete_thread; tombstones remain
+bounded and preserve fingerprint/run/expiry without durable restart promises.
+Uniform inclusive900s expiry applies to paused/terminal/replay paths. Known-owner
+rejections preserve owning identity/events, live traces record safe rejection,
+already terminal traces stay immutable, foreign requests reveal no trace. Alternatives
+silently fabricating a new run/trace on rejection or appending to completed history
+are rejected. Consequences are honest capacity/expiry errors, not extra calls or
+relaxed identity/TTL contracts.
+
+SQLite BUSY/LOCKED at execution becomes terminal DB_UNAVAILABLE rather than repairable
+SQL_INVALID: unavailable data is not malformed SQL. A real after-startup lock regression
+must prove0 repair/provider retry. These scoped representation/boundary repairs follow
+actual independent BLOCK/REQUEST CHANGES findings; they are not approval, new model,
+domain semantics, budget/limit increase or native-state mutation.
+
+## CP-E independent-review repair — DELETE-only SQLite identity
+Before dependent repair, restrict supported immutable local datasets to journal_mode
+DELETE, checked during trusted startup and before execute/resume/replay. Architect
+identified that main-file-only SHA does not bind committed WAL-visible rows. The
+smallest accepted repair is explicit fail-closed unsupported-mode rejection; adding
+WAL/checkpointing/concurrent-writer snapshot features or silently changing the user's
+journal mode is rejected as unnecessary scope expansion. Consequence: main-file
+identity is meaningful only behind the supported DELETE gate; temporary WAL negative
+regressions must demonstrate the old hash gap and current rejection. No generated
+SQL PRAGMA permission, dependencies, domain semantics or monetary authority change.

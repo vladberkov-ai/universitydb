@@ -1,0 +1,73 @@
+{
+  "stage": "H-013 finalcoverage draft pending reviews/lifecycle cutoff",
+  "root_actual_received_prompt": {
+    "path": "docs/ai/omx/H-013-actual-prompt.txt",
+    "receipt": "docs/operations/H-013/prompt-receipt.json",
+    "method": "supportedsessionexport selectedreceiveduserentry, privatevaultprefixredacted, terminalLF; notH013starterreconstruction"
+  },
+  "actual_child_tasks": [
+    {
+      "path": "docs/operations/H-013/cp-a-task.txt",
+      "sha256": "5d697ff4f0df77a73ce6688c1e4e9222a0f5547fdcd034abd615fba71682d07f",
+      "coverage": "attributedselectedactualtask/followupprojection; not complete inherited/system/developer/tool transcript"
+    },
+    {
+      "path": "docs/operations/H-013/checkpoint-reference-task.txt",
+      "sha256": "75077e3a88ff7ae41413660ab458f7cfa54db189a048ff6fdb08d33b3a33e8aa",
+      "coverage": "attributedselectedactualtask/followupprojection; not complete inherited/system/developer/tool transcript"
+    },
+    {
+      "path": "docs/operations/H-013/core-task.txt",
+      "sha256": "56c07c49063176b41090cb3e518db70f6354502ac01097cddec9d7545d5eb64e",
+      "coverage": "attributedselectedactualtask/followupprojection; not complete inherited/system/developer/tool transcript"
+    },
+    {
+      "path": "docs/operations/H-013/domain-task.txt",
+      "sha256": "7f806007807f72535aecf46777aeddf2686b777608ac5cc7ad50e97199edc531",
+      "coverage": "attributedselectedactualtask/followupprojection; not complete inherited/system/developer/tool transcript"
+    },
+    {
+      "path": "docs/operations/H-013/domain-cp-c-task.txt",
+      "sha256": "f267e19a61f6bbfeaedbf5ac465e12d53d251955340966a73489a29238def9e3",
+      "coverage": "attributedselectedactualtask/followupprojection; not complete inherited/system/developer/tool transcript"
+    },
+    {
+      "path": "docs/operations/H-013/domain-cp-d-task.txt",
+      "sha256": "c8cdd0ee5d2fb69f4f3bf8419a9f12bf35a8f180f137bc340711065362d67802",
+      "coverage": "attributedselectedactualtask/followupprojection; not complete inherited/system/developer/tool transcript"
+    },
+    {
+      "path": "docs/operations/H-013/ui-task.txt",
+      "sha256": "2a2cc408ecbd1e2596d176ca1674bd3dd3e633af45243e20be5d5dc48e2f12f2",
+      "coverage": "attributedselectedactualtask/followupprojection; not complete inherited/system/developer/tool transcript"
+    }
+  ],
+  "read_context": "H013/H011/H012, authoritativeoverview/CHAT045/ADR006 and listedinputs; sourcehashes baseline.json; not substitutedactualprompt; privatevault/PDF/rawexportsnotcopied",
+  "runtime_source_prompts": [
+    {
+      "path": "src/universitydb/prompts/plan.txt",
+      "sha256": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+      "consumption": "offlineinjectedtests only; no liveAPIrequestgenerated"
+    },
+    {
+      "path": "src/universitydb/prompts/sql.txt",
+      "sha256": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+      "consumption": "offlineinjectedtests only; no liveAPIrequestgenerated"
+    }
+  ],
+  "reader_bundles": [
+    "docs/ai/PROMPTS-RU.md",
+    "docs/ai/PROMPTS-EN.md"
+  ],
+  "reader_bundle_semantics": "separatelyattributedoriginals/synopses; never English/Russian actualinputreplayclaims",
+  "review_lanes": "Actual independentround1 code-reviewerREQUESTCHANGES and architectBLOCK attributed in reviews/round1-*.json; selected transportmetadata hashreceipt only; readableinitialtaskcoverage omitted, root retracted plaintextclaim",
+  "known_omissions": [
+    "complete root/child fulltools/inheritedsystem/developer/privateinstructions/reasoning transcripts",
+    "laterfinalreport/finalanswer/nativecomplete/strictcheckpoint exports beyondinitialselectedentry",
+    "encryptedtaskargumentequalitynotasserted"
+  ],
+  "privacy": "privatevaultprefixsafeprojections, nocredentials/headers/envvalues/privateexports/nativeIDs; originalhistoricalevidenceuntouched",
+  "live_calls": 0,
+  "U01": "boundedactualprompt/sourcecoverage; no fullhistorycompletenessclaim",
+  "review_transport_receipt": "reviews/round1-task-transport-receipt.json"
+}

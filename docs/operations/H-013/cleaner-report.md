@@ -36,3 +36,13 @@ cleaner-complete or whole-goal-complete claim. Update with actual later evidence
 original failures/cutoffs remain preserved. No keys/live/count/spending/I1/lock/vault/
 remote/push mutation, no product limit raised. UI design unchanged; no cosmetic
 redesign selected. Deferred broad Agent context refactor is outside this cleanup.
+
+## Original cleaned-candidate full cutoff (not final approval)
+Root's actual serialized pipeline on976e2207b4f8d553c96067380df2ef5c128d7dd6
+passed383tests131.61s, Ruff/format31/mypy14/compile/diff. See
+[exact candidate receipt](cp-e-976e-verification.json). Thus original bounded cleanup
+has post-cleanup full regression evidence; however independent review found four
+functional blockers (replay identity retention/owned trace/TTL equality/DB locks).
+They supersede final acceptance despite passing tests. Subsequent scoped functional
+repairs are **not** silently labeled cleaner. Fixed-candidate full/browser/proofs/
+fresh reviews/configured gates remain required; no whole-goal completion yet.

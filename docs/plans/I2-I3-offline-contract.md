@@ -146,3 +146,60 @@ This aligns the existing SQLite typed contract with its actual representation, n
 a higher budget/limit or altered grade/count/domain meaning. Regression must send
 oversized provider binding and scale values and verify safe typed rejection before
 checkpoint retention/SQL; raw injected integer boundary checks are separate.
+
+### CP-E independent-review repair — bounded identity registry and expiry
+Before dependent repair code, record the independently reviewed session-bound
+representation precisely. Retain at most **32 accepted distinct request-ID records**
+per retained server Agent/session. Accepted request fingerprints/identity tombstones
+are immutable for that session: do not FIFO/LRU-evict a request ID and later treat
+it as new, reset the registry automatically or silently replay provider/SQL work.
+At capacity, reject new identities fail-closed without dispatch; explicit new server
+session/Agent creation is the recovery path, never an implicit identity reset.
+
+Retain at most **8 unexpired run contexts**. Do not evict an unexpired paused or
+terminal context merely to admit a new run. Expired bulky graph/context payload may
+be removed with the installed checkpointer's supported `delete_thread` for the exact
+owned application thread, while retaining bounded request identity/fingerprint/
+expiry tombstones so reusing an old ID cannot execute again. This is application
+memory management, not native OMX ID/state/lock manipulation or durable recovery.
+
+All paused **and terminal** context/replay lifetimes are bounded by the original
+server run creation+900seconds. Expiry is inclusive: `now >= created_at + 900` is
+expired, including exact equality. Same accepted payload within its lifetime is
+idempotent; changed payload under an accepted request ID conflicts. Expired accepted
+identity returns a typed expiry/conflict outcome without a new provider/SQL attempt,
+not a fresh request. Framework history/transient allocations still have no hard
+process-memory guarantee; bounded tombstones and exact-thread cleanup prevent the
+application registry from silently growing or forgetting identities.
+
+Known-owner rejected start/replay/resume requests return the owning application
+run/trace identity and preserved same-run events. While a trace is nonterminal,
+record its safe rejected-request diagnostic without consuming a valid pending choice.
+Already terminal trace bytes remain immutable: return the prior trace snapshot with
+the typed rejection, never append another terminal/rewrite history. Foreign-session
+requests disclose or mutate no target trace. These are explicit repairs of replay/
+TTL/trace contracts found by independent review, not relaxed DoD or new spending.
+
+### CP-E independent-review repair — execution-time DB locks
+SQLite worker `SQLITE_BUSY`/`SQLITE_LOCKED` execution failures are terminal
+`DB_UNAVAILABLE`, not repairable `SQL_INVALID`. A lock appearing **after** trusted
+startup inspection must not consume SQL repair or trigger another provider call.
+Keep syntax/unknown-column repair for actual recoverable SQL defects and retain
+read-only authorizer/time/watchdog bounds. Regression must acquire a real exclusive
+lock after startup and assert terminal error/no repair/downstream dispatch.
+
+### CP-E independent-review repair — supported DELETE journal identity
+The local read-only snapshot/data-identity contract supports SQLite
+**`journal_mode=DELETE` only**. Trusted inspection must reject WAL and every other
+non-DELETE journal mode before provider/generated-SQL work, and revalidate this gate
+before execute/resume/replay. Do not silently accept WAL because the main `.db` file
+SHA stayed unchanged: committed WAL content can change the rows visible to a reader
+without changing that main-file hash. Main-file SHA256 is a data-identity proof only
+under this explicit supported-mode/immutable-local-dataset boundary.
+
+This is a fail-closed restriction, not WAL/snapshot/concurrent-writer support. No
+journal-mode mutation is performed on the user's DB to make it pass. Standard
+provisioned temporary/default DELETE databases remain supported. Regression creates
+a separate temporary WAL DB, commits visible changes with stable main-file hash,
+and proves startup and subsequent binding/execute/replay gates refuse that state.
+Actual repository runtime, monetary ledger and original DB evidence stay untouched.

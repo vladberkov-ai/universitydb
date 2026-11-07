@@ -77,9 +77,35 @@ def run(payload: dict[str, Any]) -> dict[str, Any]:
     except sqlite3.Error as exc:
         if denied:
             raise Failure("UNSAFE_SQL", "SQLite authorization denied this statement.") from exc
-        if "interrupt" in str(exc).lower() or time.monotonic() >= deadline:
+        code = getattr(exc, "sqlite_errorcode", 0) & 255
+        message = str(exc).lower()
+        if code in {
+            sqlite3.SQLITE_BUSY,
+            sqlite3.SQLITE_LOCKED,
+            sqlite3.SQLITE_CANTOPEN,
+            sqlite3.SQLITE_IOERR,
+        }:
+            raise Failure("DB_UNAVAILABLE", "SQLite is unavailable or locked.") from exc
+        if code in {
+            sqlite3.SQLITE_CORRUPT,
+            sqlite3.SQLITE_NOTADB,
+            sqlite3.SQLITE_SCHEMA,
+            sqlite3.SQLITE_CONSTRAINT,
+        }:
+            raise Failure("DATA_INCONSISTENT", "SQLite data or schema integrity failed.") from exc
+        if code == sqlite3.SQLITE_TOOBIG:
+            raise Failure("RESULT_TOO_LARGE", "SQLite result exceeds resource limit.") from exc
+        if code == sqlite3.SQLITE_INTERRUPT or time.monotonic() >= deadline:
             raise Failure("SQL_TIMEOUT", "Database cooperative timeout exceeded.") from exc
-        raise Failure("SQL_INVALID", "SQLite rejected the query.") from exc
+        if code == sqlite3.SQLITE_ERROR and any(
+            detail in message for detail in ("syntax error", "incomplete input", "no such column")
+        ):
+            raise Failure(
+                "SQL_INVALID", "SQLite rejected query syntax or an unknown column."
+            ) from exc
+        raise Failure(
+            "DB_UNAVAILABLE", "SQLite query failed outside the repairable subset."
+        ) from exc
 
 
 def main() -> None:
