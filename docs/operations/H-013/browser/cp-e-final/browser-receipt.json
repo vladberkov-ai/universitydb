@@ -1,0 +1,94 @@
+{
+  "profile": "offline/injected",
+  "real_provider_called": false,
+  "paid_calls": 0,
+  "base_HEAD": "f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0",
+  "source_sha256": {
+    "src/universitydb/__init__.py": "f4783354578e7b9ed2f99a68b5454ac621abd61d76b07062a05bf5887dd72dd7",
+    "src/universitydb/agent.py": "af3191e82c247f647661411224383fced8456fd5142cb5a61e81f2a1d51edbd2",
+    "src/universitydb/config.py": "508b2bef52d2c81c5114b885a6be56f5b22b18774ae5a48674679ea1fdd6b263",
+    "src/universitydb/contracts.py": "14715a2b7ed31457eba35acce6e568bcd67c72a55371822f6c9243bbacb619dc",
+    "src/universitydb/db.py": "a1650dad66a7c8ad49210bb3ab4850deff8e9f7bfc5c3f2ca65c84e632d80cc8",
+    "src/universitydb/db_worker.py": "64c17b84c0d68e97d5587c849734640fccd89ace1c12238f08105bf8201a2c05",
+    "src/universitydb/domain.py": "62bc0dda458579914b4396783856dc6f227fbda05f3f3f7cc401700c208a54ed",
+    "src/universitydb/domain_support.py": "211407da912ca737bdc449ce68b098227efad5fdd551c8848796d5c041a71fae",
+    "src/universitydb/library.py": "214f277ffeeda8672d00b69ae7d471fa66be42fdbcf0ef7452e04805c6eff7c4",
+    "src/universitydb/llm.py": "4b8c80075748a669cb70397ad8aecbad2efbb9dd3ce2a7e9680e918ba10157cb",
+    "src/universitydb/llm_worker.py": "ba0abec6f45197814068c70aa86fb747e4de070cc84f08f1caa6b537b3a5bf9d",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/sql_policy.py": "f0d2c532ad9c053952cc6a4fefba9350585e9826d49f9b05b5d6171b035307ac",
+    "src/universitydb/tracing.py": "32a8b49dc56b0e2acf59b836361ef03abb70c4c549c312a1c914c8b646e8a96b",
+    "src/universitydb/ui.py": "01aa37400817b7ea733bf5cd7ae316f1d21a9054cc1af56504d8614194045c8a"
+  },
+  "cases": {
+    "success": {
+      "expected": "80.00",
+      "status": "ok",
+      "run_id": "6f106f43-0ae4-4730-b92f-7bdec19494a6",
+      "events": 34,
+      "trace_sha256": "f715691b68bbeb3e37ea6cd86233f69999a46349acb1be1b957a78661730bf98",
+      "screenshot_sha256": "710e283630294a2f1ea0b26727b1b8d71371283c343847ffd0dfda6cdf86e65c",
+      "current_question_run_outcome_verified": true,
+      "render_settled_before_screenshots": true
+    },
+    "clarification-pause": {
+      "expected": "Choose",
+      "status": "clarification",
+      "run_id": "c3cae16b-34b9-4933-ac1b-34a7d2476999",
+      "events": 9,
+      "trace_sha256": "747600e56b391413db326e50eae7f5779b339ee1c4a4aef6e581364bca304f19",
+      "screenshot_sha256": "60a52e9c03a373a79c5c57ebf7b58919e5b13f6dc2b02fc0821a9d3aa1bc8f22",
+      "current_question_run_outcome_verified": true,
+      "render_settled_before_screenshots": true
+    },
+    "clarification-resume": {
+      "expected": "86.67",
+      "status": "ok",
+      "run_id": "c3cae16b-34b9-4933-ac1b-34a7d2476999",
+      "events": 40,
+      "trace_sha256": "fb5d2f77fed640d3f46e02a65904b7965872e9b1116719410d2a97c404667fed",
+      "screenshot_sha256": "fd002afc5a4848c024c9c665bd67ce378428d72884cb23b360d8cb0f7e93f283",
+      "current_question_run_outcome_verified": true,
+      "render_settled_before_screenshots": true
+    },
+    "m1": {
+      "expected": "95.00",
+      "status": "ok",
+      "run_id": "6ba633df-eca1-4990-bb6e-cadd023ff752",
+      "events": 68,
+      "trace_sha256": "3171e17e7794336f9cc3628ac7b959ec40cf4e367cb644b8b6055d7ec2d74c93",
+      "screenshot_sha256": "03e39d9e08c315efd33209ec3eefef52ca30b2a3dff0864a88111d2a16776a3b",
+      "current_question_run_outcome_verified": true,
+      "render_settled_before_screenshots": true
+    },
+    "repair": {
+      "expected": "80.00",
+      "status": "ok",
+      "run_id": "90446893-d5fb-43e0-8348-5d49864b75d5",
+      "events": 40,
+      "trace_sha256": "ab66c84924fadfda15a1b1e4ac813e42aab62a65c54d9130758cf404de692277",
+      "screenshot_sha256": "a58bab1c94f35517a725f84b4636accf50c4aab3f7905e1246868d43c15f4dfe",
+      "current_question_run_outcome_verified": true,
+      "render_settled_before_screenshots": true
+    },
+    "error": {
+      "expected": "PROVIDER_REFUSAL",
+      "status": "error",
+      "run_id": "012ec129-2c01-4f53-9b58-91916fd3a849",
+      "events": 14,
+      "trace_sha256": "26a264fd7636b03315e92e4939958cd4b3514af1d0f6a403cdaf96da2de1d856",
+      "screenshot_sha256": "a25a208e3ae9ba6a40149e899b92ef61b754afcaf53f101ac98c01cc0810f5db",
+      "current_question_run_outcome_verified": true,
+      "render_settled_before_screenshots": true
+    }
+  },
+  "server_stopped": true,
+  "browser_closed": true,
+  "claim": "Actual browser+Streamlit+compiled graph+SQLite with injected proposals, NOT real-model NL-to-SQL accuracy",
+  "fixture_sha256": "eb623fe3df8a5e3deee9049827d75f7a33822378956572fb98bfb8686e554033",
+  "status": "failed",
+  "failure_type": "TimeoutError",
+  "temporary_ledger_absent": true,
+  "actual_runtime_unchanged": true
+}

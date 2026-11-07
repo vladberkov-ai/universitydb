@@ -416,3 +416,13 @@ UniversityDB I1, SQL-промпт v1. Генерируй SQLite SQL, а не о�
 
 ### H-013 CP-C plan continuation — reader synopsis only
 [Current English source](../../src/universitydb/prompts/plan.txt) допускает уточнение известного поля с вариантами из серверного каталога, сохранённым планом либо одним новым планом после выбора; общие лимиты не сбрасываются. [Source hashes/provenance](../operations/H-013/cp-c-prompt-receipt.json). Это reader synopsis, не фактически отправленный русский API-промпт и не live evidence; прежние записи сохранены.
+
+### H-013 frozen offline candidate provenance
+Candidate f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0 passed410offline tests/static
+and actual six-class browser; scripted generation is not real-model accuracy. Runtime
+plan/SQL templates retain their CP-C source hashes, independently pinned in the final
+38-file candidate manifest. [Current coverage](../operations/H-013/prompt-coverage.json)
+separates selected actual root/child task projections from templates/read context,
+RU original/EN synopsis and opaque reviewer task transport (metadata only, no
+plaintext/equality/decryption claim). Full hidden/private history remains omitted;
+final independent verdict/lifecycle evidence is separately attributed.

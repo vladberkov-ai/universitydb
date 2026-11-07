@@ -1,18 +1,23 @@
 # University Database + LangGraph QA Agent
 
-## H-013 local development — CP-C continuation checkpoint
+## H-013 current local offline candidate
 
-The current local I2+I3-offline work adds per-step contracts, shared bounded DAG/result
-binding, University query adapters and an early Library adapter, plus an isolated
-offline UI dataset selector and retained server-session agent. Real in-memory
-checkpoint clarification now resumes the same graph/run with typed choices and
-complete trace; interrupted requests make no SQL/provider calls before selection.
-This checkpoint is **not whole I2+I3 completion**: full dependency/negative/portability
-proof and final independent gates remain mandatory in subsequent internal checkpoints. See the [whole brief](docs/plans/I2-I3-offline-brief.md),
+I2+I3-offline implements University means/counts/listing/grouping/exact top ties and
+all optional filters; real in-memory checkpoint clarification; bounded repair/errors;
+typed dependent results; three-step actual-result M1; early Library on the same core;
+and full English trace/UI. The frozen candidate
+`f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0` passed **410 offline tests** plus
+Ruff/format/mypy/compile checks. [Actual M1/Library proof](docs/operations/H-013/m1-final/manifest.json)
+includes F1/F2/tie, checkpoint composition and unchanged integrated core across adapters.
+Final frozen-source browser passed all six classes (seven captures); independent code-reviewer APPROVE and architect CLEAR received; root native/strict closeout remain separately pending; see
+[delivery report](docs/reports/H-013-I2-I3-offline.md), [whole brief](docs/plans/I2-I3-offline-brief.md),
 [contract](docs/plans/I2-I3-offline-contract.md), [ADR012](docs/adr/ADR-OMX-012-I2-I3-offline-contracts.md).
-Scripted proposals execute a real compiled graph and SQLite; they do not measure
-real-model NL→SQL accuracy. Live/count calls, credentials, spending changes and push
-are not authorized by this offline task.
+
+Scripted proposals execute real compiled LangGraph/SQLite; they are **not real-model
+NL→SQL accuracy**. No live/count calls, credentials, spending changes or push occur.
+SQLite DELETE journal only; immutable request IDs expire/fail closed rather than
+silently evict/reexecute; no durable restart, public authentication, concurrent
+writers or production-readiness claim. I4+verification-I5/publication/defense are later.
 
 ## Historical published I1 baseline
 
@@ -162,7 +167,9 @@ uv run --locked python -m compileall -q src tests
 and SQLite with injected provider responses. Real-model/browser evidence is separately
 linked under examples; do not count mocked tests as live model evaluation.
 
-## Architecture and limits
+## Historical I1 architecture and limits
+
+The limitations in this subsection describe I1 only; current H-013 behavior is above.
 
 UI → validate input/load schema/resolve scope → plan → validate plan → generate SQL →
 validate SQL → execute read-only SQLite → inspect result → deterministic answer.

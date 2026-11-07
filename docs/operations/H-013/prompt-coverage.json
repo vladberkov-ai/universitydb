@@ -1,5 +1,5 @@
 {
-  "stage": "H-013 finalcoverage draft pending reviews/lifecycle cutoff",
+  "stage": "H-013 offline DoD verified; actual independent APPROVE/CLEAR; root lifecycle cutoff pending",
   "root_actual_received_prompt": {
     "path": "docs/ai/omx/H-013-actual-prompt.txt",
     "receipt": "docs/operations/H-013/prompt-receipt.json",
@@ -18,7 +18,7 @@
     },
     {
       "path": "docs/operations/H-013/core-task.txt",
-      "sha256": "56c07c49063176b41090cb3e518db70f6354502ac01097cddec9d7545d5eb64e",
+      "sha256": "db0e7d438f5a0a949b013f84f4ff1f43b58bba81b8816920afb5eb4c7208d662",
       "coverage": "attributedselectedactualtask/followupprojection; not complete inherited/system/developer/tool transcript"
     },
     {
@@ -38,7 +38,7 @@
     },
     {
       "path": "docs/operations/H-013/ui-task.txt",
-      "sha256": "2a2cc408ecbd1e2596d176ca1674bd3dd3e633af45243e20be5d5dc48e2f12f2",
+      "sha256": "b9c75b09c0e06d0b20991479fb53c2322a50123b67cc68a0fde65c2903fdf4c1",
       "coverage": "attributedselectedactualtask/followupprojection; not complete inherited/system/developer/tool transcript"
     }
   ],
@@ -69,5 +69,6 @@
   "privacy": "privatevaultprefixsafeprojections, nocredentials/headers/envvalues/privateexports/nativeIDs; originalhistoricalevidenceuntouched",
   "live_calls": 0,
   "U01": "boundedactualprompt/sourcecoverage; no fullhistorycompletenessclaim",
-  "review_transport_receipt": "reviews/round1-task-transport-receipt.json"
+  "review_transport_receipt": "reviews/round1-task-transport-receipt.json",
+  "reviewer_task_coverage": "Round1 metadata-only opaque transport receipt, no plaintext task/decryption/equality claim. Root-delivered bounded results attributed separately. Round2 task coverage pending actual received summary, not reconstructed full prompts."
 }

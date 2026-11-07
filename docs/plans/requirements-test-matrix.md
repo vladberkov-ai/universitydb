@@ -48,3 +48,15 @@ M1 sensitivity/same-core final identity and CP-E browser/cleaner/reviews/gates r
 pending at this cutoff; historical live/eval/production claims are not silently
 promoted. [Current production boundaries](production-considerations.md#h-013-current-local-implementation-versus-future-production-work)
 maintain R10. R15 publication and owner defense/understanding remain separately open.
+
+### H-013 repaired-candidate current verification cutoff
+The operative local offline candidate is `f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0`:410
+offline tests121.29s plus Ruff/format32/mypy14/compile/diff passed. Earlier CP-C/CP-D
+cutoffs above remain history, not the present capability limit. Actual same-process
+M1 F1/F2/tie/checkpoint-resume and Library portability are in the final manifest;
+request identity/TTL/owner-trace/DELETE-journal/DB availability repairs respond to
+actual independent blockers, not waived by the earlier383pass. Final frozen-source browser passed six classes/seven captures; fresh
+independent code-reviewer APPROVE and architect CLEAR received; root native/strict closeout remain separately pending. No real-model
+NL accuracy/live/count/credentials/spending/push claim; I4+verification-I5/publication/
+defense remain later.
+[Exact-process structured proofs](../operations/H-013/m1-final/manifest.json).

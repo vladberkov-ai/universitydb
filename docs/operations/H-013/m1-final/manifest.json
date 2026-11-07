@@ -1,0 +1,203 @@
+{
+  "evidence": "Root serialized exact f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0:410 tests passed121.29s; Ruff/format32/mypy14/compileall/diff exit0; offline/injected",
+  "profile": "offline/injected; not real-model NL-to-SQL accuracy",
+  "source_sha256": {
+    "src/universitydb/agent.py": "af3191e82c247f647661411224383fced8456fd5142cb5a61e81f2a1d51edbd2",
+    "src/universitydb/contracts.py": "14715a2b7ed31457eba35acce6e568bcd67c72a55371822f6c9243bbacb619dc",
+    "src/universitydb/db.py": "a1650dad66a7c8ad49210bb3ab4850deff8e9f7bfc5c3f2ca65c84e632d80cc8",
+    "src/universitydb/db_worker.py": "64c17b84c0d68e97d5587c849734640fccd89ace1c12238f08105bf8201a2c05",
+    "src/universitydb/sql_policy.py": "f0d2c532ad9c053952cc6a4fefba9350585e9826d49f9b05b5d6171b035307ac",
+    "src/universitydb/config.py": "508b2bef52d2c81c5114b885a6be56f5b22b18774ae5a48674679ea1fdd6b263",
+    "src/universitydb/llm.py": "4b8c80075748a669cb70397ad8aecbad2efbb9dd3ce2a7e9680e918ba10157cb",
+    "src/universitydb/llm_worker.py": "ba0abec6f45197814068c70aa86fb747e4de070cc84f08f1caa6b537b3a5bf9d",
+    "src/universitydb/tracing.py": "32a8b49dc56b0e2acf59b836361ef03abb70c4c549c312a1c914c8b646e8a96b",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/domain.py": "62bc0dda458579914b4396783856dc6f227fbda05f3f3f7cc401700c208a54ed",
+    "src/universitydb/domain_support.py": "211407da912ca737bdc449ce68b098227efad5fdd551c8848796d5c041a71fae",
+    "src/universitydb/library.py": "214f277ffeeda8672d00b69ae7d471fa66be42fdbcf0ef7452e04805c6eff7c4",
+    "tests/test_i3_dependencies.py": "ec4c9a05e93e00443638b4567cdceff4e1f8cbc93e7ad84e0a8e1dcd000caf7d",
+    "docs/operations/H-013/frozen-oracle.json": "93c87371a125eeb09862e78664f8a3e31ef2015d80da7c5af4fa916029a9d5f2"
+  },
+  "cases": {
+    "F1": {
+      "proof": "F1.json",
+      "trace": "F1.jsonl",
+      "trace_sha256": "c176d4f1f09132324fd45074f7b5309e090a6a5f892c3af06a773ad15eca5be1",
+      "expected_top": [
+        2
+      ],
+      "actual_top": [
+        [
+          2,
+          10000,
+          1,
+          1
+        ]
+      ],
+      "actual_final": [
+        [
+          1,
+          "95.00",
+          2,
+          2
+        ]
+      ],
+      "provider_calls": 4
+    },
+    "F2": {
+      "proof": "F2.json",
+      "trace": "F2.jsonl",
+      "trace_sha256": "cb586a79e3bc8509ce2322907121c9b11dc6b4747b7bc39623429283c24b657a",
+      "expected_top": [
+        1
+      ],
+      "actual_top": [
+        [
+          1,
+          25000,
+          3,
+          4
+        ]
+      ],
+      "actual_final": [
+        [
+          1,
+          "95.00",
+          2,
+          2
+        ],
+        [
+          2,
+          "80.00",
+          2,
+          2
+        ],
+        [
+          3,
+          "50.00",
+          1,
+          2
+        ]
+      ],
+      "provider_calls": 4
+    },
+    "tie": {
+      "proof": "tie.json",
+      "trace": "tie.jsonl",
+      "trace_sha256": "326ae4c2e4d5ae63b52fa2b3396b58b8ab47b29a2eed9fc6c19b8fad018cc3d5",
+      "expected_top": [
+        1,
+        2
+      ],
+      "actual_top": [
+        [
+          1,
+          27000,
+          3,
+          4
+        ],
+        [
+          2,
+          9000,
+          1,
+          1
+        ]
+      ],
+      "actual_final": [
+        [
+          1,
+          "90.00",
+          2,
+          2
+        ],
+        [
+          2,
+          "90.00",
+          2,
+          2
+        ],
+        [
+          3,
+          null,
+          0,
+          1
+        ]
+      ],
+      "provider_calls": 4
+    }
+  },
+  "tested_sha": "f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0",
+  "all_product_hashes": {
+    "src/universitydb/__init__.py": "f4783354578e7b9ed2f99a68b5454ac621abd61d76b07062a05bf5887dd72dd7",
+    "src/universitydb/agent.py": "af3191e82c247f647661411224383fced8456fd5142cb5a61e81f2a1d51edbd2",
+    "src/universitydb/config.py": "508b2bef52d2c81c5114b885a6be56f5b22b18774ae5a48674679ea1fdd6b263",
+    "src/universitydb/contracts.py": "14715a2b7ed31457eba35acce6e568bcd67c72a55371822f6c9243bbacb619dc",
+    "src/universitydb/db.py": "a1650dad66a7c8ad49210bb3ab4850deff8e9f7bfc5c3f2ca65c84e632d80cc8",
+    "src/universitydb/db_worker.py": "64c17b84c0d68e97d5587c849734640fccd89ace1c12238f08105bf8201a2c05",
+    "src/universitydb/domain.py": "62bc0dda458579914b4396783856dc6f227fbda05f3f3f7cc401700c208a54ed",
+    "src/universitydb/domain_support.py": "211407da912ca737bdc449ce68b098227efad5fdd551c8848796d5c041a71fae",
+    "src/universitydb/library.py": "214f277ffeeda8672d00b69ae7d471fa66be42fdbcf0ef7452e04805c6eff7c4",
+    "src/universitydb/llm.py": "4b8c80075748a669cb70397ad8aecbad2efbb9dd3ce2a7e9680e918ba10157cb",
+    "src/universitydb/llm_worker.py": "ba0abec6f45197814068c70aa86fb747e4de070cc84f08f1caa6b537b3a5bf9d",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/sql_policy.py": "f0d2c532ad9c053952cc6a4fefba9350585e9826d49f9b05b5d6171b035307ac",
+    "src/universitydb/tracing.py": "32a8b49dc56b0e2acf59b836361ef03abb70c4c549c312a1c914c8b646e8a96b",
+    "src/universitydb/ui.py": "01aa37400817b7ea733bf5cd7ae316f1d21a9054cc1af56504d8614194045c8a",
+    "tests/conftest.py": "46131f0dc3214ea8c1364efa4579539bd1f6c8d85367585c3544eab3f7155989",
+    "tests/test_bounds.py": "08ce4aa953be0188ca5588b426eb3b1f3ffe61d7449ef7fe5f01ac7561b03218",
+    "tests/test_db_domain.py": "bea5452a16496b183a5a5eb790219e4d3009ffe9478fc886e616b13e78c4bfda",
+    "tests/test_graph.py": "613792b9f8e4252cb7b6364f94caa9fe0b7857d929b3fc49af9e8c0d733414fb",
+    "tests/test_i2_continuation.py": "7b3399feca7546f3187123f5aa21850d8a983811791481fbad5b6bce09b56567",
+    "tests/test_i2_contracts.py": "a6f4e688cd3caf1ebb2fc1a6366cf93435297ace7b0a4e7e8219f6ef001a158e",
+    "tests/test_i2_core.py": "fb47d23e92cf88980f5d74030fb1c1c7497b86fbd45ec938d4ffd8ef01b4da11",
+    "tests/test_i2_domains.py": "a2cb355ec4792275f2170ee43d80b53943480e9916dfc5cc710a6d01480fa140",
+    "tests/test_i2_oracle.py": "02596ca334cd669e02e6481a5a5bb0490c570a455ad8cd64f7bf71f2d638c17d",
+    "tests/test_i2_ui.py": "27d04b94ea5483f96d1c0874acfb77a46042e70ff61d0568b37c14b5fa5c60d8",
+    "tests/test_i3_dependencies.py": "ec4c9a05e93e00443638b4567cdceff4e1f8cbc93e7ad84e0a8e1dcd000caf7d",
+    "tests/test_library.py": "6831b286f6a9340711e409d2909a044071c2a259b7710b823ca036970d21f8c2",
+    "tests/test_practical_budget.py": "710a064e1ce59977aeebcca6f994ace65015a17e65e9b83b386ec3cfd44c125a",
+    "tests/test_provider_worker.py": "92a5b390e89ecac1f41ac58b6872fc80d1e038d4a44a592ed619ea08fbf56c34",
+    "tests/test_review_repairs.py": "b046f70137bb5b47e412ac2a6ad4a7be987225df15fa9a3e2ce75eebdf366e62",
+    "tests/test_sol_profile.py": "3b6846cf5f708d2287c0f2322d781d74ad12a71b6dfe4ee6d3da317750c5d96c",
+    "tests/test_ui.py": "0c949af5eb030ee1f8cac7f42e7aa828c52570acff4138a2161c30920297009e",
+    "tests/ui_fixtures.py": "210fd65439244a2a9abfddc20f3c871ba8830f4990c74e6ace954e9ccd72b09d",
+    "resources/library/schema.sql": "b7ea3103b689d4f0797bf398a278c1738ee97bac81cb785a72a9d25081b870f1",
+    "resources/library/seed.sql": "a81701bd8c62379f03f101081739b52e451ffdd0fd74d11f23217b6ecaf9400a",
+    "resources/schema.sql": "2d459c3592bdf9d0baea14d546540d55be650bb619d3762ee63b85cca9be70f8",
+    "resources/seed.sql": "c355537acc89af8a2ec7b96b65fdab3f37366185539ae16c1b0b9fe62c0d1acb"
+  },
+  "portability": {
+    "proof": "portability-proof.json",
+    "sha256": "06d24d066a2efa004b91851776a20410f9d466315c4d58ebbeb6eafc10478a6f",
+    "integrated_core_tree_sha256": "084174c7acac4583187fd6b957495b0c46983d9935d3fb3567ecf423b5c0f43d"
+  },
+  "m1_resume": {
+    "proof": "m1-resume.json",
+    "trace": "m1-resume.jsonl",
+    "trace_sha256": "bf6e31531a5fd337801497418ec041cc89957d50e6eaee6969c372f885f35f89",
+    "counters": {
+      "llm_calls": 4,
+      "sql_attempts": 3,
+      "repairs": 0,
+      "clarifications": 1,
+      "graph_steps": 23,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "reserved_tokens": 179072,
+      "transient_retries": 0
+    }
+  },
+  "artifact_sha256": {
+    "F1.json": "392bd5313cf7b3cf5e397e7cd958484df2f2e41135c5a79a19a8ea861ab8d89e",
+    "F1.jsonl": "c176d4f1f09132324fd45074f7b5309e090a6a5f892c3af06a773ad15eca5be1",
+    "F2.json": "9d6218fe3f0e1f0e22127076b5765151ca485465e6c0b0bae34b8d427df9d994",
+    "F2.jsonl": "cb586a79e3bc8509ce2322907121c9b11dc6b4747b7bc39623429283c24b657a",
+    "m1-resume.json": "130a02c3bd22c186433396ca4ae30a4706c0f73cbc1d3c4e1dbdbecc9725a379",
+    "m1-resume.jsonl": "bf6e31531a5fd337801497418ec041cc89957d50e6eaee6969c372f885f35f89",
+    "portability-proof.json": "06d24d066a2efa004b91851776a20410f9d466315c4d58ebbeb6eafc10478a6f",
+    "tie.json": "f1e14164d67b5aec4c1fbca53b663e8011545651ca2beb71d8afddbd4341ee70",
+    "tie.jsonl": "326ae4c2e4d5ae63b52fa2b3396b58b8ab47b29a2eed9fc6c19b8fad018cc3d5"
+  }
+}

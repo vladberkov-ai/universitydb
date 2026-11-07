@@ -1,8 +1,10 @@
 # H-013 — I2 + I3 offline delivery report
 
-**Draft: original cleaned candidate passed383 tests but independent review
-returned blocking changes; architect additionally found WAL identity gap. Fixed-candidate verification/browser/proofs/fresh
-verdicts and root lifecycle closeout remain pending. No whole-goal completion.**
+**I2+I3 offline DoD achieved:**410 offline tests/static checks,157 independent oracle
+checks, actual six-class browser, final same-process dependency/portability/resume
+proofs; independent code-reviewer **APPROVE** and architect **CLEAR**, zero unresolved
+findings. Root native completion/strict checkpoint are separate and still pending
+at this documentary cutoff. No live-model accuracy or publication claim.
 
 ## Authority and source identity
 Actual received H-013 task authorizes one continuous I2+I3 offline block, CP-A–E,
@@ -20,6 +22,13 @@ approved supported activation, not a bypass or manual pointer/ID/lock change.
 All12 stories retained; supported ordering put CP-E last and annotate_ledger
 reasserted seven unchanged architecture invariant lines for strict extraction.
 Root owns actual native snapshots/checkpoints; this report does not invent them.
+
+Repaired frozen candidate: **`f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0`**.
+Its [38 source/test/resource hashes](../operations/H-013/cp-e-repair-candidate.json)
+match committed blobs;54 repair targets passed first, then the serialized full
+pipeline passed410tests121.29s/Ruff/format32/mypy14/compile/diff. Final actual browser
+passed six classes/seven captures. Independent APPROVE/CLEAR received; root native/strict closeout remain
+pending. [Exact scoped commit receipt](../operations/H-013/cp-e-repair-commit.json).
 
 Original cleaned candidate (now superseded by blocking review):
 **`976e2207b4f8d553c96067380df2ef5c128d7dd6`**.
@@ -81,8 +90,13 @@ and [portability proof](../operations/H-013/m1-cp-d/portability-proof.json) pin 
 pre-cleaner source and integrated core tree
 `22af58a4aa2643d959b248fda604d7dd881ad79ab40a63cb43a675e7dd9e3d47`.
 Original first [M1 capture](../operations/H-013/m1/manifest.json) remains unchanged.
-**Final post-cleaner same-source M1/Library proof is pending**, not retroactively
-claimed by these older hashes.
+[Final exact410-process proof/JSONL manifest](../operations/H-013/m1-final/manifest.json)
+now pins f4b775c and all38 product blobs: F1/F2/tie actual references,
+[direct M1 checkpoint/resume](../operations/H-013/m1-final/m1-resume.json)
+(4calls/3SQL/1pause; exact replay0extra calls), and
+[same-core portability](../operations/H-013/m1-final/portability-proof.json).
+Integrated core tree: `084174c7acac4583187fd6b957495b0c46983d9935d3fb3567ecf423b5c0f43d`.
+These are new captures from the actual final full process, not relabeled old evidence.
 
 ## Checks, failures retained, and not-run
 | Cutoff | Actual evidence |
@@ -94,6 +108,8 @@ claimed by these older hashes.
 | CP-D |root370pass203.03s; Ruff/format31/mypy14/compile/diff passed;37 committed product blobs match |
 | Cleaner behavior locks |core43pass3.09s before/43pass3.14s after duplicate-width deletion; UI required-prompt lock1pass.44s before/1pass.43s after default removal; scoped static passed |
 | Original cleaned candidate976e220 |root383pass131.61s + Ruff/format31/mypy14/compile/diffPASS; superseded by independent4blockers, not finalDoD |
+| Repaired frozen candidatef4b775c |root410pass121.29s; Ruff/format32/mypy14/compile/diffEXIT0; independent157oracle checks without rewriting originalreceipt |
+| Final real offline browser |attempt2 all six classes/seven captures PASS; exact-owned server/browser stopped, runtimeunchanged/temp ledgerabsent |
 
 [CP-C failed/corrected attempts](../operations/H-013/cp-c-integrated-attempts.json),
 [core CP-D boundary failures/fixes](../operations/H-013/core-cp-d.md),
@@ -116,19 +132,28 @@ was socket EPERM before launch; supported explicit permission enabled the next r
 All owned servers/browsers were stopped and actual runtime hashes unchanged.
 Those are earlier snapshots, not the final cleaned candidate. Final harness now
 requires current question/run/outcome plus finished render before screenshots,
-avoiding prior transient lower-panel repaint captures. Final six-class frozen
-browser success/clarification/M1/Library/repair/error evidence is **pending**.
+avoiding prior transient lower-panel repaint captures. [Final frozen candidate attempt2](../operations/H-013/browser/cp-e-final-attempt2/browser-receipt.json)
+passes success80.00, Alex pause/resume86.67, three-stepM1→95.00, LibraryAda/Bob1/1,
+repair80.00 and refusal/no stale result. Full downloads plus focused SQL/raw/adapted/
+trace screenshots verify current question/run/outcome and settled render. Exact-owned
+server/browser stopped; actual runtime unchanged, temporary spending ledger absent.
+[First final attempt](../operations/H-013/browser/cp-e-final/browser-receipt.json)
+failed only at the generic first-combobox Library option timeout120s after the other
+captures. Dataset-named locator/scroll plus optionDOM capture repaired the docs-only
+harness; product source stayed frozen, failed evidence preserved.
 
 [Cleaner plan](../operations/H-013/cleaner-plan.md) preceded edits and had separate
 [root plan review](../operations/H-013/cleaner-plan-review.md). Only duplicate width
 validation and required-prompt display default were removed, after regressions;
 grounded safety/compatibility/test-injection boundaries were preserved. [Cleaner
-report](../operations/H-013/cleaner-report.md) is targeted-pass/full-pending at this
-cutoff, not self-approval or a replacement for final independent review.
+report](../operations/H-013/cleaner-report.md) records full410/static/browser evidence
+and separately approved repair-surface no-op inventory; not self-approval or a
+replacement for final independent review.
 
 ## Independent reviews and final gates
-Actual fresh code-reviewer and architect lanes are running read-only against the
-whole brief/candidate/evidence, with known replay/TTL/eviction trace watch items.
+Actual independent round1 code-reviewer and architect inspected the whole
+brief/candidate/evidence; their blockers were not waived by the passing test count.
+Fresh repaired-candidate re-review remains pending.
 Round1 code-reviewer actual **REQUEST CHANGES**: accepted-ID eviction allows
 reexecution; execution-time DB lock triggers SQL repair; owned initial replay error
 loses trace identity/events; TTL permits exact expiry equality. Architect independently
@@ -138,16 +163,16 @@ concurrent-writer support. [Attributed round1 receipt](../operations/H-013/revie
 Architect formal **BLOCK** also requires direct actual M1 interruption/resume proof,
 in addition to identity/trace/DB availability/WAL findings; TTL equality is part of
 lifetime findings. [Bounded formal architect receipt](../operations/H-013/reviews/round1-architect.json).
-Fresh repaired-candidate verdicts pending; no APPROVE/CLEAR claimed. Configured gate observation
-was an empty code-review gate list; final refresh and whole invariant proof remain
-required. Actual root native complete/fresh snapshot/strict checkpoint are pending.
+Fresh repaired-candidate [code-reviewer APPROVE](../operations/H-013/reviews/round2-code-reviewer.json) resolves all4prior findings with zero unresolved issues. [Architect CLEAR](../operations/H-013/reviews/round2-architect.json) resolves all5prior blockers with zero open findings. [Final review synthesis](../operations/H-013/reviews/final-synthesis.md). Configured gate observation
+was refreshed as an empty code-review gate list; final invariant/R/U proof is
+[recorded](../operations/H-013/invariant-audit.md), not invented tool approval. Actual root native complete/fresh snapshot/strict checkpoint are pending.
 
 ## Preservation, prompts, Git and remaining boundaries
 [Baseline/source input hashes](../operations/H-013/baseline.json) and checkpoint
 verification receipts preserve all7 monetary-ledger/I1/initial-lock hashes; no
 absent historical lock recreated. No native IDs/pointers/locks patched, no runtime
 update/repair, no vault/Obsidian write, no source snapshots evolved as originals.
-Final freshness/hash verification is still required at closeout.
+[Final freshness/hash verification](../operations/H-013/final-preservation-remote.json) confirms85 historical evidence,35vault inputs (including authoritative overview),9manifestinputs and7ledger/I1/lock hashes unchanged.
 
 [Actual received Russian prompt](../ai/omx/H-013-actual-prompt.txt) is preserved with
 [export/selected-entry/redaction receipt](../operations/H-013/prompt-receipt.json).
@@ -162,11 +187,13 @@ complete root/child transcript coverage is not claimed; omissions remain explici
 | CP-B early shared foundation |f522fb4f3b0c56fccd5b8dd404960fef8f88d532|
 | CP-C continuation/breadth |b9f2eb66e20a3148485da2af62eaa4fc9d02d0cb|
 | CP-D dependencies/portability |f4611ed592f6353471ab5786eed58d601d2a246e|
-| CP-E cleaned candidate |976e2207b4f8d553c96067380df2ef5c128d7dd6|
+| CP-E original cleaned candidate (superseded) |976e2207b4f8d553c96067380df2ef5c128d7dd6|
+| CP-E scoped review-repaired candidate |f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0|
 
-Saved, locally committed, pushed and public are distinct. Latest remote main
-observation at preparation:5c8669ffb2e629ea00878734385fff99b53d7adc (root actual
-read-only retrieval after initial DNS failure); final fresh remote status pending.
+Saved, locally committed, pushed and public are distinct. Final read-only remote main
+observation:5c8669ffb2e629ea00878734385fff99b53d7adc, unchanged from preparation.
+Sandbox DNS exit128 preceded supported specific-permission retry exit0; no fetch
+or remote configuration change. [Receipt](../operations/H-013/final-preservation-remote.json).
 **Push not-run.** No remote configuration changed. Final docs/late lifecycle receipt
 commit will be separate, never amend/self-SHA. Production explanation and all R/U
 obligations remain mapped; final publication/real-model quality/clean release and

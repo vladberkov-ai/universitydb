@@ -245,7 +245,13 @@ def run(out, full):
                         failed = capture("error", "PROVIDER_REFUSAL", "error")
                         assert not any(e["kind"] == "db_result" for e in failed)
                         if full:
-                            page.get_by_role("combobox").first.click()
+                            dataset = page.get_by_role("combobox", name="Dataset", exact=True)
+                            dataset.scroll_into_view_if_needed()
+                            dataset.click()
+                            (out / "dataset-options-visible.txt").write_text(
+                                page.locator("body").inner_text()
+                            )
+                            page.screenshot(path=str(out / "dataset-options.png"))
                             page.get_by_role("option", name="Library", exact=True).click()
                             assert (
                                 "Bea"

@@ -1,0 +1,22 @@
+{
+  "sha": "f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0",
+  "parent": "976e2207b4f8d553c96067380df2ef5c128d7dd6",
+  "commit_exit": 0,
+  "explicit_paths": 22,
+  "product_committed_blob_matches": 38,
+  "preservation_matches": 7,
+  "privacy_and_local_markdown_links": "PASS",
+  "diff_check": "PASS",
+  "attempts": [
+    "Initial python command unavailable (python: command not found); python3 succeeded; no product mutation.",
+    "First stage succeeded, exact-name assertion detected absolute-vs-relative manifest mismatch and aborted before commit; normalized manifest to relative paths and verified exact set.",
+    "Supported specific escalation stage/verify/commit exit0; no force/amend/push."
+  ],
+  "post_commit_status": "only original untracked locks; no runtime/ledger/I1 changes",
+  "pending": [
+    "repaired-candidate serialized full/static",
+    "final browser and exact-source proof capture",
+    "fresh independent verdicts/configured gates",
+    "root native/strict closeout"
+  ]
+}

@@ -421,3 +421,13 @@ The actual Russian task requests one continuous, verified I2+I3 offline service 
 
 ### H-013 CP-C plan continuation revision
 The [current plan source](../../src/universitydb/prompts/plan.txt) now permits an unresolved registered field to request server-grounded clarification, with retained proposed steps or an empty plan followed by one fresh plan after choice; all remaining budgets still apply. [Current source hashes/provenance](../operations/H-013/cp-c-prompt-receipt.json). This is source-template reader navigation, not an actual live request or rewritten historical prompt.
+
+### H-013 frozen offline candidate provenance
+Candidate f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0 passed410offline tests/static
+and actual six-class browser; scripted generation is not real-model accuracy. Runtime
+plan/SQL templates retain their CP-C source hashes, independently pinned in the final
+38-file candidate manifest. [Current coverage](../operations/H-013/prompt-coverage.json)
+separates selected actual root/child task projections from templates/read context,
+RU original/EN synopsis and opaque reviewer task transport (metadata only, no
+plaintext/equality/decryption claim). Full hidden/private history remains omitted;
+final independent verdict/lifecycle evidence is separately attributed.

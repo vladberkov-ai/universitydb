@@ -29,9 +29,11 @@ Before production, explicitly assess LLM verbalization, additional semantic SQL 
 
 ## H-013 current local implementation versus future production work
 
-The sections above preserve their historical I1/proposal cutoffs. H-013 CP-C has a
-verified local311-test/static checkpoint; CP-D dependent-result/portability proof and
-CP-E final offline gates are still in progress at this note's cutoff. This is **not
+The sections above preserve their historical I1/proposal cutoffs. Current H-013
+frozen candidate f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0 passed410offline tests
+and static checks. [Exact-process M1/Library proof](../operations/H-013/m1-final/manifest.json)
+now verifies dependent F1/F2/tie, checkpoint composition and same-core portability.
+Final frozen-source browser passed all six classes (seven captures); independent code-reviewer APPROVE and architect CLEAR received; root native/strict closeout remain separately pending. This is **not
 production readiness** or real-model NL→SQL accuracy. Current scoped decisions:
 [ADR012](../adr/ADR-OMX-012-I2-I3-offline-contracts.md), [whole contract](I2-I3-offline-contract.md).
 
@@ -51,3 +53,11 @@ compare, not permission to add live calls or new judges here. Final offline DoD,
 source identity, invariant audit, independent review and remaining live/publication/
 owner-defense obligations are reported separately. Absence of live/push authority
 is not a blocker to this offline block, but does not close those later obligations.
+
+Current supported DB identity is DELETE-journal only; WAL/non-DELETE is rejected at
+startup and before execution/resume/replay, not converted or silently hashed as if
+main-file SHA represented WAL-visible data. Concurrent writer/snapshot support is
+future work. Server-session request registry keeps32 immutable IDs/tombstones and
+8unexpired contexts; capacity/900s inclusive expiry fail closed, with explicit new
+session recovery rather than automatic identity eviction. These are demo bounds, not
+public authentication or durable cross-restart exactly-once guarantees.

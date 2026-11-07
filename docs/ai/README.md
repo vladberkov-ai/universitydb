@@ -135,3 +135,13 @@ Accepted model configuration is not a new application-prompt rewrite: existing v
 
 ### H-013 CP-C actual continuation and runtime-template revision
 [Current prompt hashes](../operations/H-013/cp-c-prompt-receipt.json) pin the plan-template clarification revision: registered known field, retained steps or one fresh plan after selection, server-grounded options and shared budgets. Source templates and offline injected consumption are not captured live requests. [UI continuation/browser receipt](../operations/H-013/ui-cp-c.md), [core receipt](../operations/H-013/core-cp-c.md), [domain follow-up projection](../operations/H-013/domain-cp-c-task.txt) and [actual integrated attempts](../operations/H-013/cp-c-integrated-attempts.json) distinguish prior failures, corrected verification and remaining CP-D/E. No full root/child transcript or live accuracy claim.
+
+### H-013 frozen offline candidate provenance
+Candidate f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0 passed410offline tests/static
+and actual six-class browser; scripted generation is not real-model accuracy. Runtime
+plan/SQL templates retain their CP-C source hashes, independently pinned in the final
+38-file candidate manifest. [Current coverage](../operations/H-013/prompt-coverage.json)
+separates selected actual root/child task projections from templates/read context,
+RU original/EN synopsis and opaque reviewer task transport (metadata only, no
+plaintext/equality/decryption claim). Full hidden/private history remains omitted;
+final independent verdict/lifecycle evidence is separately attributed.

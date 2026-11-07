@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-11-07T22:14:23.708712+00:00",
+  "explicit_doc_paths": 130,
+  "local_markdown_links": "PASS",
+  "privacy_text_and_PNG_signatures": "PASS",
+  "python_evidence_harness_compile": "PASS",
+  "product_blobs_unchanged": 38,
+  "tested_sha": "f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0",
+  "preservation": "final-preservation-remote.json:85history+35vault+9inputs+7ledgerI1locks unchanged",
+  "independent_final": "actual APPROVE/CLEAR; zero unresolved",
+  "offline_DoD": "achieved",
+  "root_native_strict": "pending separately; no self-certification",
+  "push": "not-run"
+}

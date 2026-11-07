@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-11-07T22:13:17.209442+00:00",
+  "historical_evidence": {
+    "count": 85,
+    "all_unchanged": true
+  },
+  "vault_readonly_inputs": {
+    "count": 35,
+    "all_unchanged": true,
+    "authoritative_overview_unchanged": true
+  },
+  "H013_manifest_inputs": {
+    "count": 9,
+    "all_unchanged": true
+  },
+  "ledger_I1_locks": {
+    "count": 7,
+    "all_unchanged": true
+  },
+  "remote": {
+    "command": "git ls-remote --heads origin main",
+    "sandbox_exit": 128,
+    "sandbox_reason": "DNS github.com resolution failed",
+    "supported_specific_permission_exit": 0,
+    "main": "5c8669ffb2e629ea00878734385fff99b53d7adc",
+    "fetch": "not-run",
+    "push": "not-run",
+    "configuration_changes": false
+  }
+}

@@ -17,3 +17,15 @@ Actual bounded cleaner task:
 After current UI edits, write bounded cleaner plan before any cleanup: load ai-slop-cleaner skill, inventory changed source fallback-like paths/dead/duplicate code, classify grounded fail-safe vs masking, list existing regression behavior locks. Keep cleanup small (no speculative abstraction/no new deps). You author plan, root independently reviews it, then scoped performers execute approved deletions/boundary repair after CP-D. Final code-reviewer/architect remain independent. Also gate list currently actual {gates:[],stage:code-review}; refresh final.
 
 CP-D cutoff: edits to test-only M1 proposals/UI tests/browser synchronization and docs, no browser/test launches until root scheduled slot. Bounded cleaner plan written before cleanup and independently approved; approval is not cleanup completion/final independent review. Actual root lifecycle/steering is attributed, not performed by this child.
+
+H-013 final repair/browser follow-up coverage (bounded selected task projection):
+Root authorized documentation-only current-contract/ADR notes before replay/TTL/trace/
+SQLite availability/DELETE-journal repairs, separate cleaner no-op inventory review,
+and explicit fixed-candidate commit after54targets/static. Root then authorized
+serialized final six-class actual browser after410full/static PASS, and capture-only
+F1/F2/tie/M1checkpoint/Library artifacts from that exact pytest temporary directory.
+No source/tests changed by this UI lane after frozenf4b775c. Generic Library selector
+timeout preserved; exact Dataset-labeled browser-only selector+DOM instrumented and
+newattempt passed. Scope remains no live/count/credentials/ledger/I1/locks/vault/
+native/push writes. Original task text elsewhere remains preserved; this follow-up
+summary is not a full actual-message transcript or encrypted-call equality proof.

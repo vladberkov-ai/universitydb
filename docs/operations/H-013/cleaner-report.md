@@ -46,3 +46,22 @@ functional blockers (replay identity retention/owned trace/TTL equality/DB locks
 They supersede final acceptance despite passing tests. Subsequent scoped functional
 repairs are **not** silently labeled cleaner. Fixed-candidate full/browser/proofs/
 fresh reviews/configured gates remain required; no whole-goal completion yet.
+
+## Repaired-candidate final verification cutoff
+The subsequent functional repairs were separately inventoried and root independently
+[approved no-op](cleaner-review-repair-verdict.md), not relabeled smell cleanup.
+Frozen f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0 passed410tests121.29s plus
+Ruff/format32/mypy14/compile/diff. Final browser attempt2 passed six required classes
+(seven captures), every focused panel and full downloaded trace; exact-owned server/
+browser stopped, actual runtime unchanged. [Verification receipt](cp-e-final-verification.json).
+Earlier generic-selector Library timeout is retained, not silently overwritten.
+Fresh independent verdicts/configured closure/root lifecycle still pending at this
+cutoff; no whole-goal self-approval. No further product cleanup selected.
+
+## Final independent acceptance refresh
+Actual independent code-reviewer APPROVE and architect CLEAR, zero unresolved/open
+findings, now cover frozenf4b775c/full410/static157oracle/finalM1Libraryresume and
+seven browser captures. [Attributed final synthesis](reviews/final-synthesis.md).
+All seven exact brief invariants and full R/U/negative obligations are retained.
+Offline DoD is achieved; root native/strict checkpoint remain separately pending.
+This does not relabel prior failures or certify live accuracy/production/publication.

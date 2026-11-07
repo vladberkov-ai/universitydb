@@ -121,3 +121,58 @@ exact registered values, checked before saver/dispatch instead of generic overfl
 masking. Core targeted fixes/regressions and integrated root full verification have
 separate evidence cutoffs; prior invalid retained-fault fixture and overflow findings
 remain in core receipts. No cap/model/accounting/domain change follows.
+
+## Independent-review repair anchors — f4b775c cutoff
+Actual independent round1 blockers were repaired, not waived by383 prior tests.
+`tests/test_review_repairs.py` now directly anchors immutable32 accepted request
+identities/tombstones and8unexpired contexts; fail-closed admission; same-owner
+initial replay run/trace/event identity and immutable terminal trace; inclusive900s
+pause/terminal/resume replay expiry; real worker BUSY plus SQLite operational-vs-
+repairable taxonomy; DELETE-only startup/execute/resume/replay mode gate with actual
+WAL unchanged-mainhash/changed-visible-data demonstration; actual accepted-plan M1
+checkpoint/resume retaining actual downstream refs and4calls/3SQL/1clarification.
+Grounded bounded owner-trace read and expired exact-owned saver deletion do not
+confer native authority or claim production authentication/durable restart.
+
+The repaired frozen38product/test/resource blobs match committed
+`f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0`;54targeted tests/static passed.
+[Candidate receipt](cp-e-repair-candidate.json), [round1 repair proof](core-review-round1/manifest.json)
+and independent [no-op cleaner addendum verdict](cleaner-review-repair-verdict.md)
+are bounded evidence only. Final exact-source full regression/static/browser/proof
+capture and fresh independent verdicts/configured gates remain pending; seven exact
+brief lines and all original R/U/negative obligations above are unchanged.
+
+## Final tested-source evidence refresh (older cutoffs above remain historical)
+- Tested product SHA `f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0`, all38 committed
+  product/test/resource blobs match; serialized410tests121.29s plus Ruff/format32/
+  mypy14/compile/diff exit0. [Verification](cp-e-final-verification.json).
+- I1/I2/I4/I5: final full suite plus independent157oracle checks, original frozen
+  oracle hash unchanged; exact typed/retained/resource/SQLite DELETE-only safety and
+  operational failure boundaries are not substituted for semantic correctness.
+- I2/I3/I6: final same-process F1/F2/tie/M1 checkpoint-resume/fullJSONLs and shared
+  integrated core tree084174c7acac4583187fd6b957495b0c46983d9935d3fb3567ecf423b5c0f43d:
+  [actual proof manifest](m1-final/manifest.json). M1 resume4calls/3SQL/1pause,
+  actual course[2]→student[1]→95.00 and exact replay0extra calls.
+- I3/I6/I7: final actual [browser attempt2](browser/cp-e-final-attempt2/browser-receipt.json)
+  passes success/pause+resume/M1/Library/repair/error, full trace downloads and focused
+  SQL/raw/adapted/trace panels. All seven captures current-run/outcome verified; owned
+  server/browser stopped, actual runtime unchanged/temp ledgerabsent. Prior generic
+  Library-selector timeout is preserved; only the browser harness locator changed.
+- Root independently viewed8 representative PNGs and checked7JSONLs contiguous/single
+  run/source hashes. Actual independent code-reviewer round2 APPROVE/zero unresolved
+  findings; architect final verdict and root lifecycle/strict closeout pending.
+- Final [preservation/remote](final-preservation-remote.json):85historic/35vault/9input/
+  7ledgerI1locks unchanged, remote main5c8669ff unchanged; push/count/API/live not-run.
+
+All original R01–17/U01–08 and mandatory negatives remain mapped above. Evidence
+establishes offline contracts/safety/results, not real-model NL accuracy/publication/
+production readiness/owner defense. Cleaner approval covers bounded no-op inventory
+of functional repairs separately from the original two tiny smell deletions.
+
+## Final independent acceptance refresh
+Actual independent code-reviewer APPROVE and architect CLEAR, zero unresolved/open
+findings, now cover frozenf4b775c/full410/static157oracle/finalM1Libraryresume and
+seven browser captures. [Attributed final synthesis](reviews/final-synthesis.md).
+All seven exact brief invariants and full R/U/negative obligations are retained.
+Offline DoD is achieved; root native/strict checkpoint remain separately pending.
+This does not relabel prior failures or certify live accuracy/production/publication.
