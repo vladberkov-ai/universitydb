@@ -1,0 +1,9 @@
+{
+  "attribution": "Root-authored strict-quality INPUT metadata, safe exact documentary copy after independent verdicts; not checkpoint/native completion proof",
+  "sha256": "443ce3fdb3076401d1fbec1ef5440a5d5cbad58bb69a586c635d7c181b072180",
+  "seven_invariants": 7,
+  "source_artifacts_and_evidence_references": "exist; nested .omx refs resolve only under workflow root, ignored originals not staged",
+  "independent_final": "APPROVE/CLEAR actual receipts exist",
+  "native_strict": "pending at copy cutoff",
+  "delivery_commit_before_copy": "f337a5b25113c33fdad7f40bd6fa133ee3fdb4f7"
+}
