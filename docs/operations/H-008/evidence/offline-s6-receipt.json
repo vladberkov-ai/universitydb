@@ -1,0 +1,50 @@
+{
+  "profile": "offline/injected",
+  "real_provider_calls": 0,
+  "network_calls": 0,
+  "configured_policy_only": "gpt-6.1-sol high plan / medium SQL; NOT real Sol replies/usage/accuracy",
+  "fixture_sha256": "09dde9d7deefc1170b8c6418208fd7aba46841231efb16227acb6e2ed10d38c5",
+  "run_id": "7fc3f99f-e4c0-45c1-a5a5-a0f3ac58277c",
+  "expected_raw": [
+    16000,
+    2,
+    2
+  ],
+  "actual_raw": [
+    16000,
+    2,
+    2
+  ],
+  "expected_answer": "80.00",
+  "actual_answer": "80.00",
+  "injected_attempts": 2,
+  "attempt_profiles": [
+    {
+      "execution_profile": "offline/injected",
+      "real_provider_called": false,
+      "phase": "application_attempt_before_dispatch",
+      "logical_operation": "plan",
+      "requested_model": "scripted-test",
+      "reasoning_effort": "high",
+      "service_tier": "default",
+      "max_output_tokens": 32768,
+      "reserved_run_tokens": 44768
+    },
+    {
+      "execution_profile": "offline/injected",
+      "real_provider_called": false,
+      "phase": "application_attempt_before_dispatch",
+      "logical_operation": "sql",
+      "requested_model": "scripted-test",
+      "reasoning_effort": "medium",
+      "service_tier": "default",
+      "max_output_tokens": 32768,
+      "reserved_run_tokens": 89536
+    }
+  ],
+  "trace": "offline-s6.jsonl",
+  "trace_sha256": "8490da6d8185679a3b6ffebebf63c964e7aaf213c65e6467fbb811fbd1120916",
+  "db_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+  "config_sha256": "d3f5f5ae9cfcadaf028f332cde9651198d929616db29ecfd473bb0f66de2ba6e",
+  "browser_screenshot": "not-run; no new browser/live claim"
+}

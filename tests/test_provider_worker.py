@@ -43,6 +43,8 @@ def test_stalled_sdk_process_killed_reaped_cost_retained(tmp_path, monkeypatch):
     with patch("universitydb.llm.subprocess.Popen", stalled), pytest.raises(Failure) as error:
         provider.call("plan", {}, PlanProposal, timeout=0.15)
     assert error.value.code == "PROVIDER_TRANSIENT"
+    assert error.value.details["usage_status"] == "unknown"
+    assert error.value.details["real_provider_called"] is None
     assert time.monotonic() - started < 1
     with pytest.raises(ProcessLookupError):
         os.kill(children[0], 0)

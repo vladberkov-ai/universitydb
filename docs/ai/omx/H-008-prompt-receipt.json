@@ -1,0 +1,22 @@
+{
+  "source": "Supported root omx session export; ignored private .omx/H-008/root-api-evidence/root-session-cutoff-private.json",
+  "source_sha256": "929783f38804e9600cc38b813e5b0c36c7ec48f94fc50e3bdbd2c079f882a44a",
+  "source_session_id": "01a1b649-9f9b-7e32-8c71-138ac3328f7e",
+  "entry_index": 15,
+  "line_number": 903,
+  "timestamp": "2026-11-07T15:35:32.449Z",
+  "source_entry_text_sha256": "a37346ecacbd598d2f6b5c87a1d98c3b3c0cd6865a0114839d76a1947d42aee0",
+  "source_entries": 20,
+  "skipped_records": 0,
+  "redactions": [
+    {
+      "source_prefix": "private vault absolute prefix",
+      "replacement": "<PRIVATE_VAULT>",
+      "occurrences": 1
+    }
+  ],
+  "normalization": "Exporter text content preserved as extracted, including its eight actual LF characters; only private vault prefix replaced and terminal LF added. Not byte-equality proof to underlying native message encoding.",
+  "destination": "docs/ai/omx/H-008-actual-prompt.txt",
+  "destination_sha256": "750e8442554284863cde34d7a4409c85b41c9c54c8e931831ae00ae81a65263b",
+  "coverage": "Actual exported H008 user task only. Handoff/read context is not substituted. No system/developer/inherited AGENTS context/tools/reasoning/full private history/child collaboration/later final message coverage. Default export20entries/skipped0 is not full coverage. No reconstructed transcripts."
+}

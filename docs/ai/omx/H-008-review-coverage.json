@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-07",
+  "roles": ["code-reviewer", "architect"],
+  "source": "Root delivered actual independent review result summaries and observer-specific commands/timings to performer via native collaboration.",
+  "scope": "Initial and corrected H008 offline frozen configuration/tests/docs; separate native lanes from author",
+  "artifacts": "docs/operations/H-008/reviews/initial-review.md; final-code-review.md; final-architecture-review.md; final-review-receipt.json",
+  "coverage": "Bounded attributed result projections only, not complete child task transcripts, all tool calls, system/developer instructions, reasoning or plaintext equality to encrypted parent delegation arguments.",
+  "task_prompt_coverage": "Root owns actual delegation/source-export provenance; this performer did not receive full reviewer tasks and does not reconstruct them from a template.",
+  "verdicts": "Initial REQUEST CHANGES/BLOCK retained; final code APPROVE offline partial + architect WATCH = COMMENT; no strict/live/I1 completion.",
+  "omissions": "Full private native histories, source byte equality and later root postcommit/runtime cutoff are not claimed.",
+  "author_review_separation": true
+}

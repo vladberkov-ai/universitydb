@@ -1,0 +1,9 @@
+{
+  "commit": "cfaf8601b8b985687b45ae4f9792891ee75064f4",
+  "parent": "470bc3ea83bcf9413cd19557d27bccbd8406fdf4",
+  "scope": "26 explicit reviewed H008 config/tests/docs files; no runtime/vault/old H007 receipt staging",
+  "git_permission": "ordinary add/commit each failed EROFS; each own exact supported escalation succeeded",
+  "verification": "102offline tests13.47s; lint/format/mypy11files/compile/diff all0; document links pass; no paid calls",
+  "review": "Source frozen for independent root-owned code-reviewer and architect; pending, not self-approved",
+  "pushed": false
+}

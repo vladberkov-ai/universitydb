@@ -1,0 +1,20 @@
+{
+  "scope": "Independent review response-boundary correction; no network",
+  "before_fix": {
+    "command": ".venv/bin/pytest -q tests/test_sol_profile.py -k real_sdk_failure_metadata",
+    "exit_code": 1,
+    "result": "2failed,27deselected in1.62s",
+    "failures": [
+      "Incomplete truncated JSON yielded PROVIDER_INVALID_OUTPUT instead of PROVIDER_INCOMPLETE.",
+      "Completed invalid JSON ledger output_tokens0 instead of known32768."
+    ]
+  },
+  "after_fix_targeted": {
+    "command": ".venv/bin/pytest -q tests/test_sol_profile.py tests/test_provider_worker.py",
+    "exit_code": 0,
+    "result": "33passed4.15s before additional noncompleted-status regressions"
+  },
+  "implementation": "Primary Responses.create strict JSON schema; safe status/usage before completed Pydantic validation; no dependency/schema weakening/fallback. Known/unknown flags and missingusage safe metadata preserved.",
+  "final_suite": "See validation.json for fresh full suite including failed/cancelled/in_progress cannot yield success.",
+  "review": "Independent re-review required; not author approval."
+}

@@ -1,0 +1,9 @@
+$ultragoal Продолжи существующий I1/H-007 по <PRIVATE_VAULT>/handoffs/H-008-sol-configuration-and-I1-resume.md в /home/dev/projects/universitydb, UbuntuD. Не создавай новый план или aggregate goal и не повторяй G001–G003.
+
+Утверждено: gpt-6.1-sol для plan, SQL и repair; reasoning effort high для plan, medium для SQL/repair. Formatter, SQL safety/execution и числовой oracle остаются без отдельных LLM. Перед production обязательно оценить эффект дополнительных LLM, не добавлять их сейчас.
+
+Сохрани checkpoint 470bc3ea83bcf9413cd19557d27bccbd8406fdf4, A/B и evidence. Настрой явный профиль, trace и проверки, согласуй token/time limits со spending ledger, обнови технические ADR/production docs. Независимую от live работу выполни сейчас. Ключ и общий cap ещё не предоставлены: до их подтверждения платных вызовов не делать.
+
+После подтверждения доступа и явного cap штатно продолжи существующий G004: реальные S6, mutation и UI evidence, проверки и independent review по пакету. При недоступной операции resume верни точную диагностику, не правь IDs/state и не запускай цикл одинаковых проверок. Не объявляй I1 complete без live и финального gate.
+
+Сохраняй actual prompts, результаты и явные локальные commits. Obsidian только читать; без remote/push, обновления OMX, I2–I5 и подготовки защиты. После отчёта остановись.

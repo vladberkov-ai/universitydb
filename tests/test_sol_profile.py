@@ -23,10 +23,10 @@ from universitydb.llm_worker import request
 def test_exact_sdk_payload(logical, effort, index):
     schema = (PlanProposal, SQLProposal)[index]
     client = MagicMock()
-    client.responses.parse.return_value = SimpleNamespace(
+    client.responses.create.return_value = SimpleNamespace(
         status="completed",
         output=[],
-        output_parsed=schema.model_validate(outputs()[index]),
+        output_text=json.dumps(outputs()[index]),
         usage=SimpleNamespace(input_tokens=100, output_tokens=50, total_tokens=150),
         model=PROFILE.model,
         service_tier="default",
@@ -46,7 +46,7 @@ def test_exact_sdk_payload(logical, effort, index):
             }
         )
     sdk.assert_called_once_with(max_retries=0, timeout=policy.timeout)
-    client.responses.parse.assert_called_once_with(
+    client.responses.create.assert_called_once_with(
         model=PROFILE.model,
         store=False,
         max_output_tokens=32768,
@@ -54,7 +54,14 @@ def test_exact_sdk_payload(logical, effort, index):
         service_tier="default",
         instructions="test",
         input="{}",
-        text_format=schema,
+        text={
+            "format": {
+                "type": "json_schema",
+                "name": schema.__name__,
+                "strict": True,
+                "schema": schema.model_json_schema(),
+            }
+        },
     )
 
 
@@ -219,8 +226,11 @@ def test_bad_worker_response_retains_reservation(tmp_path, monkeypatch, bad):
         )
 
     path = tmp_path / "spend.json"
-    with patch("universitydb.llm.subprocess.Popen", scripted), pytest.raises(Failure):
+    with patch("universitydb.llm.subprocess.Popen", scripted), pytest.raises(Failure) as failure:
         OpenAIProvider(Path("src/universitydb/prompts"), path).call("plan", {}, PlanProposal)
+    assert failure.value.details["usage_status"] == ("unknown" if bad == "usage" else "known")
+    assert failure.value.details["real_provider_called"] is True
+    assert "returned_model" in failure.value.details["usage"]
     record = json.loads(path.read_text())
     assert record["calls"] == 1 and record["effective_usd"] == "0.044768"
     assert (record["attempts"][0]["observed_usd"] is None) == (bad == "usage")
@@ -233,14 +243,14 @@ def test_worker_failed_response_preserves_known_usage(kind):
         output=[SimpleNamespace(content=[SimpleNamespace(type="refusal")])]
         if kind == "refusal"
         else [],
-        output_parsed=None,
+        output_text="",
         model=PROFILE.model,
         service_tier="default",
         id="offline-failure",
         usage=SimpleNamespace(input_tokens=100, output_tokens=32768, total_tokens=32868),
     )
     with patch("universitydb.llm_worker.OpenAI") as sdk:
-        sdk.return_value.__enter__.return_value.responses.parse.return_value = response
+        sdk.return_value.__enter__.return_value.responses.create.return_value = response
         result = request(
             {
                 "operation": "plan",
@@ -278,3 +288,91 @@ def test_actual_db_watchdog_kills_and_reaps(database):
     assert len(children) == 1
     with pytest.raises(ProcessLookupError):
         os.kill(children[0], 0)
+
+
+@pytest.mark.parametrize(
+    "status,text,code,has_usage",
+    [
+        ("incomplete", '{"version":', "PROVIDER_INCOMPLETE", True),
+        ("completed", "{}", "PROVIDER_INVALID_OUTPUT", True),
+        ("failed", json.dumps(outputs()[0]), "PROVIDER_INVALID_OUTPUT", True),
+        ("cancelled", json.dumps(outputs()[0]), "PROVIDER_INVALID_OUTPUT", True),
+        ("in_progress", json.dumps(outputs()[0]), "PROVIDER_INVALID_OUTPUT", True),
+        ("completed", json.dumps(outputs()[0]), "BUDGET_EXCEEDED", False),
+    ],
+)
+def test_real_sdk_failure_metadata_reconciled_before_parsing(
+    database, tmp_path, monkeypatch, status, text, code, has_usage
+):
+    import httpx2
+    from openai import OpenAI
+    from test_provider_worker import configure
+
+    configure(monkeypatch)
+    wire = []
+
+    def handler(req):
+        wire.append(json.loads(req.content))
+        return httpx2.Response(
+            200,
+            json={
+                "id": "offline-known-usage",
+                "object": "response",
+                "created_at": 1,
+                "status": status,
+                "model": PROFILE.model,
+                "service_tier": "default",
+                "output": [
+                    {
+                        "id": "offline-msg",
+                        "type": "message",
+                        "role": "assistant",
+                        "status": "incomplete" if status == "incomplete" else "completed",
+                        "content": [{"type": "output_text", "text": text, "annotations": []}],
+                    }
+                ],
+                "usage": {"input_tokens": 100, "output_tokens": 32768, "total_tokens": 32868}
+                if has_usage
+                else None,
+            },
+        )
+
+    def sdk(**kwargs):
+        return OpenAI(
+            api_key="offline-not-real",
+            http_client=httpx2.Client(transport=httpx2.MockTransport(handler)),
+            **kwargs,
+        )
+
+    process = MagicMock()
+    process.__enter__.return_value = process
+    process.returncode = 0
+    process.communicate.side_effect = lambda encoded, **_: (
+        json.dumps(request(json.loads(encoded))),
+        None,
+    )
+    path = tmp_path / "spend.json"
+    with (
+        patch("universitydb.llm_worker.OpenAI", sdk),
+        patch("universitydb.llm.subprocess.Popen", return_value=process),
+    ):
+        result = Agent(
+            University(),
+            database,
+            OpenAIProvider(Path("src/universitydb/prompts"), path),
+            tmp_path / "trace",
+        ).run(QUESTION)
+    assert result["error"]["code"] == code
+    ledger = json.loads(path.read_text())
+    assert ledger["calls"] == 1 and ledger["output_tokens"] == (32768 if has_usage else 0)
+    assert (ledger["attempts"][0]["observed_usd"] is not None) == has_usage
+    error = next(
+        e["payload"] for e in result["events"] if e["kind"] == "error" and "usage" in e["payload"]
+    )
+    assert error["usage_status"] == ("known" if has_usage else "unknown")
+    assert error["real_provider_called"] is True
+    assert error["usage"]["returned_model"] == PROFILE.model
+    assert error["usage"]["returned_service_tier"] == "default"
+    assert wire[0]["reasoning"] == {"effort": "high"}
+    assert wire[0]["service_tier"] == "default" and wire[0]["store"] is False
+    assert wire[0]["text"]["format"]["strict"] is True

@@ -22,7 +22,7 @@ def request(payload: dict[str, Any]) -> dict[str, Any]:
     output_type = PlanProposal if operation == "plan" else SQLProposal
     try:
         with OpenAI(max_retries=0, timeout=payload["timeout"]) as client:
-            response = client.responses.parse(
+            response = client.responses.create(
                 model=payload["model"],
                 store=False,
                 max_output_tokens=policy.output_tokens,
@@ -30,7 +30,14 @@ def request(payload: dict[str, Any]) -> dict[str, Any]:
                 service_tier=PROFILE.service_tier,
                 instructions=payload["prompt"],
                 input=payload["input"],
-                text_format=output_type,
+                text={
+                    "format": {
+                        "type": "json_schema",
+                        "name": output_type.__name__,
+                        "strict": True,
+                        "schema": output_type.model_json_schema(),
+                    }
+                },
             )
     except (APITimeoutError, APIConnectionError) as exc:
         raise Failure(
@@ -67,14 +74,21 @@ def request(payload: dict[str, Any]) -> dict[str, Any]:
         for part in getattr(item, "content", [])
     ):
         failure = ("PROVIDER_REFUSAL", "Provider refused the request.")
-    elif response.output_parsed is None:
-        failure = ("PROVIDER_INVALID_OUTPUT", "No parsed structured output.")
+    elif response.status != "completed":
+        failure = ("PROVIDER_INVALID_OUTPUT", "Provider response did not complete.")
     elif response.usage is None:
         failure = ("BUDGET_EXCEEDED", "Provider usage missing; reservation retained.")
     if failure:
         return {"error": failure[0], "message": failure[1], "usage": usage}
-    assert response.output_parsed is not None  # Established by the failure branch above.
-    return {"output": response.output_parsed.model_dump(), "usage": usage}
+    try:
+        parsed = output_type.model_validate_json(response.output_text)
+    except (ValidationError, ValueError):
+        return {
+            "error": "PROVIDER_INVALID_OUTPUT",
+            "message": "Provider output did not match strict schema.",
+            "usage": usage,
+        }
+    return {"output": parsed.model_dump(), "usage": usage}
 
 
 def main() -> None:

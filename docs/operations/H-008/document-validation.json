@@ -1,7 +1,11 @@
 {
-  "scoped_markdown_links_checked": 100,
+  "scoped_markdown_links_checked": 123,
   "broken": [],
   "new_files_utf8_final_lf_no_trailing_whitespace": true,
   "privacy_review": "Explicit changed product/docs/test files reviewed; no key values/account IDs/private raw transcripts, .omx/runtime/DB/venv/locks staged. Offline test key is explicitly fake. No vault export.",
-  "not_run": "Vulnerability-database audit; live calls/accuracy; new browser/UI capture; remote/push/publication; strict final I1 gate"
+  "not_run": "Vulnerability-database audit; live calls/accuracy; new browser/UI capture; remote/push/publication; strict final I1 gate",
+  "postreview_correction": "108tests + lint/format/type/compile/diff pass; source frozen for independent re-review; known error usage flags and real installedSDK ordering repaired",
+  "final_independent_review": "code APPROVE offline + architect WATCH = COMMENT, gates[]; not strict/live completion",
+  "frozen_source_hashes_match": true,
+  "preserved_baseline_hashes_match": true
 }

@@ -291,20 +291,33 @@ class OpenAIProvider:
             raise Failure("PROVIDER_UNAVAILABLE", "Provider worker unavailable.") from exc
         try:
             data = json.loads(output)
-            if "error" in data and "usage" not in data:
-                raise Failure(data["error"], data["message"], details=dispatch)
-            usage = data["usage"]
+            if not isinstance(data, dict):
+                raise TypeError("worker response must be an object")
+        except (ValueError, TypeError) as exc:
+            raise Failure(
+                "PROVIDER_INVALID_OUTPUT", "Provider worker response invalid.", details=dispatch
+            ) from exc
+        if "usage" not in data:
+            raise Failure(
+                data.get("error", "PROVIDER_INVALID_OUTPUT"),
+                data.get("message", "Provider usage missing; reservation retained."),
+                details=dispatch,
+            )
+        usage = data["usage"]
+        dispatch.update(real_provider_called=True)
+        try:
             if any(
                 type(usage[k]) is not int or usage[k] < 0
                 for k in ("input_tokens", "output_tokens", "total_tokens")
             ):
-                raise Failure(
-                    "PROVIDER_INVALID_OUTPUT", "Invalid provider usage.", details=dispatch
-                )
+                raise ValueError("invalid usage")
         except (ValueError, KeyError, TypeError) as exc:
             raise Failure(
-                "PROVIDER_INVALID_OUTPUT", "Provider worker response invalid.", details=dispatch
+                data.get("error", "PROVIDER_INVALID_OUTPUT"),
+                data.get("message", "Provider usage invalid; reservation retained."),
+                details={**dispatch, "usage": usage},
             ) from exc
+        dispatch.update(usage_status="known")
         try:
             spending.record_usage(
                 reservation.attempt_id, usage["input_tokens"], usage["output_tokens"]
