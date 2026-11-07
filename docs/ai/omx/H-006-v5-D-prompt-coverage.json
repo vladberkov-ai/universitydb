@@ -1,0 +1,52 @@
+{
+  "stage": "H-006-v5 D only",
+  "native_session_id": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+  "omx_session_id": "omx-1794040798905-xque5e",
+  "actual_prompt": "docs/ai/omx/H-006-v5-D-actual-prompt.txt",
+  "actual_prompt_sha256": "e147b3fa3a2e5c001e0ee18a3c5b3472ddc35ff6b798dd4d293548cd0140c2b6",
+  "source_actual_record": {
+    "timestamp": "2026-11-07T08:43:53.354Z",
+    "line_number": 10,
+    "message_text_sha256": "3dd00a4a851fcffc4652e1db92311d7f61595ee9fee5668c631c5e113f03cf13",
+    "record_bytes_sha256": "4cb986f26b1b3d0f4463406345863b34494cb93bbdcf200361b7cafeb7d536aa"
+  },
+  "source_meta": {
+    "id": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+    "cwd": "/home/dev/projects/universitydb",
+    "cli_version": "0.162.1",
+    "source": "cli"
+  },
+  "source_transcript": "<CODEX_HOME>/sessions/2026/11/07/rollout-2026-11-07T10-40-10-01a1b52a-4d0c-7211-9a7f-917698d6e84c.jsonl",
+  "transcript_is_authority": false,
+  "cutoff_messages": "docs/ai/omx/H-006-v5-D-messages-cutoff.json",
+  "cutoff_messages_sha256": "650ecf8a2d2b9e55cd9ec91d93021a01842df3ac34efd37a34edc2d154384ca6",
+  "cutoff_line": 70,
+  "read_context": [
+    "docs/operations/H-006-v5-readiness-evidence/input-hashes.json",
+    "docs/operations/H-006-v5-readiness-evidence/config-roles-sources.json",
+    "docs/operations/H-006-v5-readiness-evidence/direct-activation-source-evidence.json"
+  ],
+  "redactions": [
+    "private vault absolute root replaced; source instruction/environment bundle omitted with hash",
+    "launch lineage and nonce values not copied; credentials not read or emitted"
+  ],
+  "subagents": {
+    "count": 0,
+    "roles_executed": [],
+    "prompts": [],
+    "sessions": []
+  },
+  "runtime_application_prompts": "not-created",
+  "coverage_limits": [
+    "D user task and assistant progress only through recorded cutoff",
+    "final response and later checks not yet included",
+    "no tools/system/developer/reasoning export",
+    "B templates and handoff are read context, not actual executed prompts"
+  ],
+  "H005_completed_export": {
+    "path": "docs/ai/omx/H-005-session-export-completed.json",
+    "sha256": "658940815980086d8b974a79a070703f956ae0af675271b77656c45507b25418",
+    "matches_A_manifest": true,
+    "reexported": false
+  }
+}

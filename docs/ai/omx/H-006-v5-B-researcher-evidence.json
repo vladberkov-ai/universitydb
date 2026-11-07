@@ -1,0 +1,75 @@
+{
+  "role": "researcher",
+  "task_path": "/root/official_research",
+  "native_session_id": "01a1b54c-b64f-7763-81e3-191af590899c",
+  "source_metadata_observed_not_tracker_authority": {
+    "id": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+    "cwd": "/home/dev/projects/universitydb",
+    "cli_version": "0.162.1",
+    "source": "cli",
+    "agent_role": null
+  },
+  "actual_dispatch_and_steering": [
+    {
+      "source_line": 228,
+      "timestamp": "2026-11-07T09:17:45.342Z",
+      "name": "spawn_agent",
+      "namespace": "collaboration",
+      "arguments": {
+        "task_name": "official_research",
+        "agent_type": "researcher",
+        "message": "gAAAAABq7uy5Y6nj92oAFSRYwv-eVKXFxUPeqd1vVACa-_0owX_DqXvJduBPNAgWDgoI0iBpn9Ja9n6zL83_ZIjaD3WoDrkS1ouqhCSYx662xOML4WMuPeNT5czVS_G2A_O0L9MTTmJcgjXBCqRr7Wx-xkZ373EDzNVa463_xlaLISRy6lsW7FLgblVKLTz3eFMGFObm5SjiTOx_Z0veoiJfdWIIHxnLgGq22eYT0bHeItKTYw88DXj7Lz51Pfp7ACdCgMbuNlBSJYFS6-KhPm6XIorRAhIz51yVpU2zG__QrtZD-10u-jGasEmYzcLbgDr-EXIeGfzTBg8Ys0_XtFvsomnnKF8zl-yo_xsE6RtLo4Jhy1iCXY8NypdExOOl8lloLX2TUsWRou-AsM5Scp9XB-AIQeUZPxGSStsBuHFIjxGR8RP3AAQLZzZjwwwaM-CxzWpUxts7eEoLaf-Z6cBnD2zMCFfHrFNfvs21SXbjz-7VFJTlqOSMqFJGU6_jY_trgLsD99_xPkw_IYLgTEYaR708-f7T11Ce7B5alpd-eVhjZUBZERLKX0csdx_r0qiMCKQH1s4GRatGTwZMWBm27_HaCpDuUv41QABFC157e34g69_ZWic9AZ4hf22s9sOfhKO-Ayr85IoOps0N-19gIndweZMQR9780-iCMkeWmazPksrfixO1kkuq1iRY2w-zkeLDQOkPLTZG1e5EWd2RFPTWMx1sz7mBReTI2_6WKDHaBflEpfbADmAZoT269LXWlARo1j_j2rvor5u4okA-KOK5cscjsQ9DTl6QkITjBhWyWmOLb2ChacuYzRoLkj-txIpFb9-8DhdVjNFdr8HccFWfVMmnxaE93Uf92MAGU-jltdsAWsbqWBV_tLtTHV4Qwonzf31X9HZjLNT2iwQfHOLANLfEsJ62jhpOOrDjIaVwKEN5MC76lzlORE0DcvxwRACIR_a9TD2Rpp3vDVUPrgmkUNT9FypBwgSt-nln3Fd_f8U__3OMdl2OjTClmV3Q6jBvoX4dR0AVdf0QqNf0CS7kg5WMsHO4rb0_wMn921btd-qeNpoQx7vcvxR29uPxAcL2ScOGz7GPhDH5QT21ycbrMGIReUL5UotrN4PLiZtXIezLrscdd5INfE0SyUtQyz2cDALWQ273550Ta8ndGfsB9hXNsvCsCOinXVwfaksSc0T7fguoS9iNy_prJvUsZPWn4V9lLuYhzjRXVh5m129RBy9GAt1WIKnxQSMq23bWFt2HHtem_lTEu3SIXXg6kTjc4wBfVI07dcyvh88mNSXJqkgYA38dPLi6sQPCjMp7PTXQEdWKf4Q4EQIXc0iTgCpkBpTYUDHxyh5Xpfr-bi2JXYP8soUdyaq0_VhC0vCt6IK6bbiqDr64J1MCKggSrBm0vFSpeE_XSlYatMhC23qiPO7zLJats07uVGyiGDg42kZaLYBXdcMPd25uTMxTgQ1gPSu4SuKg5NRNo5JoKnMdh0UARkHQFauokIlDwPlgZQYq-y1ematrXYUJ8egjfO2hpSDMmZgJZLNEuPfERziONy17qg5ymO9vNHpoj5uM1kuhwVcpo0STHOMNUpp1AkPxWsJHW5dZND6t6ChMJ7UZ75IJuuuqyFxyYbTf_N1Ew_RROj3AizW-cwr326o_9BLpVnw_I9fQHeZhrqvPxS7gZI00AgZXX76W6HS5-F-m3vx7Uy1fkWHnyd0eQcpVvE1rvMk-HM-2x68zE5hSuq0_J_YGwWbulOofuISNe6t-j9Z2NObrimv7WP0BJVVLAaRrZWckGUpi8MIWX4jndAvMHV7l-k7tYpNvhEn0u9Q89LipyE80U-qW5Nz_Fek7UVlcMEyMgQv9v7Om4WP7uQQEmLhG-u0CKk56bNIXy2qwxFxi_4cWfU0r5A7mO2yFa0IOweChsqrw8qIWNwIccs7AJJMDNA=="
+      },
+      "original_record_sha256": "011ff55e75badf6109949cdefe5ec45d95cf50857991556bd59b825cadc8f2e7"
+    },
+    {
+      "source_line": 298,
+      "timestamp": "2026-11-07T09:19:21.206Z",
+      "name": "send_message",
+      "namespace": "collaboration",
+      "arguments": {
+        "target": "official_research",
+        "message": "gAAAAABq7u0Y3dw7ADcVlaVpACLuEnj5xKatGGFm2q37fKX-hCrQiKDo0NYxeyOwAo-6zVip-SmuLLZFoU3sFQeEUvaaIEl1cv-9TPWAA0NU-u-3whxPrD3xTW4Nen30gKrC97xuxjzyXi5pD0PFAzBB6EQdQRdfUfqvUq__dmDUytj6_iFQxorFOjyPz_0xbzqjhGvxsng-9gCc308cvImNACsEZgCI5yyxuPbW-QZyiChr5cTesKa7ZZ6aUXjrYGnYjwcFyvUcNPQMIQy8avHJ8okBV1261kKSMbhi4ShzTY6ddz6xs4pT8tE81ZNHhUQ6FPFsS4MPL7QXFWsbtHWQfI4jRHGJZBJdZZgR8ZhEEd2jqjdAfJV_RWax4bL0szoA_UtlmR8TDXdaCXTfCDKQbyzQIjKUAVhNVGQ8VnKhBGvbnMe-hGKMmk4reraa1XWsgaEB-wK_CO0cRhzlv-CxPU-kmmyCqyVxWvlGv0n8qvPV3VOBesr4UfYFc13AUd_IzfAr5HNUhf6qrY5NwVaYgD4sLXePN52CTPqYcWZTHpjkoClsmK0="
+      },
+      "original_record_sha256": "963782557e89de6a2e4f97dbb37da6e6a7c0fde264684c1a6d7d915191dc0da9"
+    }
+  ],
+  "actual_completed_final": {
+    "timestamp": "2026-11-07T09:20:19.967Z",
+    "line_number": 102,
+    "kind": "message",
+    "role": "assistant",
+    "text": "## Research: LangGraph, SQLite и OpenAI Responses для H-006 B\n\n### Request Type\nImplementation reference lookup / current best-practice research. Только чтение; проверки приложения и платные вызовы не выполнялись.\n\n### Direct Answer / Official Docs Evidence\n\n#### 1. LangGraph Python: граф и продолжение после уточнения\n\n- `StateGraph(State)` строит граф общего состояния; узлы возвращают обновления, рёбра задают переходы. Перед `invoke` требуется `compile()`. `recursion_limit` ограничивает **super-steps**, а не время, SQL-запросы или количество LLM-вызовов. Это верхнеуровневое поле config, **не** содержимое `configurable`; превышение вызывает `GraphRecursionError`. [Graph API](https://docs.langchain.com/oss/python/langgraph/graph-api).\n- Динамический `interrupt(payload)` требует checkpointer и `configurable.thread_id`. Продолжение: `graph.invoke(Command(resume=value), config)` с **тем же** thread ID. Узел запускается заново с начала: операции перед `interrupt()` повторяются. Поэтому нельзя считать паузу продолжением с той же строки, поглощать interrupt общим `try/except` или помещать перед ним неидемпотентные действия. Payload должен быть JSON-сериализуемым. [Interrupts](https://docs.langchain.com/oss/python/langgraph/interrupts).\n- `InMemorySaver` включён через базовый checkpoint-пакет и предназначен для экспериментов. `SqliteSaver` / `AsyncSqliteSaver` требуют отдельного `langgraph-checkpoint-sqlite`; документация позиционирует их для локальных workflows. Сохранение checkpoint не равнозначно защите чувствительных данных. [Checkpointers](https://docs.langchain.com/oss/python/langgraph/checkpointers).\n\n**Документальный API-пример, не запускался:**\n```python\ngraph = builder.compile(checkpointer=checkpointer)\nconfig = {\n    \"configurable\": {\"thread_id\": thread_id},\n    \"recursion_limit\": 24,  # пример проектного лимита, не upstream default\n}\nfirst = graph.invoke(initial_state, config)\ncontinued = graph.invoke(Command(resume=clarification), config)\n```\n\n**Следствия для будущих проверок — исследовательский вывод:** отдельно проверить изоляцию thread IDs, потерянный/устаревший resume, повторную доставку, перезапуск процесса, повторение действий до interrupt и исчерпание счётчика уточнений. Ограничение одного запуска не заменяет общий бюджет разговора.\n\n#### 2. Python sqlite3: readonly — несколько независимых ограничений\n\n- Документированное открытие: `sqlite3.connect(\"file:university.db?mode=ro\", uri=True)`. `execute(sql, parameters)` выполняет один statement и отклоняет несколько; значения связываются placeholders. `timeout=` относится к ожиданию блокировки, **не** к общему времени SQL. `set_progress_handler(callback, n)` периодически вызывается по инструкциям VM; ненулевой результат прерывает запрос. [Python sqlite3](https://docs.python.org/3.13/library/sqlite3.html).\n- Authorizer действует при **компиляции** SQL на конкретном соединении. `SQLITE_DENY` отклоняет statement; `SQLITE_IGNORE` может подменить читаемое значение на NULL. Последнее способно незаметно изменить результат и потому не равно строгому отказу. Это контроль разрешённых операций, не доказательство правильности запроса или ограничение его стоимости. [SQLite authorizer](https://www.sqlite.org/c3ref/set_authorizer.html).\n- SQLite рекомендует для недоверенного SQL уменьшать ресурсные limits, ограничивать операции authorizer и прерывать чрезмерно долгие вычисления progress handler. Даже read-only SELECT способен работать очень долго. [SQLite security guidance](https://www.sqlite.org/security.html).\n- `PRAGMA query_only=ON` блокирует изменения данных, но upstream прямо предупреждает: соединение не становится полностью read-only; например, остаются checkpoint/COMMIT. Не подменять им URI `mode=ro`. [PRAGMA query_only](https://www.sqlite.org/pragma.html#pragma_query_only).\n\n**Следствия для будущих проверок — исследовательский вывод:** политика должна явно охватывать DML/DDL, ATTACH/DETACH, PRAGMA, доступ к таблицам и функциям, extension loading, несколько statements и дорогие SELECT. Проверить обходы через CTE, комментарии и вложенные запросы. Regex по первому слову не доказывает безопасность. Progress handler — кооперативная защита, а не строгая изоляция процесса; hard wall-clock/memory boundary требует отдельного решения.\n\n#### 3. OpenAI Responses и структурированные контракты\n\n- Для Responses JSON Schema передаётся через `text.format`, не Chat Completions `response_format`. Python SDK также документирует `client.responses.parse(..., text_format=Contract)` и `response.output_parsed`. Строгий schema использует `type:\"json_schema\"`, `strict:true`, корневой object, обязательные поля и `additionalProperties:false`; необязательность выражается nullable-полем. Поддерживается подмножество JSON Schema. Refusal и incomplete response требуют отдельных ветвей. Соответствие схеме **не гарантирует фактическую правильность SQL или ответа**. [Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs).\n- Responses сохраняются по умолчанию; `store=False` отключает такое сохранение ответа. Это **не обещание нулевой retention**: политика abuse monitoring и другие оговорки остаются отдельными. [Responses migration](https://developers.openai.com/api/docs/guides/migrate-to-responses), [Data controls](https://developers.openai.com/api/docs/guides/your-data).\n- Reasoning tokens оплачиваются как output tokens; `max_output_tokens` ограничивает суммарную генерацию, включая reasoning и другие невидимые токены. [Reasoning models](https://developers.openai.com/api/docs/guides/reasoning).\n\n**Документальный API-pattern, не запускался:**\n```python\nresponse = client.responses.parse(\n    model=model_id,\n    input=messages,\n    text_format=Contract,\n    store=False,\n    max_output_tokens=output_budget,\n)\n```\nНельзя сразу трактовать `output_parsed` как успешный доменный ответ: нужны проверки завершения, refusal, parsing и доменных инвариантов.\n\n#### 4. Конкретные модели и стоимость: установленная внешняя фактура, не выбор стека\n\n| Модель | Проверенная фактура | Standard USD / 1M tokens |\n|---|---|---:|\n| `gpt-6-luna` | Responses, function calling, Structured Outputs; документированное имя без найденного датированного snapshot | input **0.10**, cached input **0.01**, output **0.50** |\n| `gpt-5.4-mini-2026-03-17` | Документированный snapshot, Structured Outputs | input **0.75**, cached input **0.075**, output **4.50** |\n\nИсточники: [GPT-6 Luna](https://developers.openai.com/api/docs/models/gpt-6-luna), [Pricing](https://developers.openai.com/api/docs/pricing), [GPT-5.4 Mini](https://developers.openai.com/api/docs/models/gpt-5.4-mini).\n\n**Важная история совместимости:** `gpt-5.4-nano` и его snapshot deprecated с 2026-10-01, shutdown запланирован на 2027-04-01; официальный replacement — `gpt-6-luna`. Поэтому nano нельзя описывать как бессрочно актуальный дешёвый default. [Deprecations](https://developers.openai.com/api/docs/deprecations).\n\n**Пример расчёта, не измерение:** для Luna при 4 000 uncached input + 1 000 **суммарных оплачиваемых output** tokens стоимость одного вызова ≈ **$0.0009**; 100 таких вызовов ≈ **$0.09**. Это арифметика по Standard rates, без retries, иных вызовов, инструментов и дополнительных начислений. Не оценивать весь multi-step запрос ценой одного вызова.\n\n### Version Note\n\nПроверено по открытым официальным страницам **2026-11-07**:\n\n- Python reference — **3.13.18**, не подтверждение установленной версии workspace.\n- LangGraph — rolling Python docs; точный совместимый установленный/фиксируемый release не проверялся. Документация уже различает recursion defaults для 1.0.6–1.1.3 и ≥1.1.4; **не переносить старое предположение default=25**. Явный проектный лимит надёжнее неявного.\n- Версии Python SDK / LangGraph и runtime SQLite не устанавливались и не фиксировались в этом исследовании.\n- Наличие модели в документации не доказывает доступ конкретного аккаунта, квоты или качество NL→SQL.\n\n### Caveats / Ambiguity Flags\n\n- `gpt-6-luna` — подтверждённый конкретный экономичный кандидат, **не рекомендация принять его без eval**; выбор принадлежит Planner/dependency-expert и владельцу.\n- Не выдумывать датированный snapshot Luna. Для воспроизводимости сохранить запрошенный/возвращённый model ID, дату, параметры, usage и версии datasets/prompts.\n- Источники достаточны без upstream code/OSS/third-party дополнений.\n- Чтение authoritative package выполнено; repo-local продуктовая реализация не исследовалась. Файлы, runtime state и credentials не изменялись/не читались на значения.\n\n### Reusable Takeaway\n\nДля `$ralplan`: проектировать явные бюджеты и error branches; считать interrupt повторным входом в узел; разделять read-only, authorizer и ресурсные лимиты; отделять schema correctness от SQL/answer correctness; документировать текущие модели с deprecation/date caveats. Все предложенные validation implications остаются **планом будущих проверок**, не выполненными тестами."
+  },
+  "source_export_sha256": "a124791bfa1cfb41cfe9f7bc015e5dad49e6ff4f95a3d0a7c9c55fc402f2af43",
+  "skipped_records": 0,
+  "omitted_inherited_context": [
+    {
+      "line_number": 5,
+      "sha256": "abd9e13231f64ce8944383fcbaade9ddc685e01f919e45daf861d0aab1ab8bff",
+      "reason": "Inherited parent/skill/read context not duplicated"
+    },
+    {
+      "line_number": 9,
+      "sha256": "3dd00a4a851fcffc4652e1db92311d7f61595ee9fee5668c631c5e113f03cf13",
+      "reason": "Inherited parent/skill/read context not duplicated"
+    },
+    {
+      "line_number": 12,
+      "sha256": "3bf99244ecdf9679efee61215ec08ad584f43ae695cc536bf9cc074e00d22120",
+      "reason": "Inherited parent/skill/read context not duplicated"
+    },
+    {
+      "line_number": 16,
+      "sha256": "07178c6c799684ff947c56e13016567a2bc00938a554a9b871392c1dc4959dad",
+      "reason": "Inherited parent/skill/read context not duplicated"
+    },
+    {
+      "line_number": 18,
+      "sha256": "be13704d1d32592cc01bb4388b78a51f6d5174a8faceb07d6d6c634a70067c9f",
+      "reason": "Inherited parent/skill/read context not duplicated"
+    }
+  ],
+  "coverage": "Real role execution/result, all actual assignment and steering messages from parent call surface; final from installed exact-session export. Not full tools/instructions/reasoning.",
+  "status": "Completed bounded research input, not architecture adoption or review/approval. Unused by Planner because lifecycle binding blocker."
+}

@@ -1,0 +1,116 @@
+{
+  "stage": "H-006 B2",
+  "iteration": 3,
+  "status": "proposed",
+  "files": [
+    {
+      "file": "ADR-OMX-003-minimal-stack.md",
+      "bytes": 1813,
+      "sha256": "99fbeb2d67733842e8f7e22ced6c6c551fd020a4c51406a1bed7810261af2c1a"
+    },
+    {
+      "file": "ADR-OMX-004-domain-semantics.md",
+      "bytes": 1983,
+      "sha256": "d043be3921dd2ef365c473a34427be2bc455a89b60d82b23acd1bc298593815f"
+    },
+    {
+      "file": "ADR-OMX-005-bounded-graph-contracts.md",
+      "bytes": 1963,
+      "sha256": "7489030464715be1c2b2e8af38ad53f5b027f5b40b5a7ee011973665d5658f3c"
+    },
+    {
+      "file": "ADR-OMX-006-schema-boundary-tracing.md",
+      "bytes": 2354,
+      "sha256": "b22250f9479a016dba730ec13bd12a85add6fea517b2e431179be970cf1939da"
+    },
+    {
+      "file": "ADR-OMX-007-verification-delivery.md",
+      "bytes": 2393,
+      "sha256": "f6dffa29a675a9ba9aa415cf10be6430d148cdfe7e99750662cbe43ea38d55c2"
+    },
+    {
+      "file": "adr-index-additions.md",
+      "bytes": 995,
+      "sha256": "1015c314d8559631fd366bfaf15920143278da9d8ffffca9ffad6c96fe615247"
+    },
+    {
+      "file": "architecture-proposal.md",
+      "bytes": 14482,
+      "sha256": "06b29d33b9be9f88e679af094c3b007c93ebbc753d0d7664f15b6cf43682aeda"
+    },
+    {
+      "file": "changes-from-iteration-1.md",
+      "bytes": 3711,
+      "sha256": "4e36899151149311d13ba0ad5e2a1fda24052849e76e47e4c93127f861fbe339"
+    },
+    {
+      "file": "changes-from-iteration-2.md",
+      "bytes": 2670,
+      "sha256": "a887a8db9fc48cb05218191dc8f50ae0663ff8ef64001d9ae99cffc1243134f9"
+    },
+    {
+      "file": "contracts.md",
+      "bytes": 45599,
+      "sha256": "fc6b18c174ebb3ba0bf5e296481f1276836f1812e5a6e9628776bb2f0d2f0da3"
+    },
+    {
+      "file": "implementation-plan.md",
+      "bytes": 6449,
+      "sha256": "798c2eab357ccb61b8958661b0e774abcebc6d918822899a81a79b3141376ff4"
+    },
+    {
+      "file": "production-considerations.md",
+      "bytes": 3788,
+      "sha256": "a38c8de03295671e3e860f6b61a19699e434527a58b3e5f067d2b64e0289889e"
+    },
+    {
+      "file": "requirements-test-matrix.md",
+      "bytes": 8958,
+      "sha256": "fdd549c61920ab1a923276e09c36c4bc4be5ea74d2ded095cff8c7a793b98479"
+    },
+    {
+      "file": "test-plan.md",
+      "bytes": 25854,
+      "sha256": "450bc0175695dd57e35e92dde7fdfb068e3c5156064682fa05d611e53ac365e7"
+    },
+    {
+      "file": "plan-bundle.md",
+      "bytes": 124495,
+      "sha256": "e4d91f3e04113d4f973bb4e578c98a243040c7d05f725f164c6b11a62ece53b8"
+    }
+  ],
+  "bundle": "plan-bundle.md",
+  "mapping": {
+    "architecture-proposal.md": "docs/plans/architecture-proposal.md",
+    "contracts.md": "docs/plans/contracts.md",
+    "test-plan.md": "docs/plans/test-plan.md",
+    "requirements-test-matrix.md": "docs/plans/requirements-test-matrix.md",
+    "implementation-plan.md": "docs/plans/implementation-plan.md",
+    "production-considerations.md": "docs/plans/production-considerations.md",
+    "ADR-OMX-*.md": "docs/adr/same-basename",
+    "adr-index-additions.md": "docs/adr/H-006-B2-index-additions.md (then leader append reviewed rows to README)",
+    "plan-bundle.md": "docs/ai/omx/H-006-B2-iteration-3-plan-bundle.md",
+    "changes-from-iteration-1.md": "docs/ai/omx/H-006-B2-iteration-2-changes.md",
+    "changes-from-iteration-2.md": "docs/ai/omx/H-006-B2-iteration-3-changes.md"
+  },
+  "validation": {
+    "R_rows": 17,
+    "U_rows": 8,
+    "application_tests": "not-run",
+    "live_calls": "not-run",
+    "privacy_scan": "no private absolute paths/credentials/raw transcript in constituent files",
+    "link_resolution": "relative paths target future docs/plans or docs/adr; leader must verify after packaging",
+    "json_examples_parsed": 12,
+    "static_m1_references": "pass documentary validation",
+    "oracle_arithmetic": "S6 80.00; tie cross product checked; not application tests",
+    "iteration1_hashes": "all unchanged",
+    "constituents": 14,
+    "product_tests": "not-run",
+    "review_verdict": "not claimed",
+    "iteration2_hashes": "all unchanged",
+    "zero_case_examples": "three complete typed raw→Answer pairs consistent; no SQL/app test"
+  },
+  "findings": {
+    "B2-R1": "addressed pending Architect3/Critic3; prior B1/B3/B4/A1/A2 decisions preserved"
+  }
+}

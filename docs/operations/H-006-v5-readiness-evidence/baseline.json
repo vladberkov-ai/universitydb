@@ -1,0 +1,472 @@
+{
+  "recorded_at": "2026-11-07T08:44:48.196296+00:00",
+  "seven_originals": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "2dee4fa80c2226b91cffb3b977aa403840a83d392aa4b4341e21a34f521dca21",
+      "bytes": 4729
+    },
+    {
+      "path": "docs/ai/README.md",
+      "sha256": "f2ffa5a75851e4465a14dcbb41c4d73692b6cc52e2e6846f8f135da012a8ff17",
+      "bytes": 9723
+    },
+    {
+      "path": "docs/ai/omx/H-006-prompt-coverage-blocker.json",
+      "sha256": "6fdbaac1ce9ad401f7b2085564c4925174ece3b6cdd978d49f7cd40421061c4a",
+      "bytes": 1181
+    },
+    {
+      "path": "docs/ai/omx/H-006-session-export-blocker-cutoff.json",
+      "sha256": "44703f89e4395858610c4297f46c200ea2e446c1e4dbe520f8d7c704c24d1360",
+      "bytes": 5747
+    },
+    {
+      "path": "docs/operations/H-006-A-postcommit-receipt.json",
+      "sha256": "739eed80a78b51338909c84846a147ebaa35c18cecee75de496b3795ba11df28",
+      "bytes": 2952
+    },
+    {
+      "path": "docs/operations/H-006-B-runtime-blocker.json",
+      "sha256": "b8b51deb101920040094f9ec9ea79d9ac31cf958a9adec8cf2ba4e0ee4b63355",
+      "bytes": 4328
+    },
+    {
+      "path": "docs/reports/H-006-advisory-blocker.md",
+      "sha256": "d8e04bdd1800e5cfdae7db605498e86ab9746b876ca87092c48caa5333d7b3ab",
+      "bytes": 4031
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "--show-toplevel",
+        "--git-dir"
+      ],
+      "exit_code": 0,
+      "stdout": "/home/dev/projects/universitydb\n.git\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exit_code": 0,
+      "stdout": "main\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "8931d832d49311ac0d63c3a7a359b4293058da89\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": " M AGENTS.md\n M docs/ai/README.md\n?? docs/ai/omx/H-006-prompt-coverage-blocker.json\n?? docs/ai/omx/H-006-session-export-blocker-cutoff.json\n?? docs/operations/H-006-A-postcommit-receipt.json\n?? docs/operations/H-006-B-runtime-blocker.json\n?? docs/reports/H-006-advisory-blocker.md\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-status"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "worktree",
+        "list",
+        "--porcelain"
+      ],
+      "exit_code": 0,
+      "stdout": "worktree /home/dev/projects/universitydb\nHEAD 8931d832d49311ac0d63c3a7a359b4293058da89\nbranch refs/heads/main\n\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "-t",
+        "8931d832d49311ac0d63c3a7a359b4293058da89"
+      ],
+      "exit_code": 0,
+      "stdout": "commit\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "8931d832d49311ac0d63c3a7a359b4293058da89",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "log",
+        "-3",
+        "--format=%H %s"
+      ],
+      "exit_code": 0,
+      "stdout": "8931d832d49311ac0d63c3a7a359b4293058da89 docs: verify preparation checkpoint for H-006-v4\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "original_files": [
+    {
+      "path": "docs/ai/omx/H-006-prompt-coverage-blocker.json",
+      "sha256": "6fdbaac1ce9ad401f7b2085564c4925174ece3b6cdd978d49f7cd40421061c4a"
+    },
+    {
+      "path": "docs/ai/omx/H-006-session-export-blocker-cutoff.json",
+      "sha256": "44703f89e4395858610c4297f46c200ea2e446c1e4dbe520f8d7c704c24d1360"
+    },
+    {
+      "path": "docs/operations/H-006-A-postcommit-receipt.json",
+      "sha256": "739eed80a78b51338909c84846a147ebaa35c18cecee75de496b3795ba11df28"
+    },
+    {
+      "path": "docs/operations/H-006-B-runtime-blocker.json",
+      "sha256": "b8b51deb101920040094f9ec9ea79d9ac31cf958a9adec8cf2ba4e0ee4b63355"
+    },
+    {
+      "path": "docs/reports/H-006-advisory-blocker.md",
+      "sha256": "d8e04bdd1800e5cfdae7db605498e86ab9746b876ca87092c48caa5333d7b3ab"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "36f5c847236d2b148c41c30b063a5afa13c1e6da68c5e655efe7c4711f2b2807"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "2dee4fa80c2226b91cffb3b977aa403840a83d392aa4b4341e21a34f521dca21"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-001-preparation-boundary.md",
+      "sha256": "985b3afa5c8df7aebb85b336509116e27ab292dc2c02757015ecdf48b06c40c5"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-002-execution-context-and-checkpoint.md",
+      "sha256": "21d5e1406745749569ad00639c8ecf6d75c4401136a4d74ff7ed5669fcb663c3"
+    },
+    {
+      "path": "docs/adr/README.md",
+      "sha256": "37e789f5d4b51b65e14db613b79a6a1cfee80892b5cfb00fc4b55fe2a4a801e0"
+    },
+    {
+      "path": "docs/ai/README.md",
+      "sha256": "f2ffa5a75851e4465a14dcbb41c4d73692b6cc52e2e6846f8f135da012a8ff17"
+    },
+    {
+      "path": "docs/ai/omx/H-004-actual-prompt.txt",
+      "sha256": "6def3132523c0e8731ec5ee6f5f23eae0f22a2935ddbb7658a1d066071e715f5"
+    },
+    {
+      "path": "docs/ai/omx/H-004-instruction-context.json",
+      "sha256": "22a1adbbcec9d04ad56e24d2b197ee590736f20277886ff833438b1fc1234932"
+    },
+    {
+      "path": "docs/ai/omx/H-004-prompt-receipt.json",
+      "sha256": "35a9be309333ecb919bd945f19c211d7973ed8a1f2a40c86d4500579d44db60f"
+    },
+    {
+      "path": "docs/ai/omx/H-004-session-export-completed.json",
+      "sha256": "d8ff7059149b0cc872f5f9b5685f790795a6d9bd6500a07b5b35ad687a004559"
+    },
+    {
+      "path": "docs/ai/omx/H-004-session-export.json",
+      "sha256": "487b330fc5bd6f958d5dabfddd38fbf7d8660460f2cc6526f189b0b1761c1149"
+    },
+    {
+      "path": "docs/ai/omx/H-005-actual-prompt.txt",
+      "sha256": "712439ae1e6f65c4bb5881d6da41d53613156580a272dccc660f3df6d0dae430"
+    },
+    {
+      "path": "docs/ai/omx/H-005-prompt-receipt.json",
+      "sha256": "ca90fdf930953f858017e3836e03808a9e200786780f1973aa16268b2fe1ef5f"
+    },
+    {
+      "path": "docs/ai/omx/H-005-session-export-completed.json",
+      "sha256": "658940815980086d8b974a79a070703f956ae0af675271b77656c45507b25418"
+    },
+    {
+      "path": "docs/ai/omx/H-005-session-export-cutoff.json",
+      "sha256": "7ce469a7090f641aaf1696a4bcbda8cbec43b8dea5bdaaef11619f8a3b42e9c9"
+    },
+    {
+      "path": "docs/ai/omx/H-006-actual-prompt.txt",
+      "sha256": "3866c94900f64b827e0542fdab49d1f71375949cf18702f8dce85e69f4710216"
+    },
+    {
+      "path": "docs/ai/omx/H-006-prompt-receipt-A.json",
+      "sha256": "d80e9cb827127b7aef178e96339534d2d86c059f40f9296323eb4960c77f4cf6"
+    },
+    {
+      "path": "docs/ai/omx/H-006-session-export-A-cutoff.json",
+      "sha256": "71697910ac293814678a4fbe099fddc949d6304ff987c2323be7fcfac6324674"
+    },
+    {
+      "path": "docs/ai/omx/history/H-004-prompt-receipt-cutoff.json",
+      "sha256": "2191d62861100f134988ca47c9608c92b3ec3609c613e2cff9b8172ab290121e"
+    },
+    {
+      "path": "docs/chat/decisions/ADR-CHAT-001-memory-ownership.md",
+      "sha256": "2f68a94298b86c7c96372102167aaa5b0e055e95024b704ca71ba560703a0cf0"
+    },
+    {
+      "path": "docs/chat/decisions/ADR-CHAT-002-result-scope.md",
+      "sha256": "a9ddf57dcb88d5610d751eb8ba9429178e728e5c23f2aa6d4ca030020d42defe"
+    },
+    {
+      "path": "docs/chat/planning/acceptance-contract.md",
+      "sha256": "ff8dd0a1354480e7fd83caac3219e5d885b4582fe33474ac51f223a75c7ac5fb"
+    },
+    {
+      "path": "docs/chat/requirements.md",
+      "sha256": "cf1822681cab3f6d46c444cb4e6aa94267abb589793f6866411d348d25b57936"
+    },
+    {
+      "path": "docs/operations/H-005-environment-checks.json",
+      "sha256": "d2222dcf7a21fb1d8d55b80a68bd75842d8360e1c4bf4640a4cea27c5325dc09"
+    },
+    {
+      "path": "docs/operations/H-005-input-verification.json",
+      "sha256": "51548f38bdff334a289280a412d472cc562085fafc416933539c77109718f1ef"
+    },
+    {
+      "path": "docs/operations/H-005-preparation-receipt.json",
+      "sha256": "6fdf6858b9d6fd7e393ee09d6e8700d07f6969570218c04309453cf1c2c34fb3"
+    },
+    {
+      "path": "docs/operations/H-005-preparation-validation.json",
+      "sha256": "1e377313f9666219496d7b7a9ce17b08440ab84b53955ac27a6a522ccfd71e0a"
+    },
+    {
+      "path": "docs/operations/H-006-A-validation.json",
+      "sha256": "2a5663219a9b0362713e14c0b109753f2aaa7d7e7dea005eee90a3fa579915ee"
+    },
+    {
+      "path": "docs/operations/H-006-input-verification.json",
+      "sha256": "b9aa14f221e42dba2f7d2d3aa09ebcfd20a5d2441115844be60c69b8dd86bc41"
+    },
+    {
+      "path": "docs/operations/chat-export-receipt.json",
+      "sha256": "c978639c47c6c4673cb6e948e558172b89a86c517df3782409e948663edfbdb7"
+    },
+    {
+      "path": "docs/operations/environment-checks.json",
+      "sha256": "cd30767517f1d708b36e2798bd5e5c3a20c8482640e392ec9c1dca79e3b8ab29"
+    },
+    {
+      "path": "docs/operations/git-checkpoints.md",
+      "sha256": "54ad15d656609353b8e06eee304d22a14aaddd937f2fbf7eeadb1834e2a2005e"
+    },
+    {
+      "path": "docs/operations/history/H-004-chat-export-receipt.json",
+      "sha256": "ad7237965f554de3fe1081aaf9583212abf636eeba3ff5df8e637ca8da6e0cba"
+    },
+    {
+      "path": "docs/operations/input-verification.json",
+      "sha256": "83fd0f7d76b2654ff37b5caebd8a9b486a387256f14950b655c6d4683ed4397c"
+    },
+    {
+      "path": "docs/operations/preparation-validation.json",
+      "sha256": "183701e05bb3b3e7ac52edf27e78b043d3e26b5396f6ceeb1e8b5d277396e6cd"
+    },
+    {
+      "path": "docs/reports/H-004-repository-preparation.md",
+      "sha256": "1af672ce1e7107464ac201c84ff1286ad901d793ebc904ba115fa5635e1e1c48"
+    },
+    {
+      "path": "docs/reports/H-005-preparation-completion.md",
+      "sha256": "e2ee430e40dd4ba4b4e14a0294f951b915c03a11860e0ff63944dac146ab8463"
+    },
+    {
+      "path": "docs/reports/H-006-preparation-checkpoint.md",
+      "sha256": "d5dc73541608e5d36d819f21f76ce61fb3f26fddf8a8087bdb572e79d7883625"
+    },
+    {
+      "path": "omx_wiki/index.md",
+      "sha256": "3004d4a65e4e4e0ac44ad6fd6ed93bab8ccd8f40c13fe5c25987f724ae0c9b10"
+    },
+    {
+      "path": "omx_wiki/log.md",
+      "sha256": "79d623adf8fac8d4c1013cc0febc9f2d9e058bfe7edac552f9c914d1a15a2fc8"
+    },
+    {
+      "path": "omx_wiki/session-log-h-004.md",
+      "sha256": "ef89bcdd5ed7a51fc96468098fd701c1ec1eebc8a73d78ccc0bf469899d3ecbc"
+    },
+    {
+      "path": "omx_wiki/session-log-h-005.md",
+      "sha256": "d789996ee9b1f428940ed03e88ff1dca02cc4bfe148aaeccfdd69c50c1c65c61"
+    }
+  ],
+  "runtime_hashes": [
+    {
+      "path": ".omx/state/current-task-baseline.json",
+      "sha256": "de4c6280b29065af7b6d7596de361b1ad5ed38179f8a6dc33e78ea75b9008810"
+    },
+    {
+      "path": ".omx/state/detached-active-record.json",
+      "sha256": "2c55da4eccf0e839a6b4f1faf380abe5f0af8f40b0e7d633d27b2076e9b378b8"
+    },
+    {
+      "path": ".omx/state/native-stop-state.json",
+      "sha256": "2616bdede2daa12897d944a76dc172915124d654fddeb415e068b046848e456e"
+    },
+    {
+      "path": ".omx/state/notify-fallback-authority-owner.json",
+      "sha256": "3d8d514303f8c66d881ad77d98619911bfdf4c413ef6582f90b1ccc99a5e32bb"
+    },
+    {
+      "path": ".omx/state/notify-fallback-authority-state.json",
+      "sha256": "3d8d514303f8c66d881ad77d98619911bfdf4c413ef6582f90b1ccc99a5e32bb"
+    },
+    {
+      "path": ".omx/state/notify-fallback-delivery-v1/ee/ee2885ab4eb941208011d1cf1d04d6ecf7c2933f1e9f58e80681fe4f6a9cf3e3.key/attempt-1/decision",
+      "sha256": "01c7fe722b73497c4c829d37da07d41ab9a457d369c322c698b80995a58cbe87"
+    },
+    {
+      "path": ".omx/state/notify-fallback-delivery-v1/ee/ee2885ab4eb941208011d1cf1d04d6ecf7c2933f1e9f58e80681fe4f6a9cf3e3.key/attempt-1/outcome",
+      "sha256": "40d9c395b35ba451cb5356897758661037e5b5397a4402517d461ce23b2057e9"
+    },
+    {
+      "path": ".omx/state/notify-fallback-delivery-v1/ee/ee2885ab4eb941208011d1cf1d04d6ecf7c2933f1e9f58e80681fe4f6a9cf3e3.key/attempt-1/owner-49deb3f9ae08b065d9617ab777d7ba8b85408b75bacbd1eebc5f91ba7cb04198/claim.json",
+      "sha256": "9a13f9730491a656a5cf75f9d0fdfa3ebf98460e4059230934525beea7db3ee4"
+    },
+    {
+      "path": ".omx/state/notify-fallback-delivery-v1/ee/ee2885ab4eb941208011d1cf1d04d6ecf7c2933f1e9f58e80681fe4f6a9cf3e3.key/key.json",
+      "sha256": "1e8489e7e17da796e1eb6e78a62dbd182c66148ec98d840cc7ed311889e2044a"
+    },
+    {
+      "path": ".omx/state/notify-fallback-state.json",
+      "sha256": "b36f83fcf4279fe5c97d4b8cf3dc98bcf277760c8a058fe31e86b23c0b5aabc9"
+    },
+    {
+      "path": ".omx/state/notify-fallback.pid",
+      "sha256": "7dc8a4eaff0fb50238e8a42fe876054545a476b2c9f0c17b1c916d50777a85ce"
+    },
+    {
+      "path": ".omx/state/session.json",
+      "sha256": "792c598d5349ece613948540d0a3e9d8aafdd17985e9567dcdef5e4438c5df7c"
+    },
+    {
+      "path": ".omx/state/sessions/01a1b31a-d9cc-7d00-b9d6-4118c6e46f49/session-owner.json",
+      "sha256": "13264c76677d6c7b866805ae7313da8c60437270d2a582cddaf51b682a5eaeab"
+    },
+    {
+      "path": ".omx/state/sessions/01a1b356-8b0a-7b40-8c40-293841f31670/session-owner.json",
+      "sha256": "2de99aeb3b70e740f7c39c93734c1ae96f19321a199264ae93434a96c01653e8"
+    },
+    {
+      "path": ".omx/state/sessions/01a1b52a-4d0c-7211-9a7f-917698d6e84c/session-owner.json",
+      "sha256": "f82ae0df0a7ad5a2fd31b76cab62f48372dcdb1a7bf60f748ccb714b86b3eeef"
+    },
+    {
+      "path": ".omx/state/sessions/omx-1794006222700-y9rw23/AGENTS.md",
+      "sha256": "6abc29eeca89509e4324396e8dd5809057d5255805dbc0a2a1cbaec88adb2655"
+    },
+    {
+      "path": ".omx/state/sessions/omx-1794006222700-y9rw23/notify-hook-state.json",
+      "sha256": "0866e4efbf27b0daa6f4dc78a13e2dfc92ae751836e3dc29a7fa9c45fe8261a1"
+    },
+    {
+      "path": ".omx/state/sessions/omx-1794040798905-xque5e/AGENTS.md",
+      "sha256": "3c6614a2c9ee7bcf07faf3c179f66cbd484ef7b3895d2e70f5b34ab15b094ae9"
+    },
+    {
+      "path": ".omx/state/sessions/omx-1794040798905-xque5e/hud-state.json",
+      "sha256": "f516b878370aab4986307129f2239a03b73a2b0ecccef27d2dfcd80082cce186"
+    },
+    {
+      "path": ".omx/state/sessions/omx-1794040798905-xque5e/notify-hook-state.json",
+      "sha256": "0ed868d5319d51eb7ef6c8c31b18d44519e9dad689efcd8247f79868e5768e84"
+    },
+    {
+      "path": ".omx/state/subagent-tracking.json",
+      "sha256": "b9457fde3cae71d628e542e1750ce32699950e0e9350dad4cbcd0ad8916b7287"
+    },
+    {
+      "path": ".omx/state/tmux-hook-state.json",
+      "sha256": "8b8eeb21ed62bfbaf0c068f1053964db65ad9e9dac74963924a6b84c7181c26a"
+    },
+    {
+      "path": ".omx/state/update-check.json",
+      "sha256": "189d17ba19f8a621b86a2d866750871953e1fdfe68f2741692a0b3686437cc61"
+    }
+  ],
+  "git_index_sha256": "c718391829390e89b87c986eca4e03af89c2f307339ed15e0e982cb288f6c6d6",
+  "environment": {
+    "CODEX_SESSION_ID": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+    "CODEX_THREAD_ID": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+    "OMX_SESSION_ID": "omx-1794040798905-xque5e",
+    "OMX_STATE_ROOT": "",
+    "TMUX_PANE": "%0",
+    "WSL_DISTRO_NAME": "UbuntuD"
+  },
+  "session_pointer": {
+    "session_id": "omx-1794040798905-xque5e",
+    "native_session_id": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+    "owner_omx_session_id": "omx-1794040798905-xque5e",
+    "started_at": "2026-11-07T08:39:59.319Z",
+    "cwd": "/home/dev/projects/universitydb",
+    "state_root": "/home/dev/projects/universitydb/.omx/state",
+    "pid": 131449,
+    "platform": "linux",
+    "identity_schema_version": 2,
+    "process_identity": {
+      "platform": "linux",
+      "birth": "24902014",
+      "cmdline_hash": "ea0098c292d1726bf3e7afc8e691ecb59582d98410578585756220cb6a164bca"
+    },
+    "pid_start_ticks": 24902014,
+    "tmux_session_name": "omx-universitydb-main-1794040798905-xque5e",
+    "tmux_pane_id": "%0"
+  }
+}

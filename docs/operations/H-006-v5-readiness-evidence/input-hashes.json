@@ -1,0 +1,207 @@
+{
+  "package_sha256": "77a67c1787b8281b094af5811cc7ec2b94a0fbf85caabb9beaae96ce9a0a332b",
+  "expected_package_sha256": null,
+  "inputs": [
+    {
+      "source": "AGENTS.md",
+      "expected_sha256": "01a9efd81e3ad9e3d9828f9fe189ccce0975292d4aa7963a8ec51e243f334074",
+      "actual_sha256": "01a9efd81e3ad9e3d9828f9fe189ccce0975292d4aa7963a8ec51e243f334074",
+      "match": true,
+      "bytes": 6375,
+      "content_read_in_D": true
+    },
+    {
+      "source": "SCHEMA.md",
+      "expected_sha256": "598e5ba595b3f6c0e604f5cf8599d92ede3a9859f0bc2ca20f4d1417617d5769",
+      "actual_sha256": "598e5ba595b3f6c0e604f5cf8599d92ede3a9859f0bc2ca20f4d1417617d5769",
+      "match": true,
+      "bytes": 6364,
+      "content_read_in_D": false
+    },
+    {
+      "source": "raw/assignment/HW Task 1.pdf",
+      "expected_sha256": "f60e6212307812a27430b2e28ad3bb027b752f50609f76d0bcb8578116ed7550",
+      "actual_sha256": "f60e6212307812a27430b2e28ad3bb027b752f50609f76d0bcb8578116ed7550",
+      "match": true,
+      "bytes": 154547,
+      "content_read_in_D": false
+    },
+    {
+      "source": "raw/chat/CHAT-015.md",
+      "expected_sha256": "774edad9220f9a305fe63dd81dacf40accb97f8f7e39591212d2ad8902e6764e",
+      "actual_sha256": "774edad9220f9a305fe63dd81dacf40accb97f8f7e39591212d2ad8902e6764e",
+      "match": true,
+      "bytes": 179,
+      "content_read_in_D": false
+    },
+    {
+      "source": "wiki/overview.md",
+      "expected_sha256": "407cdd34b42c4bed728414df11791d82db6e0331e1356ab41aa5a216df83a21a",
+      "actual_sha256": "407cdd34b42c4bed728414df11791d82db6e0331e1356ab41aa5a216df83a21a",
+      "match": true,
+      "bytes": 5214,
+      "content_read_in_D": false
+    },
+    {
+      "source": "wiki/requirements.md",
+      "expected_sha256": "b01ee2312558777b716ff32139cdc69bca5456c6aace436084db42f049ccda86",
+      "actual_sha256": "b01ee2312558777b716ff32139cdc69bca5456c6aace436084db42f049ccda86",
+      "match": true,
+      "bytes": 10391,
+      "content_read_in_D": false
+    },
+    {
+      "source": "wiki/planning/acceptance-contract.md",
+      "expected_sha256": "a0307bea7adfea9e7d0ab140ef4a062e91705f9a3709650c0b0ca0f656f6ba12",
+      "actual_sha256": "a0307bea7adfea9e7d0ab140ef4a062e91705f9a3709650c0b0ca0f656f6ba12",
+      "match": true,
+      "bytes": 8978,
+      "content_read_in_D": false
+    },
+    {
+      "source": "wiki/verification/acceptance.md",
+      "expected_sha256": "00d7a6fd28c0763513b1a27ba15c24820df5a4a39b1719c50bc1b4c40afa05e2",
+      "actual_sha256": "00d7a6fd28c0763513b1a27ba15c24820df5a4a39b1719c50bc1b4c40afa05e2",
+      "match": true,
+      "bytes": 9941,
+      "content_read_in_D": false
+    },
+    {
+      "source": "wiki/planning/stages.md",
+      "expected_sha256": "81e809f1abf00061788ab3b99a353aceb27dbb42544d3f7a794af113b898e202",
+      "actual_sha256": "81e809f1abf00061788ab3b99a353aceb27dbb42544d3f7a794af113b898e202",
+      "match": true,
+      "bytes": 7384,
+      "content_read_in_D": false
+    },
+    {
+      "source": "wiki/decisions/ADR-CHAT-001-memory-ownership.md",
+      "expected_sha256": "057e1c6a9e23d30d9e8a0580bbd885681f72a32c787ee91729c18425deb52583",
+      "actual_sha256": "057e1c6a9e23d30d9e8a0580bbd885681f72a32c787ee91729c18425deb52583",
+      "match": true,
+      "bytes": 1963,
+      "content_read_in_D": false
+    },
+    {
+      "source": "wiki/decisions/ADR-CHAT-002-result-scope.md",
+      "expected_sha256": "d9ba42c284c39ada7409c70191ab4b56be29fa2af21ed2f98146184c45e5930d",
+      "actual_sha256": "d9ba42c284c39ada7409c70191ab4b56be29fa2af21ed2f98146184c45e5930d",
+      "match": true,
+      "bytes": 3040,
+      "content_read_in_D": false
+    },
+    {
+      "source": "wiki/decisions/ADR-CHAT-003-repository-location.md",
+      "expected_sha256": "1151afe41489e8abb7a7170049f6c42b2f67ebc9882cc387aff0853b71be43e2",
+      "actual_sha256": "1151afe41489e8abb7a7170049f6c42b2f67ebc9882cc387aff0853b71be43e2",
+      "match": true,
+      "bytes": 3796,
+      "content_read_in_D": false
+    },
+    {
+      "source": "wiki/operations/git-protocol.md",
+      "expected_sha256": "d7aa9bc0b8de8859cb3c922e8f1d84ed399f068cde8ba947864ae02367afa644",
+      "actual_sha256": "d7aa9bc0b8de8859cb3c922e8f1d84ed399f068cde8ba947864ae02367afa644",
+      "match": true,
+      "bytes": 9332,
+      "content_read_in_D": false
+    },
+    {
+      "source": "wiki/operations/repo-map.md",
+      "expected_sha256": "7345c8acd7b6a4fa1d4c9ee74adca42e2a78910671700f94098088e96a0862a0",
+      "actual_sha256": "7345c8acd7b6a4fa1d4c9ee74adca42e2a78910671700f94098088e96a0862a0",
+      "match": true,
+      "bytes": 5832,
+      "content_read_in_D": false
+    },
+    {
+      "source": "wiki/operations/export-manifest.json",
+      "expected_sha256": "8cecbaadd9941c556d655d813648a92c909819a40f01d518ed3254cb041e53a8",
+      "actual_sha256": "8cecbaadd9941c556d655d813648a92c909819a40f01d518ed3254cb041e53a8",
+      "match": true,
+      "bytes": 10635,
+      "content_read_in_D": false
+    },
+    {
+      "source": "wiki/operations/result-understanding.md",
+      "expected_sha256": "5e4ba14dfc35cff554c7d1d8138e3b4584486198004692a9e116d71f740a8f64",
+      "actual_sha256": "5e4ba14dfc35cff554c7d1d8138e3b4584486198004692a9e116d71f740a8f64",
+      "match": true,
+      "bytes": 4896,
+      "content_read_in_D": false
+    },
+    {
+      "source": "wiki/verification/H-005-review.md",
+      "expected_sha256": "2f1df632cf5c8ce18e8ad2501652c73d6140ae6e865af58cb3fea673a07e1a07",
+      "actual_sha256": "2f1df632cf5c8ce18e8ad2501652c73d6140ae6e865af58cb3fea673a07e1a07",
+      "match": true,
+      "bytes": 4657,
+      "content_read_in_D": false
+    },
+    {
+      "source": "raw/chat/CHAT-018.md",
+      "expected_sha256": "d9829139a58fcb5fd9441c483b10ab628cef3692148ac89f4dd593099813c56b",
+      "actual_sha256": "d9829139a58fcb5fd9441c483b10ab628cef3692148ac89f4dd593099813c56b",
+      "match": true,
+      "bytes": 707,
+      "content_read_in_D": false
+    },
+    {
+      "source": "wiki/operations/omx-workflow.md",
+      "expected_sha256": "bd60cd2f14f54942a11e409e1cc8a730197b8c753f500125dfbf67e52fabf51d",
+      "actual_sha256": "bd60cd2f14f54942a11e409e1cc8a730197b8c753f500125dfbf67e52fabf51d",
+      "match": true,
+      "bytes": 14469,
+      "content_read_in_D": true
+    },
+    {
+      "source": "raw/chat/CHAT-020.md",
+      "expected_sha256": "9da56e5d12e08b7ba7d93f22170dfbe8e5d35554b45583f9fa54aea5902f9efe",
+      "actual_sha256": "9da56e5d12e08b7ba7d93f22170dfbe8e5d35554b45583f9fa54aea5902f9efe",
+      "match": true,
+      "bytes": 7512,
+      "content_read_in_D": false
+    },
+    {
+      "source": "wiki/verification/H-006-review.md",
+      "expected_sha256": "fb18c3e949712c51f4d8a734503a29eb2cdb39a5fe3e79148d171f7661ffd24f",
+      "actual_sha256": "fb18c3e949712c51f4d8a734503a29eb2cdb39a5fe3e79148d171f7661ffd24f",
+      "match": true,
+      "bytes": 4900,
+      "content_read_in_D": true
+    },
+    {
+      "source": "wiki/index.md",
+      "expected_sha256": "e8c1857f0374ea89f18a3d6164a8e44942cfbe8c6c0ed6de61937c549a0970f9",
+      "actual_sha256": "e8c1857f0374ea89f18a3d6164a8e44942cfbe8c6c0ed6de61937c549a0970f9",
+      "match": true,
+      "bytes": 5942,
+      "content_read_in_D": false
+    },
+    {
+      "source": "wiki/open-questions.md",
+      "expected_sha256": "7777e015cd2cc4ae16ef70bddb4c21ef7e445dae4fc06794723f5123f6d0610a",
+      "actual_sha256": "7777e015cd2cc4ae16ef70bddb4c21ef7e445dae4fc06794723f5123f6d0610a",
+      "match": true,
+      "bytes": 6744,
+      "content_read_in_D": false
+    },
+    {
+      "source": "handoffs/H-006-v5-message-1-readiness.txt",
+      "expected_sha256": "7be354c1afc9ba67fbd943b8a171088bb0eb84b05acd87a19b1dd25d2d0efd8f",
+      "actual_sha256": "7be354c1afc9ba67fbd943b8a171088bb0eb84b05acd87a19b1dd25d2d0efd8f",
+      "match": true,
+      "bytes": 1594,
+      "content_read_in_D": false
+    },
+    {
+      "source": "handoffs/H-006-v5-message-2-advisory.txt",
+      "expected_sha256": "51f8c4ce3b38938e85a371e4c496b6dc8da425f201ad73bbdda067c4718dc134",
+      "actual_sha256": "51f8c4ce3b38938e85a371e4c496b6dc8da425f201ad73bbdda067c4718dc134",
+      "match": true,
+      "bytes": 2138,
+      "content_read_in_D": false
+    }
+  ],
+  "scope": "D readiness only. All manifest bytes hashed; full B design-input reading (including PDF pages) deferred to B. No design/requirements analysis performed."
+}

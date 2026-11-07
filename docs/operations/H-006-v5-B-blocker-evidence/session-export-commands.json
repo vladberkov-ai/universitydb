@@ -1,0 +1,47 @@
+[
+  {
+    "argv": [
+      "omx",
+      "session",
+      "export",
+      "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+      "--format",
+      "json",
+      "--output",
+      ".omx/artifacts/H-006-v5-B/leader-session-export-cutoff-private.json"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Exported session 01a1b52a-4d0c-7211-9a7f-917698d6e84c to .omx/artifacts/H-006-v5-B/leader-session-export-cutoff-private.json\n"
+  },
+  {
+    "argv": [
+      "omx",
+      "session",
+      "export",
+      "01a1b54c-b64f-7763-81e3-191af590899c",
+      "--format",
+      "json",
+      "--output",
+      ".omx/artifacts/H-006-v5-B/researcher-session-export-cutoff-private.json"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Exported session 01a1b54c-b64f-7763-81e3-191af590899c to .omx/artifacts/H-006-v5-B/researcher-session-export-cutoff-private.json\n"
+  },
+  {
+    "argv": [
+      "omx",
+      "session",
+      "export",
+      "01a1b54c-d9b8-74e1-acae-52511345ab07",
+      "--format",
+      "json",
+      "--output",
+      ".omx/artifacts/H-006-v5-B/dependency-expert-session-export-cutoff-private.json"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Exported session 01a1b54c-d9b8-74e1-acae-52511345ab07 to .omx/artifacts/H-006-v5-B/dependency-expert-session-export-cutoff-private.json\n"
+  }
+]

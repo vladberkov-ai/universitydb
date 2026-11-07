@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python3",
+    "/tmp/h006v5_B_stop.py"
+  ],
+  "context": "Supported explicit escalation, first guard version",
+  "exit_code": 1,
+  "combined_tool_output": "Traceback (most recent call last):\n  File \"/tmp/h006v5_B_stop.py\", line 9, in <module>\n    active=json.loads(r['commands'][0]['stdout']).get('active_modes'); assert active==['ralplan'],repr(active)\n                                                                              ^^^^^^^^^^^^^^^^^^^\nAssertionError: []\n",
+  "mutation_attempted": false,
+  "reason": "Guard assertion precedes subprocess invocation of omx cancel; command was never reached.",
+  "followup_not_restart": "Exact-session get-status inspected to distinguish list-active omission; refined guard validated live owner and only one active exact-session workflow before supported cancel."
+}

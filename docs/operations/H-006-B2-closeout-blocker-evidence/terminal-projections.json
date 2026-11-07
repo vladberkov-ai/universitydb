@@ -1,0 +1,269 @@
+{
+  "observation_only": true,
+  "no_state_or_tracker_writes": true,
+  "postcloseout_snapshots": {
+    "ralplan": {
+      "source": ".omx/context/H-006-B2/postcloseout-ralplan-state.json",
+      "source_sha256": "a025aa79565a5afc847217123dda92e97722277d8588f05596071e8f5393d78a",
+      "observed_at": "2026-11-07T11:12:37.743885+00:00",
+      "fields": {
+        "active": false,
+        "current_phase": "complete",
+        "status": "complete",
+        "workflow_variant": "advisory",
+        "advisory_generation_id": "ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+        "session_id": "omx-1794046506930-56sf8c",
+        "thread_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+        "completed_at": "2026-11-07T11:08:28.044Z",
+        "updated_at": "2026-11-07T11:08:28.143Z",
+        "terminal_reason": "ralplan consensus complete",
+        "planning_complete": true,
+        "host_verified": false,
+        "execution_handoff_authorized": false,
+        "ralplan_consensus_gate": {
+          "complete": false
+        },
+        "ralplan_review_lifecycle": {
+          "complete": true,
+          "sequence_valid": true,
+          "iteration": 3,
+          "iteration_id": "1b36230aca603b7b80e49be37f402ae1a972924b061789b303053e74ff0406f2",
+          "plan_manifest_sha256": "af615fc22b2804c3efa5ee469df82fdf2b3050ddab5b660818f54af1d9b038f5",
+          "architect_review_sha256": "b4592981ae42e2da2dcef115ca48ca7b3c6998e0ccad2a19cfd3baf7ecddb7a6",
+          "critic_review_sha256": "61e4a015b31423b6880e676662c4e64f4a6baa4eca1104f988ef28b145b7d5f8",
+          "evidence_bundle_sha256": "57ddd777824da540443657e5f843e8fbd292ef1a528c7112080cd809e7ba5a90",
+          "evidence_scope": "local_runtime",
+          "host_observable": false,
+          "host_verified": false
+        }
+      }
+    },
+    "skill-active": {
+      "source": ".omx/context/H-006-B2/postcloseout-skill-active-state.json",
+      "source_sha256": "7f937264019a1ff92deb92cb0dcd66fbc47d1a374bde460744f13dfa66a64fab",
+      "observed_at": "2026-11-07T11:12:37.743885+00:00",
+      "fields": {
+        "active": true,
+        "phase": "reviewing",
+        "workflow_variant": "advisory",
+        "advisory_generation_id": "ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+        "session_id": "omx-1794046506930-56sf8c",
+        "thread_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+        "turn_id": "01a1b58c-206e-7472-bebe-165fab7636bc",
+        "owner_codex_session_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+        "active_skills": [],
+        "completed_at": "2026-11-07T11:08:28.044Z",
+        "updated_at": "2026-11-07T11:09:47.273Z",
+        "terminal_reason": "ralplan consensus complete"
+      }
+    },
+    "run": {
+      "source": ".omx/context/H-006-B2/postcloseout-run-state.json",
+      "source_sha256": "f65df8e10aa72f5eb335a8417cc17022f66e7779ef5fb97e236632946fdde5f0",
+      "observed_at": "2026-11-07T11:12:37.743885+00:00",
+      "fields": {
+        "active": false,
+        "current_phase": "complete",
+        "completed_at": "2026-11-07T11:08:28.044Z",
+        "updated_at": "2026-11-07T11:08:28.139Z"
+      }
+    }
+  },
+  "current_observation": {
+    "ralplan": {
+      "source": ".omx/state/sessions/omx-1794046506930-56sf8c/ralplan-state.json",
+      "source_sha256": "a025aa79565a5afc847217123dda92e97722277d8588f05596071e8f5393d78a",
+      "observed_at": "2026-11-07T11:12:37.743885+00:00",
+      "fields": {
+        "active": false,
+        "current_phase": "complete",
+        "status": "complete",
+        "workflow_variant": "advisory",
+        "advisory_generation_id": "ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+        "session_id": "omx-1794046506930-56sf8c",
+        "thread_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+        "completed_at": "2026-11-07T11:08:28.044Z",
+        "updated_at": "2026-11-07T11:08:28.143Z",
+        "terminal_reason": "ralplan consensus complete",
+        "planning_complete": true,
+        "host_verified": false,
+        "execution_handoff_authorized": false,
+        "ralplan_consensus_gate": {
+          "complete": false
+        },
+        "ralplan_review_lifecycle": {
+          "complete": true,
+          "sequence_valid": true,
+          "iteration": 3,
+          "iteration_id": "1b36230aca603b7b80e49be37f402ae1a972924b061789b303053e74ff0406f2",
+          "plan_manifest_sha256": "af615fc22b2804c3efa5ee469df82fdf2b3050ddab5b660818f54af1d9b038f5",
+          "architect_review_sha256": "b4592981ae42e2da2dcef115ca48ca7b3c6998e0ccad2a19cfd3baf7ecddb7a6",
+          "critic_review_sha256": "61e4a015b31423b6880e676662c4e64f4a6baa4eca1104f988ef28b145b7d5f8",
+          "evidence_bundle_sha256": "57ddd777824da540443657e5f843e8fbd292ef1a528c7112080cd809e7ba5a90",
+          "evidence_scope": "local_runtime",
+          "host_observable": false,
+          "host_verified": false
+        }
+      }
+    },
+    "skill-active": {
+      "source": ".omx/state/sessions/omx-1794046506930-56sf8c/skill-active-state.json",
+      "source_sha256": "de6d5c103e85a4a1520127ebb3f00a5ac997db3fbf1b1b6ce623bbdcf8532820",
+      "observed_at": "2026-11-07T11:12:37.743885+00:00",
+      "fields": {
+        "active": true,
+        "phase": "reviewing",
+        "workflow_variant": "advisory",
+        "advisory_generation_id": "ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+        "session_id": "omx-1794046506930-56sf8c",
+        "thread_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+        "turn_id": "01a1b58c-206e-7472-bebe-165fab7636bc",
+        "owner_codex_session_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+        "active_skills": [],
+        "completed_at": "2026-11-07T11:08:28.044Z",
+        "updated_at": "2026-11-07T11:12:37.306Z",
+        "terminal_reason": "ralplan consensus complete"
+      }
+    },
+    "run": {
+      "source": ".omx/state/sessions/omx-1794046506930-56sf8c/run-state.json",
+      "source_sha256": "f65df8e10aa72f5eb335a8417cc17022f66e7779ef5fb97e236632946fdde5f0",
+      "observed_at": "2026-11-07T11:12:37.743885+00:00",
+      "fields": {
+        "active": false,
+        "current_phase": "complete",
+        "completed_at": "2026-11-07T11:08:28.044Z",
+        "updated_at": "2026-11-07T11:08:28.139Z"
+      }
+    }
+  },
+  "effective_projection": {
+    "activation": {
+      "schema_version": 1,
+      "generation_id": "ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+      "canonical_cwd": "/home/dev/projects/universitydb",
+      "session_id": "omx-1794046506930-56sf8c",
+      "root_thread_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+      "activation_turn_id": "01a1b58c-206e-7472-bebe-165fab7636bc",
+      "activation_prompt_sha256": "805614ee2586d0319b123e68f82899fda22cbe4854c858ed39b78e7cc835b206",
+      "created_at": "2026-11-07T10:27:02.037Z"
+    },
+    "fence": {
+      "schema_version": 1,
+      "generation_id": "ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+      "canonical_cwd": "/home/dev/projects/universitydb",
+      "session_id": "omx-1794046506930-56sf8c",
+      "root_thread_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+      "activation_turn_id": "01a1b58c-206e-7472-bebe-165fab7636bc",
+      "activation_prompt_sha256": "805614ee2586d0319b123e68f82899fda22cbe4854c858ed39b78e7cc835b206",
+      "created_at": "2026-11-07T10:27:02.037Z",
+      "state": "closed",
+      "closing_turn_id": "01a1b58c-206e-7472-bebe-165fab7636bc",
+      "iteration": 3,
+      "iteration_id": "1b36230aca603b7b80e49be37f402ae1a972924b061789b303053e74ff0406f2",
+      "plan_manifest_sha256": "af615fc22b2804c3efa5ee469df82fdf2b3050ddab5b660818f54af1d9b038f5",
+      "architect_review_sha256": "b4592981ae42e2da2dcef115ca48ca7b3c6998e0ccad2a19cfd3baf7ecddb7a6",
+      "critic_review_sha256": "61e4a015b31423b6880e676662c4e64f4a6baa4eca1104f988ef28b145b7d5f8",
+      "evidence_bundle_sha256": "57ddd777824da540443657e5f843e8fbd292ef1a528c7112080cd809e7ba5a90",
+      "updated_at": "2026-11-07T11:08:28.119Z",
+      "sequence": 1,
+      "outcome": "approved",
+      "integrity_status": "proven",
+      "previous_event_sha256": "df9ad0b871c9c199516beabd649003bc70ccf2b1c5bd83c939bdfe7a23a51004"
+    },
+    "journal": {
+      "schema_version": 1,
+      "generation_id": "ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+      "outcome": "approved",
+      "integrity_status": "proven",
+      "evidence_bundle_sha256": "57ddd777824da540443657e5f843e8fbd292ef1a528c7112080cd809e7ba5a90",
+      "terminal_mode_updates": {
+        "active": false,
+        "current_phase": "complete",
+        "planning_complete": true,
+        "completed_at": "2026-11-07T11:08:28.044Z",
+        "workflow_variant": "advisory",
+        "advisory_generation_id": "ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+        "ralplan_review_lifecycle": {
+          "complete": true,
+          "sequence_valid": true,
+          "iteration": 3,
+          "iteration_id": "1b36230aca603b7b80e49be37f402ae1a972924b061789b303053e74ff0406f2",
+          "plan_manifest_sha256": "af615fc22b2804c3efa5ee469df82fdf2b3050ddab5b660818f54af1d9b038f5",
+          "architect_review_sha256": "b4592981ae42e2da2dcef115ca48ca7b3c6998e0ccad2a19cfd3baf7ecddb7a6",
+          "critic_review_sha256": "61e4a015b31423b6880e676662c4e64f4a6baa4eca1104f988ef28b145b7d5f8",
+          "evidence_bundle_sha256": "57ddd777824da540443657e5f843e8fbd292ef1a528c7112080cd809e7ba5a90",
+          "evidence_scope": "local_runtime",
+          "host_observable": false,
+          "host_verified": false
+        },
+        "execution_handoff_authorized": false,
+        "host_verified": false,
+        "ralplan_consensus_gate": {
+          "complete": false
+        }
+      },
+      "terminal_skill_updates": {
+        "root_skill": {
+          "version": 1,
+          "active": false,
+          "skill": "ralplan",
+          "keyword": "ralplan",
+          "activated_at": "2026-11-07T10:36:30.183Z",
+          "updated_at": "2026-11-07T11:08:28.119Z",
+          "source": "startMode",
+          "session_id": "omx-1794040798905-xque5e",
+          "active_skills": [],
+          "thread_id": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+          "turn_id": "01a1b54b-b287-7ee2-9280-4dee694d4c7b",
+          "owner_codex_session_id": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+          "phase": "complete",
+          "completed_at": "2026-11-07T11:08:28.044Z",
+          "terminal_reason": "ralplan consensus complete"
+        },
+        "session_skill": {
+          "version": 1,
+          "active": false,
+          "skill": "ralplan",
+          "keyword": "$ralplan",
+          "phase": "complete",
+          "activated_at": "2026-11-07T10:36:30.183Z",
+          "updated_at": "2026-11-07T11:08:28.119Z",
+          "source": "keyword-detector",
+          "session_id": "omx-1794046506930-56sf8c",
+          "thread_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+          "turn_id": "01a1b58c-206e-7472-bebe-165fab7636bc",
+          "active_skills": [],
+          "owner_codex_session_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+          "initialized_mode": "ralplan",
+          "initialized_state_path": ".omx/state/sessions/omx-1794046506930-56sf8c/ralplan-state.json",
+          "workflow_variant": "advisory",
+          "advisory_generation_id": "ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+          "input_lock": null,
+          "iteration": 9,
+          "last_turn_at": "2026-11-07T11:07:54.010Z",
+          "completed_at": "2026-11-07T11:08:28.044Z",
+          "terminal_reason": "ralplan consensus complete"
+        }
+      },
+      "terminal_timestamp": "2026-11-07T11:08:28.119Z",
+      "phase": "committed",
+      "created_at": "2026-11-07T11:08:28.119Z",
+      "updated_at": "2026-11-07T11:08:28.180Z",
+      "steps": {
+        "session_mode": "applied",
+        "root_mode": "applied",
+        "session_skill": "applied",
+        "root_skill": "applied",
+        "post_digest": "applied",
+        "journal_commit": "applied",
+        "fence_terminal": "applied"
+      }
+    },
+    "admin_event": null,
+    "denyProductWrites": false,
+    "corruption": null
+  },
+  "effective_projection_source_sha256": "fb3ab58e51502a4c9f9f13d1e8bc0e27ea03bb0c7d5be5399cbbd84271484fef",
+  "interpretation": "Raw base fence remains pending_closeout by append-only design; official reader folds fence-event-0001 to closed. The contradiction is session skill.active:true after terminal updates, not the raw base fence."
+}

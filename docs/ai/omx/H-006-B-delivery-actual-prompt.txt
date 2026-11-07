@@ -1,0 +1,54 @@
+Заверши только упаковку и документальную доставку уже подготовленного
+результата этапа B UniversityDB.
+
+Workspace: /home/dev/projects/universitydb, UbuntuD.
+Коммит A:
+8931d832d49311ac0d63c3a7a359b4293058da89.
+A не повторять.
+
+Сначала прочитай действующие инструкции проекта и:
+1. [PRIVATE_VAULT]/handoffs/H-006-v5-B-continuation.md
+2. docs/reports/H-006-B2-closeout-blocker.md
+3. docs/operations/H-006-B2-closeout-blocker.json
+4. [PRIVATE_REPAIR_OUTPUT]/REPORT.md
+5. [PRIVATE_REPAIR_OUTPUT]/reconciliation-result.json
+
+Проектирование и реальные reviews уже выполнены.
+Финальные Architect/Critic — APPROVE/APPROVE.
+Поколение ec3e1f0b-d751-4088-bfb2-ec386c08549c штатно закрыто:
+approved+proven, без execution handoff.
+После ремонта terminal mirror восстановлен из того же журнала.
+Старый blocker-report сохраняется как история.
+
+Не запускать новый Advisory или другой workflow.
+Не повторять проектирование, research, reviews или closeout.
+Не отменять закрытое поколение и не менять IDs/tracker вручную.
+
+Проверь сохранность и согласованность существующих:
+— .omx/plans/H-006-B2/iteration-3/
+— .omx/plans/H-006-B2/reviews/
+— manifest, review evidence и closeout journal.
+
+Если документы или evidence расходятся, остановись с конкретным
+расхождением, не создавая замену доказательствам.
+
+Используя существующий проверенный результат, выполни оставшуюся
+часть B по пакету:
+— упакуй устойчивые public-safe документы в docs/;
+— сохрани связь с исходными планами, reviews и hashes;
+— актуализируй индексы решений и реальных prompts/coverage;
+— сохрани прежние research и blocker evidence;
+— проверь состав, ссылки, JSON, whitespace, privacy и статус решений;
+— сделай отдельный локальный docs-коммит B по разрешениям пакета.
+
+Все новые архитектурные решения остаются proposed.
+Исходные приватные материалы не публиковать.
+Не применять blanket staging; включать только проверенные явные пути.
+
+Без реализации приложения, установки продуктовых зависимостей,
+продуктовых тестов/evals, изменения remote или push.
+Obsidian только читать. OMX/Codex не обновлять.
+
+Верни SHA A/B, пути итоговых документов, результаты проверок,
+ссылки на reviews/closeout, полноту prompts и открытые вопросы.
+После отчёта остановись для передачи результата оркестратору.

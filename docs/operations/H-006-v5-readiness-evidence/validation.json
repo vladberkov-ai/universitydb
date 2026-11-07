@@ -1,0 +1,340 @@
+{
+  "original_files": [
+    {
+      "path": "docs/ai/omx/H-006-prompt-coverage-blocker.json",
+      "sha256": "6fdbaac1ce9ad401f7b2085564c4925174ece3b6cdd978d49f7cd40421061c4a",
+      "unchanged": true
+    },
+    {
+      "path": "docs/ai/omx/H-006-session-export-blocker-cutoff.json",
+      "sha256": "44703f89e4395858610c4297f46c200ea2e446c1e4dbe520f8d7c704c24d1360",
+      "unchanged": true
+    },
+    {
+      "path": "docs/operations/H-006-A-postcommit-receipt.json",
+      "sha256": "739eed80a78b51338909c84846a147ebaa35c18cecee75de496b3795ba11df28",
+      "unchanged": true
+    },
+    {
+      "path": "docs/operations/H-006-B-runtime-blocker.json",
+      "sha256": "b8b51deb101920040094f9ec9ea79d9ac31cf958a9adec8cf2ba4e0ee4b63355",
+      "unchanged": true
+    },
+    {
+      "path": "docs/reports/H-006-advisory-blocker.md",
+      "sha256": "d8e04bdd1800e5cfdae7db605498e86ab9746b876ca87092c48caa5333d7b3ab",
+      "unchanged": true
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "36f5c847236d2b148c41c30b063a5afa13c1e6da68c5e655efe7c4711f2b2807",
+      "unchanged": true
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "2dee4fa80c2226b91cffb3b977aa403840a83d392aa4b4341e21a34f521dca21",
+      "unchanged": true
+    },
+    {
+      "path": "docs/adr/ADR-OMX-001-preparation-boundary.md",
+      "sha256": "985b3afa5c8df7aebb85b336509116e27ab292dc2c02757015ecdf48b06c40c5",
+      "unchanged": true
+    },
+    {
+      "path": "docs/adr/ADR-OMX-002-execution-context-and-checkpoint.md",
+      "sha256": "21d5e1406745749569ad00639c8ecf6d75c4401136a4d74ff7ed5669fcb663c3",
+      "unchanged": true
+    },
+    {
+      "path": "docs/adr/README.md",
+      "sha256": "37e789f5d4b51b65e14db613b79a6a1cfee80892b5cfb00fc4b55fe2a4a801e0",
+      "unchanged": true
+    },
+    {
+      "path": "docs/ai/README.md",
+      "sha256": "f2ffa5a75851e4465a14dcbb41c4d73692b6cc52e2e6846f8f135da012a8ff17",
+      "unchanged": true
+    },
+    {
+      "path": "docs/ai/omx/H-004-actual-prompt.txt",
+      "sha256": "6def3132523c0e8731ec5ee6f5f23eae0f22a2935ddbb7658a1d066071e715f5",
+      "unchanged": true
+    },
+    {
+      "path": "docs/ai/omx/H-004-instruction-context.json",
+      "sha256": "22a1adbbcec9d04ad56e24d2b197ee590736f20277886ff833438b1fc1234932",
+      "unchanged": true
+    },
+    {
+      "path": "docs/ai/omx/H-004-prompt-receipt.json",
+      "sha256": "35a9be309333ecb919bd945f19c211d7973ed8a1f2a40c86d4500579d44db60f",
+      "unchanged": true
+    },
+    {
+      "path": "docs/ai/omx/H-004-session-export-completed.json",
+      "sha256": "d8ff7059149b0cc872f5f9b5685f790795a6d9bd6500a07b5b35ad687a004559",
+      "unchanged": true
+    },
+    {
+      "path": "docs/ai/omx/H-004-session-export.json",
+      "sha256": "487b330fc5bd6f958d5dabfddd38fbf7d8660460f2cc6526f189b0b1761c1149",
+      "unchanged": true
+    },
+    {
+      "path": "docs/ai/omx/H-005-actual-prompt.txt",
+      "sha256": "712439ae1e6f65c4bb5881d6da41d53613156580a272dccc660f3df6d0dae430",
+      "unchanged": true
+    },
+    {
+      "path": "docs/ai/omx/H-005-prompt-receipt.json",
+      "sha256": "ca90fdf930953f858017e3836e03808a9e200786780f1973aa16268b2fe1ef5f",
+      "unchanged": true
+    },
+    {
+      "path": "docs/ai/omx/H-005-session-export-completed.json",
+      "sha256": "658940815980086d8b974a79a070703f956ae0af675271b77656c45507b25418",
+      "unchanged": true
+    },
+    {
+      "path": "docs/ai/omx/H-005-session-export-cutoff.json",
+      "sha256": "7ce469a7090f641aaf1696a4bcbda8cbec43b8dea5bdaaef11619f8a3b42e9c9",
+      "unchanged": true
+    },
+    {
+      "path": "docs/ai/omx/H-006-actual-prompt.txt",
+      "sha256": "3866c94900f64b827e0542fdab49d1f71375949cf18702f8dce85e69f4710216",
+      "unchanged": true
+    },
+    {
+      "path": "docs/ai/omx/H-006-prompt-receipt-A.json",
+      "sha256": "d80e9cb827127b7aef178e96339534d2d86c059f40f9296323eb4960c77f4cf6",
+      "unchanged": true
+    },
+    {
+      "path": "docs/ai/omx/H-006-session-export-A-cutoff.json",
+      "sha256": "71697910ac293814678a4fbe099fddc949d6304ff987c2323be7fcfac6324674",
+      "unchanged": true
+    },
+    {
+      "path": "docs/ai/omx/history/H-004-prompt-receipt-cutoff.json",
+      "sha256": "2191d62861100f134988ca47c9608c92b3ec3609c613e2cff9b8172ab290121e",
+      "unchanged": true
+    },
+    {
+      "path": "docs/chat/decisions/ADR-CHAT-001-memory-ownership.md",
+      "sha256": "2f68a94298b86c7c96372102167aaa5b0e055e95024b704ca71ba560703a0cf0",
+      "unchanged": true
+    },
+    {
+      "path": "docs/chat/decisions/ADR-CHAT-002-result-scope.md",
+      "sha256": "a9ddf57dcb88d5610d751eb8ba9429178e728e5c23f2aa6d4ca030020d42defe",
+      "unchanged": true
+    },
+    {
+      "path": "docs/chat/planning/acceptance-contract.md",
+      "sha256": "ff8dd0a1354480e7fd83caac3219e5d885b4582fe33474ac51f223a75c7ac5fb",
+      "unchanged": true
+    },
+    {
+      "path": "docs/chat/requirements.md",
+      "sha256": "cf1822681cab3f6d46c444cb4e6aa94267abb589793f6866411d348d25b57936",
+      "unchanged": true
+    },
+    {
+      "path": "docs/operations/H-005-environment-checks.json",
+      "sha256": "d2222dcf7a21fb1d8d55b80a68bd75842d8360e1c4bf4640a4cea27c5325dc09",
+      "unchanged": true
+    },
+    {
+      "path": "docs/operations/H-005-input-verification.json",
+      "sha256": "51548f38bdff334a289280a412d472cc562085fafc416933539c77109718f1ef",
+      "unchanged": true
+    },
+    {
+      "path": "docs/operations/H-005-preparation-receipt.json",
+      "sha256": "6fdf6858b9d6fd7e393ee09d6e8700d07f6969570218c04309453cf1c2c34fb3",
+      "unchanged": true
+    },
+    {
+      "path": "docs/operations/H-005-preparation-validation.json",
+      "sha256": "1e377313f9666219496d7b7a9ce17b08440ab84b53955ac27a6a522ccfd71e0a",
+      "unchanged": true
+    },
+    {
+      "path": "docs/operations/H-006-A-validation.json",
+      "sha256": "2a5663219a9b0362713e14c0b109753f2aaa7d7e7dea005eee90a3fa579915ee",
+      "unchanged": true
+    },
+    {
+      "path": "docs/operations/H-006-input-verification.json",
+      "sha256": "b9aa14f221e42dba2f7d2d3aa09ebcfd20a5d2441115844be60c69b8dd86bc41",
+      "unchanged": true
+    },
+    {
+      "path": "docs/operations/chat-export-receipt.json",
+      "sha256": "c978639c47c6c4673cb6e948e558172b89a86c517df3782409e948663edfbdb7",
+      "unchanged": true
+    },
+    {
+      "path": "docs/operations/environment-checks.json",
+      "sha256": "cd30767517f1d708b36e2798bd5e5c3a20c8482640e392ec9c1dca79e3b8ab29",
+      "unchanged": true
+    },
+    {
+      "path": "docs/operations/git-checkpoints.md",
+      "sha256": "54ad15d656609353b8e06eee304d22a14aaddd937f2fbf7eeadb1834e2a2005e",
+      "unchanged": true
+    },
+    {
+      "path": "docs/operations/history/H-004-chat-export-receipt.json",
+      "sha256": "ad7237965f554de3fe1081aaf9583212abf636eeba3ff5df8e637ca8da6e0cba",
+      "unchanged": true
+    },
+    {
+      "path": "docs/operations/input-verification.json",
+      "sha256": "83fd0f7d76b2654ff37b5caebd8a9b486a387256f14950b655c6d4683ed4397c",
+      "unchanged": true
+    },
+    {
+      "path": "docs/operations/preparation-validation.json",
+      "sha256": "183701e05bb3b3e7ac52edf27e78b043d3e26b5396f6ceeb1e8b5d277396e6cd",
+      "unchanged": true
+    },
+    {
+      "path": "docs/reports/H-004-repository-preparation.md",
+      "sha256": "1af672ce1e7107464ac201c84ff1286ad901d793ebc904ba115fa5635e1e1c48",
+      "unchanged": true
+    },
+    {
+      "path": "docs/reports/H-005-preparation-completion.md",
+      "sha256": "e2ee430e40dd4ba4b4e14a0294f951b915c03a11860e0ff63944dac146ab8463",
+      "unchanged": true
+    },
+    {
+      "path": "docs/reports/H-006-preparation-checkpoint.md",
+      "sha256": "d5dc73541608e5d36d819f21f76ce61fb3f26fddf8a8087bdb572e79d7883625",
+      "unchanged": true
+    },
+    {
+      "path": "omx_wiki/index.md",
+      "sha256": "3004d4a65e4e4e0ac44ad6fd6ed93bab8ccd8f40c13fe5c25987f724ae0c9b10",
+      "unchanged": true
+    },
+    {
+      "path": "omx_wiki/log.md",
+      "sha256": "79d623adf8fac8d4c1013cc0febc9f2d9e058bfe7edac552f9c914d1a15a2fc8",
+      "unchanged": true
+    },
+    {
+      "path": "omx_wiki/session-log-h-004.md",
+      "sha256": "ef89bcdd5ed7a51fc96468098fd701c1ec1eebc8a73d78ccc0bf469899d3ecbc",
+      "unchanged": true
+    },
+    {
+      "path": "omx_wiki/session-log-h-005.md",
+      "sha256": "d789996ee9b1f428940ed03e88ff1dca02cc4bfe148aaeccfdd69c50c1c65c61",
+      "unchanged": true
+    }
+  ],
+  "all_originals_unchanged": true,
+  "seven_originals_unchanged": true,
+  "git_index_unchanged": true,
+  "runtime_delta": {
+    "changed": [
+      ".omx/state/notify-fallback-authority-owner.json",
+      ".omx/state/notify-fallback-authority-state.json",
+      ".omx/state/notify-fallback-state.json"
+    ],
+    "added": [],
+    "manual_runtime_writes": false,
+    "note": "Hooks/background runtime may update their own state; hash drift is recorded, not repaired."
+  },
+  "session_pointer_unchanged": true,
+  "vault_inputs_unchanged_since_hash_check": true,
+  "new_files_text_checks": [],
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "8931d832d49311ac0d63c3a7a359b4293058da89\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": " M AGENTS.md\n M docs/ai/README.md\n?? docs/ai/omx/H-006-prompt-coverage-blocker.json\n?? docs/ai/omx/H-006-session-export-blocker-cutoff.json\n?? docs/ai/omx/H-006-v5-D-actual-prompt.txt\n?? docs/ai/omx/H-006-v5-D-messages-cutoff.json\n?? docs/ai/omx/H-006-v5-D-prompt-coverage.json\n?? docs/operations/H-006-A-postcommit-receipt.json\n?? docs/operations/H-006-B-runtime-blocker.json\n?? docs/operations/H-006-v5-readiness-evidence/baseline.json\n?? docs/operations/H-006-v5-readiness-evidence/commands.json\n?? docs/operations/H-006-v5-readiness-evidence/config-roles-sources.json\n?? docs/operations/H-006-v5-readiness-evidence/direct-activation-source-evidence.json\n?? docs/operations/H-006-v5-readiness-evidence/host-checks-final.json\n?? docs/operations/H-006-v5-readiness-evidence/host-checks.json\n?? docs/operations/H-006-v5-readiness-evidence/input-hashes.json\n?? docs/reports/H-006-advisory-blocker.md\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-status"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "omx",
+        "ralplan",
+        "status",
+        "--json"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Error: No Ralplan state found.\n"
+    },
+    {
+      "argv": [
+        "omx",
+        "status"
+      ],
+      "exit_code": 0,
+      "stdout": "hud: inactive (phase: n/a)\nnative-stop: inactive (phase: n/a)\nnotify-fallback: inactive (phase: n/a)\nnotify-fallback-authority: inactive (phase: n/a)\nnotify-hook: inactive (phase: n/a)\ntmux-hook: inactive (phase: n/a)\n",
+      "stderr": ""
+    }
+  ]
+}

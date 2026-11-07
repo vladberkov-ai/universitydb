@@ -1,0 +1,183 @@
+{
+  "recorded_at": "2026-11-07T08:51:33.941335+00:00",
+  "context": "supported explicit escalation; read-only runtime probes; no repair/activation",
+  "commands": [
+    {
+      "argv": [
+        "omx",
+        "doctor"
+      ],
+      "exit_code": 0,
+      "stdout": "oh-my-codex doctor\n==================\n\nResolved setup scope: user\n\n  [OK] Codex CLI: installed (codex-cli 0.162.1)\n  [OK] Node.js: v22.23.2\n  [OK] Explore Harness: skipped: omx explore is hard-deprecated and explore routing is disabled by default; use omx sparkshell for shell-native read-only evidence\n  [OK] Codex home: /home/dev/.codex\n  [OK] Config: config.toml has OMX entries\n  [OK] Native hooks: hooks.json includes OMX-managed coverage for all native hook events\n  [OK] Native hook dist smoke: installed dist/scripts/codex-native-hook.js parsed and accepted a minimal UserPromptSubmit payload\n  [OK] Explore routing: deprecated compatibility routing disabled by environment override (recommended)\n  [OK] Lore commit guard: disabled by default\n  [OK] Prompts: 32 agent prompts installed\n  [OK] Skills: 25 skills installed\n  [OK] Spark routing: lanes: frontier=`gpt-6.1-sol`, standard=`gpt-6.1-sol`, spark=`gpt-6-astra` (source: built-in default); Spark-lane native agent(s) wired: explore -> `gpt-6-astra` (runtime inheritance). If Spark quota is still unused, the leader may not be delegating read-only lookups to the Spark lane, or the Codex usage view may lag.\n  [OK] Legacy skill roots: no ~/.agents/skills overlap detected\n  [OK] AGENTS.md: found OMX contract in /home/dev/.codex/AGENTS.md\n  [OK] State dir: /home/dev/projects/universitydb/.omx/state\n  [OK] State root/session binding: src=session-authority ptr=usable fix=inspect selected session.json; verify owner; terminate only verified owner if necessary; relaunch selected_session_json=session.json\n  [OK] Repo artifact ownership: repo-local .omx/.beads artifacts are writable by the current user\n  [OK] Credential provenance: user scope launches read credentials from the default Codex home\n  [OK] MCP Servers: CLI-first default: no first-party OMX MCP servers configured\n  [OK] Prompt triage: config: enabled (default)\n\nResults: 20 passed, 0 warnings, 0 failed\n\nAll checks passed! oh-my-codex is ready.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "tmux",
+        "list-sessions",
+        "-F",
+        "#{session_id} #{session_name} attached=#{session_attached}"
+      ],
+      "exit_code": 0,
+      "stdout": "$0 omx-universitydb-main-1794040798905-xque5e attached=1\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "tmux",
+        "list-panes",
+        "-a",
+        "-F",
+        "#{session_id} #{pane_id} #{pane_pid} #{pane_current_command} #{pane_current_path}"
+      ],
+      "exit_code": 0,
+      "stdout": "$0 %0 131344 node /home/dev/projects/universitydb\n$0 %1 131359 node /home/dev/projects/universitydb\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "omx",
+        "session",
+        "lock",
+        "inspect",
+        "--cwd",
+        "/home/dev/projects/universitydb",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"absent\",\n  \"lockPath\": \"/home/dev/projects/universitydb/.omx/state/session.json.lock\",\n  \"evidenceSource\": \"none\",\n  \"safeToRecover\": false\n}\n",
+      "stderr": ""
+    }
+  ],
+  "selectors": {
+    "CODEX_SESSION_ID": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+    "CODEX_THREAD_ID": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+    "OMX_SESSION_ID": "omx-1794040798905-xque5e",
+    "OMX_STATE_ROOT": "",
+    "TMUX_PANE": "%0",
+    "WSL_DISTRO_NAME": "UbuntuD"
+  },
+  "matching_processes": [
+    {
+      "pid": 110448,
+      "comm": "bash",
+      "cwd": "/home/dev/projects/universitydb",
+      "ppid": 110447,
+      "birth_ticks": "24438850",
+      "cmdline_sha256": "a15f60e267a9d16c3fa73d1faedf4250f74a52d8dbc148e487ec8694f95d4d8d",
+      "is_codex_cli": false,
+      "is_omx_launcher": false,
+      "is_hud_watch": false,
+      "is_notify_fallback": false
+    },
+    {
+      "pid": 131325,
+      "comm": "node",
+      "cwd": "/home/dev/projects/universitydb",
+      "ppid": 110448,
+      "birth_ticks": "24901903",
+      "cmdline_sha256": "f4cedc0b08b008a181ac1295bca6e403450a6c236cdcdbedff050970987ebfbc",
+      "is_codex_cli": false,
+      "is_omx_launcher": true,
+      "is_hud_watch": false,
+      "is_notify_fallback": false
+    },
+    {
+      "pid": 131344,
+      "comm": "node",
+      "cwd": "/home/dev/projects/universitydb",
+      "ppid": 131343,
+      "birth_ticks": "24901956",
+      "cmdline_sha256": "71f8a811b2e015225e529a1d405ff62043b7bfdb8f5b2e135e48b75d00d90436",
+      "is_codex_cli": false,
+      "is_omx_launcher": true,
+      "is_hud_watch": false,
+      "is_notify_fallback": false
+    },
+    {
+      "pid": 131359,
+      "comm": "node",
+      "cwd": "/home/dev/projects/universitydb",
+      "ppid": 131343,
+      "birth_ticks": "24901962",
+      "cmdline_sha256": "e51a7517db68a1f3a4320cee7110eface8b011045a0b9ea2bc47948fc726f122",
+      "is_codex_cli": false,
+      "is_omx_launcher": true,
+      "is_hud_watch": true,
+      "is_notify_fallback": false
+    },
+    {
+      "pid": 131403,
+      "comm": "node",
+      "cwd": "/home/dev/projects/universitydb",
+      "ppid": 131344,
+      "birth_ticks": "24901998",
+      "cmdline_sha256": "f488eff644bb466e570941cc3d4f97bfb7a78cf695ecc83261550b13b7c2a6e0",
+      "is_codex_cli": false,
+      "is_omx_launcher": false,
+      "is_hud_watch": false,
+      "is_notify_fallback": true
+    },
+    {
+      "pid": 131432,
+      "comm": "sh",
+      "cwd": "/home/dev/projects/universitydb",
+      "ppid": 131344,
+      "birth_ticks": "24902009",
+      "cmdline_sha256": "5fcc9b27f209fa6857c96234ad19e141f417866d14613bc593a8c1120927a64e",
+      "is_codex_cli": false,
+      "is_omx_launcher": false,
+      "is_hud_watch": false,
+      "is_notify_fallback": false
+    },
+    {
+      "pid": 131435,
+      "comm": "node",
+      "cwd": "/home/dev/projects/universitydb",
+      "ppid": 131432,
+      "birth_ticks": "24902009",
+      "cmdline_sha256": "41fa420c748740a1a47a1ad09c1a4aa48ef9d3203ce69298b61413ba053c0d6f",
+      "is_codex_cli": true,
+      "is_omx_launcher": false,
+      "is_hud_watch": false,
+      "is_notify_fallback": false
+    },
+    {
+      "pid": 131449,
+      "comm": "codex",
+      "cwd": "/home/dev/projects/universitydb",
+      "ppid": 131435,
+      "birth_ticks": "24902014",
+      "cmdline_sha256": "ea0098c292d1726bf3e7afc8e691ecb59582d98410578585756220cb6a164bca",
+      "is_codex_cli": true,
+      "is_omx_launcher": false,
+      "is_hud_watch": false,
+      "is_notify_fallback": false
+    },
+    {
+      "pid": 137588,
+      "comm": "python3",
+      "cwd": "/home/dev/projects/universitydb",
+      "ppid": 131449,
+      "birth_ticks": "24971451",
+      "cmdline_sha256": "18969fd39846b527546f918156a58a737060a2d47defe92bf03fcad8e6cb3de5",
+      "is_codex_cli": false,
+      "is_omx_launcher": false,
+      "is_hud_watch": false,
+      "is_notify_fallback": false
+    }
+  ],
+  "pointer_process_identity": {
+    "pid": 131449,
+    "pid_start_ticks": 24902014,
+    "process_identity": {
+      "platform": "linux",
+      "birth": "24902014",
+      "cmdline_hash": "ea0098c292d1726bf3e7afc8e691ecb59582d98410578585756220cb6a164bca"
+    },
+    "session_id": "omx-1794040798905-xque5e",
+    "native_session_id": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+    "tmux_session_name": "omx-universitydb-main-1794040798905-xque5e",
+    "tmux_pane_id": "%0"
+  }
+}

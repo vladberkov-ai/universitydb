@@ -1,0 +1,223 @@
+{
+  "captured_at": "2026-11-07T10:19:00.217Z",
+  "snapshot": {
+    "cwd": "/home/dev/projects/universitydb",
+    "baseStateDir": "/home/dev/projects/universitydb/.omx/state",
+    "rootSource": "session-authority",
+    "selectedSessionJson": "/home/dev/projects/universitydb/.omx/state/session.json",
+    "status": "usable",
+    "verifiedAliases": {
+      "session_id": "omx-1794046506930-56sf8c",
+      "native_session_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+      "owner_omx_session_id": "omx-1794046506930-56sf8c"
+    },
+    "liveness": "usable",
+    "recordedCwd": "/home/dev/projects/universitydb",
+    "pointer": {
+      "session_id": "omx-1794046506930-56sf8c",
+      "native_session_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+      "owner_omx_session_id": "omx-1794046506930-56sf8c",
+      "cwd": "/home/dev/projects/universitydb",
+      "state_root": "/home/dev/projects/universitydb/.omx/state",
+      "pid": 181564,
+      "process_identity": {
+        "platform": "linux",
+        "birth": "25472811",
+        "cmdline_hash": "39a285f1acf9344420f46ce2bcbc930fab2c2c804ee77aa4e935f82390eec788"
+      },
+      "tmux_session_name": "omx-universitydb-main-1794046506930-56sf8c",
+      "tmux_pane_id": "%0"
+    }
+  },
+  "binding_check": {
+    "name": "State root/session binding",
+    "status": "pass",
+    "message": "src=session-authority ptr=usable fix=inspect selected session.json; verify owner; terminate only verified owner if necessary; relaunch selected_session_json=session.json"
+  },
+  "environment": {
+    "CODEX_SESSION_ID": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+    "CODEX_THREAD_ID": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+    "OMX_SESSION_ID": "omx-1794046506930-56sf8c",
+    "OMX_STATE_ROOT": "",
+    "OMX_TEAM_STATE_ROOT": "",
+    "OMX_TEAM_WORKER": "",
+    "TMUX_PANE": "%0"
+  },
+  "namespace": {
+    "pid": "pid:[4026532219]",
+    "mnt": "mnt:[4026532217]",
+    "user": "user:[4026531837]"
+  },
+  "pointer_pid_visible": true,
+  "native_hooks": {
+    "managed_events": [
+      "SessionStart",
+      "PreToolUse",
+      "PostToolUse",
+      "UserPromptSubmit",
+      "PreCompact",
+      "PostCompact",
+      "SubagentStart",
+      "SubagentStop",
+      "Stop"
+    ],
+    "checks": [
+      {
+        "coordinate": "/home/dev/.codex/hooks.json:pre_tool_use:0:0",
+        "expected": {
+          "trusted_hash": "sha256:c57da67e792a24cd917baa8bc943bfb689689db9bd019b735fee6f8c773a0079"
+        },
+        "configured": {
+          "trusted_hash": "sha256:c57da67e792a24cd917baa8bc943bfb689689db9bd019b735fee6f8c773a0079"
+        },
+        "match": true,
+        "enabled": true
+      },
+      {
+        "coordinate": "/home/dev/.codex/hooks.json:post_tool_use:0:0",
+        "expected": {
+          "trusted_hash": "sha256:d704f736f920150e8aea6242c1d313bc49a578ba78aa83170d1143959ac309ee"
+        },
+        "configured": {
+          "trusted_hash": "sha256:d704f736f920150e8aea6242c1d313bc49a578ba78aa83170d1143959ac309ee"
+        },
+        "match": true,
+        "enabled": true
+      },
+      {
+        "coordinate": "/home/dev/.codex/hooks.json:pre_compact:0:0",
+        "expected": {
+          "trusted_hash": "sha256:1d2d8306ea239cac0d896b72fad5f424c252fdbdee922c465c56f4c0752d525e"
+        },
+        "configured": {
+          "trusted_hash": "sha256:1d2d8306ea239cac0d896b72fad5f424c252fdbdee922c465c56f4c0752d525e"
+        },
+        "match": true,
+        "enabled": true
+      },
+      {
+        "coordinate": "/home/dev/.codex/hooks.json:post_compact:0:0",
+        "expected": {
+          "trusted_hash": "sha256:25e1d380f675cfed593da0910e7429185531f36f76bfab896ce8d97ce85e70e3"
+        },
+        "configured": {
+          "trusted_hash": "sha256:25e1d380f675cfed593da0910e7429185531f36f76bfab896ce8d97ce85e70e3"
+        },
+        "match": true,
+        "enabled": true
+      },
+      {
+        "coordinate": "/home/dev/.codex/hooks.json:session_start:0:0",
+        "expected": {
+          "trusted_hash": "sha256:b6979630f8247e58959b8e23926e0aa25fbba4721290f808a87b42b53e6ea707"
+        },
+        "configured": {
+          "trusted_hash": "sha256:b6979630f8247e58959b8e23926e0aa25fbba4721290f808a87b42b53e6ea707"
+        },
+        "match": true,
+        "enabled": true
+      },
+      {
+        "coordinate": "/home/dev/.codex/hooks.json:user_prompt_submit:0:0",
+        "expected": {
+          "trusted_hash": "sha256:e2b3025885cde46d12b4d123ac2966b6c8188c844f30ee7595d77a459edb9b0b"
+        },
+        "configured": {
+          "trusted_hash": "sha256:e2b3025885cde46d12b4d123ac2966b6c8188c844f30ee7595d77a459edb9b0b"
+        },
+        "match": true,
+        "enabled": true
+      },
+      {
+        "coordinate": "/home/dev/.codex/hooks.json:subagent_start:0:0",
+        "expected": {
+          "trusted_hash": "sha256:4082f9815753adb98c53add062dd0a644d075b93d4a40b6cb698bbaf3324de20"
+        },
+        "configured": {
+          "trusted_hash": "sha256:4082f9815753adb98c53add062dd0a644d075b93d4a40b6cb698bbaf3324de20"
+        },
+        "match": true,
+        "enabled": true
+      },
+      {
+        "coordinate": "/home/dev/.codex/hooks.json:subagent_stop:0:0",
+        "expected": {
+          "trusted_hash": "sha256:1daa35c467c129e0fdd44cffb3619a348c9db341db0b5616899db791a773b128"
+        },
+        "configured": {
+          "trusted_hash": "sha256:1daa35c467c129e0fdd44cffb3619a348c9db341db0b5616899db791a773b128"
+        },
+        "match": true,
+        "enabled": true
+      },
+      {
+        "coordinate": "/home/dev/.codex/hooks.json:stop:0:0",
+        "expected": {
+          "trusted_hash": "sha256:a7c547090b7c7ca97cb74d4225673882f34f30a7be77a741638a660a49dfe84a"
+        },
+        "configured": {
+          "trusted_hash": "sha256:a7c547090b7c7ca97cb74d4225673882f34f30a7be77a741638a660a49dfe84a"
+        },
+        "match": true,
+        "enabled": true
+      }
+    ],
+    "features": {
+      "hooks": true,
+      "goals": true
+    },
+    "notify": [
+      "node",
+      "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/scripts/notify-hook.js"
+    ],
+    "hooks_sha256": "4f9ca3760191352c5acd448e9c60e2d5d11c78f08df5460c002af36214e6368d",
+    "config_sha256": "521da12a6104d89c37ebd3da85e87b3b4a1c3de20cb9967a6b99fb212bec042f"
+  },
+  "roles": [
+    {
+      "name": "planner",
+      "path": "/home/dev/.codex/agents/planner.toml",
+      "sha256": "a267177019c583d40e3a1d5248b6cbeb67ce06ee69c6a464af96c5fcb47e3e96",
+      "parsed": true,
+      "model": "gpt-6-astra",
+      "model_reasoning_effort": "medium",
+      "instructions_present": true
+    },
+    {
+      "name": "architect",
+      "path": "/home/dev/.codex/agents/architect.toml",
+      "sha256": "d00d4c2142775458237dbe8d975a744680afa229b6c1f769c417c9aa5ffde332",
+      "parsed": true,
+      "model": "gpt-6-astra",
+      "model_reasoning_effort": "xhigh",
+      "instructions_present": true
+    },
+    {
+      "name": "critic",
+      "path": "/home/dev/.codex/agents/critic.toml",
+      "sha256": "14e33a388a2413291648cac4aa6036a0303b88e7df5338658f1e43ccc3ca953d",
+      "parsed": true,
+      "model": "inherited",
+      "model_reasoning_effort": "high",
+      "instructions_present": true
+    },
+    {
+      "name": "researcher",
+      "path": "/home/dev/.codex/agents/researcher.toml",
+      "sha256": "b383d0ee42846fb765896066d0f4458f81fa81b8a1760b0668c0647c9bbb01a7",
+      "parsed": true,
+      "model": "gpt-6-astra",
+      "model_reasoning_effort": "high",
+      "instructions_present": true
+    },
+    {
+      "name": "dependency-expert",
+      "path": "/home/dev/.codex/agents/dependency-expert.toml",
+      "sha256": "2b0067995f88b76f1da9bdbbb8286562430d2c07556dbc7cc13f9cfaac4cec4a",
+      "parsed": true,
+      "model": "inherited",
+      "model_reasoning_effort": "high",
+      "instructions_present": true
+    }
+  ]
+}

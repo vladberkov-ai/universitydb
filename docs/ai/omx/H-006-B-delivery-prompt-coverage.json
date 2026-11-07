@@ -1,0 +1,70 @@
+{
+  "session_id": "01a1b5cc-f581-70a2-9f31-d4dbb8feed49",
+  "omx_session_id": "omx-1794051468714-2djff9",
+  "mode": "direct documentation packaging only; no workflow",
+  "actual_task": {
+    "source_line": 10,
+    "timestamp": "2026-11-07T11:38:36.927Z",
+    "raw_text_sha256": "4f6dc969eda77e83b103152e145ccf96041b7b78ed1284d6b7e02356bbe60efc",
+    "public": "docs/ai/omx/H-006-B-delivery-actual-prompt.txt",
+    "public_sha256": "9bd93f13a50febc44b194c543ecce9fd80585678eb3e03e68bc10323982f2912",
+    "transformation": "Actual received text; two private path substitutions and appended terminal LF only, not a template"
+  },
+  "read_context": [
+    {
+      "source": "[PRIVATE_VAULT]/handoffs/H-006-v5-B-continuation.md",
+      "sha256": "77a67c1787b8281b094af5811cc7ec2b94a0fbf85caabb9beaae96ce9a0a332b"
+    },
+    {
+      "source": "[PRIVATE_REPAIR_OUTPUT]/REPORT.md",
+      "sha256": "eb48f25cbc1737257414ccc2c65cd2e5c4bbf09d0d75e33880bfdc3950d8f41b"
+    },
+    {
+      "source": "[PRIVATE_REPAIR_OUTPUT]/reconciliation-result.json",
+      "sha256": "ef6b7ac2e973465481c56864a1a400df3447f02b32a6d2b7f4ba26921429af65"
+    },
+    {
+      "source": "docs/reports/H-006-B2-closeout-blocker.md",
+      "sha256": "a869475cf453ea25afc8f3e3a1551924e464265265f19dcb6d266dc141be62b9"
+    },
+    {
+      "source": "docs/operations/H-006-B2-closeout-blocker.json",
+      "sha256": "a63c66a568b8d455be5e0988e2ed304c35c306620efe2afb4a1daca52359ce9b"
+    }
+  ],
+  "export": {
+    "private": ".omx/preparation/H-006-B-delivery/session-cutoff-private.json",
+    "sha256": "2b967a99ffc77b653d128d63212c8d15486f20b6c12e9e346b59a26006abae22",
+    "public": "docs/ai/omx/H-006-B-delivery-session-cutoff.json",
+    "retained_messages": 3,
+    "cutoff_at": "2026-11-07T11:40:31.663Z",
+    "skipped_records": 0
+  },
+  "redactions": [
+    {
+      "source": "private vault absolute path",
+      "replacement": "[PRIVATE_VAULT]"
+    },
+    {
+      "source": "private repair-output absolute path",
+      "replacement": "[PRIVATE_REPAIR_OUTPUT]"
+    }
+  ],
+  "omitted_entries": [
+    {
+      "line": 6,
+      "sha256": "abd9e13231f64ce8944383fcbaade9ddc685e01f919e45daf861d0aab1ab8bff",
+      "reason": "initial AGENTS/environment instruction bundle; not actual task"
+    }
+  ],
+  "omissions": [
+    "System/developer/reasoning excluded by exporter; tools not requested",
+    "Later validation/commit/final messages outside cutoff; final not reconstructed",
+    "Full inherited instructions/private raw context not published"
+  ],
+  "subagents_this_session": [],
+  "B2_roles": "7/7 covered by H-006-B2-blocker-prompt-coverage-2.json; Planner three turns, six sequential reviewers",
+  "historical_research": "researcher + dependency-expert original sessions/actual calls/finals in preserved H-006-v5-B evidence; reused, not rerun",
+  "application_runtime_prompts": "not-created",
+  "U01": "partial historical/full-instruction/tool coverage; no full-history claim"
+}

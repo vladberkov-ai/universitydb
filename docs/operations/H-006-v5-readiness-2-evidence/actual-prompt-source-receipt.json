@@ -1,0 +1,24 @@
+{
+  "native_session_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+  "source_transcript_basename": "rollout-2026-11-07T12-15-10-01a1b581-446d-70b0-84ac-3e5b449c1437.jsonl",
+  "source_line": 10,
+  "source_timestamp": "2026-11-07T10:16:04.992Z",
+  "source_text_sha256": "39ff3602016e272df7d264822384adcf5693a898537ff114e8f9f1b1d9cacb0e",
+  "projection_path": "docs/ai/omx/H-006-v5-D2-actual-prompt.txt",
+  "projection_sha256": "ca5d6b738d03a14777c82741f137dac7462f5fc8cf02ebe521c04cf6f8a167c8",
+  "redactions": [
+    {
+      "source": "private vault absolute prefix",
+      "replacement": "[private-vault]",
+      "count": 1
+    },
+    {
+      "source": "private repair output absolute prefix",
+      "replacement": "[private-repair-output]",
+      "count": 3
+    }
+  ],
+  "added_terminal_lf": true,
+  "cutoff_transcript_sha256": "188129843fd5b8f5aaddbbcde1f229c42b354489a4f2e2fcc16305ab35c20555",
+  "coverage": "Actual user task only; not instructions, tools, assistant messages, full transcript, future final, or subagent execution."
+}

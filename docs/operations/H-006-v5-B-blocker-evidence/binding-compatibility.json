@@ -1,0 +1,244 @@
+{
+  "recorded_at": "2026-11-07T09:21:45.817624+00:00",
+  "versions": {
+    "Codex": "0.162.1",
+    "OMX": "0.21.46",
+    "Node": "22.23.2"
+  },
+  "activation": {
+    "schema_version": 1,
+    "generation_id": "0748daa2-4c89-4a84-a305-486ed1f480a3",
+    "canonical_cwd": "/home/dev/projects/universitydb",
+    "session_id": "omx-1794040798905-xque5e",
+    "root_thread_id": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+    "activation_turn_id": "01a1b54b-b287-7ee2-9280-4dee694d4c7b",
+    "activation_prompt_sha256": "07178c6c799684ff947c56e13016567a2bc00938a554a9b871392c1dc4959dad",
+    "created_at": "2026-11-07T09:16:39.690Z"
+  },
+  "binding_observation": {
+    "activation_root": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+    "tracker_leader": "01a1b52d-b2b1-7fe0-8e25-ac16427b228a",
+    "match": false
+  },
+  "tracker_sha256": "6eab47f98a3188f5bc675e1d58f402cdcd062f80c317524e16e8ba576ef9ef4b",
+  "tracker_session": {
+    "session_id": "omx-1794040798905-xque5e",
+    "leader_thread_id": "01a1b52d-b2b1-7fe0-8e25-ac16427b228a",
+    "updated_at": "2026-11-07T09:20:20.392Z",
+    "threads": {
+      "01a1b52d-b2b1-7fe0-8e25-ac16427b228a": {
+        "thread_id": "01a1b52d-b2b1-7fe0-8e25-ac16427b228a",
+        "kind": "leader",
+        "first_seen_at": "2026-11-07T08:43:58.179Z",
+        "last_seen_at": "2026-11-07T08:43:58.179Z",
+        "last_turn_id": "01a1b52d-b2e1-71a0-9546-9497d6f63672",
+        "turn_count": 1
+      },
+      "01a1b52a-4d0c-7211-9a7f-917698d6e84c": {
+        "thread_id": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+        "kind": "subagent",
+        "first_seen_at": "2026-11-07T08:54:19.585Z",
+        "last_seen_at": "2026-11-07T08:54:19.585Z",
+        "last_turn_id": "01a1b52d-acbc-79d1-9e1f-3d1c5db85471",
+        "turn_count": 1
+      },
+      "01a1b54c-d9b8-74e1-acae-52511345ab07": {
+        "thread_id": "01a1b54c-d9b8-74e1-acae-52511345ab07",
+        "kind": "subagent",
+        "first_seen_at": "2026-11-07T09:20:06.757Z",
+        "last_seen_at": "2026-11-07T09:20:06.920Z",
+        "last_turn_id": "01a1b54c-da2b-72f3-b3ac-af626ae66ba8",
+        "turn_count": 2,
+        "mode": "dependency-expert"
+      },
+      "01a1b54c-b64f-7763-81e3-191af590899c": {
+        "thread_id": "01a1b54c-b64f-7763-81e3-191af590899c",
+        "kind": "subagent",
+        "first_seen_at": "2026-11-07T09:20:20.216Z",
+        "last_seen_at": "2026-11-07T09:20:20.392Z",
+        "last_turn_id": "01a1b54c-b6d4-7503-8ec6-725b36411bac",
+        "turn_count": 2,
+        "mode": "researcher"
+      }
+    }
+  },
+  "native_children": [
+    {
+      "task_path": "/root/official_research",
+      "role": "researcher",
+      "native_session_id": "01a1b54c-b64f-7763-81e3-191af590899c",
+      "metadata_observed_not_tracker_authority": {
+        "id": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+        "cwd": "/home/dev/projects/universitydb",
+        "cli_version": "0.162.1",
+        "source": "cli",
+        "agent_role": null
+      },
+      "tracker_record": {
+        "thread_id": "01a1b54c-b64f-7763-81e3-191af590899c",
+        "kind": "subagent",
+        "first_seen_at": "2026-11-07T09:20:20.216Z",
+        "last_seen_at": "2026-11-07T09:20:20.392Z",
+        "last_turn_id": "01a1b54c-b6d4-7503-8ec6-725b36411bac",
+        "turn_count": 2,
+        "mode": "researcher"
+      }
+    },
+    {
+      "task_path": "/root/stack_comparison",
+      "role": "dependency-expert",
+      "native_session_id": "01a1b54c-d9b8-74e1-acae-52511345ab07",
+      "metadata_observed_not_tracker_authority": {
+        "id": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+        "cwd": "/home/dev/projects/universitydb",
+        "cli_version": "0.162.1",
+        "source": "cli",
+        "agent_role": null
+      },
+      "tracker_record": {
+        "thread_id": "01a1b54c-d9b8-74e1-acae-52511345ab07",
+        "kind": "subagent",
+        "first_seen_at": "2026-11-07T09:20:06.757Z",
+        "last_seen_at": "2026-11-07T09:20:06.920Z",
+        "last_turn_id": "01a1b54c-da2b-72f3-b3ac-af626ae66ba8",
+        "turn_count": 2,
+        "mode": "dependency-expert"
+      }
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "omx",
+        "ralplan",
+        "status",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"ok\":true,\"state\":{\"active\":true,\"mode\":\"ralplan\",\"iteration\":2,\"max_iterations\":50,\"current_phase\":\"starting\",\"task_description\":\"$ralplan --advisory --deliberate Продолжи только этап B по <PRIVATE_VAULT_WSL>/handoffs/H-006-v5-B-continuation.md в /home/dev/projects/universitydb, UbuntuD.\\n\\nУчти отчёт диагностики D этой сессии. Сохрани коммит A 8931d832d49311ac0d63c3a7a359b4293058da89 и незакоммиченные evidence. A не повторяй. Сразу после этого прямого вызова, до проектирования, проверь штатными средствами активацию именно Advisory для текущего запроса. Если активация или binding недоступны, сохрани конкретную диагностику совместимости и остановись; без повторных перезапусков без новых оснований, ручной подмены IDs/state и имитации lifecycle.\\n\\nПосле подтверждения выполни настоящее последовательное Planner → Architect → Critic review и настроенные gates по пакету. Подготовь архитектуру, контракты, подробный test plan, матрицу R/U, ADR с обоснованиями и план реализации. Все новые решения proposed до обсуждения в чате.\\n\\nШтатно закрой Advisory без execution handoff, затем проверь и сохрани устойчивые документы, реальные prompts и review evidence; сделай отдельный docs-коммит B по пакету. Верни SHA, пути, проверки, verdicts, coverage и открытые вопросы; остановись.\\n\\nБез реализации, продуктовых зависимостей, платных eval, изменения remote и push. Obsidian только читать. Не запускай конкурирующую ведущую сессию и не обновляй инструменты посреди этапа.\",\"started_at\":\"2026-11-07T09:16:39.818Z\",\"session_id\":\"omx-1794040798905-xque5e\",\"thread_id\":\"01a1b52a-4d0c-7211-9a7f-917698d6e84c\",\"workflow_variant\":\"advisory\",\"advisory_generation_id\":\"0748daa2-4c89-4a84-a305-486ed1f480a3\",\"planning_complete\":false,\"execution_handoff_authorized\":false,\"host_verified\":false,\"tmux_pane_id\":\"%0\",\"tmux_window_id\":\"@0\",\"tmux_pane_set_at\":\"2026-11-07T09:16:39.818Z\",\"run_outcome\":\"continue\",\"last_turn_at\":\"2026-11-07T09:20:20.399Z\"},\"instruction\":\"Resume the non-authorizing Ralplan Advisory lifecycle for \\\"$ralplan --advisory --deliberate Продолжи только этап B по <PRIVATE_VAULT_WSL>/handoffs/H-006-v5-B-continuation.md в /home/dev/projects/universitydb, UbuntuD.\\\\n\\\\nУчти отчёт диагностики D этой сессии. Сохрани коммит A 8931d832d49311ac0d63c3a7a359b4293058da89 и незакоммиченные evidence. A не повторяй. Сразу после этого прямого вызова, до проектирования, проверь штатными средствами активацию именно Advisory для текущего запроса. Если активация или binding недоступны, сохрани конкретную диагностику совместимости и остановись; без повторных перезапусков без новых оснований, ручной подмены IDs/state и имитации lifecycle.\\\\n\\\\nПосле подтверждения выполни настоящее последовательное Planner → Architect → Critic review и настроенные gates по пакету. Подготовь архитектуру, контракты, подробный test plan, матрицу R/U, ADR с обоснованиями и план реализации. Все новые решения proposed до обсуждения в чате.\\\\n\\\\nШтатно закрой Advisory без execution handoff, затем проверь и сохрани устойчивые документы, реальные prompts и review evidence; сделай отдельный docs-коммит B по пакету. Верни SHA, пути, проверки, verdicts, coverage и открытые вопросы; остановись.\\\\n\\\\nБез реализации, продуктовых зависимостей, платных eval, изменения remote и push. Obsidian только читать. Не запускай конкурирующую ведущую сессию и не обновляй инструменты посреди этапа.\\\".\\nThis Advisory is non-authoritative and cannot grant execution authority.\\nComplete Planner, Architect, and Critic review in order and preserve their immutable evidence baselines.\\nClose the Advisory lifecycle and return control to the caller; the result remains non-authorizing.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "omx",
+        "state",
+        "list-active",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"active_modes\":[]}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "omx",
+        "state",
+        "get-status",
+        "--mode",
+        "ralplan",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"statuses\":{\"ralplan\":{\"active\":true,\"phase\":\"starting\",\"path\":\"/home/dev/projects/universitydb/.omx/state/sessions/omx-1794040798905-xque5e/ralplan-state.json\",\"data\":{\"active\":true,\"mode\":\"ralplan\",\"iteration\":2,\"max_iterations\":50,\"current_phase\":\"starting\",\"task_description\":\"$ralplan --advisory --deliberate Продолжи только этап B по <PRIVATE_VAULT_WSL>/handoffs/H-006-v5-B-continuation.md в /home/dev/projects/universitydb, UbuntuD.\\n\\nУчти отчёт диагностики D этой сессии. Сохрани коммит A 8931d832d49311ac0d63c3a7a359b4293058da89 и незакоммиченные evidence. A не повторяй. Сразу после этого прямого вызова, до проектирования, проверь штатными средствами активацию именно Advisory для текущего запроса. Если активация или binding недоступны, сохрани конкретную диагностику совместимости и остановись; без повторных перезапусков без новых оснований, ручной подмены IDs/state и имитации lifecycle.\\n\\nПосле подтверждения выполни настоящее последовательное Planner → Architect → Critic review и настроенные gates по пакету. Подготовь архитектуру, контракты, подробный test plan, матрицу R/U, ADR с обоснованиями и план реализации. Все новые решения proposed до обсуждения в чате.\\n\\nШтатно закрой Advisory без execution handoff, затем проверь и сохрани устойчивые документы, реальные prompts и review evidence; сделай отдельный docs-коммит B по пакету. Верни SHA, пути, проверки, verdicts, coverage и открытые вопросы; остановись.\\n\\nБез реализации, продуктовых зависимостей, платных eval, изменения remote и push. Obsidian только читать. Не запускай конкурирующую ведущую сессию и не обновляй инструменты посреди этапа.\",\"started_at\":\"2026-11-07T09:16:39.818Z\",\"session_id\":\"omx-1794040798905-xque5e\",\"thread_id\":\"01a1b52a-4d0c-7211-9a7f-917698d6e84c\",\"workflow_variant\":\"advisory\",\"advisory_generation_id\":\"0748daa2-4c89-4a84-a305-486ed1f480a3\",\"planning_complete\":false,\"execution_handoff_authorized\":false,\"host_verified\":false,\"tmux_pane_id\":\"%0\",\"tmux_window_id\":\"@0\",\"tmux_pane_set_at\":\"2026-11-07T09:16:39.818Z\",\"run_outcome\":\"continue\",\"last_turn_at\":\"2026-11-07T09:20:20.399Z\"}}}}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "omx",
+        "quality-gates",
+        "list",
+        "--stage",
+        "ralplan",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"gates\":[],\"stage\":\"ralplan\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "8931d832d49311ac0d63c3a7a359b4293058da89\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": " M AGENTS.md\n M docs/ai/README.md\n?? .omx-state-locks.identity.json\n?? .omx-state-locks/655a20b082786cf4e05f99e0da122d6dc803270e08f859022ac44d1302358bc8.mutex\n?? docs/ai/omx/H-006-prompt-coverage-blocker.json\n?? docs/ai/omx/H-006-session-export-blocker-cutoff.json\n?? docs/ai/omx/H-006-v5-D-actual-prompt.txt\n?? docs/ai/omx/H-006-v5-D-messages-cutoff.json\n?? docs/ai/omx/H-006-v5-D-prompt-coverage.json\n?? docs/operations/H-006-A-postcommit-receipt.json\n?? docs/operations/H-006-B-runtime-blocker.json\n?? docs/operations/H-006-v5-readiness-evidence/baseline.json\n?? docs/operations/H-006-v5-readiness-evidence/commands.json\n?? docs/operations/H-006-v5-readiness-evidence/config-roles-sources.json\n?? docs/operations/H-006-v5-readiness-evidence/direct-activation-source-evidence.json\n?? docs/operations/H-006-v5-readiness-evidence/final-document-checks.json\n?? docs/operations/H-006-v5-readiness-evidence/host-checks-final.json\n?? docs/operations/H-006-v5-readiness-evidence/host-checks.json\n?? docs/operations/H-006-v5-readiness-evidence/input-hashes.json\n?? docs/operations/H-006-v5-readiness-evidence/validation.json\n?? docs/operations/H-006-v5-readiness.json\n?? docs/reports/H-006-advisory-blocker.md\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "Actual Advisory activation succeeded; required tracker root/provenance/completion binding is currently unavailable for lifecycle. No Planner/Architect/Critic were launched. Research agents were actual inputs, not surrogate reviewers.",
+  "confirmed": {
+    "root_tracker_mismatch": true,
+    "both_research_agents_returned_actual_final": true,
+    "research_records_missing_native_provenance": true,
+    "research_records_missing_completed_at": true
+  },
+  "not_proven": [
+    "Root cause of missing native SessionStart/Stop evidence; exact host hook delivery vs adapter integration failure",
+    "That future reviewer launch would repair tracker automatically",
+    "Full Advisory lifecycle compatibility"
+  ],
+  "not_executed": [
+    "Projecting synthetic reviewer lifecycle with invented IDs/verdicts",
+    "Calling complete before reviews",
+    "Editing tracker/IDs manually",
+    "Internal activation/runtime functions or custom consensus executor"
+  ],
+  "next_hypothesis": "Native child SessionStart/Stop delivery or its mapping to current root is not reaching tracker as required; inspect supported native hook delivery for the two existing real child IDs, without synthetic payloads or spawning another leader/reviewer.",
+  "installed_source_evidence": [
+    {
+      "path": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/ralplan/advisory-evidence.js",
+      "sha256": "e12b081b3a93a97cc61e594c6d8a51cdfa5aa2fe661175f9f31b38dfaf9f3385",
+      "start_line": 302,
+      "end_line": 340
+    },
+    {
+      "path": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/cli/ralplan.js",
+      "sha256": "ba606672bd1fbb9bbd0affe9b5ae04e5031220432ac7091cf2bc51c68252e058",
+      "start_line": 186,
+      "end_line": 243
+    },
+    {
+      "path": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/ralplan/runtime.js",
+      "sha256": "e8e2cf7e371667d671f5e7a0add9106e5bcae7b5543252eea92ae6b845ada2fe",
+      "start_line": 27,
+      "end_line": 46
+    },
+    {
+      "path": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/ralplan/runtime.js",
+      "sha256": "e8e2cf7e371667d671f5e7a0add9106e5bcae7b5543252eea92ae6b845ada2fe",
+      "start_line": 289,
+      "end_line": 310
+    },
+    {
+      "path": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/cli/ralplan.js",
+      "sha256": "ba606672bd1fbb9bbd0affe9b5ae04e5031220432ac7091cf2bc51c68252e058",
+      "start_line": 98,
+      "end_line": 146
+    },
+    {
+      "path": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/ralplan/runtime.js",
+      "sha256": "e8e2cf7e371667d671f5e7a0add9106e5bcae7b5543252eea92ae6b845ada2fe",
+      "start_line": 645,
+      "end_line": 690
+    }
+  ],
+  "predicate_summary": [
+    "projectAdvisoryReviewLifecycle requires tracker.sessions[session].leader_thread_id == activation.root_thread_id",
+    "It requires distinct architect/critic native children, direct_child_root_id/direct_child_parent_id matching root, generation scope, role, completed_at and sequential times",
+    "Existing completed research children have native transcript metadata but tracker lacks native provenance/direct-child/completion fields. Their results are not substitute reviewer evidence.",
+    "No lifecycle projection or complete command was executed with invented reviewers. Root mismatch independently prevents required projector condition at capture time."
+  ],
+  "limitation": "This is observed current binding mismatch and source-guided closeout incompatibility, not a future reviewer trial nor a full runtime error from advisory complete."
+}

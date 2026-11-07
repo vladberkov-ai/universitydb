@@ -1,0 +1,195 @@
+{
+  "applicable_parent_instructions": "No AGENTS.md in /, /home, /home/dev or /home/dev/projects; user-scope <CODEX_HOME>/AGENTS.md read. Project AGENTS and newer explicit D-only user request applied. No nested instructions found under docs/omx_wiki.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "36f5c847236d2b148c41c30b063a5afa13c1e6da68c5e655efe7c4711f2b2807",
+      "kind": "repo read context"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "2dee4fa80c2226b91cffb3b977aa403840a83d392aa4b4341e21a34f521dca21",
+      "kind": "repo read context"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-001-preparation-boundary.md",
+      "sha256": "985b3afa5c8df7aebb85b336509116e27ab292dc2c02757015ecdf48b06c40c5",
+      "kind": "repo read context"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-002-execution-context-and-checkpoint.md",
+      "sha256": "21d5e1406745749569ad00639c8ecf6d75c4401136a4d74ff7ed5669fcb663c3",
+      "kind": "repo read context"
+    },
+    {
+      "path": "docs/adr/README.md",
+      "sha256": "37e789f5d4b51b65e14db613b79a6a1cfee80892b5cfb00fc4b55fe2a4a801e0",
+      "kind": "repo read context"
+    },
+    {
+      "path": "docs/ai/README.md",
+      "sha256": "f2ffa5a75851e4465a14dcbb41c4d73692b6cc52e2e6846f8f135da012a8ff17",
+      "kind": "repo read context"
+    },
+    {
+      "path": "docs/ai/omx/H-006-prompt-coverage-blocker.json",
+      "sha256": "6fdbaac1ce9ad401f7b2085564c4925174ece3b6cdd978d49f7cd40421061c4a",
+      "kind": "repo read context"
+    },
+    {
+      "path": "docs/ai/omx/H-006-session-export-blocker-cutoff.json",
+      "sha256": "44703f89e4395858610c4297f46c200ea2e446c1e4dbe520f8d7c704c24d1360",
+      "kind": "repo read context"
+    },
+    {
+      "path": "docs/operations/H-006-A-postcommit-receipt.json",
+      "sha256": "739eed80a78b51338909c84846a147ebaa35c18cecee75de496b3795ba11df28",
+      "kind": "repo read context"
+    },
+    {
+      "path": "docs/operations/H-006-A-validation.json",
+      "sha256": "2a5663219a9b0362713e14c0b109753f2aaa7d7e7dea005eee90a3fa579915ee",
+      "kind": "repo read context"
+    },
+    {
+      "path": "docs/operations/H-006-B-runtime-blocker.json",
+      "sha256": "b8b51deb101920040094f9ec9ea79d9ac31cf958a9adec8cf2ba4e0ee4b63355",
+      "kind": "repo read context"
+    },
+    {
+      "path": "docs/operations/H-006-input-verification.json",
+      "sha256": "b9aa14f221e42dba2f7d2d3aa09ebcfd20a5d2441115844be60c69b8dd86bc41",
+      "kind": "repo read context"
+    },
+    {
+      "path": "docs/operations/H-006-v5-B-blocker-evidence/supported-cancellation.json",
+      "sha256": "65ae0a2447675d320338b4f72690e1c393fb99f04d5f1d1aafd11d516fcd0a2e",
+      "kind": "repo read context"
+    },
+    {
+      "path": "docs/operations/H-006-v5-advisory-binding-diagnostic.json",
+      "sha256": "144a70d00e170e93b00ff74fe92229cf1c0ac1142044bc38a1379c6bb424fcfc",
+      "kind": "repo read context"
+    },
+    {
+      "path": "docs/operations/H-006-v5-readiness.json",
+      "sha256": "531c56d3541b2d003f56f045484bc09f40ea785ea5d1e61756260b5241f483b0",
+      "kind": "repo read context"
+    },
+    {
+      "path": "docs/operations/chat-export-receipt.json",
+      "sha256": "c978639c47c6c4673cb6e948e558172b89a86c517df3782409e948663edfbdb7",
+      "kind": "repo read context"
+    },
+    {
+      "path": "docs/reports/H-005-preparation-completion.md",
+      "sha256": "e2ee430e40dd4ba4b4e14a0294f951b915c03a11860e0ff63944dac146ab8463",
+      "kind": "repo read context"
+    },
+    {
+      "path": "docs/reports/H-006-advisory-blocker.md",
+      "sha256": "d8e04bdd1800e5cfdae7db605498e86ab9746b876ca87092c48caa5333d7b3ab",
+      "kind": "repo read context"
+    },
+    {
+      "path": "omx_wiki/index.md",
+      "sha256": "3004d4a65e4e4e0ac44ad6fd6ed93bab8ccd8f40c13fe5c25987f724ae0c9b10",
+      "kind": "repo read context"
+    },
+    {
+      "path": "<CODEX_HOME>/AGENTS.md",
+      "sha256": "a4e2dfb21350aa617d285ee6789397aa9a4edc62fb4ae247884697044fd0f20d",
+      "kind": "installed instructions read, not skill activation"
+    },
+    {
+      "path": "<CODEX_HOME>/skills/ralplan/SKILL.md",
+      "sha256": "9e717939acc0201d44518964a8e84052dc9874540e4c7a19f3ce91a9c27484ad",
+      "kind": "installed instructions read, not skill activation"
+    },
+    {
+      "path": "<CODEX_HOME>/skills/plan/SKILL.md",
+      "sha256": "522e2613cadfbaf50ea58c045c517a24cc8c7b15cd6dac9939f218c6e00af772",
+      "kind": "installed instructions read, not skill activation"
+    },
+    {
+      "path": "<PRIVATE_VAULT>/AGENTS.md",
+      "sha256": "01a9efd81e3ad9e3d9828f9fe189ccce0975292d4aa7963a8ec51e243f334074",
+      "kind": "private read-only context; contents not exported"
+    },
+    {
+      "path": "<PRIVATE_VAULT>/handoffs/H-006-v5-B-continuation.md",
+      "sha256": "77a67c1787b8281b094af5811cc7ec2b94a0fbf85caabb9beaae96ce9a0a332b",
+      "kind": "private read-only context; contents not exported"
+    },
+    {
+      "path": "<PRIVATE_VAULT>/wiki/overview.md",
+      "sha256": "2c86d765255f43563c4802d2ce22a9ecbb5f5fb4a23bb45ffbc72b1e80cbdaa1",
+      "kind": "private read-only context; contents not exported"
+    },
+    {
+      "path": "<PRIVATE_VAULT>/wiki/operations/omx-workflow.md",
+      "sha256": "09a36aab0c2109db8682a61d9dc7674d963716ae7c7eb5f7272e94896273025a",
+      "kind": "private read-only context; contents not exported"
+    },
+    {
+      "path": "<PRIVATE_VAULT>/wiki/verification/H-006-review.md",
+      "sha256": "83d6450c52ee118f1a16e3be0532d89ec6aa9b1c1dfe74221fa1b198c1c66c14",
+      "kind": "private read-only context; contents not exported"
+    },
+    {
+      "path": "<PRIVATE_VAULT>/wiki/index.md",
+      "sha256": "a5d5081488fd9116af650b8bb0531f5fd4ecf2527e309ee7a54b37478c70d3bc",
+      "kind": "private read-only context; contents not exported"
+    },
+    {
+      "path": "<PRIVATE_VAULT>/wiki/open-questions.md",
+      "sha256": "b3633fa70ca2f1309b5eddeaedcacf35fb6fff7da04c97e562d5dbf378303320",
+      "kind": "private read-only context; contents not exported"
+    },
+    {
+      "path": "<PRIVATE_VAULT>/wiki/log.md",
+      "sha256": "4e40baf1dd53d602cf5273f1637a4b51744f4e3f396f236e3d3cd66b9f6589a1",
+      "kind": "last 55 lines read; contents not exported"
+    },
+    {
+      "path": "<PRIVATE_REPAIR_OUTPUT>/REPORT.md",
+      "sha256": "c88e68f35f3831fa79fdc5f8977b53fd12214b64f3c8dee3fceed7686e2169ac",
+      "kind": "read-only repair evidence"
+    },
+    {
+      "path": "<PRIVATE_REPAIR_OUTPUT>/preservation-result.json",
+      "sha256": "9f360ac1d3b09215adc355ba908dccab185a9893a3b65583f3544468e3f3054d",
+      "kind": "read-only repair evidence"
+    },
+    {
+      "path": "<PRIVATE_REPAIR_OUTPUT>/installed-manifest.json",
+      "sha256": "c148c5e1e2e24b9cf45eeee2c0211a57dcc013af03597a5ccb4b573c28f8ded1",
+      "kind": "read-only repair evidence"
+    },
+    {
+      "path": "<PRIVATE_REPAIR_OUTPUT>/baseline.json",
+      "sha256": "0b328175a766519be0d18677e56df7b1ea3a55b7d36dbc9872137da68fa77f2d",
+      "kind": "read-only repair evidence"
+    }
+  ],
+  "launchers": [
+    {
+      "path": "/home/dev/projects/universitydb/.omx/runtime/bin/omx",
+      "resolved_path": "/home/dev/projects/universitydb/.omx/runtime/bin/omx",
+      "sha256": "97f8cffbab25d59a9c3265146161b86ab666009175672b505258d9f92f3f5ba1",
+      "content": "#!/bin/sh\nexec '/home/dev/.nvm/versions/node/v22.23.2/bin/node' '/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/cli/omx.js' \"$@\"\n"
+    },
+    {
+      "path": "/home/dev/.omx/runtime/bin/omx",
+      "resolved_path": "/home/dev/.omx/runtime/bin/omx",
+      "sha256": "97f8cffbab25d59a9c3265146161b86ab666009175672b505258d9f92f3f5ba1",
+      "content": "#!/bin/sh\nexec '/home/dev/.nvm/versions/node/v22.23.2/bin/node' '/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/cli/omx.js' \"$@\"\n"
+    }
+  ],
+  "commands_on_PATH": {
+    "codex": "/home/dev/.nvm/versions/node/v22.23.2/bin/codex",
+    "omx": "/home/dev/projects/universitydb/.omx/runtime/bin/omx",
+    "node": "/home/dev/.nvm/versions/node/v22.23.2/bin/node"
+  },
+  "diagnostic_script_sha256": "5f9ec6f5b7a8336a22f2562b160374c9f42120d9f18baf1e8b7905a7db363f8a"
+}

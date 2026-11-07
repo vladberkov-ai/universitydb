@@ -1,0 +1,120 @@
+{
+  "observed_at": "2026-11-07T11:42:33.203945+00:00",
+  "method": "Read-only readCurrentRalplanAdvisory + revalidateStoredAdvisoryEvidence; no complete/reconcile",
+  "session_id": "omx-1794046506930-56sf8c",
+  "generation_id": "ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+  "corruption": null,
+  "effective_fence": {
+    "schema_version": 1,
+    "generation_id": "ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+    "canonical_cwd": "/home/dev/projects/universitydb",
+    "session_id": "omx-1794046506930-56sf8c",
+    "root_thread_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+    "activation_turn_id": "01a1b58c-206e-7472-bebe-165fab7636bc",
+    "activation_prompt_sha256": "805614ee2586d0319b123e68f82899fda22cbe4854c858ed39b78e7cc835b206",
+    "created_at": "2026-11-07T10:27:02.037Z",
+    "state": "closed",
+    "closing_turn_id": "01a1b58c-206e-7472-bebe-165fab7636bc",
+    "iteration": 3,
+    "iteration_id": "1b36230aca603b7b80e49be37f402ae1a972924b061789b303053e74ff0406f2",
+    "plan_manifest_sha256": "af615fc22b2804c3efa5ee469df82fdf2b3050ddab5b660818f54af1d9b038f5",
+    "architect_review_sha256": "b4592981ae42e2da2dcef115ca48ca7b3c6998e0ccad2a19cfd3baf7ecddb7a6",
+    "critic_review_sha256": "61e4a015b31423b6880e676662c4e64f4a6baa4eca1104f988ef28b145b7d5f8",
+    "evidence_bundle_sha256": "57ddd777824da540443657e5f843e8fbd292ef1a528c7112080cd809e7ba5a90",
+    "updated_at": "2026-11-07T11:08:28.119Z",
+    "sequence": 1,
+    "outcome": "approved",
+    "integrity_status": "proven",
+    "previous_event_sha256": "df9ad0b871c9c199516beabd649003bc70ccf2b1c5bd83c939bdfe7a23a51004"
+  },
+  "journal_projection": {
+    "schema_version": 1,
+    "generation_id": "ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+    "outcome": "approved",
+    "integrity_status": "proven",
+    "evidence_bundle_sha256": "57ddd777824da540443657e5f843e8fbd292ef1a528c7112080cd809e7ba5a90",
+    "terminal_mode_updates": {
+      "active": false,
+      "current_phase": "complete",
+      "planning_complete": true,
+      "completed_at": "2026-11-07T11:08:28.044Z",
+      "workflow_variant": "advisory",
+      "advisory_generation_id": "ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+      "ralplan_review_lifecycle": {
+        "complete": true,
+        "sequence_valid": true,
+        "iteration": 3,
+        "iteration_id": "1b36230aca603b7b80e49be37f402ae1a972924b061789b303053e74ff0406f2",
+        "plan_manifest_sha256": "af615fc22b2804c3efa5ee469df82fdf2b3050ddab5b660818f54af1d9b038f5",
+        "architect_review_sha256": "b4592981ae42e2da2dcef115ca48ca7b3c6998e0ccad2a19cfd3baf7ecddb7a6",
+        "critic_review_sha256": "61e4a015b31423b6880e676662c4e64f4a6baa4eca1104f988ef28b145b7d5f8",
+        "evidence_bundle_sha256": "57ddd777824da540443657e5f843e8fbd292ef1a528c7112080cd809e7ba5a90",
+        "evidence_scope": "local_runtime",
+        "host_observable": false,
+        "host_verified": false
+      },
+      "execution_handoff_authorized": false,
+      "host_verified": false,
+      "ralplan_consensus_gate": {
+        "complete": false
+      }
+    },
+    "terminal_timestamp": "2026-11-07T11:08:28.119Z",
+    "phase": "committed",
+    "created_at": "2026-11-07T11:08:28.119Z",
+    "updated_at": "2026-11-07T11:08:28.180Z",
+    "steps": {
+      "session_mode": "applied",
+      "root_mode": "applied",
+      "session_skill": "applied",
+      "root_skill": "applied",
+      "post_digest": "applied",
+      "journal_commit": "applied",
+      "fence_terminal": "applied"
+    }
+  },
+  "journal_omission": "terminal_skill_updates omitted; current same-session skill mirror independently checked. Full original journal remains private and hashed.",
+  "sources": [
+    {
+      "path": ".omx/state/sessions/omx-1794046506930-56sf8c/ralplan-advisory/ec3e1f0b-d751-4088-bfb2-ec386c08549c/closeout-journal.json",
+      "sha256": "1d9d7fa1b8e1ba7726355f58bdbd9d9b6b4e58f638ab64f0ce79c596bb89529c"
+    },
+    {
+      "path": ".omx/state/sessions/omx-1794046506930-56sf8c/ralplan-advisory/ec3e1f0b-d751-4088-bfb2-ec386c08549c/activation.json",
+      "sha256": "d1921801dce2617e6908cec8ffcee680bcd9c89cd19747af176ebdab76ffb47a"
+    },
+    {
+      "path": ".omx/state/sessions/omx-1794046506930-56sf8c/ralplan-advisory/ec3e1f0b-d751-4088-bfb2-ec386c08549c/fence-event-0001.json",
+      "sha256": "9a8310076aa182ef020b55467750b509c8ca07f3a6b3648dc8955bf3ec970983"
+    },
+    {
+      "path": ".omx/state/sessions/omx-1794046506930-56sf8c/ralplan-advisory/ec3e1f0b-d751-4088-bfb2-ec386c08549c/fence.json",
+      "sha256": "b09220800e1c31f5f77d5c8dc40cb54ebfcea13d1d572ad50fb3b74affa5bf10"
+    }
+  ],
+  "current_mirrors": [
+    {
+      "path": ".omx/state/sessions/omx-1794046506930-56sf8c/ralplan-state.json",
+      "sha256": "a025aa79565a5afc847217123dda92e97722277d8588f05596071e8f5393d78a",
+      "active": false
+    },
+    {
+      "path": ".omx/state/sessions/omx-1794046506930-56sf8c/skill-active-state.json",
+      "sha256": "3fcd77013264d952b1be35b5b6c28c4bb52ecffc1eaa65120c7f930fbb2a380d",
+      "active": false
+    },
+    {
+      "path": ".omx/state/sessions/omx-1794046506930-56sf8c/run-state.json",
+      "sha256": "f65df8e10aa72f5eb335a8417cc17022f66e7779ef5fb97e236632946fdde5f0",
+      "active": false
+    }
+  ],
+  "stored_evidence_revalidation": {
+    "kind": "matched",
+    "digest": "57ddd777824da540443657e5f843e8fbd292ef1a528c7112080cd809e7ba5a90"
+  },
+  "hash_note": "Raw file hashes differ from official domain-separated review/plan digests. Fence predecessor uses SHA256(JSON.stringify(parsed base)+LF), not raw pretty JSON.",
+  "initial_check_correction": "First local Python check incorrectly compared predecessor with raw file SHA; it failed. Replaced by documented canonical JSON comparison and existing read-only official reader; both passed. No evidence changed.",
+  "no_mutation": "No activation, complete, reconcile, cancel, tracker/ID/state writes or review agents in packaging session.",
+  "limits": "Local runtime evidence, not host-issued execution authority. host_verified/consensus_gate_complete/execution_handoff_authorized remain false."
+}

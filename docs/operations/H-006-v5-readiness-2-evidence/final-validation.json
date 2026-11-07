@@ -1,0 +1,105 @@
+{
+  "recorded_at": "2026-11-07T10:23:21.799408+00:00",
+  "result": "pass",
+  "original_files_rechecked": 78,
+  "original_changed_or_missing": [],
+  "index_unchanged": true,
+  "JSON_parse_passed": [
+    "docs/operations/H-006-v5-readiness-2.json",
+    "docs/ai/omx/H-006-v5-D2-prompt-coverage.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/actual-prompt-source-receipt.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/baseline.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/commands.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/config-delta.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/current-and-historical-runtime.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/host-binding-hooks-roles.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/host-binding-inspection-command.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/host-doctor-command.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/installed-repair-verification.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/read-context-launchers.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/sandbox-binding-hooks-roles.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/source-guided-activation-lifecycle.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/supplemental-commands.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/vault-input-hashes.json"
+  ],
+  "report_local_links_resolved": 7,
+  "actual_prompt_projection_hash": "match",
+  "new_scope_only": true,
+  "new_files_before_this_validation": [
+    "docs/ai/omx/H-006-v5-D2-actual-prompt.txt",
+    "docs/ai/omx/H-006-v5-D2-prompt-coverage.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/actual-prompt-source-receipt.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/baseline.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/commands.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/config-delta.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/current-and-historical-runtime.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/host-binding-hooks-roles.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/host-binding-inspection-command.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/host-doctor-command.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/installed-repair-verification.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/read-context-launchers.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/sandbox-binding-hooks-roles.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/source-guided-activation-lifecycle.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/supplemental-commands.json",
+    "docs/operations/H-006-v5-readiness-2-evidence/vault-input-hashes.json",
+    "docs/operations/H-006-v5-readiness-2.json",
+    "docs/reports/H-006-v5-readiness-2.md"
+  ],
+  "privacy": "Selected private absolute prefixes and common secret patterns absent; scoped check, not a general privacy guarantee. No raw vault/transcript exported.",
+  "trailing_whitespace_files": [],
+  "git": {
+    "head": {
+      "exit_code": 0,
+      "stdout": "8931d832d49311ac0d63c3a7a359b4293058da89\n",
+      "stderr": ""
+    },
+    "branch": {
+      "exit_code": 0,
+      "stdout": "main\n",
+      "stderr": ""
+    },
+    "status": {
+      "exit_code": 0,
+      "stdout": " M AGENTS.md\n M docs/ai/README.md\n?? .omx-state-locks.identity.json\n?? .omx-state-locks/655a20b082786cf4e05f99e0da122d6dc803270e08f859022ac44d1302358bc8.mutex\n?? docs/ai/omx/H-006-prompt-coverage-blocker.json\n?? docs/ai/omx/H-006-session-export-blocker-cutoff.json\n?? docs/ai/omx/H-006-v5-B-actual-delegation-calls.json\n?? docs/ai/omx/H-006-v5-B-actual-prompt.txt\n?? docs/ai/omx/H-006-v5-B-dependency-expert-evidence.json\n?? docs/ai/omx/H-006-v5-B-leader-export-cutoff.json\n?? docs/ai/omx/H-006-v5-B-prompt-coverage.json\n?? docs/ai/omx/H-006-v5-B-researcher-evidence.json\n?? docs/ai/omx/H-006-v5-D-actual-prompt.txt\n?? docs/ai/omx/H-006-v5-D-messages-cutoff.json\n?? docs/ai/omx/H-006-v5-D-prompt-coverage.json\n?? docs/ai/omx/H-006-v5-D2-actual-prompt.txt\n?? docs/ai/omx/H-006-v5-D2-prompt-coverage.json\n?? docs/operations/H-006-A-postcommit-receipt.json\n?? docs/operations/H-006-B-runtime-blocker.json\n?? docs/operations/H-006-v5-B-blocker-evidence/activation-check.json\n?? docs/operations/H-006-v5-B-blocker-evidence/binding-compatibility.json\n?? docs/operations/H-006-v5-B-blocker-evidence/initial-state-hashes.json\n?? docs/operations/H-006-v5-B-blocker-evidence/read-context-and-inputs.json\n?? docs/operations/H-006-v5-B-blocker-evidence/session-export-commands.json\n?? docs/operations/H-006-v5-B-blocker-evidence/stop-guard-failure.json\n?? docs/operations/H-006-v5-B-blocker-evidence/supported-cancellation.json\n?? docs/operations/H-006-v5-B-blocker-evidence/validation.json\n?? docs/operations/H-006-v5-advisory-binding-diagnostic.json\n?? docs/operations/H-006-v5-readiness-2-evidence/actual-prompt-source-receipt.json\n?? docs/operations/H-006-v5-readiness-2-evidence/baseline.json\n?? docs/operations/H-006-v5-readiness-2-evidence/commands.json\n?? docs/operations/H-006-v5-readiness-2-evidence/config-delta.json\n?? docs/operations/H-006-v5-readiness-2-evidence/current-and-historical-runtime.json\n?? docs/operations/H-006-v5-readiness-2-evidence/host-binding-hooks-roles.json\n?? docs/operations/H-006-v5-readiness-2-evidence/host-binding-inspection-command.json\n?? docs/operations/H-006-v5-readiness-2-evidence/host-doctor-command.json\n?? docs/operations/H-006-v5-readiness-2-evidence/installed-repair-verification.json\n?? docs/operations/H-006-v5-readiness-2-evidence/read-context-launchers.json\n?? docs/operations/H-006-v5-readiness-2-evidence/sandbox-binding-hooks-roles.json\n?? docs/operations/H-006-v5-readiness-2-evidence/source-guided-activation-lifecycle.json\n?? docs/operations/H-006-v5-readiness-2-evidence/supplemental-commands.json\n?? docs/operations/H-006-v5-readiness-2-evidence/vault-input-hashes.json\n?? docs/operations/H-006-v5-readiness-2.json\n?? docs/operations/H-006-v5-readiness-evidence/baseline.json\n?? docs/operations/H-006-v5-readiness-evidence/commands.json\n?? docs/operations/H-006-v5-readiness-evidence/config-roles-sources.json\n?? docs/operations/H-006-v5-readiness-evidence/direct-activation-source-evidence.json\n?? docs/operations/H-006-v5-readiness-evidence/final-document-checks.json\n?? docs/operations/H-006-v5-readiness-evidence/host-checks-final.json\n?? docs/operations/H-006-v5-readiness-evidence/host-checks.json\n?? docs/operations/H-006-v5-readiness-evidence/input-hashes.json\n?? docs/operations/H-006-v5-readiness-evidence/validation.json\n?? docs/operations/H-006-v5-readiness.json\n?? docs/reports/H-006-advisory-blocker.md\n?? docs/reports/H-006-v5-advisory-binding-blocker.md\n?? docs/reports/H-006-v5-readiness-2.md\n",
+      "stderr": ""
+    },
+    "staging": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "remotes": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "diff_check": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "artifact_sha256": {
+    "docs/operations/H-006-v5-readiness-2.json": "7e1c022ed94dc3e1fdcb30e325174a600456f176ae2a82874c31fac52e27efa1",
+    "docs/reports/H-006-v5-readiness-2.md": "0d82ef25d5d4e5969a93d763ccc099e6037cb0c5a459ff3f2600870a5ea88ac8",
+    "docs/ai/omx/H-006-v5-D2-actual-prompt.txt": "ca5d6b738d03a14777c82741f137dac7462f5fc8cf02ebe521c04cf6f8a167c8",
+    "docs/ai/omx/H-006-v5-D2-prompt-coverage.json": "c929cc140165501ea39ae0f2f24ef2a2f5674a1136099aea959a1ffdaf7b0098",
+    "docs/operations/H-006-v5-readiness-2-evidence/actual-prompt-source-receipt.json": "b7f771d4e93856ad37fcf7bc557b7ca1732f841cd79a73947288f62cf800b5e5",
+    "docs/operations/H-006-v5-readiness-2-evidence/baseline.json": "946fafdcd942fc46bfd7326699d8f53b7a367c79f697b1f5df9d244aa9104d79",
+    "docs/operations/H-006-v5-readiness-2-evidence/commands.json": "ae93538aec3899b24402881641172def1b139d0424079607729674d70ba1b014",
+    "docs/operations/H-006-v5-readiness-2-evidence/config-delta.json": "1f2865beb6473d473c796404ed44d338b77713d76755784291cae665e3fd9e39",
+    "docs/operations/H-006-v5-readiness-2-evidence/current-and-historical-runtime.json": "69fdc7efde5cfc6c4b758a94961b7eed2b969d77713a7c44da880ac7e2760ffb",
+    "docs/operations/H-006-v5-readiness-2-evidence/host-binding-hooks-roles.json": "156e7acd4a10cb69ae439d9519c54fd408d76cbed200489109594025921f29ad",
+    "docs/operations/H-006-v5-readiness-2-evidence/host-binding-inspection-command.json": "4cc6d69f3e8f72abdc839afe405df647d00e08928509947db5c8a1c4b7a45a2c",
+    "docs/operations/H-006-v5-readiness-2-evidence/host-doctor-command.json": "5e836c7dbb8c8172c37a98e44a3463288f87564840ce473d8c24fb243949a882",
+    "docs/operations/H-006-v5-readiness-2-evidence/installed-repair-verification.json": "643265ec962022a7f9d74daf7a60aaf211da807e9c37199bb7e08cc020e3e83c",
+    "docs/operations/H-006-v5-readiness-2-evidence/read-context-launchers.json": "0a1e506b1afc7531e37e6a7bfae3488a750ba50acff28fa1bfc4a244614e42a2",
+    "docs/operations/H-006-v5-readiness-2-evidence/sandbox-binding-hooks-roles.json": "e83dc970a44070b69deeda1e8581e5b327942d78e46b96507e3e9d723da3de23",
+    "docs/operations/H-006-v5-readiness-2-evidence/source-guided-activation-lifecycle.json": "3438509e12cfe4eeca4e9a4a3691e563d7426e3357db9f1474d29381d1b2806a",
+    "docs/operations/H-006-v5-readiness-2-evidence/supplemental-commands.json": "fc89b156ae626415287db2a858b77f50c43671ce7463ddfa52017cebf403d3db",
+    "docs/operations/H-006-v5-readiness-2-evidence/vault-input-hashes.json": "fbe3e4452f7733793c15af6ea73ce55be4ab196094db98ad2a6e2111f6d76b47"
+  },
+  "self_hash": "excluded",
+  "application_tests": "not-run: D documentation/diagnostics only",
+  "subagents": "not-run: explicit user restriction"
+}

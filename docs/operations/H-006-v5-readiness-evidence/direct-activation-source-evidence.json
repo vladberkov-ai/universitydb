@@ -1,0 +1,48 @@
+{
+  "method": "read-only inspection of installed sources, not an executed activation test",
+  "excerpts": [
+    {
+      "source": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/ralplan/advisory-contract.js",
+      "sha256": "5e05dc816bb414eb978f0f735cefd415b6ba7266bc2d571c97895e172b47f0e0",
+      "start_line": 17,
+      "end_line": 29,
+      "text": "    const tokens = text.trim().split(/\\s+/u);\n    if (!/^\\$(?:oh-my-codex:)?ralplan$/iu.test(tokens[0] ?? ''))\n        return 'none';\n    const args = tokens.slice(1);\n    if (!args.some((token) => token.toLowerCase().startsWith('--advisory')))\n        return 'none';\n    return args.every((token) => /^--(?:advisory|interactive|deliberate)$/iu.test(token)\n        || !token.startsWith('-') && !token.startsWith('$')) ? 'valid' : 'invalid';\n}\nexport function isDirectRalplanAdvisoryInvocation(text) {\n    return parseRalplanAdvisoryInvocation(text) === 'valid';\n}\nexport function classifyAdvisoryPrompt(prompt) {"
+    },
+    {
+      "source": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/hooks/keyword-detector.js",
+      "sha256": "593b623a79ebc25a1c8f2058807af61034f91aaba0a357492dab4fe9248a01bc",
+      "start_line": 490,
+      "end_line": 525,
+      "text": "    const advisoryInvocation = config.mode === 'ralplan'\n        && isDirectRalplanAdvisoryInvocation(activationText);\n    if (config.mode === 'ralplan' && advisoryInvocation) {\n        const sessionId = safeString(nextSkill.session_id).trim();\n        const rootThreadId = safeString(nextSkill.thread_id).trim();\n        const activationTurnId = safeString(nextSkill.turn_id).trim();\n        if (!sessionId || !rootThreadId || !activationTurnId)\n            throw new Error('ralplan_advisory_canonical_turn_identity_required');\n        const prior = await readCurrentRalplanAdvisory(sourceCwd, sessionId);\n        const pendingRecovery = prior?.corruption === 'rollover_pending_admin'\n            || prior?.corruption === 'current_missing_with_advisory_state';\n        if (prior?.corruption && !pendingRecovery)\n            throw new Error(`ralplan_advisory_${prior.corruption}`);\n        const activated = await activateOrResumeRalplanAdvisory({\n            cwd: sourceCwd, sessionId, rootThreadId, activationTurnId,\n            producer: 'native', threadKind: options.advisoryThreadKind ?? 'unknown',\n            ...(prior?.activation?.generation_id ? { predecessorGenerationId: prior.activation.generation_id } : {}),\n            nowIso, prompt: activationText,\n            failpoint: async (checkpoint) => {\n                if (checkpoint === 'after_intent' && !pendingRecovery) {\n                    await options.advisoryActivationFailpoint?.('rollover_intent');\n                }\n                if (checkpoint === 'after_mode')\n                    await options.advisoryAfterModeBindingFailpoint?.();\n                if (checkpoint === 'intent_committed')\n                    await options.advisoryActivationFailpoint?.('intent_committed');\n            },\n        });\n        const activation = activated.activation;\n        baseState.workflow_variant = 'advisory';\n        baseState.advisory_generation_id = activation.generation_id;\n        baseState.execution_handoff_authorized = false;\n        baseState.host_verified = false;\n        baseState.ralplan_consensus_gate = { complete: false };\n    }\n    if (baseState.workflow_variant === 'advisory') {"
+    },
+    {
+      "source": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/scripts/codex-native-hook.js",
+      "sha256": "423cf8cc528e82bd384d19fa1eea66ce23842c633b99875ace359875fa3763a8",
+      "start_line": 21178,
+      "end_line": 21205,
+      "text": "        ? candidateWorkerPayloadSessionId\n        : sessionStartNativeCandidates[0] ?? safeString(rawPayloadSessionAlias).trim();\n    const sessionStartTranscriptPath = hookEventName === \"SessionStart\"\n        ? safeString(payload.transcript_path ?? payload.transcriptPath).trim()\n        : \"\";\n    // For native Codex events, thread_id may not exist as an explicit field; instead, session_id carries\n    // the thread identifier. When no explicit thread_id exists, fallback to session_id for identity resolution.\n    const explicitThreadId = readPayloadThreadId(payload);\n    const threadId = explicitThreadId || safeString(rawPayloadSessionAlias).trim();\n    const turnId = safeString(payload.turn_id ?? payload.turnId).trim();\n    const pointer = await readSessionPointer(pointerContext);\n    const currentSessionState = pointer.status === \"usable\" ? pointer.state ?? null : null;\n    let promptTurnContext = hookEventName === \"UserPromptSubmit\"\n        ? evaluateResolvedPromptTurn({\n            producer: \"native\",\n            payloadSessionId: rawPayloadSessionAlias,\n            ownerEnvSessionId: undefined,\n            selectedPointer: pointer,\n            threadFacts: await readNativePromptThreadFacts(cwd, nativeSessionId, threadId, currentSessionState),\n            nowIso: new Date().toISOString(),\n        })\n        : null;\n    if (promptTurnContext) {\n        promptTurnContext = await preflightNativePromptTarget(stateDir, promptTurnContext);\n    }\n    if (promptTurnContext?.status === \"rejected\") {\n        await appendPromptSessionProvenanceRejection(pointerContext, promptTurnContext.diagnostic).catch(() => { });\n        return { hookEventName, omxEventName, skillState: null, outputJson: null };"
+    },
+    {
+      "source": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/scripts/codex-native-hook.js",
+      "sha256": "423cf8cc528e82bd384d19fa1eea66ce23842c633b99875ace359875fa3763a8",
+      "start_line": 21530,
+      "end_line": 21543,
+      "text": "    }\n    if (hookEventName === \"UserPromptSubmit\") {\n        const prompt = readPromptText(payload);\n        const advisoryThreadKind = promptTurnContext?.status === \"authorized\"\n            && promptTurnContext.authorization.targetRelation !== \"explicit-independent\"\n            && promptTurnContext.authorization.thread.kind === \"root-or-drift\"\n            ? \"root-or-drift\" : \"unknown\";\n        if (!isSubagentPromptSubmit)\n            promptClassification = classifyKeywordInput(prompt);\n        if (canonicalSessionId && !isSubagentPromptSubmit && advisoryStateDetection?.status === \"normal\") {\n            try {\n                await activateOrResumeRalplanAdvisory({\n                    cwd: policyCwd, sessionId: canonicalSessionId, rootThreadId: threadId,\n                    activationTurnId: turnId, prompt, resumeOnly: true, producer: \"native\", threadKind: advisoryThreadKind,"
+    },
+    {
+      "source": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/ralplan/advisory-activation.js",
+      "sha256": "292526bb8549c13a87336b0e884237867208ddf77e92dccd4544f46481e2e853",
+      "start_line": 107,
+      "end_line": 132,
+      "text": "    }\n    if (input.producer !== 'native' || input.threadKind !== 'root-or-drift') {\n        if (input.resumeOnly)\n            return null;\n        throw new Error('ralplan_advisory_activation_authority_required');\n    }\n    const bindingPath = join(getBaseStateDir(input.cwd), 'sessions', input.sessionId, 'ralplan-state.json');\n    const isolatedInput = input.failpoint\n        ? { ...input, failpoint: (checkpoint) => outsideStateFileWriteTransaction(() => input.failpoint(checkpoint)) }\n        : input;\n    return withStateFileWriteTransaction(bindingPath, () => activateOrResumeRalplanAdvisoryUnderCanonicalLock(isolatedInput), getBaseStateDir(input.cwd));\n}\nasync function activateOrResumeRalplanAdvisoryUnderCanonicalLock(input) {\n    if (input.producer !== 'native' || input.threadKind !== 'root-or-drift') {\n        if (input.resumeOnly)\n            return null;\n        throw new Error('ralplan_advisory_activation_authority_required');\n    }\n    const authority = {\n        cwd: input.cwd, sessionId: input.sessionId, producer: input.producer, threadKind: input.threadKind,\n        rootThreadId: input.rootThreadId, activationTurnId: input.activationTurnId, prompt: input.prompt,\n    };\n    let activation = await readAuthorizedPendingRalplanActivation(authority);\n    if (!activation && input.resumeOnly)\n        return null;\n    if (!activation) {"
+    }
+  ],
+  "inference": "Installed native UserPromptSubmit reads native session/thread/turn payload fields and passes evaluated prompt-turn context into keyword activation; direct Advisory parser requires first token and whitelisted flags. This supports attempting the separate direct invocation; actual current-request binding, generation and lifecycle remain untested.",
+  "not_run": [
+    "synthetic activation payload",
+    "internal activation function",
+    "shell run/start",
+    "role-intent",
+    "adapted authority preflight"
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "checked_at": "2026-11-07T11:13:04.802689+00:00",
+  "pre_B_materials": {
+    "baseline_path": ".omx/context/H-006-B2/baseline.json",
+    "baseline_raw_sha256": "2a9c23a73d893499212b9a305eafd8eb69e6d61a8c24d7b74d88c5ae00b88b55",
+    "files_count": 97,
+    "mismatches": []
+  },
+  "historical_private_artifacts": {
+    "files_count": 9,
+    "mismatches": []
+  },
+  "cancelled_generation_files": {
+    "files_count": 2,
+    "mismatches": []
+  },
+  "vault_inputs": {
+    "count": 25,
+    "changed_since_B_intake": [],
+    "read_only": true,
+    "historical_frozen_hash_drift_is_not_new_drift": true
+  },
+  "index_sha256": "c718391829390e89b87c986eca4e03af89c2f307339ed15e0e982cb288f6c6d6",
+  "index_matches_pre_B": true,
+  "git": {
+    "root": {
+      "argv": [
+        "git",
+        "rev-parse",
+        "--show-toplevel"
+      ],
+      "exit_code": 0,
+      "stdout": "/home/dev/projects/universitydb\n",
+      "stderr": ""
+    },
+    "branch": {
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exit_code": 0,
+      "stdout": "main\n",
+      "stderr": ""
+    },
+    "HEAD": {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "8931d832d49311ac0d63c3a7a359b4293058da89\n",
+      "stderr": ""
+    },
+    "staging": {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-status"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "remotes": {
+      "argv": [
+        "git",
+        "remote",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "status": {
+      "argv": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "exit_code": 0,
+      "stdout": " M AGENTS.md\n M docs/ai/README.md\n?? .omx-state-locks.identity.json\n?? .omx-state-locks/\n?? docs/ai/omx/H-006-B2-blocker-actual-prompts-2.json\n?? docs/ai/omx/H-006-B2-blocker-actual-prompts.json\n?? docs/ai/omx/H-006-B2-blocker-prompt-coverage-2.json\n?? docs/ai/omx/H-006-B2-blocker-prompt-coverage.json\n?? docs/ai/omx/H-006-prompt-coverage-blocker.json\n?? docs/ai/omx/H-006-session-export-blocker-cutoff.json\n?? docs/ai/omx/H-006-v5-B-actual-delegation-calls.json\n?? docs/ai/omx/H-006-v5-B-actual-prompt.txt\n?? docs/ai/omx/H-006-v5-B-dependency-expert-evidence.json\n?? docs/ai/omx/H-006-v5-B-leader-export-cutoff.json\n?? docs/ai/omx/H-006-v5-B-prompt-coverage.json\n?? docs/ai/omx/H-006-v5-B-researcher-evidence.json\n?? docs/ai/omx/H-006-v5-D-actual-prompt.txt\n?? docs/ai/omx/H-006-v5-D-messages-cutoff.json\n?? docs/ai/omx/H-006-v5-D-prompt-coverage.json\n?? docs/ai/omx/H-006-v5-D2-actual-prompt.txt\n?? docs/ai/omx/H-006-v5-D2-prompt-coverage.json\n?? docs/operations/H-006-A-postcommit-receipt.json\n?? docs/operations/H-006-B-runtime-blocker.json\n?? docs/operations/H-006-B2-closeout-blocker-evidence-2/\n?? docs/operations/H-006-B2-closeout-blocker-evidence/\n?? docs/operations/H-006-v5-B-blocker-evidence/\n?? docs/operations/H-006-v5-advisory-binding-diagnostic.json\n?? docs/operations/H-006-v5-readiness-2-evidence/\n?? docs/operations/H-006-v5-readiness-2.json\n?? docs/operations/H-006-v5-readiness-evidence/\n?? docs/operations/H-006-v5-readiness.json\n?? docs/reports/H-006-advisory-blocker.md\n?? docs/reports/H-006-v5-advisory-binding-blocker.md\n?? docs/reports/H-006-v5-readiness-2.md\n",
+      "stderr": ""
+    }
+  },
+  "plan_manifest_checks": [
+    {
+      "iteration": 1,
+      "manifest_path": ".omx/plans/H-006-B2/iteration-1/manifest.json",
+      "manifest_raw_sha256": "b9e24779c7500542d37325f00974052cf9bfc6004dfd2dd9d123eac70c5f4241",
+      "entries": 13,
+      "mismatches": [],
+      "bundle_raw_sha256": "b83dadcc0ea53f63afea1e2bfe7da3b562dba5313cc06cbe8b6c114961755fc6"
+    },
+    {
+      "iteration": 2,
+      "manifest_path": ".omx/plans/H-006-B2/iteration-2/manifest.json",
+      "manifest_raw_sha256": "850ca2d4621a91d1ed74798f59786786ce6e65dced009e4a30f99ba638799c23",
+      "entries": 14,
+      "mismatches": [],
+      "bundle_raw_sha256": "fe92a07802c9ba497948b0f22f9f4fdb2031ed83273062ae76765d6d99974e86"
+    },
+    {
+      "iteration": 3,
+      "manifest_path": ".omx/plans/H-006-B2/iteration-3/manifest.json",
+      "manifest_raw_sha256": "f903b9ca80b4fb74f4f17c04ae8b69004abccd879dd065dcd53e1c9cebf891d8",
+      "entries": 15,
+      "mismatches": [],
+      "bundle_raw_sha256": "e4d91f3e04113d4f973bb4e578c98a243040c7d05f725f164c6b11a62ece53b8"
+    }
+  ],
+  "product_tests": {
+    "status": "not-run",
+    "reason": "Documentary stage only; no application/schema/seed/dependencies or live model calls."
+  },
+  "isolated_semantic_probes": "Architect2/Critic2 used SQLite 3.45.1 :memory: schema-free SELECT probes; rational fixture checks are documentary, not product/DB integration tests.",
+  "diagnostic_export_failure": "First diagnostic builder stopped on missing raw_sha256 in the older iteration1 observation schema; partial outputs preserved under unsuffixed evidence names. This second set independently validates all six review texts against exact native export marker slices. No lifecycle command repeated.",
+  "documentary_check_failure": "Initial post-closeout script incorrectly expected raw fence.json terminal and raised AssertionError; corrected inspection used official append-event fold, closed/proven without corruption. No second closeout attempted."
+}

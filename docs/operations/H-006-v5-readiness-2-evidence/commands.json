@@ -1,0 +1,111 @@
+[
+  {
+    "argv": [
+      "codex",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "codex-cli 0.162.1\n",
+    "stderr": "WARNING: proceeding, even though we could not create PATH aliases: Read-only file system (os error 30)\n",
+    "captured_at": "2026-11-07T10:17:09.368001+00:00"
+  },
+  {
+    "argv": [
+      "node",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "v22.23.2\n",
+    "stderr": "",
+    "captured_at": "2026-11-07T10:17:09.371873+00:00"
+  },
+  {
+    "argv": [
+      "omx",
+      "version"
+    ],
+    "exit_code": 0,
+    "stdout": "oh-my-codex v0.21.46\nNode.js v22.23.2\nPlatform: linux x64\n",
+    "stderr": "",
+    "captured_at": "2026-11-07T10:17:09.666619+00:00"
+  },
+  {
+    "argv": [
+      "omx",
+      "status"
+    ],
+    "exit_code": 0,
+    "stdout": "hud: inactive (phase: n/a)\nnative-stop: inactive (phase: n/a)\nnotify-fallback: inactive (phase: n/a)\nnotify-fallback-authority: inactive (phase: n/a)\nnotify-hook: inactive (phase: n/a)\nprompt-routing: inactive (phase: n/a)\nskill-active: inactive (phase: n/a)\ntmux-hook: inactive (phase: n/a)\n",
+    "stderr": "",
+    "captured_at": "2026-11-07T10:17:09.978428+00:00"
+  },
+  {
+    "argv": [
+      "omx",
+      "doctor"
+    ],
+    "exit_code": 0,
+    "stdout": "oh-my-codex doctor\n==================\n\nResolved setup scope: user\n\n  [XX] Codex CLI: found but could not be executed in this environment (EPERM)\n  [OK] Node.js: v22.23.2\n  [OK] Explore Harness: skipped: omx explore is hard-deprecated and explore routing is disabled by default; use omx sparkshell for shell-native read-only evidence\n  [OK] Codex home: /home/dev/.codex\n  [OK] Config: config.toml has OMX entries\n  [OK] Native hooks: hooks.json includes OMX-managed coverage for all native hook events\n  [XX] Native hook dist smoke: installed native hook dist smoke failed to run (spawnSync /home/dev/.nvm/versions/node/v22.23.2/bin/node EPERM); reinstall oh-my-codex and run \"omx setup\"\n  [OK] Explore routing: deprecated compatibility routing disabled by environment override (recommended)\n  [OK] Lore commit guard: disabled by default\n  [OK] Prompts: 32 agent prompts installed\n  [OK] Skills: 25 skills installed\n  [OK] Spark routing: lanes: frontier=`gpt-6.1-sol`, standard=`gpt-6.1-sol`, spark=`gpt-6-astra` (source: built-in default); Spark-lane native agent(s) wired: explore -> `gpt-6-astra` (runtime inheritance). If Spark quota is still unused, the leader may not be delegating read-only lookups to the Spark lane, or the Codex usage view may lag.\n  [OK] Legacy skill roots: no ~/.agents/skills overlap detected\n  [OK] AGENTS.md: found OMX contract in /home/dev/.codex/AGENTS.md\n  [OK] State dir: /home/dev/projects/universitydb/.omx/state\n  [XX] State root/session binding: src=cwd-default;ptr=stale-dead;binding check made no mutation;fix=clear or correct listed selectors;recover only verified-dead non-reused owner;investigate reused/uncertain identity;relaunch;session.json;bad_selectors=CODEX_SESSION_ID\n  [OK] Repo artifact ownership: repo-local .omx/.beads artifacts are writable by the current user\n  [OK] Credential provenance: user scope launches read credentials from the default Codex home\n  [OK] MCP Servers: CLI-first default: no first-party OMX MCP servers configured\n  [OK] Prompt triage: config: enabled (default)\n\nResults: 17 passed, 0 warnings, 3 failed\n\nReview failed checks above. Follow the check-specific recovery guidance; inspect invalid or ambiguous hook documents manually because doctor will not modify them.\n",
+    "stderr": "",
+    "captured_at": "2026-11-07T10:17:10.549498+00:00"
+  },
+  {
+    "argv": [
+      "omx",
+      "hooks",
+      "status"
+    ],
+    "exit_code": 0,
+    "stdout": "hooks status\n-----------\nDirectory: /home/dev/projects/universitydb/.omx/hooks\nPlugins enabled: yes\nDiscovered plugins: 0\n",
+    "stderr": "",
+    "captured_at": "2026-11-07T10:17:10.852969+00:00"
+  },
+  {
+    "argv": [
+      "omx",
+      "quality-gates",
+      "list",
+      "--stage",
+      "ralplan",
+      "--json"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"gates\":[],\"stage\":\"ralplan\"}\n",
+    "stderr": "",
+    "captured_at": "2026-11-07T10:17:11.108708+00:00"
+  },
+  {
+    "argv": [
+      "omx",
+      "ralplan",
+      "status",
+      "--json"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Error: No Ralplan state found.\n",
+    "captured_at": "2026-11-07T10:17:11.461547+00:00"
+  },
+  {
+    "argv": [
+      "omx",
+      "session",
+      "--help"
+    ],
+    "exit_code": 0,
+    "stdout": "omx session - Search and summarize local session history\n\nUsage:\n  omx session search <query> [options]\n  omx session export <session-id> [--format markdown|json] [--output <path>] [--include-tools]\n  omx session friction [options]\n  omx session usage [--since <spec>] [--project <scope>] [--sort recent|tokens] [--json]\n  omx session timeline <session-id> [--kind tools|turns|compactions] [--sort duration] [--tool <name>] [--namespace <name>] [--json]\n  omx session lock <inspect|recover> [--cwd <path>] [--json]\n  omx session pointer recover [--cwd <path>] [--json]\n\nOptions for search:\n  --limit <n>          Maximum results to return (default: 10)\n  --session <id>       Restrict to a specific session id or id fragment\n  --since <spec>       Restrict by recency (examples: 7d, 24h, 2026-03-10)\n  --project <scope>    Filter by project context: current | all | <cwd-fragment>\n  --codex-home <path>  Search only the supplied Codex home (escape hatch)\n  --context <n>        Snippet context characters (default: 80)\n  --case-sensitive     Match query using exact case\n  --json               Emit structured JSON\n  -h, --help           Show this help\n\nOptions for friction:\n  --limit <n>          Maximum sessions to inspect (default: 5)\n  --session <id>       Restrict to a specific session id or id fragment\n  --since <spec>       Restrict by recency (default: 14d)\n  --project <scope>    Filter by project context: current | all | <cwd-fragment>\n  --codex-home <path>  Inspect only the supplied Codex home (escape hatch)\n  --json               Emit structured JSON\n\nOptions for lock:\n  --cwd <path>         Inspect or recover the session pointer lock for this directory\n  --json               Emit structured JSON\n  -h, --help           Show this help\n\nOptions for pointer:\n  --cwd <path>         Recover a verified-dead or managed-daemon selected pointer\n  --json               Emit structured JSON\n  -h, --help           Show this help\n\nExamples:\n  omx session search \"worker inbox path\"\n  omx session search all_workers_idle --since 7d --limit 5\n  omx session export <session-id> --output conversation.md\n  omx session friction --project current\n  omx session friction --session <id> --json\n  omx session usage --since 7d --sort tokens\n  omx session timeline <session-id> --status failed\n  omx session lock inspect --json\n  omx session lock recover --cwd /path/to/project\n  omx session pointer recover --cwd /path/to/project\n",
+    "stderr": "",
+    "captured_at": "2026-11-07T10:17:11.723645+00:00"
+  },
+  {
+    "argv": [
+      "omx",
+      "agents",
+      "--help"
+    ],
+    "exit_code": 0,
+    "stdout": "Usage:\n  omx agents list [--scope user|project]\n  omx agents add <name> [--scope user|project] [--force]\n  omx agents edit <name> [--scope user|project]\n  omx agents remove <name> [--scope user|project] [--force]\n\nManage Codex native agent TOML files under ~/.codex/agents/ or ./.codex/agents/.\n\nNotes:\n  - list shows project + user agents by default\n  - add defaults to project scope when this repo is set up for project scope; otherwise user\n  - remove prompts for confirmation unless --force is passed\n",
+    "stderr": "",
+    "captured_at": "2026-11-07T10:17:11.989048+00:00"
+  }
+]

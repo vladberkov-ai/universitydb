@@ -1,0 +1,317 @@
+{
+  "config_path": "/home/dev/.codex/config.toml",
+  "model": "gpt-6.1-sol",
+  "model_reasoning_effort": "high",
+  "features": {
+    "hooks": true,
+    "goals": true,
+    "multi_agent": null
+  },
+  "hook_trust": {
+    "/home/dev/.codex/hooks.json:post_compact:0:0": {
+      "trusted_hash": "sha256:25e1d380f675cfed593da0910e7429185531f36f76bfab896ce8d97ce85e70e3"
+    },
+    "/home/dev/.codex/hooks.json:post_tool_use:0:0": {
+      "trusted_hash": "sha256:d704f736f920150e8aea6242c1d313bc49a578ba78aa83170d1143959ac309ee"
+    },
+    "/home/dev/.codex/hooks.json:pre_compact:0:0": {
+      "trusted_hash": "sha256:1d2d8306ea239cac0d896b72fad5f424c252fdbdee922c465c56f4c0752d525e"
+    },
+    "/home/dev/.codex/hooks.json:pre_tool_use:0:0": {
+      "trusted_hash": "sha256:c57da67e792a24cd917baa8bc943bfb689689db9bd019b735fee6f8c773a0079"
+    },
+    "/home/dev/.codex/hooks.json:session_start:0:0": {
+      "trusted_hash": "sha256:b6979630f8247e58959b8e23926e0aa25fbba4721290f808a87b42b53e6ea707"
+    },
+    "/home/dev/.codex/hooks.json:stop:0:0": {
+      "trusted_hash": "sha256:a7c547090b7c7ca97cb74d4225673882f34f30a7be77a741638a660a49dfe84a"
+    },
+    "/home/dev/.codex/hooks.json:subagent_stop:0:0": {
+      "trusted_hash": "sha256:1daa35c467c129e0fdd44cffb3619a348c9db341db0b5616899db791a773b128"
+    },
+    "/home/dev/.codex/hooks.json:user_prompt_submit:0:0": {
+      "trusted_hash": "sha256:e2b3025885cde46d12b4d123ac2966b6c8188c844f30ee7595d77a459edb9b0b"
+    }
+  },
+  "native_hook_events": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/home/dev/.nvm/versions/node/v22.23.2/bin/node\" \"/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/scripts/codex-native-hook.js\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/home/dev/.nvm/versions/node/v22.23.2/bin/node\" \"/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/scripts/codex-native-hook.js\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/home/dev/.nvm/versions/node/v22.23.2/bin/node\" \"/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/scripts/codex-native-hook.js\""
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/home/dev/.nvm/versions/node/v22.23.2/bin/node\" \"/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/scripts/codex-native-hook.js\""
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/home/dev/.nvm/versions/node/v22.23.2/bin/node\" \"/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/scripts/codex-native-hook.js\""
+          }
+        ]
+      }
+    ],
+    "PostCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/home/dev/.nvm/versions/node/v22.23.2/bin/node\" \"/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/scripts/codex-native-hook.js\""
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/home/dev/.nvm/versions/node/v22.23.2/bin/node\" \"/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/scripts/codex-native-hook.js\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/home/dev/.nvm/versions/node/v22.23.2/bin/node\" \"/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/scripts/codex-native-hook.js\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  },
+  "roles": {
+    "planner": {
+      "installed": true,
+      "toml_name": "planner",
+      "model": "gpt-6-astra",
+      "model_reasoning_effort": "medium",
+      "available_in_current_native_agent_type_schema": true,
+      "executed": false
+    },
+    "architect": {
+      "installed": true,
+      "toml_name": "architect",
+      "model": "gpt-6-astra",
+      "model_reasoning_effort": "xhigh",
+      "available_in_current_native_agent_type_schema": true,
+      "executed": false
+    },
+    "critic": {
+      "installed": true,
+      "toml_name": "critic",
+      "model": "inherited",
+      "model_reasoning_effort": "high",
+      "available_in_current_native_agent_type_schema": true,
+      "executed": false
+    },
+    "researcher": {
+      "installed": true,
+      "toml_name": "researcher",
+      "model": "gpt-6-astra",
+      "model_reasoning_effort": "high",
+      "available_in_current_native_agent_type_schema": true,
+      "executed": false
+    },
+    "dependency-expert": {
+      "installed": true,
+      "toml_name": "dependency-expert",
+      "model": "inherited",
+      "model_reasoning_effort": "high",
+      "available_in_current_native_agent_type_schema": true,
+      "executed": false
+    }
+  },
+  "current_tool_schema_evidence": "collaboration.spawn_agent exposes agent_type; planner, architect, critic, researcher and dependency-expert are explicitly enumerated in this turn. No invocation was made.",
+  "commands": [
+    {
+      "argv": [
+        "omx",
+        "agents",
+        "list"
+      ],
+      "exit_code": 0,
+      "stdout": "scope  name               model        description                                                                            \nuser   analyst            -            Requirements clarity, acceptance criteria, hidden constraints                          \nuser   architect          gpt-6-astra  System design, boundaries, interfaces, long-horizon tradeoffs                          \nuser   code-reviewer      -            Comprehensive review across all concerns                                               \nuser   code-simplifier    -            Simplifies recently modified code for clarity and consistency without changing behavior\nuser   critic             -            Plan/design critical challenge and review                                              \nuser   debugger           -            Root-cause analysis, regression isolation, failure diagnosis                           \nuser   dependency-expert  -            External SDK/API/package evaluation                                                    \nuser   designer           -            UX/UI architecture, interaction design                                                 \nuser   executor           -            Code implementation, refactoring, feature work                                         \nuser   explore            -            Fast codebase search and file/symbol mapping                                           \nuser   git-master         -            Commit strategy, history hygiene, rebasing                                             \nuser   planner            gpt-6-astra  Task sequencing, execution plans, risk flags                                           \nuser   researcher         gpt-6-astra  External documentation and reference research                                          \nuser   team-executor      -            Supervised team execution for conservative delivery lanes                              \nuser   test-engineer      -            Test strategy, coverage, flaky-test hardening                                          \nuser   verifier           -            Completion evidence, claim validation, test adequacy                                   \nuser   vision             -            Image/screenshot/diagram analysis                                                      \nuser   writer             -            Documentation, migration notes, user guidance                                          \n",
+      "stderr": ""
+    }
+  ],
+  "launcher": {
+    "codex": "/home/dev/.nvm/versions/node/v22.23.2/bin/codex",
+    "codex_resolved": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/@openai/codex/bin/codex.js",
+    "omx": "/home/dev/projects/universitydb/.omx/runtime/bin/omx",
+    "omx_resolved": "/home/dev/projects/universitydb/.omx/runtime/bin/omx",
+    "omx_wrapper": "#!/bin/sh\nexec '/home/dev/.nvm/versions/node/v22.23.2/bin/node' '/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/cli/omx.js' \"$@\"\n",
+    "fallback_launcher_checked": true
+  },
+  "sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "2dee4fa80c2226b91cffb3b977aa403840a83d392aa4b4341e21a34f521dca21"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "36f5c847236d2b148c41c30b063a5afa13c1e6da68c5e655efe7c4711f2b2807"
+    },
+    {
+      "path": "docs/reports/H-005-preparation-completion.md",
+      "sha256": "e2ee430e40dd4ba4b4e14a0294f951b915c03a11860e0ff63944dac146ab8463"
+    },
+    {
+      "path": "docs/ai/README.md",
+      "sha256": "f2ffa5a75851e4465a14dcbb41c4d73692b6cc52e2e6846f8f135da012a8ff17"
+    },
+    {
+      "path": "docs/adr/README.md",
+      "sha256": "37e789f5d4b51b65e14db613b79a6a1cfee80892b5cfb00fc4b55fe2a4a801e0"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-001-preparation-boundary.md",
+      "sha256": "985b3afa5c8df7aebb85b336509116e27ab292dc2c02757015ecdf48b06c40c5"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-002-execution-context-and-checkpoint.md",
+      "sha256": "21d5e1406745749569ad00639c8ecf6d75c4401136a4d74ff7ed5669fcb663c3"
+    },
+    {
+      "path": "omx_wiki/index.md",
+      "sha256": "3004d4a65e4e4e0ac44ad6fd6ed93bab8ccd8f40c13fe5c25987f724ae0c9b10"
+    },
+    {
+      "path": "docs/operations/chat-export-receipt.json",
+      "sha256": "c978639c47c6c4673cb6e948e558172b89a86c517df3782409e948663edfbdb7"
+    },
+    {
+      "path": "docs/operations/H-006-A-validation.json",
+      "sha256": "2a5663219a9b0362713e14c0b109753f2aaa7d7e7dea005eee90a3fa579915ee"
+    },
+    {
+      "path": "docs/operations/H-006-input-verification.json",
+      "sha256": "b9aa14f221e42dba2f7d2d3aa09ebcfd20a5d2441115844be60c69b8dd86bc41"
+    },
+    {
+      "path": "docs/ai/omx/H-006-prompt-coverage-blocker.json",
+      "sha256": "6fdbaac1ce9ad401f7b2085564c4925174ece3b6cdd978d49f7cd40421061c4a"
+    },
+    {
+      "path": "docs/ai/omx/H-006-session-export-blocker-cutoff.json",
+      "sha256": "44703f89e4395858610c4297f46c200ea2e446c1e4dbe520f8d7c704c24d1360"
+    },
+    {
+      "path": "docs/operations/H-006-A-postcommit-receipt.json",
+      "sha256": "739eed80a78b51338909c84846a147ebaa35c18cecee75de496b3795ba11df28"
+    },
+    {
+      "path": "docs/operations/H-006-B-runtime-blocker.json",
+      "sha256": "b8b51deb101920040094f9ec9ea79d9ac31cf958a9adec8cf2ba4e0ee4b63355"
+    },
+    {
+      "path": "docs/reports/H-006-advisory-blocker.md",
+      "sha256": "d8e04bdd1800e5cfdae7db605498e86ab9746b876ca87092c48caa5333d7b3ab"
+    },
+    {
+      "path": "/home/dev/.codex/skills/ralplan/SKILL.md",
+      "sha256": "9e717939acc0201d44518964a8e84052dc9874540e4c7a19f3ce91a9c27484ad"
+    },
+    {
+      "path": "/home/dev/.codex/skills/plan/SKILL.md",
+      "sha256": "522e2613cadfbaf50ea58c045c517a24cc8c7b15cd6dac9939f218c6e00af772"
+    },
+    {
+      "path": "/home/dev/.codex/config.toml",
+      "sha256": "a7f92499309d0859263d1afa6873b58ec12a7a6ad29c57fe2741912aa80523a2"
+    },
+    {
+      "path": "/home/dev/.codex/hooks.json",
+      "sha256": "8cdd104983b2d687c5a737fe2f4d8a9de4660a7fce0dac483d8f0daf095eab87"
+    },
+    {
+      "path": ".omx/runtime/bin/omx",
+      "sha256": "97f8cffbab25d59a9c3265146161b86ab666009175672b505258d9f92f3f5ba1"
+    },
+    {
+      "path": "/home/dev/.omx/runtime/bin/omx",
+      "sha256": "97f8cffbab25d59a9c3265146161b86ab666009175672b505258d9f92f3f5ba1"
+    },
+    {
+      "path": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/ralplan/advisory-contract.js",
+      "sha256": "5e05dc816bb414eb978f0f735cefd415b6ba7266bc2d571c97895e172b47f0e0"
+    },
+    {
+      "path": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/hooks/keyword-detector.js",
+      "sha256": "593b623a79ebc25a1c8f2058807af61034f91aaba0a357492dab4fe9248a01bc"
+    },
+    {
+      "path": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/scripts/codex-native-hook.js",
+      "sha256": "423cf8cc528e82bd384d19fa1eea66ce23842c633b99875ace359875fa3763a8"
+    },
+    {
+      "path": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/ralplan/advisory-activation.js",
+      "sha256": "292526bb8549c13a87336b0e884237867208ddf77e92dccd4544f46481e2e853"
+    },
+    {
+      "path": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/cli/ralplan.js",
+      "sha256": "ba606672bd1fbb9bbd0affe9b5ae04e5031220432ac7091cf2bc51c68252e058"
+    },
+    {
+      "path": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/cli/doctor.js",
+      "sha256": "d6de4bfab4e275ef3d22d54255233172961a3ad9f1e9141e2876887a978f3842"
+    },
+    {
+      "path": "/home/dev/.codex/agents/planner.toml",
+      "sha256": "a267177019c583d40e3a1d5248b6cbeb67ce06ee69c6a464af96c5fcb47e3e96"
+    },
+    {
+      "path": "/home/dev/.codex/agents/architect.toml",
+      "sha256": "d00d4c2142775458237dbe8d975a744680afa229b6c1f769c417c9aa5ffde332"
+    },
+    {
+      "path": "/home/dev/.codex/agents/critic.toml",
+      "sha256": "14e33a388a2413291648cac4aa6036a0303b88e7df5338658f1e43ccc3ca953d"
+    },
+    {
+      "path": "/home/dev/.codex/agents/researcher.toml",
+      "sha256": "b383d0ee42846fb765896066d0f4458f81fa81b8a1760b0668c0647c9bbb01a7"
+    },
+    {
+      "path": "/home/dev/.codex/agents/dependency-expert.toml",
+      "sha256": "2b0067995f88b76f1da9bdbbb8286562430d2c07556dbc7cc13f9cfaac4cec4a"
+    }
+  ]
+}

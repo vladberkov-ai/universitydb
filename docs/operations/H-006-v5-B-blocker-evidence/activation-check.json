@@ -1,0 +1,42 @@
+{
+  "activation_verified_before_research": true,
+  "native_hook_developer_delivery_observed": true,
+  "mode_state_selected": {
+    "active": true,
+    "mode": "ralplan",
+    "current_phase": "starting",
+    "iteration": 0,
+    "session_id": "omx-1794040798905-xque5e",
+    "thread_id": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+    "workflow_variant": "advisory",
+    "advisory_generation_id": "0748daa2-4c89-4a84-a305-486ed1f480a3",
+    "planning_complete": false,
+    "execution_handoff_authorized": false,
+    "host_verified": false
+  },
+  "current": {
+    "schema_version": 1,
+    "generation_id": "0748daa2-4c89-4a84-a305-486ed1f480a3",
+    "session_id": "omx-1794040798905-xque5e",
+    "canonical_cwd": "/home/dev/projects/universitydb",
+    "updated_at": "2026-11-07T09:16:39.690Z"
+  },
+  "canonical_activation": {
+    "schema_version": 1,
+    "generation_id": "0748daa2-4c89-4a84-a305-486ed1f480a3",
+    "canonical_cwd": "/home/dev/projects/universitydb",
+    "session_id": "omx-1794040798905-xque5e",
+    "root_thread_id": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+    "activation_turn_id": "01a1b54b-b287-7ee2-9280-4dee694d4c7b",
+    "activation_prompt_sha256": "07178c6c799684ff947c56e13016567a2bc00938a554a9b871392c1dc4959dad",
+    "created_at": "2026-11-07T09:16:39.690Z"
+  },
+  "actual_prompt_original_sha256": "07178c6c799684ff947c56e13016567a2bc00938a554a9b871392c1dc4959dad",
+  "prompt_hash_match": true,
+  "source_hashes": {
+    ".omx/state/sessions/omx-1794040798905-xque5e/ralplan-state.json": "48a43ad643fbdc1b7206992ff92cc4dce01bdb19223e997e3039b89bab7954f3",
+    ".omx/state/sessions/omx-1794040798905-xque5e/ralplan-advisory/current.json": "bad49751b81ae8aee3ba9b29e877d91ed780e2b3291391166df045e6697a56fa",
+    ".omx/state/sessions/omx-1794040798905-xque5e/ralplan-advisory/0748daa2-4c89-4a84-a305-486ed1f480a3/activation.json": "fafb6965af331a38315fb7ae2660c79d9b83f254395a6e3fd03641fd96be0642"
+  },
+  "identity_origin": "Hook-owned canonical activation; not inferred or rewritten from transcript/prompt IDs. Native transcript independently establishes exact actual task bytes."
+}

@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "stage": "H-006-v5 D after lifecycle repair; no B activation",
+  "recorded_at": "2026-11-07T10:22:48.750545+00:00",
+  "mode": "solo/read-only diagnostics plus new documentation evidence",
+  "result": "ready-for-direct-invocation",
+  "scope_of_readiness": "Prerequisites only, not activated/executed/approved B or certified complete Advisory lifecycle.",
+  "git": {
+    "root": "/home/dev/projects/universitydb",
+    "branch": "main",
+    "HEAD": "8931d832d49311ac0d63c3a7a359b4293058da89",
+    "A_repeated": false,
+    "staging": "empty",
+    "remotes": [],
+    "working_tree": "dirty before D; preserved modifications/untracked evidence/runtime lock metadata; only new diagnostic files added",
+    "saved": true,
+    "committed_in_D": false,
+    "pushed": false
+  },
+  "preservation": {
+    "seven_original_hashes": {
+      "AGENTS.md": "2dee4fa80c2226b91cffb3b977aa403840a83d392aa4b4341e21a34f521dca21",
+      "docs/ai/README.md": "f2ffa5a75851e4465a14dcbb41c4d73692b6cc52e2e6846f8f135da012a8ff17",
+      "docs/ai/omx/H-006-prompt-coverage-blocker.json": "6fdbaac1ce9ad401f7b2085564c4925174ece3b6cdd978d49f7cd40421061c4a",
+      "docs/ai/omx/H-006-session-export-blocker-cutoff.json": "44703f89e4395858610c4297f46c200ea2e446c1e4dbe520f8d7c704c24d1360",
+      "docs/operations/H-006-A-postcommit-receipt.json": "739eed80a78b51338909c84846a147ebaa35c18cecee75de496b3795ba11df28",
+      "docs/operations/H-006-B-runtime-blocker.json": "b8b51deb101920040094f9ec9ea79d9ac31cf958a9adec8cf2ba4e0ee4b63355",
+      "docs/reports/H-006-advisory-blocker.md": "d8e04bdd1800e5cfdae7db605498e86ab9746b876ca87092c48caa5333d7b3ab"
+    },
+    "original_and_repair_baseline_files": 78,
+    "changed": [],
+    "missing": [],
+    "index_sha256": "c718391829390e89b87c986eca4e03af89c2f307339ed15e0e982cb288f6c6d6",
+    "index_matches_repair_baseline": true,
+    "research_and_historical_evidence": "byte-identical; no deletion/overwrite",
+    "Obsidian": "read-only, no writes"
+  },
+  "versions": {
+    "codex": "0.162.1",
+    "omx": "0.21.46 with local lifecycle compatibility patch",
+    "node": "22.23.2",
+    "PATH_launcher": "/home/dev/projects/universitydb/.omx/runtime/bin/omx",
+    "verified_user_launcher": "/home/dev/.omx/runtime/bin/omx",
+    "launcher_bodies_and_sha256_match": true
+  },
+  "binding": {
+    "host": "pass: session-authority, usable; native/OMX selectors match pointer; owner process identity verified by installed snapshot",
+    "native_session_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+    "omx_session_id": "omx-1794046506930-56sf8c",
+    "owner_pid": 181564,
+    "tracker_leader_matches_current_native_root": true,
+    "host_doctor": {
+      "passed": 20,
+      "warnings": 0,
+      "failed": 0,
+      "permission_surface": "supported require_escalated read-only diagnostic"
+    },
+    "sandbox_doctor": {
+      "passed": 17,
+      "warnings": 0,
+      "failed": 3,
+      "failures": [
+        "Codex CLI spawnSync EPERM",
+        "native-hook dist smoke spawnSync EPERM",
+        "binding stale-dead / bad_selectors=CODEX_SESSION_ID"
+      ]
+    },
+    "interpretation": "The same selectors/pointer pass in the supported host context; owner PID is invisible in sandbox and visible with verified identity in host. Namespace-dependent diagnostic failures are not a real current ID mismatch. No selector/pointer/tracker edits or recovery performed.",
+    "lock": "absent, safeToRecover=false; not used as ownership proof"
+  },
+  "hooks": {
+    "features_hooks": true,
+    "registered_and_trusted": [
+      "SessionStart",
+      "PreToolUse",
+      "PostToolUse",
+      "UserPromptSubmit",
+      "PreCompact",
+      "PostCompact",
+      "SubagentStart",
+      "SubagentStop",
+      "Stop"
+    ],
+    "trust_hashes_match": "9/9",
+    "UserPromptSubmit": "actual D triage delivered; built-in doctor minimal non-activation smoke passed in host",
+    "SubagentStart_and_SubagentStop": "installed, registered, trusted and patched source inspected; real reviewer lifecycle not executed in D",
+    "notify": "patched canonical leader selection/preserveCompletionEvidence:true; installed manifest matches runtime modules",
+    "hook_plugins": "0 discovered; omx hooks status concerns plugins, not native registration"
+  },
+  "roles": [
+    {
+      "name": "planner",
+      "path": "/home/dev/.codex/agents/planner.toml",
+      "sha256": "a267177019c583d40e3a1d5248b6cbeb67ce06ee69c6a464af96c5fcb47e3e96",
+      "parsed": true,
+      "model": "gpt-6-astra",
+      "model_reasoning_effort": "medium",
+      "instructions_present": true,
+      "native_agent_type_available": true,
+      "executed_in_D": false
+    },
+    {
+      "name": "architect",
+      "path": "/home/dev/.codex/agents/architect.toml",
+      "sha256": "d00d4c2142775458237dbe8d975a744680afa229b6c1f769c417c9aa5ffde332",
+      "parsed": true,
+      "model": "gpt-6-astra",
+      "model_reasoning_effort": "xhigh",
+      "instructions_present": true,
+      "native_agent_type_available": true,
+      "executed_in_D": false
+    },
+    {
+      "name": "critic",
+      "path": "/home/dev/.codex/agents/critic.toml",
+      "sha256": "14e33a388a2413291648cac4aa6036a0303b88e7df5338658f1e43ccc3ca953d",
+      "parsed": true,
+      "model": "inherited",
+      "model_reasoning_effort": "high",
+      "instructions_present": true,
+      "native_agent_type_available": true,
+      "executed_in_D": false
+    },
+    {
+      "name": "researcher",
+      "path": "/home/dev/.codex/agents/researcher.toml",
+      "sha256": "b383d0ee42846fb765896066d0f4458f81fa81b8a1760b0668c0647c9bbb01a7",
+      "parsed": true,
+      "model": "gpt-6-astra",
+      "model_reasoning_effort": "high",
+      "instructions_present": true,
+      "native_agent_type_available": true,
+      "executed_in_D": false
+    },
+    {
+      "name": "dependency-expert",
+      "path": "/home/dev/.codex/agents/dependency-expert.toml",
+      "sha256": "2b0067995f88b76f1da9bdbbb8286562430d2c07556dbc7cc13f9cfaac4cec4a",
+      "parsed": true,
+      "model": "inherited",
+      "model_reasoning_effort": "high",
+      "instructions_present": true,
+      "native_agent_type_available": true,
+      "executed_in_D": false
+    }
+  ],
+  "native_routing": {
+    "surface": "collaboration.spawn_agent",
+    "agent_type_field": "present in current tool schema; required roles explicitly listed in available role roster",
+    "probed_by_spawn": false,
+    "adapted_preflight": "not-run: native role routing available, no adapted authority attempted"
+  },
+  "planning": {
+    "ralplan_and_plan_skills": "read, not invoked",
+    "current_ralplan_state": "absent, expected before direct invocation; not a blocker",
+    "additional_quality_gates": [],
+    "gate_semantics": "Empty custom list does not waive real sequential Planner -> Architect -> Critic. No reviews/gates executed in D.",
+    "old_generation": "0748daa2-4c89-4a84-a305-486ed1f480a3 cancelled/abandoned, active:false; never resumed",
+    "activation_mechanism": "Separate user message in this same leader session, first token $ralplan with --advisory --deliberate. Native UserPromptSubmit provides current session/root/turn; new generation created only then. No shell run/start substitute.",
+    "next_verifiable_check": "After separate direct invocation, inspect current advisory variant/new generation/session/root/turn before Planner; then real sequential reviews, gates and supported closeout during B.",
+    "activation_or_completion_called": false
+  },
+  "nonblocking_observations": [
+    {
+      "kind": "config manifest drift",
+      "detail": "7/8 installed-manifest after hashes match exactly. config.toml differs only by added service_tier=fast after repair; all prior config values retained plus repaired SubagentStart trust. All 9 actual hook trust hashes match. Config untouched in D."
+    },
+    {
+      "kind": "vault handoff manifest drift",
+      "matching_inputs": 20,
+      "total_inputs": 25,
+      "changed_files": [
+        {
+          "vault_relative_path": "wiki/overview.md",
+          "expected_sha256": "407cdd34b42c4bed728414df11791d82db6e0331e1356ab41aa5a216df83a21a",
+          "actual_sha256": "2c86d765255f43563c4802d2ce22a9ecbb5f5fb4a23bb45ffbc72b1e80cbdaa1",
+          "match": false,
+          "content_read_for_B": false
+        },
+        {
+          "vault_relative_path": "wiki/operations/omx-workflow.md",
+          "expected_sha256": "bd60cd2f14f54942a11e409e1cc8a730197b8c753f500125dfbf67e52fabf51d",
+          "actual_sha256": "09a36aab0c2109db8682a61d9dc7674d963716ae7c7eb5f7272e94896273025a",
+          "match": false,
+          "content_read_for_B": false
+        },
+        {
+          "vault_relative_path": "wiki/verification/H-006-review.md",
+          "expected_sha256": "fb18c3e949712c51f4d8a734503a29eb2cdb39a5fe3e79148d171f7661ffd24f",
+          "actual_sha256": "83d6450c52ee118f1a16e3be0532d89ec6aa9b1c1dfe74221fa1b198c1c66c14",
+          "match": false,
+          "content_read_for_B": false
+        },
+        {
+          "vault_relative_path": "wiki/index.md",
+          "expected_sha256": "e8c1857f0374ea89f18a3d6164a8e44942cfbe8c6c0ed6de61937c549a0970f9",
+          "actual_sha256": "a5d5081488fd9116af650b8bb0531f5fd4ecf2527e309ee7a54b37478c70d3bc",
+          "match": false,
+          "content_read_for_B": false
+        },
+        {
+          "vault_relative_path": "wiki/open-questions.md",
+          "expected_sha256": "7777e015cd2cc4ae16ef70bddb4c21ef7e445dae4fc06794723f5123f6d0610a",
+          "actual_sha256": "b3633fa70ca2f1309b5eddeaedcacf35fb6fff7da04c97e562d5dbf378303320",
+          "match": false,
+          "content_read_for_B": false
+        }
+      ],
+      "explanation": "Read current changed status/workflow/index/review/question pages and log: they record later CHAT-021/022 activation, research and cancellation. Historical frozen H-006-v5 hashes precede that update; current user repair context explicitly supersedes the old blocker/diagnostic-only next-step. Requirements/contract/PDF hashes unchanged. Current hashes captured, old source files not rewritten. Full domain/PDF content review deferred to B; no architecture here."
+    },
+    {
+      "kind": "sandbox visibility",
+      "detail": "Use supported permissions for host-level runtime diagnostics if needed; do not clear/correct matching selectors in response to sandbox-only stale-dead."
+    }
+  ],
+  "remaining_blockers": [],
+  "unknowns": [
+    "New direct Advisory activation/generation has not yet occurred.",
+    "Real post-repair Planner/Architect/Critic/native SubagentStart/Stop provenance/completion and complete closeout remain untested until authorized B.",
+    "Future B Git write/commit permission is not inferred from read-only diagnostics; D performs no staging/commit."
+  ],
+  "not_run": [
+    "setup/update/repair",
+    "workflow activation/start/resume/complete/cancel",
+    "subagent probes/reviewers/research calls",
+    "application design/implementation/tests/dependencies/live or paid calls",
+    "Git staging/commit/remote mutation/push",
+    "Obsidian writes"
+  ],
+  "evidence_directory": "docs/operations/H-006-v5-readiness-2-evidence",
+  "prompt_coverage": "docs/ai/omx/H-006-v5-D2-prompt-coverage.json",
+  "report": "docs/reports/H-006-v5-readiness-2.md",
+  "stop": "D finished; stop and wait for a separate direct invocation."
+}

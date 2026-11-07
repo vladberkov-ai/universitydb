@@ -1,0 +1,20 @@
+{
+  "handoff": "H-006-v4",
+  "actual_task": "docs/ai/omx/H-006-actual-prompt.txt",
+  "actual_task_sha256": "3866c94900f64b827e0542fdab49d1f71375949cf18702f8dce85e69f4710216",
+  "earlier_receipt": "docs/ai/omx/H-006-prompt-receipt-A.json",
+  "new_export": "docs/ai/omx/H-006-session-export-blocker-cutoff.json",
+  "new_export_sha256": "44703f89e4395858610c4297f46c200ea2e446c1e4dbe520f8d7c704c24d1360",
+  "native_session_id": "01a1b356-8b0a-7b40-8c40-293841f31670",
+  "source": "Installed OMX exact-session export; task extracted from actual entry, never reconstructed from package",
+  "read_context": "19 private inputs/package in input verification; attached skill contexts omitted with hashes",
+  "coverage": "Later assistant progress through blocker; final not yet emitted; tools/instruction/reasoning not included",
+  "subagents": {
+    "count": 0,
+    "prompts": [],
+    "sessions": [],
+    "reason": "A solo; B stopped before activation; no fictitious Planner/Architect/Critic/researcher/gate tasks"
+  },
+  "runtime_application_prompts": "not-created",
+  "historical_H005": "Completed logical-stage export includes actual final line 394; older receipt and cutoff retained"
+}

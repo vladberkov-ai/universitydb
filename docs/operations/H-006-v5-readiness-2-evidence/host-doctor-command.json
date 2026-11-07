@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/home/dev/.omx/runtime/bin/omx",
+    "doctor"
+  ],
+  "sandbox_permissions": "require_escalated",
+  "result": {
+    "chunk_id": "151318",
+    "wall_time_seconds": 0.302918603,
+    "exit_code": 0,
+    "original_token_count": 494,
+    "output": "oh-my-codex doctor\n==================\n\nResolved setup scope: user\n\n  [OK] Codex CLI: installed (codex-cli 0.162.1)\n  [OK] Node.js: v22.23.2\n  [OK] Explore Harness: skipped: omx explore is hard-deprecated and explore routing is disabled by default; use omx sparkshell for shell-native read-only evidence\n  [OK] Codex home: /home/dev/.codex\n  [OK] Config: config.toml has OMX entries\n  [OK] Native hooks: hooks.json includes OMX-managed coverage for all native hook events\n  [OK] Native hook dist smoke: installed dist/scripts/codex-native-hook.js parsed and accepted a minimal UserPromptSubmit payload\n  [OK] Explore routing: deprecated compatibility routing disabled by environment override (recommended)\n  [OK] Lore commit guard: disabled by default\n  [OK] Prompts: 32 agent prompts installed\n  [OK] Skills: 25 skills installed\n  [OK] Spark routing: lanes: frontier=`gpt-6.1-sol`, standard=`gpt-6.1-sol`, spark=`gpt-6-astra` (source: built-in default); Spark-lane native agent(s) wired: explore -> `gpt-6-astra` (runtime inheritance). If Spark quota is still unused, the leader may not be delegating read-only lookups to the Spark lane, or the Codex usage view may lag.\n  [OK] Legacy skill roots: no ~/.agents/skills overlap detected\n  [OK] AGENTS.md: found OMX contract in /home/dev/.codex/AGENTS.md\n  [OK] State dir: /home/dev/projects/universitydb/.omx/state\n  [OK] State root/session binding: src=session-authority ptr=usable fix=inspect selected session.json; verify owner; terminate only verified owner if necessary; relaunch selected_session_json=session.json\n  [OK] Repo artifact ownership: repo-local .omx/.beads artifacts are writable by the current user\n  [OK] Credential provenance: user scope launches read credentials from the default Codex home\n  [OK] MCP Servers: CLI-first default: no first-party OMX MCP servers configured\n  [OK] Prompt triage: config: enabled (default)\n\nResults: 20 passed, 0 warnings, 0 failed\n\nAll checks passed! oh-my-codex is ready.\n"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "status": "blocker",
+  "stage_B_complete": false,
+  "commit_A": "8931d832d49311ac0d63c3a7a359b4293058da89",
+  "commit_B": null,
+  "session_id": "omx-1794046506930-56sf8c",
+  "root_thread_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+  "generation_id": "ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+  "activation_turn_id": "01a1b58c-206e-7472-bebe-165fab7636bc",
+  "workflow_variant": "advisory",
+  "local_review_lifecycle": "complete; sequence_valid; iteration3 Architect approve then Critic approve",
+  "configured_additional_quality_gates": [],
+  "supported_closeout": "one successful complete command; closed approved+proven; mode/run inactive; host_verified/consensus_gate_complete/execution_handoff_authorized false",
+  "remaining_incompatibility": "Session skill-active projection reactivated after supported closeout: active:true, phase:reviewing, same generation and completed_at retained. omx status shows skill-active ACTIVE.",
+  "stop_action": "No reactivation, closeout retry, repair, tracker/ID rewrite, architecture docs packaging, staging or B commit. New diagnostics only.",
+  "approved_proposed_private_bundle": ".omx/plans/H-006-B2/iteration-3/plan-bundle.md",
+  "bundle_raw_sha256": "e4d91f3e04113d4f973bb4e578c98a243040c7d05f725f164c6b11a62ece53b8",
+  "evidence_bundle_sha256": "57ddd777824da540443657e5f843e8fbd292ef1a528c7112080cd809e7ba5a90",
+  "evidence_directory": "docs/operations/H-006-B2-closeout-blocker-evidence-2",
+  "prompt_coverage": "docs/ai/omx/H-006-B2-blocker-prompt-coverage-2.json",
+  "all_decisions_remain": "proposed, pending owner chat; no execution authorization",
+  "known_limits": [
+    "Provider/model/account access, budget and compatibility not live-tested.",
+    "Product implementation/tests/evals, public delivery and owner defense are unproven; R-15 remains open.",
+    "Private approved plan is saved, not committed or published."
+  ]
+}

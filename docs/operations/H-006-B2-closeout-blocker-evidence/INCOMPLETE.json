@@ -1,0 +1,7 @@
+{
+  "status": "incomplete diagnostic builder output, not canonical final evidence",
+  "reason": "Builder stopped before review export/validation on older iteration1 schema lacking raw_sha256; iteration1 verdict defaults in these initial projections are not authoritative.",
+  "canonical_complete_evidence": "docs/operations/H-006-B2-closeout-blocker-evidence-2",
+  "canonical_prompt_coverage": "docs/ai/omx/H-006-B2-blocker-prompt-coverage-2.json",
+  "preservation": "Initial partial diagnostic outputs retained without overwrite; no runtime/lifecycle change."
+}

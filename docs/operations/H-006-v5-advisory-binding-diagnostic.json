@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "stage": "H-006-v5 B",
+  "result": "blocker",
+  "blocker_category": "binding/environment + result validation / native hook compatibility",
+  "activation": "succeeded and verified for actual current request; not the old pre-activation blocker",
+  "generation_id": "0748daa2-4c89-4a84-a305-486ed1f480a3",
+  "facts": {
+    "root_tracker_mismatch": true,
+    "both_research_agents_returned_actual_final": true,
+    "research_records_missing_native_provenance": true,
+    "research_records_missing_completed_at": true
+  },
+  "binding": {
+    "activation_root": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+    "tracker_leader": "01a1b52d-b2b1-7fe0-8e25-ac16427b228a",
+    "match": false
+  },
+  "causal_boundary": "The current tracker leader mismatch violates an explicit mandatory closeout predicate independently of missing reviewers. Real research children completed, but required native provenance/direct-parent/root/completion binding is not populated. This is sufficient to stop before costly design/reviewer work; not proof of exact underlying host-hook bug.",
+  "compatibility": {
+    "Codex": "0.162.1",
+    "OMX": "0.21.46",
+    "native_roles": "available; researcher and dependency-expert actually completed; Planner/Architect/Critic not launched",
+    "D_doctor": "Authorized 20/20 prerequisite check, not full lifecycle proof",
+    "list_active": "returned [] while get-status and ralplan status showed active Advisory; explicitly diagnosed, not treated as no active state"
+  },
+  "lifecycle": {
+    "supported_cancellation_command": [
+      "omx",
+      "cancel"
+    ],
+    "exit_code": 0,
+    "active": false,
+    "phase": "cancelled",
+    "fence_latest": "abandoned",
+    "journal_phase": "committed",
+    "outcome": "cancelled",
+    "planning_complete": false,
+    "consensus_complete": false,
+    "execution_handoff_authorized": false,
+    "host_verified": false,
+    "advisory_complete_command": "not-run: no Planner/Architect/Critic reviews; no invented completion"
+  },
+  "git": {
+    "root": "/home/dev/projects/universitydb",
+    "branch": "main",
+    "HEAD_A": "8931d832d49311ac0d63c3a7a359b4293058da89",
+    "B_commit": null,
+    "commit_attempted": false,
+    "reason": "Blocked B is not committed as completed architecture",
+    "remotes": [],
+    "push": false,
+    "all_initial_files_preserved": true,
+    "git_index_unchanged": true
+  },
+  "evidence": "docs/operations/H-006-v5-B-blocker-evidence",
+  "prompt_coverage": "docs/ai/omx/H-006-v5-B-prompt-coverage.json",
+  "not_run": [
+    "Planner/Architect/Critic/gates",
+    "Architecture/contracts/ERD/test plan/ADRs/design walkthrough",
+    "Product implementation/dependencies/tests/build/live or paid eval",
+    "Full vault contents/PDF B intake after blocker",
+    "Commit/push/public verification"
+  ],
+  "next_testable_hypothesis": "Native child SessionStart/Stop delivery or its mapping to current root is not reaching tracker as required; inspect supported native hook delivery for the two existing real child IDs, without synthetic payloads or spawning another leader/reviewer.",
+  "stop": "No retries/restarts/setup/update/manual IDs/state edits; await owner review of compatibility evidence. No competing leader launched."
+}

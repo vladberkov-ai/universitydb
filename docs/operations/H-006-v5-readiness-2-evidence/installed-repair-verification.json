@@ -1,0 +1,50 @@
+[
+  {
+    "target": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/scripts/codex-native-hook.js",
+    "expected": "f48a6ba442d6aeacd9dcc3c63fc191b6b83ab8fea1ef20cab15b61d0578f3a2c",
+    "actual": "f48a6ba442d6aeacd9dcc3c63fc191b6b83ab8fea1ef20cab15b61d0578f3a2c",
+    "match": true
+  },
+  {
+    "target": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/src/scripts/codex-native-hook.ts",
+    "expected": "e6479e458547615e4e74d548f88ac6a4ec991db6e1e252c1d289e7b9eeb732d9",
+    "actual": "e6479e458547615e4e74d548f88ac6a4ec991db6e1e252c1d289e7b9eeb732d9",
+    "match": true
+  },
+  {
+    "target": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/scripts/notify-hook.js",
+    "expected": "9c39872ccfcdb83e7717c76a1c3ed0ec7720fb04f2e43e9a2778532430fa0c41",
+    "actual": "9c39872ccfcdb83e7717c76a1c3ed0ec7720fb04f2e43e9a2778532430fa0c41",
+    "match": true
+  },
+  {
+    "target": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/config/codex-hooks.js",
+    "expected": "6cfce2febc94c81f9a35f5d9807c0ecf7921d03ea1a1a8724de4bd8f28ca6c72",
+    "actual": "6cfce2febc94c81f9a35f5d9807c0ecf7921d03ea1a1a8724de4bd8f28ca6c72",
+    "match": true
+  },
+  {
+    "target": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/config/__tests__/codex-hooks.test.js",
+    "expected": "63e5bf2dc3841ed62ab9c8728b38e3cdd0ff0ed84e649707031ca6ca818d48bc",
+    "actual": "63e5bf2dc3841ed62ab9c8728b38e3cdd0ff0ed84e649707031ca6ca818d48bc",
+    "match": true
+  },
+  {
+    "target": "/home/dev/.codex/hooks.json",
+    "expected": "4f9ca3760191352c5acd448e9c60e2d5d11c78f08df5460c002af36214e6368d",
+    "actual": "4f9ca3760191352c5acd448e9c60e2d5d11c78f08df5460c002af36214e6368d",
+    "match": true
+  },
+  {
+    "target": "/home/dev/.codex/config.toml",
+    "expected": "931103595bc2e0026a773911bc75d4e5402a894ea39046d599c4aa561385d160",
+    "actual": "521da12a6104d89c37ebd3da85e87b3b4a1c3de20cb9967a6b99fb212bec042f",
+    "match": false
+  },
+  {
+    "target": "/home/dev/.nvm/versions/node/v22.23.2/lib/node_modules/oh-my-codex/dist/cli/doctor.js",
+    "expected": "21f456b72becab777015f111f050db68c98dff1c73cac708343cb97db034cdcf",
+    "actual": "21f456b72becab777015f111f050db68c98dff1c73cac708343cb97db034cdcf",
+    "match": true
+  }
+]

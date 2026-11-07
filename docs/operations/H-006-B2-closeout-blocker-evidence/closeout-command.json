@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "/home/dev/.omx/runtime/bin/omx",
+    "ralplan",
+    "advisory",
+    "complete",
+    "--json"
+  ],
+  "sandbox_permissions": "require_escalated",
+  "result": {
+    "chunk_id": "f8d09b",
+    "wall_time_seconds": 0.220539797,
+    "exit_code": 0,
+    "original_token_count": 37,
+    "output": "{\"ok\":true,\"status\":\"closed\",\"host_verified\":false,\"consensus_gate_complete\":false,\"execution_handoff_authorized\":false,\"return_to_caller\":true}\n"
+  }
+}

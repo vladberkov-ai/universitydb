@@ -1,0 +1,9 @@
+Выполни только диагностику готовности по разделу D пакета <PRIVATE_VAULT_WSL>/handoffs/H-006-v5-B-continuation.md.
+
+Workspace: /home/dev/projects/universitydb, UbuntuD. Сохрани A 8931d832d49311ac0d63c3a7a359b4293058da89 и все незакоммиченные evidence; A не повторяй.
+
+Проверь версии Codex/OMX, workspace, Git/status, единственную ведущую сессию, session binding, hooks и доступность native ролей Planner/Architect/Critic/researcher. Сохрани фактические проверки и hashes исходного состояния. Отсутствие Ralplan state до активации допустимо; не создавай его ради проверки.
+
+Не активируй навыки, не проектируй и не запускай reviewers. Не меняй IDs/runtime state вручную, не обновляй инструменты, не устанавливай продуктовые зависимости, не делай commit/push. Obsidian только читать.
+
+Верни ready-for-direct-invocation либо конкретный blocker по категориям из пакета и остановись. Готовность здесь означает только предпосылки, не работоспособность полного Advisory. Следующий прямой вызов придёт отдельным сообщением в этой же сессии.

@@ -1,0 +1,9 @@
+{
+  "argv": [
+    "/home/dev/.omx/runtime/bin/omx",
+    "status"
+  ],
+  "exit_code": 0,
+  "stdout": "hud: inactive (phase: n/a)\nnative-stop: inactive (phase: n/a)\nnotify-fallback: inactive (phase: n/a)\nnotify-fallback-authority: inactive (phase: n/a)\nnotify-hook: inactive (phase: n/a)\nprompt-routing: inactive (phase: n/a)\nralplan: inactive (phase: complete)\nskill-active: ACTIVE (phase: n/a)\ntmux-hook: inactive (phase: n/a)\n",
+  "stderr": ""
+}

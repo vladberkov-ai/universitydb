@@ -1,0 +1,8 @@
+{
+  "installed_config_manifest_match": false,
+  "current_sha256": "521da12a6104d89c37ebd3da85e87b3b4a1c3de20cb9967a6b99fb212bec042f",
+  "expected_post_repair_sha256": "931103595bc2e0026a773911bc75d4e5402a894ea39046d599c4aa561385d160",
+  "only_semantic_addition_after_repair": "service_tier",
+  "service_tier": "fast",
+  "hooks_trust_verified_separately": true
+}

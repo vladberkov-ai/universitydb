@@ -1,0 +1,60 @@
+{
+  "current_session_start_events": [
+    {
+      "event": "session_start",
+      "session_id": "omx-1794046506930-56sf8c",
+      "pid": 181462,
+      "timestamp": "2026-11-07T10:15:07.331Z",
+      "_ts": "2026-11-07T10:15:07.335Z"
+    },
+    {
+      "event": "session_start_reconciled",
+      "session_id": "omx-1794046506930-56sf8c",
+      "native_session_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+      "pid": 181564,
+      "timestamp": "2026-11-07T10:16:04.641Z",
+      "_ts": "2026-11-07T10:16:04.642Z"
+    }
+  ],
+  "current_prompt_triage": {
+    "version": 1,
+    "last_triage": {
+      "lane": "HEAVY",
+      "destination": "autopilot",
+      "reason": "implementation_research_goal",
+      "prompt_signature": "sha256:01bb02e33f04bd4e1a7da8a71aabdc39cd789ca0fbc0826ffac914ca58aaced7",
+      "turn_id": "01a1b582-1523-7f62-8d7d-447c242d81f3",
+      "created_at": "2026-11-07T10:16:04.872Z"
+    },
+    "suppress_followup": true
+  },
+  "triage_interpretation": "Native UserPromptSubmit delivered context for this actual D request; destination autopilot is advisory routing only and explicitly not activated. D-only user override followed.",
+  "current_tracker": {
+    "session_id": "omx-1794046506930-56sf8c",
+    "leader_thread_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+    "matches_current_pointer_native_id": true,
+    "observed_thread_ids": [
+      "01a1b582-1aa7-77d2-9e10-b3babbe590d2",
+      "01a1b584-b306-7f13-87fe-a9c73c1bc6b9"
+    ]
+  },
+  "subagent_calls_by_this_D": [],
+  "incidental_notifications": "Existing auxiliary notify thread is not evidence of a requested reviewer; no spawn_agent calls made.",
+  "current_ralplan_state_present": false,
+  "old_advisory": {
+    "session_id": "omx-1794040798905-xque5e",
+    "generation_id": "0748daa2-4c89-4a84-a305-486ed1f480a3",
+    "active": false,
+    "current_phase": "cancelled",
+    "planning_complete": false,
+    "execution_handoff_authorized": false,
+    "fence_event_state": "abandoned",
+    "fence_event_outcome": "cancelled",
+    "terminal_reason_is_not_an_approval": true,
+    "resumed": false
+  },
+  "historical_state_sha256": {
+    ".omx/state/sessions/omx-1794040798905-xque5e/ralplan-state.json": "efb565d71b6012e846d1a4b5bd5337951a3fe9bb8fda55bb371ca42944897193",
+    ".omx/state/sessions/omx-1794040798905-xque5e/ralplan-advisory/0748daa2-4c89-4a84-a305-486ed1f480a3/fence-event-0001.json": "b9c0b0f1ab126b1a31de9a7cc03261acaf2e52a3676c9c1bbced87cfbde87e24"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "stage": "H-006-v5 B blocked after activation, before Planner",
+  "native_session_id": "01a1b52a-4d0c-7211-9a7f-917698d6e84c",
+  "omx_session_id": "omx-1794040798905-xque5e",
+  "generation_id": "0748daa2-4c89-4a84-a305-486ed1f480a3",
+  "actual_task": {
+    "path": "docs/ai/omx/H-006-v5-B-actual-prompt.txt",
+    "original_text_sha256": "07178c6c799684ff947c56e13016567a2bc00938a554a9b871392c1dc4959dad",
+    "redacted_sha256": "bbfbb186fdcf602f215b00254704172144fb1c6ed16abb1b2c80cb36de515006",
+    "native_source_line": 192
+  },
+  "leader_cutoff": {
+    "path": "docs/ai/omx/H-006-v5-B-leader-export-cutoff.json",
+    "sha256": "57921844071246756ebabcf04c93e2755d42524e75ad2fe58b94912ff41d44e3"
+  },
+  "actual_delegation_calls": {
+    "path": "docs/ai/omx/H-006-v5-B-actual-delegation-calls.json",
+    "sha256": "760aa318930ce40e838ecb72c0b05f4508dd5a6e4f3ac6a022bbc0860ca23394"
+  },
+  "subagents": [
+    {
+      "role": "researcher",
+      "task_path": "/root/official_research",
+      "native_session_id": "01a1b54c-b64f-7763-81e3-191af590899c",
+      "evidence": "docs/ai/omx/H-006-v5-B-researcher-evidence.json",
+      "sha256": "9d9a2aede7beebde6cf6c1fbfc625b3317eb8a6a23a942df94e5a38c2a23d074",
+      "executed": true,
+      "used_for_architecture": false
+    },
+    {
+      "role": "dependency-expert",
+      "task_path": "/root/stack_comparison",
+      "native_session_id": "01a1b54c-d9b8-74e1-acae-52511345ab07",
+      "evidence": "docs/ai/omx/H-006-v5-B-dependency-expert-evidence.json",
+      "sha256": "2593fd50a9c75ed9c673f415d7a0cbbf82c837f8a1c9405fe2365b0fdb19c184",
+      "executed": true,
+      "used_for_architecture": false
+    }
+  ],
+  "not_launched": [
+    "planner",
+    "architect",
+    "critic",
+    "custom gates"
+  ],
+  "quality_gates_configured": [],
+  "runtime_application_prompts": "not-created",
+  "read_context": "docs/operations/H-006-v5-B-blocker-evidence/read-context-and-inputs.json",
+  "redactions": [
+    "Private vault root placeholder",
+    "Inherited instruction/skill contexts omitted with hashes",
+    "Raw private session exports remain ignored under .omx/artifacts, not public-safe copies of entire transcript",
+    "No secrets/credential values were read or exported"
+  ],
+  "coverage_limits": [
+    "Actual task, exact delegation/steering calls and both real research final outputs covered",
+    "Leader cutoff excludes later save/check/cancel progress and future final",
+    "No full tools/system/developer/reasoning coverage",
+    "Native transcript metadata are observed provenance, not substitute tracker authority"
+  ],
+  "H005_completed_export": {
+    "path": "docs/ai/omx/H-005-session-export-completed.json",
+    "sha256": "658940815980086d8b974a79a070703f956ae0af675271b77656c45507b25418",
+    "reexported": false
+  }
+}

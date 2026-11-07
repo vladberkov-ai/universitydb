@@ -1,0 +1,334 @@
+{
+  "scope": "B2 through stopped diagnostic cutoff; later diagnostic/final messages outside export cutoff. All 7 launched roles covered; Planner reused across 3 iterations. No new research/gate/execution agents.",
+  "actual_root_task_receipt": {
+    "source_basename": "rollout-2026-11-07T12-15-10-01a1b581-446d-70b0-84ac-3e5b449c1437.jsonl",
+    "line": 191,
+    "timestamp": "2026-11-07T10:27:03.268Z",
+    "sha256": "805614ee2586d0319b123e68f82899fda22cbe4854c858ed39b78e7cc835b206"
+  },
+  "roles": [
+    {
+      "observation_only": true,
+      "completion_observation_source": ".omx/context/H-006-B2/planner-3-completion-observed.json",
+      "completion_observation_sha256": "ad1b53e35a570ddbb14f8ff69a59c36db9d765ceade2d337ad19072318d8927d",
+      "tracker_record": {
+        "thread_id": "01a1b58e-de5b-7ad2-be16-c0301fd914e5",
+        "kind": "subagent",
+        "first_seen_at": "2026-11-07T10:30:03.008Z",
+        "last_seen_at": "2026-11-07T10:59:48.785Z",
+        "last_turn_id": "01a1b5a9-1677-7891-857f-6f67f33da177",
+        "completed_at": "2026-11-07T10:59:48.666Z",
+        "last_completed_turn_id": "01a1b5a9-1677-7891-857f-6f67f33da177",
+        "turn_count": 8,
+        "mode": "planner",
+        "provenance_kind": "native_subagent",
+        "scope": "ralplan-advisory:ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+        "completion_source": "native_stop_event",
+        "status": "closed",
+        "direct_child_root_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+        "direct_child_parent_id": "01a1b581-446d-70b0-84ac-3e5b449c1437"
+      },
+      "verdict": "draft completed, not reviewer",
+      "review_artifact": null,
+      "review_raw_sha256": null
+    },
+    {
+      "observation_only": true,
+      "completion_observation_source": ".omx/context/H-006-B2/architect-1-completion-observed.json",
+      "completion_observation_sha256": "8da149677197c28e5b3c0e7d0c0f8a5abe39de50891ab806a29fa3f1b748b533",
+      "tracker_record": {
+        "thread_id": "01a1b595-19dd-71a2-9155-f07a1f460155",
+        "kind": "subagent",
+        "first_seen_at": "2026-11-07T10:36:51.657Z",
+        "last_seen_at": "2026-11-07T10:41:25.466Z",
+        "last_turn_id": "01a1b595-19f9-7011-b2b0-735e1e99b008",
+        "completed_at": "2026-11-07T10:41:25.321Z",
+        "last_completed_turn_id": "01a1b595-19f9-7011-b2b0-735e1e99b008",
+        "turn_count": 4,
+        "mode": "architect",
+        "provenance_kind": "native_subagent",
+        "scope": "ralplan-advisory:ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+        "completion_source": "native_stop_event",
+        "status": "closed",
+        "direct_child_root_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+        "direct_child_parent_id": "01a1b581-446d-70b0-84ac-3e5b449c1437"
+      },
+      "verdict": "draft completed, not reviewer",
+      "review_artifact": null,
+      "review_raw_sha256": null
+    },
+    {
+      "observation_only": true,
+      "completion_observation_source": ".omx/context/H-006-B2/critic-1-completion-observed.json",
+      "completion_observation_sha256": "697b18e65b2a6c099701ba26d949fd4b9cdfb0c10880638c7de5552e8bbc14e0",
+      "tracker_record": {
+        "thread_id": "01a1b59a-18d4-7f31-be04-10f2a1b72c79",
+        "kind": "subagent",
+        "first_seen_at": "2026-11-07T10:42:19.068Z",
+        "last_seen_at": "2026-11-07T10:45:43.969Z",
+        "last_turn_id": "01a1b59a-18ed-7f30-adfa-7e8a47d94ad7",
+        "completed_at": "2026-11-07T10:45:43.846Z",
+        "last_completed_turn_id": "01a1b59a-18ed-7f30-adfa-7e8a47d94ad7",
+        "turn_count": 4,
+        "mode": "critic",
+        "provenance_kind": "native_subagent",
+        "scope": "ralplan-advisory:ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+        "completion_source": "native_stop_event",
+        "status": "closed",
+        "direct_child_root_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+        "direct_child_parent_id": "01a1b581-446d-70b0-84ac-3e5b449c1437"
+      },
+      "verdict": "draft completed, not reviewer",
+      "review_artifact": null,
+      "review_raw_sha256": null
+    },
+    {
+      "observation_only": true,
+      "completion_observation_source": ".omx/context/H-006-B2/architect-2-completion-observed.json",
+      "completion_observation_sha256": "fef30e6de607ecfef754eae6fc889855130651972f8488f4ae4986f14737fe48",
+      "tracker_record": {
+        "thread_id": "01a1b5a2-096d-7270-8ce3-fead95793dd1",
+        "kind": "subagent",
+        "first_seen_at": "2026-11-07T10:51:03.640Z",
+        "last_seen_at": "2026-11-07T10:54:21.773Z",
+        "last_turn_id": "01a1b5a2-0984-70d3-9450-bd1a4b21bd43",
+        "completed_at": "2026-11-07T10:54:21.643Z",
+        "last_completed_turn_id": "01a1b5a2-0984-70d3-9450-bd1a4b21bd43",
+        "turn_count": 4,
+        "mode": "architect",
+        "provenance_kind": "native_subagent",
+        "scope": "ralplan-advisory:ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+        "completion_source": "native_stop_event",
+        "status": "closed",
+        "direct_child_root_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+        "direct_child_parent_id": "01a1b581-446d-70b0-84ac-3e5b449c1437"
+      },
+      "verdict": "iterate",
+      "review_artifact": ".omx/plans/H-006-B2/reviews/iteration-2-architect.md",
+      "review_raw_sha256": "445bcc65db20c1a1d5ec983cbc6aa41509dcdb394c1510f9b1dbecf2992a4fd8"
+    },
+    {
+      "observation_only": true,
+      "completion_observation_source": ".omx/context/H-006-B2/critic-2-completion-observed.json",
+      "completion_observation_sha256": "568632b1fa3d118be122973e40af8e0131dacb05214caddb78983d60a3a4a34f",
+      "tracker_record": {
+        "thread_id": "01a1b5a6-185b-71d0-a156-e32f488f8fc1",
+        "kind": "subagent",
+        "first_seen_at": "2026-11-07T10:55:25.409Z",
+        "last_seen_at": "2026-11-07T10:58:11.994Z",
+        "last_turn_id": "01a1b5a6-1876-7092-aad7-15fb63c2e5ed",
+        "completed_at": "2026-11-07T10:58:11.862Z",
+        "last_completed_turn_id": "01a1b5a6-1876-7092-aad7-15fb63c2e5ed",
+        "turn_count": 4,
+        "mode": "critic",
+        "provenance_kind": "native_subagent",
+        "scope": "ralplan-advisory:ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+        "completion_source": "native_stop_event",
+        "status": "closed",
+        "direct_child_root_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+        "direct_child_parent_id": "01a1b581-446d-70b0-84ac-3e5b449c1437"
+      },
+      "verdict": "iterate",
+      "review_artifact": ".omx/plans/H-006-B2/reviews/iteration-2-critic.md",
+      "review_raw_sha256": "d7d2dc602af90aa299beba4c21f1d86560168e4211ee161b8f6af054d224726d"
+    },
+    {
+      "observation_only": true,
+      "completion_observation_source": ".omx/context/H-006-B2/architect-3-completion-observed.json",
+      "completion_observation_sha256": "61e7b25abbccb3561b1db60cf37cec9759f3d35a751ea49f7b0063fae251e7c6",
+      "tracker_record": {
+        "thread_id": "01a1b5aa-a880-78f1-a12e-5fb989bff90f",
+        "kind": "subagent",
+        "first_seen_at": "2026-11-07T11:00:24.191Z",
+        "last_seen_at": "2026-11-07T11:03:44.507Z",
+        "last_turn_id": "01a1b5aa-a897-7ad0-9150-4da0bb6939db",
+        "completed_at": "2026-11-07T11:03:44.386Z",
+        "last_completed_turn_id": "01a1b5aa-a897-7ad0-9150-4da0bb6939db",
+        "turn_count": 4,
+        "mode": "architect",
+        "provenance_kind": "native_subagent",
+        "scope": "ralplan-advisory:ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+        "completion_source": "native_stop_event",
+        "status": "closed",
+        "direct_child_root_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+        "direct_child_parent_id": "01a1b581-446d-70b0-84ac-3e5b449c1437"
+      },
+      "verdict": "approve",
+      "review_artifact": ".omx/plans/H-006-B2/reviews/iteration-3-architect.md",
+      "review_raw_sha256": "0914935a942be1c89c0c56d26f0be4371b795a674c590662ccd0939d3df4ce00"
+    },
+    {
+      "observation_only": true,
+      "completion_observation_source": ".omx/context/H-006-B2/critic-3-completion-observed.json",
+      "completion_observation_sha256": "b5e9797657e55df9fe50bda38183660d0972bd80363a8885abf4c085cf8ff9d2",
+      "tracker_record": {
+        "thread_id": "01a1b5ae-3622-7883-b225-707aeec2ff0d",
+        "kind": "subagent",
+        "first_seen_at": "2026-11-07T11:04:17.056Z",
+        "last_seen_at": "2026-11-07T11:07:54.004Z",
+        "last_turn_id": "01a1b5ae-363f-74d0-a648-4d126e0434b2",
+        "completed_at": "2026-11-07T11:07:53.882Z",
+        "last_completed_turn_id": "01a1b5ae-363f-74d0-a648-4d126e0434b2",
+        "turn_count": 4,
+        "mode": "critic",
+        "provenance_kind": "native_subagent",
+        "scope": "ralplan-advisory:ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+        "completion_source": "native_stop_event",
+        "status": "closed",
+        "direct_child_root_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+        "direct_child_parent_id": "01a1b581-446d-70b0-84ac-3e5b449c1437"
+      },
+      "verdict": "approve",
+      "review_artifact": ".omx/plans/H-006-B2/reviews/iteration-3-critic.md",
+      "review_raw_sha256": "d085935946e56c26bbb26963c7f8f8d64440b09a21effde7a581e15a428ae249"
+    }
+  ],
+  "exports": [
+    {
+      "private_path": ".omx/context/H-006-B2/leader-stop-cutoff-export-private.json",
+      "raw_sha256": "7bf7c71b36f09842d65328f706165c7b5a8d4fab0372335650e3aaaaebe44f51",
+      "session_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+      "entries": 14,
+      "skipped_records": 0,
+      "first_entry_at": "2026-11-07T10:16:04.389Z",
+      "cutoff_at": "2026-11-07T11:09:44.174Z"
+    },
+    {
+      "private_path": ".omx/context/H-006-B2/planner-stop-cutoff-export-private.json",
+      "raw_sha256": "51ca4e7092cfc0bc587626da42de91fe970fce65d90a5203b95f9462cc50f1d5",
+      "session_id": "01a1b58e-de5b-7ad2-be16-c0301fd914e5",
+      "entries": 8,
+      "skipped_records": 0,
+      "first_entry_at": "2026-11-07T10:30:01.570Z",
+      "cutoff_at": "2026-11-07T10:59:48.535Z"
+    },
+    {
+      "private_path": ".omx/context/H-006-B2/architect-1-export-private.json",
+      "raw_sha256": "2024bfb484285729d26842bea8e18ebfbeb0449180268130954297d5ae22e6f9",
+      "session_id": "01a1b595-19dd-71a2-9155-f07a1f460155",
+      "entries": 6,
+      "skipped_records": 0,
+      "first_entry_at": "2026-11-07T10:36:50.020Z",
+      "cutoff_at": "2026-11-07T10:41:25.168Z"
+    },
+    {
+      "private_path": ".omx/context/H-006-B2/critic-1-export-private.json",
+      "raw_sha256": "e4273b81ceb6221edea7316c4b5c8e661aeef932458d7f896df5392600584255",
+      "session_id": "01a1b59a-18d4-7f31-be04-10f2a1b72c79",
+      "entries": 6,
+      "skipped_records": 0,
+      "first_entry_at": "2026-11-07T10:42:17.435Z",
+      "cutoff_at": "2026-11-07T10:45:43.656Z"
+    },
+    {
+      "private_path": ".omx/context/H-006-B2/architect-2-export-private.json",
+      "raw_sha256": "658b8d538ce83ab64d38845a86ab06d5b64ee88a1453df059f613d2108eaadd5",
+      "session_id": "01a1b5a2-096d-7270-8ce3-fead95793dd1",
+      "entries": 6,
+      "skipped_records": 0,
+      "first_entry_at": "2026-11-07T10:50:57.779Z",
+      "cutoff_at": "2026-11-07T10:54:21.400Z"
+    },
+    {
+      "private_path": ".omx/context/H-006-B2/critic-2-export-private.json",
+      "raw_sha256": "7ccac9c1e18d0980018004586c135df67a59607c30d7a57c02568206b1827471",
+      "session_id": "01a1b5a6-185b-71d0-a156-e32f488f8fc1",
+      "entries": 6,
+      "skipped_records": 0,
+      "first_entry_at": "2026-11-07T10:55:23.747Z",
+      "cutoff_at": "2026-11-07T10:58:11.708Z"
+    },
+    {
+      "private_path": ".omx/context/H-006-B2/architect-3-export-private.json",
+      "raw_sha256": "bb8966e4541bcd91128612e1991c025d96c576ebebd129683d0c8c5756c20424",
+      "session_id": "01a1b5aa-a880-78f1-a12e-5fb989bff90f",
+      "entries": 7,
+      "skipped_records": 0,
+      "first_entry_at": "2026-11-07T11:00:22.790Z",
+      "cutoff_at": "2026-11-07T11:03:44.196Z"
+    },
+    {
+      "private_path": ".omx/context/H-006-B2/critic-3-export-private.json",
+      "raw_sha256": "db8ae1e24751908eaf6f72ef1dd0c5a2c6140edbd81337f08233c8bfd2b884e1",
+      "session_id": "01a1b5ae-3622-7883-b225-707aeec2ff0d",
+      "entries": 6,
+      "skipped_records": 0,
+      "first_entry_at": "2026-11-07T11:04:15.657Z",
+      "cutoff_at": "2026-11-07T11:07:53.692Z"
+    }
+  ],
+  "actual_prompt_projection": "docs/ai/omx/H-006-B2-blocker-actual-prompts.json",
+  "actual_prompt_projection_sha256": "57a594c77451ec1bf91d43590a241f69a7565ace6aa1d1a1466559d55901732b",
+  "planner_turn_observations": [
+    {
+      "path": ".omx/context/H-006-B2/planner-completion-observed.json",
+      "sha256": "a2d83ceeba9f214fd449263258c83e516b8a8b550340be275a6caf57448fa8b1",
+      "record": {
+        "thread_id": "01a1b58e-de5b-7ad2-be16-c0301fd914e5",
+        "kind": "subagent",
+        "first_seen_at": "2026-11-07T10:30:03.008Z",
+        "last_seen_at": "2026-11-07T10:36:04.230Z",
+        "last_turn_id": "01a1b58e-de74-7d70-83d4-10b823d61b0d",
+        "completed_at": "2026-11-07T10:36:04.112Z",
+        "last_completed_turn_id": "01a1b58e-de74-7d70-83d4-10b823d61b0d",
+        "turn_count": 4,
+        "mode": "planner",
+        "provenance_kind": "native_subagent",
+        "scope": "ralplan-advisory:ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+        "completion_source": "native_stop_event",
+        "status": "closed",
+        "direct_child_root_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+        "direct_child_parent_id": "01a1b581-446d-70b0-84ac-3e5b449c1437"
+      }
+    },
+    {
+      "path": ".omx/context/H-006-B2/planner-2-completion-observed.json",
+      "sha256": "3995addfaa2eb90034be597c41cedf3b3cf7cdc4814e2545c67d16fad7e11fae",
+      "record": {
+        "thread_id": "01a1b58e-de5b-7ad2-be16-c0301fd914e5",
+        "kind": "subagent",
+        "first_seen_at": "2026-11-07T10:30:03.008Z",
+        "last_seen_at": "2026-11-07T10:50:20.702Z",
+        "last_turn_id": "01a1b59d-e4df-70d0-84cb-2cbd2038ddcc",
+        "completed_at": "2026-11-07T10:50:20.589Z",
+        "last_completed_turn_id": "01a1b59d-e4df-70d0-84cb-2cbd2038ddcc",
+        "turn_count": 6,
+        "mode": "planner",
+        "provenance_kind": "native_subagent",
+        "scope": "ralplan-advisory:ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+        "completion_source": "native_stop_event",
+        "status": "closed",
+        "direct_child_root_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+        "direct_child_parent_id": "01a1b581-446d-70b0-84ac-3e5b449c1437"
+      }
+    },
+    {
+      "path": ".omx/context/H-006-B2/planner-3-completion-observed.json",
+      "sha256": "ad1b53e35a570ddbb14f8ff69a59c36db9d765ceade2d337ad19072318d8927d",
+      "record": {
+        "thread_id": "01a1b58e-de5b-7ad2-be16-c0301fd914e5",
+        "kind": "subagent",
+        "first_seen_at": "2026-11-07T10:30:03.008Z",
+        "last_seen_at": "2026-11-07T10:59:48.785Z",
+        "last_turn_id": "01a1b5a9-1677-7891-857f-6f67f33da177",
+        "completed_at": "2026-11-07T10:59:48.666Z",
+        "last_completed_turn_id": "01a1b5a9-1677-7891-857f-6f67f33da177",
+        "turn_count": 8,
+        "mode": "planner",
+        "provenance_kind": "native_subagent",
+        "scope": "ralplan-advisory:ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+        "completion_source": "native_stop_event",
+        "status": "closed",
+        "direct_child_root_id": "01a1b581-446d-70b0-84ac-3e5b449c1437",
+        "direct_child_parent_id": "01a1b581-446d-70b0-84ac-3e5b449c1437"
+      }
+    }
+  ],
+  "limits": [
+    "Native parent tool-message arguments stored encrypted; plaintext equality to ciphertext is not claimed. Child received-task self-projections identify source and omissions.",
+    "System/developer instructions, reasoning, inherited private context and full transcripts are not published. Exact private exports remain local.",
+    "Root actual task directly extracted from native transcript and hash matches activation prompt; source receipts retained.",
+    "Old researcher/dependency-expert results are historical reused inputs, not new reviewers.",
+    "Advisory lifecycle evidence is local runtime evidence, not host-issued execution authority."
+  ]
+}

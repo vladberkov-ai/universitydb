@@ -1,0 +1,159 @@
+{
+  "checked_at": "2026-11-07T11:14:25.607636+00:00",
+  "status": "pass for diagnostic documents; runtime blocker remains",
+  "scope": "Fresh B2 diagnostics only, no stable architecture packaging; first partial builder outputs retained with INCOMPLETE notice.",
+  "new_document_files": [
+    {
+      "path": "docs/operations/H-006-B2-closeout-blocker.json",
+      "sha256": "a63c66a568b8d455be5e0988e2ed304c35c306620efe2afb4a1daca52359ce9b",
+      "bytes": 1887
+    },
+    {
+      "path": "docs/reports/H-006-B2-closeout-blocker.md",
+      "sha256": "a869475cf453ea25afc8f3e3a1551924e464265265f19dcb6d266dc141be62b9",
+      "bytes": 12257
+    },
+    {
+      "path": "docs/ai/omx/H-006-B2-blocker-actual-prompts.json",
+      "sha256": "57a594c77451ec1bf91d43590a241f69a7565ace6aa1d1a1466559d55901732b",
+      "bytes": 65765
+    },
+    {
+      "path": "docs/ai/omx/H-006-B2-blocker-prompt-coverage.json",
+      "sha256": "40d70c9e551dd46e525f22d4337772bd964d586aae86102871b25faeb2c3a7b4",
+      "bytes": 16051
+    },
+    {
+      "path": "docs/ai/omx/H-006-B2-blocker-prompt-coverage-2.json",
+      "sha256": "89895b273ec5f445bfac8431bb242556e8729dd0d89a3168bdac2743566f773a",
+      "bytes": 16009
+    },
+    {
+      "path": "docs/ai/omx/H-006-B2-blocker-actual-prompts-2.json",
+      "sha256": "57a594c77451ec1bf91d43590a241f69a7565ace6aa1d1a1466559d55901732b",
+      "bytes": 65765
+    },
+    {
+      "path": "docs/operations/H-006-B2-closeout-blocker-evidence-2/native-role-completions.json",
+      "sha256": "8862f90bd3b0f9d7f31d0cfe1711fbad2431d19d18a7c34a406a9f43f722e721",
+      "bytes": 8895
+    },
+    {
+      "path": "docs/operations/H-006-B2-closeout-blocker-evidence-2/review-evidence.json",
+      "sha256": "2cfc1818c9e1c1e8f5d8ec617b871d466391f130146c3d5324fbeecc8e8569ac",
+      "bytes": 119519
+    },
+    {
+      "path": "docs/operations/H-006-B2-closeout-blocker-evidence-2/preservation-and-validation.json",
+      "sha256": "eaff5545d08cd173577c7c51483e381b6ef784d361c373d9332e10b8ff4eb5d0",
+      "bytes": 5410
+    },
+    {
+      "path": "docs/operations/H-006-B2-closeout-blocker-evidence-2/terminal-projections.json",
+      "sha256": "6bd3d36d3b618c43013f5154354f995131db77f72c596cc8ac8547cfeed051cc",
+      "bytes": 12243
+    },
+    {
+      "path": "docs/operations/H-006-B2-closeout-blocker-evidence-2/source-guided-hypothesis.json",
+      "sha256": "9dbd9efaf88f95c05ca2ec07739e8f293a68612fe0013d5dc6cc545977d8c9bd",
+      "bytes": 9924
+    },
+    {
+      "path": "docs/operations/H-006-B2-closeout-blocker-evidence-2/closeout-command.json",
+      "sha256": "96b141be1e65a72617b0df1c97c2ef331369eaf43d08ade36632e592f2b26fe9",
+      "bytes": 476
+    },
+    {
+      "path": "docs/operations/H-006-B2-closeout-blocker-evidence-2/status-command.json",
+      "sha256": "07bbd4148c2e77c7de031b9244b740cbcb782fca9dc45ba1313c6da0c678d080",
+      "bytes": 456
+    },
+    {
+      "path": "docs/operations/H-006-B2-closeout-blocker-evidence/native-role-completions.json",
+      "sha256": "b9d590c0f7f571a43e74bdc6b81e54f771e40fe478ea528882f753f3918b39a0",
+      "bytes": 8939
+    },
+    {
+      "path": "docs/operations/H-006-B2-closeout-blocker-evidence/terminal-projections.json",
+      "sha256": "5c27cadf94f7b1cb32a068d7c34dc4b6baaa78abfdd585fa51182ebc876ac217",
+      "bytes": 12243
+    },
+    {
+      "path": "docs/operations/H-006-B2-closeout-blocker-evidence/source-guided-hypothesis.json",
+      "sha256": "9dbd9efaf88f95c05ca2ec07739e8f293a68612fe0013d5dc6cc545977d8c9bd",
+      "bytes": 9924
+    },
+    {
+      "path": "docs/operations/H-006-B2-closeout-blocker-evidence/closeout-command.json",
+      "sha256": "96b141be1e65a72617b0df1c97c2ef331369eaf43d08ade36632e592f2b26fe9",
+      "bytes": 476
+    },
+    {
+      "path": "docs/operations/H-006-B2-closeout-blocker-evidence/INCOMPLETE.json",
+      "sha256": "5ea09a75a8d9b4328a86f4d4856d4a1e8be43c5753286d44810062039b272937",
+      "bytes": 563
+    },
+    {
+      "path": "docs/operations/H-006-B2-closeout-blocker-evidence/status-command.json",
+      "sha256": "07bbd4148c2e77c7de031b9244b740cbcb782fca9dc45ba1313c6da0c678d080",
+      "bytes": 456
+    }
+  ],
+  "json_parse": "pass",
+  "relative_markdown_links": "pass",
+  "private_path_and_secret_pattern_scan": "pass; targeted scan, not a claim of exhaustive DLP",
+  "whitespace_check": "pass for all fresh diagnostics via git diff --no-index --check",
+  "git_diff_check": {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "pre_B_baseline": {
+    "files": 97,
+    "changed": [],
+    "index_unchanged": true
+  },
+  "HEAD": {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stdout": "8931d832d49311ac0d63c3a7a359b4293058da89\n",
+    "stderr": ""
+  },
+  "staging": {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--name-status"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "remotes": {
+    "argv": [
+      "git",
+      "remote",
+      "-v"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "B_commit": null,
+  "not_run": [
+    "Application tests/typecheck/lint/build and paid eval: no application or product changes",
+    "Synthetic late-notify replay/repair: user stop boundary",
+    "Architecture packaging and commit B: blocked by post-closeout session skill reactivation"
+  ],
+  "errors": []
+}

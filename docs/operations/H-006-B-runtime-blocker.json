@@ -1,0 +1,98 @@
+{
+  "handoff": "H-006-v4",
+  "stage": "B readiness only; planning not started",
+  "recorded_at": "2026-11-07T00:31:24.988549+00:00",
+  "commit_A": "8931d832d49311ac0d63c3a7a359b4293058da89",
+  "commands": [
+    {
+      "command": "omx status",
+      "exit_code": 0,
+      "stdout": "hud: inactive (phase: n/a)\nnative-stop: inactive (phase: n/a)\nnotify-fallback: inactive (phase: n/a)\nnotify-fallback-authority: inactive (phase: n/a)\nnotify-hook: inactive (phase: n/a)\ntmux-hook: inactive (phase: n/a)\n",
+      "stderr": ""
+    },
+    {
+      "command": "omx quality-gates list --stage ralplan --json",
+      "exit_code": 0,
+      "stdout": "{\"gates\":[],\"stage\":\"ralplan\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": "omx ralplan status --json",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Error: No Ralplan state found.\n"
+    },
+    {
+      "command": "omx session lock inspect --cwd /home/dev/projects/universitydb --json",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"absent\",\n  \"lockPath\": \"/home/dev/projects/universitydb/.omx/state/session.json.lock\",\n  \"evidenceSource\": \"none\",\n  \"safeToRecover\": false\n}\n",
+      "stderr": ""
+    }
+  ],
+  "native_surface": {
+    "agent_type_routing": "available in tool schema; installed planner/architect/critic/researcher TOMLs present",
+    "adapted_authority_attempted": false,
+    "preflight": "not-run: role_routing_unavailable was not reported"
+  },
+  "doctor": {
+    "ordinary": {
+      "exit_code": 1,
+      "error": "EROFS: read-only file system, mkdtemp '/tmp/omx-doctor-native-hook-dist-rhUTqK'"
+    },
+    "supported_permission_request": {
+      "exit_code": 0,
+      "passed": 19,
+      "warnings": 0,
+      "failed": 1,
+      "failed_check": "State root/session binding",
+      "detail": "src=session-authority;ptr=usable;binding check made no mutation;fix=clear or correct listed selectors;relaunch;selected_session_json=session.json;bad_selectors=CODEX_SESSION_ID",
+      "native_hook_smoke": "passed minimal UserPromptSubmit smoke; not proof that this request activated advisory"
+    }
+  },
+  "diagnostic_selectors": {
+    "current_native_export_session": "01a1b356-8b0a-7b40-8c40-293841f31670",
+    "runtime_pointer_native_session": "01a1b31a-d9cc-7d00-b9d6-4118c6e46f49",
+    "omx_selector": "omx-1794006222700-y9rw23",
+    "root_turn_identity": "not supplied on a canonical workflow activation surface; not inferred from selectors/transcripts/cwd"
+  },
+  "activation": {
+    "advisory_projection_or_pending_intent": "none found under selected .omx/state",
+    "ralplan_status": "absent, not terminal-complete",
+    "run_command": "not invoked: installed shell bootstrap without an existing advisory/start profile starts Standard state, not requested Advisory",
+    "complete_command": "not-run: no active Advisory generation/reviews to close",
+    "identity_or_state_recovery": "not attempted; pointer usable; safeToRecover=false",
+    "reason": "Canonical advisory activation/session binding prerequisite unavailable. H-006-v4 requires stop at missing identity; no fabricated root/turn, pending intent, role labels or lifecycle."
+  },
+  "roles_launched": [],
+  "research": "not-run: blocked before planning; no external factual architecture claims made",
+  "reviews": {
+    "planner": "not-run",
+    "architect": "not-run",
+    "critic": "not-run",
+    "quality_gates": "none configured; no passing verdict claimed"
+  },
+  "execution_authorization_created": false,
+  "execution_handoff_created": false,
+  "source_hashes": [
+    {
+      "source": "<CODEX_HOME>/skills/ralplan/SKILL.md",
+      "sha256": "9e717939acc0201d44518964a8e84052dc9874540e4c7a19f3ce91a9c27484ad"
+    },
+    {
+      "source": "<CODEX_HOME>/skills/plan/SKILL.md",
+      "sha256": "522e2613cadfbaf50ea58c045c517a24cc8c7b15cd6dac9939f218c6e00af772"
+    },
+    {
+      "source": "<CODEX_HOME>/skills/best-practice-research/SKILL.md",
+      "sha256": "6f0525b364f03ea4ec991ceb1b77a5bf0674efc605bed5db5cb98ebfc09e7c5e"
+    },
+    {
+      "source": "<INSTALLED_OMX>/dist/cli/ralplan.js",
+      "sha256": "ba606672bd1fbb9bbd0affe9b5ae04e5031220432ac7091cf2bc51c68252e058"
+    },
+    {
+      "source": "<INSTALLED_OMX>/dist/modes/base.js",
+      "sha256": "c12bcbbaa0feab88a00b62e3089cc14479c705f30bb7d43a921dc055ae2fc970"
+    }
+  ]
+}

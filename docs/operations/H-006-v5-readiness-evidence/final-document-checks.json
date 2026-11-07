@@ -1,0 +1,77 @@
+{
+  "json_parsed": [
+    "docs/operations/H-006-v5-readiness-evidence/baseline.json",
+    "docs/operations/H-006-v5-readiness-evidence/host-checks-final.json",
+    "docs/operations/H-006-v5-readiness-evidence/input-hashes.json",
+    "docs/operations/H-006-v5-readiness-evidence/host-checks.json",
+    "docs/operations/H-006-v5-readiness-evidence/config-roles-sources.json",
+    "docs/operations/H-006-v5-readiness-evidence/direct-activation-source-evidence.json",
+    "docs/operations/H-006-v5-readiness-evidence/validation.json",
+    "docs/operations/H-006-v5-readiness-evidence/commands.json",
+    "docs/operations/H-006-v5-readiness.json",
+    "docs/ai/omx/H-006-v5-D-prompt-coverage.json",
+    "docs/ai/omx/H-006-v5-D-messages-cutoff.json"
+  ],
+  "sha256_manifest_verified": true,
+  "all_47_original_files_unchanged": true,
+  "index_unchanged": true,
+  "report_sha256": "531c56d3541b2d003f56f045484bc09f40ea785ea5d1e61756260b5241f483b0",
+  "scoped_privacy_and_whitespace": "pass; private vault absolute root absent, common credential patterns absent; no raw transcript copied; manual review limited to new diagnostic/selected prompt evidence",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": " M AGENTS.md\n M docs/ai/README.md\n?? docs/ai/omx/H-006-prompt-coverage-blocker.json\n?? docs/ai/omx/H-006-session-export-blocker-cutoff.json\n?? docs/ai/omx/H-006-v5-D-actual-prompt.txt\n?? docs/ai/omx/H-006-v5-D-messages-cutoff.json\n?? docs/ai/omx/H-006-v5-D-prompt-coverage.json\n?? docs/operations/H-006-A-postcommit-receipt.json\n?? docs/operations/H-006-B-runtime-blocker.json\n?? docs/operations/H-006-v5-readiness-evidence/baseline.json\n?? docs/operations/H-006-v5-readiness-evidence/commands.json\n?? docs/operations/H-006-v5-readiness-evidence/config-roles-sources.json\n?? docs/operations/H-006-v5-readiness-evidence/direct-activation-source-evidence.json\n?? docs/operations/H-006-v5-readiness-evidence/host-checks-final.json\n?? docs/operations/H-006-v5-readiness-evidence/host-checks.json\n?? docs/operations/H-006-v5-readiness-evidence/input-hashes.json\n?? docs/operations/H-006-v5-readiness-evidence/validation.json\n?? docs/operations/H-006-v5-readiness.json\n?? docs/reports/H-006-advisory-blocker.md\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "8931d832d49311ac0d63c3a7a359b4293058da89\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "evidence_files_checked": 12,
+  "recorded_at": "2026-11-07T08:54:09.093091+00:00",
+  "not_run": "Application tests/build/typecheck/lint are not applicable to D, no application or product changes. No workflow, reviewer, commit or push."
+}

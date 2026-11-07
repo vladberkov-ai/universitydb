@@ -1,0 +1,216 @@
+{
+  "captured_at": "2026-11-07T10:16:59.890093+00:00",
+  "repair_baseline_sha256": "0b328175a766519be0d18677e56df7b1ea3a55b7d36dbc9872137da68fa77f2d",
+  "repair_baseline_file_count": 78,
+  "repair_baseline_changed": [],
+  "repair_baseline_missing": [],
+  "all_original_file_sha256": {
+    ".gitignore": "36f5c847236d2b148c41c30b063a5afa13c1e6da68c5e655efe7c4711f2b2807",
+    ".omx-state-locks.identity.json": "50d956e3fbf97b265862cefdbfb54fd809b03ef55b3f7ccd9997864b70d62711",
+    ".omx-state-locks/655a20b082786cf4e05f99e0da122d6dc803270e08f859022ac44d1302358bc8.mutex": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "AGENTS.md": "2dee4fa80c2226b91cffb3b977aa403840a83d392aa4b4341e21a34f521dca21",
+    "docs/adr/ADR-OMX-001-preparation-boundary.md": "985b3afa5c8df7aebb85b336509116e27ab292dc2c02757015ecdf48b06c40c5",
+    "docs/adr/ADR-OMX-002-execution-context-and-checkpoint.md": "21d5e1406745749569ad00639c8ecf6d75c4401136a4d74ff7ed5669fcb663c3",
+    "docs/adr/README.md": "37e789f5d4b51b65e14db613b79a6a1cfee80892b5cfb00fc4b55fe2a4a801e0",
+    "docs/ai/README.md": "f2ffa5a75851e4465a14dcbb41c4d73692b6cc52e2e6846f8f135da012a8ff17",
+    "docs/ai/omx/H-004-actual-prompt.txt": "6def3132523c0e8731ec5ee6f5f23eae0f22a2935ddbb7658a1d066071e715f5",
+    "docs/ai/omx/H-004-instruction-context.json": "22a1adbbcec9d04ad56e24d2b197ee590736f20277886ff833438b1fc1234932",
+    "docs/ai/omx/H-004-prompt-receipt.json": "35a9be309333ecb919bd945f19c211d7973ed8a1f2a40c86d4500579d44db60f",
+    "docs/ai/omx/H-004-session-export-completed.json": "d8ff7059149b0cc872f5f9b5685f790795a6d9bd6500a07b5b35ad687a004559",
+    "docs/ai/omx/H-004-session-export.json": "487b330fc5bd6f958d5dabfddd38fbf7d8660460f2cc6526f189b0b1761c1149",
+    "docs/ai/omx/H-005-actual-prompt.txt": "712439ae1e6f65c4bb5881d6da41d53613156580a272dccc660f3df6d0dae430",
+    "docs/ai/omx/H-005-prompt-receipt.json": "ca90fdf930953f858017e3836e03808a9e200786780f1973aa16268b2fe1ef5f",
+    "docs/ai/omx/H-005-session-export-completed.json": "658940815980086d8b974a79a070703f956ae0af675271b77656c45507b25418",
+    "docs/ai/omx/H-005-session-export-cutoff.json": "7ce469a7090f641aaf1696a4bcbda8cbec43b8dea5bdaaef11619f8a3b42e9c9",
+    "docs/ai/omx/H-006-actual-prompt.txt": "3866c94900f64b827e0542fdab49d1f71375949cf18702f8dce85e69f4710216",
+    "docs/ai/omx/H-006-prompt-coverage-blocker.json": "6fdbaac1ce9ad401f7b2085564c4925174ece3b6cdd978d49f7cd40421061c4a",
+    "docs/ai/omx/H-006-prompt-receipt-A.json": "d80e9cb827127b7aef178e96339534d2d86c059f40f9296323eb4960c77f4cf6",
+    "docs/ai/omx/H-006-session-export-A-cutoff.json": "71697910ac293814678a4fbe099fddc949d6304ff987c2323be7fcfac6324674",
+    "docs/ai/omx/H-006-session-export-blocker-cutoff.json": "44703f89e4395858610c4297f46c200ea2e446c1e4dbe520f8d7c704c24d1360",
+    "docs/ai/omx/H-006-v5-B-actual-delegation-calls.json": "760aa318930ce40e838ecb72c0b05f4508dd5a6e4f3ac6a022bbc0860ca23394",
+    "docs/ai/omx/H-006-v5-B-actual-prompt.txt": "bbfbb186fdcf602f215b00254704172144fb1c6ed16abb1b2c80cb36de515006",
+    "docs/ai/omx/H-006-v5-B-dependency-expert-evidence.json": "2593fd50a9c75ed9c673f415d7a0cbbf82c837f8a1c9405fe2365b0fdb19c184",
+    "docs/ai/omx/H-006-v5-B-leader-export-cutoff.json": "57921844071246756ebabcf04c93e2755d42524e75ad2fe58b94912ff41d44e3",
+    "docs/ai/omx/H-006-v5-B-prompt-coverage.json": "b3a82c628612aaf4cd097d707cfa075bb70b9aa0bbc94c14e9eee5fbf1702126",
+    "docs/ai/omx/H-006-v5-B-researcher-evidence.json": "9d9a2aede7beebde6cf6c1fbfc625b3317eb8a6a23a942df94e5a38c2a23d074",
+    "docs/ai/omx/H-006-v5-D-actual-prompt.txt": "e147b3fa3a2e5c001e0ee18a3c5b3472ddc35ff6b798dd4d293548cd0140c2b6",
+    "docs/ai/omx/H-006-v5-D-messages-cutoff.json": "650ecf8a2d2b9e55cd9ec91d93021a01842df3ac34efd37a34edc2d154384ca6",
+    "docs/ai/omx/H-006-v5-D-prompt-coverage.json": "d0c1f6cf28a02fdab1365435638ef08d4a3d14fce70ab8fdd9e2d22f1661bbf4",
+    "docs/ai/omx/history/H-004-prompt-receipt-cutoff.json": "2191d62861100f134988ca47c9608c92b3ec3609c613e2cff9b8172ab290121e",
+    "docs/chat/decisions/ADR-CHAT-001-memory-ownership.md": "2f68a94298b86c7c96372102167aaa5b0e055e95024b704ca71ba560703a0cf0",
+    "docs/chat/decisions/ADR-CHAT-002-result-scope.md": "a9ddf57dcb88d5610d751eb8ba9429178e728e5c23f2aa6d4ca030020d42defe",
+    "docs/chat/planning/acceptance-contract.md": "ff8dd0a1354480e7fd83caac3219e5d885b4582fe33474ac51f223a75c7ac5fb",
+    "docs/chat/requirements.md": "cf1822681cab3f6d46c444cb4e6aa94267abb589793f6866411d348d25b57936",
+    "docs/operations/H-005-environment-checks.json": "d2222dcf7a21fb1d8d55b80a68bd75842d8360e1c4bf4640a4cea27c5325dc09",
+    "docs/operations/H-005-input-verification.json": "51548f38bdff334a289280a412d472cc562085fafc416933539c77109718f1ef",
+    "docs/operations/H-005-preparation-receipt.json": "6fdf6858b9d6fd7e393ee09d6e8700d07f6969570218c04309453cf1c2c34fb3",
+    "docs/operations/H-005-preparation-validation.json": "1e377313f9666219496d7b7a9ce17b08440ab84b53955ac27a6a522ccfd71e0a",
+    "docs/operations/H-006-A-postcommit-receipt.json": "739eed80a78b51338909c84846a147ebaa35c18cecee75de496b3795ba11df28",
+    "docs/operations/H-006-A-validation.json": "2a5663219a9b0362713e14c0b109753f2aaa7d7e7dea005eee90a3fa579915ee",
+    "docs/operations/H-006-B-runtime-blocker.json": "b8b51deb101920040094f9ec9ea79d9ac31cf958a9adec8cf2ba4e0ee4b63355",
+    "docs/operations/H-006-input-verification.json": "b9aa14f221e42dba2f7d2d3aa09ebcfd20a5d2441115844be60c69b8dd86bc41",
+    "docs/operations/H-006-v5-B-blocker-evidence/activation-check.json": "05fd7da9e99f56c599349bf74e96bfafc396e1ed07f5f45c79f74367b87c3ddd",
+    "docs/operations/H-006-v5-B-blocker-evidence/binding-compatibility.json": "173ac7b6beb91db22c176321305957186d9da9fa583dafa46ec6decc6d0f9d95",
+    "docs/operations/H-006-v5-B-blocker-evidence/initial-state-hashes.json": "3407fa5bf659ccc557a15083add2a4a5a6e9e7c14565cca054b5bd5dbd6b6382",
+    "docs/operations/H-006-v5-B-blocker-evidence/read-context-and-inputs.json": "af01a4a62450b7c762da75c4fd9e6f7deab86890fff57373f7778fa0ed845816",
+    "docs/operations/H-006-v5-B-blocker-evidence/session-export-commands.json": "4060768c26d2be9c9c467d2d451192f3381e2f1c61153155d0103e9f801a6549",
+    "docs/operations/H-006-v5-B-blocker-evidence/stop-guard-failure.json": "8fc0d06f94856cd2a382418f7ca1ee3fbcddc7e2a2e1e8f154e653e2ad682ec4",
+    "docs/operations/H-006-v5-B-blocker-evidence/supported-cancellation.json": "65ae0a2447675d320338b4f72690e1c393fb99f04d5f1d1aafd11d516fcd0a2e",
+    "docs/operations/H-006-v5-B-blocker-evidence/validation.json": "ca8a5b132b0bea1fdae318d2f17266a08903a5918476066b5c12c653bf6f058e",
+    "docs/operations/H-006-v5-advisory-binding-diagnostic.json": "144a70d00e170e93b00ff74fe92229cf1c0ac1142044bc38a1379c6bb424fcfc",
+    "docs/operations/H-006-v5-readiness-evidence/baseline.json": "e5433d4ca4eebf15f7169bc11189e85b810009ae8e466820dd84ed8b6d89facf",
+    "docs/operations/H-006-v5-readiness-evidence/commands.json": "33a48665d9e13c7adc54633c8ff9512a59fece005bf4f357efa5e3fbe9e48b3c",
+    "docs/operations/H-006-v5-readiness-evidence/config-roles-sources.json": "9343d38b43fe254f3203541b707075933b74903feae45787386182519bb51a03",
+    "docs/operations/H-006-v5-readiness-evidence/direct-activation-source-evidence.json": "6be96e5b304225cc534616dec5bc0707c8b00f4334d8359ac4773f4c5e198676",
+    "docs/operations/H-006-v5-readiness-evidence/final-document-checks.json": "3b67165c76427477783a4e2181165c7bf4793878526921a84961894c8bd09f2a",
+    "docs/operations/H-006-v5-readiness-evidence/host-checks-final.json": "1705fce3edd8373d9230db2e1b44618bad05ab3327c65dc91e767a10d0f14660",
+    "docs/operations/H-006-v5-readiness-evidence/host-checks.json": "8ff7f25133b610d87d66adde266383dbb135446eda8c486565f2661960e35a0e",
+    "docs/operations/H-006-v5-readiness-evidence/input-hashes.json": "bc3201d6c881becb848345ed76cb2f63169730cde674b843e88501fab23d4880",
+    "docs/operations/H-006-v5-readiness-evidence/validation.json": "f92722c1cbaf2a93fd7200a001d7bad73b6c4ca013d7a906d6a97ed28f4c165a",
+    "docs/operations/H-006-v5-readiness.json": "531c56d3541b2d003f56f045484bc09f40ea785ea5d1e61756260b5241f483b0",
+    "docs/operations/chat-export-receipt.json": "c978639c47c6c4673cb6e948e558172b89a86c517df3782409e948663edfbdb7",
+    "docs/operations/environment-checks.json": "cd30767517f1d708b36e2798bd5e5c3a20c8482640e392ec9c1dca79e3b8ab29",
+    "docs/operations/git-checkpoints.md": "54ad15d656609353b8e06eee304d22a14aaddd937f2fbf7eeadb1834e2a2005e",
+    "docs/operations/history/H-004-chat-export-receipt.json": "ad7237965f554de3fe1081aaf9583212abf636eeba3ff5df8e637ca8da6e0cba",
+    "docs/operations/input-verification.json": "83fd0f7d76b2654ff37b5caebd8a9b486a387256f14950b655c6d4683ed4397c",
+    "docs/operations/preparation-validation.json": "183701e05bb3b3e7ac52edf27e78b043d3e26b5396f6ceeb1e8b5d277396e6cd",
+    "docs/reports/H-004-repository-preparation.md": "1af672ce1e7107464ac201c84ff1286ad901d793ebc904ba115fa5635e1e1c48",
+    "docs/reports/H-005-preparation-completion.md": "e2ee430e40dd4ba4b4e14a0294f951b915c03a11860e0ff63944dac146ab8463",
+    "docs/reports/H-006-advisory-blocker.md": "d8e04bdd1800e5cfdae7db605498e86ab9746b876ca87092c48caa5333d7b3ab",
+    "docs/reports/H-006-preparation-checkpoint.md": "d5dc73541608e5d36d819f21f76ce61fb3f26fddf8a8087bdb572e79d7883625",
+    "docs/reports/H-006-v5-advisory-binding-blocker.md": "4e868928aa2e662d3e6326da6544a0ad02c88b519eb4605261ac2a32d7a5aa4a",
+    "omx_wiki/index.md": "3004d4a65e4e4e0ac44ad6fd6ed93bab8ccd8f40c13fe5c25987f724ae0c9b10",
+    "omx_wiki/log.md": "79d623adf8fac8d4c1013cc0febc9f2d9e058bfe7edac552f9c914d1a15a2fc8",
+    "omx_wiki/session-log-h-004.md": "ef89bcdd5ed7a51fc96468098fd701c1ec1eebc8a73d78ccc0bf469899d3ecbc",
+    "omx_wiki/session-log-h-005.md": "d789996ee9b1f428940ed03e88ff1dca02cc4bfe148aaeccfdd69c50c1c65c61"
+  },
+  "seven_original_file_sha256": {
+    "AGENTS.md": "2dee4fa80c2226b91cffb3b977aa403840a83d392aa4b4341e21a34f521dca21",
+    "docs/ai/README.md": "f2ffa5a75851e4465a14dcbb41c4d73692b6cc52e2e6846f8f135da012a8ff17",
+    "docs/ai/omx/H-006-prompt-coverage-blocker.json": "6fdbaac1ce9ad401f7b2085564c4925174ece3b6cdd978d49f7cd40421061c4a",
+    "docs/ai/omx/H-006-session-export-blocker-cutoff.json": "44703f89e4395858610c4297f46c200ea2e446c1e4dbe520f8d7c704c24d1360",
+    "docs/operations/H-006-A-postcommit-receipt.json": "739eed80a78b51338909c84846a147ebaa35c18cecee75de496b3795ba11df28",
+    "docs/operations/H-006-B-runtime-blocker.json": "b8b51deb101920040094f9ec9ea79d9ac31cf958a9adec8cf2ba4e0ee4b63355",
+    "docs/reports/H-006-advisory-blocker.md": "d8e04bdd1800e5cfdae7db605498e86ab9746b876ca87092c48caa5333d7b3ab"
+  },
+  "index_sha256": "c718391829390e89b87c986eca4e03af89c2f307339ed15e0e982cb288f6c6d6",
+  "git": {
+    "root": {
+      "argv": [
+        "git",
+        "rev-parse",
+        "--show-toplevel"
+      ],
+      "exit_code": 0,
+      "stdout": "/home/dev/projects/universitydb\n",
+      "stderr": ""
+    },
+    "git_dir": {
+      "argv": [
+        "git",
+        "rev-parse",
+        "--absolute-git-dir"
+      ],
+      "exit_code": 0,
+      "stdout": "/home/dev/projects/universitydb/.git\n",
+      "stderr": ""
+    },
+    "branch": {
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exit_code": 0,
+      "stdout": "main\n",
+      "stderr": ""
+    },
+    "head": {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "8931d832d49311ac0d63c3a7a359b4293058da89\n",
+      "stderr": ""
+    },
+    "status": {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": " M AGENTS.md\n M docs/ai/README.md\n?? .omx-state-locks.identity.json\n?? .omx-state-locks/655a20b082786cf4e05f99e0da122d6dc803270e08f859022ac44d1302358bc8.mutex\n?? docs/ai/omx/H-006-prompt-coverage-blocker.json\n?? docs/ai/omx/H-006-session-export-blocker-cutoff.json\n?? docs/ai/omx/H-006-v5-B-actual-delegation-calls.json\n?? docs/ai/omx/H-006-v5-B-actual-prompt.txt\n?? docs/ai/omx/H-006-v5-B-dependency-expert-evidence.json\n?? docs/ai/omx/H-006-v5-B-leader-export-cutoff.json\n?? docs/ai/omx/H-006-v5-B-prompt-coverage.json\n?? docs/ai/omx/H-006-v5-B-researcher-evidence.json\n?? docs/ai/omx/H-006-v5-D-actual-prompt.txt\n?? docs/ai/omx/H-006-v5-D-messages-cutoff.json\n?? docs/ai/omx/H-006-v5-D-prompt-coverage.json\n?? docs/operations/H-006-A-postcommit-receipt.json\n?? docs/operations/H-006-B-runtime-blocker.json\n?? docs/operations/H-006-v5-B-blocker-evidence/activation-check.json\n?? docs/operations/H-006-v5-B-blocker-evidence/binding-compatibility.json\n?? docs/operations/H-006-v5-B-blocker-evidence/initial-state-hashes.json\n?? docs/operations/H-006-v5-B-blocker-evidence/read-context-and-inputs.json\n?? docs/operations/H-006-v5-B-blocker-evidence/session-export-commands.json\n?? docs/operations/H-006-v5-B-blocker-evidence/stop-guard-failure.json\n?? docs/operations/H-006-v5-B-blocker-evidence/supported-cancellation.json\n?? docs/operations/H-006-v5-B-blocker-evidence/validation.json\n?? docs/operations/H-006-v5-advisory-binding-diagnostic.json\n?? docs/operations/H-006-v5-readiness-evidence/baseline.json\n?? docs/operations/H-006-v5-readiness-evidence/commands.json\n?? docs/operations/H-006-v5-readiness-evidence/config-roles-sources.json\n?? docs/operations/H-006-v5-readiness-evidence/direct-activation-source-evidence.json\n?? docs/operations/H-006-v5-readiness-evidence/final-document-checks.json\n?? docs/operations/H-006-v5-readiness-evidence/host-checks-final.json\n?? docs/operations/H-006-v5-readiness-evidence/host-checks.json\n?? docs/operations/H-006-v5-readiness-evidence/input-hashes.json\n?? docs/operations/H-006-v5-readiness-evidence/validation.json\n?? docs/operations/H-006-v5-readiness.json\n?? docs/reports/H-006-advisory-blocker.md\n?? docs/reports/H-006-v5-advisory-binding-blocker.md\n",
+      "stderr": ""
+    },
+    "staging": {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-status"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "staged_check": {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "remotes": {
+      "argv": [
+        "git",
+        "remote",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "commit_A": {
+      "argv": [
+        "git",
+        "cat-file",
+        "-t",
+        "8931d832d49311ac0d63c3a7a359b4293058da89"
+      ],
+      "exit_code": 0,
+      "stdout": "commit\n",
+      "stderr": ""
+    },
+    "A_ancestor": {
+      "argv": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "8931d832d49311ac0d63c3a7a359b4293058da89",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "history": {
+      "argv": [
+        "git",
+        "log",
+        "-4",
+        "--format=%H %s"
+      ],
+      "exit_code": 0,
+      "stdout": "8931d832d49311ac0d63c3a7a359b4293058da89 docs: verify preparation checkpoint for H-006-v4\n",
+      "stderr": ""
+    }
+  }
+}

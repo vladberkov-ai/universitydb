@@ -1,0 +1,13 @@
+{
+  "session_id": "omx-1794046506930-56sf8c",
+  "generation_id": "ec3e1f0b-d751-4088-bfb2-ec386c08549c",
+  "method": "existing exported reconcileRalplanAdvisory journal replay; no repeated complete",
+  "fence": "closed",
+  "journal_phase": "committed",
+  "outcome": "approved",
+  "integrity_status": "proven",
+  "skill_active": false,
+  "mode_active": false,
+  "execution_handoff_authorized": false,
+  "evidence_bundle_sha256": "57ddd777824da540443657e5f843e8fbd292ef1a528c7112080cd809e7ba5a90"
+}
