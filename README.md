@@ -15,7 +15,7 @@ blocking regression. Candidatec631 passed482tests/static/157oracle but independe
 visual review found UI magic/help output. UI-repaired source98345ad is frozen;
 its fresh final clean/browser gates now passed485tests80.36s/157oracle and six
 browser classes/seven captures with focused typed rows/no help/None. Independent
-final APPROVE/CLEAR received; native closeout remains pending. Old captures are not final proof.
+final APPROVE/CLEAR received; actual native COMPLETE/strict PASS5/5 now verified. Old captures are not final proof.
 New live calls and push are forbidden; historical results below remain unchanged.
 
 
@@ -35,7 +35,7 @@ that tested product identity. [Report and evidence](docs/reports/H-013-I2-I3-off
 **Offline verification is not real-model NL→SQL accuracy.** The earlier I1 slice has
 real Sol evidence for 80.00 and 90.00; the expanded service still needs broad real-model
 evaluation. H014 clean-environment offline verification now passes at exact
-98345ad6ce5757c71d44ba1ce59a683d46e0d910; offline DoD achieved with APPROVE/CLEAR; native checkpoint remains pending. Publication makes these
+98345ad6ce5757c71d44ba1ce59a683d46e0d910; offline DoD achieved with APPROVE/CLEAR; actual native COMPLETE/strict PASS5/5 now verified. Publication makes these
 results available; it does not certify those remaining checks or production readiness.
 [Requirement-by-requirement status](docs/assignment-status.md).
 

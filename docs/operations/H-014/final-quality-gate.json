@@ -1,0 +1,111 @@
+{
+  "created_at": "2026-11-07T23:38:43.714924+00:00",
+  "tested_sha": "98345ad6ce5757c71d44ba1ce59a683d46e0d910",
+  "scope": "H014 bounded offline readiness only; futurelivepackageproposed/notrun",
+  "aiSlopCleaner": {
+    "status": "passed",
+    "evidence": "docs/operations/H-014/cleaner-summary.md; pre-edit scope/UI/evalplans and separate rootplanreviews, primaryfailurelocks\u2192minimaladapter/UIboundaryrepairs, nofallback/newdeps/globalmagicdisable. Final485/static/157oracle/actualbrowser PASS after changes."
+  },
+  "verification": {
+    "status": "passed",
+    "commands": [
+      "uv run --locked pytest -q --basetemp=/tmp/universitydb-h014-final-983-evidence/pytest-temp",
+      "uv run --locked ruff check src tests",
+      "uv run --locked ruff format --check src tests",
+      "uv run --locked mypy src/universitydb --ignore-missing-imports",
+      "uv run --locked python -m compileall -q src tests",
+      "uv run --locked python docs/operations/H-014/readiness_e2e.py /tmp/universitydb-h014-final-983-evidence/graph-e2e",
+      "uv run --locked python docs/operations/H-013/m1/capture.py /tmp/universitydb-h014-final-983-evidence/pytest-temp --verification 'Fresh full pytest command in clean-run command-1.txt passed' --output-dir /tmp/universitydb-h014-final-983-evidence/m1",
+      "independent stdlib frozen oracle check157 and both schema/seed initialization/repeat refusal; receipt.json",
+      "actual Playwright/Streamlit offline browser; browser/final-983-attempt1/browser-receipt.json",
+      "omx quality-gates list --stage code-review --json",
+      "git diff --check"
+    ],
+    "evidence": "Exact983 fresh tracked-only clone/frozen lock/fresh initialvenv reused transparently,485passed80.36s/all7commands0/157oracle; M1F1F2tie/resume/portability; fullcurrenttrace+nohelp/noNone/focusedtypedDOM browser6classes7captures. Root45sourceblobs/28clean+53browserhashes/10preservation/263history/22vault/17eval verified: final-983-preservation-remote.json. OwnedUI/browserstopped, temp ledgerabsent; livecountcredentialbudgetpushnotrun."
+  },
+  "codeReview": {
+    "recommendation": "APPROVE",
+    "architectStatus": "CLEAR",
+    "evidence": "Actual independent final_code_review APPROVE (reviews/final-code-review.md), final_architecture CLEAR zero blockers (reviews/final-architect.json), both exact98345ad6ce5757c71d44ba1ce59a683d46e0d910; no writer self-approval. Earlier failures/BLOCK/REQUESTCHANGES preserved.",
+    "independentReview": {
+      "codeReviewer": {
+        "agentRole": "code-reviewer",
+        "evidence": "Actual independent final_code_review APPROVE (reviews/final-code-review.md), final_architecture CLEAR zero blockers (reviews/final-architect.json), both exact98345ad6ce5757c71d44ba1ce59a683d46e0d910; no writer self-approval. Earlier failures/BLOCK/REQUESTCHANGES preserved."
+      },
+      "architect": {
+        "agentRole": "architect",
+        "evidence": "Actual independent final_code_review APPROVE (reviews/final-code-review.md), final_architecture CLEAR zero blockers (reviews/final-architect.json), both exact98345ad6ce5757c71d44ba1ce59a683d46e0d910; no writer self-approval. Earlier failures/BLOCK/REQUESTCHANGES preserved."
+      }
+    }
+  },
+  "architectureInvariantGate": {
+    "status": "passed",
+    "sourceArtifacts": [
+      ".omx/ultragoal/brief.md",
+      ".omx/ultragoal/ledger.jsonl",
+      "docs/plans/H-014-offline-readiness-brief.md",
+      "docs/operations/H-014/invariant-audit.md"
+    ],
+    "evidence": "Seven ORIGINAL invariant lines retained unchanged; installed genericheading extractor gap repaired through supported append-only annotate_ledger with Architectureinvariants heading in H014nestedworkflow only; all7 enforced, no requirementweakened. FullR01-14/U01/U03-06 audit and later R15publication/R16-17defense/U02deadline gaps explicit. Actual final independent APPROVE/CLEAR, zero unresolvedblockers.",
+    "invariants": [
+      {
+        "invariant": "Equal graded-enrollment weights; every offering/retake; NULL distinct from zero; absent filters explicitly all including semesters; count objects distinct. Exact rational top ties before HALF_UP two decimals. Known catalog IDs/names only; ambiguous/current/conflicting/unknown scope explicit.",
+        "source": ".omx/ultragoal/ledger.jsonl#accepted-original-H014-architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "domain.py/domain_support.py exactinteger components, Fraction ties/HALF_UP, authoritative catalog scope and contextual GROUPS name guards",
+        "testEvidence": "test_i2_domains all16filters/fivegroups/counts/NULL/zero/exactties; test_readiness_scope39; independent157oracle/group-top proofs; exact983full485/static/oracle157 PASS, docs/operations/H-014/clean-run-final-attempt3 +browser/final-983-attempt1",
+        "reviewEvidence": "Actual independent final_code_review APPROVE (reviews/final-code-review.md), final_architecture CLEAR zero blockers (reviews/final-architect.json), both exact98345ad6ce5757c71d44ba1ce59a683d46e0d910; no writer self-approval. Earlier failures/BLOCK/REQUESTCHANGES preserved."
+      },
+      {
+        "invariant": "Every accepted step has a registered exact ResultSpec: shape, columns/types/nullability, components, grain, unit/scale. No first-row inference. Static DAG \u22643 steps, missing/cyclic/forward-invalid refs rejected before execution; materialized refs are checked typed bound values only, never SQL text. Preserve exact top selection and union de-duplication. Fail closed on truncated/oversized upstream and never silently remove empty filters.",
+        "source": ".omx/ultragoal/ledger.jsonl#accepted-original-H014-architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "contracts.py exact ResultSpec/validate_dag/validate_result/materialize_refs; agent.py static validation then actual result binding",
+        "testEvidence": "test_i2_contracts/test_i3_dependencies invalid/truncated/empty/type/partial0downstream; finalM1F1/F2/tie actualrefs; exact983full485/static/oracle157 PASS, docs/operations/H-014/clean-run-final-attempt3 +browser/final-983-attempt1",
+        "reviewEvidence": "Actual independent final_code_review APPROVE (reviews/final-code-review.md), final_architecture CLEAR zero blockers (reviews/final-architect.json), both exact98345ad6ce5757c71d44ba1ce59a683d46e0d910; no writer self-approval. Earlier failures/BLOCK/REQUESTCHANGES preserved."
+      },
+      {
+        "invariant": "Actual in-memory LangGraph saver/interrupt, server session/run/checkpoint/clarification/schema/data/policy identity; \u22642 pauses, TTL900s. Exact replay idempotent; changed same-ID payload conflicts; invalid/stale/foreign/expired rejected before calls. Human wait excluded from active180s, other counters persist across resume; process restart expires explicitly.",
+        "source": ".omx/ultragoal/ledger.jsonl#accepted-original-H014-architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "agent.py InMemorySaver/interrupt/server context/session/checkpoint/schema/data/policy/replay/inclusiveTTL",
+        "testEvidence": "test_i2_continuation/test_review_repairs expiry/replay/foreign/policy/data/requestID; finalM1resume/browserpause-resume; exact983full485/static/oracle157 PASS, docs/operations/H-014/clean-run-final-attempt3 +browser/final-983-attempt1",
+        "reviewEvidence": "Actual independent final_code_review APPROVE (reviews/final-code-review.md), final_architecture CLEAR zero blockers (reviews/final-architect.json), both exact98345ad6ce5757c71d44ba1ce59a683d46e0d910; no writer self-approval. Earlier failures/BLOCK/REQUESTCHANGES preserved."
+      },
+      {
+        "invariant": "Exact gpt-6.1-sol plan high, SQL/repair medium, no fallback/judge. Existing \u22645 calls/run, \u22644 SQL attempts/run, plan60s/SQL45s, output32768; one repair spends shared remainder. Payload\u226412000 UTF8 bytes, SQL\u22648000 bytes/chars, \u2264100 bindings, encoded bindings\u22648192 bytes/text\u22642000 bytes, results\u2264100 rows/64KiB, retained\u2264128KiB, trace\u22641MiB. Never raise ceilings silently. Unknown usage/holds accounting remains terminal and unchanged.",
+        "source": ".omx/ultragoal/ledger.jsonl#accepted-original-H014-architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "config.py fixedSol high-medium-medium/calls/time/size; llm.py original accounting; agent.py shared counters/resource gates unchanged",
+        "testEvidence": "test_bounds/test_sol_profile/test_provider_worker/test_practical_budget; unknownusage stop andsharedbudget tests; originalmonetaryhash unchanged; exact983full485/static/oracle157 PASS, docs/operations/H-014/clean-run-final-attempt3 +browser/final-983-attempt1",
+        "reviewEvidence": "Actual independent final_code_review APPROVE (reviews/final-code-review.md), final_architecture CLEAR zero blockers (reviews/final-architect.json), both exact98345ad6ce5757c71d44ba1ce59a683d46e0d910; no writer self-approval. Earlier failures/BLOCK/REQUESTCHANGES preserved."
+      },
+      {
+        "invariant": "AST allowlist + read-only SQLite authorizer + bound values/watchdog/integrity scan, unchanged DB hash. Safe SELECT is not semantic correctness: independent oracle detects wrong JOIN/aggregation. No hard memory-isolation or universal SQL claim.",
+        "source": ".omx/ultragoal/ledger.jsonl#accepted-original-H014-architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "sql_policy.py genericAST; db.py/worker read-only authorizer/watchdog/DELETE integrity; independent oracle separate from formatter",
+        "testEvidence": "test_db_domain/test_review_repairs corruption/locked/WAL/unsafe; bothDBinit/repeatrefusal/hash; oracle wrongJOIN/meanofmeans; exact983full485/static/oracle157 PASS, docs/operations/H-014/clean-run-final-attempt3 +browser/final-983-attempt1",
+        "reviewEvidence": "Actual independent final_code_review APPROVE (reviews/final-code-review.md), final_architecture CLEAR zero blockers (reviews/final-architect.json), both exact98345ad6ce5757c71d44ba1ce59a683d46e0d910; no writer self-approval. Earlier failures/BLOCK/REQUESTCHANGES preserved."
+      },
+      {
+        "invariant": "Library: Readers/Books/Loans, open=returned false; per-reader count includes zero, unit count scale1, separate schema/seed/descriptor/registry/result adapter/domain policy. Common core/DB safety/provider/graph/tracing/UI; both schemas exercise shared contracts early.",
+        "source": ".omx/ultragoal/ledger.jsonl#accepted-original-H014-architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "library.py own schema/catalog/registry/count1 with zero; common Agent/DB/provider/UI core and portability proof",
+        "testEvidence": "test_library zero/returned/FK/type/isolation/unit; finalportability proof and Library rawAda1Bob1/browser; exact983full485/static/oracle157 PASS, docs/operations/H-014/clean-run-final-attempt3 +browser/final-983-attempt1",
+        "reviewEvidence": "Actual independent final_code_review APPROVE (reviews/final-code-review.md), final_architecture CLEAR zero blockers (reviews/final-architect.json), both exact98345ad6ce5757c71d44ba1ce59a683d46e0d910; no writer self-approval. Earlier failures/BLOCK/REQUESTCHANGES preserved."
+      },
+      {
+        "invariant": "Trace all input/nodes/attempts/SQL/bindings/raw typed rows/adapted results/dependency binds/answer-or-error in one run, including resume. English UI reveals full trace and every step; failure/new question clears prior answer. Trace failure cannot produce untraced success.",
+        "source": ".omx/ultragoal/ledger.jsonl#accepted-original-H014-architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "tracing.py failclosed persisted JSONL; agent.py same-run events/replay; ui.py explicit ifelse no magichelp/None; allstepsraw/adapted anddownload",
+        "testEvidence": "test_readiness_ui_magic3 actualmagic; test_i2_ui fullsteps/clearing; final6class7capture53hashes/nohelp/noNone/currentrun/fullJSONL; exact983full485/static/oracle157 PASS, docs/operations/H-014/clean-run-final-attempt3 +browser/final-983-attempt1",
+        "reviewEvidence": "Actual independent final_code_review APPROVE (reviews/final-code-review.md), final_architecture CLEAR zero blockers (reviews/final-architect.json), both exact98345ad6ce5757c71d44ba1ce59a683d46e0d910; no writer self-approval. Earlier failures/BLOCK/REQUESTCHANGES preserved."
+      }
+    ]
+  },
+  "configured_gates": [],
+  "native_completion": "not claimed by this quality input; root actual tools/checkpoint required separately"
+}

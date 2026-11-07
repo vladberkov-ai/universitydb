@@ -22,7 +22,7 @@
   },
   "candidate_sha": "98345ad6ce5757c71d44ba1ce59a683d46e0d910",
   "pre_registration": "Proposed before live results; all48 planned/not-run; reviewer/author/root exposure disclosed, not sealed untouched holdout; independently replace if required.",
-  "candidate_status": "Bounded offline DoD achieved: exact983full485/static157oracle/fresh six-class browser, actual independent APPROVE+CLEAR, configured review gates clear. Root native/strict pending. Proposed future live48not-run.",
+  "candidate_status": "Bounded offline DoD achieved: exact983full485/static157oracle/fresh six-class browser, actual independent APPROVE+CLEAR, configured review gates clear. Actual root native COMPLETE/strict PASS5/5 verified. Proposed future live48not-run.",
   "normalization_review": "Before results: observer validates strict typed choice sets/duplicates then emits oracle-defined ordering. Scorer remains exact; frozenv1 unchanged, no case/product execution.",
   "candidate_history": [
     "331eb5a61648bccb7fa66eecb58d9cc284eda2a0 rejected after clean457/staticPASS but group-by E2E regression; no live scores exist.",

@@ -1,0 +1,90 @@
+{
+  "created_at": "2026-11-07T23:41:47.039581+00:00",
+  "scope": "H014 bounded offline readiness only",
+  "tested_sha": "98345ad6ce5757c71d44ba1ce59a683d46e0d910",
+  "pre_native_docs_sha": "0325cbf8ae1611435321281523591b7bb40acd90",
+  "actual_native_goal": {
+    "objective": "Complete the durable ultragoal plan in docs/operations/H-014/workflow/.omx/ultragoal/goals.json, including later accepted/appended stories, under the original brief constraints; use docs/operations/H-014/workflow/.omx/ultragoal/ledger.jsonl as the audit trail.",
+    "status": "complete",
+    "tokensUsed": 1261360,
+    "timeUsedSeconds": 2762,
+    "createdAt": 1794092103,
+    "updatedAt": 1794094866
+  },
+  "strict_checkpoint": {
+    "command": "omx ultragoal checkpoint --goal-id G005-cp-r5 --status complete --codex-goal-json <fresh actual complete snapshot> --quality-gate-json ../final-quality-gate.json --strict --json",
+    "working_directory": "docs/operations/H-014/workflow",
+    "exit_code": 0,
+    "ok": true,
+    "summary": {
+      "total": 5,
+      "pending": 0,
+      "inProgress": 0,
+      "complete": 5,
+      "failed": 0,
+      "reviewBlocked": 0,
+      "historicalReviewBlocked": 0,
+      "needsUserDecision": 0,
+      "superseded": 0,
+      "steeringBlocked": 0,
+      "aggregateComplete": true,
+      "artifactComplete": true
+    }
+  },
+  "fresh_status": {
+    "total": 5,
+    "pending": 0,
+    "inProgress": 0,
+    "complete": 5,
+    "failed": 0,
+    "reviewBlocked": 0,
+    "historicalReviewBlocked": 0,
+    "needsUserDecision": 0,
+    "superseded": 0,
+    "steeringBlocked": 0,
+    "aggregateComplete": true,
+    "artifactComplete": true
+  },
+  "goals": [
+    {
+      "id": "G001-cp-r1",
+      "status": "complete"
+    },
+    {
+      "id": "G002-cp-r2",
+      "status": "complete"
+    },
+    {
+      "id": "G003-cp-r3",
+      "status": "complete"
+    },
+    {
+      "id": "G004-cp-r4",
+      "status": "complete"
+    },
+    {
+      "id": "G005-cp-r5",
+      "status": "complete"
+    }
+  ],
+  "standalone_mode": {
+    "active": false,
+    "current_phase": "complete",
+    "method": "supported omx state write with actual current native session scope",
+    "exit_code": 0
+  },
+  "artifact_sha256": {
+    "docs/operations/H-014/workflow/.omx/ultragoal/brief.md": "1b62f77d524f3a213bcdf354066127c8e4000cf886b4dfeb76854b49ad0ccafb",
+    "docs/operations/H-014/workflow/.omx/ultragoal/goals.json": "21a70f990db18228f9a0d8b8887759e97e9715d15e57bcf731ae09501f11ed02",
+    "docs/operations/H-014/workflow/.omx/ultragoal/ledger.jsonl": "32298faaa8ca273db20e5942d04ac22422cdaebaf29fba4d9ae56a4fc5d9d594",
+    "docs/operations/H-014/final-quality-gate.json": "97507ad64695be94a2702d12cd9d56d0c085c7fe50d5e155c2d74eeac260ef60"
+  },
+  "raw_private_receipts_omitted": [
+    "native thread identity and raw before/snapshot/runtime state payloads"
+  ],
+  "live": "not-run",
+  "count": "not-run",
+  "credential_loading": "not-run",
+  "monetary_changes": "not-run",
+  "push": "not-run"
+}

@@ -23,7 +23,13 @@
   "prior_findings": "initial/interimBLOCK,REQUESTCHANGES and revoked preliminary draft preserved; source-level scoped repairs and fresh proofs close blockers",
   "cleaner": "bounded summary with pre-edit locks, no masking fallback/newdeps/ceilingchange",
   "offline_DoD": "achieved",
-  "native_COMPLETE_strict": "pending actual root postconditions; not asserted",
+  "native_COMPLETE_strict": {
+    "status": "actual COMPLETE/strict PASS5/5",
+    "aggregateComplete": true,
+    "artifactComplete": true,
+    "receipt": "docs/operations/H-014/native-strict-closeout.json",
+    "root_mode": "activefalse/complete supported success"
+  },
   "live": "48not-run; proposed44/48and7/8each, no approved newcap",
   "push": "not-run"
 }

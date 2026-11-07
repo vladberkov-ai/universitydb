@@ -78,4 +78,4 @@ passed485tests80.36s/all7commands0/157oracle;
 passed six classes/seven captures with focused raw/adapted rows and no help/None.
 Exact tested product98345ad6ce5757c71d44ba1ce59a683d46e0d910, not a later docs SHA.
 Full values checked in DOM+trace, not all cells fit one screenshot. Processes stopped.
-Final independent APPROVE/CLEAR received; root native/strict pending; live/push/defense not-run.
+Final independent APPROVE/CLEAR received; root actual native COMPLETE/strict PASS5/5; live/push/defense not-run.

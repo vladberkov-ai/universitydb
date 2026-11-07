@@ -1,0 +1,16 @@
+{
+  "tested_product_sha": "98345ad6ce5757c71d44ba1ce59a683d46e0d910",
+  "documentation_files_checked": 13,
+  "privacy_links_json": "PASS",
+  "eval_manifest_hashes": 17,
+  "seven_original_invariants": "unchanged exact text",
+  "quality_gate_hash": "matches native closeout receipt",
+  "source_test_resources_harness_scripts_diff_vs_tested": "empty",
+  "native": "actual COMPLETE",
+  "strict": "actual PASS5/5 aggregateComplete/artifactComplete true",
+  "cp_r3": "418e4785f93df34756430bcc7ad46e8da2ac3874",
+  "cp_r4": "94a0e97383e02e8382a0e3cd0217db4558e93511",
+  "cp_r5_pre_native": "0325cbf8ae1611435321281523591b7bb40acd90",
+  "push": "not-run",
+  "new_full_product_run": "not-run docs-only closeout"
+}

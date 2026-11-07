@@ -86,7 +86,6 @@ or relaxed semantics/ceilings are introduced by H014.
 
 Fresh tracked-only frozen install and clean full485tests/static/157oracle plus actual
 six-class browser passed at98345ad6ce5757c71d44ba1ce59a683d46e0d910. Typed rows are
-visible without Streamlit return-value help/None; final independent APPROVE/CLEAR received; root native/strict
-remain pending. This closes technical clean-run/UI verification, not production
+visible without Streamlit return-value help/None; final independent APPROVE/CLEAR received; root actual native COMPLETE/strict PASS5/5 verified. This closes technical clean-run/UI verification, not production
 readiness, multi-user security, durable recovery, real-model accuracy or publication.
 [Current source/preservation evidence](../operations/H-014/final-983-preservation-remote.json).

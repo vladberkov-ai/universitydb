@@ -1,6 +1,6 @@
 # H-014 v2 — offline readiness report
 
-**Bounded offline DoD achieved at exact98345ad:485tests/157oracle, fresh clean/browser, independent APPROVE+CLEAR and configured gates clear. Root native COMPLETE/strict remain pending actual postconditions.**
+**Bounded offline DoD achieved at exact98345ad:485tests/157oracle, fresh clean/browser, independent APPROVE+CLEAR and configured gates clear. Root actual native **COMPLETE**, supported strict **PASS5/5**; aggregateComplete/artifactComplete true.**
 This is the bounded I4 + verification-I5 **offline** readiness task, not full live
 acceptance, publication or owner defense. No live generation/access/count calls,
 credential loading, monetary ledger/cap/hold changes, push or vault writes are
@@ -39,7 +39,7 @@ permitted. Accepted ADR-CHAT-006 semantics and Sol high/medium/medium are unchan
   Docs-only `ac998a9b411b6d15b7d4a555523e653c1f124197` is not tested product983.
   Fresh exact983full/browser/regression assertions PASS:485tests80.36s,
   all seven pipeline exits0,157oracle and six actual browser classes/seven captures.
-  Independent final APPROVE+CLEAR received; root native/strict postconditions pending.
+  Independent final APPROVE+CLEAR received; root native COMPLETE/strict PASS5/5 now verified.
 - Later evidence/documentation commits are not newly full-tested product identities.
 
 ## Independent audit and repair
@@ -202,11 +202,11 @@ code-reviewer **APPROVE**, zero unresolved blockers: [actual review](../operatio
 Earlier [REQUEST CHANGES/revoked draft](../operations/H-014/reviews/ui-visual-block-code-review.md)
 is preserved, not substituted as final approval. Refreshed configured review gates
 returned `[]` after both actual verdicts. Cleaner/invariant technical evidence PASS;
-final native COMPLETE/strict remain pending,
+final actual native COMPLETE/strict PASS5/5 verified,
 root-owned. Live/API/count/access/credential loading/monetary mutation/push and owner
 defense: **not-run**. Missing live/push authority does not block this bounded offline
-DoD. Bounded offline DoD is now achieved; root native/strict postconditions are
-separate pending steps, not preclaimed here.
+DoD. Bounded offline DoD is achieved; root actual native COMPLETE and strict PASS5/5
+now confirmed by the separate receipt below.
 
 ## Verified local checkpoints and independent synthesis
 
@@ -218,3 +218,24 @@ separate pending steps, not preclaimed here.
 - [Final independent synthesis](../operations/H-014/reviews/final-synthesis.json):
   actual APPROVE/CLEAR, no unresolved blockers, configured gates empty. New final
   docs receipt commit records its SHA separately, never self-identifies in its content.
+
+## Actual native and strict closeout — later verified receipt
+
+[Native/strict closeout](../operations/H-014/native-strict-closeout.json),
+[final quality-gate input](../operations/H-014/final-quality-gate.json),
+[fresh remote status](../operations/H-014/final-remote-status.json).
+Root called the actual goal tool: **COMPLETE**; fresh snapshot records1,261,360tokens
+and2,762seconds (46m02s), no explicit token budget. These native orchestration
+usage fields are not product API spending and do not change the monetary ledger. Supported nested G005 strict checkpoint exited0/oktrue: all five
+stories complete, aggregateComplete=true, artifactComplete=true; fresh status
+confirms5/5complete, no pending/failed/reviewBlocked. Supported root-current-native
+standalone mode transition succeeded active=false/current_phase=complete. These
+are actual postconditions, not inferred from documentation or shell-only state.
+
+CP-R5 pre-native documentation commit: `0325cbf8ae1611435321281523591b7bb40acd90`.
+This late docs-only receipt does not alter tested product
+`98345ad6ce5757c71d44ba1ce59a683d46e0d910` or claim another485test run.
+Fresh remote main remains `6cc7ad3af426d0da6818281b035c5e683806f357`; no push/fetch
+or remote-configuration changes. Final local receipt commit is reported separately
+without a self-SHA edit loop. Live48/API/count/access/credentials/monetary changes/
+push/owner defense remain not-run. Proposed thresholds/budget are not accepted.

@@ -5,7 +5,7 @@ Later docs-only `ac998a9b411b6d15b7d4a555523e653c1f124197` does not mean a diffe
 full product test. Final full clean/browser technical evidence **PASS**:485tests80.36s/all7commands0/
 157oracle/28clean+53browserhashes, visible typed raw/adapted UI with nohelp/noNone.
 Independent final code-reviewer **APPROVE** and architect **CLEAR**, zero unresolved
-blockers; refreshed configured review gates empty. Root native/strict pending.
+blockers; refreshed configured review gates empty. Root actual native COMPLETE/strict PASS5/5 verified.
 This audit copies the seven original obligations unchanged, then maps actual source,
 tests and bounded evidence. Read-only workflow brief is not modified by this lane.
 Accepted ADR006/Sol profile stays unchanged; offline providers are not model accuracy.
@@ -93,7 +93,7 @@ contextual registered grammar39tests; then actual c631visualBLOCK → actual mag
 3failure lock → two explicit UI branches plus browser assertions. c631482PASS/
 157oracle/browser screenshots do not waive that visual blocker. Preserve all failed
 attempts and initial/interim reviewer findings. Exact983full485/static157oracle and strengthened actual browser now close the
-technical finding; independent APPROVE/CLEAR received; root native/strict pending.
+technical finding; independent APPROVE/CLEAR received; root actual native COMPLETE/strict PASS5/5 verified.
 
 No live/count/access/credential operation, spending migration, judge/fallback,
 accepted-semantics change, new dependency, global magic override, screenshot masking
@@ -110,4 +110,6 @@ disclosed orchestration recovery.17eval package hashes and28clean/53browser hash
 verified. Owned server/browser stopped, temporary ledger absent, disposable tracked
 checkout clean. These technical receipts do not invent final reviewer approval.
 
-Independent architect final **CLEAR**, zero unresolved blockers: [actual receipt](reviews/final-architect.json). Actual final code-reviewer [APPROVE](reviews/final-code-review.md), zero unresolved blockers; native/strict root-owned pending, no reused H013 verdict.
+Independent architect final **CLEAR**, zero unresolved blockers: [actual receipt](reviews/final-architect.json). Actual final code-reviewer [APPROVE](reviews/final-code-review.md), zero unresolved blockers; native/strict root-owned COMPLETE/PASS5/5, no reused H013 verdict.
+
+Actual root native **COMPLETE** and supported strict **PASS5/5**, aggregateComplete/artifactComplete true; [closeout receipt](native-strict-closeout.json). No new full product run is claimed by this documentation update.

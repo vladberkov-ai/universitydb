@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-11-07T23:39:29.458562+00:00",
+  "command": "git ls-remote origin refs/heads/main",
+  "exit": 0,
+  "remote_main": "6cc7ad3af426d0da6818281b035c5e683806f357",
+  "ref": "refs/heads/main",
+  "local_head_before_native_closeout": "0325cbf8ae1611435321281523591b7bb40acd90",
+  "tested_sha": "98345ad6ce5757c71d44ba1ce59a683d46e0d910",
+  "source_test_resource_harness_diff_vs_tested": "empty",
+  "git_diff_check": "pass",
+  "preservation10": "all exact match/restored; disclosed recovery",
+  "fetch": "not-run external origin",
+  "push": "not-run",
+  "remote_configuration_changes": false
+}
