@@ -1,0 +1,47 @@
+{
+  "source": "Actual parent NEW_TASK forwarding root observations; no performer goal-tool or CLI execution.",
+  "supersession": "New final blocked observation supersedes prior active observations prospectively; previous receipts remain unchanged historical facts.",
+  "blocked_audit": {
+    "root_reported_consecutive_goal_turns": 3,
+    "condition": "same billing/full-input blocker; no meaningful progress possible"
+  },
+  "native_update": {
+    "operation": "update_goal",
+    "arguments": {
+      "status": "blocked"
+    },
+    "succeeded": true
+  },
+  "fresh_native_snapshot": {
+    "status": "blocked",
+    "identity": "same existing objective/thread",
+    "tokensUsed": 1556117,
+    "timeUsedSeconds": 2787,
+    "updatedAt": 1794070805
+  },
+  "supported_checkpoint": {
+    "surface": "omx ultragoal checkpoint",
+    "goal_id": "G004-i1-approved-live-and-ui",
+    "status": "blocked",
+    "codex_goal_json": "genuine fresh blocked snapshot",
+    "exit_code": 0,
+    "ok": true,
+    "recorded_in_ledger": true,
+    "retry_basis": "actual changed prerequisite: native goal transitioned from active to blocked"
+  },
+  "plan_state": {
+    "G004": "in_progress per CLI design; blocked checkpoint recorded",
+    "G001_G002_G003": "complete",
+    "aggregateComplete": false,
+    "artifactComplete": false
+  },
+  "head": "f8203073bc1534a5dc4bb6acf4e5c156e5b388aa",
+  "head_unchanged": true,
+  "application_provider_count_access_calls": 0,
+  "recorded_spend_usd": "0",
+  "holds_usd": "0",
+  "authorized_remainder_usd": "10",
+  "invoice_verified": false,
+  "I1": "incomplete; live not run",
+  "performer_actions": "Only this new untracked receipt written; no other file edits, commit, app, research, goal tools or runtime CLI."
+}

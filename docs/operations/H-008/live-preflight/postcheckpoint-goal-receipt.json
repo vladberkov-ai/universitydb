@@ -1,0 +1,59 @@
+{
+  "at_utc": "2026-11-07T16:59:22.395371+00:00",
+  "source": "Actual parent NEW_TASK forwarding root observations; performer did not invoke goal/runtime tools.",
+  "commit": "f8203073bc1534a5dc4bb6acf4e5c156e5b388aa",
+  "root_git_verification": {
+    "head_verified": true,
+    "git_show_check_exit": 0,
+    "tracked_and_index_clean": true
+  },
+  "native_snapshot": {
+    "status": "active",
+    "identity": "same existing objective/thread",
+    "tokensUsed": 1537150,
+    "timeUsedSeconds": 2707,
+    "updatedAt": 1794070725
+  },
+  "checkpoint_attempt": {
+    "surface": "documented omx ultragoal checkpoint",
+    "goal_id": "G004-i1-approved-live-and-ui",
+    "requested_status": "blocked",
+    "codex_goal_json": "actual active snapshot, not fabricated",
+    "exit_code": 1,
+    "exact_diagnostic": "[ultragoal] Cannot record a blocked ultragoal checkpoint while the existing Codex goal is active; strict objective mismatch protection remains required for active or incomplete goals.",
+    "blocked_story_checkpoint_succeeded": false,
+    "retry": false
+  },
+  "supported_annotation": {
+    "surface": "steer annotate_ledger",
+    "accepted": true,
+    "idempotency_key": "H008-live-preflight-f820307-partial-checkpoint",
+    "included": [
+      "actual commit SHA",
+      "billing blocker",
+      "exact checkpoint failure",
+      "documentary review verdicts",
+      "spend0/holds0/remainder10",
+      "native active / G004 in_progress"
+    ]
+  },
+  "native_mutations_called": {
+    "complete": false,
+    "blocked": false,
+    "paused": false
+  },
+  "final_status": {
+    "native_goal": "active",
+    "G004": "in_progress",
+    "billing": "blocked in meaning; not a successful blocked lifecycle transition",
+    "I1": "incomplete",
+    "live": "not run"
+  },
+  "money": {
+    "recorded_spend_usd": "0",
+    "holds_usd": "0",
+    "authorized_remainder_usd": "10",
+    "invoice_verified": false
+  },
+  "receipt_status": "new untracked postcommit receipt only; no committed files, old receipts, source, runtime state or Git metadata changed by performer"
+}

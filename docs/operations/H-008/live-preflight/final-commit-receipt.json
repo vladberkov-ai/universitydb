@@ -1,0 +1,48 @@
+{
+  "at_utc": "2026-11-07T16:58:36.884560+00:00",
+  "commit": "f8203073bc1534a5dc4bb6acf4e5c156e5b388aa",
+  "parent": "af8cd2455442c7decbbb766f02ebe68b7c1cb430",
+  "subject": "docs: checkpoint G004 active-goal billing preflight blocker",
+  "files": [
+    "AGENTS.md",
+    "README.md",
+    "docs/ai/README.md",
+    "docs/ai/omx/H-008-g004-no-call-performer-task.txt",
+    "docs/ai/omx/H-008-live-billing-research-task.txt",
+    "docs/operations/H-008/live-preflight/api-billing-references.md",
+    "docs/operations/H-008/live-preflight/baseline.json",
+    "docs/operations/H-008/live-preflight/no-call-technical-preflight.md",
+    "docs/operations/H-008/live-preflight/performer-prompt-projection.md",
+    "docs/operations/H-008/live-preflight/performer-prompt-receipt.json",
+    "docs/operations/H-008/live-preflight/review-receipt.json",
+    "docs/operations/H-008/live-preflight/root-observations.json",
+    "docs/operations/H-008/live-preflight/validation.json",
+    "docs/reports/H-008-live-preflight-blocker.md"
+  ],
+  "checks": {
+    "tracked_clean": true,
+    "staged_clean": true,
+    "protected248unchanged": true,
+    "existing18receipts_unchanged": true,
+    "ledger_and_lock_absent": true,
+    "no_remotes": true
+  },
+  "stage_permission": "ordinary exact git add EROFS; supported exact require_escalated staging succeeded",
+  "commit_permission": "specific supported require_escalated local commit succeeded",
+  "review": "code APPROVE / architect CLEAR docs-only partial; live-dispatch BLOCK; no strict I1 acceptance",
+  "application_provider_count_access_requests": 0,
+  "new_spend_usd": "0",
+  "new_holds_usd": "0",
+  "recorded_total_spend_usd": "0",
+  "recorded_total_holds_usd": "0",
+  "authorized_remainder_usd": "10",
+  "billing_invoice_verified": false,
+  "status": "I1 incomplete; G004 unresolved; native lifecycle root-owned",
+  "saved_committed_pushed_public": {
+    "saved": true,
+    "committed": true,
+    "pushed": false,
+    "public": false
+  },
+  "postcommit_status_before_this_receipt": "?? .omx-state-locks.identity.json\n?? .omx-state-locks/\n?? docs/operations/H-007/final-commit-receipt.json\n?? docs/operations/H-007/postcheckpoint-goal-receipt.json\n?? docs/operations/H-008/cap10-resume/final-commit-receipt.json\n?? docs/operations/H-008/final-commit-receipt.json\n?? docs/operations/H-008/postcheckpoint-goal-receipt.json\n"
+}

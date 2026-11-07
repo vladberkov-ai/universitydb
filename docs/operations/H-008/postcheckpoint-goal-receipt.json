@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-07",
+  "current_commit": "5c127c526852277d7989b744e777fb1f38c1f65f",
+  "config_checkpoint": "cfaf8601b8b985687b45ae4f9792891ee75064f4",
+  "baseline": "470bc3ea83bcf9413cd19557d27bccbd8406fdf4",
+  "source": "Actual root native goal and supported CLI results delivered to performer; performer independently read/hash-checked the two exact private receipts, exported only selected safe statuses. No runtime state mutation by performer.",
+  "private_source_hashes": {
+    "postcheckpoint-get-goal.json": "b7d8caafe9afce298debeb0e5e7062ef9f4cd4f174dbdda9b4a5098277eb1224",
+    "postcheckpoint-status.json": "8788769712657a4f7079b9b039a1c823ce415cf28d5784b02cd996ab13f3b4f5"
+  },
+  "native_goal_status": "blocked",
+  "native_same_existing_aggregate": "Root confirmed same existing aggregate; no new goal/plan/IDs",
+  "supported_checkpoint": {
+    "observer": "root actual supported command result",
+    "requested_status": "blocked",
+    "accepted": true,
+    "exit_code": 0,
+    "evidence": "Current H008 commits, resolved approved profile, offline proof, access/cap and native resume blockers recorded on existing G004."
+  },
+  "cli_summary": {
+    "total": 4,
+    "pending": 0,
+    "inProgress": 1,
+    "complete": 3,
+    "failed": 0,
+    "reviewBlocked": 0,
+    "historicalReviewBlocked": 0,
+    "needsUserDecision": 0,
+    "superseded": 0,
+    "steeringBlocked": 0,
+    "aggregateComplete": false,
+    "artifactComplete": false,
+    "activeGoalId": "G004-i1-approved-live-and-ui"
+  },
+  "G004": {
+    "status": "in_progress",
+    "attempt": 1
+  },
+  "reconciliation": {
+    "ok": false,
+    "errors": [
+      "Codex goal status mismatch: expected active, got blocked."
+    ],
+    "interpretation": "Accepted checkpoint is not full runtime health. Existing CLI story in_progress conflicts with native blocked; exact blocked-to-active capability gap, not a checkpoint failure or successful resume."
+  },
+  "observed_after_cli": "Root fresh native get_goal still blocked after CLI; no retry loop.",
+  "root_integration_checks": {
+    "tests": "108 passed16.99s",
+    "ruff": "All checks passed",
+    "format": "18files already formatted",
+    "mypy": "Success11sourcefiles",
+    "compileall": "src/tests exit0",
+    "diff_check": 0,
+    "configured_code_review_gates": []
+  },
+  "git": {
+    "tracked_and_index_clean_after_commit": true,
+    "root_git_show_check": 0,
+    "root_cached_check": 0,
+    "remotes": "none; no create/change/push",
+    "saved_not_committed_receipts": [
+      "final-commit-receipt.json",
+      "postcheckpoint-goal-receipt.json"
+    ],
+    "preserved_old_H007_receipts_and_locks": "unchanged/untracked"
+  },
+  "not_done": [
+    "Native blocked-to-active resume unverified/unavailable on exposed tools",
+    "Live account/key access and explicit total cap absent",
+    "Technical billing/input coverage verification",
+    "Real-model S6, independent changed oracle, live UI screenshot/full same-run trace",
+    "Strict final I1 gate"
+  ],
+  "paid_calls": 0,
+  "I1": "NOT COMPLETE",
+  "next_step": "Owner supplies locally usable account access and explicit total continuation USD cap; root/owner uses an actually supported existing native goal-control Resume if exposed and verifies fresh get_goal. No model reselection, guessed IDs, replacement goal or state edits.",
+  "receipt_status": "Saved untracked after verified final commit; separate truthful later cutoff, no extra commit required."
+}

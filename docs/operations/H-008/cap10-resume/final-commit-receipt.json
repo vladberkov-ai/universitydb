@@ -1,0 +1,66 @@
+{
+  "status": "LOCAL DOCS COMMIT VERIFIED; I1 NOT COMPLETE",
+  "commit": "af8cd2455442c7decbbb766f02ebe68b7c1cb430",
+  "parent": "5c127c526852277d7989b744e777fb1f38c1f65f",
+  "branch": "main",
+  "subject": "docs: record H-008 total cap and native resume blocker",
+  "commit_scope": [
+    "AGENTS.md",
+    "README.md",
+    "docs/ai/README.md",
+    "docs/ai/omx/H-008-cap10-actual-prompt.txt",
+    "docs/ai/omx/H-008-cap10-performer-projection.json",
+    "docs/ai/omx/H-008-cap10-prompt-receipt.json",
+    "docs/operations/H-008/cap10-resume/baseline.json",
+    "docs/operations/H-008/cap10-resume/document-validation.json",
+    "docs/operations/H-008/cap10-resume/root-observations.json",
+    "docs/reports/H-008-cap10-native-resume-blocker.md",
+    "omx_wiki/index.md"
+  ],
+  "file_count": 11,
+  "normal_git_add": {
+    "exit_code": 128,
+    "error": "Read-only file system: .git/index.lock"
+  },
+  "supported_explicit_git_add": {
+    "exit_code": 0,
+    "exact_paths_only": true
+  },
+  "normal_git_commit": {
+    "exit_code": 128,
+    "error": "Read-only file system: .git/index.lock"
+  },
+  "supported_explicit_git_commit": {
+    "exit_code": 0
+  },
+  "postcommit_checks": {
+    "expected_parent": true,
+    "exact_docs_scope": true,
+    "commit_bytes_match_worktree": true,
+    "tracked_worktree_clean": true,
+    "index_empty": true,
+    "git_show_whitespace_check_exit": 0,
+    "protected_document_hashes_unchanged": 214,
+    "original_untracked_hashes_unchanged": 7,
+    "original_untracked_files_still_untracked": true
+  },
+  "staged_diff_sha256": "8af4829efba93c03e4385e9c0a06372cdb12dcceb59a98958c5ea0756a786377",
+  "staged_diff_bytes": 62914,
+  "committed_document_sha256": {
+    "AGENTS.md": "43411fbed7eef67ed3b24b7fd685dcb31ac002c43879732a4c23ed1a0f8c958f",
+    "README.md": "1f017cfe866f08edc418f9526e7db5a92874b084d47fa20375ef68867f344479",
+    "docs/ai/README.md": "dfd6d2dc779baea129a1faca9c862d375ffbae9648b6c9577ae51181746aaf9f",
+    "docs/ai/omx/H-008-cap10-actual-prompt.txt": "16ef945a7856be644ca2476bfbc13db3d9e620743d1d69faa278c4357e6d0c1c",
+    "docs/ai/omx/H-008-cap10-performer-projection.json": "b6120372b076ebd2de688508ac6c4d1cb47c99ee77db85df1e1e7f3f98a2d603",
+    "docs/ai/omx/H-008-cap10-prompt-receipt.json": "d618298b52573e5e773d4b294079d960b6b24f848ab5dddb9a11bb91e8a3b2c6",
+    "docs/operations/H-008/cap10-resume/baseline.json": "9d159758b02b6d8f5299fc55af49c48f6dd4e18a19f733912aa9acb49ef89c91",
+    "docs/operations/H-008/cap10-resume/document-validation.json": "62a10c2ebb3dbcbf98ef56645e611417969c7ce63270a588c10ee8f6d1065ab6",
+    "docs/operations/H-008/cap10-resume/root-observations.json": "2f2e9dc8704b298821457271a49c2066c566610c0f7b8865282656c88875b845",
+    "docs/reports/H-008-cap10-native-resume-blocker.md": "93a8b833db99983b35a341768acdcffff3fcb4d147a6c392f4cb959955e061cc",
+    "omx_wiki/index.md": "d53aa35b9952aeae387027cdef2f5f09675a60890f0d39cad8280d9f78c0b4d2"
+  },
+  "native_status": "Root prior observation blocked, not rechecked by performer; root owns next supported checkpoint and fresh native snapshot.",
+  "budget": "Root-reported local recorded spend0/holds0/remaining10USD, paid requests0; no new paid requests or ledger mutation by performer.",
+  "publication": "Not pushed or public; no remote mutation.",
+  "receipt_status": "Written after commit; intentionally untracked, not included in the SHA it records."
+}

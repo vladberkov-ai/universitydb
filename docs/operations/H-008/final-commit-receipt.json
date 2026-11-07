@@ -1,0 +1,17 @@
+{
+  "commit": "5c127c526852277d7989b744e777fb1f38c1f65f",
+  "parent": "cfaf8601b8b985687b45ae4f9792891ee75064f4",
+  "baseline": "470bc3ea83bcf9413cd19557d27bccbd8406fdf4",
+  "scope": "24 explicit reviewed correction/evidence paths; H007 receipts and initial locks preserved/untracked",
+  "tracked_and_staged_clean_after_commit": true,
+  "frozen_source_hashes_match": true,
+  "baseline_preserved_hashes_match": true,
+  "tests": "Performer108passed14.64s; independent code10817.26s/architect10816.89s; root10816.99s. All attributed diagnostics pass as separately recorded.",
+  "review": "code APPROVE corrected OFFLINE PARTIAL + architect WATCH = COMMENT; configured gates[]; not strict clean/live I1 completion",
+  "paid_calls": 0,
+  "live": "not-run; key/account/cap and technical billing verification absent; no approved remaining cap",
+  "git_permissions": "Each ordinary write failed EROFS; each own exact supported add/commit escalation succeeded. No blanket authority, remotes/push/reset/amend.",
+  "root_runtime": "Root owns fresh postcommit get_goal/checkpoint/status; not yet included in this receipt. Existing native blocked, no resume API verified.",
+  "pushed": false,
+  "receipt_status": "Saved after actual commit; necessarily untracked/not included in its own referenced commit."
+}

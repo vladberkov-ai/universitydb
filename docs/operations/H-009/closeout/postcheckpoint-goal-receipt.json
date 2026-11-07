@@ -1,0 +1,77 @@
+{
+  "created_at_utc": "2026-11-07T18:00:38.647147+00:00",
+  "source": "Actual root native-tool and supported CLI completion results relayed to documents performer. Performer executes bookkeeping write only; no goal/runtime/API command.",
+  "commit": "aeb1598cc745cda7a22918e8ace5e121542ea178",
+  "root_postcheckpoint_git_checks": {
+    "head_matches": true,
+    "tracked_index_clean": true,
+    "remotes": []
+  },
+  "native_completion": {
+    "actual_update_goal_status": "complete",
+    "fresh_get_goal": {
+      "status": "complete",
+      "thread_id": "01a1b649-9f9b-7e32-8c71-138ac3328f7e",
+      "same_original_objective": true,
+      "tokens_used": 2067399,
+      "time_used_seconds": 3752,
+      "updated_at_unix": 1794074372
+    }
+  },
+  "supported_strict_checkpoint": {
+    "goal_id": "G004-i1-approved-live-and-ui",
+    "status": "complete",
+    "strict": true,
+    "exit_code": 0,
+    "ok": true,
+    "quality_gate": "Actual cleaner, verification, fresh independent APPROVE/CLEAR and17 grouped proved domain/acceptance invariants, backed by35-row requirement audit. I32 was not pre-proved.",
+    "aggregate_completed_at": "2026-11-07T17:59:33.407Z"
+  },
+  "actual_final_status": {
+    "total": 4,
+    "complete": 4,
+    "pending": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "review_blocked": 0,
+    "aggregate_complete": true,
+    "artifact_complete": true,
+    "reconciliation": {
+      "ok": true,
+      "warnings": [],
+      "errors": []
+    }
+  },
+  "ledger_audit": {
+    "path": ".omx/ultragoal/ledger.jsonl",
+    "last_event": "aggregate_completed",
+    "contains": [
+      "codexGoal",
+      "qualityGate"
+    ],
+    "performer_manual_edit": false
+  },
+  "I32_postcondition": "NOW ACTUALLY SATISFIED: native complete, fresh complete snapshot, strict checkpoint and final reconciled status. Earlier committed pending cutoffs remain truthful historical snapshots, not rewritten.",
+  "i1_status": "COMPLETE in limited I1 scope only",
+  "live_accounting": {
+    "calls": 6,
+    "input_tokens": 7277,
+    "output_tokens": 2775,
+    "observed_estimate_usd": "0.0705485",
+    "retained_reservations_usd": "2.558688",
+    "accounted_effective_usd": "2.558688",
+    "unknown_usage_holds": 0,
+    "stop": null,
+    "remaining_to_8_usd": "5.441312",
+    "remaining_to_10_usd": "7.441312",
+    "not_provider_invoice_guarantee": true
+  },
+  "remaining_outside_scope": [
+    "R15/public delivery remains future/open; no remote or push",
+    "I2–I5 not started",
+    "No defense preparation or production-readiness claim",
+    "U01 full transcript coverage remains partial"
+  ],
+  "runtime_limits": "Historical phase/HUD writer binding gap remains recorded; actual native goal and durable plan lifecycle independently verified complete. No state clear/cancel/goal clear or manual ID/state mutation.",
+  "receipt_status": "New saved untracked postcheckpoint receipt only; no older receipt/committed file rewritten, no new commit/API call. Stop after saving."
+}

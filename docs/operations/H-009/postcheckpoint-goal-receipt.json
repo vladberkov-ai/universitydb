@@ -1,0 +1,58 @@
+{
+  "created_at_utc": "2026-11-07T17:30:04.364421+00:00",
+  "source": "Actual root observations relayed to documents performer after local commit; no goal/runtime commands executed by this performer.",
+  "commit": "1ae9a35132e6bd2d0c16583a5015cc2a34681cd0",
+  "git": {
+    "root_verified_head": true,
+    "git_show_check_exit_code": 0,
+    "tracked_index_clean": true
+  },
+  "native_goal": {
+    "status": "blocked",
+    "thread_id": "01a1b649-9f9b-7e32-8c71-138ac3328f7e",
+    "same_aggregate_goal": true,
+    "tokens_used": 1556117,
+    "time_used_seconds": 2787,
+    "updated_at_unix": 1794070805
+  },
+  "supported_checkpoint": {
+    "goal_id": "G004-i1-approved-live-and-ui",
+    "status_requested": "blocked",
+    "exit_code": 0,
+    "ok": true,
+    "updated_at": "2026-11-07T17:29:45.639Z",
+    "artifact_goal_status": "in_progress",
+    "blocked_checkpoint_recorded_in_existing_ledger": true,
+    "completed_goals_preserved": [
+      "G001",
+      "G002",
+      "G003"
+    ]
+  },
+  "current_blocker": "Native goal must be resumed before live. H009 supersedes the former count/input-proof blocker; do not restart proof research.",
+  "owner_action": "/goal resume in the composer of this same Codex session",
+  "live": {
+    "generation_calls": 0,
+    "s6": "not run",
+    "mutation": "not run",
+    "ui": "not run",
+    "i1_complete": false
+  },
+  "money": {
+    "accounted_usd": "0",
+    "holds_usd": "0",
+    "remaining_to_dispatch_threshold_usd": "8",
+    "remaining_to_total_cap_usd": "10",
+    "contingency_usd": "2",
+    "invoice_verified": false
+  },
+  "git_hook_followup": {
+    "source": "Root read-only Git hook metadata inspection after commit",
+    "configured_core_hooksPath": false,
+    "hook_directory": "14 regular *.sample files only; no active hooks or symlinks",
+    "actual_commit_override": "Per-command core.hooksPath=/dev/null was unnecessary; recorded in final-commit-receipt.json, no hook-execution claim. Do not repeat without necessity and grounds.",
+    "persistent_git_config_changed": false
+  },
+  "receipt_status": "New saved untracked postcheckpoint receipt; no committed file or older receipt modified, no new commit/push.",
+  "performer_boundaries": "No goal/OMX/API/application call, credential read or source; stop after saving."
+}

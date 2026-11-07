@@ -1,0 +1,55 @@
+{
+  "observed_utc": "2026-11-07T14:35:21.163849+00:00",
+  "kind": "safe field projection from actual root-owned supported API/CLI output; performer persisted read-only projection",
+  "commit": "470bc3ea83bcf9413cd19557d27bccbd8406fdf4",
+  "source_sha256": {
+    ".omx/H-007/root-api-evidence/postcheckpoint-get-goal.json": "1f89f1c5288cc778ba18c99db178b312cb721267b10057b2f4126d69b8bf63da",
+    ".omx/H-007/root-api-evidence/postcheckpoint-status.json": "c43490a6a518760c5e9daab91fc02c87242935f7b90991c5dc368993027d30c6"
+  },
+  "native_status": "active",
+  "native_goal_complete": "not called; active aggregate incomplete",
+  "root_observed_cli_summary": {
+    "G001": "complete",
+    "G002": "complete",
+    "G003": "complete",
+    "G004": "pending; attempt0; not-started",
+    "aggregateComplete": false,
+    "artifactComplete": false,
+    "in_progress": false,
+    "reconciliation": {
+      "ok": true,
+      "warnings": [],
+      "errors": []
+    }
+  },
+  "summary_provenance": "actual native result from root; raw source hashes independently matched here; no raw private runtime/state copied wholesale",
+  "live_blocker": "No specific model approval, local account/key access or explicit total smoke/retry cost cap; real-model S6+mutation/live UI not run;0application paidcalls/cost",
+  "strict_final_gate": "deferred; combined offline COMMENT with architecture WATCH, not fullI1completion",
+  "runtime_boundary": "no manual IDs/state mutation; no OMX update/repair or H006 Advisory operation; sanctioned goal/ledger commands only",
+  "git": "root show/cachedchecks0; tracked/indexclean; no remotes/push",
+  "receipt_status": "saved separately and untracked by design, no extra commit; does not change referenced commit",
+  "stop": "performer stopped; noI2-I5/defense/publication",
+  "actual_cli_summary": {
+    "total": 4,
+    "pending": 1,
+    "inProgress": 0,
+    "complete": 3,
+    "failed": 0,
+    "reviewBlocked": 0,
+    "historicalReviewBlocked": 0,
+    "needsUserDecision": 0,
+    "superseded": 0,
+    "steeringBlocked": 0,
+    "aggregateComplete": false,
+    "artifactComplete": false
+  },
+  "actual_reconciliation": {
+    "ok": true,
+    "snapshot": {
+      "available": true,
+      "status": "active"
+    },
+    "warnings": [],
+    "errors": []
+  }
+}
