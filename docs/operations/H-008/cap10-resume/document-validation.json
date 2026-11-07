@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "scope": "Docs-only targeted validation; no product/SDK/provider checks, credentials read, live requests, setup or old input-manifest rerun. Historical user-prompt shell text is not an executable example.",
+  "commands_run_by_performer": [
+    "git status --short",
+    "git rev-parse HEAD",
+    "git diff --check",
+    "git diff -- <four named documentation files>",
+    "git diff --no-index --check /dev/null <each named new document>",
+    "git diff --no-index -- /dev/null <each named new document>",
+    "git merge-base --is-ancestor <each preserved checkpoint> HEAD",
+    "python3 /tmp/h008-cap10-doc-validate.py"
+  ],
+  "initial_diagnostic_failure": {
+    "command": "python (read-only JSON metadata inspection)",
+    "exit_code": 127,
+    "cause": "python command not found",
+    "recovery": "Used available python3; metadata and source hash checks passed."
+  },
+  "json_files_parsed": 5,
+  "changed_local_markdown_links_checked": 14,
+  "protected_document_hashes_unchanged": 214,
+  "preserved_untracked_file_hashes_unchanged": 7,
+  "preserved_checkpoint_ancestry": "PASS",
+  "tracked_diff_scope": "Exactly four allowed documentation files",
+  "new_files_scope": "Exactly seven allowed documents, including this validation receipt",
+  "staged_files_before_review": 0,
+  "validation_tool_adjustment": "Initial unbounded sk- pattern matched ordinary task-projection filename text; added word boundary, no secret match or file change. git diff --no-index --check returns1 for a new differing file with empty diagnostics; validator accepts0/1 with no whitespace errors.",
+  "privacy_pattern_scan": "PASS; changed/new files only; no credentials file opened; no key/env/header values exported",
+  "prompt_source_redaction_and_hash": "PASS; actual entry22/line1399; three path substitutions plus terminal LF",
+  "new_file_diff_checks": [
+    {
+      "path": "docs/ai/omx/H-008-cap10-actual-prompt.txt",
+      "whitespace_exit": 1,
+      "diff_bytes": 4243
+    },
+    {
+      "path": "docs/ai/omx/H-008-cap10-performer-projection.json",
+      "whitespace_exit": 1,
+      "diff_bytes": 1125
+    },
+    {
+      "path": "docs/ai/omx/H-008-cap10-prompt-receipt.json",
+      "whitespace_exit": 1,
+      "diff_bytes": 1913
+    },
+    {
+      "path": "docs/operations/H-008/cap10-resume/baseline.json",
+      "whitespace_exit": 1,
+      "diff_bytes": 29549
+    },
+    {
+      "path": "docs/operations/H-008/cap10-resume/root-observations.json",
+      "whitespace_exit": 1,
+      "diff_bytes": 3567
+    },
+    {
+      "path": "docs/reports/H-008-cap10-native-resume-blocker.md",
+      "whitespace_exit": 1,
+      "diff_bytes": 6146
+    },
+    {
+      "path": "docs/operations/H-008/cap10-resume/document-validation.json",
+      "whitespace_exit": 1,
+      "diff_bytes": 4945
+    }
+  ],
+  "changed_file_sha256_excluding_this_receipt": {
+    "AGENTS.md": "43411fbed7eef67ed3b24b7fd685dcb31ac002c43879732a4c23ed1a0f8c958f",
+    "README.md": "1f017cfe866f08edc418f9526e7db5a92874b084d47fa20375ef68867f344479",
+    "docs/ai/README.md": "dfd6d2dc779baea129a1faca9c862d375ffbae9648b6c9577ae51181746aaf9f",
+    "omx_wiki/index.md": "d53aa35b9952aeae387027cdef2f5f09675a60890f0d39cad8280d9f78c0b4d2",
+    "docs/ai/omx/H-008-cap10-actual-prompt.txt": "16ef945a7856be644ca2476bfbc13db3d9e620743d1d69faa278c4357e6d0c1c",
+    "docs/ai/omx/H-008-cap10-performer-projection.json": "b6120372b076ebd2de688508ac6c4d1cb47c99ee77db85df1e1e7f3f98a2d603",
+    "docs/ai/omx/H-008-cap10-prompt-receipt.json": "d618298b52573e5e773d4b294079d960b6b24f848ab5dddb9a11bb91e8a3b2c6",
+    "docs/operations/H-008/cap10-resume/baseline.json": "9d159758b02b6d8f5299fc55af49c48f6dd4e18a19f733912aa9acb49ef89c91",
+    "docs/operations/H-008/cap10-resume/root-observations.json": "2f2e9dc8704b298821457271a49c2066c566610c0f7b8865282656c88875b845",
+    "docs/reports/H-008-cap10-native-resume-blocker.md": "93a8b833db99983b35a341768acdcffff3fcb4d147a6c392f4cb959955e061cc"
+  },
+  "self_hash_note": "This receipt excludes its own hash; commit later pins it. New-file diff byte count for this receipt reflects its preceding validation iteration.",
+  "application_tests": "NOT RUN: docs-only changes; explicitly out of assigned slice",
+  "live_evidence": "NOT RUN: native-resume first gate blocked; no paid calls",
+  "normal_staging_attempt": {
+    "exit_code": 128,
+    "error": "fatal: Unable to create '/home/dev/projects/universitydb/.git/index.lock': Read-only file system",
+    "recovery": "Request supported explicit permission for the same exact-path staging; no alternate git-dir or restriction bypass."
+  },
+  "root_read_only_docs_review": "PASS scope/privacy/provenance/budget truthfulness; two wording clarifications applied and revalidated. Not application approval or an I1 acceptance gate.",
+  "commit": "Pre-staging validation; root docs review complete; exact-path local docs checkpoint next."
+}

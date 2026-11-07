@@ -1,0 +1,32 @@
+{
+  "source": "Supported root session export, private ignored .omx/H-008/cap10-resume/root-session-cutoff-private.json",
+  "source_sha256": "0eeaa667f1a79c7fad73f30b77bbe464f300a95c21704e8238010c9a65200127",
+  "source_session_id": "01a1b649-9f9b-7e32-8c71-138ac3328f7e",
+  "entry_index_zero_based": 22,
+  "line_number": 1399,
+  "timestamp": "2026-11-07T16:35:55.016Z",
+  "source_entry_text_sha256": "57479186ee1094620aa6af4685d052d4f505885f523644370d29dcb541012dbb",
+  "source_entries": 26,
+  "skipped_records": 0,
+  "redactions": [
+    {
+      "source_category": "private credentials tilde path",
+      "replacement": "<PRIVATE_CREDENTIALS_FILE>",
+      "occurrences": 1
+    },
+    {
+      "source_category": "private credentials shell path",
+      "replacement": "<PRIVATE_CREDENTIALS_FILE>",
+      "occurrences": 1
+    },
+    {
+      "source_category": "private vault input absolute path",
+      "replacement": "<PRIVATE_VAULT>",
+      "occurrences": 1
+    }
+  ],
+  "normalization": "Actual exported task text preserved except listed path substitutions and one added terminal LF. No reconstruction from performer task. Redacted shell text is historical prompt content, not an executable example.",
+  "destination": "docs/ai/omx/H-008-cap10-actual-prompt.txt",
+  "destination_sha256": "16ef945a7856be644ca2476bfbc13db3d9e620743d1d69faa278c4357e6d0c1c",
+  "coverage": "Only actual selected user task. Initial/inherited instruction bundles, system/developer/reasoning, tools, private full context, other messages, full child histories and later final/checkpoint are not covered. Export skipped0 does not establish completeness. U-01 remains partial."
+}

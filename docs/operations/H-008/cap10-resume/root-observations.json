@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-07",
+  "provenance": "Attributed observations supplied by root in the actual received delegation. This performer did not run goal/CLI/account/ledger checks and does not present these as its own raw stdout.",
+  "native_goal": {
+    "actual_get_goal_status": "blocked",
+    "same_existing_aggregate": true,
+    "available_tool_controls": [
+      "get_goal",
+      "create_goal",
+      "update_goal(complete|blocked|paused)"
+    ],
+    "resume_or_active_tool_available": false,
+    "cli_reconciliation_error": "Codex goal status mismatch: expected active, got blocked.",
+    "owner_ui_automation_available": false,
+    "existing_plan": {
+      "G001": "complete",
+      "G002": "complete",
+      "G003": "complete",
+      "G004": "in-progress, attempt1; blocked checkpoint"
+    },
+    "supported_existing_G004_annotation": "Root reports current cap authority and evidence accepted; annotation is not native reactivation.",
+    "not_attempted": [
+      "new or replacement goal/plan",
+      "manual goal IDs/state",
+      "repeat identical complete-goals restart",
+      "session-resume substitution"
+    ]
+  },
+  "approval": {
+    "total_continuation_cap_usd": 10,
+    "single_shared_cap": true,
+    "includes": [
+      "old recorded spend",
+      "old uncertain holds",
+      "smoke",
+      "S6",
+      "mutation",
+      "UI",
+      "retries",
+      "failed attempts",
+      "model-access checks",
+      "all other continuation attempts"
+    ],
+    "model": "gpt-6.1-sol",
+    "reasoning": {
+      "plan": "high",
+      "sql": "medium",
+      "repair": "medium"
+    },
+    "approval_source": "docs/ai/omx/H-008-cap10-actual-prompt.txt",
+    "model_choice_reconfirmation_needed": false,
+    "additional_budget_requested": false
+  },
+  "credentials": {
+    "rotated_key_claim": "User says old key revoked, new private file supplied.",
+    "root_launch_shell_observation": "Root reports disabled xtrace, cleared inherited key, sourced private credentials with stdout/stderr suppressed and printed only key-presence TRUE.",
+    "credential_file_path": "<PRIVATE_CREDENTIALS_FILE>",
+    "performer_read_or_source": false,
+    "key_material_exported": false,
+    "usable_account_or_model_access_verified": false
+  },
+  "spending": {
+    "ledger": "runtime/spending.json",
+    "root_observed_ledger_presence": false,
+    "recorded_spend_usd": 0,
+    "effective_holds_usd": 0,
+    "remaining_from_approved_cap_usd": 10,
+    "paid_calls_this_continuation": 0,
+    "ledger_created_reset_or_migrated": false,
+    "scope": "Local recorded-ledger reconciliation only, not provider billing/account history verification. Existing monetary history or uncertain holds must never be discarded if discovered."
+  },
+  "not_run_because_first_native_resume_gate_failed": [
+    "paid API requests or compatibility/access probes",
+    "current rates and applicable pricing research",
+    "full-request input/reservation coverage verification",
+    "BILLING_VERIFIED attestation",
+    "live S6",
+    "independent live changed example",
+    "live UI screenshot and complete real-provider trace",
+    "product test reruns or offline setup"
+  ],
+  "outcome": "Blocked before paid calls; same I1/G004 remains incomplete."
+}

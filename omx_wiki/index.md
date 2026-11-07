@@ -26,3 +26,5 @@ Historical H005/H006 entries above remain provenance; no closed Advisory is repe
 ## H-008 existing-I1 continuation
 - [Sol profile ADR009](../docs/adr/ADR-OMX-009-Sol-operation-profile.md): owner model/efforts accepted, limits provisional.
 - [H008 report](../docs/reports/H-008-sol-profile-I1-continuation.md): offline configuration is not live I1 completion; account/cap/billing and native control gaps remain separate.
+
+- [H-008 cap10 / native-resume blocker](../docs/reports/H-008-cap10-native-resume-blocker.md): one total 10 USD authority recorded; root still observes native blocked, no paid requests, I1 not complete. Earlier missing-cap observations remain historical, not current authority.
