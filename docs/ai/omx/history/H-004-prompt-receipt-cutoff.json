@@ -1,0 +1,39 @@
+{
+  "session_id": "01a1b31a-d9cc-7d00-b9d6-4118c6e46f49",
+  "omx_session_id": "omx-1794006222700-y9rw23",
+  "actual": true,
+  "template": false,
+  "source": "Private native session, exported via installed OMX 0.21.46 JSON exporter; task entry line 10",
+  "actual_prompt_original_utf8_sha256": "8ec2f43217e89df1a5af255b9098a0a31b1e02751f4be80b927e6ea9657c483d",
+  "private_saved_prompt_sha256": "8ec2f43217e89df1a5af255b9098a0a31b1e02751f4be80b927e6ea9657c483d",
+  "public_prompt": "docs/ai/omx/H-004-actual-prompt.txt",
+  "public_prompt_sha256": "6def3132523c0e8731ec5ee6f5f23eae0f22a2935ddbb7658a1d066071e715f5",
+  "public_export": "docs/ai/omx/H-004-session-export.json",
+  "public_export_sha256": "487b330fc5bd6f958d5dabfddd38fbf7d8660460f2cc6526f189b0b1761c1149",
+  "private_export_sha256": "6f24e76820d02f2799587a11c5ad3a55b16a21a117933b5424574381f4ac33ac",
+  "redactions": [
+    {
+      "original_category": "private local path",
+      "replacement": "<PRIVATE_VAULT_WSL>"
+    },
+    {
+      "original_category": "private local path",
+      "replacement": "<PRIVATE_VAULT_WINDOWS>"
+    },
+    {
+      "original_category": "private local path",
+      "replacement": "<LEGACY_CANDIDATE_WSL>"
+    },
+    {
+      "original_category": "private local path",
+      "replacement": "<LEGACY_CANDIDATE_WINDOWS>"
+    }
+  ],
+  "format_normalization": "Public .txt adds one terminal LF; actual original text hash is recorded separately.",
+  "export_command": "omx session export 01a1b31a-d9cc-7d00-b9d6-4118c6e46f49 --format json --output .omx/H-004-session-private.json",
+  "private_final_storage": "Ignored private session export storage; no private transcript in public paths.",
+  "full_transcript": false,
+  "workers": "not-applicable; no children/workers launched",
+  "history": "CHAT-001..009 pointer queue only",
+  "runtime": "not-yet-created"
+}

@@ -1,0 +1,27 @@
+{
+  "actual": true,
+  "template": false,
+  "session_id": "01a1b31a-d9cc-7d00-b9d6-4118c6e46f49",
+  "omx_session_id": "omx-1794006222700-y9rw23",
+  "same_native_session_as_h004": true,
+  "source_entry_line_number": 260,
+  "source_prompt_utf8_sha256": "5e30106c8416cce1d41403a1a3a23abe58582189a3359330979bc1f8a75228a6",
+  "public_prompt": "docs/ai/omx/H-005-actual-prompt.txt",
+  "public_prompt_sha256": "712439ae1e6f65c4bb5881d6da41d53613156580a272dccc660f3df6d0dae430",
+  "public_export": "docs/ai/omx/H-005-session-export-cutoff.json",
+  "public_export_sha256": "7ce469a7090f641aaf1696a4bcbda8cbec43b8dea5bdaaef11619f8a3b42e9c9",
+  "source_export_sha256": "f363e0a60f08fca07cedd94839a7768842e685ede2b51aee3d679714954c9318",
+  "command": "omx session export 01a1b31a-d9cc-7d00-b9d6-4118c6e46f49 --format json --output .omx/preparation/H-005/session-cutoff-private.json",
+  "redactions": [
+    {
+      "category": "private local path",
+      "replacement": "<PRIVATE_VAULT_WSL>",
+      "occurrences_in_h005_task": 1
+    }
+  ],
+  "normalization": "Terminal LF added to public task .txt; original text hash excludes it.",
+  "coverage": "Task plus first progress through cutoff; later H-005 messages/final absent. Not a full transcript.",
+  "workers": "not-applicable",
+  "runtime_prompts": "not-yet-created",
+  "historical_chat_prompts": "CHAT-001..011 pointers only"
+}

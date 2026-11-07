@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "handoff": "H-005",
+  "owner": "repo",
+  "state": "saved-not-committed-not-pushed",
+  "session_id": "01a1b31a-d9cc-7d00-b9d6-4118c6e46f49",
+  "omx_session_id": "omx-1794006222700-y9rw23",
+  "scope": "Preparation only, solo; no workers/architecture/implementation/application/dependencies/runtime prompts/paid eval/remote/push.",
+  "input_evidence": {
+    "path": "docs/operations/H-005-input-verification.json",
+    "sha256": "51548f38bdff334a289280a412d472cc562085fafc416933539c77109718f1ef"
+  },
+  "current_chat_receipt": "docs/operations/chat-export-receipt.json",
+  "previous_chat_receipt": "docs/operations/history/H-004-chat-export-receipt.json",
+  "new_validation": "docs/operations/H-005-preparation-validation.json",
+  "old_validation": {
+    "path": "docs/operations/preparation-validation.json",
+    "sha256": "183701e05bb3b3e7ac52edf27e78b043d3e26b5396f6ceeb1e8b5d277396e6cd",
+    "role": "Immutable H-004 historical snapshot, not current proof"
+  },
+  "environment": "docs/operations/H-005-environment-checks.json",
+  "prompt_receipts": [
+    "docs/ai/omx/H-004-prompt-receipt.json",
+    "docs/ai/omx/H-005-prompt-receipt.json"
+  ],
+  "historical_partial_export": "docs/ai/omx/H-004-session-export.json",
+  "completed_h004_export": "docs/ai/omx/H-004-session-export-completed.json",
+  "h005_cutoff_export": "docs/ai/omx/H-005-session-export-cutoff.json",
+  "coverage": {
+    "h004": "Task plus all four assistant messages through actual H-004 final; logical stage completed, same native session continued.",
+    "h005": "Actual task plus first progress through current export cutoff, later work/final not included.",
+    "tools": "not requested, not claimed",
+    "instruction_bundle": "omitted with hash; system/developer/reasoning excluded by exporter",
+    "chat_history": "CHAT-001..011 pointer queue only",
+    "workers": "not-applicable",
+    "runtime_prompts": "not-yet-created"
+  },
+  "instruction_context": [
+    {
+      "source_alias": "project-AGENTS-before-H-005-edit",
+      "sha256": "91e919ba05e16729b9c147b4d4317d48c59a2d988fe6d25ea53091321c1f10b9",
+      "role": "Applicable instruction context read before execution"
+    },
+    {
+      "source_alias": "project-AGENTS-after-update",
+      "sha256": "769de8a590501b88499e47faf8721d5ac8f0885582c0b05b72b055d668fc10b7",
+      "role": "instruction context, not actual task prompt"
+    },
+    {
+      "source_alias": "wiki-skill",
+      "sha256": "e2dc6f9da428b1afffeb855544a46b5f50168bb4bc43372a964a988c587e7f72",
+      "role": "instruction context, not actual task prompt"
+    },
+    {
+      "source_alias": "session-runtime-overlay",
+      "sha256": "6abc29eeca89509e4324396e8dd5809057d5255805dbc0a2a1cbaec88adb2655",
+      "role": "instruction context, not actual task prompt"
+    }
+  ],
+  "source_store": "private-vault; only relative source paths in receipts; no writes",
+  "git_checkpoint": "Blocked: ordinary git init exit 128 EROFS in tool sandbox; escalation unavailable under active permission policy; no bypass",
+  "checks_not_run": [
+    "staging/staged diff/commit due no Git repository",
+    "application tests/build/live eval due scope",
+    "remote changes/push/public check due prohibition"
+  ]
+}

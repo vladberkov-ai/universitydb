@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "session_id": "01a1b31a-d9cc-7d00-b9d6-4118c6e46f49",
+  "omx_session_id": "omx-1794006222700-y9rw23",
+  "source_export_sha256": "f363e0a60f08fca07cedd94839a7768842e685ede2b51aee3d679714954c9318",
+  "skipped_records": 0,
+  "tool_coverage": "not included; --include-tools not requested",
+  "excluded_by_exporter": [
+    "system",
+    "developer",
+    "reasoning"
+  ],
+  "kind": "H-005-actual-task-and-progress-cutoff",
+  "coverage": "H-005 actual task and available first progress message only through export cutoff; later work/final not yet included or required by this checkpoint.",
+  "entries": [
+    {
+      "timestamp": "2026-11-06T23:31:40.839Z",
+      "line_number": 260,
+      "kind": "message",
+      "role": "user",
+      "text": "Продолжи подготовку UniversityDB по пакету:\n<PRIVATE_VAULT_WSL>/handoffs/H-005-finish-preparation.md\n\nПрочитай пакет и входы, проверь хеши. Работай в существующем\n/home/dev/projects/universitydb внутри UbuntuD.\n\nЗаверши Git-checkpoint штатным разрешённым способом, уточни различие видимости .git между средами, обнови устаревшие разрешённые снимки и экспорт завершённой H-004-сессии. Проверь значимость ошибок диагностики OMX.\n\nСпособ выполнения выбери по локальным инструкциям. Не обходи sandbox, не создавай другую копию repo. Obsidian только читать. Архитектуру, реализацию и workers не запускай; remote/push запрещены.\n\nВерни артефакты, проверки, фактический commit SHA либо точный blocker, покрытие prompts. После отчёта остановись."
+    },
+    {
+      "timestamp": "2026-11-06T23:31:43.937Z",
+      "line_number": 263,
+      "kind": "message",
+      "role": "assistant",
+      "text": "Прочитаю H-005 и его входы, сверю хеши и проверю текущее состояние существующего repo. Затем выполню разрешённую подготовку и Git-checkpoint, если среда позволяет штатную запись — без обхода sandbox, workers, архитектуры и remote/push."
+    }
+  ]
+}

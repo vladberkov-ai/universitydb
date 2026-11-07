@@ -1,0 +1,190 @@
+{
+  "package": "H-004-v2",
+  "package_source": "handoffs/H-004-v2-cli-repository-preparation.md",
+  "package_sha256": "69d0fc4b467f4272504d9e6366ee25c5e53607bef30e92975a8fde320ea9335b",
+  "expected_package_sha256": null,
+  "package_hash_note": "Observed hash; no independent expected handoff hash supplied.",
+  "inputs": [
+    {
+      "source": "AGENTS.md",
+      "expected_sha256": "ed17c591c51015a18df7696d78fdab27745184737bf20f31d60ffbffc2201e97",
+      "actual_sha256": "ed17c591c51015a18df7696d78fdab27745184737bf20f31d60ffbffc2201e97",
+      "status": "match",
+      "bytes": 5871
+    },
+    {
+      "source": "SCHEMA.md",
+      "expected_sha256": "598e5ba595b3f6c0e604f5cf8599d92ede3a9859f0bc2ca20f4d1417617d5769",
+      "actual_sha256": "598e5ba595b3f6c0e604f5cf8599d92ede3a9859f0bc2ca20f4d1417617d5769",
+      "status": "match",
+      "bytes": 6364
+    },
+    {
+      "source": "raw/assignment/HW Task 1.pdf",
+      "expected_sha256": "f60e6212307812a27430b2e28ad3bb027b752f50609f76d0bcb8578116ed7550",
+      "actual_sha256": "f60e6212307812a27430b2e28ad3bb027b752f50609f76d0bcb8578116ed7550",
+      "status": "match",
+      "bytes": 154547
+    },
+    {
+      "source": "raw/assignment/provenance.json",
+      "expected_sha256": "6bae340063c847d372ea8c47879b8a1a360690af90d207141df49243ca5ce76d",
+      "actual_sha256": "6bae340063c847d372ea8c47879b8a1a360690af90d207141df49243ca5ce76d",
+      "status": "match",
+      "bytes": 296
+    },
+    {
+      "source": "raw/chat/CHAT-008.md",
+      "expected_sha256": "0eb37bf329856e419e616d28679524b57911bf0bd9a1b5ad724e51fcc1c85931",
+      "actual_sha256": "0eb37bf329856e419e616d28679524b57911bf0bd9a1b5ad724e51fcc1c85931",
+      "status": "match",
+      "bytes": 600
+    },
+    {
+      "source": "wiki/index.md",
+      "expected_sha256": "a1b81f8a540460bff3b9c929dcc11c6f49521ca660716fc59ce4b151052aa6c0",
+      "actual_sha256": "a1b81f8a540460bff3b9c929dcc11c6f49521ca660716fc59ce4b151052aa6c0",
+      "status": "match",
+      "bytes": 3791
+    },
+    {
+      "source": "wiki/overview.md",
+      "expected_sha256": "22b609cc92575a39305570dc417cc8122c85e90a70a6b2f0e8a83a32f82ce193",
+      "actual_sha256": "22b609cc92575a39305570dc417cc8122c85e90a70a6b2f0e8a83a32f82ce193",
+      "status": "match",
+      "bytes": 4505
+    },
+    {
+      "source": "wiki/requirements.md",
+      "expected_sha256": "71d363db289d2fc1e1993bc0b94e03e012231ad77596bfd6dc5bab077ff71291",
+      "actual_sha256": "71d363db289d2fc1e1993bc0b94e03e012231ad77596bfd6dc5bab077ff71291",
+      "status": "match",
+      "bytes": 9450
+    },
+    {
+      "source": "wiki/planning/acceptance-contract.md",
+      "expected_sha256": "a0307bea7adfea9e7d0ab140ef4a062e91705f9a3709650c0b0ca0f656f6ba12",
+      "actual_sha256": "a0307bea7adfea9e7d0ab140ef4a062e91705f9a3709650c0b0ca0f656f6ba12",
+      "status": "match",
+      "bytes": 8978
+    },
+    {
+      "source": "wiki/planning/result-brief.md",
+      "expected_sha256": "cc19e81366ad416790784e670f0e6aa742619094fd8a35748e112d4230c0ddea",
+      "actual_sha256": "cc19e81366ad416790784e670f0e6aa742619094fd8a35748e112d4230c0ddea",
+      "status": "match",
+      "bytes": 12226
+    },
+    {
+      "source": "wiki/planning/stages.md",
+      "expected_sha256": "349d5c4bb2094d5e87ab2477388a60d70f955d2af6a53e4db229db0d617f4768",
+      "actual_sha256": "349d5c4bb2094d5e87ab2477388a60d70f955d2af6a53e4db229db0d617f4768",
+      "status": "match",
+      "bytes": 5106
+    },
+    {
+      "source": "wiki/decisions/index.md",
+      "expected_sha256": "3dcbc7fd9062d80750c72c68267d0486f440cd35780d620d71860ecb973acaf2",
+      "actual_sha256": "3dcbc7fd9062d80750c72c68267d0486f440cd35780d620d71860ecb973acaf2",
+      "status": "match",
+      "bytes": 1674
+    },
+    {
+      "source": "wiki/decisions/ADR-CHAT-001-memory-ownership.md",
+      "expected_sha256": "057e1c6a9e23d30d9e8a0580bbd885681f72a32c787ee91729c18425deb52583",
+      "actual_sha256": "057e1c6a9e23d30d9e8a0580bbd885681f72a32c787ee91729c18425deb52583",
+      "status": "match",
+      "bytes": 1963
+    },
+    {
+      "source": "wiki/decisions/ADR-CHAT-002-result-scope.md",
+      "expected_sha256": "d9ba42c284c39ada7409c70191ab4b56be29fa2af21ed2f98146184c45e5930d",
+      "actual_sha256": "d9ba42c284c39ada7409c70191ab4b56be29fa2af21ed2f98146184c45e5930d",
+      "status": "match",
+      "bytes": 3040
+    },
+    {
+      "source": "wiki/open-questions.md",
+      "expected_sha256": "4480dfa22116363a42a27fd7ca09d6e7e0fad88e8577ddf9424b148e9bba9871",
+      "actual_sha256": "4480dfa22116363a42a27fd7ca09d6e7e0fad88e8577ddf9424b148e9bba9871",
+      "status": "match",
+      "bytes": 4840
+    },
+    {
+      "source": "wiki/prompts/register.md",
+      "expected_sha256": "d6b9027b094d065a4e1a8dcfc642569655451879d5a8f78dc01331ca288de940",
+      "actual_sha256": "d6b9027b094d065a4e1a8dcfc642569655451879d5a8f78dc01331ca288de940",
+      "status": "match",
+      "bytes": 6326
+    },
+    {
+      "source": "wiki/operations/git-protocol.md",
+      "expected_sha256": "7beee92cf71ba4e452041000f707309f7473d6b69276d69dd681f6b73ee6a821",
+      "actual_sha256": "7beee92cf71ba4e452041000f707309f7473d6b69276d69dd681f6b73ee6a821",
+      "status": "match",
+      "bytes": 8680
+    },
+    {
+      "source": "wiki/operations/repo-map.md",
+      "expected_sha256": "4395499a8d1bd1329e4b56e6929276bb2203fb4020e5cb0c3858c240e2a7aeab",
+      "actual_sha256": "4395499a8d1bd1329e4b56e6929276bb2203fb4020e5cb0c3858c240e2a7aeab",
+      "status": "match",
+      "bytes": 4536
+    },
+    {
+      "source": "wiki/operations/export-manifest.json",
+      "expected_sha256": "58dfb174b82c1589b9cc0ee4646d7bfe2f75b727a9d5a15fbf4b029c6e39aae4",
+      "actual_sha256": "58dfb174b82c1589b9cc0ee4646d7bfe2f75b727a9d5a15fbf4b029c6e39aae4",
+      "status": "match",
+      "bytes": 4286
+    },
+    {
+      "source": "wiki/operations/omx-workflow.md",
+      "expected_sha256": "2229f51ff3d0e8753bc479caa9f0c8e660c9d03dd39bacca5bc1569a77a74d98",
+      "actual_sha256": "2229f51ff3d0e8753bc479caa9f0c8e660c9d03dd39bacca5bc1569a77a74d98",
+      "status": "match",
+      "bytes": 6746
+    },
+    {
+      "source": "wiki/operations/result-understanding.md",
+      "expected_sha256": "5e4ba14dfc35cff554c7d1d8138e3b4584486198004692a9e116d71f740a8f64",
+      "actual_sha256": "5e4ba14dfc35cff554c7d1d8138e3b4584486198004692a9e116d71f740a8f64",
+      "status": "match",
+      "bytes": 4896
+    },
+    {
+      "source": "wiki/operations/sync-log.md",
+      "expected_sha256": "9a57b46af9b86cffa4582e3b97fd763439fe4a5adfa74581a6418766285141ef",
+      "actual_sha256": "9a57b46af9b86cffa4582e3b97fd763439fe4a5adfa74581a6418766285141ef",
+      "status": "match",
+      "bytes": 2365
+    },
+    {
+      "source": "wiki/delivery/checklist.md",
+      "expected_sha256": "cab44df5aa11552102fa2cde86a408218ec091512c2df181600cb4d963236cfe",
+      "actual_sha256": "cab44df5aa11552102fa2cde86a408218ec091512c2df181600cb4d963236cfe",
+      "status": "match",
+      "bytes": 2005
+    },
+    {
+      "source": "raw/chat/CHAT-009.md",
+      "expected_sha256": "25b713c6a81c76870ce5b7ea0e050973c3ca44646a3017de606375ce7f9bd873",
+      "actual_sha256": "25b713c6a81c76870ce5b7ea0e050973c3ca44646a3017de606375ce7f9bd873",
+      "status": "match",
+      "bytes": 2668
+    },
+    {
+      "source": "wiki/decisions/ADR-CHAT-003-repository-location.md",
+      "expected_sha256": "1151afe41489e8abb7a7170049f6c42b2f67ebc9882cc387aff0853b71be43e2",
+      "actual_sha256": "1151afe41489e8abb7a7170049f6c42b2f67ebc9882cc387aff0853b71be43e2",
+      "status": "match",
+      "bytes": 3796
+    }
+  ],
+  "pdf_read": {
+    "pages": 4,
+    "method": "Direct PDF object/Flate stream and embedded ToUnicode CMap decoding; all four page content streams read, zero unmapped glyphs. No exported PDF or extracted full text.",
+    "fallback_reason": "pdfinfo/pdftotext and Python PDF libraries unavailable"
+  },
+  "h004_v1": "not-opened-not-used"
+}

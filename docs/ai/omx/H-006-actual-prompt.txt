@@ -1,0 +1,27 @@
+Выполни пакет:
+<PRIVATE_VAULT_WSL>/handoffs/H-006-v4-omx-architecture.md
+
+Workspace: /home/dev/projects/universitydb, UbuntuD, main.
+Прочитай входы, проверь hashes. Предыдущие версии H-006 не используй.
+
+A. Проверь Git и сделай проверенный docs-коммит подготовки.
+Если Git недоступен штатным способом — остановись с blocker.
+
+B. После A прочитай локальный ralplan/SKILL.md и выполни:
+omx status
+omx quality-gates list --stage ralplan --json
+
+Затем вызови навык:
+$ralplan --advisory --deliberate "Спроектируй UniversityDB по этапу B H-006-v4: архитектура, контракты, подробный test plan с fixtures/expected/pass-fail и покрытием R/U, ADR и план реализации."
+
+Используй настоящих Planner → Architect → Critic последовательно и настроенные quality gates. Субагенты разрешены. Исправляй замечания по циклу skill. Для актуальных API используй ограниченный $best-practice-research с researcher. Недоступные роли не имитируй.
+
+Заверши advisory штатным lifecycle без execution handoff; проверь:
+omx ralplan status --json
+
+После закрытия advisory сохрани устойчивые планы и review evidence в docs/, проверь их и сделай отдельный docs-коммит B. Новые архитектурные решения — proposed до обсуждения в чате.
+
+Сохрани реальные prompts и coverage всех субагентов.
+Верни SHA A/B, пути, review/gate verdicts, проверки и вопросы; остановись.
+
+Без реализации, платных eval, установки зависимостей продукта и remote/push. Obsidian только читать.

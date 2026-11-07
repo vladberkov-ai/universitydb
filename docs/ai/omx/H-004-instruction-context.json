@@ -1,0 +1,36 @@
+{
+  "omx_version": "0.21.46",
+  "entries": [
+    {
+      "source_alias": "installed-user-AGENTS",
+      "sha256": "a4e2dfb21350aa617d285ee6789397aa9a4edc62fb4ae247884697044fd0f20d",
+      "role": "read instruction context, not task prompt",
+      "exported": false
+    },
+    {
+      "source_alias": "wiki-skill",
+      "sha256": "e2dc6f9da428b1afffeb855544a46b5f50168bb4bc43372a964a988c587e7f72",
+      "role": "read instruction context, not task prompt",
+      "exported": false
+    },
+    {
+      "source_alias": "managed-runtime-skill",
+      "sha256": "c23513e361a6f9dbe1c28e5c41de635f355469b4ec1740ae1cd2de1d38a91bd3",
+      "role": "read instruction context, not task prompt",
+      "exported": false
+    },
+    {
+      "source_alias": "session-runtime-overlay",
+      "sha256": "6abc29eeca89509e4324396e8dd5809057d5255805dbc0a2a1cbaec88adb2655",
+      "role": "read instruction context, not task prompt",
+      "exported": false
+    },
+    {
+      "source_alias": "new-project-AGENTS",
+      "sha256": "91e919ba05e16729b9c147b4d4317d48c59a2d988fe6d25ea53091321c1f10b9",
+      "role": "read instruction context, not task prompt",
+      "exported": true
+    }
+  ],
+  "coverage": "Read context hashes, not complete public instruction transcript. Actual task and initial instruction bundle accounted separately in prompt receipt/export."
+}

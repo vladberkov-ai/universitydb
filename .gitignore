@@ -1,0 +1,45 @@
+# Private preparation/runtime, never public deliverables
+/.omx/
+/.agents/
+/.codex/
+/.aws/
+/tmp/
+/bootstrap/
+/private/
+/raw/
+/.obsidian/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+secrets*.json
+
+# Future local dependencies, environments and caches (none installed now)
+.venv/
+venv/
+env/
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.coverage*
+htmlcov/
+dist/
+build/
+
+# Local binary databases and generated runtime output
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+*.duckdb
+*.log

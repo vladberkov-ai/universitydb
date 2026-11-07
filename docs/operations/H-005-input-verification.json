@@ -1,0 +1,251 @@
+{
+  "package": "H-005",
+  "package_source": "handoffs/H-005-finish-preparation.md",
+  "package_sha256": "3924824352710586120e461dc905de1cadd81f7480c6977066ddd5de515fcf3d",
+  "package_hash_note": "Observed; independent expected package hash not supplied.",
+  "checks": [
+    {
+      "source": "raw/chat/CHAT-011.md",
+      "scope": "private-vault",
+      "expected_sha256": "b428538b594d69d8608bb22d28ec7549547b9fbe65fbbc282fff89892465c44e",
+      "actual_sha256": "b428538b594d69d8608bb22d28ec7549547b9fbe65fbbc282fff89892465c44e",
+      "status": "match"
+    },
+    {
+      "source": "wiki/overview.md",
+      "scope": "private-vault",
+      "expected_sha256": "b067a1933aeb4e554c0827674094283e3a6f4c67bd035754c01f47237fef8152",
+      "actual_sha256": "b067a1933aeb4e554c0827674094283e3a6f4c67bd035754c01f47237fef8152",
+      "status": "match"
+    },
+    {
+      "source": "wiki/requirements.md",
+      "scope": "private-vault",
+      "expected_sha256": "1011c7bb7bce852f21d1d54850c476d422990c12c2f01199ce3cf7c37b90a086",
+      "actual_sha256": "1011c7bb7bce852f21d1d54850c476d422990c12c2f01199ce3cf7c37b90a086",
+      "status": "match"
+    },
+    {
+      "source": "wiki/planning/acceptance-contract.md",
+      "scope": "private-vault",
+      "expected_sha256": "a0307bea7adfea9e7d0ab140ef4a062e91705f9a3709650c0b0ca0f656f6ba12",
+      "actual_sha256": "a0307bea7adfea9e7d0ab140ef4a062e91705f9a3709650c0b0ca0f656f6ba12",
+      "status": "match"
+    },
+    {
+      "source": "wiki/verification/H-004-review.md",
+      "scope": "private-vault",
+      "expected_sha256": "b94ddf1784e940239f74407fefda4f963b172a08d0708866d2eb03fed4128946",
+      "actual_sha256": "b94ddf1784e940239f74407fefda4f963b172a08d0708866d2eb03fed4128946",
+      "status": "match"
+    },
+    {
+      "source": "wiki/operations/git-protocol.md",
+      "scope": "private-vault",
+      "expected_sha256": "51f4dc9119a204dc10094340c6f7f991754fda0a20f2fcfa5e2a52ae12f0ad32",
+      "actual_sha256": "51f4dc9119a204dc10094340c6f7f991754fda0a20f2fcfa5e2a52ae12f0ad32",
+      "status": "match"
+    },
+    {
+      "source": "wiki/operations/repo-map.md",
+      "scope": "private-vault",
+      "expected_sha256": "b9fe331d0ced0ab625fa9f9fcbd05978ea286151614c837eb163f74c276ee0b0",
+      "actual_sha256": "b9fe331d0ced0ab625fa9f9fcbd05978ea286151614c837eb163f74c276ee0b0",
+      "status": "match"
+    },
+    {
+      "source": "wiki/operations/export-manifest.json",
+      "scope": "private-vault",
+      "expected_sha256": "9d71577b46c0d36872645251a1b31abe2260138f08a01aa9696711eac47fd34c",
+      "actual_sha256": "9d71577b46c0d36872645251a1b31abe2260138f08a01aa9696711eac47fd34c",
+      "status": "match"
+    },
+    {
+      "source": "wiki/decisions/ADR-CHAT-003-repository-location.md",
+      "scope": "private-vault",
+      "expected_sha256": "1151afe41489e8abb7a7170049f6c42b2f67ebc9882cc387aff0853b71be43e2",
+      "actual_sha256": "1151afe41489e8abb7a7170049f6c42b2f67ebc9882cc387aff0853b71be43e2",
+      "status": "match"
+    },
+    {
+      "source": "handoffs/H-004-v2-cli-repository-preparation.md",
+      "scope": "private-vault",
+      "expected_sha256": "69d0fc4b467f4272504d9e6366ee25c5e53607bef30e92975a8fde320ea9335b",
+      "actual_sha256": "69d0fc4b467f4272504d9e6366ee25c5e53607bef30e92975a8fde320ea9335b",
+      "status": "match"
+    },
+    {
+      "source": "docs/reports/H-004-repository-preparation.md",
+      "scope": "workspace-baseline",
+      "expected_sha256": "1af672ce1e7107464ac201c84ff1286ad901d793ebc904ba115fa5635e1e1c48",
+      "actual_sha256": "1af672ce1e7107464ac201c84ff1286ad901d793ebc904ba115fa5635e1e1c48",
+      "status": "match"
+    },
+    {
+      "source": "docs/operations/chat-export-receipt.json",
+      "scope": "workspace-baseline",
+      "expected_sha256": "ad7237965f554de3fe1081aaf9583212abf636eeba3ff5df8e637ca8da6e0cba",
+      "actual_sha256": "ad7237965f554de3fe1081aaf9583212abf636eeba3ff5df8e637ca8da6e0cba",
+      "status": "match"
+    },
+    {
+      "source": "docs/adr/ADR-OMX-001-preparation-boundary.md",
+      "scope": "workspace-baseline",
+      "expected_sha256": "a7be0d850c99ca833fabf5f4d48b20ac31f2ab11a1d9c1e94139d143ce806674",
+      "actual_sha256": "a7be0d850c99ca833fabf5f4d48b20ac31f2ab11a1d9c1e94139d143ce806674",
+      "status": "match"
+    }
+  ],
+  "previous_manifest": {
+    "path": "docs/operations/preparation-validation.json",
+    "sha256": "183701e05bb3b3e7ac52edf27e78b043d3e26b5396f6ceeb1e8b5d277396e6cd",
+    "status": "historical H-004 snapshot kept byte-identical; not current proof after updates"
+  },
+  "baseline_file_checks": [
+    {
+      "path": "AGENTS.md",
+      "expected_sha256": "91e919ba05e16729b9c147b4d4317d48c59a2d988fe6d25ea53091321c1f10b9",
+      "actual_sha256": "91e919ba05e16729b9c147b4d4317d48c59a2d988fe6d25ea53091321c1f10b9",
+      "status": "match"
+    },
+    {
+      "path": ".gitignore",
+      "expected_sha256": "36f5c847236d2b148c41c30b063a5afa13c1e6da68c5e655efe7c4711f2b2807",
+      "actual_sha256": "36f5c847236d2b148c41c30b063a5afa13c1e6da68c5e655efe7c4711f2b2807",
+      "status": "match"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-001-preparation-boundary.md",
+      "expected_sha256": "a7be0d850c99ca833fabf5f4d48b20ac31f2ab11a1d9c1e94139d143ce806674",
+      "actual_sha256": "a7be0d850c99ca833fabf5f4d48b20ac31f2ab11a1d9c1e94139d143ce806674",
+      "status": "match"
+    },
+    {
+      "path": "docs/adr/README.md",
+      "expected_sha256": "99363077fc2b8f7dee819408bac2f83225968772364e515a9e466d573f27605c",
+      "actual_sha256": "99363077fc2b8f7dee819408bac2f83225968772364e515a9e466d573f27605c",
+      "status": "match"
+    },
+    {
+      "path": "docs/ai/README.md",
+      "expected_sha256": "847ea6aff77272508fa5fbf8c7233c601642896376bd570cbf8b9255471dca45",
+      "actual_sha256": "847ea6aff77272508fa5fbf8c7233c601642896376bd570cbf8b9255471dca45",
+      "status": "match"
+    },
+    {
+      "path": "docs/ai/omx/H-004-actual-prompt.txt",
+      "expected_sha256": "6def3132523c0e8731ec5ee6f5f23eae0f22a2935ddbb7658a1d066071e715f5",
+      "actual_sha256": "6def3132523c0e8731ec5ee6f5f23eae0f22a2935ddbb7658a1d066071e715f5",
+      "status": "match"
+    },
+    {
+      "path": "docs/ai/omx/H-004-instruction-context.json",
+      "expected_sha256": "22a1adbbcec9d04ad56e24d2b197ee590736f20277886ff833438b1fc1234932",
+      "actual_sha256": "22a1adbbcec9d04ad56e24d2b197ee590736f20277886ff833438b1fc1234932",
+      "status": "match"
+    },
+    {
+      "path": "docs/ai/omx/H-004-prompt-receipt.json",
+      "expected_sha256": "2191d62861100f134988ca47c9608c92b3ec3609c613e2cff9b8172ab290121e",
+      "actual_sha256": "2191d62861100f134988ca47c9608c92b3ec3609c613e2cff9b8172ab290121e",
+      "status": "match"
+    },
+    {
+      "path": "docs/ai/omx/H-004-session-export.json",
+      "expected_sha256": "487b330fc5bd6f958d5dabfddd38fbf7d8660460f2cc6526f189b0b1761c1149",
+      "actual_sha256": "487b330fc5bd6f958d5dabfddd38fbf7d8660460f2cc6526f189b0b1761c1149",
+      "status": "match"
+    },
+    {
+      "path": "docs/chat/decisions/ADR-CHAT-001-memory-ownership.md",
+      "expected_sha256": "2f68a94298b86c7c96372102167aaa5b0e055e95024b704ca71ba560703a0cf0",
+      "actual_sha256": "2f68a94298b86c7c96372102167aaa5b0e055e95024b704ca71ba560703a0cf0",
+      "status": "match"
+    },
+    {
+      "path": "docs/chat/decisions/ADR-CHAT-002-result-scope.md",
+      "expected_sha256": "a9ddf57dcb88d5610d751eb8ba9429178e728e5c23f2aa6d4ca030020d42defe",
+      "actual_sha256": "a9ddf57dcb88d5610d751eb8ba9429178e728e5c23f2aa6d4ca030020d42defe",
+      "status": "match"
+    },
+    {
+      "path": "docs/chat/planning/acceptance-contract.md",
+      "expected_sha256": "ff8dd0a1354480e7fd83caac3219e5d885b4582fe33474ac51f223a75c7ac5fb",
+      "actual_sha256": "ff8dd0a1354480e7fd83caac3219e5d885b4582fe33474ac51f223a75c7ac5fb",
+      "status": "match"
+    },
+    {
+      "path": "docs/chat/requirements.md",
+      "expected_sha256": "09e723b90c5ccc4b83e77d0f34b52ac02c59effd8d0af45ab046c40088171e9b",
+      "actual_sha256": "09e723b90c5ccc4b83e77d0f34b52ac02c59effd8d0af45ab046c40088171e9b",
+      "status": "match"
+    },
+    {
+      "path": "docs/operations/chat-export-receipt.json",
+      "expected_sha256": "ad7237965f554de3fe1081aaf9583212abf636eeba3ff5df8e637ca8da6e0cba",
+      "actual_sha256": "ad7237965f554de3fe1081aaf9583212abf636eeba3ff5df8e637ca8da6e0cba",
+      "status": "match"
+    },
+    {
+      "path": "docs/operations/environment-checks.json",
+      "expected_sha256": "cd30767517f1d708b36e2798bd5e5c3a20c8482640e392ec9c1dca79e3b8ab29",
+      "actual_sha256": "cd30767517f1d708b36e2798bd5e5c3a20c8482640e392ec9c1dca79e3b8ab29",
+      "status": "match"
+    },
+    {
+      "path": "docs/operations/git-checkpoints.md",
+      "expected_sha256": "bc46f5573acb4498953bef61bf74b1e892820e80dd042cf6bf773ec1e3c68059",
+      "actual_sha256": "bc46f5573acb4498953bef61bf74b1e892820e80dd042cf6bf773ec1e3c68059",
+      "status": "match"
+    },
+    {
+      "path": "docs/operations/input-verification.json",
+      "expected_sha256": "83fd0f7d76b2654ff37b5caebd8a9b486a387256f14950b655c6d4683ed4397c",
+      "actual_sha256": "83fd0f7d76b2654ff37b5caebd8a9b486a387256f14950b655c6d4683ed4397c",
+      "status": "match"
+    },
+    {
+      "path": "docs/reports/H-004-repository-preparation.md",
+      "expected_sha256": "1af672ce1e7107464ac201c84ff1286ad901d793ebc904ba115fa5635e1e1c48",
+      "actual_sha256": "1af672ce1e7107464ac201c84ff1286ad901d793ebc904ba115fa5635e1e1c48",
+      "status": "match"
+    },
+    {
+      "path": "omx_wiki/index.md",
+      "expected_sha256": "6a82c0ce227ed9d9bff02866eb32196a397e02cb0ae780307953c2bee61c85d2",
+      "actual_sha256": "6a82c0ce227ed9d9bff02866eb32196a397e02cb0ae780307953c2bee61c85d2",
+      "status": "match"
+    },
+    {
+      "path": "omx_wiki/log.md",
+      "expected_sha256": "5708183ebf21e1cc3063fc99e83bddc86e325a43b0baa8ebe5e1d9f6142d9e2b",
+      "actual_sha256": "5708183ebf21e1cc3063fc99e83bddc86e325a43b0baa8ebe5e1d9f6142d9e2b",
+      "status": "match"
+    },
+    {
+      "path": "omx_wiki/session-log-h-004.md",
+      "expected_sha256": "ef89bcdd5ed7a51fc96468098fd701c1ec1eebc8a73d78ccc0bf469899d3ecbc",
+      "actual_sha256": "ef89bcdd5ed7a51fc96468098fd701c1ec1eebc8a73d78ccc0bf469899d3ecbc",
+      "status": "match"
+    }
+  ],
+  "h004_scope": "Historical read-only context; old vault hashes not reapplied to updated inputs.",
+  "additional_allowed_sources": [
+    {
+      "source": "wiki/requirements.md",
+      "sha256": "1011c7bb7bce852f21d1d54850c476d422990c12c2f01199ce3cf7c37b90a086"
+    },
+    {
+      "source": "wiki/planning/acceptance-contract.md",
+      "sha256": "a0307bea7adfea9e7d0ab140ef4a062e91705f9a3709650c0b0ca0f656f6ba12"
+    },
+    {
+      "source": "wiki/decisions/ADR-CHAT-001-memory-ownership.md",
+      "sha256": "057e1c6a9e23d30d9e8a0580bbd885681f72a32c787ee91729c18425deb52583"
+    },
+    {
+      "source": "wiki/decisions/ADR-CHAT-002-result-scope.md",
+      "sha256": "d9ba42c284c39ada7409c70191ab4b56be29fa2af21ed2f98146184c45e5930d"
+    }
+  ]
+}

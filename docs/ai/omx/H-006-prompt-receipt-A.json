@@ -1,0 +1,36 @@
+{
+  "actual": true,
+  "template": false,
+  "native_session_id": "01a1b356-8b0a-7b40-8c40-293841f31670",
+  "omx_session_id": "omx-1794006222700-y9rw23",
+  "identity_note": "Export selectors are diagnostic, not runtime ownership or canonical advisory authority.",
+  "source_task_line": 9,
+  "source_task_sha256": "a8d9a0a8c48532fa819d66c567340580093561cccb8d8b4d1f3ff0f2e2295cd3",
+  "public_task": "docs/ai/omx/H-006-actual-prompt.txt",
+  "public_task_sha256": "3866c94900f64b827e0542fdab49d1f71375949cf18702f8dce85e69f4710216",
+  "public_export": "docs/ai/omx/H-006-session-export-A-cutoff.json",
+  "public_export_sha256": "71697910ac293814678a4fbe099fddc949d6304ff987c2323be7fcfac6324674",
+  "context": "H-006-v4 and 19 inputs are read context, not actual task. User-supplied skills and AGENTS omitted with hashes in export.",
+  "normalization": "terminal LF on task projection only",
+  "redactions": [
+    {
+      "category": "private vault or legacy absolute path",
+      "replacement": "<PRIVATE_VAULT_WSL>"
+    },
+    {
+      "category": "private vault or legacy absolute path",
+      "replacement": "<PRIVATE_VAULT_WINDOWS>"
+    },
+    {
+      "category": "private vault or legacy absolute path",
+      "replacement": "<LEGACY_CANDIDATE_WSL>"
+    },
+    {
+      "category": "private vault or legacy absolute path",
+      "replacement": "<LEGACY_CANDIDATE_WINDOWS>"
+    }
+  ],
+  "subagents": [],
+  "application_runtime_prompts": "not-created",
+  "coverage": "A cutoff; no all-tools or final-response coverage claim"
+}

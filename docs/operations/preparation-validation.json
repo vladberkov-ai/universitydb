@@ -1,0 +1,243 @@
+{
+  "recorded_at": "2026-11-06T23:20:17.981795+00:00",
+  "result": "passed for independent documentation checks; Git/runtime failures remain",
+  "input_sha256_recheck": "25/25 match plus observed handoff hash unchanged",
+  "snapshot_source_destination_sha256_recheck": "4/4 match",
+  "snapshot_allowlist": "exactly four; no nested exports",
+  "prompt_hashes": "public task/export match receipt; task derived from actual native export entry",
+  "local_markdown_links_checked": 39,
+  "local_wiki_links_checked": 2,
+  "privacy_review": {
+    "automated": "No private absolute vault/legacy/contact paths, common API/AWS/GitHub/private-key patterns or credential-bearing URLs in public-safe allowlist.",
+    "manual": "Four transformed chat snapshots and task/progress derivative read; owner/status and accepted/proposed/withdrawn distinctions retained; private dependencies converted to attribution. Scoped review, not universal secret detection."
+  },
+  "requirements_report_matrix": "R-01..17 and U-01..08 all accounted, no application completion claimed",
+  "whitespace_check": {
+    "method": "git diff --no-index --check /dev/null <each-explicit-new-safe-file>; no separate repository/git-dir created",
+    "results": [
+      {
+        "path": "AGENTS.md",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": ".gitignore",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "docs/adr/ADR-OMX-001-preparation-boundary.md",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "docs/adr/README.md",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "docs/ai/README.md",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "docs/ai/omx/H-004-actual-prompt.txt",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "docs/ai/omx/H-004-instruction-context.json",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "docs/ai/omx/H-004-prompt-receipt.json",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "docs/ai/omx/H-004-session-export.json",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "docs/chat/decisions/ADR-CHAT-001-memory-ownership.md",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "docs/chat/decisions/ADR-CHAT-002-result-scope.md",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "docs/chat/planning/acceptance-contract.md",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "docs/chat/requirements.md",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "docs/operations/chat-export-receipt.json",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "docs/operations/environment-checks.json",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "docs/operations/git-checkpoints.md",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "docs/operations/input-verification.json",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "docs/reports/H-004-repository-preparation.md",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "omx_wiki/index.md",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "omx_wiki/log.md",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      },
+      {
+        "path": "omx_wiki/session-log-h-004.md",
+        "exit_code": 1,
+        "interpretation": "Expected no-index differences versus empty file; no whitespace diagnostics."
+      }
+    ]
+  },
+  "omx_wiki_lint": {
+    "brokenRefCount": 0,
+    "contradictionCount": 0,
+    "info": "One orphan informational issue: index links are not counted as another content page; manual index link resolves. Not a broken link or error."
+  },
+  "git_diff_check": "exit 129: no Git repository",
+  "staged_diff": "not-run: Git prerequisite unavailable",
+  "commit": "not-committed: empty read-only .git mount",
+  "application_tests": "not-run: forbidden by preparation scope",
+  "public_file_count_excluding_this_manifest": 21,
+  "public_files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 2821,
+      "sha256": "91e919ba05e16729b9c147b4d4317d48c59a2d988fe6d25ea53091321c1f10b9"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 577,
+      "sha256": "36f5c847236d2b148c41c30b063a5afa13c1e6da68c5e655efe7c4711f2b2807"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-001-preparation-boundary.md",
+      "bytes": 2748,
+      "sha256": "a7be0d850c99ca833fabf5f4d48b20ac31f2ab11a1d9c1e94139d143ce806674"
+    },
+    {
+      "path": "docs/adr/README.md",
+      "bytes": 1305,
+      "sha256": "99363077fc2b8f7dee819408bac2f83225968772364e515a9e466d573f27605c"
+    },
+    {
+      "path": "docs/ai/README.md",
+      "bytes": 5328,
+      "sha256": "847ea6aff77272508fa5fbf8c7233c601642896376bd570cbf8b9255471dca45"
+    },
+    {
+      "path": "docs/ai/omx/H-004-actual-prompt.txt",
+      "bytes": 1919,
+      "sha256": "6def3132523c0e8731ec5ee6f5f23eae0f22a2935ddbb7658a1d066071e715f5"
+    },
+    {
+      "path": "docs/ai/omx/H-004-instruction-context.json",
+      "bytes": 1344,
+      "sha256": "22a1adbbcec9d04ad56e24d2b197ee590736f20277886ff833438b1fc1234932"
+    },
+    {
+      "path": "docs/ai/omx/H-004-prompt-receipt.json",
+      "bytes": 1846,
+      "sha256": "2191d62861100f134988ca47c9608c92b3ec3609c613e2cff9b8172ab290121e"
+    },
+    {
+      "path": "docs/ai/omx/H-004-session-export.json",
+      "bytes": 4109,
+      "sha256": "487b330fc5bd6f958d5dabfddd38fbf7d8660460f2cc6526f189b0b1761c1149"
+    },
+    {
+      "path": "docs/chat/decisions/ADR-CHAT-001-memory-ownership.md",
+      "bytes": 2352,
+      "sha256": "2f68a94298b86c7c96372102167aaa5b0e055e95024b704ca71ba560703a0cf0"
+    },
+    {
+      "path": "docs/chat/decisions/ADR-CHAT-002-result-scope.md",
+      "bytes": 3456,
+      "sha256": "a9ddf57dcb88d5610d751eb8ba9429178e728e5c23f2aa6d4ca030020d42defe"
+    },
+    {
+      "path": "docs/chat/planning/acceptance-contract.md",
+      "bytes": 9378,
+      "sha256": "ff8dd0a1354480e7fd83caac3219e5d885b4582fe33474ac51f223a75c7ac5fb"
+    },
+    {
+      "path": "docs/chat/requirements.md",
+      "bytes": 10079,
+      "sha256": "09e723b90c5ccc4b83e77d0f34b52ac02c59effd8d0af45ab046c40088171e9b"
+    },
+    {
+      "path": "docs/operations/chat-export-receipt.json",
+      "bytes": 8563,
+      "sha256": "ad7237965f554de3fe1081aaf9583212abf636eeba3ff5df8e637ca8da6e0cba"
+    },
+    {
+      "path": "docs/operations/environment-checks.json",
+      "bytes": 10695,
+      "sha256": "cd30767517f1d708b36e2798bd5e5c3a20c8482640e392ec9c1dca79e3b8ab29"
+    },
+    {
+      "path": "docs/operations/git-checkpoints.md",
+      "bytes": 2524,
+      "sha256": "bc46f5573acb4498953bef61bf74b1e892820e80dd042cf6bf773ec1e3c68059"
+    },
+    {
+      "path": "docs/operations/input-verification.json",
+      "bytes": 7895,
+      "sha256": "83fd0f7d76b2654ff37b5caebd8a9b486a387256f14950b655c6d4683ed4397c"
+    },
+    {
+      "path": "docs/reports/H-004-repository-preparation.md",
+      "bytes": 23551,
+      "sha256": "1af672ce1e7107464ac201c84ff1286ad901d793ebc904ba115fa5635e1e1c48"
+    },
+    {
+      "path": "omx_wiki/index.md",
+      "bytes": 614,
+      "sha256": "6a82c0ce227ed9d9bff02866eb32196a397e02cb0ae780307953c2bee61c85d2"
+    },
+    {
+      "path": "omx_wiki/log.md",
+      "bytes": 307,
+      "sha256": "5708183ebf21e1cc3063fc99e83bddc86e325a43b0baa8ebe5e1d9f6142d9e2b"
+    },
+    {
+      "path": "omx_wiki/session-log-h-004.md",
+      "bytes": 963,
+      "sha256": "ef89bcdd5ed7a51fc96468098fd701c1ec1eebc8a73d78ccc0bf469899d3ecbc"
+    }
+  ],
+  "self_hash": "excluded to avoid self-reference; hash separately after final save"
+}

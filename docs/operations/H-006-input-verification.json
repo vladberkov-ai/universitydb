@@ -1,0 +1,136 @@
+{
+  "handoff": "H-006-v4",
+  "package_sha256": "c55b0326e8eeb09c76bf38d0db6096e92944f90daacec0cafac97b21cdbdbf7b",
+  "expected_package_hash": null,
+  "inputs": [
+    {
+      "source": "AGENTS.md",
+      "expected_sha256": "ed17c591c51015a18df7696d78fdab27745184737bf20f31d60ffbffc2201e97",
+      "actual_sha256": "ed17c591c51015a18df7696d78fdab27745184737bf20f31d60ffbffc2201e97",
+      "match": true
+    },
+    {
+      "source": "SCHEMA.md",
+      "expected_sha256": "598e5ba595b3f6c0e604f5cf8599d92ede3a9859f0bc2ca20f4d1417617d5769",
+      "actual_sha256": "598e5ba595b3f6c0e604f5cf8599d92ede3a9859f0bc2ca20f4d1417617d5769",
+      "match": true
+    },
+    {
+      "source": "raw/assignment/HW Task 1.pdf",
+      "expected_sha256": "f60e6212307812a27430b2e28ad3bb027b752f50609f76d0bcb8578116ed7550",
+      "actual_sha256": "f60e6212307812a27430b2e28ad3bb027b752f50609f76d0bcb8578116ed7550",
+      "match": true
+    },
+    {
+      "source": "raw/chat/CHAT-015.md",
+      "expected_sha256": "774edad9220f9a305fe63dd81dacf40accb97f8f7e39591212d2ad8902e6764e",
+      "actual_sha256": "774edad9220f9a305fe63dd81dacf40accb97f8f7e39591212d2ad8902e6764e",
+      "match": true
+    },
+    {
+      "source": "wiki/overview.md",
+      "expected_sha256": "36d985eda9597af47f91d05155a8ead486419e27fc1a6714dcb7fa57be7994bc",
+      "actual_sha256": "36d985eda9597af47f91d05155a8ead486419e27fc1a6714dcb7fa57be7994bc",
+      "match": true
+    },
+    {
+      "source": "wiki/requirements.md",
+      "expected_sha256": "1011c7bb7bce852f21d1d54850c476d422990c12c2f01199ce3cf7c37b90a086",
+      "actual_sha256": "1011c7bb7bce852f21d1d54850c476d422990c12c2f01199ce3cf7c37b90a086",
+      "match": true
+    },
+    {
+      "source": "wiki/planning/acceptance-contract.md",
+      "expected_sha256": "a0307bea7adfea9e7d0ab140ef4a062e91705f9a3709650c0b0ca0f656f6ba12",
+      "actual_sha256": "a0307bea7adfea9e7d0ab140ef4a062e91705f9a3709650c0b0ca0f656f6ba12",
+      "match": true
+    },
+    {
+      "source": "wiki/verification/acceptance.md",
+      "expected_sha256": "00d7a6fd28c0763513b1a27ba15c24820df5a4a39b1719c50bc1b4c40afa05e2",
+      "actual_sha256": "00d7a6fd28c0763513b1a27ba15c24820df5a4a39b1719c50bc1b4c40afa05e2",
+      "match": true
+    },
+    {
+      "source": "wiki/planning/stages.md",
+      "expected_sha256": "8ece6bf9f140b4303c30b782e95ef970f9b24778a68f43614d545b537066cf7d",
+      "actual_sha256": "8ece6bf9f140b4303c30b782e95ef970f9b24778a68f43614d545b537066cf7d",
+      "match": true
+    },
+    {
+      "source": "wiki/decisions/ADR-CHAT-001-memory-ownership.md",
+      "expected_sha256": "057e1c6a9e23d30d9e8a0580bbd885681f72a32c787ee91729c18425deb52583",
+      "actual_sha256": "057e1c6a9e23d30d9e8a0580bbd885681f72a32c787ee91729c18425deb52583",
+      "match": true
+    },
+    {
+      "source": "wiki/decisions/ADR-CHAT-002-result-scope.md",
+      "expected_sha256": "d9ba42c284c39ada7409c70191ab4b56be29fa2af21ed2f98146184c45e5930d",
+      "actual_sha256": "d9ba42c284c39ada7409c70191ab4b56be29fa2af21ed2f98146184c45e5930d",
+      "match": true
+    },
+    {
+      "source": "wiki/decisions/ADR-CHAT-003-repository-location.md",
+      "expected_sha256": "1151afe41489e8abb7a7170049f6c42b2f67ebc9882cc387aff0853b71be43e2",
+      "actual_sha256": "1151afe41489e8abb7a7170049f6c42b2f67ebc9882cc387aff0853b71be43e2",
+      "match": true
+    },
+    {
+      "source": "wiki/operations/git-protocol.md",
+      "expected_sha256": "51f4dc9119a204dc10094340c6f7f991754fda0a20f2fcfa5e2a52ae12f0ad32",
+      "actual_sha256": "51f4dc9119a204dc10094340c6f7f991754fda0a20f2fcfa5e2a52ae12f0ad32",
+      "match": true
+    },
+    {
+      "source": "wiki/operations/repo-map.md",
+      "expected_sha256": "4d704c3de99a4c570fd61c5a34466534e37497bcba05948737aac0c47223a59d",
+      "actual_sha256": "4d704c3de99a4c570fd61c5a34466534e37497bcba05948737aac0c47223a59d",
+      "match": true
+    },
+    {
+      "source": "wiki/operations/export-manifest.json",
+      "expected_sha256": "3c7376c1780b10ca8240d2e749c67522c370400d95c3445a35412f18af17eab8",
+      "actual_sha256": "3c7376c1780b10ca8240d2e749c67522c370400d95c3445a35412f18af17eab8",
+      "match": true
+    },
+    {
+      "source": "wiki/operations/result-understanding.md",
+      "expected_sha256": "5e4ba14dfc35cff554c7d1d8138e3b4584486198004692a9e116d71f740a8f64",
+      "actual_sha256": "5e4ba14dfc35cff554c7d1d8138e3b4584486198004692a9e116d71f740a8f64",
+      "match": true
+    },
+    {
+      "source": "wiki/verification/H-005-review.md",
+      "expected_sha256": "2f1df632cf5c8ce18e8ad2501652c73d6140ae6e865af58cb3fea673a07e1a07",
+      "actual_sha256": "2f1df632cf5c8ce18e8ad2501652c73d6140ae6e865af58cb3fea673a07e1a07",
+      "match": true
+    },
+    {
+      "source": "raw/chat/CHAT-018.md",
+      "expected_sha256": "d9829139a58fcb5fd9441c483b10ab628cef3692148ac89f4dd593099813c56b",
+      "actual_sha256": "d9829139a58fcb5fd9441c483b10ab628cef3692148ac89f4dd593099813c56b",
+      "match": true
+    },
+    {
+      "source": "wiki/operations/omx-workflow.md",
+      "expected_sha256": "9e5f6eafcf29cada6a178783a68b4a1ebd0a1aa0fa3b1f34f42078635a2eac66",
+      "actual_sha256": "9e5f6eafcf29cada6a178783a68b4a1ebd0a1aa0fa3b1f34f42078635a2eac66",
+      "match": true
+    }
+  ],
+  "baseline": "34/34 H-005 manifest entries match before edits; no additional public files",
+  "snapshots": "4/4 destination hashes checked first against receipt, then 4/4 source hashes; unchanged, no refresh",
+  "pdf": {
+    "pages": 4,
+    "method": "Direct PDF page objects + Flate streams + embedded ToUnicode CMaps; zero unmapped glyphs",
+    "not_available": [
+      "pdfinfo",
+      "pdftotext",
+      "pypdf",
+      "PyPDF2",
+      "fitz",
+      "pdfplumber"
+    ]
+  },
+  "previous_h006_packages": "not opened or used"
+}

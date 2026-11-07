@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "handoff": "H-004-v2",
+  "date": "2026-11-07",
+  "owner": "repo",
+  "source_root": "private-vault",
+  "source_path_convention": "All source paths are vault-relative; authoritative originals unchanged.",
+  "state": "saved-not-committed-not-pushed",
+  "vault_manifest_updated": false,
+  "allowlist_exact": true,
+  "entries": [
+    {
+      "source": "wiki/requirements.md",
+      "destination": "docs/chat/requirements.md",
+      "source_sha256": "71d363db289d2fc1e1993bc0b94e03e012231ad77596bfd6dc5bab077ff71291",
+      "destination_sha256": "09e723b90c5ccc4b83e77d0f34b52ac02c59effd8d0af45ab046c40088171e9b",
+      "source_bytes": 9450,
+      "destination_bytes": 10079,
+      "redactions": [
+        {
+          "kind": "projection-metadata",
+          "change": "Visibility is for this reviewed derivative only; original remains private. Owner/status retained."
+        },
+        {
+          "kind": "private-link-to-attribution",
+          "source_target": "../raw/assignment/HW%20Task%201.pdf",
+          "change": "Retained label/attribution, removed dependency link; dependency not exported."
+        },
+        {
+          "kind": "private-link-to-attribution",
+          "source_target": "../raw/assignment/extracted.txt",
+          "change": "Retained label/attribution, removed dependency link; dependency not exported."
+        },
+        {
+          "kind": "private-link-to-attribution",
+          "source_target": "../raw/chat/CHAT-001.md",
+          "change": "Retained label/attribution, removed dependency link; dependency not exported."
+        },
+        {
+          "kind": "private-link-to-attribution",
+          "source_target": "../raw/chat/CHAT-002.md",
+          "change": "Retained label/attribution, removed dependency link; dependency not exported."
+        },
+        {
+          "kind": "private-link-to-attribution",
+          "source_target": "../raw/chat/CHAT-003.md",
+          "change": "Retained label/attribution, removed dependency link; dependency not exported."
+        },
+        {
+          "kind": "private-link-to-attribution",
+          "source_target": "../raw/chat/CHAT-004.md",
+          "change": "Retained label/attribution, removed dependency link; dependency not exported."
+        },
+        {
+          "kind": "private-link-to-attribution",
+          "source_target": "../raw/chat/CHAT-005.md",
+          "change": "Retained label/attribution, removed dependency link; dependency not exported."
+        },
+        {
+          "kind": "private-link-to-attribution",
+          "source_target": "planning/result-brief.md",
+          "change": "Retained label/attribution, removed dependency link; dependency not exported."
+        },
+        {
+          "kind": "link-rebase",
+          "source_target": "decisions/ADR-CHAT-002-result-scope.md",
+          "destination_target": "decisions/ADR-CHAT-002-result-scope.md"
+        },
+        {
+          "kind": "link-rebase",
+          "source_target": "planning/acceptance-contract.md",
+          "destination_target": "planning/acceptance-contract.md"
+        },
+        {
+          "kind": "link-rebase",
+          "source_target": "planning/acceptance-contract.md",
+          "destination_target": "planning/acceptance-contract.md"
+        },
+        {
+          "kind": "private-link-to-attribution",
+          "source_target": "decisions/ADR-CHAT-003-repository-location.md",
+          "change": "Retained label/attribution, removed dependency link; dependency not exported."
+        }
+      ],
+      "content_review": "No personal circumstances, contact details, private URLs or unnecessary hiring context in selected text; private dependency links removed, accepted/proposed/withdrawn semantics retained.",
+      "link_check": "passed: all remaining Markdown dependency links resolve inside the public-safe file set; excluded dependencies are plain attributions."
+    },
+    {
+      "source": "wiki/planning/acceptance-contract.md",
+      "destination": "docs/chat/planning/acceptance-contract.md",
+      "source_sha256": "a0307bea7adfea9e7d0ab140ef4a062e91705f9a3709650c0b0ca0f656f6ba12",
+      "destination_sha256": "ff8dd0a1354480e7fd83caac3219e5d885b4582fe33474ac51f223a75c7ac5fb",
+      "source_bytes": 8978,
+      "destination_bytes": 9378,
+      "redactions": [
+        {
+          "kind": "projection-metadata",
+          "change": "Visibility is for this reviewed derivative only; original remains private. Owner/status retained."
+        },
+        {
+          "kind": "private-link-to-attribution",
+          "source_target": "../../raw/assignment/HW%20Task%201.pdf",
+          "change": "Retained label/attribution, removed dependency link; dependency not exported."
+        },
+        {
+          "kind": "private-link-to-attribution",
+          "source_target": "../../raw/chat/CHAT-007.md",
+          "change": "Retained label/attribution, removed dependency link; dependency not exported."
+        },
+        {
+          "kind": "private-link-to-attribution",
+          "source_target": "acceptance-contract-v1-superseded.md",
+          "change": "Retained label/attribution, removed dependency link; dependency not exported."
+        }
+      ],
+      "content_review": "No personal circumstances, contact details, private URLs or unnecessary hiring context in selected text; private dependency links removed, accepted/proposed/withdrawn semantics retained.",
+      "link_check": "passed: all remaining Markdown dependency links resolve inside the public-safe file set; excluded dependencies are plain attributions."
+    },
+    {
+      "source": "wiki/decisions/ADR-CHAT-001-memory-ownership.md",
+      "destination": "docs/chat/decisions/ADR-CHAT-001-memory-ownership.md",
+      "source_sha256": "057e1c6a9e23d30d9e8a0580bbd885681f72a32c787ee91729c18425deb52583",
+      "destination_sha256": "2f68a94298b86c7c96372102167aaa5b0e055e95024b704ca71ba560703a0cf0",
+      "source_bytes": 1963,
+      "destination_bytes": 2352,
+      "redactions": [
+        {
+          "kind": "projection-metadata",
+          "change": "Visibility is for this reviewed derivative only; original remains private. Owner/status retained."
+        },
+        {
+          "kind": "private-link-to-attribution",
+          "source_target": "../../raw/chat/CHAT-003.md",
+          "change": "Retained label/attribution, removed dependency link; dependency not exported."
+        }
+      ],
+      "content_review": "No personal circumstances, contact details, private URLs or unnecessary hiring context in selected text; private dependency links removed, accepted/proposed/withdrawn semantics retained.",
+      "link_check": "passed: all remaining Markdown dependency links resolve inside the public-safe file set; excluded dependencies are plain attributions."
+    },
+    {
+      "source": "wiki/decisions/ADR-CHAT-002-result-scope.md",
+      "destination": "docs/chat/decisions/ADR-CHAT-002-result-scope.md",
+      "source_sha256": "d9ba42c284c39ada7409c70191ab4b56be29fa2af21ed2f98146184c45e5930d",
+      "destination_sha256": "a9ddf57dcb88d5610d751eb8ba9429178e728e5c23f2aa6d4ca030020d42defe",
+      "source_bytes": 3040,
+      "destination_bytes": 3456,
+      "redactions": [
+        {
+          "kind": "projection-metadata",
+          "change": "Visibility is for this reviewed derivative only; original remains private. Owner/status retained."
+        },
+        {
+          "kind": "private-link-to-attribution",
+          "source_target": "../../raw/chat/CHAT-006.md",
+          "change": "Retained label/attribution, removed dependency link; dependency not exported."
+        },
+        {
+          "kind": "private-link-to-attribution",
+          "source_target": "../planning/result-brief.md",
+          "change": "Retained label/attribution, removed dependency link; dependency not exported."
+        },
+        {
+          "kind": "link-rebase",
+          "source_target": "../planning/acceptance-contract.md",
+          "destination_target": "../planning/acceptance-contract.md"
+        }
+      ],
+      "content_review": "No personal circumstances, contact details, private URLs or unnecessary hiring context in selected text; private dependency links removed, accepted/proposed/withdrawn semantics retained.",
+      "link_check": "passed: all remaining Markdown dependency links resolve inside the public-safe file set; excluded dependencies are plain attributions."
+    }
+  ],
+  "excluded": "Full PDF, raw chats, vault, result-brief, ADR-CHAT-003 and bootstrap materials are not exported. No nested dependencies copied."
+}
