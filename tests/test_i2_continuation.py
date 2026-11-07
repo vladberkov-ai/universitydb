@@ -247,3 +247,25 @@ def test_trace_preserves_actual_request_ids_across_resume(database, tmp_path):
     assert result["status"] == "ok" and provider.calls == 2
     assert {e["request_id"] for e in result["events"]} == {"new-app-request", "resume-app-request"}
     assert {e["run_id"] for e in result["events"]} == {first["run_id"]}
+
+
+@pytest.mark.parametrize("malformed", [[], {}, None, True, 4, "x" * 129])
+def test_malformed_run_identity_never_escapes_or_dispatches(database, tmp_path, malformed):
+    from universitydb.contracts import AgentOutput
+
+    agent, provider = make_agent(database, tmp_path)
+    first = agent.run("mean Alex")
+    continuation = deepcopy(first["clarification"])
+    continuation["run_id"] = malformed
+    result = agent.resume(continuation, 1, request_id="invalid")
+    AgentOutput.model_validate(result)
+    assert result["status"] == "error" and provider.calls == 0
+
+
+def test_paused_request_replay_after_ttl_is_expired(database, tmp_path):
+    agent, provider = make_agent(database, tmp_path)
+    first = agent.run("mean Alex", request_id="initial")
+    agent._now = lambda: first["clarification"]["expires_at"] + 1
+    result = agent.run("mean Alex", request_id="initial")
+    assert result["error"]["code"] == "RESUME_EXPIRED"
+    assert provider.calls == 0

@@ -226,3 +226,145 @@ def test_library_owned_reads_locked_classification(library_db):
             with pytest.raises(Failure) as caught:
                 read(library_db)
             assert caught.value.code == "DB_UNAVAILABLE"
+
+
+def library_graph(
+    path, trace_root, scope=None, question="How many open loans does each reader have?"
+):
+    domain = Library()
+    scope = scope or {}
+    p = proposal_for(domain, SPEC, scope)
+    plan = {
+        "version": "1",
+        "steps": [step_for(SPEC).model_dump()],
+        "needs_clarification": False,
+        "clarification_field": None,
+    }
+    provider = ScriptedProvider([plan, p.model_dump()])
+    agent = Agent(domain, path, provider, trace_root)
+    before = db.file_hash(path)
+    result = agent.run(question)
+    assert db.file_hash(path) == before
+    assert result["status"] == "ok", result
+    assert provider.calls == 2
+    return result
+
+
+def test_library_compiled_returned_zero_mutations(library_db, tmp_path):
+    assert library_graph(library_db, tmp_path / "base")["answer"]["rows"] == EXPECTED["expected"]
+    with sqlite3.connect(library_db) as conn:
+        conn.execute("INSERT INTO Readers VALUES(3,'Cy')")
+    assert (
+        library_graph(library_db, tmp_path / "zero")["answer"]["rows"]
+        == EXPECTED["reader_without_loans"]
+    )
+    with sqlite3.connect(library_db) as conn:
+        conn.execute("DELETE FROM Readers WHERE reader_id=3")
+        conn.execute("UPDATE Loans SET returned=1 WHERE loan_id=1")
+    assert (
+        library_graph(library_db, tmp_path / "changed")["answer"]["rows"]
+        == EXPECTED["returned_mutation"]
+    )
+    with sqlite3.connect(library_db) as conn:
+        conn.execute("UPDATE Loans SET returned=1")
+    assert (
+        library_graph(library_db, tmp_path / "all-returned")["answer"]["rows"]
+        == EXPECTED["all_returned"]
+    )
+
+
+def test_library_same_integrated_core_tree_and_session_schema_isolation(
+    library_db, database, tmp_path
+):
+    import hashlib
+
+    from universitydb.domain import University, make_spec
+
+    root = ROOT / "src/universitydb"
+
+    def hashes():
+        return {
+            p.name: hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in sorted(root.glob("*.py"))
+            if p.name not in ("domain.py", "library.py")
+        }
+
+    before = hashes()
+    d = University()
+    s = make_spec("grade_mean")
+    p = proposal_for(d, s, {})
+    plan = {
+        "version": "1",
+        "steps": [step_for(s).model_dump()],
+        "needs_clarification": False,
+        "clarification_field": None,
+    }
+    u = Agent(
+        d,
+        database,
+        ScriptedProvider([plan, p.model_dump()]),
+        tmp_path / "u",
+        session_id="same-server",
+    )
+    university = u.run("Mean all")
+    library = library_graph(library_db, tmp_path / "l")
+    assert university["answer"]["rows"] == [["83.33", 6, 8]]
+    assert library["answer"]["rows"] == EXPECTED["expected"]
+    paused = u.run("Mean Alex")
+    foreign = Agent(
+        Library(), library_db, ScriptedProvider([]), tmp_path / "foreign", session_id="same-server"
+    )
+    rejected = foreign.resume(paused["clarification"], 1, request_id="foreign")
+    assert rejected["error"]["code"] == "RESUME_EXPIRED"
+    assert foreign.provider.calls == 0
+    assert hashes() == before
+    tree_hash = hashlib.sha256(json.dumps(before, sort_keys=True).encode()).hexdigest()
+    evidence = {
+        "core_files_sha256": before,
+        "integrated_core_tree_sha256": tree_hash,
+        "same_core_before_after_adapter_switch": True,
+        "University": university["answer"]["rows"],
+        "Library": library["answer"]["rows"],
+        "foreign_adapter_resume": rejected["error"]["code"],
+        "foreign_adapter_provider_calls": 0,
+        "live_calls": 0,
+        "claim": "actual SQLite/compiled graph with injected provider, not NL accuracy",
+    }
+    (tmp_path / "portability-proof.json").write_text(json.dumps(evidence, indent=2) + "\n")
+
+
+@pytest.mark.parametrize("corruption", ["fk", "flag", "storage_type"])
+def test_library_corrupted_real_graph_stops_before_provider(library_db, tmp_path, corruption):
+    with sqlite3.connect(library_db) as conn:
+        if corruption == "fk":
+            conn.execute("UPDATE Loans SET reader_id=999 WHERE loan_id=1")
+        elif corruption == "flag":
+            conn.execute("PRAGMA ignore_check_constraints=ON")
+            conn.execute("UPDATE Loans SET returned=2 WHERE loan_id=1")
+        else:
+            conn.executescript(
+                "ALTER TABLE Loans RENAME TO OldLoans; CREATE TABLE Loans(loan_id INTEGER, reader_id INTEGER, book_id INTEGER, returned); INSERT INTO Loans SELECT loan_id,reader_id,book_id,returned FROM OldLoans; DROP TABLE OldLoans;"
+            )
+            conn.execute("UPDATE Loans SET returned='false' WHERE loan_id=1")
+    provider = ScriptedProvider([])
+    result = Agent(Library(), library_db, provider, tmp_path / "trace").run(
+        "Count open loans per reader"
+    )
+    assert result["error"]["code"] == "DATA_INCONSISTENT"
+    assert provider.calls == 0
+    assert not [e for e in result["events"] if e["kind"] == "sql_attempt"]
+
+
+def test_existing_checkpoint_refuses_adapter_schema_switch(library_db, database, tmp_path):
+    from universitydb.domain import University
+
+    provider = ScriptedProvider([])
+    agent = Agent(University(), database, provider, tmp_path / "trace", session_id="bound-server")
+    paused = agent.run("Mean Alex")
+    assert paused["status"] == "clarification"
+    agent.domain = Library()
+    agent.database = library_db
+    result = agent.resume(paused["clarification"], 1, request_id="after-adapter-switch")
+    assert result["error"]["code"] == "STALE_RESUME"
+    assert provider.calls == 0
+    assert not [e for e in result["events"] if e["kind"] == "sql_attempt"]

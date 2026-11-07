@@ -123,22 +123,75 @@ def run(out, full):
                             "Execution profile: offline/injected.", exact=False
                         ).wait_for()
 
+                        seen_runs = {}
+
                         def capture(case, expected, status="ok"):
+                            # Grouped means have a summary alert; exact values are in the
+                            # typed answer/trace rather than repeated in that heading.
+                            alert_text = "grade_mean" if case == "m1" else expected
                             page.get_by_test_id("stAlert").filter(
-                                has_text=expected
+                                has_text=alert_text
                             ).first.wait_for()
-                            body = page.inner_text("body")
-                            assert "offline/injected" in body
-                            if status == "ok":
-                                assert expected in body
+                            # Wait for the whole current render, not merely its early alert.
+                            # Otherwise Streamlit can still be replacing prior lower panels.
+                            page.get_by_test_id("stStatusWidget").wait_for(state="hidden")
+                            with page.expect_download() as download:
+                                page.get_by_role("button", name="JSONL trace", exact=True).click()
+                            download.value.save_as(str(out / f"{case}.jsonl"))
+                            events = [
+                                json.loads(line)
+                                for line in (out / f"{case}.jsonl").read_text().splitlines()
+                            ]
+                            run_ids = {event["run_id"] for event in events}
+                            assert len(run_ids) == 1
+                            run_id = next(iter(run_ids))
+                            assert [e["seq"] for e in events] == list(range(1, len(events) + 1))
+                            question_key = (
+                                "clarification" if case.startswith("clarification-") else case
+                            )
+                            expected_question = QUESTIONS.get(
+                                question_key, "How many open loans does each reader have?"
+                            )
+                            assert events[0]["kind"] == "input"
+                            assert events[0]["payload"]["question"] == expected_question
+                            if case == "clarification-resume":
+                                assert run_id == seen_runs["clarification-pause"]
                             else:
+                                assert run_id not in seen_runs.values()
+                            seen_runs[case] = run_id
+                            if status != "clarification":
+                                assert events[-1]["kind"] == "run_end"
+                                assert events[-1]["payload"]["status"] == status
+                            if status == "ok":
+                                assert expected in json.dumps(
+                                    [e["payload"] for e in events if e["kind"] == "answer"]
+                                )
+                            elif status == "error":
+                                assert any(
+                                    e["kind"] == "error" and e["payload"].get("code") == expected
+                                    for e in events
+                                )
+                                assert not any(e["kind"] == "db_result" for e in events)
+                            page.get_by_test_id("stStatusWidget").wait_for(state="hidden")
+                            body = page.inner_text("body")
+                            assert "offline/injected" in body and run_id in body
+                            if status == "error":
                                 assert (
                                     page.get_by_test_id("stAlert").filter(has_text="80.00").count()
                                     == 0
                                 )
+                                db_section = (
+                                    page.get_by_test_id("stExpander")
+                                    .filter(has_text="DB typed rows")
+                                    .first
+                                )
+                                assert "DB query was not executed." in db_section.inner_text()
+                                assert "sum_units" not in db_section.inner_text()
+                            page.get_by_role(
+                                "textbox", name="Question", exact=True
+                            ).scroll_into_view_if_needed()
                             page.screenshot(path=str(out / f"{case}.png"), full_page=True)
-                            # Streamlit scrolls inside its app container; document full_page
-                            # alone does not prove the lower SQL/DB/trace panels are visible.
+                            # Streamlit has an internal scroll container: focus every panel.
                             for panel, label in [
                                 ("sql", "SQL and safe parameters"),
                                 ("db", "DB typed rows"),
@@ -150,26 +203,16 @@ def run(out, full):
                                 )
                                 section.scroll_into_view_if_needed()
                                 page.screenshot(path=str(out / f"{case}-{panel}.png"))
-                            with page.expect_download() as download:
-                                page.get_by_role("button", name="JSONL trace", exact=True).click()
-                            download.value.save_as(str(out / f"{case}.jsonl"))
-                            events = [
-                                json.loads(line)
-                                for line in (out / f"{case}.jsonl").read_text().splitlines()
-                            ]
-                            run_ids = {event["run_id"] for event in events}
-                            assert len(run_ids) == 1
-                            assert [e["seq"] for e in events] == list(range(1, len(events) + 1))
-                            if status != "clarification":
-                                assert events[-1]["kind"] == "run_end"
                             (out / f"{case}-visible.txt").write_text(body)
                             receipt["cases"][case] = {
                                 "expected": expected,
                                 "status": status,
-                                "run_id": next(iter(run_ids)),
+                                "run_id": run_id,
                                 "events": len(events),
                                 "trace_sha256": digest(out / f"{case}.jsonl"),
                                 "screenshot_sha256": digest(out / f"{case}.png"),
+                                "current_question_run_outcome_verified": True,
+                                "render_settled_before_screenshots": True,
                             }
                             return events
 

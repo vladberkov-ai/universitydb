@@ -1,0 +1,33 @@
+{
+  "status": "focused20_pass; four_additional_graph_negative_tests_not_run_pending_root_serial_regression",
+  "CP_C": "b9f2eb66e20a3148485da2af62eaa4fc9d02d0cb",
+  "source_sha256": {
+    "src/universitydb/domain.py": "62bc0dda458579914b4396783856dc6f227fbda05f3f3f7cc401700c208a54ed",
+    "src/universitydb/library.py": "214f277ffeeda8672d00b69ae7d471fa66be42fdbcf0ef7452e04805c6eff7c4",
+    "tests/test_i2_domains.py": "a2cb355ec4792275f2170ee43d80b53943480e9916dfc5cc710a6d01480fa140",
+    "tests/test_library.py": "6831b286f6a9340711e409d2909a044071c2a259b7710b823ca036970d21f8c2",
+    "docs/operations/H-013/domain-cp-d-task.txt": "c8cdd0ee5d2fb69f4f3bf8419a9f12bf35a8f180f137bc340711065362d67802",
+    "docs/operations/H-013/domain-cp-d-portability-pre-retained-fix.json": "f28572fd6d00517cb9614fe63eef5d5a01ca18bd9915d350679e7b1493d8d7f1"
+  },
+  "checks": [
+    {
+      "command": ".venv/bin/pytest -q tests/test_i2_domains.py::test_domain_registered_edges_and_independent_variants_not_narrowed tests/test_i2_domains.py::test_domain_wrong_or_incomplete_reference_family_fails_before_sql tests/test_i2_domains.py::test_m1_registered_domain_queries_use_actual_upstream_oracle tests/test_library.py::test_library_compiled_returned_zero_mutations tests/test_library.py::test_library_same_integrated_core_tree_and_session_schema_isolation --basetemp=/tmp/h013-domain-cpd-verified",
+      "exit": 0,
+      "result": "20 passed in 16.99s"
+    }
+  ],
+  "not_run": [
+    "3 new compiled Library corruption variants",
+    "existing checkpoint adapter-switch rejection test",
+    "root full regression",
+    "final core-tree proof after retained-bound fix/cleaner"
+  ],
+  "initial_failed_attempt": "12 static negative tests used ambiguous shorthand top course S1 and stopped at input; explicit required top course in S1 reaches plan and all12pass. No unknown resolver weakening.",
+  "static": "Ruff/format4ownedfiles; mypy2sources; scoped diffcheck passed after final test additions",
+  "semantics": "per-edge registered families only; valid independent single/multisteps and top-cohort prefix preserved",
+  "proof_cutoff": "Portability artifact is pre-final retained-payload core fix; final root serialized regression/capture must refresh final core identity.",
+  "live_calls": 0,
+  "credentials_loaded": false,
+  "ledger_modified": false,
+  "Git_or_workflow_mutated": false
+}

@@ -55,3 +55,46 @@ def proposal(
         "result_kind": "rows" if spec.shape in ("rows", "top") else "aggregate",
         "explanation": "Offline injected proposal; database result is not supplied",
     }
+
+
+def m1_outputs(course_ids: list[int], student_ids: list[int]) -> list[dict[str, Any]]:
+    """Fixed proposals for UI mechanics only, not the dynamic sensitivity proof."""
+    from universitydb.domain import University, make_spec
+
+    domain = University()
+    top = make_spec("top_course", "course_id")
+    cohort = make_spec("student_ids")
+    means = make_spec("grade_mean", "student_id")
+    scope = {"semester_id": "S1"}
+    return [
+        plan(
+            step(top, "top"),
+            step(
+                cohort,
+                "cohort",
+                [
+                    {
+                        "from_step": "top",
+                        "column": "course_id",
+                        "type": "integer",
+                        "bind_as": "course_ids",
+                    }
+                ],
+            ),
+            step(
+                means,
+                "means",
+                [
+                    {
+                        "from_step": "cohort",
+                        "column": "student_id",
+                        "type": "integer",
+                        "bind_as": "student_ids",
+                    }
+                ],
+            ),
+        ),
+        proposal(domain, top, scope, "top"),
+        proposal(domain, cohort, scope, "cohort", {"course_ids": course_ids}),
+        proposal(domain, means, scope, "means", {"student_ids": student_ids}),
+    ]

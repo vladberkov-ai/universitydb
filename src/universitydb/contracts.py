@@ -72,7 +72,7 @@ class ResultSpec(Closed):
     columns: list[ResultColumn]
     components: Components
     unit: str
-    scale: int
+    scale: int = Field(ge=1, le=9223372036854775807)
 
 
 class Reference(Closed):
@@ -106,7 +106,7 @@ class PlanProposal(Closed):
 class Binding(Closed):
     name: str = Field(pattern=r"^[A-Za-z_][A-Za-z0-9_]{0,63}$")
     type: Literal["integer", "text", "null"]
-    integer_value: int | None
+    integer_value: int | None = Field(ge=-9223372036854775808, le=9223372036854775807)
     text_value: str | None
 
 
@@ -169,7 +169,9 @@ def validate_dag(plan: PlanProposal) -> None:
 
 
 def _typed(value: Any, kind: str) -> bool:
-    return type(value) is {"integer": int, "string": str, "boolean": bool}[kind]
+    if kind == "integer":
+        return type(value) is int and -9223372036854775808 <= value <= 9223372036854775807
+    return type(value) is {"string": str, "boolean": bool}[kind]
 
 
 def validate_result(result: dict[str, Any], spec: ResultSpec) -> None:

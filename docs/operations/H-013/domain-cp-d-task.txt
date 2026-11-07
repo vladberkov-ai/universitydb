@@ -1,0 +1,9 @@
+Actual received follow-up from root to domain_implementation:
+
+Resume bounded CP-D performer slice now. CP-C actual commit b9f2eb66e20a3148485da2af62eaa4fc9d02d0cb root full311PASS/static; actual G004 active. Read queued CP-D messages. Own domain.py/static family validation, tests/test_i2_domains.py and test_library.py, domain evidence. Require valid M1 static ref families top_course.course_id→student_ids bindcourse_ids then student_ids.student_id→grade_mean/student bindstudent_ids; reject wrong/missing/extra before calls; preserve valid independent single steps. Core lane owns dynamic test_i3_dependencies.py, currently first targeted/proof slot; coordinate directly and run your focused tests only when slot released. Add same integrated core hash both schemas and Library real-graph mutations/zero/corruption/session-resume proof. No other files/ledger/workflow/Git/live/credentials. Not alone; preserve others' changes. Report ready/frozen then keep available without final until root release.
+
+Subsequent received root policy clarification:
+
+Use allowed per-edge family policy, not global exact3-only blanket. Preserve previously supported registered independent single steps; valid top→cohort prefix2 should stay valid. For any referenced dependent step require exact allowed one ref: top_course(course_id)→student_ids(course_ids), student_ids(student_id)→grade_mean groupedstudent(student_ids); reject other/extra/missing claimed dependency edges beforecalls. Full M1 remains exact3test. Avoid silently narrowing all previously valid independent multistep plans merely for convenience; ≤3 and staticDAG already apply. Record policy/docs scoped.
+
+Coverage note: actual task projections above, not a full child/root transcript. Core peer owns dynamic actual-result proof and raw traces; this lane owns domain validation and early Library portability regression. No private source contents, credentials or spending state copied.

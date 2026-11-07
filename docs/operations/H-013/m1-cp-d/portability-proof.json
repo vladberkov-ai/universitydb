@@ -1,0 +1,41 @@
+{
+  "core_files_sha256": {
+    "__init__.py": "f4783354578e7b9ed2f99a68b5454ac621abd61d76b07062a05bf5887dd72dd7",
+    "agent.py": "e8448f6de4f0917acdabcd3803666dc61abe243745d308feb3ce37348a5fa651",
+    "config.py": "508b2bef52d2c81c5114b885a6be56f5b22b18774ae5a48674679ea1fdd6b263",
+    "contracts.py": "0f850cd9b62b45bd4e6d135478040d0aa8f3ea3cc2d8b624e519512c75b08ed7",
+    "db.py": "5ad77c530df1d6b2b80f438d8b5be4b63f64ed9a14d5d83998af2c20af767f07",
+    "db_worker.py": "807eff2fe2b8ded359815fd050c93c32eeb14f18778504cd0a98e335d4145d1e",
+    "domain_support.py": "211407da912ca737bdc449ce68b098227efad5fdd551c8848796d5c041a71fae",
+    "llm.py": "4b8c80075748a669cb70397ad8aecbad2efbb9dd3ce2a7e9680e918ba10157cb",
+    "llm_worker.py": "ba0abec6f45197814068c70aa86fb747e4de070cc84f08f1caa6b537b3a5bf9d",
+    "sql_policy.py": "f0d2c532ad9c053952cc6a4fefba9350585e9826d49f9b05b5d6171b035307ac",
+    "tracing.py": "32a8b49dc56b0e2acf59b836361ef03abb70c4c549c312a1c914c8b646e8a96b",
+    "ui.py": "b20f375761ff10223c12be622a2a004917ee1ebde6816bd62171495c3813304b"
+  },
+  "integrated_core_tree_sha256": "22af58a4aa2643d959b248fda604d7dd881ad79ab40a63cb43a675e7dd9e3d47",
+  "same_core_before_after_adapter_switch": true,
+  "University": [
+    [
+      "83.33",
+      6,
+      8
+    ]
+  ],
+  "Library": [
+    [
+      1,
+      "Ada",
+      1
+    ],
+    [
+      2,
+      "Bob",
+      1
+    ]
+  ],
+  "foreign_adapter_resume": "RESUME_EXPIRED",
+  "foreign_adapter_provider_calls": 0,
+  "live_calls": 0,
+  "claim": "actual SQLite/compiled graph with injected provider, not NL accuracy"
+}

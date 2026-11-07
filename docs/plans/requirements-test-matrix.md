@@ -37,3 +37,14 @@ Current status: only documentary fixtures/expected and plan evidence. Runtime li
 
 ## H-013 — authoritative current-block mapping (historical rows retained)
 Use the explicit full R/U mapping in [I2+I3 contract](I2-I3-offline-contract.md#coverage-levels-and-blocking-gates), with [whole brief](I2-I3-offline-brief.md). R01/02/11 real schema/oracle/integrity; R03/04 all University classes/filters + actual-result M1 compiled-graph proof (offline, not real NL accuracy); **R05 early Library**, same integrated core/adapter/DB/graph and mutation/zero/isolation; R06 same-run trace/UI every step/resume; R07 clarification/errors/repair/NULL/empty/security; R08 unit/DB/graph/AppTest/browser/static/full regression; R09 core-domain separation and independent review; R10 production risk explanation maintained; R12/13/14 code/tests/ADR/prompts/examples/evidence/receipts. R15 final publication pending separate permission, push not-run; R16/17 offline working/debuggable service proof now, owner defense later. U01 actual root/child prompts+honest coverage and U04 scoped rationale/alternatives; U03 supported binding/new workflow and independent lanes; U05 vault/I1/ledger/locks preserved; U06 CP-A–E scoped local checkpoints/late receipt; U02 deadline not invented; U07 historical; U08 deferred understanding/defense. No requirement is silently dropped, no offline test count substitutes for DoD, no live score claimed. Implementation status pending actual evidence.
+
+### H-013 evidence progression, before final offline gates
+CP-A `13411c8` froze the whole contract/oracle; CP-B `f522fb4` verified both adapters
+on shared graph; CP-C `b9f2eb6` ties all36 committed source/test/resource blobs to
+root311pass/static proof. [Q1–Q12/negative mapping](../operations/H-013/cp-c-coverage.json)
+and [seven invariant audit plus all negative obligations](../operations/H-013/invariant-audit.md)
+retain R01–14/current U obligations, not just workflow extraction lines. Actual
+M1 sensitivity/same-core final identity and CP-E browser/cleaner/reviews/gates remain
+pending at this cutoff; historical live/eval/production claims are not silently
+promoted. [Current production boundaries](production-considerations.md#h-013-current-local-implementation-versus-future-production-work)
+maintain R10. R15 publication and owner defense/understanding remain separately open.

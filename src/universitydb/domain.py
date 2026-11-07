@@ -323,8 +323,44 @@ class University:
     def validate_plan(self, plan: PlanProposal) -> None:
         if plan.needs_clarification or plan.clarification_field is not None:
             raise Failure("PLAN_INVALID", "Catalog clarification must precede planning.")
+        known: dict[str, Step] = {}
         for step in plan.steps:
             self.accept_spec(step.result_spec)
+            if step.depends_on or step.result_refs:
+                if len(step.result_refs) != 1 or step.depends_on != [step.result_refs[0].from_step]:
+                    raise Failure(
+                        "PLAN_INVALID",
+                        "Dependent University steps require exactly one registered reference edge.",
+                    )
+                ref = step.result_refs[0]
+                upstream = known.get(ref.from_step)
+                if upstream is None:
+                    raise Failure(
+                        "PLAN_INVALID", "A registered dependency must precede its consumer."
+                    )
+                if step.result_spec == make_spec("student_ids"):
+                    source, name, bind_as = (
+                        make_spec("top_course", "course_id"),
+                        "course_id",
+                        "course_ids",
+                    )
+                elif step.result_spec == make_spec("grade_mean", "student_id"):
+                    source, name, bind_as = make_spec("student_ids"), "student_id", "student_ids"
+                else:
+                    raise Failure(
+                        "PLAN_INVALID", "This registered result family has no dependent variant."
+                    )
+                if (
+                    upstream.result_spec != source
+                    or ref.column != name
+                    or ref.type != "integer"
+                    or ref.bind_as != bind_as
+                ):
+                    raise Failure(
+                        "PLAN_INVALID",
+                        "Reference does not match an allowed metric/grain/column/type/binding family.",
+                    )
+            known[step.step_id] = step
 
     def query(
         self,

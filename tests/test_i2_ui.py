@@ -249,3 +249,41 @@ def test_missing_database_safe_error_no_stale_answer(isolated_app):
     app.button[0].click().run()
     assert not app.exception and not app.success
     assert "DB_UNAVAILABLE" in app.error[0].value
+
+
+@pytest.mark.parametrize("fixture_name", ["F1", "F2"])
+def test_m1_ui_all_actual_step_rows_bindings_and_final_means(isolated_app, fixture_name):
+    import sqlite3
+
+    from ui_fixtures import m1_outputs
+
+    root, fixture = isolated_app
+    oracle = json.loads((ROOT / "docs/operations/H-013/frozen-oracle.json").read_text())["m1"][
+        fixture_name
+    ]
+    app = app_with(fixture, m1_outputs(oracle["top_course_ids"], oracle["cohort_student_ids"]))
+    if fixture_name == "F2":
+        with sqlite3.connect(root / "runtime/university-v1.db") as connection:
+            connection.execute("INSERT INTO Enrollments VALUES(3,2,5000)")
+    app.text_area[0].set_value(
+        "For students of the course with the highest mean in S1, show their mean across all S1 courses."
+    )
+    app.button[0].click().run()
+    assert not app.exception and app.success, app.session_state["result"].get("error")
+    result = app.session_state["result"]
+    assert [outcome["step_id"] for outcome in result["step_results"]] == ["top", "cohort", "means"]
+    assert [row[0] for row in result["step_results"][0]["dependency_rows"]] == oracle[
+        "top_course_ids"
+    ]
+    assert [row[0] for row in result["step_results"][1]["dependency_rows"]] == oracle[
+        "cohort_student_ids"
+    ]
+    assert [row[1] for row in result["answer"]["rows"]] == [
+        entry["mean"] for entry in oracle["final"]
+    ]
+    assert len([e for e in result["events"] if e["kind"] == "db_result"]) == 3
+    assert any("course_ids_0" in block.value for block in app.code)
+    assert any("student_ids_0" in block.value for block in app.code)
+    assert any("dependency_rows" in block.value for block in app.json)
+    assert result["events"][-1]["kind"] == "run_end"
+    assert app.session_state["agent"].provider.calls == 4

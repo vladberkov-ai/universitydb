@@ -1,0 +1,22 @@
+{
+  "checkpoint": "CP-C",
+  "status": "local committed verified continuation/breadth/failures/UI; wholeofflinegoalnotcomplete",
+  "sha": "b9f2eb66e20a3148485da2af62eaa4fc9d02d0cb",
+  "parent": "f522fb4f3b0c56fccd5b8dd404960fef8f88d532",
+  "commit_exit": 0,
+  "exact_paths_manifest": "cp-c-staged-paths.json",
+  "path_count": 92,
+  "committed_source_match": {
+    "files": 36,
+    "result": "all committed source/test/resource blobs match root-tested311pass/static candidate hashes",
+    "verification": "cp-c-verification.json"
+  },
+  "preservation": "all7 baseline ledger/I1/lock hashes unchanged beforecommit; verified in cp-c-verification.json",
+  "privacy_diff_links": "reviewed explicit92 paths, textsecret/privateprefix patterns, Pngheaders, local links; stageddiffcheck0",
+  "prior_failure": "root serialized308pass2fail preserved in cp-c-integrated-attempts.json; exacterrorregistry fix preserved primaryerrors/originalassertions/limits",
+  "browser": "actual CP-C prior snapshots only; final frozen-candidate allcases stillrequired",
+  "postcommit_status": "only original untracked locks",
+  "native_checkpoint": "root-owned,notclaimedbychild",
+  "push": "not-run",
+  "receipt_commit": "late nextcheckpoint, no self-SHA"
+}

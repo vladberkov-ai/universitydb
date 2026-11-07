@@ -330,6 +330,7 @@ class Agent:
                 self.calls,
             )
             try:
+                self._check_deadline()
                 result, usage = self.provider.call(
                     operation,
                     payload,
@@ -534,16 +535,23 @@ class Agent:
                 "row_count": len(adapted["dependency_rows"]),
             }
             completed = {**state["completed"], step.step_id: dependency}
-            if len(json.dumps(completed).encode()) > 131072:
-                raise Failure("RESOURCE_LIMIT", "Retained step results exceed byte limit.")
+            step_results = [
+                *state["step_results"],
+                {"step_id": step.step_id, "raw": state["result"], **adapted},
+            ]
+            retained = {
+                "result": state["result"],
+                "completed": completed,
+                "step_results": step_results,
+                "answer": adapted["answer"],
+            }
+            if len(json.dumps(retained, ensure_ascii=False, allow_nan=False).encode()) > 131072:
+                raise Failure("RESOURCE_LIMIT", "Retained run result payload exceeds byte limit.")
             self.trace.emit(name, "adapted_result", {"step_id": step.step_id, **adapted})
             return {
                 "answer": adapted["answer"],
                 "completed": completed,
-                "step_results": [
-                    *state["step_results"],
-                    {"step_id": step.step_id, "raw": state["result"], **adapted},
-                ],
+                "step_results": step_results,
                 "step_index": state["step_index"] + 1,
             }
         if name == "answer":
@@ -777,6 +785,8 @@ class Agent:
         context = self._runs.get(run_id)
         if context is None:
             raise Failure("RESUME_EXPIRED", "Request context was evicted.")
+        if not context.get("terminal") and self._now() > context["created_at"] + 900:
+            raise Failure("RESUME_EXPIRED", "Paused request replay has expired.")
         if context.get("data_sha256"):
             schema, policy = self._identity()
             if schema != context["schema_sha256"] or policy != context["policy_sha256"]:
@@ -793,6 +803,8 @@ class Agent:
             try:
                 if session_id is not None and session_id != self.session_id:
                     raise Failure("RESUME_FORBIDDEN", "Request belongs to another server session.")
+                if not isinstance(question, str):
+                    raise Failure("INVALID_INPUT", "Question must be a string.")
                 replay = self._request(request_id, payload)
                 if replay is not None:
                     self._validate_replay_binding(replay["run_id"])
@@ -848,7 +860,14 @@ class Agent:
         session_id: str | None = None,
     ) -> dict[str, Any]:
         with self._mutex:
-            run_id = continuation.get("run_id", "") if isinstance(continuation, dict) else ""
+            submitted_run_id = (
+                continuation.get("run_id", "") if isinstance(continuation, dict) else ""
+            )
+            run_id = (
+                submitted_run_id
+                if isinstance(submitted_run_id, str) and len(submitted_run_id) <= 128
+                else ""
+            )
             context: dict[str, Any] | None = None
             terminal_binding_failure = False
             try:

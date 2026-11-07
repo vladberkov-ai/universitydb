@@ -39,3 +39,27 @@ values grants authority; retained server Agent/context/checkpointer/current data
 are authoritative. Native OMX ownership and IDs are separate and never exposed
 by this product contract. No authentication, public HTTP or restart-durability
 claim follows from local equality checks.
+
+## CP-D implementation note — count every retained application copy
+Before dependent code, clarify the existing128KiB bound as the serialized UTF-8 JSON
+bundle of current raw result, proposed completed dependency results (current step
+included), raw/adapted step_results
+and current answer, checked before accepting retention/downstream. Alternative
+completed-rows-only accounting is rejected: it omits retained duplicate copies and
+understates application payload. Consequence: earlier fail-closed rejection of
+oversize bundles as RESOURCE_LIMIT without partial success or downstream dispatch;
+scope/counters/framework overhead are not this result bundle. No ceiling,
+semantics/accounting policy or dependency change. Framework history/transient
+allocations still lack hard process-memory isolation. Regression must exercise a
+bundle whose individual pieces fit but combined retained payload exceeds131072.
+
+## CP-D implementation note — signed SQLite64 primitive integers
+Before dependent code, bind integer wire/raw-result primitives to strict signed64
+SQLite range, and scale to positive signed64 plus exact registry equality. Context:
+unbounded Python ints in provider bindings/scale can overflow LangGraph msgpack
+before later semantic validation. Root-cause primitive boundary validation is chosen;
+generic OverflowError swallowing or acceptance of arbitrary big integers is rejected.
+Consequence: malformed oversized values fail typed validation before saver/SQL,
+without changing accepted IDs/grades/counts/scale variants, budgets or dependencies.
+Retained-payload regression fixtures must use otherwise valid typed values, not
+impossible huge integers that fail this independent boundary first.

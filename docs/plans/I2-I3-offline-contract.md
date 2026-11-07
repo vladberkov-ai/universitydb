@@ -119,3 +119,30 @@ The closed current error registry preserves the existing terminal
 An actual expired active-work deadline remains `BUDGET_EXCEEDED`. Closed output
 validation must not erase an already valid primary failure. These are preserved
 baseline error semantics, not relaxed accounting, additional calls or new budget.
+
+### CP-D retained-payload accounting boundary
+Before accepting retention or allowing downstream dispatch, enforce the existing
+**131072-byte (128KiB)** retained application-payload ceiling over the serialized
+UTF-8 JSON bundle containing **current raw result + proposed completed validated dependency
+results (including the current step) + step_results (raw and adapted copies) + current answer**. Counting only
+completed dependency rows omits retained duplicates and is insufficient. This is a
+safety repair of the accepted ceiling, not a cap increase or changed domain/budget
+policy. Oversize fails closed as `RESOURCE_LIMIT` with no downstream provider/SQL call and
+no partial success. Scope/counters are outside this retained-result bundle.
+LangGraph checkpoint/history storage, serializer internals and transient
+Python/SQLite allocations are not a hard process-memory isolation guarantee; that
+production limitation remains explicit.
+
+### CP-D SQLite integer wire/retention boundary
+Untrusted `Binding.integer_value` and declared raw `integer` cells must be strict
+Python integers in SQLite's signed64 range **−9223372036854775808..9223372036854775807**;
+booleans are not integers. `ResultSpec.scale` must be positive and at most
+9223372036854775807, while the exact domain registry still permits only its approved
+scale1/100 variants. Enforce these primitive bounds before accepting provider/state
+values into LangGraph checkpoint serialization or SQLite dispatch. Arbitrary Python
+big integers are not supported wire values: do not allow msgpack overflow to bypass
+the typed error lane, and do not mask that defect with a generic OverflowError catch.
+This aligns the existing SQLite typed contract with its actual representation, not
+a higher budget/limit or altered grade/count/domain meaning. Regression must send
+oversized provider binding and scale values and verify safe typed rejection before
+checkpoint retention/SQL; raw injected integer boundary checks are separate.

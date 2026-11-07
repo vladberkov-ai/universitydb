@@ -149,3 +149,21 @@ def test_locked_database_startup_fails_without_provider(database, tmp_path):
     finally:
         connection.rollback()
         connection.close()
+
+
+@pytest.mark.parametrize("location", ["plan_scale", "sql_binding"])
+def test_provider_extreme_integer_rejected_before_saver_or_sql(database, tmp_path, location):
+    from conftest import QUESTION, outputs
+
+    proposals = outputs()
+    if location == "plan_scale":
+        proposals[0]["steps"][0]["result_spec"]["scale"] = 10**100
+    else:
+        proposals[1]["parameters"][0]["integer_value"] = 10**100
+    provider = ScriptedProvider(proposals)
+    result = Agent(University(), database, provider, tmp_path / "extreme").run(QUESTION)
+    assert result["error"]["code"] == "PROVIDER_INVALID_OUTPUT", result
+    assert result["answer"] is None
+    assert provider.calls == (1 if location == "plan_scale" else 2)
+    assert not any(e["kind"] == "sql_attempt" for e in result["events"])
+    assert result["events"][-1]["kind"] == "run_end"

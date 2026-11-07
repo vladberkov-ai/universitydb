@@ -1,0 +1,1857 @@
+{
+  "case": "tie",
+  "expected": {
+    "enrollments": [
+      [
+        1,
+        1,
+        9000
+      ],
+      [
+        2,
+        1,
+        8000
+      ],
+      [
+        3,
+        1,
+        null
+      ],
+      [
+        1,
+        2,
+        9000
+      ],
+      [
+        1,
+        3,
+        7000
+      ],
+      [
+        2,
+        3,
+        8000
+      ],
+      [
+        4,
+        4,
+        null
+      ],
+      [
+        2,
+        5,
+        10000
+      ]
+    ],
+    "top_course_ids": [
+      1,
+      2
+    ],
+    "cohort_student_ids": [
+      1,
+      2,
+      3
+    ],
+    "final": [
+      {
+        "key": 1,
+        "raw": [
+          18000,
+          2,
+          2
+        ],
+        "mean": "90.00",
+        "distinct_students": 1,
+        "reason": null
+      },
+      {
+        "key": 2,
+        "raw": [
+          18000,
+          2,
+          2
+        ],
+        "mean": "90.00",
+        "distinct_students": 1,
+        "reason": null
+      },
+      {
+        "key": 3,
+        "raw": [
+          0,
+          0,
+          1
+        ],
+        "mean": null,
+        "distinct_students": 1,
+        "reason": "no_grades"
+      }
+    ]
+  },
+  "actual_answer": {
+    "text": "student_id=all; course_id=all; teacher_id=all; semester_id=S1: grade_mean: 3 rows.",
+    "columns": [
+      {
+        "name": "student_id",
+        "type": "integer"
+      },
+      {
+        "name": "average",
+        "type": "decimal"
+      },
+      {
+        "name": "graded_count",
+        "type": "integer"
+      },
+      {
+        "name": "enrollment_count",
+        "type": "integer"
+      }
+    ],
+    "rows": [
+      [
+        1,
+        "90.00",
+        2,
+        2
+      ],
+      [
+        2,
+        "90.00",
+        2,
+        2
+      ],
+      [
+        3,
+        null,
+        0,
+        1
+      ]
+    ],
+    "scope": "student_id=all; course_id=all; teacher_id=all; semester_id=S1",
+    "empty_reason": null,
+    "row_reasons": [
+      null,
+      null,
+      "no_grades"
+    ],
+    "truncated": false
+  },
+  "steps": [
+    {
+      "step_id": "top",
+      "raw": {
+        "result_spec": {
+          "metric_id": "u.top_course.v1",
+          "shape": "top",
+          "group_keys": [
+            "course_id"
+          ],
+          "columns": [
+            {
+              "name": "course_id",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "sum_units",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "graded_count",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "enrollment_count",
+              "type": "integer",
+              "nullable": false
+            }
+          ],
+          "components": {
+            "sum": "sum_units",
+            "denominator": "graded_count",
+            "count": "enrollment_count"
+          },
+          "unit": "grade_hundredth",
+          "scale": 100
+        },
+        "step_id": "top",
+        "columns": [
+          {
+            "name": "course_id",
+            "type": "integer"
+          },
+          {
+            "name": "sum_units",
+            "type": "integer"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            1,
+            27000,
+            3,
+            4
+          ],
+          [
+            2,
+            9000,
+            1,
+            1
+          ],
+          [
+            3,
+            0,
+            0,
+            1
+          ]
+        ],
+        "row_count": 3,
+        "truncated": false,
+        "elapsed_ms": 0
+      },
+      "answer": {
+        "text": "student_id=all; course_id=all; teacher_id=all; semester_id=S1: top_course: 2 rows.",
+        "columns": [
+          {
+            "name": "course_id",
+            "type": "integer"
+          },
+          {
+            "name": "average",
+            "type": "decimal"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            1,
+            "90.00",
+            3,
+            4
+          ],
+          [
+            2,
+            "90.00",
+            1,
+            1
+          ]
+        ],
+        "scope": "student_id=all; course_id=all; teacher_id=all; semester_id=S1",
+        "empty_reason": null,
+        "row_reasons": [
+          null,
+          null
+        ],
+        "truncated": false
+      },
+      "dependency_rows": [
+        [
+          1,
+          27000,
+          3,
+          4
+        ],
+        [
+          2,
+          9000,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "step_id": "cohort",
+      "raw": {
+        "result_spec": {
+          "metric_id": "u.student_ids.v1",
+          "shape": "rows",
+          "group_keys": [
+            "student_id"
+          ],
+          "columns": [
+            {
+              "name": "student_id",
+              "type": "integer",
+              "nullable": false
+            }
+          ],
+          "components": {
+            "sum": null,
+            "denominator": null,
+            "count": null
+          },
+          "unit": "identifier",
+          "scale": 1
+        },
+        "step_id": "cohort",
+        "columns": [
+          {
+            "name": "student_id",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "row_count": 3,
+        "truncated": false,
+        "elapsed_ms": 0
+      },
+      "answer": {
+        "text": "student_id=all; course_id=all; teacher_id=all; semester_id=S1: student_ids: 3 rows.",
+        "columns": [
+          {
+            "name": "student_id",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "scope": "student_id=all; course_id=all; teacher_id=all; semester_id=S1",
+        "empty_reason": null,
+        "row_reasons": [
+          null,
+          null,
+          null
+        ],
+        "truncated": false
+      },
+      "dependency_rows": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ]
+    },
+    {
+      "step_id": "means",
+      "raw": {
+        "result_spec": {
+          "metric_id": "u.grade_mean.v1",
+          "shape": "aggregate",
+          "group_keys": [
+            "student_id"
+          ],
+          "columns": [
+            {
+              "name": "student_id",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "sum_units",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "graded_count",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "enrollment_count",
+              "type": "integer",
+              "nullable": false
+            }
+          ],
+          "components": {
+            "sum": "sum_units",
+            "denominator": "graded_count",
+            "count": "enrollment_count"
+          },
+          "unit": "grade_hundredth",
+          "scale": 100
+        },
+        "step_id": "means",
+        "columns": [
+          {
+            "name": "student_id",
+            "type": "integer"
+          },
+          {
+            "name": "sum_units",
+            "type": "integer"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            1,
+            18000,
+            2,
+            2
+          ],
+          [
+            2,
+            18000,
+            2,
+            2
+          ],
+          [
+            3,
+            0,
+            0,
+            1
+          ]
+        ],
+        "row_count": 3,
+        "truncated": false,
+        "elapsed_ms": 0
+      },
+      "answer": {
+        "text": "student_id=all; course_id=all; teacher_id=all; semester_id=S1: grade_mean: 3 rows.",
+        "columns": [
+          {
+            "name": "student_id",
+            "type": "integer"
+          },
+          {
+            "name": "average",
+            "type": "decimal"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            1,
+            "90.00",
+            2,
+            2
+          ],
+          [
+            2,
+            "90.00",
+            2,
+            2
+          ],
+          [
+            3,
+            null,
+            0,
+            1
+          ]
+        ],
+        "scope": "student_id=all; course_id=all; teacher_id=all; semester_id=S1",
+        "empty_reason": null,
+        "row_reasons": [
+          null,
+          null,
+          "no_grades"
+        ],
+        "truncated": false
+      },
+      "dependency_rows": [
+        [
+          1,
+          18000,
+          2,
+          2
+        ],
+        [
+          2,
+          18000,
+          2,
+          2
+        ],
+        [
+          3,
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  ],
+  "provider_history": [
+    {
+      "operation": "plan",
+      "payload": {
+        "question": "For students of the top course in S1 show their mean across all S1 courses",
+        "descriptor": {
+          "version": "I2-I3-1",
+          "schema_id": "university-v1",
+          "dialect": "sqlite",
+          "tables": {
+            "Students": [
+              "student_id",
+              "name"
+            ],
+            "Teachers": [
+              "teacher_id",
+              "name"
+            ],
+            "Courses": [
+              "course_id",
+              "code",
+              "title"
+            ],
+            "Semesters": [
+              "semester_id",
+              "starts_on",
+              "ends_on"
+            ],
+            "Offerings": [
+              "offering_id",
+              "course_id",
+              "teacher_id",
+              "semester_id",
+              "section"
+            ],
+            "Enrollments": [
+              "student_id",
+              "offering_id",
+              "grade_units"
+            ]
+          },
+          "allowed_functions": [
+            "sum",
+            "count",
+            "coalesce"
+          ],
+          "registry": {
+            "mean_template": {
+              "metric_id": "u.grade_mean.v1",
+              "shape": "aggregate",
+              "group_keys": [],
+              "columns": [
+                {
+                  "name": "sum_units",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "graded_count",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "enrollment_count",
+                  "type": "integer",
+                  "nullable": false
+                }
+              ],
+              "components": {
+                "sum": "sum_units",
+                "denominator": "graded_count",
+                "count": "enrollment_count"
+              },
+              "unit": "grade_hundredth",
+              "scale": 100
+            },
+            "groups": [
+              "course_id",
+              "student_id",
+              "teacher_id",
+              "offering_id",
+              "semester_id"
+            ],
+            "count_template": {
+              "metric_id": "u.enrollment_counts.v1",
+              "shape": "aggregate",
+              "group_keys": [],
+              "columns": [
+                {
+                  "name": "enrollment_count",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "graded_count",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "distinct_student_count",
+                  "type": "integer",
+                  "nullable": false
+                }
+              ],
+              "components": {
+                "sum": null,
+                "denominator": null,
+                "count": "enrollment_count"
+              },
+              "unit": "count",
+              "scale": 1
+            },
+            "other": [
+              {
+                "metric_id": "u.top_course.v1",
+                "shape": "top",
+                "group_keys": [
+                  "course_id"
+                ],
+                "columns": [
+                  {
+                    "name": "course_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "sum_units",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "graded_count",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "enrollment_count",
+                    "type": "integer",
+                    "nullable": false
+                  }
+                ],
+                "components": {
+                  "sum": "sum_units",
+                  "denominator": "graded_count",
+                  "count": "enrollment_count"
+                },
+                "unit": "grade_hundredth",
+                "scale": 100
+              },
+              {
+                "metric_id": "u.enrollment_rows.v1",
+                "shape": "rows",
+                "group_keys": [
+                  "student_id",
+                  "offering_id"
+                ],
+                "columns": [
+                  {
+                    "name": "student_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "student_name",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "offering_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "course_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "course_title",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "teacher_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "teacher_name",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "semester_id",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "grade_units",
+                    "type": "integer",
+                    "nullable": true
+                  }
+                ],
+                "components": {
+                  "sum": null,
+                  "denominator": null,
+                  "count": null
+                },
+                "unit": "grade_hundredth",
+                "scale": 100
+              },
+              {
+                "metric_id": "u.student_ids.v1",
+                "shape": "rows",
+                "group_keys": [
+                  "student_id"
+                ],
+                "columns": [
+                  {
+                    "name": "student_id",
+                    "type": "integer",
+                    "nullable": false
+                  }
+                ],
+                "components": {
+                  "sum": null,
+                  "denominator": null,
+                  "count": null
+                },
+                "unit": "identifier",
+                "scale": 1
+              }
+            ]
+          },
+          "policy": "Equal graded enrollments, NULL excluded, all offerings/retakes. Absent filters mean all including semesters. Mean projections COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count. Base Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id. Optional equality predicates named student_id/course_id/teacher_id/semester_id; group keys e.student_id or o.course_id/teacher_id/offering_id/semester_id. For rows GROUP BY key ORDER BY key. Top returns ALL course components, adapter selects exact maximum ties. student_ids uses SELECT DISTINCT e.student_id ORDER BY e.student_id. Dependency course_ids/student_ids bind named <ref>_0,<ref>_1 etc in IN clause. Empty ref WHERE 0=1. Listing adds Students s,Courses c,Teachers t joins on IDs and ordered declared projections; ORDER BY e.offering_id,e.student_id."
+        },
+        "scope": {
+          "semester_id": "S1"
+        },
+        "step": null,
+        "resolved_refs": {},
+        "previous_error": null,
+        "budgets": {
+          "calls_remaining": 5,
+          "sql_remaining": 4,
+          "repair_available": true
+        }
+      }
+    },
+    {
+      "operation": "sql",
+      "payload": {
+        "question": "For students of the top course in S1 show their mean across all S1 courses",
+        "descriptor": {
+          "version": "I2-I3-1",
+          "schema_id": "university-v1",
+          "dialect": "sqlite",
+          "tables": {
+            "Students": [
+              "student_id",
+              "name"
+            ],
+            "Teachers": [
+              "teacher_id",
+              "name"
+            ],
+            "Courses": [
+              "course_id",
+              "code",
+              "title"
+            ],
+            "Semesters": [
+              "semester_id",
+              "starts_on",
+              "ends_on"
+            ],
+            "Offerings": [
+              "offering_id",
+              "course_id",
+              "teacher_id",
+              "semester_id",
+              "section"
+            ],
+            "Enrollments": [
+              "student_id",
+              "offering_id",
+              "grade_units"
+            ]
+          },
+          "allowed_functions": [
+            "sum",
+            "count",
+            "coalesce"
+          ],
+          "registry": {
+            "mean_template": {
+              "metric_id": "u.grade_mean.v1",
+              "shape": "aggregate",
+              "group_keys": [],
+              "columns": [
+                {
+                  "name": "sum_units",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "graded_count",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "enrollment_count",
+                  "type": "integer",
+                  "nullable": false
+                }
+              ],
+              "components": {
+                "sum": "sum_units",
+                "denominator": "graded_count",
+                "count": "enrollment_count"
+              },
+              "unit": "grade_hundredth",
+              "scale": 100
+            },
+            "groups": [
+              "course_id",
+              "student_id",
+              "teacher_id",
+              "offering_id",
+              "semester_id"
+            ],
+            "count_template": {
+              "metric_id": "u.enrollment_counts.v1",
+              "shape": "aggregate",
+              "group_keys": [],
+              "columns": [
+                {
+                  "name": "enrollment_count",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "graded_count",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "distinct_student_count",
+                  "type": "integer",
+                  "nullable": false
+                }
+              ],
+              "components": {
+                "sum": null,
+                "denominator": null,
+                "count": "enrollment_count"
+              },
+              "unit": "count",
+              "scale": 1
+            },
+            "other": [
+              {
+                "metric_id": "u.top_course.v1",
+                "shape": "top",
+                "group_keys": [
+                  "course_id"
+                ],
+                "columns": [
+                  {
+                    "name": "course_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "sum_units",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "graded_count",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "enrollment_count",
+                    "type": "integer",
+                    "nullable": false
+                  }
+                ],
+                "components": {
+                  "sum": "sum_units",
+                  "denominator": "graded_count",
+                  "count": "enrollment_count"
+                },
+                "unit": "grade_hundredth",
+                "scale": 100
+              },
+              {
+                "metric_id": "u.enrollment_rows.v1",
+                "shape": "rows",
+                "group_keys": [
+                  "student_id",
+                  "offering_id"
+                ],
+                "columns": [
+                  {
+                    "name": "student_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "student_name",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "offering_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "course_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "course_title",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "teacher_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "teacher_name",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "semester_id",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "grade_units",
+                    "type": "integer",
+                    "nullable": true
+                  }
+                ],
+                "components": {
+                  "sum": null,
+                  "denominator": null,
+                  "count": null
+                },
+                "unit": "grade_hundredth",
+                "scale": 100
+              },
+              {
+                "metric_id": "u.student_ids.v1",
+                "shape": "rows",
+                "group_keys": [
+                  "student_id"
+                ],
+                "columns": [
+                  {
+                    "name": "student_id",
+                    "type": "integer",
+                    "nullable": false
+                  }
+                ],
+                "components": {
+                  "sum": null,
+                  "denominator": null,
+                  "count": null
+                },
+                "unit": "identifier",
+                "scale": 1
+              }
+            ]
+          },
+          "policy": "Equal graded enrollments, NULL excluded, all offerings/retakes. Absent filters mean all including semesters. Mean projections COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count. Base Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id. Optional equality predicates named student_id/course_id/teacher_id/semester_id; group keys e.student_id or o.course_id/teacher_id/offering_id/semester_id. For rows GROUP BY key ORDER BY key. Top returns ALL course components, adapter selects exact maximum ties. student_ids uses SELECT DISTINCT e.student_id ORDER BY e.student_id. Dependency course_ids/student_ids bind named <ref>_0,<ref>_1 etc in IN clause. Empty ref WHERE 0=1. Listing adds Students s,Courses c,Teachers t joins on IDs and ordered declared projections; ORDER BY e.offering_id,e.student_id."
+        },
+        "scope": {
+          "semester_id": "S1"
+        },
+        "step": {
+          "step_id": "top",
+          "depends_on": [],
+          "purpose": "top",
+          "result_refs": [],
+          "result_spec": {
+            "metric_id": "u.top_course.v1",
+            "shape": "top",
+            "group_keys": [
+              "course_id"
+            ],
+            "columns": [
+              {
+                "name": "course_id",
+                "type": "integer",
+                "nullable": false
+              },
+              {
+                "name": "sum_units",
+                "type": "integer",
+                "nullable": false
+              },
+              {
+                "name": "graded_count",
+                "type": "integer",
+                "nullable": false
+              },
+              {
+                "name": "enrollment_count",
+                "type": "integer",
+                "nullable": false
+              }
+            ],
+            "components": {
+              "sum": "sum_units",
+              "denominator": "graded_count",
+              "count": "enrollment_count"
+            },
+            "unit": "grade_hundredth",
+            "scale": 100
+          }
+        },
+        "resolved_refs": {},
+        "previous_error": {},
+        "budgets": {
+          "calls_remaining": 4,
+          "sql_remaining": 4,
+          "repair_available": true
+        }
+      }
+    },
+    {
+      "operation": "sql",
+      "payload": {
+        "question": "For students of the top course in S1 show their mean across all S1 courses",
+        "descriptor": {
+          "version": "I2-I3-1",
+          "schema_id": "university-v1",
+          "dialect": "sqlite",
+          "tables": {
+            "Students": [
+              "student_id",
+              "name"
+            ],
+            "Teachers": [
+              "teacher_id",
+              "name"
+            ],
+            "Courses": [
+              "course_id",
+              "code",
+              "title"
+            ],
+            "Semesters": [
+              "semester_id",
+              "starts_on",
+              "ends_on"
+            ],
+            "Offerings": [
+              "offering_id",
+              "course_id",
+              "teacher_id",
+              "semester_id",
+              "section"
+            ],
+            "Enrollments": [
+              "student_id",
+              "offering_id",
+              "grade_units"
+            ]
+          },
+          "allowed_functions": [
+            "sum",
+            "count",
+            "coalesce"
+          ],
+          "registry": {
+            "mean_template": {
+              "metric_id": "u.grade_mean.v1",
+              "shape": "aggregate",
+              "group_keys": [],
+              "columns": [
+                {
+                  "name": "sum_units",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "graded_count",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "enrollment_count",
+                  "type": "integer",
+                  "nullable": false
+                }
+              ],
+              "components": {
+                "sum": "sum_units",
+                "denominator": "graded_count",
+                "count": "enrollment_count"
+              },
+              "unit": "grade_hundredth",
+              "scale": 100
+            },
+            "groups": [
+              "course_id",
+              "student_id",
+              "teacher_id",
+              "offering_id",
+              "semester_id"
+            ],
+            "count_template": {
+              "metric_id": "u.enrollment_counts.v1",
+              "shape": "aggregate",
+              "group_keys": [],
+              "columns": [
+                {
+                  "name": "enrollment_count",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "graded_count",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "distinct_student_count",
+                  "type": "integer",
+                  "nullable": false
+                }
+              ],
+              "components": {
+                "sum": null,
+                "denominator": null,
+                "count": "enrollment_count"
+              },
+              "unit": "count",
+              "scale": 1
+            },
+            "other": [
+              {
+                "metric_id": "u.top_course.v1",
+                "shape": "top",
+                "group_keys": [
+                  "course_id"
+                ],
+                "columns": [
+                  {
+                    "name": "course_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "sum_units",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "graded_count",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "enrollment_count",
+                    "type": "integer",
+                    "nullable": false
+                  }
+                ],
+                "components": {
+                  "sum": "sum_units",
+                  "denominator": "graded_count",
+                  "count": "enrollment_count"
+                },
+                "unit": "grade_hundredth",
+                "scale": 100
+              },
+              {
+                "metric_id": "u.enrollment_rows.v1",
+                "shape": "rows",
+                "group_keys": [
+                  "student_id",
+                  "offering_id"
+                ],
+                "columns": [
+                  {
+                    "name": "student_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "student_name",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "offering_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "course_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "course_title",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "teacher_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "teacher_name",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "semester_id",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "grade_units",
+                    "type": "integer",
+                    "nullable": true
+                  }
+                ],
+                "components": {
+                  "sum": null,
+                  "denominator": null,
+                  "count": null
+                },
+                "unit": "grade_hundredth",
+                "scale": 100
+              },
+              {
+                "metric_id": "u.student_ids.v1",
+                "shape": "rows",
+                "group_keys": [
+                  "student_id"
+                ],
+                "columns": [
+                  {
+                    "name": "student_id",
+                    "type": "integer",
+                    "nullable": false
+                  }
+                ],
+                "components": {
+                  "sum": null,
+                  "denominator": null,
+                  "count": null
+                },
+                "unit": "identifier",
+                "scale": 1
+              }
+            ]
+          },
+          "policy": "Equal graded enrollments, NULL excluded, all offerings/retakes. Absent filters mean all including semesters. Mean projections COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count. Base Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id. Optional equality predicates named student_id/course_id/teacher_id/semester_id; group keys e.student_id or o.course_id/teacher_id/offering_id/semester_id. For rows GROUP BY key ORDER BY key. Top returns ALL course components, adapter selects exact maximum ties. student_ids uses SELECT DISTINCT e.student_id ORDER BY e.student_id. Dependency course_ids/student_ids bind named <ref>_0,<ref>_1 etc in IN clause. Empty ref WHERE 0=1. Listing adds Students s,Courses c,Teachers t joins on IDs and ordered declared projections; ORDER BY e.offering_id,e.student_id."
+        },
+        "scope": {
+          "semester_id": "S1"
+        },
+        "step": {
+          "step_id": "cohort",
+          "depends_on": [
+            "top"
+          ],
+          "purpose": "cohort",
+          "result_refs": [
+            {
+              "from_step": "top",
+              "column": "course_id",
+              "type": "integer",
+              "bind_as": "course_ids"
+            }
+          ],
+          "result_spec": {
+            "metric_id": "u.student_ids.v1",
+            "shape": "rows",
+            "group_keys": [
+              "student_id"
+            ],
+            "columns": [
+              {
+                "name": "student_id",
+                "type": "integer",
+                "nullable": false
+              }
+            ],
+            "components": {
+              "sum": null,
+              "denominator": null,
+              "count": null
+            },
+            "unit": "identifier",
+            "scale": 1
+          }
+        },
+        "resolved_refs": {
+          "course_ids": [
+            1,
+            2
+          ]
+        },
+        "previous_error": {},
+        "budgets": {
+          "calls_remaining": 3,
+          "sql_remaining": 3,
+          "repair_available": true
+        }
+      }
+    },
+    {
+      "operation": "sql",
+      "payload": {
+        "question": "For students of the top course in S1 show their mean across all S1 courses",
+        "descriptor": {
+          "version": "I2-I3-1",
+          "schema_id": "university-v1",
+          "dialect": "sqlite",
+          "tables": {
+            "Students": [
+              "student_id",
+              "name"
+            ],
+            "Teachers": [
+              "teacher_id",
+              "name"
+            ],
+            "Courses": [
+              "course_id",
+              "code",
+              "title"
+            ],
+            "Semesters": [
+              "semester_id",
+              "starts_on",
+              "ends_on"
+            ],
+            "Offerings": [
+              "offering_id",
+              "course_id",
+              "teacher_id",
+              "semester_id",
+              "section"
+            ],
+            "Enrollments": [
+              "student_id",
+              "offering_id",
+              "grade_units"
+            ]
+          },
+          "allowed_functions": [
+            "sum",
+            "count",
+            "coalesce"
+          ],
+          "registry": {
+            "mean_template": {
+              "metric_id": "u.grade_mean.v1",
+              "shape": "aggregate",
+              "group_keys": [],
+              "columns": [
+                {
+                  "name": "sum_units",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "graded_count",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "enrollment_count",
+                  "type": "integer",
+                  "nullable": false
+                }
+              ],
+              "components": {
+                "sum": "sum_units",
+                "denominator": "graded_count",
+                "count": "enrollment_count"
+              },
+              "unit": "grade_hundredth",
+              "scale": 100
+            },
+            "groups": [
+              "course_id",
+              "student_id",
+              "teacher_id",
+              "offering_id",
+              "semester_id"
+            ],
+            "count_template": {
+              "metric_id": "u.enrollment_counts.v1",
+              "shape": "aggregate",
+              "group_keys": [],
+              "columns": [
+                {
+                  "name": "enrollment_count",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "graded_count",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "distinct_student_count",
+                  "type": "integer",
+                  "nullable": false
+                }
+              ],
+              "components": {
+                "sum": null,
+                "denominator": null,
+                "count": "enrollment_count"
+              },
+              "unit": "count",
+              "scale": 1
+            },
+            "other": [
+              {
+                "metric_id": "u.top_course.v1",
+                "shape": "top",
+                "group_keys": [
+                  "course_id"
+                ],
+                "columns": [
+                  {
+                    "name": "course_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "sum_units",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "graded_count",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "enrollment_count",
+                    "type": "integer",
+                    "nullable": false
+                  }
+                ],
+                "components": {
+                  "sum": "sum_units",
+                  "denominator": "graded_count",
+                  "count": "enrollment_count"
+                },
+                "unit": "grade_hundredth",
+                "scale": 100
+              },
+              {
+                "metric_id": "u.enrollment_rows.v1",
+                "shape": "rows",
+                "group_keys": [
+                  "student_id",
+                  "offering_id"
+                ],
+                "columns": [
+                  {
+                    "name": "student_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "student_name",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "offering_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "course_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "course_title",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "teacher_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "teacher_name",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "semester_id",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "grade_units",
+                    "type": "integer",
+                    "nullable": true
+                  }
+                ],
+                "components": {
+                  "sum": null,
+                  "denominator": null,
+                  "count": null
+                },
+                "unit": "grade_hundredth",
+                "scale": 100
+              },
+              {
+                "metric_id": "u.student_ids.v1",
+                "shape": "rows",
+                "group_keys": [
+                  "student_id"
+                ],
+                "columns": [
+                  {
+                    "name": "student_id",
+                    "type": "integer",
+                    "nullable": false
+                  }
+                ],
+                "components": {
+                  "sum": null,
+                  "denominator": null,
+                  "count": null
+                },
+                "unit": "identifier",
+                "scale": 1
+              }
+            ]
+          },
+          "policy": "Equal graded enrollments, NULL excluded, all offerings/retakes. Absent filters mean all including semesters. Mean projections COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count. Base Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id. Optional equality predicates named student_id/course_id/teacher_id/semester_id; group keys e.student_id or o.course_id/teacher_id/offering_id/semester_id. For rows GROUP BY key ORDER BY key. Top returns ALL course components, adapter selects exact maximum ties. student_ids uses SELECT DISTINCT e.student_id ORDER BY e.student_id. Dependency course_ids/student_ids bind named <ref>_0,<ref>_1 etc in IN clause. Empty ref WHERE 0=1. Listing adds Students s,Courses c,Teachers t joins on IDs and ordered declared projections; ORDER BY e.offering_id,e.student_id."
+        },
+        "scope": {
+          "semester_id": "S1"
+        },
+        "step": {
+          "step_id": "means",
+          "depends_on": [
+            "cohort"
+          ],
+          "purpose": "means",
+          "result_refs": [
+            {
+              "from_step": "cohort",
+              "column": "student_id",
+              "type": "integer",
+              "bind_as": "student_ids"
+            }
+          ],
+          "result_spec": {
+            "metric_id": "u.grade_mean.v1",
+            "shape": "aggregate",
+            "group_keys": [
+              "student_id"
+            ],
+            "columns": [
+              {
+                "name": "student_id",
+                "type": "integer",
+                "nullable": false
+              },
+              {
+                "name": "sum_units",
+                "type": "integer",
+                "nullable": false
+              },
+              {
+                "name": "graded_count",
+                "type": "integer",
+                "nullable": false
+              },
+              {
+                "name": "enrollment_count",
+                "type": "integer",
+                "nullable": false
+              }
+            ],
+            "components": {
+              "sum": "sum_units",
+              "denominator": "graded_count",
+              "count": "enrollment_count"
+            },
+            "unit": "grade_hundredth",
+            "scale": 100
+          }
+        },
+        "resolved_refs": {
+          "student_ids": [
+            1,
+            2,
+            3
+          ]
+        },
+        "previous_error": {},
+        "budgets": {
+          "calls_remaining": 2,
+          "sql_remaining": 2,
+          "repair_available": true
+        }
+      }
+    }
+  ],
+  "sql_proposals": [
+    {
+      "version": "1",
+      "step_id": "top",
+      "result_spec": {
+        "metric_id": "u.top_course.v1",
+        "shape": "top",
+        "group_keys": [
+          "course_id"
+        ],
+        "columns": [
+          {
+            "name": "course_id",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "sum_units",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "graded_count",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer",
+            "nullable": false
+          }
+        ],
+        "components": {
+          "sum": "sum_units",
+          "denominator": "graded_count",
+          "count": "enrollment_count"
+        },
+        "unit": "grade_hundredth",
+        "scale": 100
+      },
+      "sql": "SELECT o.course_id AS course_id, COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count FROM Enrollments e JOIN Offerings o ON e.offering_id = o.offering_id WHERE o.semester_id = :semester_id GROUP BY o.course_id ORDER BY o.course_id",
+      "parameters": [
+        {
+          "name": "semester_id",
+          "type": "text",
+          "integer_value": null,
+          "text_value": "S1"
+        }
+      ],
+      "expected_columns": [
+        "course_id",
+        "sum_units",
+        "graded_count",
+        "enrollment_count"
+      ],
+      "result_kind": "rows",
+      "explanation": "Offline scripted SQL"
+    },
+    {
+      "version": "1",
+      "step_id": "cohort",
+      "result_spec": {
+        "metric_id": "u.student_ids.v1",
+        "shape": "rows",
+        "group_keys": [
+          "student_id"
+        ],
+        "columns": [
+          {
+            "name": "student_id",
+            "type": "integer",
+            "nullable": false
+          }
+        ],
+        "components": {
+          "sum": null,
+          "denominator": null,
+          "count": null
+        },
+        "unit": "identifier",
+        "scale": 1
+      },
+      "sql": "SELECT DISTINCT e.student_id AS student_id FROM Enrollments e JOIN Offerings o ON e.offering_id = o.offering_id WHERE o.semester_id = :semester_id AND o.course_id IN (:course_ids_0,:course_ids_1) ORDER BY e.student_id",
+      "parameters": [
+        {
+          "name": "semester_id",
+          "type": "text",
+          "integer_value": null,
+          "text_value": "S1"
+        },
+        {
+          "name": "course_ids_0",
+          "type": "integer",
+          "integer_value": 1,
+          "text_value": null
+        },
+        {
+          "name": "course_ids_1",
+          "type": "integer",
+          "integer_value": 2,
+          "text_value": null
+        }
+      ],
+      "expected_columns": [
+        "student_id"
+      ],
+      "result_kind": "rows",
+      "explanation": "Offline scripted SQL"
+    },
+    {
+      "version": "1",
+      "step_id": "means",
+      "result_spec": {
+        "metric_id": "u.grade_mean.v1",
+        "shape": "aggregate",
+        "group_keys": [
+          "student_id"
+        ],
+        "columns": [
+          {
+            "name": "student_id",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "sum_units",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "graded_count",
+            "type": "integer",
+            "nullable": false
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer",
+            "nullable": false
+          }
+        ],
+        "components": {
+          "sum": "sum_units",
+          "denominator": "graded_count",
+          "count": "enrollment_count"
+        },
+        "unit": "grade_hundredth",
+        "scale": 100
+      },
+      "sql": "SELECT e.student_id AS student_id, COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count FROM Enrollments e JOIN Offerings o ON e.offering_id = o.offering_id WHERE o.semester_id = :semester_id AND e.student_id IN (:student_ids_0,:student_ids_1,:student_ids_2) GROUP BY e.student_id ORDER BY e.student_id",
+      "parameters": [
+        {
+          "name": "semester_id",
+          "type": "text",
+          "integer_value": null,
+          "text_value": "S1"
+        },
+        {
+          "name": "student_ids_0",
+          "type": "integer",
+          "integer_value": 1,
+          "text_value": null
+        },
+        {
+          "name": "student_ids_1",
+          "type": "integer",
+          "integer_value": 2,
+          "text_value": null
+        },
+        {
+          "name": "student_ids_2",
+          "type": "integer",
+          "integer_value": 3,
+          "text_value": null
+        }
+      ],
+      "expected_columns": [
+        "student_id",
+        "sum_units",
+        "graded_count",
+        "enrollment_count"
+      ],
+      "result_kind": "aggregate",
+      "explanation": "Offline scripted SQL"
+    }
+  ],
+  "run_id": "a68928c1-5873-493a-8d59-c5cae4085fab",
+  "trace_basename": "tie.jsonl",
+  "trace_sha256": "1c52dd0fbc2f2259b684bc02b8d58ebccf7f758a934152e3f12218f42f3ee810",
+  "profile": "offline/injected; not real-model NL-to-SQL accuracy",
+  "source_sha256": {
+    "src/universitydb/agent.py": "e8448f6de4f0917acdabcd3803666dc61abe243745d308feb3ce37348a5fa651",
+    "src/universitydb/contracts.py": "0f850cd9b62b45bd4e6d135478040d0aa8f3ea3cc2d8b624e519512c75b08ed7",
+    "src/universitydb/db.py": "5ad77c530df1d6b2b80f438d8b5be4b63f64ed9a14d5d83998af2c20af767f07",
+    "src/universitydb/db_worker.py": "807eff2fe2b8ded359815fd050c93c32eeb14f18778504cd0a98e335d4145d1e",
+    "src/universitydb/sql_policy.py": "f0d2c532ad9c053952cc6a4fefba9350585e9826d49f9b05b5d6171b035307ac",
+    "src/universitydb/config.py": "508b2bef52d2c81c5114b885a6be56f5b22b18774ae5a48674679ea1fdd6b263",
+    "src/universitydb/llm.py": "4b8c80075748a669cb70397ad8aecbad2efbb9dd3ce2a7e9680e918ba10157cb",
+    "src/universitydb/llm_worker.py": "ba0abec6f45197814068c70aa86fb747e4de070cc84f08f1caa6b537b3a5bf9d",
+    "src/universitydb/tracing.py": "32a8b49dc56b0e2acf59b836361ef03abb70c4c549c312a1c914c8b646e8a96b",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/domain.py": "62bc0dda458579914b4396783856dc6f227fbda05f3f3f7cc401700c208a54ed",
+    "src/universitydb/domain_support.py": "211407da912ca737bdc449ce68b098227efad5fdd551c8848796d5c041a71fae",
+    "src/universitydb/library.py": "214f277ffeeda8672d00b69ae7d471fa66be42fdbcf0ef7452e04805c6eff7c4",
+    "tests/test_i3_dependencies.py": "ec4c9a05e93e00443638b4567cdceff4e1f8cbc93e7ad84e0a8e1dcd000caf7d",
+    "docs/operations/H-013/frozen-oracle.json": "93c87371a125eeb09862e78664f8a3e31ef2015d80da7c5af4fa916029a9d5f2"
+  }
+}

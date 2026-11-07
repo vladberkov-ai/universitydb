@@ -1,0 +1,29 @@
+{
+  "source": "Actual root received coordination, bounded attribution not lifecycle stdout or child authority",
+  "scope": "same existing H-013 aggregate, all12 durable stories retained",
+  "native_status": "root reports actual sameaggregate ACTIVE; G004 CP-D current",
+  "supported_steering": "root reports accepted reorder: CP-D, extracted invariant audits6-12, CP-E final completion gate last",
+  "scope_change": false,
+  "DoD_change": false,
+  "dropped_obligations": false,
+  "manual_ID_state_pointer_edits_by_child": false,
+  "execution_schedule": "core scheduled tests, then domain tests, then UI targeted slot; no overlapping heavy suites/browser launches",
+  "browser": "final allcase CP-E launch only on frozen tested source; priorCP-C snapshots remain historicalcutoffs",
+  "cleaner": "plan first, independent rootreviewapproved bounded deletions only afterCP-D verifiedcheckpoint; finalreviewers/gates separate",
+  "current_child_tests": "scheduledUI13AppTests passed11.93s, ownstaticPASS; frozen; no browserlaunch, rootintegratedfullpending",
+  "live_calls": 0,
+  "push": "not-run",
+  "architecture_invariant_steering": {
+    "source": "Actual root source-backed lifecycle audit report",
+    "observation": "generic Invariants heading was not extracted by installed strict validator; architecture/domain label required",
+    "supported_action": "annotate_ledger steering ACCEPTED reasserting seven unchanged exact brief invariant lines with Architecture invariant: prefix",
+    "scope_or_DoD_change": false,
+    "manual_plan_edits": false,
+    "final_sourceArtifacts": [
+      ".omx/ultragoal/ledger.jsonl",
+      ".omx/ultragoal/brief.md"
+    ],
+    "paths": "relative to existing nested H013 workflow; runtime files remain ignored, not staged",
+    "ownership": "root owns lifecycle/quality metadata, child records attribution only"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "evidence": "Root serialized full offline370passed203.03s; Ruff/format31/mypy14/compileall/diffPASS",
+  "profile": "offline/injected; not real-model NL-to-SQL accuracy",
+  "source_sha256": {
+    "src/universitydb/agent.py": "e8448f6de4f0917acdabcd3803666dc61abe243745d308feb3ce37348a5fa651",
+    "src/universitydb/contracts.py": "0f850cd9b62b45bd4e6d135478040d0aa8f3ea3cc2d8b624e519512c75b08ed7",
+    "src/universitydb/db.py": "5ad77c530df1d6b2b80f438d8b5be4b63f64ed9a14d5d83998af2c20af767f07",
+    "src/universitydb/db_worker.py": "807eff2fe2b8ded359815fd050c93c32eeb14f18778504cd0a98e335d4145d1e",
+    "src/universitydb/sql_policy.py": "f0d2c532ad9c053952cc6a4fefba9350585e9826d49f9b05b5d6171b035307ac",
+    "src/universitydb/config.py": "508b2bef52d2c81c5114b885a6be56f5b22b18774ae5a48674679ea1fdd6b263",
+    "src/universitydb/llm.py": "4b8c80075748a669cb70397ad8aecbad2efbb9dd3ce2a7e9680e918ba10157cb",
+    "src/universitydb/llm_worker.py": "ba0abec6f45197814068c70aa86fb747e4de070cc84f08f1caa6b537b3a5bf9d",
+    "src/universitydb/tracing.py": "32a8b49dc56b0e2acf59b836361ef03abb70c4c549c312a1c914c8b646e8a96b",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/domain.py": "62bc0dda458579914b4396783856dc6f227fbda05f3f3f7cc401700c208a54ed",
+    "src/universitydb/domain_support.py": "211407da912ca737bdc449ce68b098227efad5fdd551c8848796d5c041a71fae",
+    "src/universitydb/library.py": "214f277ffeeda8672d00b69ae7d471fa66be42fdbcf0ef7452e04805c6eff7c4",
+    "tests/test_i3_dependencies.py": "ec4c9a05e93e00443638b4567cdceff4e1f8cbc93e7ad84e0a8e1dcd000caf7d",
+    "docs/operations/H-013/frozen-oracle.json": "93c87371a125eeb09862e78664f8a3e31ef2015d80da7c5af4fa916029a9d5f2"
+  },
+  "cases": {
+    "F1": {
+      "proof": "F1.json",
+      "trace": "F1.jsonl",
+      "trace_sha256": "faa892ac4fae25b96af3f0e95214bedcd6152ca43509e946f5fd0b54f05f6fd2",
+      "expected_top": [
+        2
+      ],
+      "actual_top": [
+        [
+          2,
+          10000,
+          1,
+          1
+        ]
+      ],
+      "actual_final": [
+        [
+          1,
+          "95.00",
+          2,
+          2
+        ]
+      ],
+      "provider_calls": 4
+    },
+    "F2": {
+      "proof": "F2.json",
+      "trace": "F2.jsonl",
+      "trace_sha256": "855c9d1ad078ddb322db2f14788c0c166a281a0933e16ac0c0a17b5c79019f12",
+      "expected_top": [
+        1
+      ],
+      "actual_top": [
+        [
+          1,
+          25000,
+          3,
+          4
+        ]
+      ],
+      "actual_final": [
+        [
+          1,
+          "95.00",
+          2,
+          2
+        ],
+        [
+          2,
+          "80.00",
+          2,
+          2
+        ],
+        [
+          3,
+          "50.00",
+          1,
+          2
+        ]
+      ],
+      "provider_calls": 4
+    },
+    "tie": {
+      "proof": "tie.json",
+      "trace": "tie.jsonl",
+      "trace_sha256": "1c52dd0fbc2f2259b684bc02b8d58ebccf7f758a934152e3f12218f42f3ee810",
+      "expected_top": [
+        1,
+        2
+      ],
+      "actual_top": [
+        [
+          1,
+          27000,
+          3,
+          4
+        ],
+        [
+          2,
+          9000,
+          1,
+          1
+        ]
+      ],
+      "actual_final": [
+        [
+          1,
+          "90.00",
+          2,
+          2
+        ],
+        [
+          2,
+          "90.00",
+          2,
+          2
+        ],
+        [
+          3,
+          null,
+          0,
+          1
+        ]
+      ],
+      "provider_calls": 4
+    }
+  },
+  "portability_proof": {
+    "path": "portability-proof.json",
+    "sha256": "0a60b5a42d2b8ae9567f123ec85cbafe25f1824a489dd819f5e17ca1e0011de3",
+    "provenance": "Same root serialized370pass process; no product rerun"
+  }
+}

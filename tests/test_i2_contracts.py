@@ -230,3 +230,44 @@ def test_known_accounting_stop_transient_keeps_primary_error_code():
         retryable=False,
     )
     assert error.code == "PROVIDER_TRANSIENT"
+
+
+def test_sqlite_integer_primitives_reject_extreme_values_before_checkpoint():
+    from pydantic import ValidationError
+
+    from universitydb.contracts import Binding
+
+    for value in (-9223372036854775809, 9223372036854775808, 10**100, True):
+        with pytest.raises(ValidationError):
+            Binding(name="x", type="integer", integer_value=value, text_value=None)
+    for value in (-9223372036854775808, 9223372036854775807):
+        Binding(name="x", type="integer", integer_value=value, text_value=None)
+    spec = plan_pair().steps[0].result_spec
+    for scale in (0, -1, 10**100):
+        with pytest.raises(ValidationError):
+            ResultSpec.model_validate({**spec.model_dump(), "scale": scale})
+    for value in (-9223372036854775809, 9223372036854775808):
+        raw = complete_raw(spec, [[value, 1, 1]])
+        with pytest.raises(Failure) as error:
+            validate_result(raw, spec)
+        assert error.value.code == "RESULT_CONTRACT_INVALID"
+
+
+@pytest.mark.parametrize("question", [10**100, [10**100], {"question": 10**100}, 1.5, None, True])
+def test_public_nonstr_question_rejected_before_fingerprint_saver_or_db(tmp_path, question):
+    from unittest.mock import patch
+
+    from universitydb.agent import Agent
+    from universitydb.contracts import AgentOutput
+    from universitydb.domain import University
+    from universitydb.llm import ScriptedProvider
+
+    provider = ScriptedProvider([])
+    agent = Agent(University(), tmp_path / "not-opened.sqlite", provider, tmp_path / "trace")
+    with patch(
+        "universitydb.agent.db.inspect", side_effect=AssertionError("No DB startup allowed")
+    ):
+        result = agent.run(question)
+    AgentOutput.model_validate(result)
+    assert result["error"]["code"] == "INVALID_INPUT"
+    assert provider.calls == 0 and not agent._runs and not agent._requests

@@ -139,7 +139,7 @@ class Library:
             raise Failure("PLAN_INVALID", "Resolve catalog ambiguity before planning.")
         for step in plan.steps:
             self.accept_spec(step.result_spec)
-            if step.result_refs:
+            if step.depends_on or step.result_refs:
                 raise Failure("PLAN_INVALID", "Library open-count has no registered dependencies.")
 
     def query(

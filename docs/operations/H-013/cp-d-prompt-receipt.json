@@ -1,0 +1,12 @@
+{
+  "stage": "CP-D",
+  "source": "unchanged runtime prompt source templates, not live requests",
+  "files": {
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb"
+  },
+  "actual_ui_task": "ui-task.txt selectedreceivedprojection",
+  "test_fixture_provenance": "tests/ui_fixtures.py m1_outputs suppliesSQLproposals only; actualDBresults independently checked against frozenoracle; dynamicref proof separate core",
+  "live_generation": "not-run",
+  "coverage": "no complete root/child/system/tool transcript claim"
+}

@@ -13,53 +13,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "tests"))
-from ui_fixtures import plan, proposal, step
+from ui_fixtures import m1_outputs, plan, proposal, step
 
 from universitydb.domain import University, make_spec
 from universitydb.library import SPEC as LIBRARY_SPEC
 from universitydb.library import Library
 
 S6 = {"student_id": 2, "course_id": 1, "teacher_id": 10, "semester_id": "S1"}
-
-
-def m1_outputs():
-    domain = University()
-    top = make_spec("top_course", "course_id")
-    cohort = make_spec("student_ids")
-    means = make_spec("grade_mean", "student_id")
-    scope = {"semester_id": "S1"}
-    return [
-        plan(
-            step(top, "top"),
-            step(
-                cohort,
-                "cohort",
-                [
-                    {
-                        "from_step": "top",
-                        "column": "course_id",
-                        "type": "integer",
-                        "bind_as": "course_ids",
-                    }
-                ],
-            ),
-            step(
-                means,
-                "means",
-                [
-                    {
-                        "from_step": "cohort",
-                        "column": "student_id",
-                        "type": "integer",
-                        "bind_as": "student_ids",
-                    }
-                ],
-            ),
-        ),
-        proposal(domain, top, scope, "top"),
-        proposal(domain, cohort, scope, "cohort", {"course_ids": [2]}),
-        proposal(domain, means, scope, "means", {"student_ids": [1]}),
-    ]
 
 
 def fixture(full=False):
@@ -79,7 +39,11 @@ def fixture(full=False):
         }
     ]
     return {
-        "university-v1": s6 + clarification + (m1_outputs() if full else []) + repair + refusal,
+        "university-v1": s6
+        + clarification
+        + (m1_outputs([2], [1]) if full else [])
+        + repair
+        + refusal,
         "library-v1": [plan(step(LIBRARY_SPEC)), proposal(Library(), LIBRARY_SPEC, {})],
     }
 

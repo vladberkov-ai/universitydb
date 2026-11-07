@@ -531,3 +531,129 @@ def test_university_owned_reads_locked_classification(database):
             with pytest.raises(Failure) as caught:
                 read(database)
             assert caught.value.code == "DB_UNAVAILABLE"
+
+
+def m1_family_plan():
+    # Kept independent of the core lane's dynamic provider/test helper.
+    steps = [
+        step_for(make_spec("top_course", "course_id"), "best").model_dump(),
+        step_for(make_spec("student_ids"), "people").model_dump(),
+        step_for(make_spec("grade_mean", "student_id"), "averages").model_dump(),
+    ]
+    for step, upstream, column, bind_as in [
+        (steps[1], "best", "course_id", "course_ids"),
+        (steps[2], "people", "student_id", "student_ids"),
+    ]:
+        step["depends_on"] = [upstream]
+        step["result_refs"] = [
+            {"from_step": upstream, "column": column, "type": "integer", "bind_as": bind_as}
+        ]
+    return {
+        "version": "1",
+        "steps": steps,
+        "needs_clarification": False,
+        "clarification_field": None,
+    }
+
+
+def test_domain_registered_edges_and_independent_variants_not_narrowed():
+    from universitydb.contracts import PlanProposal
+
+    domain = University()
+    raw = m1_family_plan()
+    domain.validate_plan(PlanProposal.model_validate(raw))
+    prefix = {**raw, "steps": raw["steps"][:2]}
+    domain.validate_plan(PlanProposal.model_validate(prefix))
+    for spec in domain.registry:
+        single = {**raw, "steps": [step_for(spec).model_dump()]}
+        domain.validate_plan(PlanProposal.model_validate(single))
+    independent = {
+        **raw,
+        "steps": [
+            step_for(make_spec("grade_mean"), "a").model_dump(),
+            step_for(make_spec("enrollment_counts"), "b").model_dump(),
+        ],
+    }
+    domain.validate_plan(PlanProposal.model_validate(independent))
+
+
+@pytest.mark.parametrize(
+    "mutation",
+    [
+        "source_metric",
+        "source_grain",
+        "column",
+        "type",
+        "bind_as",
+        "missing_ref",
+        "missing_dep",
+        "extra_ref",
+        "extra_dep",
+        "consumer_metric",
+        "consumer_grain",
+        "forward",
+    ],
+)
+def test_domain_wrong_or_incomplete_reference_family_fails_before_sql(database, tmp_path, mutation):
+    from universitydb.agent import Agent
+    from universitydb.llm import ScriptedProvider
+
+    raw = m1_family_plan()
+    if mutation == "source_metric":
+        raw["steps"][0]["result_spec"] = make_spec("grade_mean", "course_id").model_dump()
+    elif mutation == "source_grain":
+        raw["steps"][0]["result_spec"] = make_spec("grade_mean", "teacher_id").model_dump()
+    elif mutation in ("column", "type", "bind_as"):
+        raw["steps"][1]["result_refs"][0][mutation] = {
+            "column": "sum_units",
+            "type": "string",
+            "bind_as": "student_ids",
+        }[mutation]
+    elif mutation == "missing_ref":
+        raw["steps"][1]["result_refs"] = []
+    elif mutation == "missing_dep":
+        raw["steps"][1]["depends_on"] = []
+    elif mutation == "extra_ref":
+        raw["steps"][1]["result_refs"].append(
+            {**raw["steps"][1]["result_refs"][0], "bind_as": "extra"}
+        )
+    elif mutation == "extra_dep":
+        raw["steps"][2]["depends_on"].append("best")
+    elif mutation == "consumer_metric":
+        raw["steps"][2]["result_spec"] = make_spec("enrollment_counts", "student_id").model_dump()
+    elif mutation == "consumer_grain":
+        raw["steps"][2]["result_spec"] = make_spec("grade_mean", "course_id").model_dump()
+    else:
+        raw["steps"][1]["result_refs"][0]["from_step"] = "averages"
+        raw["steps"][1]["depends_on"] = ["averages"]
+    provider = ScriptedProvider([raw])
+    result = Agent(University(), database, provider, tmp_path / "trace").run(
+        "For students of the top course in S1 show their means"
+    )
+    assert result["error"]["code"] == "PLAN_INVALID", result
+    assert provider.calls == 1
+    assert not [e for e in result["events"] if e["kind"] == "sql_attempt"]
+
+
+@pytest.mark.parametrize("fixture", ["F1", "F2", "tie", "empty", "no_grades"])
+def test_m1_registered_domain_queries_use_actual_upstream_oracle(database, fixture):
+    expected = ORACLE["m1"][fixture]
+    with sqlite3.connect(database) as conn:
+        conn.execute("DELETE FROM Enrollments")
+        conn.executemany("INSERT INTO Enrollments VALUES(?,?,?)", expected["enrollments"])
+    scope = {"semester_id": "S1"}
+    _, top = execute_spec(database, make_spec("top_course", "course_id"), scope)
+    course_ids = [row[0] for row in top["dependency_rows"]]
+    _, cohort = execute_spec(database, make_spec("student_ids"), scope, {"course_ids": course_ids})
+    student_ids = [row[0] for row in cohort["dependency_rows"]]
+    _, means = execute_spec(
+        database, make_spec("grade_mean", "student_id"), scope, {"student_ids": student_ids}
+    )
+    assert course_ids == expected["top_course_ids"]
+    assert student_ids == expected["cohort_student_ids"]
+    assert means["answer"]["rows"] == [
+        [g["key"], g["mean"], *g["raw"][1:]] for g in expected["final"]
+    ]
+    if not course_ids:
+        sql, params = University().query(make_spec("student_ids"), scope, {"course_ids": []})
+        assert "0 = 1" in sql and params == scope
