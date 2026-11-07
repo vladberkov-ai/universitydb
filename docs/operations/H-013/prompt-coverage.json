@@ -1,5 +1,5 @@
 {
-  "stage": "H-013 offline DoD verified; actual independent APPROVE/CLEAR; root lifecycle cutoff pending",
+  "stage": "H-013 offline DoD verified; actual APPROVE/CLEAR and root native COMPLETE/strict PASS13of13",
   "root_actual_received_prompt": {
     "path": "docs/ai/omx/H-013-actual-prompt.txt",
     "receipt": "docs/operations/H-013/prompt-receipt.json",

@@ -1,0 +1,70 @@
+{
+  "checked_at": "2026-11-07T22:17:13.464555+00:00",
+  "attribution": "Actual root-delivered native get_goal/update_goal and supported strict CLI outputs; selected safe fields read from actual checkpoint/status JSON. Private native IDs/objectives/raw snapshots deliberately omitted. Child made no runtime/goal/state writes.",
+  "native": {
+    "status": "complete",
+    "update_goal": "complete succeeded",
+    "fresh_get_goal": "complete confirmed before strict retry",
+    "elapsed_seconds": 5538,
+    "tokens_used": 1644859,
+    "explicit_token_budget": false
+  },
+  "strict": {
+    "exit": 0,
+    "ok": true,
+    "summary": {
+      "total": 13,
+      "pending": 0,
+      "inProgress": 0,
+      "complete": 13,
+      "failed": 0,
+      "reviewBlocked": 0,
+      "historicalReviewBlocked": 0,
+      "needsUserDecision": 0,
+      "superseded": 0,
+      "steeringBlocked": 0,
+      "aggregateComplete": true,
+      "artifactComplete": true
+    },
+    "fresh_status_summary": {
+      "total": 13,
+      "pending": 0,
+      "inProgress": 0,
+      "complete": 13,
+      "failed": 0,
+      "reviewBlocked": 0,
+      "historicalReviewBlocked": 0,
+      "needsUserDecision": 0,
+      "superseded": 0,
+      "steeringBlocked": 0,
+      "aggregateComplete": true,
+      "artifactComplete": true
+    },
+    "fresh_status_reconciliation": null,
+    "all13_complete": true,
+    "history": "Prior review-blocked parent resolved through supported G013; prior reviewBlockedAt/ledger history retained, not manually patched."
+  },
+  "first_attempt": "strict-attempt1.json:exit1 metadata extraction proof gap preserved",
+  "quality_input": {
+    "path": "final-quality-gate-strict.json",
+    "sha256": "bdd86dad8c434a47184306bea29c338daadc4d93ff123635e88da4b304a50622",
+    "proof_records": 8,
+    "architecture_invariants": 7,
+    "extra_record": "Exact machine-extracted trace invariant duplicate includes accepted steering CLI serialization tail; no semantic requirement waived or new product invariant. Previous seven-record final-quality-gate.json preserved."
+  },
+  "lifecycle_artifact_hashes": {
+    "brief.md": "1a4305a5ecff1d3d0601c362f5ca55f9154e319a0efb4a7f989fa4f696b9d17e",
+    "goals.json": "ffec24fc676b66a652ea49773baef20b00f83e10ea993794b4a2efd8f0a72d1f",
+    "ledger.jsonl": "4f7bb5d4ed8bda272b6bf28b4e3e72de1e79aca19586ed647db31eb9ae1037b3",
+    "quality-gate.json": "bdd86dad8c434a47184306bea29c338daadc4d93ff123635e88da4b304a50622"
+  },
+  "tested_product_sha": "f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0",
+  "product_blobs_unchanged": 38,
+  "preservation7_unchanged": true,
+  "prior_documentation_checkpoints": {
+    "delivery": "f337a5b25113c33fdad7f40bd6fa133ee3fdb4f7",
+    "seven_proof_quality_input": "28271a38c30817c5297435b138b4fecd064764a9"
+  },
+  "remote_main": "5c8669ffb2e629ea00878734385fff99b53d7adc",
+  "push": "not-run"
+}

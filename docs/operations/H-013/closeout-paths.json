@@ -1,0 +1,20 @@
+{
+  "count": 15,
+  "paths": [
+    "README.md",
+    "docs/assignment-status.md",
+    "docs/manual-e2e.md",
+    "docs/operations/H-013/cleaner-report.md",
+    "docs/operations/H-013/closeout-paths.json",
+    "docs/operations/H-013/cp-e-final-verification.json",
+    "docs/operations/H-013/final-quality-gate-strict.json",
+    "docs/operations/H-013/invariant-audit.md",
+    "docs/operations/H-013/native-strict-closeout.json",
+    "docs/operations/H-013/prompt-coverage.json",
+    "docs/operations/H-013/strict-attempt1.json",
+    "docs/plans/production-considerations.md",
+    "docs/plans/requirements-test-matrix.md",
+    "docs/reports/H-013-I2-I3-offline.md",
+    "examples/README.md"
+  ]
+}

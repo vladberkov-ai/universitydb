@@ -1,0 +1,110 @@
+{
+  "aiSlopCleaner": {
+    "status": "passed",
+    "evidence": "docs/operations/H-013/cleaner-report.md + cleaner-plan/review and cleaner-review-repair-addendum/verdict; behaviorlocks before two tiny deletions; postrepair no-op inventory independentrootapproved; final410/static/browserPASS"
+  },
+  "verification": {
+    "status": "passed",
+    "commands": [
+      "env -u OPENAI_API_KEY UNIVERSITYDB_LIVE_APPROVED=no LANGSMITH_TRACING=false LANGCHAIN_TRACING_V2=false UV_CACHE_DIR=/tmp/h013-uv-cache uv run --locked pytest -q --basetemp=/tmp/h013-cp-e-repaired-final",
+      "UV_CACHE_DIR=/tmp/h013-uv-cache uv run --locked ruff check src tests",
+      "UV_CACHE_DIR=/tmp/h013-uv-cache uv run --locked ruff format --check src tests",
+      "UV_CACHE_DIR=/tmp/h013-uv-cache uv run --locked mypy src/universitydb --ignore-missing-imports",
+      "UV_CACHE_DIR=/tmp/h013-uv-cache uv run --locked python -m compileall -q src tests",
+      "git diff --check",
+      "omx quality-gates list --stage code-review --json"
+    ],
+    "evidence": "Exactf4b775ce2680f6282ebd2f9c449d1f27a2c85ee0 product38blobs; root410passed121.29s allstatic; oracle157; cp-e-final-verification.json/m1-final/browser cp-e-final-attempt2; preservation7+85history+35vault+9manifest and remote receipt; live/push notrun"
+  },
+  "codeReview": {
+    "recommendation": "APPROVE",
+    "architectStatus": "CLEAR",
+    "evidence": "Actual independent final_code_review(code-reviewer) APPROVE and final_architecture_review(architect) CLEAR for f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0; docs/operations/H-013/reviews/round2-code-reviewer.json and round2-architect.json; prior REQUEST CHANGES/BLOCK preserved; actual post-builtin configured gate refresh empty[]",
+    "independentReview": {
+      "codeReviewer": {
+        "agentRole": "code-reviewer",
+        "evidence": "Actual independent final_code_review(code-reviewer) APPROVE and final_architecture_review(architect) CLEAR for f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0; docs/operations/H-013/reviews/round2-code-reviewer.json and round2-architect.json; prior REQUEST CHANGES/BLOCK preserved"
+      },
+      "architect": {
+        "agentRole": "architect",
+        "evidence": "Actual independent final_code_review(code-reviewer) APPROVE and final_architecture_review(architect) CLEAR for f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0; docs/operations/H-013/reviews/round2-code-reviewer.json and round2-architect.json; prior REQUEST CHANGES/BLOCK preserved"
+      }
+    }
+  },
+  "architectureInvariantGate": {
+    "status": "passed",
+    "sourceArtifacts": [
+      ".omx/ultragoal/brief.md",
+      ".omx/ultragoal/ledger.jsonl",
+      "docs/plans/I2-I3-offline-brief.md",
+      "docs/plans/I2-I3-offline-contract.md"
+    ],
+    "evidence": "Allseven exact accepted brief invariants explicitly reasserted by supported annotate_ledger and manually audited with full H013/H011 Q/negative/R/U obligations; docs/operations/H-013/invariant-audit.md; final APPROVE/CLEAR, no unresolved blockers; First strict attempt rejected only the eighth machine-extracted CLI-tail duplicate. Exact duplicate now explicitly proved alongside seven domain invariants; no required text dropped, no runtime/history edits.",
+    "invariants": [
+      {
+        "invariant": "Equal graded-enrollment weights; every offering/retake; NULL distinct from zero; absent filters explicitly all including semesters; count objects distinct. Exact rational top ties before HALF_UP two decimals. Known catalog IDs/names only; ambiguous/current/conflicting/unknown scope explicit",
+        "source": ".omx/ultragoal/ledger.jsonl#accepted-existing-H013-architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "domain.py make_spec/resolve/adapt_result; domain_support.resolve_entities: exact integer components/Fraction ties/HALF_UP, explicit scopes/NULL/counts",
+        "testEvidence": "test_i2_domains all16filters/fivegroups/Q1-Q12/mutations/ties/NULLzero; test_i2_oracle wrongJOIN/meanofmeans; independent check157; final root410 and static PASS",
+        "reviewEvidence": "Actual independent final_code_review(code-reviewer) APPROVE and final_architecture_review(architect) CLEAR for f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0; docs/operations/H-013/reviews/round2-code-reviewer.json and round2-architect.json; prior REQUEST CHANGES/BLOCK preserved"
+      },
+      {
+        "invariant": "Every accepted step has a registered exact ResultSpec: shape, columns/types/nullability, components, grain, unit/scale. No first-row inference. Static DAG ≤3 steps, missing/cyclic/forward-invalid refs rejected before execution; materialized refs are checked typed bound values only, never SQL text. Preserve exact top selection and union de-duplication. Fail closed on truncated/oversized upstream and never silently remove empty filters",
+        "source": ".omx/ultragoal/ledger.jsonl#accepted-existing-H013-architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "contracts.validate_dag/validate_result/materialize_refs; agent validate_plan/bind_results/inspect_result; adapter exact registry and registered dependency families",
+        "testEvidence": "test_i2_contracts strict specs/types/metadata/static refs/empty; test_i3_dependencies F1F2tie/empty/invalid0downstream; m1-final manifest; final root410 and static PASS",
+        "reviewEvidence": "Actual independent final_code_review(code-reviewer) APPROVE and final_architecture_review(architect) CLEAR for f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0; docs/operations/H-013/reviews/round2-code-reviewer.json and round2-architect.json; prior REQUEST CHANGES/BLOCK preserved"
+      },
+      {
+        "invariant": "Actual in-memory LangGraph saver/interrupt, server session/run/checkpoint/clarification/schema/data/policy identity; ≤2 pauses, TTL900s. Exact replay idempotent; changed same-ID payload conflicts; invalid/stale/foreign/expired rejected before calls. Human wait excluded from active180s, other counters persist across resume; process restart expires explicitly",
+        "source": ".omx/ultragoal/ledger.jsonl#accepted-existing-H013-architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "agent InMemorySaver/interrupt/Command/_restore/run/resume immutable32 identities/8 contexts/inclusive900 expiry/owning rejection/current schema-data-policy binding",
+        "testEvidence": "test_i2_continuation plus test_review_repairs TTL899.999/900/900.001/registry/tombstones/trace/foreign/WAL/M1realresume; same-run browser clarification; final root410 and static PASS",
+        "reviewEvidence": "Actual independent final_code_review(code-reviewer) APPROVE and final_architecture_review(architect) CLEAR for f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0; docs/operations/H-013/reviews/round2-code-reviewer.json and round2-architect.json; prior REQUEST CHANGES/BLOCK preserved"
+      },
+      {
+        "invariant": "Exact gpt-6.1-sol plan high, SQL/repair medium, no fallback/judge. Existing ≤5 calls/run, ≤4 SQL attempts/run, plan60s/SQL45s, output32768; one repair spends shared remainder. Payload≤12000 UTF8 bytes, SQL≤8000 bytes/chars, ≤100 bindings, encoded bindings≤8192 bytes/text≤2000 bytes, results≤100 rows/64KiB, retained≤128KiB, trace≤1MiB. Never raise ceilings silently. Unknown usage/holds accounting remains terminal and unchanged",
+        "source": ".omx/ultragoal/ledger.jsonl#accepted-existing-H013-architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "config.PROFILE/wire_payload; agent _call/check_deadline/retained bundle; db_worker limits; tracing.Trace; unchanged llm accounting and original monetary ledger",
+        "testEvidence": "test_bounds/test_sol_profile/test_provider_worker/test_practical_budget; M1 sharedrepair/transient5calls4SQL; retained131072 and fullwire12000 negative tests; final root410 and static PASS",
+        "reviewEvidence": "Actual independent final_code_review(code-reviewer) APPROVE and final_architecture_review(architect) CLEAR for f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0; docs/operations/H-013/reviews/round2-code-reviewer.json and round2-architect.json; prior REQUEST CHANGES/BLOCK preserved"
+      },
+      {
+        "invariant": "AST allowlist + read-only SQLite authorizer + bound values/watchdog/integrity scan, unchanged DB hash. Safe SELECT is not semantic correctness: independent oracle detects wrong JOIN/aggregation. No hard memory-isolation or universal SQL claim",
+        "source": ".omx/ultragoal/ledger.jsonl#accepted-existing-H013-architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "sql_policy AST; db mode-ro/DELETE identity/integrity and worker authorizer/watchdog/terminal SQLite taxonomy; independent semantic oracle",
+        "testEvidence": "test_db_domain/test_graph/test_review_repairs realbusy/WAL/integrity/unsafe/timeout; unchanged DBhashes; semantic mutant oracle independent; final root410 and static PASS",
+        "reviewEvidence": "Actual independent final_code_review(code-reviewer) APPROVE and final_architecture_review(architect) CLEAR for f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0; docs/operations/H-013/reviews/round2-code-reviewer.json and round2-architect.json; prior REQUEST CHANGES/BLOCK preserved"
+      },
+      {
+        "invariant": "Library: Readers/Books/Loans, open=returned false; per-reader count includes zero, unit count scale1, separate schema/seed/descriptor/registry/result adapter/domain policy. Common core/DB safety/provider/graph/tracing/UI; both schemas exercise shared contracts early",
+        "source": ".omx/ultragoal/ledger.jsonl#accepted-existing-H013-architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "library.py own descriptor/registry/adapter/policy + resources/library; generic shared Agent/DB/provider/tracing/UI composition root",
+        "testEvidence": "test_library actual1/1 zero returned allreturned FK/type/crossschema; m1-final/portability-proof.json tree084174c7acac4583187fd6b957495b0c46983d9935d3fb3567ecf423b5c0f43d; finalbrowser Library; final root410 and static PASS",
+        "reviewEvidence": "Actual independent final_code_review(code-reviewer) APPROVE and final_architecture_review(architect) CLEAR for f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0; docs/operations/H-013/reviews/round2-code-reviewer.json and round2-architect.json; prior REQUEST CHANGES/BLOCK preserved"
+      },
+      {
+        "invariant": "Trace all input/nodes/attempts/SQL/bindings/raw typed rows/adapted results/dependency binds/answer-or-error in one run, including resume. English UI reveals full trace and every step; failure/new question clears prior answer. Trace failure cannot produce untraced success",
+        "source": ".omx/ultragoal/ledger.jsonl#accepted-existing-H013-architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "tracing.Trace; Agent input/node/provider/SQL/raw/adapted/ref/answer-error/resume events; ui panels and full JSONL download, no stale answer",
+        "testEvidence": "test_graph tracefailures; continuation actualrequestIDs; isolated AppTests; browser/cp-e-final-attempt2 seven same-run JSONLs/PNG captures sixclasses, root8images inspected; final root410 and static PASS",
+        "reviewEvidence": "Actual independent final_code_review(code-reviewer) APPROVE and final_architecture_review(architect) CLEAR for f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0; docs/operations/H-013/reviews/round2-code-reviewer.json and round2-architect.json; prior REQUEST CHANGES/BLOCK preserved"
+      },
+      {
+        "invariant": "Trace all input/nodes/attempts/SQL/bindings/raw typed rows/adapted results/dependency binds/answer-or-error in one run, including resume. English UI reveals full trace and every step; failure/new question clears prior answer. Trace failure cannot produce untraced success. --rationale Make all seven existing accepted invariants mandatory in strict final validation as well as human audit; preserve every original obligation. --json",
+        "source": ".omx/ultragoal/ledger.jsonl#accepted-existing-H013-architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "tracing.Trace; Agent input/node/provider/SQL/raw/adapted/ref/answer-error/resume events; ui panels and full JSONL download, no stale answer; Additional extracted text is the accepted CLI serialization suffix (rationale/JSON flag), not a new product rule. All seven original obligations remain enforced without history or runtime-code changes.",
+        "testEvidence": "test_graph tracefailures; continuation actualrequestIDs; isolated AppTests; browser/cp-e-final-attempt2 seven same-run JSONLs/PNG captures sixclasses, root8images inspected; final root410 and static PASS; CLI source-backed extraction confirms exactly8unique records (7domain lines +1serialization-tailed duplicate).",
+        "reviewEvidence": "Actual independent final_code_review(code-reviewer) APPROVE and final_architecture_review(architect) CLEAR for f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0; docs/operations/H-013/reviews/round2-code-reviewer.json and round2-architect.json; prior REQUEST CHANGES/BLOCK preserved; Base trace/domain invariant independently APPROVE/CLEAR; serialization suffix adds no new application semantics or waived condition."
+      }
+    ]
+  }
+}

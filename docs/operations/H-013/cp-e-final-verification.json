@@ -122,7 +122,7 @@
     "open_findings": 0,
     "receipts": "reviews/round2-*.json"
   },
-  "native_strict_completion": "pending",
+  "native_strict_completion": "actual root native COMPLETE; strict retry exit0 all13complete, see native-strict-closeout.json",
   "push": "not-run",
   "offline_DoD": "achieved; root native/strict separately pending"
 }

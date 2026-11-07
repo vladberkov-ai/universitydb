@@ -55,7 +55,7 @@ cutoffs above remain history, not the present capability limit. Actual same-proc
 M1 F1/F2/tie/checkpoint-resume and Library portability are in the final manifest;
 request identity/TTL/owner-trace/DELETE-journal/DB availability repairs respond to
 actual independent blockers, not waived by the earlier383pass. Final frozen-source browser passed six classes/seven captures; fresh
-independent code-reviewer APPROVE and architect CLEAR received; root native/strict closeout remain separately pending. No real-model
+independent code-reviewer APPROVE and architect CLEAR received; root native COMPLETE/strict PASS (13/13) now confirmed. No real-model
 NL accuracy/live/count/credentials/spending/push claim; I4+verification-I5/publication/
 defense remain later.
 [Exact-process structured proofs](operations/H-013/m1-final/manifest.json).

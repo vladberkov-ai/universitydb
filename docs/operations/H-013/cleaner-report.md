@@ -65,3 +65,7 @@ seven browser captures. [Attributed final synthesis](reviews/final-synthesis.md)
 All seven exact brief invariants and full R/U/negative obligations are retained.
 Offline DoD is achieved; root native/strict checkpoint remain separately pending.
 This does not relabel prior failures or certify live accuracy/production/publication.
+
+Final root lifecycle refresh: actual native COMPLETE and supported strict retry PASS,
+all13goals complete with aggregate/artifact complete. [Safe receipt](native-strict-closeout.json).
+Prior pending cutoffs/failures remain historical; no product or semantic gate waived.

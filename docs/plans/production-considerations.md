@@ -33,7 +33,7 @@ The sections above preserve their historical I1/proposal cutoffs. Current H-013
 frozen candidate f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0 passed410offline tests
 and static checks. [Exact-process M1/Library proof](../operations/H-013/m1-final/manifest.json)
 now verifies dependent F1/F2/tie, checkpoint composition and same-core portability.
-Final frozen-source browser passed all six classes (seven captures); independent code-reviewer APPROVE and architect CLEAR received; root native/strict closeout remain separately pending. This is **not
+Final frozen-source browser passed all six classes (seven captures); independent code-reviewer APPROVE and architect CLEAR received; root native COMPLETE/strict PASS (13/13) now confirmed. This is **not
 production readiness** or real-model NL→SQL accuracy. Current scoped decisions:
 [ADR012](../adr/ADR-OMX-012-I2-I3-offline-contracts.md), [whole contract](I2-I3-offline-contract.md).
 

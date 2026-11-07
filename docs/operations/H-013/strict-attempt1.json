@@ -1,0 +1,14 @@
+{
+  "attribution": "actual root-delivered lifecycle result, bounded documentary projection; no worker native/workflow write",
+  "native_update_goal": "COMPLETE succeeded",
+  "native_elapsed_seconds": 5538,
+  "explicit_token_budget": false,
+  "strict_checkpoint": {
+    "exit": 1,
+    "status": "failed metadata proof gap; not completion proof",
+    "reason": "Installed extractor also reads acceptedsteering.directiveText; final trace invariant machine text included trailing CLI serialization, absent exact duplicate proof in quality input. Seven base domain invariants already proved.",
+    "machine_tail": "--rationale Make all seven existing accepted invariants mandatory in strict final validation as well as human audit; preserve every original obligation. --json"
+  },
+  "next": "Root corrects documented quality-input metadata only, obtains fresh actual completed native snapshot, retries supported strict checkpoint. No runtime/history/IDs/code/new goal patch.",
+  "strict_success": "not yet observed"
+}

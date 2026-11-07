@@ -3,8 +3,8 @@
 **I2+I3 offline DoD achieved:**410 offline tests/static checks,157 independent oracle
 checks, actual six-class browser, final same-process dependency/portability/resume
 proofs; independent code-reviewer **APPROVE** and architect **CLEAR**, zero unresolved
-findings. Root native completion/strict checkpoint are separate and still pending
-at this documentary cutoff. No live-model accuracy or publication claim.
+findings. Root actual native goal is **COMPLETE**; supported strict checkpoint retry **PASS**,
+all13stories complete/aggregateComplete/artifactComplete. No live-model accuracy or publication claim.
 
 ## Authority and source identity
 Actual received H-013 task authorizes one continuous I2+I3 offline block, CP-A–E,
@@ -27,8 +27,7 @@ Repaired frozen candidate: **`f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0`**.
 Its [38 source/test/resource hashes](../operations/H-013/cp-e-repair-candidate.json)
 match committed blobs;54 repair targets passed first, then the serialized full
 pipeline passed410tests121.29s/Ruff/format32/mypy14/compile/diff. Final actual browser
-passed six classes/seven captures. Independent APPROVE/CLEAR received; root native/strict closeout remain
-pending. [Exact scoped commit receipt](../operations/H-013/cp-e-repair-commit.json).
+passed six classes/seven captures. Independent APPROVE/CLEAR received; root native/strict closeout now separately confirmed COMPLETE/PASS. [Exact scoped commit receipt](../operations/H-013/cp-e-repair-commit.json).
 
 Original cleaned candidate (now superseded by blocking review):
 **`976e2207b4f8d553c96067380df2ef5c128d7dd6`**.
@@ -165,7 +164,7 @@ in addition to identity/trace/DB availability/WAL findings; TTL equality is part
 lifetime findings. [Bounded formal architect receipt](../operations/H-013/reviews/round1-architect.json).
 Fresh repaired-candidate [code-reviewer APPROVE](../operations/H-013/reviews/round2-code-reviewer.json) resolves all4prior findings with zero unresolved issues. [Architect CLEAR](../operations/H-013/reviews/round2-architect.json) resolves all5prior blockers with zero open findings. [Final review synthesis](../operations/H-013/reviews/final-synthesis.md). Configured gate observation
 was refreshed as an empty code-review gate list; final invariant/R/U proof is
-[recorded](../operations/H-013/invariant-audit.md), not invented tool approval. Actual root native complete/fresh snapshot/strict checkpoint are pending.
+[recorded](../operations/H-013/invariant-audit.md), not invented tool approval. Actual root native COMPLETE/fresh completed snapshot and strict checkpoint retry EXIT0 are confirmed:13/13complete, aggregateComplete/artifactComplete true. [Safe closeout receipt](../operations/H-013/native-strict-closeout.json). First strict attempt EXIT1 exposed an exact extractor metadata serialization-tail proof gap; root corrected quality input only, preserved the failed attempt and all history, then retried successfully. Seven semantic invariants plus one exact machine-extracted duplicate proof are present; no rule waived.
 
 ## Preservation, prompts, Git and remaining boundaries
 [Baseline/source input hashes](../operations/H-013/baseline.json) and checkpoint
@@ -198,3 +197,21 @@ or remote configuration change. [Receipt](../operations/H-013/final-preservation
 commit will be separate, never amend/self-SHA. Production explanation and all R/U
 obligations remain mapped; final publication/real-model quality/clean release and
 owner understanding/defense are later blocks, not implicitly completed here.
+
+## Actual final lifecycle closeout
+Root native COMPLETE is independently distinct from the achieved offline product
+DoD. Fresh actual completed snapshot preceded supported strict retry EXIT0:13/13
+complete, pending/in-progress/review-blocked0, aggregateComplete/artifactComplete true.
+[Safe selected actual receipt](../operations/H-013/native-strict-closeout.json) includes
+plan/ledger/brief/quality hashes, usage and source identity, omitting private native
+IDs/raw snapshots. First strict attempt metadata proof failure is retained; root
+added only the exact machine-extracted CLI-tailed duplicate trace proof to quality
+input, no product/history/ID edits. Previous seven-proof input remains preserved.
+
+Verified documentary delivery: `f337a5b25113c33fdad7f40bd6fa133ee3fdb4f7`;
+initial quality-input documentary copy: `28271a38c30817c5297435b138b4fecd064764a9`.
+This late receipt commit records actual postconditions and does not claim its own
+self-referential SHA as product tested source. Final product remains frozenf4b775c.
+Native elapsed5538s;1,644,859tokens reported without an explicit token budget.
+All original monetary/I1/locks remain unchanged; owned offline UI/browser stopped.
+Push not-run; I4+verification-I5/publication/defense remain the next blocks.
