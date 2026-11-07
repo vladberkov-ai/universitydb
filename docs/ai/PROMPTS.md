@@ -1,3 +1,13 @@
+# Prompt catalogue navigation
+
+Use the two maintained reader collections: [English](PROMPTS-EN.md) and
+[Russian](PROMPTS-RU.md). They include complete current runtime templates and
+H-011/H-013 root tasks with source/translation labels. Current child-task coverage
+and original projections are linked from [coverage](README.md) and
+[H-013 coverage receipt](../operations/H-013/prompt-coverage.json).
+The historical catalogue below is retained as an original-source index, not a third
+maintained translation bundle or a claim of complete private transcripts.
+
 # Prompt catalogue
 
 Read the consolidated prompt texts in **[English](PROMPTS-EN.md)** or **[Russian](PROMPTS-RU.md)**. Each entry links to the authoritative original; translations are not claims of actual model input. Structured child/session records remain in the provenance index below.

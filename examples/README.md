@@ -1,3 +1,19 @@
+# Current offline examples — I2+I3
+
+| Scenario | Result | Evidence |
+| --- | --- | --- |
+| University S6 |80.00 | [trace](../docs/operations/H-013/browser/cp-e-final-attempt2/success.jsonl) |
+| Alex clarification |same-run selection→86.67 | [trace](../docs/operations/H-013/browser/cp-e-final-attempt2/clarification-resume.jsonl) |
+| Dependent M1 |course2→student1→95.00 | [trace](../docs/operations/H-013/m1-final/F1.jsonl) |
+| M1 mutations and exact ties |actual upstream IDs change downstream results | [manifest](../docs/operations/H-013/m1-final/manifest.json) |
+| Library open loans |Ada1/Bob1 | [trace](../docs/operations/H-013/browser/cp-e-final-attempt2/library.jsonl) |
+| Repair and terminal error |all attempts, no stale answer | [browser receipt](../docs/operations/H-013/browser/cp-e-final-attempt2/browser-receipt.json) |
+
+These are offline/injected generation records with actual graph/SQLite results.
+Follow the current [E2E guide](../docs/manual-e2e.md) to reproduce the UI sequence.
+Historical live and intermediate evidence below retain their original cutoffs;
+their no-push statements do not override the later publication authorization.
+
 # Example questions, outputs and traces
 
 | Case | Expected / recorded result | Evidence |

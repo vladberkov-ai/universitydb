@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-08",
+  "documentation_links": "PASS",
+  "credential_pattern_scan": "PASS; heuristic, no secret values output",
+  "product_hashes_unchanged": 38,
+  "ledger_I1_locks_unchanged": 7,
+  "seed_initialization": {
+    "university": 8,
+    "library": 3
+  },
+  "full_offline_fixture_builder": "PASS",
+  "targeted_e2e": {
+    "command": "pytest -q tests/test_i2_ui.py tests/test_i3_dependencies.py tests/test_library.py",
+    "passed": 59,
+    "seconds": 14.38,
+    "exit": 0
+  },
+  "live_calls": 0,
+  "prior_complete_suite": "410 H-013 tests; not re-run for documentation-only changes",
+  "publication": "pending push",
+  "documentation_initial_diff_check": "CRLF from Windows write detected; only owned edited docs normalized to LF"
+}

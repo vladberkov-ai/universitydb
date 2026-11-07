@@ -1,3 +1,7 @@
+## Current reader bundle update — 2026-11-08
+
+Full current runtime templates and H-011/H-013 root tasks are included in both existing language bundles below. English translations and Russian runtime translations are reader derivatives, not newly submitted model inputs. Original task/receipt bytes remain unchanged. H-013 child task projections stay linked with explicit coverage; missing private/opaque messages are not reconstructed. Publication is now authorized; historical no-push statements describe past tasks.
+
 ## H-011 current coverage
 [Actual received prompt](omx/H-011-actual-prompt.txt), [provenance/cutoff](../operations/H-011/prompt-receipt.json), [I2 readiness report](../reports/H-011-I2-offline.md). Preparation only; no I2 runtime prompt/model consumption or full transcript claim. Earlier stage cutoffs below are preserved.
 

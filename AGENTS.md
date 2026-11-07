@@ -1,3 +1,7 @@
+# Current delivery boundary — 2026-11-08
+
+The owner explicitly authorizes packaging and pushing the completed I2+I3 offline results to the existing GitHub origin before H-014 starts. Update English reviewer docs and both existing RU/EN prompt bundles; preserve original evidence, locks, completed goals and monetary ledger. No new live/API/count calls or spending changes. This delivery authority supersedes earlier no-push restrictions only for this publication. H-014 readiness is not started by this task. The history below retains its original scope.
+
 # UniversityDB — repository instructions
 
 ## Current boundary: H-006-v4 preparation checkpoint, then advisory design only

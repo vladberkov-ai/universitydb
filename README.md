@@ -1,192 +1,144 @@
 # University Database + LangGraph QA Agent
 
-## H-013 current local offline candidate
+A local question-answering service using LangGraph, generated SQLite queries,
+typed results and an inspectable Streamlit interface. Two synthetic datasets are
+included: University and Library. This repository contains the assignment code,
+schemas, seed data, tests, decisions, prompt collections and execution evidence.
 
-I2+I3-offline implements University means/counts/listing/grouping/exact top ties and
-all optional filters; real in-memory checkpoint clarification; bounded repair/errors;
-typed dependent results; three-step actual-result M1; early Library on the same core;
-and full English trace/UI. The frozen candidate
-`f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0` passed **410 offline tests** plus
-Ruff/format/mypy/compile checks. [Actual M1/Library proof](docs/operations/H-013/m1-final/manifest.json)
-includes F1/F2/tie, checkpoint composition and unchanged integrated core across adapters.
-Final frozen-source browser passed all six classes (seven captures); independent code-reviewer APPROVE and architect CLEAR received; root native COMPLETE/strict PASS (13/13) now confirmed; see
-[delivery report](docs/reports/H-013-I2-I3-offline.md), [whole brief](docs/plans/I2-I3-offline-brief.md),
-[contract](docs/plans/I2-I3-offline-contract.md), [ADR012](docs/adr/ADR-OMX-012-I2-I3-offline-contracts.md).
+## Current status
 
-Scripted proposals execute real compiled LangGraph/SQLite; they are **not real-model
-NL→SQL accuracy**. No live/count calls, credentials, spending changes or push occur.
-SQLite DELETE journal only; immutable request IDs expire/fail closed rather than
-silently evict/reexecute; no durable restart, public authentication, concurrent
-writers or production-readiness claim. I4+verification-I5/publication/defense are later.
+**I2+I3 implementation is complete and verified offline.** University supports
+means, enrollment/graded/distinct-student counts, JOIN listings, grouping, exact
+top-course ties, optional student/course/teacher/semester filters, ambiguous-name
+clarification, and dependent multi-step questions. Library uses the same core to
+answer open-loan counts. The UI shows every step's SQL, bindings, raw/adapted rows,
+errors, repair attempts and full JSONL trace.
 
-## Historical published I1 baseline
+Product commit `f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0` passed **410 tests,
+157 independent oracle checks**, static checks, AppTest and six actual offline-browser
+scenario classes. Independent reviews returned APPROVE/CLEAR; the development goal
+closed COMPLETE with strict PASS (13/13). Later documentation commits do not change
+that tested product identity. [Report and evidence](docs/reports/H-013-I2-I3-offline.md).
 
-**Published I1 baseline: working demonstrator; the full assignment was not finished.**
-Real Sol + LangGraph + SQLite + Streamlit passed S6 **80.00**, an independent changed
-example **90.00**, full trace inspection and error/no-stale-answer checks. The owner
-also passed all four manual live checks. The recorded full suite has **131 tests**.
-[Live evidence](docs/reports/H-009-live-I1-closeout.md) ·
-[owner acceptance](docs/reports/I1-owner-manual-acceptance.md) ·
-[completion receipt](docs/operations/H-009/closeout/postcheckpoint-goal-receipt.json).
+**Offline verification is not real-model NL→SQL accuracy.** The earlier I1 slice has
+real Sol evidence for 80.00 and 90.00; the expanded service still needs broad real-model
+evaluation and clean-environment readiness verification. Publication makes these
+results available; it does not certify those remaining checks or production readiness.
+[Requirement-by-requirement status](docs/assignment-status.md).
 
-At that historical I1 baseline the supported question was **a scalar grade mean with four explicit filters**:
-student, course, teacher and semester. Arbitrary natural-language questions, multiple
-dependent steps, conversational clarification/resume and a second database adapter
-were not implemented at that checkpoint. See the [assignment audit](docs/assignment-status.md) for the
-complete distinction between delivered artifacts and missing functionality.
+## Deliverables
 
-## Reviewer navigation
-
-| Deliverable | Location |
+| Item | Files |
 | --- | --- |
-| SQL schema and synthetic seed | [schema.sql](resources/schema.sql), [seed.sql](resources/seed.sql), [database guide](docs/database.md) |
-| LangGraph agent and domain adapter | [agent.py](src/universitydb/agent.py), [domain.py](src/universitydb/domain.py) |
-| DB, model and tracing layers | [db.py](src/universitydb/db.py), [llm.py](src/universitydb/llm.py), [tracing.py](src/universitydb/tracing.py) |
-| Runtime and development prompts | [English prompts](docs/ai/PROMPTS-EN.md), [Russian prompts](docs/ai/PROMPTS-RU.md), [provenance/coverage](docs/ai/README.md) |
-| Tests | [tests](tests), [manual E2E](docs/manual-e2e.md) |
-| Design decisions | [ADR index](docs/adr/README.md); implemented scope: [ADR008](docs/adr/ADR-OMX-008-I1-scoped-implementation.md), [ADR009](docs/adr/ADR-OMX-009-Sol-operation-profile.md), [ADR010](docs/adr/ADR-OMX-010-I1-practical-budget-policy.md) |
-| Queries, outputs and execution traces | [examples](examples/README.md) |
-| Production discussion | [production considerations](docs/plans/production-considerations.md) (future work, not production readiness) |
-
-Earlier design documents/ADR003–007 are proposals. Their old model/budget/eval settings
-do not override the implemented I1 profile. Historical OMX goal/resume instructions
-are development records, **not prerequisites for running the application**.
+| University schema and seed | [schema](resources/schema.sql), [seed](resources/seed.sql) |
+| Library schema and seed | [schema](resources/library/schema.sql), [seed](resources/library/seed.sql) |
+| Data model and initialization | [database guide](docs/database.md) |
+| Graph and typed contracts | [agent](src/universitydb/agent.py), [contracts](src/universitydb/contracts.py) |
+| Domain adapters | [University](src/universitydb/domain.py), [Library](src/universitydb/library.py) |
+| SQL, provider, tracing and UI | [DB](src/universitydb/db.py), [SQL policy](src/universitydb/sql_policy.py), [provider](src/universitydb/llm.py), [trace](src/universitydb/tracing.py), [UI](src/universitydb/ui.py) |
+| Prompts in two languages | [English](docs/ai/PROMPTS-EN.md), [Russian](docs/ai/PROMPTS-RU.md), [source coverage](docs/ai/README.md) |
+| Automated and manual E2E | [tests](tests), [E2E guide](docs/manual-e2e.md) |
+| Examples, outputs and traces | [examples](examples/README.md), [final M1 proofs](docs/operations/H-013/m1-final/manifest.json), [browser evidence](docs/operations/H-013/browser/cp-e-final-attempt2/browser-receipt.json) |
+| Architecture and rationale | [ADR index](docs/adr/README.md), [current contracts/decisions](docs/adr/ADR-OMX-012-I2-I3-offline-contracts.md) |
+| Production considerations | [reliability, security, scaling and deployment](docs/plans/production-considerations.md) |
 
 ## Install
 
-Tested environment: Ubuntu 24.04 / WSL2, Python **3.12**, `uv`. Windows users can run
-these Bash commands in UbuntuD. Install Python3.12 and uv before continuing.
+Use Python **3.12**, `uv`, and Bash on Linux/WSL (development environment: Ubuntu24.04).
+No external SQL server, API key or OMX installation is needed for offline tests.
 
 ```bash
 git clone https://github.com/vladberkov-ai/universitydb.git
 cd universitydb
 uv sync --locked
-uv run --locked pytest -q
+env -u OPENAI_API_KEY UNIVERSITYDB_LIVE_APPROVED=no LANGSMITH_TRACING=false LANGCHAIN_TRACING_V2=false uv run --locked pytest -q
 ```
 
-Run commands from the repository root: schema/seed and prompts are repository resources;
-installation as a standalone wheel outside the checkout is not a supported deployment.
-`uv.lock` pins dependencies. No external SQL server is required. The UI dataset selection creates `runtime/university-v1.db` or `runtime/library-v1.db` from the schema and seed if absent; it never
-overwrites an existing DB. Runtime DB/traces, dependencies and credentials are not committed.
+Run from the checkout root; this is not a standalone-wheel deployment. `uv.lock`
+pins dependencies. Runtime databases, traces, credentials and spending state are
+local and excluded from Git. Schema/seed SQL is the reproducible database deliverable.
 
-## Start without an API key (offline E2E)
+## Start the offline UI
+
+These commands prepare the **full scripted E2E sequence** (not arbitrary model answers)
+and isolate its databases and traces from any real spending ledger:
 
 ```bash
 unset OPENAI_API_KEY
 export UNIVERSITYDB_LIVE_APPROVED=no LANGSMITH_TRACING=false LANGCHAIN_TRACING_V2=false
-export UNIVERSITYDB_TEST_MODE=1
-export UNIVERSITYDB_TEST_FIXTURE="$PWD/examples/offline-s6.json"
 offline_root="$(mktemp -d)"
 cp -R resources "$offline_root/resources"
+uv run --locked python docs/operations/H-013/offline_ui_fixture.py "$offline_root/injected.json" --full
 export UNIVERSITYDB_ROOT="$offline_root"
+export UNIVERSITYDB_TEST_MODE=1 UNIVERSITYDB_TEST_FIXTURE="$offline_root/injected.json"
 uv run --locked streamlit run src/universitydb/ui.py \
   --server.address=127.0.0.1 --server.port=8501 --server.headless=true \
   --browser.gatherUsageStats=false
 ```
 
-Open **http://localhost:8501** and keep the default question. Expect **80.00**.
-The banner must say `offline/injected`: the graph, SQL validator, SQLite, formatter
-and UI are real, but model responses are fixed. This is **not live NL-to-SQL accuracy**;
-the fixed fixture is for S6 only. Do not expect changing the student to test the model.
-Stop the foreground server with **Ctrl+C**. The temporary root isolates DB/traces from
-the actual monetary ledger; remove only that owned temporary directory after stopping.
-No goal, OMX installation or API key is needed. Library needs its own explicit
-schema-keyed scripted fixture; the historical S6-only fixture is not a Library fixture.
+Open **http://localhost:8501**. The banner must identify **offline/injected** mode.
+Follow the exact [E2E sequence](docs/manual-e2e.md): S6→80.00, Alex clarification→86.67,
+M1→95.00, repaired S6→80.00, injected refusal, then Library→Ada1/Bob1.
+SQLite and the graph compute actual results; scripted proposals do not measure
+language understanding. Start a new browser session/restart the isolated server to
+reset the scripted sequence. Stop with **Ctrl+C**; do not delete an existing real
+spending ledger when cleaning up the owned temporary folder.
 
-## Start with real Sol (paid, optional)
-
-Use an API project with access to `gpt-6.1-sol`. Configure your own local key securely:
+## Automated E2E and regression
 
 ```bash
-bash tools/local-credentials/setup-universitydb-key.sh
-set +x
-source "$HOME/.universitydb-secrets/credentials.env"
-unset UNIVERSITYDB_TEST_MODE UNIVERSITYDB_TEST_FIXTURE UNIVERSITYDB_BILLING_VERIFIED
-set -a
-source .env.example
-set +a
-# .env.example clears the key; reload the private value, without printing it.
-source "$HOME/.universitydb-secrets/credentials.env"
-export UNIVERSITYDB_ROOT="$PWD"
-```
-
-An existing credential file is preserved; use `replace-universitydb-key.sh` only for
-intentional rotation. Never commit or print your key. `.env` is **not** auto-loaded.
-
-Before enabling requests, explicitly accept the practical spending policy and review
-applicable current API rates. The shipped rate values **5.50/M input and11/M output**
-are a conservative dated envelope, documented [on 2026-11-07](docs/operations/H-009/api-references.md),
-not a permanent provider tariff. If the applicable rates differ, configure them before
-first use; an existing ledger's monetary profile is pinned and must not be reset to change it.
-Only after that review and your own spending authorization:
-
-```bash
-export UNIVERSITYDB_RATES_CONFIRMED=yes
-export UNIVERSITYDB_LIVE_APPROVED=yes
-uv run --locked streamlit run src/universitydb/ui.py \
-  --server.address=127.0.0.1 --server.port=8501 --server.headless=true \
-  --browser.gatherUsageStats=false
-```
-
-Check the banner is `live`. Each submitted supported question normally makes two
-generation calls (plan high, SQL medium); repair also uses medium. No silent fallback.
-Missing configuration fails with `PROVIDER_UNAVAILABLE`, not a canned success.
-
-The I1 profile is fixed: total cap **$10**, admission threshold **$8**, **$2 contingency**.
-All requests/retries/restarts share `runtime/spending.json`; successful reservations
-are conservatively retained. Do not delete it or create a fresh checkout to evade a
-budget stop. The counter is not a provider invoice and **does not guarantee a hard
-financial ceiling**. The old `BILLING_VERIFIED` proof flag is not used. The repository's
-historical owner approval does not authorize spending on a reviewer's account.
-The original owner's remaining allowance must be read from the existing ledger, not
-inferred from historical receipts. No live request is needed to inspect shipped evidence.
-
-## Check through E2E
-
-Full copy/paste questions and expectations are in [manual-e2e.md](docs/manual-e2e.md).
-
-| Check | Expected | Mode |
-| --- | --- | --- |
-| Default Bea/student2, DB/course1, Kim/teacher10, S1 | **80.00**, raw16000/2/2 | offline or live |
-| Alex/student1, same course/teacher/semester | **90.00**, raw 9000/1/1 | live only |
-| Expand SQL, typed rows, trace; download JSONL | Four bound filters, consistent rows and one run_id | both |
-| Submit `unsupported` after success | `INVALID_INPUT`; previous answer disappears | both; this failure makes0LLM calls |
-
-Offline automated checks (no credentials, no real provider calls):
-
-```bash
-uv run --locked pytest -q
-uv run --locked pytest -q tests/test_db_domain.py tests/test_graph.py tests/test_ui.py
+env -u OPENAI_API_KEY UNIVERSITYDB_LIVE_APPROVED=no LANGSMITH_TRACING=false LANGCHAIN_TRACING_V2=false uv run --locked pytest -q tests/test_i2_ui.py tests/test_i3_dependencies.py tests/test_library.py
 uv run --locked ruff check src tests
 uv run --locked ruff format --check src tests
 uv run --locked mypy src/universitydb --ignore-missing-imports
 uv run --locked python -m compileall -q src tests
 ```
 
-`test_ui.py` uses Streamlit AppTest, not a real browser. Graph tests run actual LangGraph
-and SQLite with injected provider responses. Real-model/browser evidence is separately
-linked under examples; do not count mocked tests as live model evaluation.
+Run the full `pytest -q` command from Install for all410 current tests. Graph tests
+use compiled LangGraph and real SQLite with injected proposals; UI tests use
+Streamlit AppTest. Actual browser evidence is separate and linked above. The
+historical Playwright capture harness has a machine-specific browser path; it is
+not required for these portable test commands. Manual browser reproduction uses
+the ordinary local UI and the sequence above. New browser automation portability
+and clean-install verification belong to the next readiness block.
 
-## Historical I1 architecture and limits
+## Live mode: configuration reference, no new evaluation claim
 
-The limitations in this subsection describe I1 only; current H-013 behavior is above.
+The normal provider uses `gpt-6.1-sol`: planning high, SQL/repair medium, no fallback.
+Unset `UNIVERSITYDB_TEST_MODE` and `UNIVERSITYDB_TEST_FIXTURE` before using it. Follow
+the documented settings in [.env.example](.env.example); `.env` is not auto-loaded.
+The local credential helpers under `tools/local-credentials/` store the key outside
+Git. Never print keys or include them in traces/issues.
 
-UI → validate input/load schema/resolve scope → plan → validate plan → generate SQL →
-validate SQL → execute read-only SQLite → inspect result → deterministic answer.
-Failure routes terminate with a structured error; one bounded SQL repair is possible.
-Every stage/attempt is written to JSONL before success is shown. Debug a wrong answer
-by comparing scope, SQL bindings, DB rows, result specification and final arithmetic
-in that same run, rather than looking only at the final text.
+Live use requires your own explicit spending authority and applicable rate review;
+historical owner approval is not permission for a reviewer's account or this expanded
+evaluation. The shipped policy is the earlier I1 cap$10/admission$8/contingency$2,
+with a pinned shared `runtime/spending.json`; it must not be reset or bypassed by a new
+checkout. Current expanded live evaluation is **not authorized/run**. See the
+[dated budget policy](docs/adr/ADR-OMX-010-I1-practical-budget-policy.md). The controller
+is conservative local accounting, not a guarantee about the final provider invoice.
+Requests may use a plan plus up to three SQL steps, repair/retry sharing the maximum
+five-call budget. Starting the UI does not establish model accuracy.
 
-The core graph avoids University table names; domain-specific schema, scope and result
-rules live in `domain.py`. A second-schema adaptation has **not** been demonstrated.
-SQLGlot checks one tightly restricted SELECT; SQLite authorizer/read-only mode and worker
-timeouts add protection. This is a synthetic loopback demo, not a general SQL sandbox.
-Output: 32768 tokens, ≤5attempts/run, plan 60s / SQL-repair 45s / run 180s; synchronous local I/O
-assumes a responsive filesystem, so 180s is not a universal hard deadline. These limits
-have been measured for I1 cases, not all workloads. No authentication, remote deployment,
-hard memory isolation, multi-step orchestration or durable conversational resume is claimed.
+## Architecture and limits
 
-## Documentation language and provenance
+UI → grounded scope/clarification → plan → static dependency validation → per-step
+SQL generation/validation → read-only execution → typed result inspection → actual
+dependency binding → deterministic answer. The domain adapters supply schema,
+metrics and result semantics; the common core does not infer University semantics
+from table names. Library demonstrates portability within SQLite, not all databases.
 
-Reviewer documentation and UI are in English. Prompt texts are collected separately in English and Russian. Original prompt files, machine-readable execution/provenance records and screenshots retain the language actually used; they are evidence, not translated replay results. Historical document hashes refer to the original pre-translation versions in Git. See the [translation record](docs/operations/english-translation-manifest.json). Translated chat snapshots are a presentation layer; they do not change the private authoritative wiki or create an automatic two-way sync.
+Session-bound LangGraph checkpoints survive UI reruns within the process, not server
+restart. Maximum two clarification pauses/15minutes; up to three planned steps and
+five provider attempts per run; plan60s, SQL/repair45s, active work180s. SQL safety
+does not prove semantic correctness; independent oracles test that separately.
+SQLite DELETE journal only, synthetic local data, no authentication/concurrent-writer
+or production deployment claim. See [production considerations](docs/plans/production-considerations.md).
+
+## Language and evidence
+
+Current documentation/UI are English. The two prompt collections provide Russian
+and English reader versions, with explicit source/translation/summary labels.
+Original prompts, machine-readable receipts, traces and screenshots retain their
+actual bytes/language; translating them would invalidate provenance. Historical
+cutoffs are preserved and do not override current status. Full private transcripts, credentials and the original private assignment PDF are not published.

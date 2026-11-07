@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-08",
+  "authority": "Actual owner publication request, CHAT-048 in private wiki",
+  "baseline_head": "899e2ef20e64c77b547f0312de0c426911a8100b",
+  "tested_product": "f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0",
+  "changes": {
+    "README.md": {
+      "before": "205d0e33d08484b93daa0b7d26650fbf0b802116e2c63875bebc574a03c14eb3",
+      "after": "226dda358f1114f93efb249e4a608e066d1c4be40ea6ea1ea92943e6d6a82731"
+    },
+    "docs/manual-e2e.md": {
+      "before": "08e960f0353a0dd63c178792998c55f15b7cd0e5145bce565c3a6c0e109eb70d",
+      "after": "432f3a798964cb80d48ff49804dbc53f74d16f4b6fdab5093ab3e5418d97511e"
+    },
+    "docs/database.md": {
+      "before": "c6a78296fb7c538428b64c3519299224c7374d8c7f136c4a57b221e7109adf34",
+      "after": "8c1abf3992d167bd694e338a27f897fcd275f92dd8cb50265ca534cb29009245"
+    },
+    "docs/assignment-status.md": {
+      "before": "77bab854f3d48866e10c6f563f0ea15640ecca917ec499c1943392a9ff9572a1",
+      "after": "5e11e2776c284acdf0a952669f501566947a73c87b19edc7b577ece65b7143f9"
+    },
+    "AGENTS.md": {
+      "before": "17bb7edb77d71120f3ab5bd323c9a6ea68d7eb17998c4a9cb69d3f58242b2f3a",
+      "after": "5ef17f8baa2c202c74f83bdb59a619446b1a3684a15c18bbf1622f41fc037ba9"
+    },
+    "docs/ai/README.md": {
+      "before": "34d9e4c1d88e46be6e0fa00ec217893525c70208dc8ed5d5a9836d416e634fa3",
+      "after": "b064baa73a830b7e9c1dba81dc0740a58631d37e9140f5beff0b975bfca268f9"
+    },
+    "docs/ai/PROMPTS-EN.md": {
+      "before": "995f86020f7a2672fc4b773001e538870b8db7fe845904437850f2aadc954f88",
+      "after": "653015a13f4ec91b19a303918dab8f5dbb3d7a827f3ec6fbec89c2257e96d330"
+    },
+    "docs/ai/PROMPTS-RU.md": {
+      "before": "ef43bec728affd0395a52da529c33d19551bd8fec86f2d921e51e44749c79cf1",
+      "after": "e969dba69e9172a54061978cad1e18c284e96fa263695decb6696fce6913e9a6"
+    },
+    "examples/README.md": {
+      "before": "957b485fa97b235ca4c7898eb0aa7b43e3b065196417f51929177568ceb1982e",
+      "after": "9c4e96c767ac5a9014e5f0c1b058b13c7744225cd1631a490060ec9db44d89de"
+    },
+    "docs/ai/PROMPTS.md": {
+      "before": "b7f50ef1d91b5b4478d848c4f934e81bfbfc99fdd95ba78ac6f7f17a82a933b5",
+      "after": "1e3ad5a5a8ca5bbf55a2adfc0d288f04092aa0ed41f614c3f1fe728f1071e868"
+    }
+  },
+  "required_artifacts_present": [
+    "resources/schema.sql",
+    "resources/seed.sql",
+    "resources/library/schema.sql",
+    "resources/library/seed.sql",
+    "uv.lock",
+    "docs/plans/production-considerations.md",
+    "docs/adr/ADR-OMX-012-I2-I3-offline-contracts.md",
+    "docs/operations/H-013/m1-final/manifest.json",
+    "docs/operations/H-013/browser/cp-e-final-attempt2/browser-receipt.json"
+  ],
+  "language": "Current prose English; two RU/EN prompt bundles; original prompt/trace/machine evidence and supported Russian input literals preserved unchanged.",
+  "coverage": "Current root tasks and runtime full text; historical bundles retained; child task projections linked by existing provenance, no full transcript claim.",
+  "live_calls": 0,
+  "push": "pending at manifest creation; verify external Git receipt after publication"
+}
