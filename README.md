@@ -13,7 +13,9 @@ tracks the independent audit, scoped named-target repair, clean reproduction and
 The331eb5a clean run passed457tests/static but fresh group-by E2E found a
 blocking regression. Candidatec631 passed482tests/static/157oracle but independent
 visual review found UI magic/help output. UI-repaired source98345ad is frozen;
-its final clean/browser/review gates remain pending. Old captures are not final proof.
+its fresh final clean/browser gates now passed485tests80.36s/157oracle and six
+browser classes/seven captures with focused typed rows/no help/None. Independent
+final reviews and native closeout remain pending. Old captures are not final proof.
 New live calls and push are forbidden; historical results below remain unchanged.
 
 
@@ -32,7 +34,8 @@ that tested product identity. [Report and evidence](docs/reports/H-013-I2-I3-off
 
 **Offline verification is not real-model NL→SQL accuracy.** The earlier I1 slice has
 real Sol evidence for 80.00 and 90.00; the expanded service still needs broad real-model
-evaluation and clean-environment readiness verification. Publication makes these
+evaluation. H014 clean-environment offline verification now passes at exact
+98345ad6ce5757c71d44ba1ce59a683d46e0d910; final review/native gates remain pending. Publication makes these
 results available; it does not certify those remaining checks or production readiness.
 [Requirement-by-requirement status](docs/assignment-status.md).
 

@@ -81,3 +81,12 @@ authentication, memory isolation, production reliability or billing correctness.
 Historical completed checks remain intact; new live/publication/owner defense require
 separate decisions. No new dependencies, judge/verbalizer, automatic budget migration
 or relaxed semantics/ceilings are introduced by H014.
+
+### H014 exact983 reproducibility outcome
+
+Fresh tracked-only frozen install and clean full485tests/static/157oracle plus actual
+six-class browser passed at98345ad6ce5757c71d44ba1ce59a683d46e0d910. Typed rows are
+visible without Streamlit return-value help/None; final independent/native gates
+remain pending. This closes technical clean-run/UI verification, not production
+readiness, multi-user security, durable recovery, real-model accuracy or publication.
+[Current source/preservation evidence](../operations/H-014/final-983-preservation-remote.json).

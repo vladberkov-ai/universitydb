@@ -1,6 +1,6 @@
 # H-014 v2 — offline readiness report
 
-**Offline verification PASS at exact98345ad; independent final verdicts and root native/strict closeout pending.**
+**Offline verification PASS at exact98345ad; architect CLEAR; final code-reviewer and root native/strict closeout pending.**
 This is the bounded I4 + verification-I5 **offline** readiness task, not full live
 acceptance, publication or owner defense. No live generation/access/count calls,
 credential loading, monetary ledger/cap/hold changes, push or vault writes are
@@ -158,8 +158,8 @@ history-preserving approval/migration is required; no cap migration is applied.
 Preserve DAG≤3,≤5generation calls/run,≤4SQL attempts,180s active,60/45s calls,
 32768output; checkpoint≤2pauses/900s,in-process only; read-only validated SQL and
 DELETE-only DB mode. Typed dependency values never become SQL fragments. Runtime
-prompt hashes and locked dependencies remain unchanged. Final independent invariant
-review is pending, not inferred from count of tests or historical H013 verdicts.
+prompt hashes and locked dependencies remain unchanged. Final independent architect invariant
+review CLEAR; code-reviewer verdict pending, not inferred from count of tests or historical H013 verdicts.
 
 ## Provenance, preservation and privacy
 
@@ -196,8 +196,9 @@ Credentials were not loaded; no secrets belong in public evidence.
 
 ## Final gates / not-run
 
-Final independent code-reviewer and architect verdicts: **pending**, not reused from
-H013. Cleaner/invariant technical evidence updated to485PASS; independent final reviews
+Final independent architect **CLEAR**, zero unresolved blockers:
+[actual receipt](../operations/H-014/reviews/final-architect.json). Final independent
+code-reviewer verdict remains **pending**, not inferred from preliminary drafts or H013. Cleaner/invariant technical evidence updated to485PASS; independent final reviews
 and final native COMPLETE/strict: pending,
 root-owned. Live/API/count/access/credential loading/monetary mutation/push and owner
 defense: **not-run**. Missing live/push authority does not block this bounded offline

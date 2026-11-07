@@ -1,0 +1,16 @@
+{
+  "candidate_sha": "98345ad6ce5757c71d44ba1ce59a683d46e0d910",
+  "technical_tests": "485passed80.36s, exact983clean receipt; no product rerun by docs lane",
+  "targeted_scorer_tests": "33passed0.07s",
+  "heldout": "48planned/not-run structure only, noexecution",
+  "manifest_hashes": 17,
+  "proposed_decision": "threshold44/48,7/8each; caps22/120/140 choices, not accepted/authorized",
+  "seven_original_invariants": "exact text preserved",
+  "docs_links_privacy_json": "PASS10files",
+  "architect": "actualCLEAR receipt available",
+  "code_review": "finalpending",
+  "native_strict": "rootpending",
+  "cp_r3": "418e4785f93df34756430bcc7ad46e8da2ac3874",
+  "push": "not-run",
+  "source_scripts_tests_changes": "none"
+}

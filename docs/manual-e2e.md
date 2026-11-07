@@ -69,3 +69,13 @@ error/no stale success. Normal profile must reject hidden test injection. Stop o
 owned UI/browser. [Current receipts and gaps](reports/H-014-readiness-offline.md)
 separate final corrected-candidate runs from historical H013 captures and initial
 clean baseline; injected providers are never real-model accuracy.
+
+### H014 exact983 fresh execution evidence
+
+[Final isolated full run](operations/H-014/clean-run-final-attempt3/final-summary.json)
+passed485tests80.36s/all7commands0/157oracle;
+[actual browser](operations/H-014/browser/final-983-attempt1/browser-receipt.json)
+passed six classes/seven captures with focused raw/adapted rows and no help/None.
+Exact tested product98345ad6ce5757c71d44ba1ce59a683d46e0d910, not a later docs SHA.
+Full values checked in DOM+trace, not all cells fit one screenshot. Processes stopped.
+Final independent verdicts/native pending; live/push/defense not-run.

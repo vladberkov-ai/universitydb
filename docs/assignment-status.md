@@ -37,7 +37,8 @@ Named-target scope-loss defect repaired with14regressions; frozen candidate
 Candidate331eb5a clean457tests/static passed but fresh group-by E2E failed; it is
 not accepted. Subsequent c631passed482tests/157oracle but architect visualBLOCK
 required UI repair. Current source98345ad fixes magic rendering with15targetedPASS;
-final full clean/browser/independent reviews pending. No final verdict inferred.
+final full485tests80.36s/static157oracle/browser typedrows/nohelp PASS. Independent
+final reviews/native pending; no final verdict inferred.
 R01–14/U01/U03–06 are mapped in the report; R15 new publication awaits authority,
 R16/17 owner defense deferred, U02 deadline unknown. I4 real-model/I5 live acceptance
 not-run: proposed24×2/48cases and44/48,≥7/8/category await approval, not an accuracy
