@@ -87,8 +87,15 @@ all semesters. Decimal NULL, `no_grades`, `no_rows` and numeric0 are distinct.
 Observation `scope` is the specified filter object (empty object explicitly means
 all dimensions/all semesters), not a prose string; selected count object is retained.
 `choices` is the ordered clarification field/value-set sequence (labels need not
-match wording). Offered option sets must equal oracle sets; ordering inside values
-is normalized by typed ID, never omit alternatives. Prechoice generated SQL must
+match wording). Before emitting the scorer record, the independent observer must
+first compare offered values against the case oracle as strict typed sets, rejecting
+missing/extra values and duplicates (integer1 is not booleantrue). Only after that
+set check succeeds, reorder the observed values to the **oracle-defined order**;
+retain the original offered order in the trace. This observer-side normalization
+is required because the scorer compares arrays exactly; it is not performed by
+`score`, not a product change, and oracle values must never enter model payloads.
+For example C04 retains registered order enrollment_count, graded_count,
+distinct_student_count, not lexical order. Never omit alternatives. Prechoice generated SQL must
 be zero; startup catalog reads are not generated SQL. Same server session/run and
 trace must survive selection. Alex choices1/3 and current semester S1/S2 are
 mandatory. Count choices use actual registry IDs. D03/D04 dependencies must be
@@ -141,3 +148,11 @@ aggregate cap/admission threshold, contingency and preservation migration. See
 [budget draft](H-014-live-eval-budget.md). Until then all48are not-run, I4/I5-live
 await authority; offline readiness can complete. Publication and defense remain
 separate. Preserve originals and append versioned results after any later fix.
+
+### Prospective normalization review correction
+Independent architecture review identified that typed-ID sorting contradicted C04's
+registered nonlexical count-choice order while scorer arrays are strict. Before
+any live results, the observation contract above now requires strict typed-set
+validation followed by oracle-defined ordering. Frozen v1 cases are unchanged;
+no scores/results exist or are rewritten. Observer/reviewer exposure is explicit,
+not an untouched holdout claim; no product prompt/logic is tuned from those cases.
