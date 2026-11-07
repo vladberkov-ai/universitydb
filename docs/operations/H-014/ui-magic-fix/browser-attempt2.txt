@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<canonical-repo>/docs/operations/H-014/browser_ui.py", line 374, in <module>
+    run(args.output, args.full)
+  File "<canonical-repo>/docs/operations/H-014/browser_ui.py", line 88, in run
+    with socket.socket() as sock:
+         ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 233, in __init__
+    _socket.socket.__init__(self, family, type, proto, fileno)
+PermissionError: [Errno 1] Operation not permitted
