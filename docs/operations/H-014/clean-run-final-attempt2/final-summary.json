@@ -1,0 +1,201 @@
+{
+  "tested_sha": "c631c0c62bebd7c291429e26783dbfc442bde3af",
+  "status": "passed",
+  "pytest": {
+    "passed": 482,
+    "duration_seconds": 92.83
+  },
+  "pipeline_commands": 7,
+  "all_pipeline_exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "oracle_checks": 157,
+  "db_initialization": {
+    "university": {
+      "db_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+      "row_counts": {
+        "Courses": 3,
+        "Enrollments": 8,
+        "Offerings": 5,
+        "Semesters": 2,
+        "Students": 4,
+        "Teachers": 2
+      },
+      "repeat_init": "refused DB_UNAVAILABLE; original DB hash unchanged",
+      "resources_sha256": {
+        "schema.sql": "2d459c3592bdf9d0baea14d546540d55be650bb619d3762ee63b85cca9be70f8",
+        "seed.sql": "c355537acc89af8a2ec7b96b65fdab3f37366185539ae16c1b0b9fe62c0d1acb"
+      }
+    },
+    "library": {
+      "db_sha256": "a8dcc9b77ccea2f6f1726a4ef649ee0c576e88f1643b1f981be9eb38cf38d217",
+      "row_counts": {
+        "Books": 2,
+        "Loans": 3,
+        "Readers": 2
+      },
+      "repeat_init": "refused DB_UNAVAILABLE; original DB hash unchanged",
+      "resources_sha256": {
+        "schema.sql": "b7ea3103b689d4f0797bf398a278c1738ee97bac81cb785a72a9d25081b870f1",
+        "seed.sql": "a81701bd8c62379f03f101081739b52e451ffdd0fd74d11f23217b6ecaf9400a"
+      }
+    }
+  },
+  "compiled_graph_groups_top": "passed fixed expected typed rows including NULL; full JSONL stored",
+  "m1_actual_sensitivity": {
+    "F1": {
+      "proof": "F1.json",
+      "trace": "F1.jsonl",
+      "trace_sha256": "1c1cb420e2c1aa739fe65bdbe021c11fa94c5fa41603aee99e6981f18b8682c6",
+      "expected_top": [
+        2
+      ],
+      "actual_top": [
+        [
+          2,
+          10000,
+          1,
+          1
+        ]
+      ],
+      "actual_final": [
+        [
+          1,
+          "95.00",
+          2,
+          2
+        ]
+      ],
+      "provider_calls": 4
+    },
+    "F2": {
+      "proof": "F2.json",
+      "trace": "F2.jsonl",
+      "trace_sha256": "e29926f072aef5d7128e35df025fa2421854d7fc359e422126e006ad171bd894",
+      "expected_top": [
+        1
+      ],
+      "actual_top": [
+        [
+          1,
+          25000,
+          3,
+          4
+        ]
+      ],
+      "actual_final": [
+        [
+          1,
+          "95.00",
+          2,
+          2
+        ],
+        [
+          2,
+          "80.00",
+          2,
+          2
+        ],
+        [
+          3,
+          "50.00",
+          1,
+          2
+        ]
+      ],
+      "provider_calls": 4
+    },
+    "tie": {
+      "proof": "tie.json",
+      "trace": "tie.jsonl",
+      "trace_sha256": "f04c6ce6a106ffd3b1e8f093659572704b9cf8fabc20af0ec6a920cc09cbf622",
+      "expected_top": [
+        1,
+        2
+      ],
+      "actual_top": [
+        [
+          1,
+          27000,
+          3,
+          4
+        ],
+        [
+          2,
+          9000,
+          1,
+          1
+        ]
+      ],
+      "actual_final": [
+        [
+          1,
+          "90.00",
+          2,
+          2
+        ],
+        [
+          2,
+          "90.00",
+          2,
+          2
+        ],
+        [
+          3,
+          null,
+          0,
+          1
+        ]
+      ],
+      "provider_calls": 4
+    }
+  },
+  "m1_resume": "same run,4calls,3SQL,1clarification; actual refs{},course_ids[2],student_ids[1]; replay no extra calls (test assertions)",
+  "browser": {
+    "exit_code": 0,
+    "cases": [
+      "success",
+      "clarification-pause",
+      "clarification-resume",
+      "m1",
+      "repair",
+      "error",
+      "library"
+    ],
+    "captures": 7,
+    "current_question_run_outcome_verified": true,
+    "render_settled_before_screenshots": true,
+    "downloaded_full_same_run_trace": "single run_id,contiguous sequence,correct terminal; clarification pause/resume same run",
+    "library_raw_rows": [
+      [
+        1,
+        "Ada",
+        1
+      ],
+      [
+        2,
+        "Bob",
+        1
+      ]
+    ],
+    "server_stopped": true,
+    "browser_closed": true,
+    "temporary_ledger_absent": true,
+    "actual_runtime_unchanged": true,
+    "execution": "Supported escalated localhost browser check after prior sandbox socket-denial evidence; existing dynamically discovered Chromium, separate pinned Playwright toolvenv",
+    "visual_inspection": "Viewed library.png: current Library/question/run/offline banner and Ada1/Bob1 visible"
+  },
+  "disposable_git_status": "",
+  "docs_scripts_static": "ruff check+format--check3files passed",
+  "limitations": [
+    "Offline/injected is not real-model NL-to-SQL accuracy",
+    "Same fresh-at-initial-install venv and isolated cache reused after normal exact candidate checkout; not fresh-download claim",
+    "No live/API/count/credentials/monetarychanges/push"
+  ]
+}

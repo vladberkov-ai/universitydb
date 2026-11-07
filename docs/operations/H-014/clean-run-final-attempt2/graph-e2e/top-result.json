@@ -1,0 +1,1576 @@
+{
+  "version": "1",
+  "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+  "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+  "status": "ok",
+  "answer": {
+    "text": "student_id=all; course_id=all; teacher_id=all; semester_id=all: top_course: 1 rows.",
+    "columns": [
+      {
+        "name": "course_id",
+        "type": "integer"
+      },
+      {
+        "name": "average",
+        "type": "decimal"
+      },
+      {
+        "name": "graded_count",
+        "type": "integer"
+      },
+      {
+        "name": "enrollment_count",
+        "type": "integer"
+      }
+    ],
+    "rows": [
+      [
+        2,
+        "100.00",
+        1,
+        1
+      ]
+    ],
+    "scope": "student_id=all; course_id=all; teacher_id=all; semester_id=all",
+    "empty_reason": null,
+    "row_reasons": [
+      null
+    ],
+    "truncated": false
+  },
+  "error": null,
+  "clarification": null,
+  "events": [
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "63a80a72-734b-40ea-b696-7eb29f4d20ab",
+      "seq": 1,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "input",
+      "kind": "input",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.407751+00:00",
+      "duration_ms": null,
+      "payload": {
+        "question": "Show the course with the highest mean grade",
+        "execution_profile": "offline/injected",
+        "real_provider_called": false,
+        "fixture_sha256": "0a6d9d26e61d09312f801a23f9d2f8d10f6a3dd02fd3983e992b59ef02a2b40d"
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "0be7fd52-deac-4503-81cb-00b3d6b4ab99",
+      "seq": 2,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "validate_input",
+      "kind": "node_start",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.411291+00:00",
+      "duration_ms": null,
+      "payload": {}
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "8391a6e7-b473-4195-b3ba-4f36dcd7f605",
+      "seq": 3,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "validate_input",
+      "kind": "node_end",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.412636+00:00",
+      "duration_ms": null,
+      "payload": {}
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "96a8ceed-a982-40e1-9a5d-5d49ad0bbe67",
+      "seq": 4,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "load_schema",
+      "kind": "node_start",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.414286+00:00",
+      "duration_ms": null,
+      "payload": {}
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "c4cf18ce-bb09-4c20-b4fd-98fdccafec85",
+      "seq": 5,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "load_schema",
+      "kind": "node_end",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.417504+00:00",
+      "duration_ms": null,
+      "payload": {
+        "descriptor": {
+          "version": "I2-I3-1",
+          "schema_id": "university-v1",
+          "dialect": "sqlite",
+          "tables": {
+            "Students": [
+              "student_id",
+              "name"
+            ],
+            "Teachers": [
+              "teacher_id",
+              "name"
+            ],
+            "Courses": [
+              "course_id",
+              "code",
+              "title"
+            ],
+            "Semesters": [
+              "semester_id",
+              "starts_on",
+              "ends_on"
+            ],
+            "Offerings": [
+              "offering_id",
+              "course_id",
+              "teacher_id",
+              "semester_id",
+              "section"
+            ],
+            "Enrollments": [
+              "student_id",
+              "offering_id",
+              "grade_units"
+            ]
+          },
+          "allowed_functions": [
+            "sum",
+            "count",
+            "coalesce"
+          ],
+          "registry": {
+            "mean_template": {
+              "metric_id": "u.grade_mean.v1",
+              "shape": "aggregate",
+              "group_keys": [],
+              "columns": [
+                {
+                  "name": "sum_units",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "graded_count",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "enrollment_count",
+                  "type": "integer",
+                  "nullable": false
+                }
+              ],
+              "components": {
+                "sum": "sum_units",
+                "denominator": "graded_count",
+                "count": "enrollment_count"
+              },
+              "unit": "grade_hundredth",
+              "scale": 100
+            },
+            "groups": [
+              "course_id",
+              "student_id",
+              "teacher_id",
+              "offering_id",
+              "semester_id"
+            ],
+            "count_template": {
+              "metric_id": "u.enrollment_counts.v1",
+              "shape": "aggregate",
+              "group_keys": [],
+              "columns": [
+                {
+                  "name": "enrollment_count",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "graded_count",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "distinct_student_count",
+                  "type": "integer",
+                  "nullable": false
+                }
+              ],
+              "components": {
+                "sum": null,
+                "denominator": null,
+                "count": "enrollment_count"
+              },
+              "unit": "count",
+              "scale": 1
+            },
+            "other": [
+              {
+                "metric_id": "u.top_course.v1",
+                "shape": "top",
+                "group_keys": [
+                  "course_id"
+                ],
+                "columns": [
+                  {
+                    "name": "course_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "sum_units",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "graded_count",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "enrollment_count",
+                    "type": "integer",
+                    "nullable": false
+                  }
+                ],
+                "components": {
+                  "sum": "sum_units",
+                  "denominator": "graded_count",
+                  "count": "enrollment_count"
+                },
+                "unit": "grade_hundredth",
+                "scale": 100
+              },
+              {
+                "metric_id": "u.enrollment_rows.v1",
+                "shape": "rows",
+                "group_keys": [
+                  "student_id",
+                  "offering_id"
+                ],
+                "columns": [
+                  {
+                    "name": "student_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "student_name",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "offering_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "course_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "course_title",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "teacher_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "teacher_name",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "semester_id",
+                    "type": "string",
+                    "nullable": false
+                  },
+                  {
+                    "name": "grade_units",
+                    "type": "integer",
+                    "nullable": true
+                  }
+                ],
+                "components": {
+                  "sum": null,
+                  "denominator": null,
+                  "count": null
+                },
+                "unit": "grade_hundredth",
+                "scale": 100
+              },
+              {
+                "metric_id": "u.student_ids.v1",
+                "shape": "rows",
+                "group_keys": [
+                  "student_id"
+                ],
+                "columns": [
+                  {
+                    "name": "student_id",
+                    "type": "integer",
+                    "nullable": false
+                  }
+                ],
+                "components": {
+                  "sum": null,
+                  "denominator": null,
+                  "count": null
+                },
+                "unit": "identifier",
+                "scale": 1
+              }
+            ]
+          },
+          "policy": "Equal graded enrollments, NULL excluded, all offerings/retakes. Absent filters mean all including semesters. Mean projections COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count. Base Enrollments e JOIN Offerings o ON e.offering_id=o.offering_id. Optional equality predicates named student_id/course_id/teacher_id/semester_id; group keys e.student_id or o.course_id/teacher_id/offering_id/semester_id. For rows GROUP BY key ORDER BY key. Top returns ALL course components, adapter selects exact maximum ties. student_ids uses SELECT DISTINCT e.student_id ORDER BY e.student_id. Dependency course_ids/student_ids bind named <ref>_0,<ref>_1 etc in IN clause. Empty ref WHERE 0=1. Listing adds Students s,Courses c,Teachers t joins on IDs and ordered declared projections; ORDER BY e.offering_id,e.student_id."
+        },
+        "startup": {
+          "db_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+          "sqlite_version": "3.45.1",
+          "lock_sha256": "de36cab6c73d37bde70cc13e019b9eb2552a0747e46fe5c8c3b7cedf5338378d",
+          "schema_sha256": "89b7c664b89f0229c71a78f61c4fb58a8468bc8e089968c70a1b8f485bb265e7"
+        }
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "4d529189-bef8-4b2d-81df-f26a1a70c700",
+      "seq": 6,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "resolve_scope",
+      "kind": "node_start",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.419573+00:00",
+      "duration_ms": null,
+      "payload": {}
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "a2110f1c-0178-44d0-b9fc-a5d0851c16f2",
+      "seq": 7,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "resolve_scope",
+      "kind": "node_end",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.420994+00:00",
+      "duration_ms": null,
+      "payload": {
+        "scope": {},
+        "clarification": null
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "d8dda995-1c18-49c5-8f0c-ac5a658ebc37",
+      "seq": 8,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "plan",
+      "kind": "node_start",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.422488+00:00",
+      "duration_ms": null,
+      "payload": {}
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "0a674aaa-4c97-4617-9764-a53b15279652",
+      "seq": 9,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "plan",
+      "kind": "llm_attempt",
+      "attempt": 1,
+      "timestamp": "2026-11-07T23:20:10.425901+00:00",
+      "duration_ms": null,
+      "payload": {
+        "execution_profile": "offline/injected",
+        "real_provider_called": false,
+        "phase": "application_attempt_before_dispatch",
+        "logical_operation": "plan",
+        "requested_model": "scripted-test",
+        "reasoning_effort": "high",
+        "service_tier": "default",
+        "max_output_tokens": 32768,
+        "reserved_run_tokens": 44768
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "72d71f71-6b94-4192-8f43-32a66d8c0719",
+      "seq": 10,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "plan",
+      "kind": "llm_attempt",
+      "attempt": 1,
+      "timestamp": "2026-11-07T23:20:10.427334+00:00",
+      "duration_ms": null,
+      "payload": {
+        "phase": "response",
+        "usage": {
+          "fixture_sha256": "0a6d9d26e61d09312f801a23f9d2f8d10f6a3dd02fd3983e992b59ef02a2b40d",
+          "injection_point": "provider_transport",
+          "fault_case": "scripted_fixture",
+          "requested_model": "scripted-test",
+          "returned_model": "scripted-test",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "real_provider_called": false
+        }
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "210370be-e256-4aa4-a371-9ddc2bac721a",
+      "seq": 11,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "plan",
+      "kind": "node_end",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.428351+00:00",
+      "duration_ms": null,
+      "payload": {
+        "plan": {
+          "version": "1",
+          "steps": [
+            {
+              "step_id": "one",
+              "depends_on": [],
+              "purpose": "Offline fixture",
+              "result_refs": [],
+              "result_spec": {
+                "metric_id": "u.top_course.v1",
+                "shape": "top",
+                "group_keys": [
+                  "course_id"
+                ],
+                "columns": [
+                  {
+                    "name": "course_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "sum_units",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "graded_count",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "enrollment_count",
+                    "type": "integer",
+                    "nullable": false
+                  }
+                ],
+                "components": {
+                  "sum": "sum_units",
+                  "denominator": "graded_count",
+                  "count": "enrollment_count"
+                },
+                "unit": "grade_hundredth",
+                "scale": 100
+              }
+            }
+          ],
+          "needs_clarification": false,
+          "clarification_field": null
+        }
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "7ae05d41-4bc3-4f11-aa4b-9e5461b5a0a7",
+      "seq": 12,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "validate_plan",
+      "kind": "node_start",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.430433+00:00",
+      "duration_ms": null,
+      "payload": {}
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "6afa181b-edc6-427f-8c53-c172dc0f0dbf",
+      "seq": 13,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "validate_plan",
+      "kind": "node_end",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.431869+00:00",
+      "duration_ms": null,
+      "payload": {
+        "step_index": 0,
+        "completed": {},
+        "step_results": []
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "57c1df1c-7a26-48a8-a5df-e85f132af0e0",
+      "seq": 14,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "bind_results",
+      "kind": "node_start",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.434226+00:00",
+      "duration_ms": null,
+      "payload": {}
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "09a13cc8-64d3-4987-a4fa-e49a748e77d0",
+      "seq": 15,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "bind_results",
+      "kind": "dependency_bindings",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.447097+00:00",
+      "duration_ms": null,
+      "payload": {
+        "step_id": "one",
+        "values": {}
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "e93a38e7-8655-403b-aee8-9fa124b21dcb",
+      "seq": 16,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "bind_results",
+      "kind": "node_end",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.448194+00:00",
+      "duration_ms": null,
+      "payload": {
+        "resolved_refs": {},
+        "repair_error": {},
+        "repair_needed": false,
+        "skip_step": false
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "8e21ff8b-b390-4d02-ac38-c4f0e443496e",
+      "seq": 17,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "generate_sql",
+      "kind": "node_start",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.450098+00:00",
+      "duration_ms": null,
+      "payload": {}
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "48fbedb2-c1cc-4cf0-9759-faae24f71ab7",
+      "seq": 18,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "sql",
+      "kind": "llm_attempt",
+      "attempt": 2,
+      "timestamp": "2026-11-07T23:20:10.453551+00:00",
+      "duration_ms": null,
+      "payload": {
+        "execution_profile": "offline/injected",
+        "real_provider_called": false,
+        "phase": "application_attempt_before_dispatch",
+        "logical_operation": "sql",
+        "requested_model": "scripted-test",
+        "reasoning_effort": "medium",
+        "service_tier": "default",
+        "max_output_tokens": 32768,
+        "reserved_run_tokens": 89536
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "d1c9576f-0bc0-44d2-942d-ea6bfb6e6411",
+      "seq": 19,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "sql",
+      "kind": "llm_attempt",
+      "attempt": 2,
+      "timestamp": "2026-11-07T23:20:10.455211+00:00",
+      "duration_ms": null,
+      "payload": {
+        "phase": "response",
+        "usage": {
+          "fixture_sha256": "0a6d9d26e61d09312f801a23f9d2f8d10f6a3dd02fd3983e992b59ef02a2b40d",
+          "injection_point": "provider_transport",
+          "fault_case": "scripted_fixture",
+          "requested_model": "scripted-test",
+          "returned_model": "scripted-test",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0,
+          "real_provider_called": false
+        }
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "6cd7fcca-c46f-48d5-912e-43f9c8ba4cc9",
+      "seq": 20,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "generate_sql",
+      "kind": "node_end",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.456924+00:00",
+      "duration_ms": null,
+      "payload": {
+        "proposal": {
+          "version": "1",
+          "step_id": "one",
+          "result_spec": {
+            "metric_id": "u.top_course.v1",
+            "shape": "top",
+            "group_keys": [
+              "course_id"
+            ],
+            "columns": [
+              {
+                "name": "course_id",
+                "type": "integer",
+                "nullable": false
+              },
+              {
+                "name": "sum_units",
+                "type": "integer",
+                "nullable": false
+              },
+              {
+                "name": "graded_count",
+                "type": "integer",
+                "nullable": false
+              },
+              {
+                "name": "enrollment_count",
+                "type": "integer",
+                "nullable": false
+              }
+            ],
+            "components": {
+              "sum": "sum_units",
+              "denominator": "graded_count",
+              "count": "enrollment_count"
+            },
+            "unit": "grade_hundredth",
+            "scale": 100
+          },
+          "sql": "SELECT o.course_id AS course_id, COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count FROM Enrollments e JOIN Offerings o ON e.offering_id = o.offering_id GROUP BY o.course_id ORDER BY o.course_id",
+          "parameters": [],
+          "expected_columns": [
+            "course_id",
+            "sum_units",
+            "graded_count",
+            "enrollment_count"
+          ],
+          "result_kind": "rows",
+          "explanation": "Offline scripted SQL"
+        },
+        "repair_needed": false
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "cd758d16-655c-457e-91df-af0d51d01496",
+      "seq": 21,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "validate_sql",
+      "kind": "node_start",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.459340+00:00",
+      "duration_ms": null,
+      "payload": {}
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "98b308c9-b0a1-42d5-b9e9-17bb785893ce",
+      "seq": 22,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "validate_sql",
+      "kind": "sql_validated",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.462363+00:00",
+      "duration_ms": null,
+      "payload": {
+        "sql": "SELECT o.course_id AS course_id, COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count FROM Enrollments e JOIN Offerings o ON e.offering_id = o.offering_id GROUP BY o.course_id ORDER BY o.course_id",
+        "parameters": {}
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "c5bbc2e2-20d5-4ac0-912a-b4b0fe371cb2",
+      "seq": 23,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "validate_sql",
+      "kind": "node_end",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.463629+00:00",
+      "duration_ms": null,
+      "payload": {
+        "parameters": {}
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "7be92cd7-ba35-49ef-9930-47cd36cac2d6",
+      "seq": 24,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "execute",
+      "kind": "node_start",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.465348+00:00",
+      "duration_ms": null,
+      "payload": {}
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "9276836a-2de2-4378-9c23-1759aa85259c",
+      "seq": 25,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "execute",
+      "kind": "sql_attempt",
+      "attempt": 1,
+      "timestamp": "2026-11-07T23:20:10.466470+00:00",
+      "duration_ms": null,
+      "payload": {
+        "sql": "SELECT o.course_id AS course_id, COALESCE(SUM(e.grade_units),0) AS sum_units, COUNT(e.grade_units) AS graded_count, COUNT(*) AS enrollment_count FROM Enrollments e JOIN Offerings o ON e.offering_id = o.offering_id GROUP BY o.course_id ORDER BY o.course_id",
+        "parameters": {}
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "15eb94ac-984f-4741-903a-959faa26b382",
+      "seq": 26,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "execute",
+      "kind": "db_result",
+      "attempt": 1,
+      "timestamp": "2026-11-07T23:20:10.595218+00:00",
+      "duration_ms": 0,
+      "payload": {
+        "result_spec": {
+          "metric_id": "u.top_course.v1",
+          "shape": "top",
+          "group_keys": [
+            "course_id"
+          ],
+          "columns": [
+            {
+              "name": "course_id",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "sum_units",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "graded_count",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "enrollment_count",
+              "type": "integer",
+              "nullable": false
+            }
+          ],
+          "components": {
+            "sum": "sum_units",
+            "denominator": "graded_count",
+            "count": "enrollment_count"
+          },
+          "unit": "grade_hundredth",
+          "scale": 100
+        },
+        "step_id": "one",
+        "columns": [
+          {
+            "name": "course_id",
+            "type": "integer"
+          },
+          {
+            "name": "sum_units",
+            "type": "integer"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            1,
+            40000,
+            5,
+            6
+          ],
+          [
+            2,
+            10000,
+            1,
+            1
+          ],
+          [
+            3,
+            0,
+            0,
+            1
+          ]
+        ],
+        "row_count": 3,
+        "truncated": false,
+        "elapsed_ms": 0
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "9f157cd9-b33c-4d2c-b0d2-a908a6707248",
+      "seq": 27,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "execute",
+      "kind": "node_end",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.596806+00:00",
+      "duration_ms": null,
+      "payload": {
+        "result": {
+          "result_spec": {
+            "metric_id": "u.top_course.v1",
+            "shape": "top",
+            "group_keys": [
+              "course_id"
+            ],
+            "columns": [
+              {
+                "name": "course_id",
+                "type": "integer",
+                "nullable": false
+              },
+              {
+                "name": "sum_units",
+                "type": "integer",
+                "nullable": false
+              },
+              {
+                "name": "graded_count",
+                "type": "integer",
+                "nullable": false
+              },
+              {
+                "name": "enrollment_count",
+                "type": "integer",
+                "nullable": false
+              }
+            ],
+            "components": {
+              "sum": "sum_units",
+              "denominator": "graded_count",
+              "count": "enrollment_count"
+            },
+            "unit": "grade_hundredth",
+            "scale": 100
+          },
+          "step_id": "one",
+          "columns": [
+            {
+              "name": "course_id",
+              "type": "integer"
+            },
+            {
+              "name": "sum_units",
+              "type": "integer"
+            },
+            {
+              "name": "graded_count",
+              "type": "integer"
+            },
+            {
+              "name": "enrollment_count",
+              "type": "integer"
+            }
+          ],
+          "rows": [
+            [
+              1,
+              40000,
+              5,
+              6
+            ],
+            [
+              2,
+              10000,
+              1,
+              1
+            ],
+            [
+              3,
+              0,
+              0,
+              1
+            ]
+          ],
+          "row_count": 3,
+          "truncated": false,
+          "elapsed_ms": 0
+        }
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "9c4c2541-0539-4bd0-9a11-260b2a45f9bd",
+      "seq": 28,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "inspect_result",
+      "kind": "node_start",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.599131+00:00",
+      "duration_ms": null,
+      "payload": {}
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "f283f868-d917-433c-9588-c9c505dc1438",
+      "seq": 29,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "inspect_result",
+      "kind": "adapted_result",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.600307+00:00",
+      "duration_ms": null,
+      "payload": {
+        "step_id": "one",
+        "answer": {
+          "text": "student_id=all; course_id=all; teacher_id=all; semester_id=all: top_course: 1 rows.",
+          "columns": [
+            {
+              "name": "course_id",
+              "type": "integer"
+            },
+            {
+              "name": "average",
+              "type": "decimal"
+            },
+            {
+              "name": "graded_count",
+              "type": "integer"
+            },
+            {
+              "name": "enrollment_count",
+              "type": "integer"
+            }
+          ],
+          "rows": [
+            [
+              2,
+              "100.00",
+              1,
+              1
+            ]
+          ],
+          "scope": "student_id=all; course_id=all; teacher_id=all; semester_id=all",
+          "empty_reason": null,
+          "row_reasons": [
+            null
+          ],
+          "truncated": false
+        },
+        "dependency_rows": [
+          [
+            2,
+            10000,
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "14645261-3ca4-44a8-b174-828a299bddcc",
+      "seq": 30,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "inspect_result",
+      "kind": "node_end",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.601176+00:00",
+      "duration_ms": null,
+      "payload": {
+        "answer": {
+          "text": "student_id=all; course_id=all; teacher_id=all; semester_id=all: top_course: 1 rows.",
+          "columns": [
+            {
+              "name": "course_id",
+              "type": "integer"
+            },
+            {
+              "name": "average",
+              "type": "decimal"
+            },
+            {
+              "name": "graded_count",
+              "type": "integer"
+            },
+            {
+              "name": "enrollment_count",
+              "type": "integer"
+            }
+          ],
+          "rows": [
+            [
+              2,
+              "100.00",
+              1,
+              1
+            ]
+          ],
+          "scope": "student_id=all; course_id=all; teacher_id=all; semester_id=all",
+          "empty_reason": null,
+          "row_reasons": [
+            null
+          ],
+          "truncated": false
+        },
+        "completed": {
+          "one": {
+            "result_spec": {
+              "metric_id": "u.top_course.v1",
+              "shape": "top",
+              "group_keys": [
+                "course_id"
+              ],
+              "columns": [
+                {
+                  "name": "course_id",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "sum_units",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "graded_count",
+                  "type": "integer",
+                  "nullable": false
+                },
+                {
+                  "name": "enrollment_count",
+                  "type": "integer",
+                  "nullable": false
+                }
+              ],
+              "components": {
+                "sum": "sum_units",
+                "denominator": "graded_count",
+                "count": "enrollment_count"
+              },
+              "unit": "grade_hundredth",
+              "scale": 100
+            },
+            "step_id": "one",
+            "columns": [
+              {
+                "name": "course_id",
+                "type": "integer"
+              },
+              {
+                "name": "sum_units",
+                "type": "integer"
+              },
+              {
+                "name": "graded_count",
+                "type": "integer"
+              },
+              {
+                "name": "enrollment_count",
+                "type": "integer"
+              }
+            ],
+            "rows": [
+              [
+                2,
+                10000,
+                1,
+                1
+              ]
+            ],
+            "row_count": 1,
+            "truncated": false,
+            "elapsed_ms": 0
+          }
+        },
+        "step_results": [
+          {
+            "step_id": "one",
+            "raw": {
+              "result_spec": {
+                "metric_id": "u.top_course.v1",
+                "shape": "top",
+                "group_keys": [
+                  "course_id"
+                ],
+                "columns": [
+                  {
+                    "name": "course_id",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "sum_units",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "graded_count",
+                    "type": "integer",
+                    "nullable": false
+                  },
+                  {
+                    "name": "enrollment_count",
+                    "type": "integer",
+                    "nullable": false
+                  }
+                ],
+                "components": {
+                  "sum": "sum_units",
+                  "denominator": "graded_count",
+                  "count": "enrollment_count"
+                },
+                "unit": "grade_hundredth",
+                "scale": 100
+              },
+              "step_id": "one",
+              "columns": [
+                {
+                  "name": "course_id",
+                  "type": "integer"
+                },
+                {
+                  "name": "sum_units",
+                  "type": "integer"
+                },
+                {
+                  "name": "graded_count",
+                  "type": "integer"
+                },
+                {
+                  "name": "enrollment_count",
+                  "type": "integer"
+                }
+              ],
+              "rows": [
+                [
+                  1,
+                  40000,
+                  5,
+                  6
+                ],
+                [
+                  2,
+                  10000,
+                  1,
+                  1
+                ],
+                [
+                  3,
+                  0,
+                  0,
+                  1
+                ]
+              ],
+              "row_count": 3,
+              "truncated": false,
+              "elapsed_ms": 0
+            },
+            "answer": {
+              "text": "student_id=all; course_id=all; teacher_id=all; semester_id=all: top_course: 1 rows.",
+              "columns": [
+                {
+                  "name": "course_id",
+                  "type": "integer"
+                },
+                {
+                  "name": "average",
+                  "type": "decimal"
+                },
+                {
+                  "name": "graded_count",
+                  "type": "integer"
+                },
+                {
+                  "name": "enrollment_count",
+                  "type": "integer"
+                }
+              ],
+              "rows": [
+                [
+                  2,
+                  "100.00",
+                  1,
+                  1
+                ]
+              ],
+              "scope": "student_id=all; course_id=all; teacher_id=all; semester_id=all",
+              "empty_reason": null,
+              "row_reasons": [
+                null
+              ],
+              "truncated": false
+            },
+            "dependency_rows": [
+              [
+                2,
+                10000,
+                1,
+                1
+              ]
+            ]
+          }
+        ],
+        "step_index": 1
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "db38722c-16f6-4ab5-baee-8fa2abd07b15",
+      "seq": 31,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "answer",
+      "kind": "node_start",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.614194+00:00",
+      "duration_ms": null,
+      "payload": {}
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "b8ebad61-402e-4267-bb39-623c0b40a5cf",
+      "seq": 32,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "answer",
+      "kind": "answer",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.615458+00:00",
+      "duration_ms": null,
+      "payload": {
+        "text": "student_id=all; course_id=all; teacher_id=all; semester_id=all: top_course: 1 rows.",
+        "columns": [
+          {
+            "name": "course_id",
+            "type": "integer"
+          },
+          {
+            "name": "average",
+            "type": "decimal"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            2,
+            "100.00",
+            1,
+            1
+          ]
+        ],
+        "scope": "student_id=all; course_id=all; teacher_id=all; semester_id=all",
+        "empty_reason": null,
+        "row_reasons": [
+          null
+        ],
+        "truncated": false
+      }
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "fb02add8-bf01-411b-adfb-d72d796353cb",
+      "seq": 33,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "answer",
+      "kind": "node_end",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.616269+00:00",
+      "duration_ms": null,
+      "payload": {}
+    },
+    {
+      "version": "1",
+      "trace_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "run_id": "541099a5-f77e-4ee3-b732-49d5d947c652",
+      "event_id": "f52ab509-8e21-4240-a533-1de739ed41a1",
+      "seq": 34,
+      "parent_event_id": null,
+      "request_id": "4bc3b927-c483-4c04-bda4-64f33a713246",
+      "node": "end",
+      "kind": "run_end",
+      "attempt": 0,
+      "timestamp": "2026-11-07T23:20:10.618919+00:00",
+      "duration_ms": null,
+      "payload": {
+        "status": "ok",
+        "llm_calls": 2,
+        "sql_attempts": 1
+      }
+    }
+  ],
+  "execution_profile": "offline/injected",
+  "step_results": [
+    {
+      "step_id": "one",
+      "raw": {
+        "result_spec": {
+          "metric_id": "u.top_course.v1",
+          "shape": "top",
+          "group_keys": [
+            "course_id"
+          ],
+          "columns": [
+            {
+              "name": "course_id",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "sum_units",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "graded_count",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "enrollment_count",
+              "type": "integer",
+              "nullable": false
+            }
+          ],
+          "components": {
+            "sum": "sum_units",
+            "denominator": "graded_count",
+            "count": "enrollment_count"
+          },
+          "unit": "grade_hundredth",
+          "scale": 100
+        },
+        "step_id": "one",
+        "columns": [
+          {
+            "name": "course_id",
+            "type": "integer"
+          },
+          {
+            "name": "sum_units",
+            "type": "integer"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            1,
+            40000,
+            5,
+            6
+          ],
+          [
+            2,
+            10000,
+            1,
+            1
+          ],
+          [
+            3,
+            0,
+            0,
+            1
+          ]
+        ],
+        "row_count": 3,
+        "truncated": false,
+        "elapsed_ms": 0
+      },
+      "answer": {
+        "text": "student_id=all; course_id=all; teacher_id=all; semester_id=all: top_course: 1 rows.",
+        "columns": [
+          {
+            "name": "course_id",
+            "type": "integer"
+          },
+          {
+            "name": "average",
+            "type": "decimal"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            2,
+            "100.00",
+            1,
+            1
+          ]
+        ],
+        "scope": "student_id=all; course_id=all; teacher_id=all; semester_id=all",
+        "empty_reason": null,
+        "row_reasons": [
+          null
+        ],
+        "truncated": false
+      },
+      "dependency_rows": [
+        [
+          2,
+          10000,
+          1,
+          1
+        ]
+      ]
+    }
+  ]
+}

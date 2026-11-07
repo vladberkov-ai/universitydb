@@ -1,0 +1,104 @@
+{
+  "profile": "offline/injected",
+  "real_provider_called": false,
+  "paid_calls": 0,
+  "browser_executable": "/home/dev/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome",
+  "base_HEAD": "c631c0c62bebd7c291429e26783dbfc442bde3af",
+  "source_sha256": {
+    "src/universitydb/__init__.py": "f4783354578e7b9ed2f99a68b5454ac621abd61d76b07062a05bf5887dd72dd7",
+    "src/universitydb/agent.py": "af3191e82c247f647661411224383fced8456fd5142cb5a61e81f2a1d51edbd2",
+    "src/universitydb/config.py": "508b2bef52d2c81c5114b885a6be56f5b22b18774ae5a48674679ea1fdd6b263",
+    "src/universitydb/contracts.py": "14715a2b7ed31457eba35acce6e568bcd67c72a55371822f6c9243bbacb619dc",
+    "src/universitydb/db.py": "a1650dad66a7c8ad49210bb3ab4850deff8e9f7bfc5c3f2ca65c84e632d80cc8",
+    "src/universitydb/db_worker.py": "64c17b84c0d68e97d5587c849734640fccd89ace1c12238f08105bf8201a2c05",
+    "src/universitydb/domain.py": "0c6dc3a5dcaae4b9db8b723fb673f150e50438765352628909ca47b0f542ea77",
+    "src/universitydb/domain_support.py": "211407da912ca737bdc449ce68b098227efad5fdd551c8848796d5c041a71fae",
+    "src/universitydb/library.py": "0087d38942de432422fdf641ae241ca5928f995c81447296c8b54e6dc7a0a797",
+    "src/universitydb/llm.py": "4b8c80075748a669cb70397ad8aecbad2efbb9dd3ce2a7e9680e918ba10157cb",
+    "src/universitydb/llm_worker.py": "ba0abec6f45197814068c70aa86fb747e4de070cc84f08f1caa6b537b3a5bf9d",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/sql_policy.py": "f0d2c532ad9c053952cc6a4fefba9350585e9826d49f9b05b5d6171b035307ac",
+    "src/universitydb/tracing.py": "32a8b49dc56b0e2acf59b836361ef03abb70c4c549c312a1c914c8b646e8a96b",
+    "src/universitydb/ui.py": "01aa37400817b7ea733bf5cd7ae316f1d21a9054cc1af56504d8614194045c8a"
+  },
+  "cases": {
+    "success": {
+      "expected": "80.00",
+      "status": "ok",
+      "run_id": "e790b758-226a-4376-8296-ca4df15f190a",
+      "events": 34,
+      "trace_sha256": "fa7bedd37614f09e39bba654c94c0f1bb5c8b1b4bfddd3922b0ffc07d8ca7877",
+      "screenshot_sha256": "f1b3977227afaa92d092cdc7bac02106a97eaf5ebf02fe24b3f7b8dcd1f7431c",
+      "current_question_run_outcome_verified": true,
+      "render_settled_before_screenshots": true
+    },
+    "clarification-pause": {
+      "expected": "Choose",
+      "status": "clarification",
+      "run_id": "c6647a93-993c-4026-993b-bd1a84f4eab5",
+      "events": 9,
+      "trace_sha256": "07066e8de683ff2f6c532002b5fe311394077a455dfe0faf982cede753cf4452",
+      "screenshot_sha256": "b65d6274c6a224627eccada77f766cecbd6d0c93ffd2af8b2aa87c35cfa10a8c",
+      "current_question_run_outcome_verified": true,
+      "render_settled_before_screenshots": true
+    },
+    "clarification-resume": {
+      "expected": "86.67",
+      "status": "ok",
+      "run_id": "c6647a93-993c-4026-993b-bd1a84f4eab5",
+      "events": 40,
+      "trace_sha256": "46d6c39af785d06a6cb5586a701e1e6549622abd0555165bbc6899425cecfef6",
+      "screenshot_sha256": "f870b84c4aecd507da17837eef6fa6ac10703e15e8b1782a963ba018942656cb",
+      "current_question_run_outcome_verified": true,
+      "render_settled_before_screenshots": true
+    },
+    "m1": {
+      "expected": "95.00",
+      "status": "ok",
+      "run_id": "f32a3676-697f-422a-945a-694c21e9e8b1",
+      "events": 68,
+      "trace_sha256": "d232d2411397cc8d75853918ae70e95490dfdabcb43bbc92c71459b0366bc16a",
+      "screenshot_sha256": "e14f2abc8cdb5fc9134fbd0c2e904ec9730bcdbce1056516ed7b51a800c6b2a7",
+      "current_question_run_outcome_verified": true,
+      "render_settled_before_screenshots": true
+    },
+    "repair": {
+      "expected": "80.00",
+      "status": "ok",
+      "run_id": "6f3a3959-41a6-45d4-9517-6cc62fde6f2f",
+      "events": 40,
+      "trace_sha256": "a358b0730e053e3a15ccb941e9ff8eab59c689e42f04f6c8e86dba79228a03f6",
+      "screenshot_sha256": "100ae0d666db31e118d7123bf95edf506c8e536e1d141f969f1c259ede5c048d",
+      "current_question_run_outcome_verified": true,
+      "render_settled_before_screenshots": true
+    },
+    "error": {
+      "expected": "PROVIDER_REFUSAL",
+      "status": "error",
+      "run_id": "bed9b5f8-ea84-4503-bce0-9bb5100a460b",
+      "events": 14,
+      "trace_sha256": "00f9b394170ad7288f0e501a4013ebd62c4c4fc76f71ab599f6c4e02f77cb623",
+      "screenshot_sha256": "ae7e167642aa4f1ce32fc12a99b328fbc6474940cf2ebd9f33944bbf6510d418",
+      "current_question_run_outcome_verified": true,
+      "render_settled_before_screenshots": true
+    },
+    "library": {
+      "expected": "Ada",
+      "status": "ok",
+      "run_id": "6c2e5829-5b9f-4d04-a2f8-646db27468dd",
+      "events": 34,
+      "trace_sha256": "2a39ed54fe4ac9f1d5afc5e9eba34da6b5da4b67693f69513eb2b81cdebc61e7",
+      "screenshot_sha256": "c3c4e0cb7be0cb8d2fd5fb8da0cd0cb8b46d505c4c0e7842d72f8ebaf167e38b",
+      "current_question_run_outcome_verified": true,
+      "render_settled_before_screenshots": true
+    }
+  },
+  "server_stopped": true,
+  "browser_closed": true,
+  "claim": "Actual browser+Streamlit+compiled graph+SQLite with injected proposals, NOT real-model NL-to-SQL accuracy",
+  "fixture_sha256": "eb623fe3df8a5e3deee9049827d75f7a33822378956572fb98bfb8686e554033",
+  "status": "passed",
+  "temporary_ledger_absent": true,
+  "actual_runtime_unchanged": true
+}
