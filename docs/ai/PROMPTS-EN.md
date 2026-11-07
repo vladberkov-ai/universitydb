@@ -411,3 +411,7 @@ UniversityDB I1 SQL prompt v1. Generate SQLite SQL, not an answer. Use precisely
 ## H-011 I2-offline — reader navigation, not an actual English input
 
 The actual Russian task accepts bounded offline query breadth, clarification/failures/UI, independent reviews and CP1–CP4 local checkpoints; it forbids live/API generation, credentials, ledger changes and push. [Preserved original projection](omx/H-011-actual-prompt.txt), [provenance/omissions](../operations/H-011/prompt-receipt.json). This English synopsis is not a translation replay or complete transcript.
+
+## H-013 I2 + I3 offline — English reader synopsis, not actual input
+
+The actual Russian task requests one continuous, verified I2+I3 offline service implementation through CP-A–E: University query/filter breadth, real checkpoint clarification/bounded failures, typed per-step results, actual-result M1 dependencies, early Library on one shared core, complete traces/UI/tests/docs, independent reviews and local checkpoints. Establish supported current-native-owner binding before a new scoped workflow; never revive completed I1 or invent IDs. No live/count calls, credentials, spending changes, vault writes or push. Later live/release/defense blocks are excluded from offline completion. [Actual original](omx/H-013-actual-prompt.txt), [provenance](../operations/H-013/prompt-receipt.json), [CP-A child task/coverage](../operations/H-013/cp-a-task.txt). This synopsis is not an English actual input, translation replay or complete transcript.

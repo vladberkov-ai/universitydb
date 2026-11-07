@@ -1,0 +1,2 @@
+# Scoped workflow runtime artifacts are local evidence, never product commits.
+.omx/

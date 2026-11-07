@@ -1,0 +1,74 @@
+{
+  "date_utc": "2026-11-07T20:40:24.771234+00:00",
+  "status": "current-native binding established by source-backed read-only root checks; activation not yet attempted",
+  "new_evidence_vs_H011": {
+    "launcher_started_at": "2026-11-07T20:36:57.434Z",
+    "native_session_meta_matches_launcher": true,
+    "CODEX_SESSION_ID_matches_native": true,
+    "CODEX_THREAD_ID_matches_native": true,
+    "OMX_SESSION_ID_matches_launcher_owner": true,
+    "hook_state_owner_thread_matches_native": true,
+    "cwd_and_tmux_pane_match": true
+  },
+  "sandbox_observation": {
+    "pointer_pid_visible": false,
+    "reason": "sandbox PID namespace, not evidence of dead host owner"
+  },
+  "supported_specific_permission_host_check": {
+    "exit": 0,
+    "pointer_pid_visible": true,
+    "birth_matches": true,
+    "cmdline_matches": true,
+    "cmdline_hash_matches": true,
+    "installed_pointer_status": "usable",
+    "writable_scope_source": "session",
+    "selector_matches": true,
+    "canonical_state_dir_matches": true
+  },
+  "source": {
+    "base": "installed oh-my-codex dist",
+    "state-paths.js": "752-837; usable-pointer canonical/alias branch819-837; stale-dead branch780-804 is NOT authority proof",
+    "hooks/session.js": "readSessionPointer plus SessionStart reconciliation",
+    "scripts/codex-native-hook.js": "21384-21427 genuine SessionStart binds native owner"
+  },
+  "source_hashes": {
+    "mcp/state-paths.js": "4e42a9209da125fc08081f21825eac67220d39e310f8523ee0a58c1a15bf6ad3",
+    "ultragoal/artifacts.js": "fd6b92c207705c4953b46076342e1124314cc1ffd48b917fd4e179bb27257d3a",
+    "hooks/session.js": "7239b214f98e044f51fcbe51e2e24fdf98f6655bd411c723c23cd696bbea455f",
+    "scripts/codex-native-hook.js": "f48a6ba442d6aeacd9dcc3c63fc191b6b83ab8fea1ef20cab15b61d0578f3a2c",
+    "cli/ultragoal.js": "413cec602692f98437032c6a6d36adc95c58dc008e52deafe76b3f760e80c558"
+  },
+  "native_goal_before": null,
+  "I1": "4/4 complete untouched; no resume",
+  "mutations": {
+    "manual_ID_state_pointer_edits": false,
+    "lock_recovery_cleanup": false,
+    "force": false,
+    "runtime_update_patch": false
+  },
+  "child": "read-only explore diagnostic; child stale-dead result explained by its PID namespace, not used as root ownership proof",
+  "lock_inspect": {
+    "status": "absent",
+    "safeToRecover": false
+  },
+  "next": "use supported separate nested-cwd plan after full brief, canonical runtime storage selection only after above independent ownership proof",
+  "nested_supported_authority": {
+    "canonical_snapshot_status": "usable",
+    "liveness": "usable",
+    "rootSource": "session-authority",
+    "recordedCwd_matches_repo": true,
+    "selectedSessionJson_matches_repo": true,
+    "native_matches_root": true,
+    "owner_matches_current": true,
+    "scopeSource": "session",
+    "rootArtifactsDisjoint": true,
+    "storageOverridesAbsent": true,
+    "source": "state-paths.js215-257,534-565,609-629,752-760,819-837; artifacts.js31-60,598-625,717-762; cli/ultragoal.js340-365; nested tests2757-2852",
+    "direct_hook_foreign_cwd": "exact-cwd hook API not authoritative ancestor-aware lifecycle API; not a fallback in authoritative snapshot"
+  },
+  "activation_review": {
+    "first_request": "auto-review rejected before command execution; concern foreign-cwd/mixed I1 state",
+    "subsequent_evidence": "actual host canonical nested snapshot usable/session-authority; source-backed descendant support and disjoint artifact paths",
+    "bypass": false
+  }
+}

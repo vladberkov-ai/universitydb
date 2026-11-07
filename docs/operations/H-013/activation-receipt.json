@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-07",
+  "source": "Actual root collaboration report; bounded attribution, not child-executed lifecycle or full stdout transcript",
+  "owner": "root native owner, one leader; no private runtime identifiers published",
+  "binding": "Root's supported host canonical nested snapshot: usable/liveness usable/rootSource session-authority, actual native/root selectors and hook owner match; see binding-readiness.json",
+  "first_permission_review": {
+    "result": "rejected before command execution",
+    "concern": "foreign-cwd/mixed I1 state",
+    "activation_executed": false
+  },
+  "new_discriminating_evidence": "Direct foreign-cwd hook was exact-cwd API; source-backed ancestor-aware lifecycle API plus disjoint nested artifact paths and host snapshot prove supported binding, not OMX_ROOT alone",
+  "subsequent_permission_review": "approved after new evidence; no bypass or identical unsupported retry",
+  "create_command": "omx ultragoal create-goals --brief-file /home/dev/projects/universitydb/docs/plans/I2-I3-offline-brief.md",
+  "working_directory": "docs/operations/H-013/workflow",
+  "artifact_directory": "docs/operations/H-013/workflow/.omx/ultragoal",
+  "create_exit": 0,
+  "complete_goals_handoff": "G001 in_progress",
+  "native_before": null,
+  "native_after": "root reports actual create_goal matching nested aggregate pointer objective ACTIVE",
+  "decomposition": "12 microgoals: CP-A–E plus extracted invariants 6–12; extracted invariants remain required, not dropped",
+  "completion": "not claimed; whole I2+I3 offline DoD remains pending",
+  "preservation": "Root reports completed I1 unchanged; no I1 resume, force, manual IDs/pointers/state/locks, or runtime patch",
+  "live_calls": 0,
+  "child_authority": "CP-A performer does not own native/workflow lifecycle"
+}

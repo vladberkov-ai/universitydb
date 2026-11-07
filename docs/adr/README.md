@@ -35,3 +35,6 @@ Architecture recommendations passed separate Architect/Critic reviews, not owner
 
 ## H-009 practical I1 spending policy
 [ADR-OMX-010](ADR-OMX-010-I1-practical-budget-policy.md) adopts accepted ADR-CHAT-005 / CHAT-034 for I1 only: total10, new-dispatch threshold8, contingency2, explicit estimate-based residual uncertainty. Supersedes the old strict input/count-fee proof, not a claim it was achieved; live/final gates and unrelated ADR proposals remain unchanged.
+
+## H-013 — current combined offline scope
+[ADR-OMX-012](ADR-OMX-012-I2-I3-offline-contracts.md) records adopted scoped implementation choices before dependent code: per-step registry, static bounded DAG then typed actual-result binding, in-memory session-bound continuation, early Library adapter and unchanged dependencies/bounds. Actual H-013 / CHAT-045 expands accepted ADR006/ADR011 only beyond single-step/no-Library; ADR003–007 remain proposed. Full I2+I3 offline proof is pending, not conferred by this decision. [Whole brief](../plans/I2-I3-offline-brief.md), [acceptance contract](../plans/I2-I3-offline-contract.md).

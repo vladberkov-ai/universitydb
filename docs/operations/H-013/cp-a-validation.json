@@ -1,0 +1,218 @@
+{
+  "status": "passed CP-A documentary checks only; product DoD pending",
+  "append_only_navigation": [
+    "AGENTS.md",
+    "docs/adr/README.md",
+    "docs/assignment-status.md",
+    "docs/plans/implementation-plan.md",
+    "docs/plans/requirements-test-matrix.md",
+    "docs/ai/README.md",
+    "docs/ai/PROMPTS-RU.md",
+    "docs/ai/PROMPTS-EN.md"
+  ],
+  "new_doc_local_links_checked": [
+    [
+      "docs/plans/I2-I3-offline-brief.md",
+      "I2-I3-offline-contract.md"
+    ],
+    [
+      "docs/plans/I2-I3-offline-brief.md",
+      "../adr/ADR-OMX-012-I2-I3-offline-contracts.md"
+    ],
+    [
+      "docs/plans/I2-I3-offline-contract.md",
+      "I2-I3-offline-brief.md"
+    ],
+    [
+      "docs/plans/I2-I3-offline-contract.md",
+      "../adr/ADR-OMX-012-I2-I3-offline-contracts.md"
+    ],
+    [
+      "docs/plans/I2-I3-offline-contract.md",
+      "I2-offline-contract.md"
+    ],
+    [
+      "docs/plans/I2-I3-offline-contract.md",
+      "contracts.md"
+    ],
+    [
+      "docs/plans/I2-I3-offline-contract.md",
+      "test-plan.md"
+    ],
+    [
+      "docs/plans/I2-I3-offline-contract.md",
+      "../operations/H-013/frozen-oracle.json"
+    ],
+    [
+      "docs/plans/I2-I3-offline-contract.md",
+      "../operations/H-013/independent_oracle.py"
+    ],
+    [
+      "docs/adr/ADR-OMX-012-I2-I3-offline-contracts.md",
+      "../plans/I2-I3-offline-brief.md"
+    ],
+    [
+      "docs/adr/ADR-OMX-012-I2-I3-offline-contracts.md",
+      "../plans/I2-I3-offline-contract.md"
+    ]
+  ],
+  "preservation": {
+    "runtime/spending.json": {
+      "sha256": "2753fe2fdf1dc366ffecdb5a86dcd9cf184d83707a00da0de62a8a4e4963f125",
+      "unchanged": true
+    },
+    ".omx-state-locks.identity.json": {
+      "sha256": "50d956e3fbf97b265862cefdbfb54fd809b03ef55b3f7ccd9997864b70d62711",
+      "unchanged": true
+    },
+    ".omx-state-locks/655a20b082786cf4e05f99e0da122d6dc803270e08f859022ac44d1302358bc8.mutex": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    ".omx-state-locks/3102cbda72779bbf780705d49e74806858334b4de02a46d2ee2a37802e26125c.mutex": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    ".omx/ultragoal/brief.md": {
+      "sha256": "0ff09bb7638889aa742f75070ece675573391187b5568b2be010b59fe22b5191",
+      "unchanged": true
+    },
+    ".omx/ultragoal/ledger.jsonl": {
+      "sha256": "980675a8f5b3a288809d7c98c3fb539ba1d51e43a6beb64dfb30d85c09d1e380",
+      "unchanged": true
+    },
+    ".omx/ultragoal/goals.json": {
+      "sha256": "8e3383ac22651fbc8cbad2d49181e91957e747dee35ac9de7f1ba8b7f6a7e0ef",
+      "unchanged": true
+    }
+  },
+  "historical_evidence_hashes": {
+    "docs/operations/H-009/api-references.md": "fe415b05c74cd05e6bc92d0c894230661f0e22f0446c20d74fc41f70ddeb6f68",
+    "docs/operations/H-009/baseline.json": "932664dd1e25145797e5293aee8afe9d2775c166e379c06549f4e03b2a75713b",
+    "docs/operations/H-009/cleaner-report.md": "809ac11d8d29353085eaca27636bd83866aa59e3e0a7806335d797377c8ac44e",
+    "docs/operations/H-009/cleanup-plan.md": "b7f2f8bcba6ae5c107c2537aab4c7bdd0786543ab1e4f3a362eb85ff3528d1b7",
+    "docs/operations/H-009/closeout/baseline.json": "31101215f6cb8d2d4ec4815075051ba37cc4e912163887cd4fd82a81c3a5b06a",
+    "docs/operations/H-009/closeout/cleaner-report.md": "9777c34bc63a2b88201de51b41db0a8d5ace5ab3e316c2c95524ac8fdbf1585d",
+    "docs/operations/H-009/closeout/cleanup-plan.md": "582dee7a67a21cd2712d2e312b1789c71997e21d9b6cb06ebf5b0ee619349450",
+    "docs/operations/H-009/closeout/document-validation.json": "cc30c95ed9456cb2ef8ea75ca694718e83878a1c3e5ad0ba1b2ae8a4b4ee4cc7",
+    "docs/operations/H-009/closeout/documents-received-task.txt": "bdbf35bd272e9615b021e38700d32ebd2f3e22d3c4520d0af0d1009bc8af06d3",
+    "docs/operations/H-009/closeout/final-commit-receipt.json": "48a04e508bb1f81a008f2a781d9572c0768bf067e7e468f959f8dd0f410c4a20",
+    "docs/operations/H-009/closeout/final-verification-receipt.json": "79c5d9c71373b2ed944fd816071d0137c786edc48bb89e0fab4b36b75ed9b238",
+    "docs/operations/H-009/closeout/invariant-audit.md": "7b980e1d4fd9d2be28b0a1f036cd425aceef76f04ff8487e0ae95292e92634bb",
+    "docs/operations/H-009/closeout/live-graph-documentary-validation.json": "5835a4c1920386129778543dd0807edc169ec4ebb0730ee12ef06739df847f79",
+    "docs/operations/H-009/closeout/postcheckpoint-goal-receipt.json": "6fe02fc36825db4e0dec44f8d1ae01dabbd429001b22f78ea98811f6f8a38dde",
+    "docs/operations/H-009/closeout/prompt-coverage.json": "d06bcb0f98d18f89cde601aad1963bad881e7a2ade1b4743c4d872f35d2a461d",
+    "docs/operations/H-009/closeout/reviews/final-architecture-review-receipt.json": "449c3cb8c4b9ab187103f43e7543651b72dda23623d9624e8cac8ddb399b9e66",
+    "docs/operations/H-009/closeout/reviews/final-code-review-receipt.json": "c08fcbefc6e3c0476c745a2f238e05fc6dbc3d0d4af46d2eac49fe34315129a1",
+    "docs/operations/H-009/closeout/root-live-audit-receipt.json": "7b2e51ff89979a19438642bd8dbf7cef249a0669549684d0775174a6d6a1448c",
+    "docs/operations/H-009/closeout/test-reference-validation.json": "dd71f3ceb32e7d525b20b239a6615a8b3fc98c92a89ffc6bf9b61443206d2095",
+    "docs/operations/H-009/document-validation.json": "31a1d0a7e4d0c177711316bdc85ee36b1768cf975d81dd98f0c627fb8f2ac771",
+    "docs/operations/H-009/final-commit-receipt.json": "e20f31713922aec7a7391b93ba347e98d5d84ec394f8e78f3514720340624574",
+    "docs/operations/H-009/implementation-task-projection-receipt.json": "da4f8953f7806345effc45bef622d24db7f74f7f588bc04977ec3340872687f4",
+    "docs/operations/H-009/implementation-task.txt": "a18a117a9a3dacc69f04ea6ffdb2a2d7ba006bd43256b0c221e4766cf6b1c4d1",
+    "docs/operations/H-009/implementation-validation.json": "547842fb749ab9dc6cf857d9c0cf4b2d98cd74edb29822ef747889c1b02dcf2f",
+    "docs/operations/H-009/input-hashes.json": "0141df1e5b6812a02926246dc2508a6cbea687fb6b876d7a3321d5746f6ac2e9",
+    "docs/operations/H-009/live/actual-prompt-snapshots/PlanProposal.schema.json": "dba37027f59e83a9bc935cbfe5727ca9eea34fbce98790b0e4670a2e9170718f",
+    "docs/operations/H-009/live/actual-prompt-snapshots/SQLProposal.schema.json": "307fe006e5068f6ff6f51d9f362fb7fdb28572f6cc5271a6aa024a88de790bd6",
+    "docs/operations/H-009/live/actual-prompt-snapshots/plan.txt": "24d1d41b946b85397fe863523a2fec18f4371f665b11ae21f7eadf5c7c9a6db8",
+    "docs/operations/H-009/live/actual-prompt-snapshots/sql.txt": "c485c9e4fd66ad6345861e15c35212f01399f4598f04408e3de7aa922a0b11d3",
+    "docs/operations/H-009/live/browser_ui.py": "11347437b93cbc93b03573df1f20bd96aa3b6e6b864ad02714beaceee6696141",
+    "docs/operations/H-009/live/capture-coverage.json": "4ef36d657b9cc106565b8396620189907e1ce2f96d48c76be868d08742e4cc00",
+    "docs/operations/H-009/live/execution-receipt.json": "2c86328ce2fdddb95d3c060fb254644e25bd5a536571d8d5c86e2f19bbc3f851",
+    "docs/operations/H-009/live/manifest.json": "a593e494560bd3eeff4bfc7ef6ba281db8fd4362693b6615ad484e33395d6a72",
+    "docs/operations/H-009/live/mutation-planned-oracle.json": "c13aae89f5ac67bf3594fbb98255a0e9025e1d8ec9cf2daa364c8eb4d8b182bf",
+    "docs/operations/H-009/live/mutation/baseline.json": "1a4aa3127fafa0242fb43422dc93349d46b8a76b06df552a13536e4af86ff003",
+    "docs/operations/H-009/live/mutation/evidence-validation.json": "24dbe879104bf6a7a26b74f6bb254a766492f552ce78818deb797b387b6915b8",
+    "docs/operations/H-009/live/mutation/receipt.json": "99abf8a6cfff62767e23d873a7357223c8e93fda5da47006b90a28fceda70e20",
+    "docs/operations/H-009/live/mutation/request-01.json": "e5585edc9a628c1c1c6a8b2127cb301a0827fa469c2d73f6a62fba04807afb73",
+    "docs/operations/H-009/live/mutation/request-02.json": "8c2c363df444453f51ae32f2fe93e40dc808a37c4af44e53335abb7dbcd0f79c",
+    "docs/operations/H-009/live/mutation/response-01.json": "91203add562ec0bf9881d3b73eb3072e61197fe9dd39f7687fb472778fb41e2e",
+    "docs/operations/H-009/live/mutation/response-02.json": "2bfba86158e29a49cc9711949c4120706392d10d3583be1e2ccadb2095105106",
+    "docs/operations/H-009/live/mutation/result.json": "8135f999267b9b0024ac8a157f7aa1bf90407b26cc77dc76cb4d7da8e8c8514e",
+    "docs/operations/H-009/live/mutation/trace.jsonl": "960e6aa0df5870fa465937ae6159096bbf3fe497b33b6c0d170499485148686e",
+    "docs/operations/H-009/live/run_graph.py": "16048aec8d96f74087ea0fa2d62c3fdcab011134ab6ccae2741e7ff2038563a0",
+    "docs/operations/H-009/live/s6/baseline.json": "2e31a2f0bd51b953ca0fe3226de99689838c0fffcd4accf816f909574dc9bd34",
+    "docs/operations/H-009/live/s6/evidence-validation.json": "cbeeeb49527e05c120c5df3a66828d7413c211fe1a4e6b1028808a39fd153275",
+    "docs/operations/H-009/live/s6/receipt.json": "f2c1f236353ec55d862b70a81a3b631192a841e36504489a8aef3c84eb052a56",
+    "docs/operations/H-009/live/s6/request-01.json": "f0aa3eac8541156518943d4f26ea4a7a9b9133afdbcb2d1d8f8c59c8996b82ce",
+    "docs/operations/H-009/live/s6/request-02.json": "f21a7584691a7c012b0ba93809de02626be524783d99ff2bcca07f707e454e33",
+    "docs/operations/H-009/live/s6/response-01.json": "e87c0021939eae1b9802e6e0c61140e75a931954eb8e8b9b1b1e08fa80e3e2d0",
+    "docs/operations/H-009/live/s6/response-02.json": "425eff0ad247eca96c77cccf1b7765389ef8beec786ffb336682a0d73c0f1aec",
+    "docs/operations/H-009/live/s6/result.json": "8d6c6e2bcaa456c20d401aceda2584cd9f319ccfcc34b88b0b8045ec67695872",
+    "docs/operations/H-009/live/s6/trace.jsonl": "8baff2f1695016328429a886e3a2e1fbd6505d70875857b0c6ad5eb8fed951aa",
+    "docs/operations/H-009/live/ui/baseline.json": "e0f807cb4d0a071ba085f2ae9cb0bda733eec1248e56baf4fc5d89304db1e2e7",
+    "docs/operations/H-009/live/ui/browser-initial-wait-correction.json": "62db7e503e5280e3a749ff8b7d7fd95a173775c576b70e4f7ca0f3c299946103",
+    "docs/operations/H-009/live/ui/browser-receipt.json": "1727b55f4b9a4fdff28c1632d4c561fdd68c3d31742f142b3b76dbc8e9ea42f8",
+    "docs/operations/H-009/live/ui/evidence-validation.json": "ba36b82b2a90c44f66f73c2a1f46b879b1235785e18f78b13ce50462f1e1cf25",
+    "docs/operations/H-009/live/ui/live-ui-db.png": "50a2731c6cda80004ea33b5f6a3e385b10db27ee22c9de673136ecac8668d041",
+    "docs/operations/H-009/live/ui/live-ui-failure.jsonl": "2f3bd5932e1edd23f3afa95927f184dfe5e590018c69f78110c950632d879627",
+    "docs/operations/H-009/live/ui/live-ui-failure.png": "82488e9628e45893c076bb6c04fc2c1e5ab9417636c5982a82b6887d55a7e060",
+    "docs/operations/H-009/live/ui/live-ui-sql.png": "92c5014a729a420b8831c4fe67e4924c6f826e00bfe720f6cbaf17ad21f7a6a0",
+    "docs/operations/H-009/live/ui/live-ui-success.jsonl": "2b3a6717a20de9bf1ca034e07cc23ab8d4e00a3f73748c1fe04aa388d14e72c0",
+    "docs/operations/H-009/live/ui/live-ui-success.png": "332d704e1e79cb95ade00de476630ca5829357441dfd31a472dd423e27c2f591",
+    "docs/operations/H-009/live/ui/live-ui-trace.png": "136bb6236a548a121023dc86787983177e2af259d61e216e57f5575df8adcde6",
+    "docs/operations/H-009/live/ui/success-visible-body.txt": "35c69b410f84ff4ff9e0e028ce42b449017af76ac8e151280e21c3738d2b412a",
+    "docs/operations/H-009/postcheckpoint-goal-receipt.json": "0dc285c784bc06bde3042ad3abc2fa592f3a85db5e8b232da9311f4ac9938d3e",
+    "docs/operations/H-009/prompt-coverage.json": "ed7b5ce4bd986c57d00c46cb7b8172ba2d48173df5990e6db4788ee9fb799d9e",
+    "docs/operations/H-009/regression-receipt.json": "74182e06b1bbd6bfb05d776119d93dab9cc093b90253b67b567c6c94c3459e00",
+    "docs/operations/H-009/reviews/architecture-review-receipt.json": "42b940e63d5977445a750a2ecab43737ff8d62d4b8e505f77a451069b5fa4784",
+    "docs/operations/H-009/reviews/code-review-receipt.json": "cbdde440f06246739b9d413fdbd06214695269814a44607efdff564efc7e0e2b",
+    "docs/operations/H-009/root-verification-receipt.json": "b48acd06d7b86e66dac9e2e4ba4c9d9b9695e6c205caf0cb7edd29bd5f815cc8",
+    "docs/operations/H-009/versions.json": "47135aef50df2808c44fbf45e5c927124618a8281b9f3b3f402c25973f6250d7",
+    "docs/operations/H-011/baseline.json": "6ef9542e3cfd051db76fdd388deff339189ce0c31bbbae46242f6966d94eb435",
+    "docs/operations/H-011/checkpoint-receipt.json": "5bd37c31d8a3f14bcd685d52516f283b943d0c70558f04dbc3aa9f404a67b0bd",
+    "docs/operations/H-011/cleaner-report.md": "1ee19be5135b9a0ad59d01dc60be7e8265f794e8ad54007ad99b58583c2fedd9",
+    "docs/operations/H-011/delegation-coverage.json": "fa3e7c2a12560d7909912f3d5f9a57fa0650c324bf726c93f16125d5d3bfc7ba",
+    "docs/operations/H-011/frozen-oracle.json": "3cd9055abc7f9dc518ab6f710bde36e77dd5fda6421e96eceecf5532602120c0",
+    "docs/operations/H-011/oracle-check-source.txt": "5cd77b23dacdeb2816842d79a56859b68ae06d606a0c245c8ccec0082be96e5c",
+    "docs/operations/H-011/oracle-validation.json": "05add91599f81aa76f65c9d5ee23d2c0610dc5a6a00220aad693f6ee2babe700",
+    "docs/operations/H-011/preparation-validation.json": "8ae2ebefafe28dc489b20d45256d56bd8b77e73b8be20f8afc4f10d1f3c9a581",
+    "docs/operations/H-011/prompt-receipt.json": "f1edcb0dd85902d1e37cf1c495f35a18f285f5e29de3c55a43cfccfd888b0b31",
+    "docs/operations/H-011/readiness.json": "da4a4bb61b0b602710f896bf5b63090bfffe402e2dcba2a0ce253fc91bfef811",
+    "docs/operations/H-011/reviews/architect.md": "357f6f80bb5b21f3c44220d4b8b42c1bade754301125db7290eefa0e30c50407",
+    "docs/operations/H-011/reviews/code-reviewer.md": "0f3c50f4874e45a0a2e3b02c6a1bb6e5135a7d577636f6e41e42593d06ed1388",
+    "docs/reports/H-011-I2-offline.md": "b2cccd54cc4655c4a52b17b4d602d902aa78e1d4611e4a06acc974c4befb2968"
+  },
+  "oracle": "157 stdlib/temporary-SQLite checks passed; not product tests or NL accuracy",
+  "checks": [
+    {
+      "command": "python docs/operations/H-013/independent_oracle.py --freeze",
+      "exit": 127,
+      "reason": "python executable absent; used python3 next, no freeze occurred"
+    },
+    {
+      "command": "python3 docs/operations/H-013/independent_oracle.py --freeze",
+      "exit": 0
+    },
+    {
+      "command": "python3 docs/operations/H-013/independent_oracle.py",
+      "exit": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit": 0
+    },
+    {
+      "command": "git add -- [24 explicit CP-A paths]",
+      "exit": 128,
+      "reason": "sandbox .git read-only"
+    },
+    {
+      "command": "git add -- [same explicit paths] (supported specific escalation)",
+      "exit": 0
+    },
+    {
+      "command": "staged privacy scan initial",
+      "exit": 1,
+      "reason": "substring sk- false positive in task-projection filename; tightened to word boundary; private vault prefix in reference-child task found and redacted before commit"
+    },
+    {
+      "command": "git commit (ordinary sandbox)",
+      "exit": 128,
+      "reason": ".git/index.lock EROFS; no commit created; supported specific escalation required"
+    }
+  ],
+  "app_tests": "not-run CP-A no product code changed; required at later CPs",
+  "privacy": "own new docs/task safe projection reviewed; no credential values, private exports, runtime state/locks/ledger staged",
+  "push": "not-run"
+}

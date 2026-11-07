@@ -406,3 +406,7 @@ UniversityDB I1, SQL-промпт v1. Генерируй SQLite SQL, а не о�
 ## H-011 I2-offline — actual received task
 
 [Russian original safe projection](omx/H-011-actual-prompt.txt); [provenance and omissions](../operations/H-011/prompt-receipt.json). Not the read-context H-package; no live request.
+
+## H-013 I2 + I3 offline — actual Russian task
+
+[Preserved actual received Russian prompt](omx/H-013-actual-prompt.txt), [root provenance/omissions](../operations/H-013/prompt-receipt.json), [actual CP-A delegation](../operations/H-013/cp-a-task.txt). H-013/H-011/H-012 handoff packages are read context, not replacements for this actual task. This navigation adds no translation or transcript-completeness claim. Existing historical RU prompt versions above remain unchanged.

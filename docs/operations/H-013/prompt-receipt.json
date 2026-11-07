@@ -1,0 +1,18 @@
+{
+  "method": "actual installed omx session export; selected received user entry, not starter reconstruction",
+  "export_sha256": "878601b00009f34cf6a55717c193f5c5d1f1f1a2bd458c83f5e7128ac4c7cbb1",
+  "entry_index": 1,
+  "line_number": 10,
+  "timestamp": "2026-11-07T20:37:05.601Z",
+  "received_text_sha256": "4162768e8e0fefabb98b44cd215b441f20af9d0c1909377bb41e4f7fc164a212",
+  "saved_sha256": "f7fdcead0327ae6bc5b3c5cc4ab6612534cd9959b27c2fd9106494f6470d3d56",
+  "redactions": [
+    "private vault prefix only"
+  ],
+  "normalization": "one terminal LF",
+  "H013": "read context; NOT actual received prompt",
+  "entries_exported": 5,
+  "skipped_records": 0,
+  "coverage": "selected root user task only; no full system/developer/tools/reasoning/child transcripts or future final",
+  "session_identity": "verified locally against launcher/native metadata; private IDs omitted"
+}

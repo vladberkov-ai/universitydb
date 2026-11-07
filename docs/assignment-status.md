@@ -34,3 +34,6 @@ that every assignment requirement has passed.
 This audit added reviewer-facing README, database guide, manual E2E, linked examples,
 an offline fixture and a prompt catalogue. No application behavior or live budget changed.
 Full private chat/system/developer/reasoning history is not published or reconstructed.
+
+## H-013 — current authorized work, not an implementation verdict
+The current task combines I2+I3 offline: all University classes/filters, actual checkpoint clarification/bounded errors, typed step contracts, actual-result-dependent M1 and early Library on the same core, full trace/UI/tests/docs. See [whole brief](plans/I2-I3-offline-brief.md), [contract/full R/U mapping](plans/I2-I3-offline-contract.md), [ADR012](adr/ADR-OMX-012-I2-I3-offline-contracts.md). CP-A–E are internal verified local checkpoints, not further owner approvals. Previous I1 audit and H-011 partial/history are preserved, not relabeled complete. Offline scripted-provider results do not establish real-model accuracy; current implementation proof remains pending. I4+verification-I5, publication and defense are later blocks, not offline completion conditions. Live/count/credentials/spending changes/push prohibited. R10 production explanation remains maintained with explicit risks and implemented/future separation; final R15/owner-defense obligations remain open.
