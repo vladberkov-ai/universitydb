@@ -33,8 +33,9 @@ Original cleaned candidate (now superseded by blocking review):
 **`976e2207b4f8d553c96067380df2ef5c128d7dd6`**.
 Its [37 source/test/resource hashes](../operations/H-013/cp-e-candidate-source.json)
 are frozen. Its root full pipeline passed383tests131.61s plus static checks, but four independent
-blocking findings prevent acceptance. Fixed-candidate full/browser/review evidence
-remains pending. Later documentation-only commits must not be
+blocking findings prevented acceptance at that historical cutoff. The pending fixed-
+candidate full/browser/review evidence was subsequently completed on f4b775c above.
+Later documentation-only commits must not be
 misrepresented as newly tested product source or self-referential receipt SHAs.
 
 ## Implemented capabilities and proof boundaries
@@ -152,7 +153,7 @@ replacement for final independent review.
 ## Independent reviews and final gates
 Actual independent round1 code-reviewer and architect inspected the whole
 brief/candidate/evidence; their blockers were not waived by the passing test count.
-Fresh repaired-candidate re-review remains pending.
+Fresh repaired-candidate re-review is received: independent APPROVE/CLEAR, as recorded below.
 Round1 code-reviewer actual **REQUEST CHANGES**: accepted-ID eviction allows
 reexecution; execution-time DB lock triggers SQL repair; owned initial replay error
 loses trace identity/events; TTL permits exact expiry equality. Architect independently
@@ -193,8 +194,9 @@ Saved, locally committed, pushed and public are distinct. Final read-only remote
 observation:5c8669ffb2e629ea00878734385fff99b53d7adc, unchanged from preparation.
 Sandbox DNS exit128 preceded supported specific-permission retry exit0; no fetch
 or remote configuration change. [Receipt](../operations/H-013/final-preservation-remote.json).
-**Push not-run.** No remote configuration changed. Final docs/late lifecycle receipt
-commit will be separate, never amend/self-SHA. Production explanation and all R/U
+**Push not-run.** No remote configuration changed. Final docs and late lifecycle receipt
+were committed separately; actual late closeout commit:
+`41df2a628491768d813d46911370eba590e9e06e`, never amend/self-SHA. Production explanation and all R/U
 obligations remain mapped; final publication/real-model quality/clean release and
 owner understanding/defense are later blocks, not implicitly completed here.
 
