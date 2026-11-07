@@ -149,8 +149,8 @@ def test_persistent_spending_shared_across_instances_and_failures(tmp_path):
     def budget():
         return Spending(ledger, "approved-test", Decimal(".028"), Decimal(1), Decimal(1))
 
-    assert budget().reserve() == "0.014"
-    assert budget().reserve() == "0.014"
+    assert budget().reserve().amount == "0.014"
+    assert budget().reserve().amount == "0.014"
     with pytest.raises(Failure) as error:
         budget().reserve()
     assert error.value.code == "BUDGET_EXCEEDED"

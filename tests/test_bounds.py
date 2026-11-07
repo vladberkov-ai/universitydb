@@ -72,9 +72,117 @@ def test_budget_actual_usage_reconciled_without_releasing_hold(tmp_path):
 
     ledger = tmp_path / "spend.json"
     budget = Spending(ledger, "test", Decimal(".1"), Decimal(1), Decimal(2))
-    budget.reserve()
-    budget.record_usage(100, 50)
+    reservation = budget.reserve()
+    budget.record_usage(reservation.attempt_id, 100, 50)
     record = json.loads(ledger.read_text())
     assert record["reserved_usd"] == ".016" or Decimal(record["reserved_usd"]) == Decimal(".016")
     assert Decimal(record["observed_usd"]) == Decimal(".0002")
     assert record["input_tokens"] == 100 and record["output_tokens"] == 50
+
+
+def test_graph_core_has_no_university_table_identifiers():
+    from pathlib import Path
+
+    core = Path("src/universitydb/agent.py").read_text()
+    for name in (
+        "Students",
+        "Teachers",
+        "Courses",
+        "Semesters",
+        "Offerings",
+        "Enrollments",
+        "grade_units",
+    ):
+        assert name not in core
+
+
+def test_actual_usage_overrun_durably_stops_next_reservation(tmp_path):
+    budget = Spending(tmp_path / "spend.json", "test", Decimal(".03"), Decimal(1), Decimal(1))
+    reservation = budget.reserve()
+    with pytest.raises(Failure):
+        budget.record_usage(reservation.attempt_id, 30000, 1000)
+    with pytest.raises(Failure):
+        budget.reserve()
+
+
+def test_existing_empty_ledger_fails_closed(tmp_path):
+    ledger = tmp_path / "spend.json"
+    ledger.touch()
+    budget = Spending(ledger, "test", Decimal(".03"), Decimal(1), Decimal(1))
+    with pytest.raises(Failure):
+        budget.reserve()
+
+
+def test_effective_holds_preserve_unknown_attempt_plus_positive_actual_excess(tmp_path):
+    ledger = tmp_path / "spend.json"
+    budget = Spending(ledger, "test", Decimal(".05"), Decimal(1), Decimal(1))
+    known = budget.reserve()
+    budget.reserve()  # Second attempt remains uncertain, not free.
+    budget.record_usage(known.attempt_id, 30000, 1000)
+    with pytest.raises(Failure):
+        budget.reserve()
+    import json
+
+    record = json.loads(ledger.read_text())
+    assert Decimal(record["effective_usd"]) == Decimal(".045")
+    assert Decimal(record["reserved_usd"]) == Decimal(".028")
+    assert Decimal(record["observed_usd"]) == Decimal(".031")
+
+
+@pytest.mark.parametrize("contents", ["", "not-json", "{}", "[]"])
+def test_existing_bad_ledger_never_resets_to_zero(tmp_path, contents):
+    ledger = tmp_path / "spend.json"
+    ledger.write_text(contents)
+    budget = Spending(ledger, "test", Decimal(".05"), Decimal(1), Decimal(1))
+    with pytest.raises(Failure):
+        budget.reserve()
+    assert ledger.read_text() == contents
+
+
+def test_ledger_deleted_after_use_and_approval_profile_drift_fail_closed(tmp_path):
+    ledger = tmp_path / "spend.json"
+    budget = Spending(ledger, "test", Decimal(".05"), Decimal(1), Decimal(1))
+    budget.reserve()
+    with pytest.raises(Failure):
+        Spending(ledger, "test", Decimal(".05"), Decimal(".1"), Decimal(1)).reserve()
+    ledger.unlink()
+    with pytest.raises(Failure):
+        budget.reserve()
+
+
+def test_atomic_replace_failure_preserves_old_ledger_and_lock(tmp_path):
+    from unittest.mock import patch
+
+    ledger = tmp_path / "spend.json"
+    budget = Spending(ledger, "test", Decimal(".05"), Decimal(1), Decimal(1))
+    budget.reserve()
+    before = ledger.read_bytes()
+    inode = (tmp_path / "spend.json.lock").stat().st_ino
+    with (
+        patch("universitydb.llm.os.replace", side_effect=OSError("test failure")),
+        pytest.raises(Failure),
+    ):
+        budget.reserve()
+    assert ledger.read_bytes() == before
+    assert (tmp_path / "spend.json.lock").stat().st_ino == inode
+    assert sorted(p.name for p in tmp_path.iterdir()) == ["spend.json", "spend.json.lock"]
+
+
+def test_concurrent_process_reservations_share_stable_lock(tmp_path):
+    import subprocess
+    import sys
+
+    ledger = tmp_path / "spend.json"
+    script = (
+        "from universitydb.llm import Spending;from universitydb.contracts import Failure;"
+        "from pathlib import Path;from decimal import Decimal;"
+        f'b=Spending(Path({str(ledger)!r}),"test",Decimal(".028"),Decimal("1"),Decimal("1"));'
+        '\ntry: b.reserve();print("ok")\nexcept Failure: print("blocked")'
+    )
+    workers = [
+        subprocess.Popen([sys.executable, "-c", script], stdout=subprocess.PIPE, text=True)
+        for _ in range(6)
+    ]
+    outcomes = [worker.communicate(timeout=10)[0].strip() for worker in workers]
+    assert outcomes.count("ok") == 2 and outcomes.count("blocked") == 4
+    assert all(worker.returncode == 0 for worker in workers)

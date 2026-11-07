@@ -1,0 +1,13 @@
+{
+  "scope": "changed Python source/tests only",
+  "status": "pass",
+  "findings": [],
+  "patterns": [
+    "eval/exec",
+    "pickle deserialization",
+    "shell=True",
+    "verify=False",
+    "credential-like token"
+  ],
+  "limitations": "targeted static patterns, not a vulnerability-database audit or comprehensive formal security proof"
+}

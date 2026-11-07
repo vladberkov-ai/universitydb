@@ -1,0 +1,12 @@
+# H007 supported workflow / goal evidence cutoff
+
+Date2026-11-07. Source: root's actual supported tool results delivered via native collaboration; performer persisted this bounded summary, not a reconstructed raw state/transcript. No IDs/tracker/state edited by performer.
+
+- `omx ultragoal create-goals` initially refused49inferred stories; supported explicit four-story decomposition then succeeded. `complete-goals` returned real active-agent handoff; root native get/create_goal succeeded. One aggregate native objective, no competing leader or clearing another goal.
+- G001/G002 were checkpointed COMPLETE through supported CLI with fresh matching active native snapshots after their verified local commits. G003 cleanup/review/verification is done, waiting this final local partial commit before root's supported checkpoint. G004 live story remains PENDING/not-started with supported durable ledger annotation describing exact model/access/key/cap blocker; no fabricated native blocked/completed status.
+- Initial review findings were retained by supported `steer --kind annotate_ledger` after `record-review-blockers` refused because G003 was not the sole unresolved story while G004 remained pending. The refusal was not bypassed by manual artifact mutation. Supported annotation later retained the resolved findings/re-review and live blocker.
+- Separate `omx state write` phase transaction failed canonical binding; supported escalation was rejected by auto-review. No retry, manual selector/pointer/ID change, repair, update or synthetic activation. Phase-state persistence remains degraded/unverified. Working Ultragoal ledger/goal APIs do not certify phase hooks or old Advisory lifecycle.
+- Root fresh configured code-review gates returned[]; independent built-in lanes actually ran and re-reviewed. Combined COMMENT (offline code APPROVE, architecture WATCH), not strict clean quality-gate evidence.
+- Native aggregate remains ACTIVE/INCOMPLETE; update_goal complete and final strict completion were not called. No unsupported fake blocked status, no broad cancel/reset/clear, no H006 Advisory action. Missing live provider+mutation+live UI evidence prevents I1 completion.
+
+After final code/evidence commit, root will collect fresh supported goal/checkpoint/status. That postcommit cutoff belongs in a separate receipt/report, not falsely in this earlier referenced commit. Saved/committed/pushed/public remain distinct; remote/push prohibited.

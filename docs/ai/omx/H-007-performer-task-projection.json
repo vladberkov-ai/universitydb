@@ -1,0 +1,49 @@
+{
+  "kind": "actual received task self-projection, not a full native transcript",
+  "lane": "/root/i1_performer",
+  "role": "executor",
+  "entries": [
+    {
+      "source": "native NEW_TASK from /root",
+      "stage": "G001",
+      "text": "You own H007 performer artifacts: new docs/adr/ADR-OMX-008-I1-scoped-implementation.md, H007 operations/reports/prompt records, AGENTS current-boundary appendix, later src/resources/tests/pyproject/lock/README (not old B files). Not alone; do not revert others. No recursive delegation. Main is now Conductor from supported ultragoal handoff, so you do performer writes. FIRST ONLY finish G001 preparation and docs checkpoint, then report and wait before code. Read H007 handoff entire and all manifest inputs fully (parent read many but truncated outputs mean need remaining verification). Hash results 30/30 in /tmp/H-007-input-hashes.json; handoff SHA 0ff09bb7638889aa742f75070ece675573391187b5568b2be010b59fe22b5191. Baseline HEAD B7d8348ade98cd75b5987cb47e1de40535cebb289 parent A8931d832d49311ac0d63c3a7a359b4293058da89; only original untracked locks and H006 B commit receipt preserve. Need PDF 4 pages actual read: python3 available 3.12.3, no python alias or pdftotext/pdfinfo; uv exists. Use available safe temporary reader dependency if needed, no product code yet. Save baseline hashes ALL tracked originals for final preservation comparison; baseline status/root/remotes. Record installed OMX0.21.46 identity from /home/dev/.omx/repairs/20261107-lifecycle/patch-manifest.json plus locate other installed patch manifests and verify actual matching patched bytes, launcher hash. Supported doctor has17pass3fail EPERM probes and stale-dead/bad CODEX_SESSION_ID. `omx state write` normal returns error canonical mode binding lease helper exited(0); supported escalation REJECTED auto-review due failed binding/manual-state risk. DO NOT retry/bypass or mutate IDs/pointers/state; record blocked phase only. `omx ultragoal create-goals` first refused49 implicit goals; explicit4 --goal stories succeeded; complete-goals succeeded and native get/create_goal succeeded. Runtime phase remains unverified, NOT lifecycle completion proof. No Advisory operations. Root owns only ultragoal CLI/goal tools. You may write docs and specific local Git checkpoint through normal supported permissions; .git likely ro needs your own explicit escalation, no bypasses. Before code commit scoped reversible S6 choices/rationale/options/consequences/verification, not accepting ADR003-007. Product dependencies authorized H007, Python3.12 vs proposed3.13 scoped rationale. Model/access/cap approval absent and async question sent; zero live calls. Independent researcher verified official API references (message forthcoming); dependencies should not be installed until docs checkpoint except isolated PDF reader tool if needed. Capture actual user prompt through installed session export exact native session01a1b649-9f9b-7e32-8c71-138ac3328f7e private .omx/H007 source; sanitize selected actual messages, do not reconstruct transcript. Prompt coverage omissions explicit. Preserve all B evidence/receipt, include receipt in safe checkpoint if reviewed. Report docs commit SHA and validation; if Git blocked report precise blocker and do not start code until prerequisite resolved."
+    },
+    {
+      "source": "native follow-up from /root",
+      "stage": "G002",
+      "text": "G001 supported checkpoint COMPLETE succeeded with fresh matching active native snapshot; G002 complete-goals handoff now IN_PROGRESS and root get_goal active. Proceed only G002 S6 offline implementation, real LangGraph+DB+UI+prompt/SDK adapter+limits/safety/tests/install lock; zero live calls. After tests and small explicit code checkpoint report results; cleaner/final reviews follow G003. Main cannot write product artifacts in Conductor lane. If parser dependency needed H007 authorizes product deps, document narrow SQL AST safety rationale in scoped ADR followup (not speculative compiler). Follow official APIs, dependencies compat check real. Don't wait model/budget. No I2–I5."
+    },
+    {
+      "source": "native follow-up from /root",
+      "stage": "G002 bounds correction",
+      "text": "Please fix provider hard wall bounds before freeze/review: SDK numeric timeout isn't total deadline; H007 requires bounded implemented path incl60s whole active. Minimal separate request subprocess watchdog killed/reaped on min(15s,remaining run deadline), reserve cost in parent before dispatch and retain uncertain costs, no secrets/raw diagnostics IPC/log. Avoid noncancelable thread timeout. Add regression stalled SDK (offline process fake) verifies termination/no lingering child, graph total budget and no answer. Record scoped boundary rationale addendum. Then fresh suite/code checkpoint. Browser offline evidence excellent but keep live not-run."
+    },
+    {
+      "source": "native follow-up from /root",
+      "stage": "G003",
+      "text": "G002 supported checkpoint COMPLETE and G003 handoff IN_PROGRESS succeeded; root native goal active. Now run ai-slop-cleaner bounded helper as skill: write cleanup plan before edits,64test behavior lock, fallback inventory/classification, one smell pass at time prefer deletion, no broaden architecture; writer/reviewer separation final reviewers independent. Save new cleaner evidence, rerun full offline/lint/type/compile; then freeze code and notify main for parallel final fresh-review lanes. No live. Need actual final deps receipt (lock verified). Main will collect goal JSON/status via APIs and ledger (not product edits), final source/evidence checkpoint performer after review."
+    },
+    {
+      "source": "native follow-up from /root",
+      "stage": "final evidence draft",
+      "text": "Two fresh clean-context independent final reviewer and architect launched in parallel; scope frozen latest source65tests. Main root no self-approval. Please prepare final report/prompt coverage/evidence extraction DRAFT only while they read; no source edits until findings. Need final actual prompts exports safely, final report H007, tests risk/invariant matrix source refs. We'll record root goal snapshots/status via supported CLI after reviews; final report should retain native aggregate active incomplete if live-blocked. No final strict completion while no model/cap."
+    },
+    {
+      "source": "native follow-up from /root",
+      "stage": "G003 independent review correction",
+      "text": "Independent reviewer confirmed cap defects (must fix before clean review): llm.py58 reserved_usd only guard ignores observed actual above reserve; reproduction cap.03 reserve.014 record_usage(30000,1000)=.031 then next.014reserve allowed. Existing empty ledger treated as first-use zero (truncate/crash resets spend). Wait formal findings but begin REGRESSION tests first then minimal boundary fixes. Need failclosed empty/malformed/existing ledger, atomic durable replace with stable separate locking (no unsafe lock on replaced inode); retain uncertain holds and account actual overrun across all submissions. Suggested effective hold perattempt max(reserved,actual), accumulate positive actual excess instead of max(total observed,total reserved) which can undercount failed uncertain holds. Pin profile/rates ledger if needed, no fallback; observe actual cap exceeded -> durable stop/no next dispatch. Source freeze released for these bounded fixes; don't change unrelated code. Root attempted required record-review-blockers, CLI refused because G003 not sole unresolved story (G004pending); supported steer annotate_ledger accepted actual blockers; G003 stays inprogress, no false completion."
+    },
+    {
+      "source": "native follow-up from /root",
+      "stage": "final partial checkpoint",
+      "text": "Architect final re-review WATCH; originalBLOCKresolved, no remainingarchitecturalblocker offline boundary. Independent22/22source+8/8evidencehashes and Ruff/diffpass; read75testreceipt not fullrerun. Verified perattempt effectiveliability .031known+.014uncertain=.045 then .014new exceeds.05cap. WATCH1resolver keywordIDs notfullintent/SQLsafetynotNL; WATCH2parentlocalI/O responsiveness, documented. Combined skill verdict COMMENT (codeAPPROVE+architectWATCH), NOT merged clean strictgate/liveacceptance. Configuredqualitygates command fresh returned[] (no customgates). Persist attributed finalreviewresults+coverage with limitations; update report/invariantaudit75/tests/fixes/residuals and finalsourcehashes. Final strictgate deferred: missing model/key/account/cap and liveUI/mutation evidence; nativeupdatecomplete NOTcalled. Prepare final verified explicit local partial code/evidence commit now after docs/privacy/links/preservation/stagedcheck. Root goalG003 checkpoint only after that commit; G004 remainspending with durableliveblockerannotation (nativeactivecannotfakeblocked). Save postcommitreceipt separately; report currentcutoff accurately (G003 verificationdone/pendingfinalcheckpoint, finalfreshstatusseparatereceipt)."
+    }
+  ],
+  "coverage": {
+    "retained": "stage-defining actual received task messages copied verbatim from native collaboration context",
+    "omitted": "minor diagnostic/research/coordination messages, inherited private context, system/developer/reasoning, all tool events and subsequent final response; these selected tasks are not full child coverage",
+    "default_export": "Installed omx session export for the performer session retained inherited root user task/context only; it did not include native collaboration task/follow-up messages. No missing encrypted parent arguments were reconstructed.",
+    "redactions": "none in retained engineering task messages",
+    "plaintext_parent_tool_equality": "not-proven; received task self-projection only"
+  }
+}

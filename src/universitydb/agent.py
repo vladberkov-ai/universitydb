@@ -28,11 +28,8 @@ class State(TypedDict, total=False):
     result: dict[str, Any]
     answer: dict[str, Any]
     error: dict[str, Any]
-    repairs: int
     repair_error: dict[str, str]
     repair_needed: bool
-    llm_calls: int
-    sql_attempts: int
 
 
 class Agent:
@@ -256,6 +253,7 @@ class Agent:
         self.calls = self.sql_attempts = 0
         self.retried = False
         self.repaired = False
+        answer: dict[str, Any] | None = None
         try:
             self.trace.emit(
                 "input",
@@ -277,17 +275,7 @@ class Agent:
                     "sql_attempts": self.sql_attempts,
                 },
             )
-            return {
-                "version": "1",
-                "run_id": run_id,
-                "trace_id": run_id,
-                "status": "error" if error else "ok",
-                "answer": None if error else state["answer"],
-                "error": error,
-                "clarification": None,
-                "events": self.trace.events,
-                "execution_profile": self.provider.profile,
-            }
+            answer = None if error else state["answer"]
         except (Failure, ValidationError, OSError, ValueError, KeyError, TypeError) as exc:
             error = {
                 "code": exc.code if isinstance(exc, Failure) else "INTERNAL_CONTRACT",
@@ -308,14 +296,14 @@ class Agent:
                         "failed_node": "trace",
                         "retryable": False,
                     }
-            return {
-                "version": "1",
-                "run_id": run_id,
-                "trace_id": run_id,
-                "status": "error",
-                "answer": None,
-                "error": error,
-                "clarification": None,
-                "events": self.trace.events,
-                "execution_profile": self.provider.profile,
-            }
+        return {
+            "version": "1",
+            "run_id": run_id,
+            "trace_id": run_id,
+            "status": "error" if error else "ok",
+            "answer": answer,
+            "error": error,
+            "clarification": None,
+            "events": self.trace.events,
+            "execution_profile": self.provider.profile,
+        }

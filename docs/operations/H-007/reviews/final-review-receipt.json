@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-07",
+  "scope": "H007 corrected offline I1 source/tests/docs; not live acceptance",
+  "source": "actual independent native results received by root and summarized to performer; performer persisted attributed bounded projections",
+  "independent_lanes": {
+    "code-reviewer": {
+      "initial": "REQUEST CHANGES: 2 HIGH spending defects",
+      "final": "APPROVE for OFFLINE PARTIAL only; zero unresolved severity findings",
+      "evidence": "75 independently passed13.12s; lint/format/mypy10files/compile/diff and direct defect reproductions",
+      "projection": "final-code-review.md"
+    },
+    "architect": {
+      "initial": "BLOCK known-overrun accounting",
+      "final": "WATCH; original block resolved, no remaining offline architectural blocker",
+      "evidence": "22source/8browserhashes, Ruff/diff pass;75test receipt read, not full independent rerun",
+      "watch": ["limited intent/identity resolver, not general NL correctness", "responsive trusted parent local I/O assumption, not all-failure hard60s guarantee"],
+      "projection": "final-architecture-review.md"
+    }
+  },
+  "configured_gates": {
+    "command": "omx quality-gates list --stage code-review --json",
+    "observer": "root actual supported CLI result",
+    "gates": []
+  },
+  "combined_skill_verdict": "COMMENT (code APPROVE plus architect WATCH)",
+  "strict_final_quality_gate": "DEFERRED; no CLEAR/strict-clean/live completion claim",
+  "I1": "NOT COMPLETE; no specific model/account/key access and total cost cap approval, no live S6+mutation/live UI evidence",
+  "paid_calls": 0,
+  "native_update_goal_complete": "not called",
+  "coverage": "bounded received-result summaries; selected task self-projections separate, no full transcript/all-tools/private-context or plaintext encrypted-parent equality claim"
+}

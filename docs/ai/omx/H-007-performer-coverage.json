@@ -1,0 +1,29 @@
+{
+  "native_session": "01a1b64e-3339-7851-b5e8-2941527f6da3",
+  "source_sha256": "ef45675e89f4b3e5556e2fa88e21c09f1b4996172c0e327cc7681792ed5c3c61",
+  "exporter": "installed omx session export exact session JSON, without include-tools",
+  "actual_export_entries": [
+    {
+      "line": 5,
+      "role": "user",
+      "utf8_sha256": "c3925386282553757a0b392306bd4e3153e565cfa678bdc88753128818586b1e",
+      "omitted_reason": "inherited root task/instructions already covered or private context; no child delegation message exported"
+    },
+    {
+      "line": 8,
+      "role": "user",
+      "utf8_sha256": "007f1080f391386c4c6e500a29ceec6f45da1d8363b4e33e8727fa5adc84fa66",
+      "omitted_reason": "inherited root task/instructions already covered or private context; no child delegation message exported"
+    },
+    {
+      "line": 10,
+      "role": "user",
+      "utf8_sha256": "2f5450f9388c5cb8683b476bbb5c565ebe2ec2792a6f547a9dbe73cf8580092c",
+      "omitted_reason": "inherited root task/instructions already covered or private context; no child delegation message exported"
+    }
+  ],
+  "self_projection_file": "H-007-performer-task-projection.json",
+  "self_projection_sha256": "627973e53a87604aa4384c7bc1b17f8c71c1666fa449fce3aa6a59ff47da96b4",
+  "coverage": "selected actual received collaboration tasks, not full child transcript or plaintext parent argument equality; private raw export not published",
+  "later_review_fixes": "Selected later actual received correction/final-checkpoint instructions appended as self-projection; earlier default-export cutoff remains unchanged; minor coordination messages omitted."
+}

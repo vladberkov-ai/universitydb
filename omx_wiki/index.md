@@ -20,3 +20,5 @@ This is OMX's own memory, not a copy or replacement of the authoritative Obsidia
 - [Preparation and capability limits](../docs/operations/H-007/preparation.md)
 - [Actual prompt coverage](../docs/ai/omx/H-007-prompt-coverage.json)
 Historical H005/H006 entries above remain provenance; no closed Advisory is repeated. I1 is not complete at the preparation checkpoint; live model/access/cap gates remain open.
+
+- [H007 I1 offline partial report](../docs/reports/H-007-first-vertical-slice.md) —75offline tests and actual injected browser evidence; independent code APPROVE offline/architect WATCH, combined COMMENT; live gate missing, no I2–I5 or publication.

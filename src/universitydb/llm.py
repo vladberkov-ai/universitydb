@@ -6,9 +6,13 @@ import json
 import os
 import subprocess
 import sys
+import tempfile
+import uuid
+from collections.abc import Iterator
+from contextlib import contextmanager
 from decimal import Decimal
 from pathlib import Path
-from typing import Any, Protocol, TypeVar
+from typing import Any, NamedTuple, Protocol, TypeVar
 
 from pydantic import BaseModel, ValidationError
 
@@ -30,8 +34,13 @@ class Provider(Protocol):
     ) -> tuple[T, dict[str, Any]]: ...
 
 
+class Reservation(NamedTuple):
+    attempt_id: str
+    amount: str
+
+
 class Spending:
-    """All UI submissions share one local ledger. Ambiguous failed charges stay reserved."""
+    """Durable per-attempt effective holds, serialized by a stable separate lock inode."""
 
     def __init__(
         self, path: Path, model: str, cap: Decimal, input_rate: Decimal, output_rate: Decimal
@@ -42,44 +51,141 @@ class Spending:
             )
         self.path, self.model, self.cap = path, model, cap
         self.input_rate, self.output_rate = input_rate, output_rate
+        self.profile = {
+            "version": 1,
+            "model": model,
+            "cap_usd": str(cap),
+            "input_rate": str(input_rate),
+            "output_rate": str(output_rate),
+        }
 
-    def reserve(self) -> str:
-        amount = (12000 * self.input_rate + 2000 * self.output_rate) / 1000000
+    def _totals(self, attempts: list[dict[str, Any]]) -> dict[str, Any]:
+        reserved = observed = effective = Decimal(0)
+        input_tokens = output_tokens = 0
+        ids: set[str] = set()
+        for entry in attempts:
+            if set(entry) != {
+                "id",
+                "reserved_usd",
+                "observed_usd",
+                "input_tokens",
+                "output_tokens",
+            }:
+                raise ValueError("invalid attempt fields")
+            if not isinstance(entry["id"], str) or not entry["id"] or entry["id"] in ids:
+                raise ValueError("invalid attempt identity")
+            ids.add(entry["id"])
+            held = Decimal(entry["reserved_usd"])
+            if not held.is_finite() or held <= 0:
+                raise ValueError("invalid reservation")
+            actual = Decimal(0)
+            if entry["observed_usd"] is not None:
+                values = [entry["input_tokens"], entry["output_tokens"]]
+                if any(type(v) is not int or v < 0 for v in values):
+                    raise ValueError("invalid usage")
+                actual = (values[0] * self.input_rate + values[1] * self.output_rate) / 1000000
+                if str(actual) != entry["observed_usd"]:
+                    raise ValueError("usage accounting mismatch")
+                input_tokens += values[0]
+                output_tokens += values[1]
+            elif entry["input_tokens"] is not None or entry["output_tokens"] is not None:
+                raise ValueError("partial usage")
+            reserved += held
+            observed += actual
+            effective += max(held, actual)
+        return {
+            "reserved_usd": str(reserved),
+            "observed_usd": str(observed),
+            "effective_usd": str(effective),
+            "calls": len(attempts),
+            "input_tokens": input_tokens,
+            "output_tokens": output_tokens,
+        }
+
+    @contextmanager
+    def _transaction(self) -> Iterator[dict[str, Any]]:
         self.path.parent.mkdir(parents=True, exist_ok=True)
-        with self.path.open("a+", encoding="utf8") as stream:
-            fcntl.flock(stream, fcntl.LOCK_EX)
-            stream.seek(0)
-            text = stream.read()
-            record: dict[str, Any] = (
-                json.loads(text) if text else {"model": self.model, "reserved_usd": "0", "calls": 0}
-            )
-            if record["model"] != self.model:
-                raise Failure("PROVIDER_UNAVAILABLE", "Budget ledger belongs to another model.")
-            total = Decimal(record["reserved_usd"]) + amount
-            if total > self.cap:
-                raise Failure("BUDGET_EXCEEDED", "Projected total spend exceeds approved cap.")
-            record.update(reserved_usd=str(total), calls=record["calls"] + 1)
-            stream.seek(0)
-            stream.truncate()
-            json.dump(record, stream)
-            stream.flush()
-            os.fsync(stream.fileno())
-        return str(amount)
+        lock_path = self.path.with_name(self.path.name + ".lock")
+        lock_existed = lock_path.exists()
+        try:
+            with lock_path.open("a+") as lock:
+                fcntl.flock(lock, fcntl.LOCK_EX)
+                if self.path.exists():
+                    record = json.loads(self.path.read_text())
+                    if not isinstance(record, dict) or record.get("profile") != self.profile:
+                        raise ValueError("invalid or changed approval profile")
+                    attempts = record.get("attempts")
+                    if not isinstance(attempts, list):
+                        raise ValueError("invalid attempts")
+                    totals = self._totals(attempts)
+                    if set(record) != {"profile", "attempts", *totals} or any(
+                        record[k] != v for k, v in totals.items()
+                    ):
+                        raise ValueError("invalid ledger totals")
+                elif lock_existed:
+                    raise ValueError("existing ledger is missing")
+                else:
+                    record = {"profile": self.profile, "attempts": [], **self._totals([])}
+                yield record
+                record.update(self._totals(record["attempts"]))
+                temporary: str | None = None
+                try:
+                    with tempfile.NamedTemporaryFile(
+                        mode="w", dir=self.path.parent, prefix=self.path.name + ".", delete=False
+                    ) as stream:
+                        temporary = stream.name
+                        json.dump(record, stream)
+                        stream.flush()
+                        os.fsync(stream.fileno())
+                    os.replace(temporary, self.path)
+                    temporary = None
+                    directory = os.open(self.path.parent, os.O_RDONLY | os.O_DIRECTORY)
+                    try:
+                        os.fsync(directory)
+                    finally:
+                        os.close(directory)
+                finally:
+                    if temporary is not None:
+                        Path(temporary).unlink(missing_ok=True)
+        except (OSError, ValueError, TypeError, KeyError, ArithmeticError) as exc:
+            raise Failure(
+                "BUDGET_EXCEEDED", "Spending ledger unavailable or invalid; dispatch stopped."
+            ) from exc
 
-    def record_usage(self, input_tokens: int, output_tokens: int) -> None:
-        actual = (input_tokens * self.input_rate + output_tokens * self.output_rate) / 1000000
-        with self.path.open("r+", encoding="utf8") as stream:
-            fcntl.flock(stream, fcntl.LOCK_EX)
-            record = json.load(stream)
-            record["observed_usd"] = str(Decimal(record.get("observed_usd", "0")) + actual)
-            record["input_tokens"] = record.get("input_tokens", 0) + input_tokens
-            record["output_tokens"] = record.get("output_tokens", 0) + output_tokens
-            stream.seek(0)
-            stream.truncate()
-            json.dump(record, stream)
-            stream.flush()
-            os.fsync(stream.fileno())
-        # Conservative holds are intentionally not freed even after known success.
+    def reserve(self) -> Reservation:
+        amount = (12000 * self.input_rate + 2000 * self.output_rate) / 1000000
+        attempt_id = str(uuid.uuid4())
+        with self._transaction() as record:
+            if Decimal(record["effective_usd"]) + amount > self.cap:
+                raise Failure("BUDGET_EXCEEDED", "Projected effective spend exceeds approved cap.")
+            record["attempts"].append(
+                {
+                    "id": attempt_id,
+                    "reserved_usd": str(amount),
+                    "observed_usd": None,
+                    "input_tokens": None,
+                    "output_tokens": None,
+                }
+            )
+        return Reservation(attempt_id, str(amount))
+
+    def record_usage(self, attempt_id: str, input_tokens: int, output_tokens: int) -> None:
+        if any(type(v) is not int or v < 0 for v in (input_tokens, output_tokens)):
+            raise Failure("BUDGET_EXCEEDED", "Invalid usage; uncertain hold retained.")
+        exceeded = False
+        with self._transaction() as record:
+            matches = [a for a in record["attempts"] if a["id"] == attempt_id]
+            if len(matches) != 1 or matches[0]["observed_usd"] is not None:
+                raise Failure("BUDGET_EXCEEDED", "Usage does not match one unreconciled attempt.")
+            actual = (input_tokens * self.input_rate + output_tokens * self.output_rate) / 1000000
+            matches[0].update(
+                observed_usd=str(actual), input_tokens=input_tokens, output_tokens=output_tokens
+            )
+            exceeded = Decimal(self._totals(record["attempts"])["effective_usd"]) > self.cap
+        if exceeded:
+            raise Failure(
+                "BUDGET_EXCEEDED", "Observed effective spend exceeded cap; future dispatch stopped."
+            )
 
 
 class OpenAIProvider:
@@ -121,7 +227,8 @@ class OpenAIProvider:
         encoded = json.dumps(payload, ensure_ascii=False)
         if len((prompt + encoded).encode()) > 12000:
             raise Failure("RESOURCE_LIMIT", "Provider input exceeds byte gate.")
-        reserved = spending.reserve()
+        reservation = spending.reserve()
+        reserved = reservation.amount
         dispatch = {
             "requested_model": model,
             "prompt_sha256": hashlib.sha256(prompt.encode()).hexdigest(),
@@ -174,7 +281,12 @@ class OpenAIProvider:
             raise Failure(
                 "PROVIDER_INVALID_OUTPUT", "Provider worker response invalid.", details=dispatch
             ) from exc
-        spending.record_usage(usage["input_tokens"], usage["output_tokens"])
+        try:
+            spending.record_usage(
+                reservation.attempt_id, usage["input_tokens"], usage["output_tokens"]
+            )
+        except Failure as exc:
+            raise Failure(exc.code, exc.message, details={**dispatch, "usage": usage}) from exc
         if usage["input_tokens"] > 12000 or usage["output_tokens"] > 2000:
             raise Failure(
                 "BUDGET_EXCEEDED",
