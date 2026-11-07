@@ -1,6 +1,6 @@
 # H-014 v2 — offline readiness report
 
-**WIP — UI-repaired source983 frozen; final clean/browser and independent reviews pending.**
+**Offline verification PASS at exact98345ad; independent final verdicts and root native/strict closeout pending.**
 This is the bounded I4 + verification-I5 **offline** readiness task, not full live
 acceptance, publication or owner defense. No live generation/access/count calls,
 credential loading, monetary ledger/cap/hold changes, push or vault writes are
@@ -37,7 +37,9 @@ permitted. Accepted ADR-CHAT-006 semantics and Sol high/medium/medium are unchan
   serialized15targetedPASS6.00s, scoped static/mypy14PASS. Intermediate9fail/6pass
   200.02s with SQL_TIMEOUT preserved, cause unproven; no ceilings raised.
   Docs-only `ac998a9b411b6d15b7d4a555523e653c1f124197` is not tested product983.
-  Fresh exact983full/browser/regression assertions remain pending.
+  Fresh exact983full/browser/regression assertions PASS:485tests80.36s,
+  all seven pipeline exits0,157oracle and six actual browser classes/seven captures.
+  Independent final verdicts and root native/strict closeout remain pending.
 - Later evidence/documentation commits are not newly full-tested product identities.
 
 ## Independent audit and repair
@@ -50,73 +52,64 @@ regressions reject unknown supported targets before provider dispatch, with term
 trace and no fabricated success. [ADR013](../adr/ADR-OMX-013-readiness-scope-boundary.md)
 records alternatives and the bounded language limitation; no universal NL claim.
 
-## Clean-run and evidence cutoff
+## Current exact983 clean-run and browser evidence
 
-**New blocking evidence:** first corrected-candidate331eb5a clean run passed
-457tests/static92.09s, then fresh readiness E2E rejected
-`Show mean grade grouped by course across all enrollments` with INVALID_INPUT and
-zero provider calls. The baseline6cc runner had passed this case. Candidate is **not
-accepted**, not waived by457tests. Failing regressions and the subsequent c631c0c
-repair now address that regression; corrected-candidate c631clean/browser proof has now passed; final reviews and
-native completion remain pending.
-[Rejected clean attempt](../operations/H-014/clean-run-final-attempt1/receipt.json)
-and [failure summary](../operations/H-014/clean-run-final-attempt1/attempt-status.json)
-retain actual command exits, init hashes and failure trace. Independent
-[interim architect BLOCK](../operations/H-014/reviews/interim-architect.json) also
-identified the Library each/every regression; this is not a final verdict.
+[Final clean summary](../operations/H-014/clean-run-final-attempt3/final-summary.json),
+[command/result receipt](../operations/H-014/clean-run-final-attempt3/receipt.json),
+[actual browser receipt](../operations/H-014/browser/final-983-attempt1/browser-receipt.json),
+[current preservation/remote](../operations/H-014/final-983-preservation-remote.json).
 
-Historical331browser attempt1 failed socket permission:
-[command](../operations/H-014/browser/candidate331-attempt1-command.txt).
-Supported retry attempt2 passed seven captures across six classes:
-[receipt](../operations/H-014/browser/candidate331-attempt2/browser-receipt.json),
-[same-run M1 trace](../operations/H-014/browser/candidate331-attempt2/m1.jsonl).
-Those screenshots/traces remain **rejected331candidate evidence**, not final c631
-browser proof; a browser pass did not waive the separate E2E blocker.
+- Exact tested SHA **98345ad6ce5757c71d44ba1ce59a683d46e0d910**:485tests80.36s;
+  Ruff check/format, strict mypy14, compileall, readiness E2E,157oracle; all seven
+  serialized pipeline commands exit0. This is the new full product run, not a docs SHA.
+- Both tracked University/Library schemas+seeds initialize; repeat init refuses
+  without changing DB hashes. Typed group/top and M1 F1/F2/tie actual dependency
+  values, same-run resume/replay, empty/negative/repair/terminal behavior and
+  same-core Library portability passed.
+- Fresh actual browser: six classes/seven captures; current question/run, full
+  downloaded same-run JSONL, SQL/bindings/raw/adapted rows visible. Strengthened
+  assertions reject DeltaGenerator/stDocstring/help dumps/strayNone, require open
+  focused panels, actual raw DOM values and adapted dependency rows. Root viewed
+  DB/error/M1 adapted panels: proper raw JSON/no help,95.00/M1 and Library1/1.
+  Full values are verified in DOM+trace; a screenshot viewport does not fit every
+  cell and is not represented as doing so. No cropped/masked evidence workaround.
+-28clean and53browser manifest hashes verified. Server/browser stopped; temporary
+  runtime ledger absent; original runtime unchanged; disposable tracked checkout clean.
+- [Environment](../operations/H-014/clean-run-environment.json),
+  [toolchain](../operations/H-014/clean-run-browser-toolchain.json) and
+  [scope](../operations/H-014/clean-run-scope.md): tracked-only disposable local
+  clone, locked uv dependencies, new venv, isolated DB/runtime/cache. Registry DNS
+  failed initially; supported retry succeeded, partial-cache/provisioned-browser
+  reuse disclosed. This is not all-fresh download proof or a second canonical repo.
 
+### Preserved failed and superseded candidates
 
-[Verifier scope](../operations/H-014/clean-run-scope.md),
-[environment](../operations/H-014/clean-run-environment.json) and
-[browser toolchain](../operations/H-014/clean-run-browser-toolchain.json) describe
-a tracked-only disposable local clone, frozen `uv.lock`, new venv and isolated
-DB/runtime/cache, never a second canonical repository. Initial sandbox registry DNS
-failed; supported escalated retry succeeded. Partial retry caches/provisioned browser
-binaries are disclosed, not represented as all-fresh download proof.
-Initial clean baseline at6cc7ad3 separately passed410tests/static/157oracle and both
-DB init/safe repeat refusal: [receipt](../operations/H-014/clean-run-initial/receipt.json).
-That is a real fresh baseline run, not final corrected candidate acceptance.
-Final c631mechanical checks passed, but visual readiness is **BLOCKED**:
-[clean receipt](../operations/H-014/clean-run-final-attempt2/receipt.json),
-[browser receipt](../operations/H-014/browser/final-c631-attempt1/browser-receipt.json),
-[preservation/remote](../operations/H-014/final-preservation-remote.json).
-The serialized pipeline passed482tests92.83s, Ruff check/format, strict mypy,
-compileall, readiness E2E and157 independent oracle checks; all seven command exits0.
-Both DBs initialized with recorded seed/resource/row hashes; repeat init refused
-without mutation. Fresh compiled graph proved group/top, M1 F1/F2/tie actual refs,
-same-run clarification/resume/replay and Library same-core portability. Actual
-browser passed six classes/seven captures with SQL/bindings/raw/adapted rows/full
-same-run JSONL: success, clarification pause/resume, M1, Library, repair, terminal
-error/no stale answer. Root inspected M1 adapted95.00, Ada1/Bob1 and error no SQL.
-The28clean-manifest and53browser-manifest hashes were verified; owned server/browser
-stopped, temporary runtime ledger absent, disposable tracked checkout clean.
-These are fresh **c631** artifacts, not relabeled331 or H013 captures.
+- Initial clean published6cc baseline:410tests/static/157oracle and safe DB repeat
+  refusal [receipt](../operations/H-014/clean-run-initial/receipt.json); historical
+  H013 productf4b410 and publication59targeted checks remain separately attributed.
+-331clean457/staticPASS but group-by E2E failed before provider dispatch:
+  [failed receipt](../operations/H-014/clean-run-final-attempt1/receipt.json),
+  [summary](../operations/H-014/clean-run-final-attempt1/attempt-status.json).
+  [Interim architect BLOCK](../operations/H-014/reviews/interim-architect.json)
+  also identified Library each/every regression. c631repair closed those failures.
+-331browser socket attempt1 [failure](../operations/H-014/browser/candidate331-attempt1-command.txt),
+  attempt2 [seven captures](../operations/H-014/browser/candidate331-attempt2/browser-receipt.json)
+  are rejected-candidate evidence, not983final proof.
+-c631clean482tests92.83s/static157oracle/mechanical browser passed, but
+  [actual architect visual BLOCK](../operations/H-014/reviews/ui-visual-block-architect.json)
+  found Streamlit return-value magic/help/None in DB panels. Preserve
+  [clean receipt](../operations/H-014/clean-run-final-attempt2/receipt.json),
+  [screenshots](../operations/H-014/browser/final-c631-attempt1/browser-receipt.json)
+  and [old preservation receipt](../operations/H-014/final-preservation-remote.json)
+  unchanged; none is relabeled as983 acceptance.
+-983two explicit UI branches fixed that source root cause. Actual magic3pre-fail,
+ 15serialized targetedPASS6.00s. Intermediate9fail/6pass200.02s with SQL_TIMEOUT
+  retained, cause unproven; no timeout/ceiling changes. [UI repair evidence](../operations/H-014/ui-magic-fix/report.md).
+  Preliminary code approval draft was revoked, not delivered as final approval;
+  only actual final verdicts will close that gate. No global magic-disable/new platform.
 
-Independent architect visual inspection found `success-db.png` dominated by
-Streamlit DeltaGenerator API help and `error-db.png` showing None. Root confirmed
-bare ternary expressions around `st.json`/`st.write` in `ui.py` trigger Streamlit
-magic return-value rendering. Captures/automated checks did not prove a clean UI:
-**c631 is not accepted**. Preserve original screenshots; minimally repair explicit
-if/else rendering, lock behavior with AppTest/browser regression, freeze a new
-candidate and rerun full clean/browser gates. [Actual visual BLOCK](../operations/H-014/reviews/ui-visual-block-architect.json)
-is retained. The983source repair now uses explicit branches without global
-magic-disable/screenshot masking. New browser asserts no help/DeltaGenerator/stray
-None and visible typed raw/adapted dependency rows; fresh full/browser proof pending.
-Code-reviewer's preliminary draft approval was revoked/current REQUEST CHANGES;
-no final APPROVE was delivered. Final CLEAR/APPROVE/native are not claimed.
-[UI repair evidence](../operations/H-014/ui-magic-fix/report.md),
-[seven-invariant audit](../operations/H-014/invariant-audit.md),
+[Seven-invariant audit](../operations/H-014/invariant-audit.md),
 [bounded cleaner summary](../operations/H-014/cleaner-summary.md).
-CP-R2 candidate checks passed: Ruff format/check for five scripts/tests, 33 synthetic
-eval harness tests, cached diff check. Those 33 tests are not live model accuracy.
 
 ## Proposed live decision package — no execution
 
@@ -146,13 +139,13 @@ history-preserving approval/migration is required; no cap migration is applied.
 | R01/R02/R11 | University+Library schema/seed and typed data/integrity; clean init/repeat-init/hash receipts PASS |
 | R03 | Real compiled LangGraph→SQLite→formatter; offline injected provider only, broad real NL quality not-run |
 | R04 | All16filter scopes, five group grains, three count objects, NULL≠zero, exact ties, all-semester equal enrollment weights; M1 actual typed result bindings; clean regression/trace PASS |
-| R05 | Library unit1/zero/schema isolation on same core; clean/browser mechanical PASS; visual UI BLOCK |
-| R06 | Ordered same-run nodes/SQL/bindings/raw/adapted rows/answer-or-error trace; mechanical browser checks PASS, visual architect BLOCK |
+| R05 | Library unit1/zero/schema isolation on same core; fresh983clean/browser PASS |
+| R06 | Ordered same-run nodes/SQL/bindings/raw/adapted rows/answer-or-error trace; fresh983browser/trace PASS; final independent verdict pending |
 | R07 | Grounded ambiguity, session-bound expiry/conflict/replay, bounded repair, corruption/safety/provider/accounting failures; named-target regression repaired |
-| R08 | 482offline/static/157oracle/AppTest/mechanical browser PASS; visual UI BLOCK; eval harness33PASS does not replace live48 |
+| R08 | 485offline/static/157oracle/AppTest/fresh983browser PASS; eval harness33PASS does not replace live48 |
 | R09 | Existing adapter/core separation; independent final review pending |
 | R10 | [Production boundaries](../plans/production-considerations.md), not production-ready |
-| R12/R13/R14 | Tracked code/tests/ADR/prompts/examples and exact candidate receipts, final links/evidence audit pending |
+| R12/R13/R14 | Tracked code/tests/ADR/prompts/examples and exact candidate receipts, exact candidate receipts and public links checked |
 | R15 | Previously published baseline remains; new publication awaiting separate authority, push not-run |
 | R16/R17 | Offline working/debuggable evidence under verification; owner explanation/defense deferred |
 | U01 | Actual root task and bounded child projections; RU original / EN reader translation, no full hidden transcript claim |
@@ -166,7 +159,7 @@ Preserve DAG≤3,≤5generation calls/run,≤4SQL attempts,180s active,60/45s ca
 32768output; checkpoint≤2pauses/900s,in-process only; read-only validated SQL and
 DELETE-only DB mode. Typed dependency values never become SQL fragments. Runtime
 prompt hashes and locked dependencies remain unchanged. Final independent invariant
-proof is pending, not inferred from count of tests or historical H013 verdicts.
+review is pending, not inferred from count of tests or historical H013 verdicts.
 
 ## Provenance, preservation and privacy
 
@@ -176,8 +169,8 @@ wording with private vault-prefix redaction only; the H014v2 handoff/listed inpu
 read context, not substituted prompts. [Baseline](../operations/H-014/baseline.json)
 records source and preservation hashes, including monetary ledger
 `2753fe2fdf1dc366ffecdb5a86dcd9cf184d83707a00da0de62a8a4e4963f125`.
-Original H013 results/failed attempts and untracked locks are retained. [Final fresh preservation/remote receipt](../operations/H-014/final-preservation-remote.json)
-verifies44source paths against c631Git blobs,263H013historical files,22vault inputs
+Original H013 results/failed attempts and untracked locks are retained. [Final fresh preservation/remote receipt](../operations/H-014/final-983-preservation-remote.json)
+verifies45source paths against983Git blobs,263H013historical files,22vault inputs
 and10preservation targets unchanged/restored. Fresh read-only ls-remote exit0 observes
 origin/main6cc7ad3af426d0da6818281b035c5e683806f357; local work is not published. Root disclosed a transient orchestration
 incident rather than asserting zero historical workflow writes:
@@ -204,7 +197,8 @@ Credentials were not loaded; no secrets belong in public evidence.
 ## Final gates / not-run
 
 Final independent code-reviewer and architect verdicts: **pending**, not reused from
-H013. Cleaner/final invariant/doc synthesis and final native COMPLETE/strict: pending,
+H013. Cleaner/invariant technical evidence updated to485PASS; independent final reviews
+and final native COMPLETE/strict: pending,
 root-owned. Live/API/count/access/credential loading/monetary mutation/push and owner
 defense: **not-run**. Missing live/push authority does not block this bounded offline
 DoD, but final independent approvals/native postconditions are still pending at this cutoff.

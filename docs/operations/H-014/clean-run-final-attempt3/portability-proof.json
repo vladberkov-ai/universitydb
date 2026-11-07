@@ -1,0 +1,88 @@
+{
+  "library-v1": {
+    "trace": "portability-library-v1.jsonl",
+    "trace_sha256": "2358db5d2fa38d4212f71105cc9c5f1138519c07ba0a78a99f0e442c84a75ae9",
+    "answer": [
+      {
+        "text": "reader_id=all: open loans [[1, 'Ada', 1], [2, 'Bob', 1]].",
+        "columns": [
+          {
+            "name": "reader_id",
+            "type": "integer"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "open_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            1,
+            "Ada",
+            1
+          ],
+          [
+            2,
+            "Bob",
+            1
+          ]
+        ],
+        "scope": "reader_id=all",
+        "empty_reason": null,
+        "truncated": false
+      }
+    ],
+    "real_compiled_graph": "asserted by passed test_both_adapters_real_db_compiled_graph",
+    "terminal": {
+      "status": "ok",
+      "llm_calls": 2,
+      "sql_attempts": 1
+    }
+  },
+  "university-v1": {
+    "trace": "portability-university-v1.jsonl",
+    "trace_sha256": "473e8a3190fdb3228cff215964594d3754d074386a327448caaab81b89a30bc1",
+    "answer": [
+      {
+        "text": "student_id=all; course_id=all; teacher_id=all; semester_id=all: mean 83.33 (6 grades; 8 enrollments).",
+        "columns": [
+          {
+            "name": "average",
+            "type": "decimal"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            "83.33",
+            6,
+            8
+          ]
+        ],
+        "scope": "student_id=all; course_id=all; teacher_id=all; semester_id=all",
+        "empty_reason": null,
+        "row_reasons": [
+          null
+        ],
+        "truncated": false
+      }
+    ],
+    "real_compiled_graph": "asserted by passed test_both_adapters_real_db_compiled_graph",
+    "terminal": {
+      "status": "ok",
+      "llm_calls": 2,
+      "sql_attempts": 1
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "checked_at": "2026-11-07T23:35:16.400964+00:00",
+  "tested_sha": "98345ad6ce5757c71d44ba1ce59a683d46e0d910",
+  "working_product_test_resource_harness_matches_committed": true,
+  "source_hashes": {
+    ".env.example": "1cd314ad6c6c9438048e997c40787ff395ab7e5a199fab36b0de0dfeac6b0026",
+    "pyproject.toml": "00522db5a7513ed6a19804487591996a65a31c5f1b40559362d6587dbbfe9644",
+    "resources/library/schema.sql": "b7ea3103b689d4f0797bf398a278c1738ee97bac81cb785a72a9d25081b870f1",
+    "resources/library/seed.sql": "a81701bd8c62379f03f101081739b52e451ffdd0fd74d11f23217b6ecaf9400a",
+    "resources/schema.sql": "2d459c3592bdf9d0baea14d546540d55be650bb619d3762ee63b85cca9be70f8",
+    "resources/seed.sql": "c355537acc89af8a2ec7b96b65fdab3f37366185539ae16c1b0b9fe62c0d1acb",
+    "src/universitydb/__init__.py": "f4783354578e7b9ed2f99a68b5454ac621abd61d76b07062a05bf5887dd72dd7",
+    "src/universitydb/agent.py": "af3191e82c247f647661411224383fced8456fd5142cb5a61e81f2a1d51edbd2",
+    "src/universitydb/config.py": "508b2bef52d2c81c5114b885a6be56f5b22b18774ae5a48674679ea1fdd6b263",
+    "src/universitydb/contracts.py": "14715a2b7ed31457eba35acce6e568bcd67c72a55371822f6c9243bbacb619dc",
+    "src/universitydb/db.py": "a1650dad66a7c8ad49210bb3ab4850deff8e9f7bfc5c3f2ca65c84e632d80cc8",
+    "src/universitydb/db_worker.py": "64c17b84c0d68e97d5587c849734640fccd89ace1c12238f08105bf8201a2c05",
+    "src/universitydb/domain.py": "0c6dc3a5dcaae4b9db8b723fb673f150e50438765352628909ca47b0f542ea77",
+    "src/universitydb/domain_support.py": "211407da912ca737bdc449ce68b098227efad5fdd551c8848796d5c041a71fae",
+    "src/universitydb/library.py": "0087d38942de432422fdf641ae241ca5928f995c81447296c8b54e6dc7a0a797",
+    "src/universitydb/llm.py": "4b8c80075748a669cb70397ad8aecbad2efbb9dd3ce2a7e9680e918ba10157cb",
+    "src/universitydb/llm_worker.py": "ba0abec6f45197814068c70aa86fb747e4de070cc84f08f1caa6b537b3a5bf9d",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/sql_policy.py": "f0d2c532ad9c053952cc6a4fefba9350585e9826d49f9b05b5d6171b035307ac",
+    "src/universitydb/tracing.py": "32a8b49dc56b0e2acf59b836361ef03abb70c4c549c312a1c914c8b646e8a96b",
+    "src/universitydb/ui.py": "5982cb04da649ea6da5f03269697181d2724b401992a6addb647abe6d358e972",
+    "tests/conftest.py": "46131f0dc3214ea8c1364efa4579539bd1f6c8d85367585c3544eab3f7155989",
+    "tests/test_bounds.py": "08ce4aa953be0188ca5588b426eb3b1f3ffe61d7449ef7fe5f01ac7561b03218",
+    "tests/test_db_domain.py": "bea5452a16496b183a5a5eb790219e4d3009ffe9478fc886e616b13e78c4bfda",
+    "tests/test_eval_harness.py": "0e077f83f5b236139cf44ad3f295658b034947b37aee19e8b2573ce1064b0d60",
+    "tests/test_graph.py": "613792b9f8e4252cb7b6364f94caa9fe0b7857d929b3fc49af9e8c0d733414fb",
+    "tests/test_i2_continuation.py": "7b3399feca7546f3187123f5aa21850d8a983811791481fbad5b6bce09b56567",
+    "tests/test_i2_contracts.py": "a6f4e688cd3caf1ebb2fc1a6366cf93435297ace7b0a4e7e8219f6ef001a158e",
+    "tests/test_i2_core.py": "fb47d23e92cf88980f5d74030fb1c1c7497b86fbd45ec938d4ffd8ef01b4da11",
+    "tests/test_i2_domains.py": "a2cb355ec4792275f2170ee43d80b53943480e9916dfc5cc710a6d01480fa140",
+    "tests/test_i2_oracle.py": "02596ca334cd669e02e6481a5a5bb0490c570a455ad8cd64f7bf71f2d638c17d",
+    "tests/test_i2_ui.py": "27d04b94ea5483f96d1c0874acfb77a46042e70ff61d0568b37c14b5fa5c60d8",
+    "tests/test_i3_dependencies.py": "ec4c9a05e93e00443638b4567cdceff4e1f8cbc93e7ad84e0a8e1dcd000caf7d",
+    "tests/test_library.py": "6831b286f6a9340711e409d2909a044071c2a259b7710b823ca036970d21f8c2",
+    "tests/test_practical_budget.py": "710a064e1ce59977aeebcca6f994ace65015a17e65e9b83b386ec3cfd44c125a",
+    "tests/test_provider_worker.py": "92a5b390e89ecac1f41ac58b6872fc80d1e038d4a44a592ed619ea08fbf56c34",
+    "tests/test_readiness_scope.py": "461f3443a3152114c6a5fab93ba196ce9da5d862a9a66a60e1df0e5dc5884833",
+    "tests/test_readiness_ui_magic.py": "f0550efd39870c390873c4218198546fa7d1a56903e3e206bcad229b9480cade",
+    "tests/test_review_repairs.py": "b046f70137bb5b47e412ac2a6ad4a7be987225df15fa9a3e2ce75eebdf366e62",
+    "tests/test_sol_profile.py": "3b6846cf5f708d2287c0f2322d781d74ad12a71b6dfe4ee6d3da317750c5d96c",
+    "tests/test_ui.py": "0c949af5eb030ee1f8cac7f42e7aa828c52570acff4138a2161c30920297009e",
+    "tests/ui_fixtures.py": "210fd65439244a2a9abfddc20f3c871ba8830f4990c74e6ace954e9ccd72b09d",
+    "tools/eval/harness.py": "a14f11835ff3c67aa6ef6e7a95716613982a3c1799bfa2d734f4038c95a1c811",
+    "uv.lock": "de36cab6c73d37bde70cc13e019b9eb2552a0747e46fe5c8c3b7cedf5338378d"
+  },
+  "preservation": {
+    "runtime/spending.json": {
+      "expected": "2753fe2fdf1dc366ffecdb5a86dcd9cf184d83707a00da0de62a8a4e4963f125",
+      "actual": "2753fe2fdf1dc366ffecdb5a86dcd9cf184d83707a00da0de62a8a4e4963f125",
+      "unchanged": true
+    },
+    ".omx-state-locks.identity.json": {
+      "expected": "50d956e3fbf97b265862cefdbfb54fd809b03ef55b3f7ccd9997864b70d62711",
+      "actual": "50d956e3fbf97b265862cefdbfb54fd809b03ef55b3f7ccd9997864b70d62711",
+      "unchanged": true
+    },
+    ".omx-state-locks/655a20b082786cf4e05f99e0da122d6dc803270e08f859022ac44d1302358bc8.mutex": {
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    ".omx-state-locks/3102cbda72779bbf780705d49e74806858334b4de02a46d2ee2a37802e26125c.mutex": {
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    ".omx/ultragoal/brief.md": {
+      "expected": "0ff09bb7638889aa742f75070ece675573391187b5568b2be010b59fe22b5191",
+      "actual": "0ff09bb7638889aa742f75070ece675573391187b5568b2be010b59fe22b5191",
+      "unchanged": true
+    },
+    ".omx/ultragoal/ledger.jsonl": {
+      "expected": "980675a8f5b3a288809d7c98c3fb539ba1d51e43a6beb64dfb30d85c09d1e380",
+      "actual": "980675a8f5b3a288809d7c98c3fb539ba1d51e43a6beb64dfb30d85c09d1e380",
+      "unchanged": true
+    },
+    ".omx/ultragoal/goals.json": {
+      "expected": "8e3383ac22651fbc8cbad2d49181e91957e747dee35ac9de7f1ba8b7f6a7e0ef",
+      "actual": "8e3383ac22651fbc8cbad2d49181e91957e747dee35ac9de7f1ba8b7f6a7e0ef",
+      "unchanged": true
+    },
+    "docs/operations/H-013/workflow/.omx/ultragoal/brief.md": {
+      "expected": "1a4305a5ecff1d3d0601c362f5ca55f9154e319a0efb4a7f989fa4f696b9d17e",
+      "actual": "1a4305a5ecff1d3d0601c362f5ca55f9154e319a0efb4a7f989fa4f696b9d17e",
+      "unchanged": true
+    },
+    "docs/operations/H-013/workflow/.omx/ultragoal/goals.json": {
+      "expected": "ffec24fc676b66a652ea49773baef20b00f83e10ea993794b4a2efd8f0a72d1f",
+      "actual": "ffec24fc676b66a652ea49773baef20b00f83e10ea993794b4a2efd8f0a72d1f",
+      "unchanged": true
+    },
+    "docs/operations/H-013/workflow/.omx/ultragoal/ledger.jsonl": {
+      "expected": "4f7bb5d4ed8bda272b6bf28b4e3e72de1e79aca19586ed647db31eb9ae1037b3",
+      "actual": "4f7bb5d4ed8bda272b6bf28b4e3e72de1e79aca19586ed647db31eb9ae1037b3",
+      "unchanged": true
+    }
+  },
+  "historical_evidence": {
+    "files": 263,
+    "all_unchanged": true
+  },
+  "vault_readonly_inputs": {
+    "files": 22,
+    "all_unchanged": true
+  },
+  "final_artifact_manifests": {
+    "clean-run-final-attempt3": {
+      "files": 28,
+      "all_match": true
+    },
+    "browser/final-983-attempt1": {
+      "files": 53,
+      "all_match": true
+    }
+  },
+  "eval_manifest": {
+    "hashes": 17,
+    "all_match": true
+  },
+  "configured_code_review_gates": [],
+  "root_visual_inspection": [
+    "success-db.png shows actual typed component columns and16000 raw sum without help (following counts viewport-clipped; full values DOM+JSONL checked)",
+    "error-db.png shows refusal/no SQL or DB query/no adapted results, no stray None",
+    "m1-adapted.png shows validated cohort student_id1/typed rows/dependency_rows structure without DeltaGenerator/help; final95.00 checked in full proof JSON/trace"
+  ],
+  "remote": "fresh observed origin/main6cc7ad3 exit0 retained in earlier final-preservation-remote.json; refresh after closeout",
+  "push": "not-run",
+  "orchestration_recovery": "Original10preservation hashes match/restored. Transient wrong-scope rejected audit append and guarded approved restoration disclosed in orchestration-recovery.json; original31I1 records unchanged. No monetary/IDs/pointers/locks/goal state change."
+}

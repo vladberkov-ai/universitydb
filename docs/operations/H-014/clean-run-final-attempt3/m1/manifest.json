@@ -1,0 +1,130 @@
+{
+  "evidence": "Fresh full pytest command in clean-run command-1.txt passed",
+  "profile": "offline/injected; not real-model NL-to-SQL accuracy",
+  "source_sha256": {
+    "src/universitydb/agent.py": "af3191e82c247f647661411224383fced8456fd5142cb5a61e81f2a1d51edbd2",
+    "src/universitydb/contracts.py": "14715a2b7ed31457eba35acce6e568bcd67c72a55371822f6c9243bbacb619dc",
+    "src/universitydb/db.py": "a1650dad66a7c8ad49210bb3ab4850deff8e9f7bfc5c3f2ca65c84e632d80cc8",
+    "src/universitydb/db_worker.py": "64c17b84c0d68e97d5587c849734640fccd89ace1c12238f08105bf8201a2c05",
+    "src/universitydb/sql_policy.py": "f0d2c532ad9c053952cc6a4fefba9350585e9826d49f9b05b5d6171b035307ac",
+    "src/universitydb/config.py": "508b2bef52d2c81c5114b885a6be56f5b22b18774ae5a48674679ea1fdd6b263",
+    "src/universitydb/llm.py": "4b8c80075748a669cb70397ad8aecbad2efbb9dd3ce2a7e9680e918ba10157cb",
+    "src/universitydb/llm_worker.py": "ba0abec6f45197814068c70aa86fb747e4de070cc84f08f1caa6b537b3a5bf9d",
+    "src/universitydb/tracing.py": "32a8b49dc56b0e2acf59b836361ef03abb70c4c549c312a1c914c8b646e8a96b",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/domain.py": "0c6dc3a5dcaae4b9db8b723fb673f150e50438765352628909ca47b0f542ea77",
+    "src/universitydb/domain_support.py": "211407da912ca737bdc449ce68b098227efad5fdd551c8848796d5c041a71fae",
+    "src/universitydb/library.py": "0087d38942de432422fdf641ae241ca5928f995c81447296c8b54e6dc7a0a797",
+    "tests/test_i3_dependencies.py": "ec4c9a05e93e00443638b4567cdceff4e1f8cbc93e7ad84e0a8e1dcd000caf7d",
+    "docs/operations/H-013/frozen-oracle.json": "93c87371a125eeb09862e78664f8a3e31ef2015d80da7c5af4fa916029a9d5f2"
+  },
+  "cases": {
+    "F1": {
+      "proof": "F1.json",
+      "trace": "F1.jsonl",
+      "trace_sha256": "c23e1c2f4560eb59b7b5735c82994969a964532604cea7bd3c49e939598ff74a",
+      "expected_top": [
+        2
+      ],
+      "actual_top": [
+        [
+          2,
+          10000,
+          1,
+          1
+        ]
+      ],
+      "actual_final": [
+        [
+          1,
+          "95.00",
+          2,
+          2
+        ]
+      ],
+      "provider_calls": 4
+    },
+    "F2": {
+      "proof": "F2.json",
+      "trace": "F2.jsonl",
+      "trace_sha256": "0b8d10aaa1ea25b0e28c15da578d71f5ad15d51a45c9df50ad944abfba287392",
+      "expected_top": [
+        1
+      ],
+      "actual_top": [
+        [
+          1,
+          25000,
+          3,
+          4
+        ]
+      ],
+      "actual_final": [
+        [
+          1,
+          "95.00",
+          2,
+          2
+        ],
+        [
+          2,
+          "80.00",
+          2,
+          2
+        ],
+        [
+          3,
+          "50.00",
+          1,
+          2
+        ]
+      ],
+      "provider_calls": 4
+    },
+    "tie": {
+      "proof": "tie.json",
+      "trace": "tie.jsonl",
+      "trace_sha256": "78707317c6de6b6a34c5826e825f44b83cab098ae538878ff3e1e34b43b18ebf",
+      "expected_top": [
+        1,
+        2
+      ],
+      "actual_top": [
+        [
+          1,
+          27000,
+          3,
+          4
+        ],
+        [
+          2,
+          9000,
+          1,
+          1
+        ]
+      ],
+      "actual_final": [
+        [
+          1,
+          "90.00",
+          2,
+          2
+        ],
+        [
+          2,
+          "90.00",
+          2,
+          2
+        ],
+        [
+          3,
+          null,
+          0,
+          1
+        ]
+      ],
+      "provider_calls": 4
+    }
+  }
+}

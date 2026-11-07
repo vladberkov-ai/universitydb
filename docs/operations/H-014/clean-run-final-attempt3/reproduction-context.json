@@ -1,0 +1,33 @@
+{
+  "candidate": "98345ad6ce5757c71d44ba1ce59a683d46e0d910",
+  "update": "git fetch local origin then git checkout --detach exact candidate; no reset/force",
+  "environment": "Same disposable tracked-only clone and fresh-at-initial-install venv; reused isolated uv cache and packages, not fresh-download or fresh-second-venv claim",
+  "locked_sync_exit": 0,
+  "no_credentials_loaded": true,
+  "api_or_count_calls": "not-run",
+  "original_ledger_copied": false,
+  "m1_resume_trace_sha256": "56d5bf649969d15a140f3aff01bc9963a9ced00ae5eb51913e30c8979e3dbb67",
+  "m1_resume_calls": 4,
+  "m1_resume_answer": [
+    [
+      1,
+      "95.00",
+      2,
+      2
+    ]
+  ],
+  "all_commands_exit": 0,
+  "m1_resume_refs": [
+    {},
+    {
+      "course_ids": [
+        2
+      ]
+    },
+    {
+      "student_ids": [
+        1
+      ]
+    }
+  ]
+}
