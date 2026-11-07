@@ -1,0 +1,123 @@
+{
+  "version": "h014-eval-v1",
+  "kind": "dev",
+  "repeats": 1,
+  "exposure": "Synthetic scorer development only; not product or live accuracy.",
+  "source_hashes": {
+    "resources/schema.sql": "2d459c3592bdf9d0baea14d546540d55be650bb619d3762ee63b85cca9be70f8",
+    "resources/seed.sql": "c355537acc89af8a2ec7b96b65fdab3f37366185539ae16c1b0b9fe62c0d1acb",
+    "resources/library/schema.sql": "b7ea3103b689d4f0797bf398a278c1738ee97bac81cb785a72a9d25081b870f1",
+    "resources/library/seed.sql": "a81701bd8c62379f03f101081739b52e451ffdd0fd74d11f23217b6ecaf9400a",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "docs/operations/H-013/frozen-oracle.json": "93c87371a125eeb09862e78664f8a3e31ef2015d80da7c5af4fa916029a9d5f2"
+  },
+  "fixtures": {
+    "u": {
+      "domain": "university",
+      "schema": "resources/schema.sql",
+      "seed": "resources/seed.sql",
+      "mutations": [],
+      "sha256": "f16d8d4c9351c011a5f11a4219676a22cfeb2db58381e501bae690659dabb2d3"
+    },
+    "l": {
+      "domain": "library",
+      "schema": "resources/library/schema.sql",
+      "seed": "resources/library/seed.sql",
+      "mutations": [],
+      "sha256": "8db3d9c44f0565e578d5501973c0bcbe90c1a4ae7a667829adfc60f7cfd45364"
+    },
+    "tie": {
+      "domain": "university",
+      "schema": "resources/schema.sql",
+      "seed": "resources/seed.sql",
+      "mutations": [
+        "UPDATE Enrollments SET grade_units=8000 WHERE student_id=2 AND offering_id=1",
+        "UPDATE Enrollments SET grade_units=9000 WHERE student_id=1 AND offering_id=2"
+      ],
+      "sha256": "b60d10136dfa7e69976f3f0415276f21a85e565eab1a3d8bd39a60ccb05527eb"
+    },
+    "f2": {
+      "domain": "university",
+      "schema": "resources/schema.sql",
+      "seed": "resources/seed.sql",
+      "mutations": [
+        "INSERT INTO Enrollments VALUES(3,2,5000)"
+      ],
+      "sha256": "4a54523ed340320c3ed6c6ffdc2f622316893962b31c79fc4db0b2e83d747639"
+    },
+    "zero": {
+      "domain": "university",
+      "schema": "resources/schema.sql",
+      "seed": "resources/seed.sql",
+      "mutations": [
+        "UPDATE Enrollments SET grade_units=0 WHERE student_id=4 AND offering_id=4"
+      ],
+      "sha256": "4fd43b13e30bd7db0bf78b102e0da7fd1aec4d2738d97688ab81c76d8d55f7e2"
+    },
+    "no_loans": {
+      "domain": "library",
+      "schema": "resources/library/schema.sql",
+      "seed": "resources/library/seed.sql",
+      "mutations": [
+        "INSERT INTO Readers VALUES(3,'Cy')"
+      ],
+      "sha256": "f46f4c8065efd16b401991f579f8992390840c6273a25896be2f5f13fa4ba5dd"
+    },
+    "returned": {
+      "domain": "library",
+      "schema": "resources/library/schema.sql",
+      "seed": "resources/library/seed.sql",
+      "mutations": [
+        "UPDATE Loans SET returned=1 WHERE loan_id=1"
+      ],
+      "sha256": "0fa3c926c3ff1f544868f324e7b6a8e2915be53d02414acbf0a45ab5bd313533"
+    },
+    "all_returned": {
+      "domain": "library",
+      "schema": "resources/library/schema.sql",
+      "seed": "resources/library/seed.sql",
+      "mutations": [
+        "UPDATE Loans SET returned=1"
+      ],
+      "sha256": "cacab1d1384dbdfee04d3b215a57a6f3df295183cf0cff6a6f40d6697dfec352"
+    }
+  },
+  "questions": {
+    "cases": [
+      {
+        "id": "DEV01",
+        "category": "aggregates_null",
+        "domain": "university",
+        "fixture": "u",
+        "question": "Synthetic scorer test only",
+        "selections": []
+      }
+    ]
+  },
+  "oracle": {
+    "basis": "Manual typed projection of ADR006 / independent H013 frozen oracle; no product formatter.",
+    "cases": {
+      "DEV01": {
+        "scope": {},
+        "columns": [
+          "value"
+        ],
+        "types": [
+          "integer?"
+        ],
+        "rows": [
+          [
+            0
+          ],
+          [
+            null
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [],
+        "dependencies": {}
+      }
+    }
+  }
+}

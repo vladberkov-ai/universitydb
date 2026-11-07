@@ -1,0 +1,15 @@
+{
+  "version": "h014-eval-v1",
+  "status": "proposed/not-run; no live acceptance",
+  "sha256": {
+    "tools/eval/harness.py": "a14f11835ff3c67aa6ef6e7a95716613982a3c1799bfa2d734f4038c95a1c811",
+    "tests/test_eval_harness.py": "0e077f83f5b236139cf44ad3f295658b034947b37aee19e8b2573ce1064b0d60",
+    "docs/plans/H-014-live-eval-budget.md": "488521ab41c1ef17e9d0bce7d9768a02e44f5bc3ac4fb5760860838406959378",
+    "docs/plans/H-014-live-eval-protocol.md": "00950a2e651351ccdf3b0ab996e65829f76fac5719fb6b4722ebe3137792bec7",
+    "docs/operations/H-014/eval/planned-runs-v1.json": "972c134e4fa82682f0a16d87b71c0c1ed693888248d662f63280cde4fcff3424",
+    "docs/operations/H-014/eval/dev-v1.json": "0915ca1f5c3a2c199e6bd85b1ff34ad859c61676d8c6d0713e2748f8a16803ff",
+    "docs/operations/H-014/eval/validation.json": "68b6b83591c107d39463b9d4abfe95172b58b2b5fba73aad869728f60be48b4f",
+    "docs/operations/H-014/eval/heldout-candidate-v1.json": "af1c7cafce466f58065fb96de9dd997565b2e3b940855fb9f48faa4559753ae5",
+    "docs/operations/H-014/eval/cleanup-plan.md": "c1d8e1ab130170572df3b4cededa162d7c1186bf85e166ba110c1616a1a24851"
+  }
+}

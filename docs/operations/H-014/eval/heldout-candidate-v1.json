@@ -1,0 +1,976 @@
+{
+  "version": "h014-eval-v1",
+  "kind": "heldout_candidate",
+  "repeats": 2,
+  "exposure": "Authored/read by delegated harness author; root integration reviewed scorer and E01-E04/L01-L04; independent reviewers may read. NOT untouched holdout. Fix lane reports no eval/heldout read and its audit finding predates authoring. No product prompt/logic tuning using this candidate.",
+  "source_hashes": {
+    "resources/schema.sql": "2d459c3592bdf9d0baea14d546540d55be650bb619d3762ee63b85cca9be70f8",
+    "resources/seed.sql": "c355537acc89af8a2ec7b96b65fdab3f37366185539ae16c1b0b9fe62c0d1acb",
+    "resources/library/schema.sql": "b7ea3103b689d4f0797bf398a278c1738ee97bac81cb785a72a9d25081b870f1",
+    "resources/library/seed.sql": "a81701bd8c62379f03f101081739b52e451ffdd0fd74d11f23217b6ecaf9400a",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "docs/operations/H-013/frozen-oracle.json": "93c87371a125eeb09862e78664f8a3e31ef2015d80da7c5af4fa916029a9d5f2"
+  },
+  "fixtures": {
+    "u": {
+      "domain": "university",
+      "schema": "resources/schema.sql",
+      "seed": "resources/seed.sql",
+      "mutations": [],
+      "sha256": "f16d8d4c9351c011a5f11a4219676a22cfeb2db58381e501bae690659dabb2d3"
+    },
+    "l": {
+      "domain": "library",
+      "schema": "resources/library/schema.sql",
+      "seed": "resources/library/seed.sql",
+      "mutations": [],
+      "sha256": "8db3d9c44f0565e578d5501973c0bcbe90c1a4ae7a667829adfc60f7cfd45364"
+    },
+    "tie": {
+      "domain": "university",
+      "schema": "resources/schema.sql",
+      "seed": "resources/seed.sql",
+      "mutations": [
+        "UPDATE Enrollments SET grade_units=8000 WHERE student_id=2 AND offering_id=1",
+        "UPDATE Enrollments SET grade_units=9000 WHERE student_id=1 AND offering_id=2"
+      ],
+      "sha256": "b60d10136dfa7e69976f3f0415276f21a85e565eab1a3d8bd39a60ccb05527eb"
+    },
+    "f2": {
+      "domain": "university",
+      "schema": "resources/schema.sql",
+      "seed": "resources/seed.sql",
+      "mutations": [
+        "INSERT INTO Enrollments VALUES(3,2,5000)"
+      ],
+      "sha256": "4a54523ed340320c3ed6c6ffdc2f622316893962b31c79fc4db0b2e83d747639"
+    },
+    "zero": {
+      "domain": "university",
+      "schema": "resources/schema.sql",
+      "seed": "resources/seed.sql",
+      "mutations": [
+        "UPDATE Enrollments SET grade_units=0 WHERE student_id=4 AND offering_id=4"
+      ],
+      "sha256": "4fd43b13e30bd7db0bf78b102e0da7fd1aec4d2738d97688ab81c76d8d55f7e2"
+    },
+    "no_loans": {
+      "domain": "library",
+      "schema": "resources/library/schema.sql",
+      "seed": "resources/library/seed.sql",
+      "mutations": [
+        "INSERT INTO Readers VALUES(3,'Cy')"
+      ],
+      "sha256": "f46f4c8065efd16b401991f579f8992390840c6273a25896be2f5f13fa4ba5dd"
+    },
+    "returned": {
+      "domain": "library",
+      "schema": "resources/library/schema.sql",
+      "seed": "resources/library/seed.sql",
+      "mutations": [
+        "UPDATE Loans SET returned=1 WHERE loan_id=1"
+      ],
+      "sha256": "0fa3c926c3ff1f544868f324e7b6a8e2915be53d02414acbf0a45ab5bd313533"
+    },
+    "all_returned": {
+      "domain": "library",
+      "schema": "resources/library/schema.sql",
+      "seed": "resources/library/seed.sql",
+      "mutations": [
+        "UPDATE Loans SET returned=1"
+      ],
+      "sha256": "cacab1d1384dbdfee04d3b215a57a6f3df295183cf0cff6a6f40d6697dfec352"
+    }
+  },
+  "questions": {
+    "cases": [
+      {
+        "id": "A01",
+        "category": "aggregates_null",
+        "domain": "university",
+        "fixture": "u",
+        "question": "Mean grade across all enrollments and all semesters?",
+        "selections": []
+      },
+      {
+        "id": "A02",
+        "category": "aggregates_null",
+        "domain": "university",
+        "fixture": "u",
+        "question": "Mean grade in S1 across all students, courses and teachers?",
+        "selections": []
+      },
+      {
+        "id": "A03",
+        "category": "aggregates_null",
+        "domain": "university",
+        "fixture": "u",
+        "question": "Mean grade for course ID 3 in S1?",
+        "selections": []
+      },
+      {
+        "id": "A04",
+        "category": "aggregates_null",
+        "domain": "university",
+        "fixture": "zero",
+        "question": "Mean grade for course ID 3 in S1?",
+        "selections": []
+      },
+      {
+        "id": "J01",
+        "category": "joins_filters",
+        "domain": "university",
+        "fixture": "u",
+        "question": "Mean grade for student ID 2, course ID 1, teacher ID 10, semester S1?",
+        "selections": []
+      },
+      {
+        "id": "J02",
+        "category": "joins_filters",
+        "domain": "university",
+        "fixture": "u",
+        "question": "Mean grade for student ID 1 in course ID 1 across all offerings and all semesters?",
+        "selections": []
+      },
+      {
+        "id": "J03",
+        "category": "joins_filters",
+        "domain": "university",
+        "fixture": "u",
+        "question": "For course ID 1 in S1, count enrollments, graded enrollments and distinct students.",
+        "selections": []
+      },
+      {
+        "id": "J04",
+        "category": "joins_filters",
+        "domain": "university",
+        "fixture": "u",
+        "question": "List student IDs, offering IDs and grades for course ID 1 in S1, including ungraded enrollments.",
+        "selections": []
+      },
+      {
+        "id": "D01",
+        "category": "dependencies_ties",
+        "domain": "university",
+        "fixture": "u",
+        "question": "Which course IDs have the highest mean grade in S1? Include all exact ties.",
+        "selections": []
+      },
+      {
+        "id": "D02",
+        "category": "dependencies_ties",
+        "domain": "university",
+        "fixture": "tie",
+        "question": "Which course IDs have the highest mean grade in S1? Include all exact ties.",
+        "selections": []
+      },
+      {
+        "id": "D03",
+        "category": "dependencies_ties",
+        "domain": "university",
+        "fixture": "u",
+        "question": "For students enrolled in the course with the highest mean in S1, show each student ID and mean across all S1 courses, including all tied courses.",
+        "selections": []
+      },
+      {
+        "id": "D04",
+        "category": "dependencies_ties",
+        "domain": "university",
+        "fixture": "f2",
+        "question": "For students enrolled in the course with the highest mean in S1, show each student ID and mean across all S1 courses, including all tied courses.",
+        "selections": []
+      },
+      {
+        "id": "C01",
+        "category": "clarification",
+        "domain": "university",
+        "fixture": "u",
+        "question": "What is Alex's mean grade across all courses and all semesters?",
+        "selections": [
+          1
+        ]
+      },
+      {
+        "id": "C02",
+        "category": "clarification",
+        "domain": "university",
+        "fixture": "u",
+        "question": "What is Alex's mean grade across all courses and all semesters?",
+        "selections": [
+          3
+        ]
+      },
+      {
+        "id": "C03",
+        "category": "clarification",
+        "domain": "university",
+        "fixture": "u",
+        "question": "What is the mean grade in the current semester?",
+        "selections": [
+          "S1"
+        ]
+      },
+      {
+        "id": "C04",
+        "category": "clarification",
+        "domain": "university",
+        "fixture": "u",
+        "question": "How many for course ID 1 in S1?",
+        "selections": [
+          "enrollment_count"
+        ]
+      },
+      {
+        "id": "E01",
+        "category": "empty_negative",
+        "domain": "university",
+        "fixture": "u",
+        "question": "Mean grade for course ID 2 in S2?",
+        "selections": []
+      },
+      {
+        "id": "E02",
+        "category": "empty_negative",
+        "domain": "university",
+        "fixture": "u",
+        "question": "Mean grade for teacher ID 10 in S2?",
+        "selections": []
+      },
+      {
+        "id": "E03",
+        "category": "empty_negative",
+        "domain": "university",
+        "fixture": "u",
+        "question": "List student IDs, offering IDs and grades for course ID 2 in S2.",
+        "selections": []
+      },
+      {
+        "id": "E04",
+        "category": "empty_negative",
+        "domain": "university",
+        "fixture": "u",
+        "question": "For course ID 2 in S2, count enrollments, graded enrollments and distinct students.",
+        "selections": []
+      },
+      {
+        "id": "L01",
+        "category": "library",
+        "domain": "library",
+        "fixture": "l",
+        "question": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+        "selections": []
+      },
+      {
+        "id": "L02",
+        "category": "library",
+        "domain": "library",
+        "fixture": "no_loans",
+        "question": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+        "selections": []
+      },
+      {
+        "id": "L03",
+        "category": "library",
+        "domain": "library",
+        "fixture": "returned",
+        "question": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+        "selections": []
+      },
+      {
+        "id": "L04",
+        "category": "library",
+        "domain": "library",
+        "fixture": "all_returned",
+        "question": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+        "selections": []
+      }
+    ]
+  },
+  "oracle": {
+    "basis": "Manual typed projection of ADR006 / independent H013 frozen oracle; no product formatter.",
+    "cases": {
+      "A01": {
+        "scope": {},
+        "columns": [
+          "mean",
+          "graded_count",
+          "enrollment_count"
+        ],
+        "types": [
+          "decimal?",
+          "integer",
+          "integer"
+        ],
+        "rows": [
+          [
+            "83.33",
+            6,
+            8
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [],
+        "dependencies": {}
+      },
+      "A02": {
+        "scope": {
+          "semester_id": "S1"
+        },
+        "columns": [
+          "mean",
+          "graded_count",
+          "enrollment_count"
+        ],
+        "types": [
+          "decimal?",
+          "integer",
+          "integer"
+        ],
+        "rows": [
+          [
+            "87.50",
+            4,
+            6
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [],
+        "dependencies": {}
+      },
+      "A03": {
+        "scope": {
+          "course_id": 3,
+          "semester_id": "S1"
+        },
+        "columns": [
+          "mean",
+          "graded_count",
+          "enrollment_count"
+        ],
+        "types": [
+          "decimal?",
+          "integer",
+          "integer"
+        ],
+        "rows": [
+          [
+            null,
+            0,
+            1
+          ]
+        ],
+        "empty_reason": "no_grades",
+        "choices": [],
+        "dependencies": {}
+      },
+      "A04": {
+        "scope": {
+          "course_id": 3,
+          "semester_id": "S1"
+        },
+        "columns": [
+          "mean",
+          "graded_count",
+          "enrollment_count"
+        ],
+        "types": [
+          "decimal?",
+          "integer",
+          "integer"
+        ],
+        "rows": [
+          [
+            "0.00",
+            1,
+            1
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [],
+        "dependencies": {}
+      },
+      "J01": {
+        "scope": {
+          "student_id": 2,
+          "course_id": 1,
+          "teacher_id": 10,
+          "semester_id": "S1"
+        },
+        "columns": [
+          "mean",
+          "graded_count",
+          "enrollment_count"
+        ],
+        "types": [
+          "decimal?",
+          "integer",
+          "integer"
+        ],
+        "rows": [
+          [
+            "80.00",
+            2,
+            2
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [],
+        "dependencies": {}
+      },
+      "J02": {
+        "scope": {
+          "student_id": 1,
+          "course_id": 1
+        },
+        "columns": [
+          "mean",
+          "graded_count",
+          "enrollment_count"
+        ],
+        "types": [
+          "decimal?",
+          "integer",
+          "integer"
+        ],
+        "rows": [
+          [
+            "80.00",
+            2,
+            2
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [],
+        "dependencies": {}
+      },
+      "J03": {
+        "scope": {
+          "course_id": 1,
+          "semester_id": "S1"
+        },
+        "columns": [
+          "enrollment_count",
+          "graded_count",
+          "distinct_student_count"
+        ],
+        "types": [
+          "integer",
+          "integer",
+          "integer"
+        ],
+        "rows": [
+          [
+            4,
+            3,
+            3
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [],
+        "dependencies": {}
+      },
+      "J04": {
+        "scope": {
+          "course_id": 1,
+          "semester_id": "S1"
+        },
+        "columns": [
+          "student_id",
+          "offering_id",
+          "grade_units"
+        ],
+        "types": [
+          "integer",
+          "integer",
+          "integer?"
+        ],
+        "rows": [
+          [
+            1,
+            1,
+            9000
+          ],
+          [
+            2,
+            1,
+            6000
+          ],
+          [
+            2,
+            5,
+            10000
+          ],
+          [
+            3,
+            1,
+            null
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [],
+        "dependencies": {}
+      },
+      "D01": {
+        "scope": {
+          "semester_id": "S1"
+        },
+        "columns": [
+          "course_id",
+          "mean"
+        ],
+        "types": [
+          "integer",
+          "decimal"
+        ],
+        "rows": [
+          [
+            2,
+            "100.00"
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [],
+        "dependencies": {}
+      },
+      "D02": {
+        "scope": {
+          "semester_id": "S1"
+        },
+        "columns": [
+          "course_id",
+          "mean"
+        ],
+        "types": [
+          "integer",
+          "decimal"
+        ],
+        "rows": [
+          [
+            1,
+            "90.00"
+          ],
+          [
+            2,
+            "90.00"
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [],
+        "dependencies": {}
+      },
+      "D03": {
+        "scope": {
+          "semester_id": "S1"
+        },
+        "columns": [
+          "student_id",
+          "mean"
+        ],
+        "types": [
+          "integer",
+          "decimal?"
+        ],
+        "rows": [
+          [
+            1,
+            "95.00"
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [],
+        "dependencies": {
+          "top_course_ids": [
+            2
+          ],
+          "cohort_student_ids": [
+            1
+          ]
+        }
+      },
+      "D04": {
+        "scope": {
+          "semester_id": "S1"
+        },
+        "columns": [
+          "student_id",
+          "mean"
+        ],
+        "types": [
+          "integer",
+          "decimal?"
+        ],
+        "rows": [
+          [
+            1,
+            "95.00"
+          ],
+          [
+            2,
+            "80.00"
+          ],
+          [
+            3,
+            "50.00"
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [],
+        "dependencies": {
+          "top_course_ids": [
+            1
+          ],
+          "cohort_student_ids": [
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      "C01": {
+        "scope": {
+          "student_id": 1
+        },
+        "columns": [
+          "mean",
+          "graded_count",
+          "enrollment_count"
+        ],
+        "types": [
+          "decimal?",
+          "integer",
+          "integer"
+        ],
+        "rows": [
+          [
+            "86.67",
+            3,
+            3
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [
+          {
+            "field": "student_id",
+            "values": [
+              1,
+              3
+            ]
+          }
+        ],
+        "dependencies": {}
+      },
+      "C02": {
+        "scope": {
+          "student_id": 3
+        },
+        "columns": [
+          "mean",
+          "graded_count",
+          "enrollment_count"
+        ],
+        "types": [
+          "decimal?",
+          "integer",
+          "integer"
+        ],
+        "rows": [
+          [
+            null,
+            0,
+            1
+          ]
+        ],
+        "empty_reason": "no_grades",
+        "choices": [
+          {
+            "field": "student_id",
+            "values": [
+              1,
+              3
+            ]
+          }
+        ],
+        "dependencies": {}
+      },
+      "C03": {
+        "scope": {
+          "semester_id": "S1"
+        },
+        "columns": [
+          "mean",
+          "graded_count",
+          "enrollment_count"
+        ],
+        "types": [
+          "decimal?",
+          "integer",
+          "integer"
+        ],
+        "rows": [
+          [
+            "87.50",
+            4,
+            6
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [
+          {
+            "field": "semester_id",
+            "values": [
+              "S1",
+              "S2"
+            ]
+          }
+        ],
+        "dependencies": {}
+      },
+      "C04": {
+        "scope": {
+          "course_id": 1,
+          "semester_id": "S1",
+          "count_object": "enrollment_count"
+        },
+        "columns": [
+          "enrollment_count"
+        ],
+        "types": [
+          "integer"
+        ],
+        "rows": [
+          [
+            4
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [
+          {
+            "field": "count_object",
+            "values": [
+              "enrollment_count",
+              "graded_count",
+              "distinct_student_count"
+            ]
+          }
+        ],
+        "dependencies": {}
+      },
+      "E01": {
+        "scope": {
+          "course_id": 2,
+          "semester_id": "S2"
+        },
+        "columns": [
+          "mean",
+          "graded_count",
+          "enrollment_count"
+        ],
+        "types": [
+          "decimal?",
+          "integer",
+          "integer"
+        ],
+        "rows": [
+          [
+            null,
+            0,
+            0
+          ]
+        ],
+        "empty_reason": "no_rows",
+        "choices": [],
+        "dependencies": {}
+      },
+      "E02": {
+        "scope": {
+          "teacher_id": 10,
+          "semester_id": "S2"
+        },
+        "columns": [
+          "mean",
+          "graded_count",
+          "enrollment_count"
+        ],
+        "types": [
+          "decimal?",
+          "integer",
+          "integer"
+        ],
+        "rows": [
+          [
+            null,
+            0,
+            0
+          ]
+        ],
+        "empty_reason": "no_rows",
+        "choices": [],
+        "dependencies": {}
+      },
+      "E03": {
+        "scope": {
+          "course_id": 2,
+          "semester_id": "S2"
+        },
+        "columns": [
+          "student_id",
+          "offering_id",
+          "grade_units"
+        ],
+        "types": [
+          "integer",
+          "integer",
+          "integer?"
+        ],
+        "rows": [],
+        "empty_reason": "no_rows",
+        "choices": [],
+        "dependencies": {}
+      },
+      "E04": {
+        "scope": {
+          "course_id": 2,
+          "semester_id": "S2"
+        },
+        "columns": [
+          "enrollment_count",
+          "graded_count",
+          "distinct_student_count"
+        ],
+        "types": [
+          "integer",
+          "integer",
+          "integer"
+        ],
+        "rows": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [],
+        "dependencies": {}
+      },
+      "L01": {
+        "scope": {},
+        "columns": [
+          "reader_id",
+          "name",
+          "open_count"
+        ],
+        "types": [
+          "integer",
+          "string",
+          "integer"
+        ],
+        "rows": [
+          [
+            1,
+            "Ada",
+            1
+          ],
+          [
+            2,
+            "Bob",
+            1
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [],
+        "dependencies": {}
+      },
+      "L02": {
+        "scope": {},
+        "columns": [
+          "reader_id",
+          "name",
+          "open_count"
+        ],
+        "types": [
+          "integer",
+          "string",
+          "integer"
+        ],
+        "rows": [
+          [
+            1,
+            "Ada",
+            1
+          ],
+          [
+            2,
+            "Bob",
+            1
+          ],
+          [
+            3,
+            "Cy",
+            0
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [],
+        "dependencies": {}
+      },
+      "L03": {
+        "scope": {},
+        "columns": [
+          "reader_id",
+          "name",
+          "open_count"
+        ],
+        "types": [
+          "integer",
+          "string",
+          "integer"
+        ],
+        "rows": [
+          [
+            1,
+            "Ada",
+            0
+          ],
+          [
+            2,
+            "Bob",
+            1
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [],
+        "dependencies": {}
+      },
+      "L04": {
+        "scope": {},
+        "columns": [
+          "reader_id",
+          "name",
+          "open_count"
+        ],
+        "types": [
+          "integer",
+          "string",
+          "integer"
+        ],
+        "rows": [
+          [
+            1,
+            "Ada",
+            0
+          ],
+          [
+            2,
+            "Bob",
+            0
+          ]
+        ],
+        "empty_reason": null,
+        "choices": [],
+        "dependencies": {}
+      }
+    }
+  }
+}

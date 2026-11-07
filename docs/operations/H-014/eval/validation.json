@@ -1,0 +1,29 @@
+{
+  "scope": "CP-R4 offline-only harness and proposed future real-model protocol; no product edits",
+  "profile": "synthetic/dev scorer tests only; NOT live or injected-product accuracy",
+  "commands": [
+    {"command": ".venv/bin/python -m pytest -q tests/test_eval_harness.py", "exit": 0, "result": "33 passed in 0.13s"},
+    {"command": ".venv/bin/ruff check tools/eval tests/test_eval_harness.py", "exit": 0, "result": "All checks passed"},
+    {"command": ".venv/bin/ruff format tools/eval/harness.py tests/test_eval_harness.py", "exit": 0, "result": "2 files left unchanged on final rerun"},
+    {"command": ".venv/bin/python -m compileall -q tools/eval tests/test_eval_harness.py", "exit": 0},
+    {"command": "git diff --check", "exit": 0},
+    {"command": ".venv/bin/python tools/eval/harness.py plan docs/operations/H-014/eval/heldout-candidate-v1.json", "exit": 0, "result": "48 not-run records; structure/hash validation only, no case execution/scoring"}
+  ],
+  "preserved_failures": [
+    {"command": "python /tmp/build_h014_eval.py", "exit": 127, "result": "python alias absent; switched to python3/.venv/bin/python; no authority workaround"},
+    {"command": ".venv/bin/python -m pytest -q tests/test_eval_harness.py", "exit": 1, "result": "12 failed,20 passed during nonfabricated-check addition: CHECKS constant not updated, KeyError; fixed constant then33pass"}
+  ],
+  "cleaner": {
+    "behavior_lock": "32 initial synthetic/dev tests before bounded simplification; explicit nonfabricated case raises final33",
+    "fallbacks": "None; invalid evidence fails closed, no skip/default-to-pass paths",
+    "passes": "Dead/duplicate review, explicit errors, test reinforcement; no unrelated refactor",
+    "ui": "N/A",
+    "independent_review": "Root-owned; not self-approved"
+  },
+  "not_run": ["heldout product execution", "real-model evaluation", "model/count/access calls", "credential loading", "monetary mutations", "push"],
+  "actual_task_coverage": {
+    "received": "Delegated CP-R4 eval harness/dev/proposed heldout package; parent owns lifecycle/commits and official-rate integration; no recursive orchestration",
+    "read_context": ["H-014-v2-readiness-offline.md (private vault read-only)", "accepted ADR-CHAT-006", "ADR-OMX-012", "I2-I3-offline-contract", "resources University/Library schema+seed", "H013 frozen oracle and M1 manifest", "product contracts/config/domain/llm payload boundary", "pyproject.toml", "ai-slop-cleaner skill"],
+    "omissions": "Did not load full private chat history, credentials, monetary ledger content or unrelated product paths; root owns whole-task audit and baseline. This is delegated task coverage, not a full transcript."
+  }
+}

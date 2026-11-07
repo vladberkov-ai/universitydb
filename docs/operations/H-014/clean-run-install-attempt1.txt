@@ -1,0 +1,18 @@
+Using CPython 3.12.3 interpreter at: /usr/bin/python3
+Creating virtual environment at: /tmp/universitydb-h014-clean/.venv
+Resolved 77 packages in 0.97ms
+   Building universitydb @ file:///tmp/universitydb-h014-clean
+  × Failed to download `zstandard==0.25.0`
+  ├─▶ Request failed after 3 retries
+  ├─▶ Failed to fetch:
+  │   `https://files.pythonhosted.org/packages/53/60/7be26e610767316c028a2cbedb9a3beabdbe33e2182c373f71a1c0b88f36/zstandard-0.25.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl`
+  ├─▶ error sending request for url
+  │   (https://files.pythonhosted.org/packages/53/60/7be26e610767316c028a2cbedb9a3beabdbe33e2182c373f71a1c0b88f36/zstandard-0.25.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl)
+  ├─▶ client error (Connect)
+  ├─▶ dns error
+  ╰─▶ failed to lookup address information: Temporary failure in name
+      resolution
+  help: `zstandard` (v0.25.0) was included because `universitydb` (v0.1.0)
+        depends on `langgraph` (v1.2.20) which depends on `langchain-core`
+        (v1.7.6) which depends on `langsmith` (v0.14.17) which depends on
+        `zstandard`
