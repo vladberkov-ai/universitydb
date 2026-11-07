@@ -1,0 +1,11 @@
+{
+  "status": "blocked before server/browser launch",
+  "command_exit": 1,
+  "reason": "sandbox socket creation PermissionError EPERM at ephemeral loopback-port allocation",
+  "server_started": false,
+  "browser_started": false,
+  "paid_calls": 0,
+  "credentials_loaded": false,
+  "temporary_directory": "automatically removed by context manager",
+  "next": "supported specific permission for exact offline browser command, preserve this attempt"
+}

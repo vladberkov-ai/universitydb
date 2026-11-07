@@ -418,3 +418,6 @@ The actual Russian task requests one continuous, verified I2+I3 offline service 
 
 ## H-013 policy v2 — current runtime source navigation
 [Plan policy v2](../../src/universitydb/prompts/plan.txt): propose 1–3 registered topologically ordered steps, exact ResultSpecs and typed prior-step refs; never invent answers. [SQL policy v2](../../src/universitydb/prompts/sql.txt): one read-only registered SELECT using accepted step/scope and actual dependency bindings; exact projections/types, empty-set and NULL semantics, one bounded syntax/column repair. [Hashes/provenance](../operations/H-013/cp-b-prompt-receipt.json). This is an English reader synopsis of source templates, not a captured live request; original I1 versions above remain historical.
+
+### H-013 CP-C plan continuation revision
+The [current plan source](../../src/universitydb/prompts/plan.txt) now permits an unresolved registered field to request server-grounded clarification, with retained proposed steps or an empty plan followed by one fresh plan after choice; all remaining budgets still apply. [Current source hashes/provenance](../operations/H-013/cp-c-prompt-receipt.json). This is source-template reader navigation, not an actual live request or rewritten historical prompt.

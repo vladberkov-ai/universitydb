@@ -61,3 +61,61 @@ Every Q/negative requirement above at unit, real SQLite, compiled-graph scripted
 | U08 | Owner understanding/defense deferred, not self-certified |
 
 Completion requires the whole CP-A–E brief, not only this preparation. I4+verification-I5/publication/defense are next blocks, not hidden offline completion conditions.
+
+### CP-C scoped public per-row reason extension
+Before dependent closed-output validation, H-013 adopts optional `Answer.row_reasons`:
+when present it is a typed list of `null | "no_rows" | "no_grades"` with exactly the same length
+as normalized `Answer.rows`. This makes a grouped all-NULL student's result visible
+in the public answer without confusing NULL with zero. Scalar empty/no-grade reasons
+remain the required `empty_reason` envelope; optional per-row `no_rows` preserves
+the existing scalar empty proof without changing semantics.
+Counts and Library may omit this optional field; omission preserves prior envelope
+compatibility. This is an explicit scoped representation extension for the current
+H-013 contract, not a rewrite of historical v1 examples or a semantic/model/bounds
+change. Annotations only in private/internal step results were rejected because
+public UI/typed answer consumers must see the reason without inferring from NULL.
+
+### CP-C actual in-process continuation representation
+The current application API is `Agent(..., session_id=None)`,
+`run(question, *, request_id=None, session_id=None)` and
+`resume(continuation, selection, *, request_id, session_id=None)`. The Streamlit
+server creates/retains the Agent and session identity; users select only an offered
+choice in that server session. This is local in-process API/UI scope, not a public
+HTTP authentication protocol or durable-restart contract.
+
+The current closed `Clarification` contains required `field`, `options`, `prompt`,
+`clarification_id`, `checkpoint_id`, `session_id`, `run_id`, `schema_sha256`,
+`data_sha256`, `policy_sha256`, `expires_at`. Options are closed `{value:int|string,
+label:string}` records,2–100 choices; IDs retain their actual domain type rather
+than historical proposed `student:1` strings. UI labels include ID for duplicate
+names. `expires_at` is a server-generated Unix-seconds float (run creation+900),
+not historical proposed RFC3339 text. These are explicit H-013 representation
+choices; older proposed v1 envelopes/examples remain historical, not silently
+rewritten or treated as implementation evidence.
+
+`resume` receives an untrusted echo of this continuation plus typed selection and
+new request ID. Echoing a session ID/checkpoint/hash is **not authority**: the Agent
+compares its own retained server session, stored pending run/context, exact latest
+continuation, actual saver checkpoint/interrupt, current descriptor/policy and DB
+content hash before dispatch. IDs/hashes/expiry in the returned envelope are local
+application diagnostics/binding values, never native OMX owner/session IDs. A user
+cannot obtain ownership by submitting them. Optional method `session_id` is an
+additional equality check against retained server identity, never a switch to a
+client-chosen owner. Invalid selections/foreign/stale/expired echoes fail before
+provider/SQL; exact accepted replay is checked against server-recorded request
+payload/result and does not repeat side effects. Schema/policy/data changes expire
+or terminate the stored continuation as documented by the error lane.
+
+Only the known local UI extensions (`execution_profile`, complete `events`, typed
+`step_results`) accompany the closed public run envelope; they are not provider
+output schema fields. Raw/dependency rows stay tied to accepted per-step ResultSpec.
+No native/runtime IDs, credentials or private host binding records belong in this
+application wire or trace.
+
+### CP-C primary error preservation
+The closed current error registry preserves the existing terminal
+`PROVIDER_TRANSIENT` diagnostic when `accounting_stop`/uncertain usage forbids retry
+(`retryable=false`); it is not recast as `INTERNAL_CONTRACT` or permission to retry.
+An actual expired active-work deadline remains `BUDGET_EXCEEDED`. Closed output
+validation must not erase an already valid primary failure. These are preserved
+baseline error semantics, not relaxed accounting, additional calls or new budget.

@@ -1,0 +1,12 @@
+{
+  "stage": "CP-C",
+  "version": "policy v2 continuation revision",
+  "source": "runtime source templates, not live requests",
+  "files": {
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb"
+  },
+  "change": "plan now permits known-field catalog-grounded clarification, retainedsteps or emptyplanfreshplan afterchoice; shared remainingbudget respected; SQL template unchanged fromCPB",
+  "consumption": "offline/injected tests only, no livegeneration",
+  "history": "priorCPB promptreceipt/sourcehash cutoff unchanged"
+}

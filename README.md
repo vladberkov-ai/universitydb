@@ -1,13 +1,14 @@
 # University Database + LangGraph QA Agent
 
-## H-013 local development — CP-B foundation
+## H-013 local development — CP-C continuation checkpoint
 
 The current local I2+I3-offline work adds per-step contracts, shared bounded DAG/result
 binding, University query adapters and an early Library adapter, plus an isolated
-offline UI dataset selector and retained server-session agent. This checkpoint is
-**not whole I2+I3 completion**: actual clarification/checkpoint continuation, full
-dependency/negative/UI browser proof and final independent gates are completed in
-subsequent internal checkpoints. See the [whole brief](docs/plans/I2-I3-offline-brief.md),
+offline UI dataset selector and retained server-session agent. Real in-memory
+checkpoint clarification now resumes the same graph/run with typed choices and
+complete trace; interrupted requests make no SQL/provider calls before selection.
+This checkpoint is **not whole I2+I3 completion**: full dependency/negative/portability
+proof and final independent gates remain mandatory in subsequent internal checkpoints. See the [whole brief](docs/plans/I2-I3-offline-brief.md),
 [contract](docs/plans/I2-I3-offline-contract.md), [ADR012](docs/adr/ADR-OMX-012-I2-I3-offline-contracts.md).
 Scripted proposals execute a real compiled graph and SQLite; they do not measure
 real-model NL→SQL accuracy. Live/count calls, credentials, spending changes and push

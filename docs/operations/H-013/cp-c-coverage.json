@@ -1,0 +1,204 @@
+{
+  "stage": "CP-C",
+  "status": "case-to-test symbols mapped; corrected serialized frozen-source root fullregression311pass/staticpassed, sourcehashes cp-c-verification.json; CP-D/E stillpending",
+  "Q1_Q12": {
+    "Q1": {
+      "expected": "50000/6/8 ->83.33; distinct4",
+      "tests": [
+        "tests/test_i2_domains.py::test_all_16_filter_subsets_all_five_groups_and_counts",
+        "tests/test_i2_domains.py::test_compiled_graph_all_16_filter_scopes_means_counts"
+      ]
+    },
+    "Q2": {
+      "expected": "S1 87.50; C1all80.00; Kim10all83.33; student1all86.67",
+      "tests": [
+        "tests/test_i2_domains.py::test_q2_q3_q7_q8_explicit_oracles",
+        "tests/test_i2_domains.py::test_compiled_graph_q2_q7_q8_mean_states"
+      ]
+    },
+    "Q3": {
+      "expected": "explicit four filters Bea2 80.00/Alex1 90.00",
+      "tests": [
+        "tests/test_i2_domains.py::test_compiled_graph_q3_q6_q8_zero_q9_top_ties",
+        "tests/test_graph.py::test_changed_explicit_input_graph",
+        "tests/test_i2_ui.py::test_agent_retained_across_ui_rerun"
+      ]
+    },
+    "Q4": {
+      "expected": "S1course C1 83.33/C2 100.00/C3null",
+      "tests": [
+        "tests/test_i2_domains.py::test_all_16_filter_subsets_all_five_groups_and_counts",
+        "tests/test_i2_domains.py::test_compiled_s1_groups_and_rounded_equal_not_exact_top"
+      ]
+    },
+    "Q5": {
+      "expected": "C1/S1 enrollment4/graded3/distinct3",
+      "tests": [
+        "tests/test_i2_domains.py::test_all_16_filter_subsets_all_five_groups_and_counts",
+        "tests/test_i2_domains.py::test_compiled_graph_all_16_filter_scopes_means_counts"
+      ]
+    },
+    "Q6": {
+      "expected": "exact four labeled JOIN rows inclNULL and second offering",
+      "tests": [
+        "tests/test_i2_domains.py::test_q6_join_listing_labels_and_nullable_grade",
+        "tests/test_i2_domains.py::test_compiled_graph_q3_q6_q8_zero_q9_top_ties"
+      ]
+    },
+    "Q7": {
+      "expected": "student1/C1all80.00,S2 70.00; allofferings",
+      "tests": [
+        "tests/test_i2_domains.py::test_q2_q3_q7_q8_explicit_oracles",
+        "tests/test_i2_domains.py::test_compiled_graph_q2_q7_q8_mean_states"
+      ]
+    },
+    "Q8": {
+      "expected": "[0,0,0]no_rows;[0,0,1]no_grades;[0,1,1]0.00;count0numeric",
+      "tests": [
+        "tests/test_i2_domains.py::test_zero_empty_and_null_are_distinct_on_real_database",
+        "tests/test_i2_domains.py::test_compiled_graph_q2_q7_q8_mean_states",
+        "tests/test_i2_domains.py::test_compiled_graph_q3_q6_q8_zero_q9_top_ties",
+        "tests/test_i2_ui.py::test_repair_attempts_visible_and_library_zero_not_grade_scaled"
+      ]
+    },
+    "Q9": {
+      "expected": "S1topC2; exacttieC1+C2; rounded equal nottie",
+      "tests": [
+        "tests/test_i2_domains.py::test_exact_top_ties_raw_candidates_and_selected_dependencies",
+        "tests/test_i2_domains.py::test_compiled_graph_q3_q6_q8_zero_q9_top_ties",
+        "tests/test_i2_domains.py::test_compiled_s1_groups_and_rounded_equal_not_exact_top"
+      ]
+    },
+    "Q10": {
+      "expected": "Alexoptions1/3,86.67/no_grades;0callsbeforechoice",
+      "tests": [
+        "tests/test_i2_continuation.py::test_real_pause_resume_and_replay",
+        "tests/test_i2_ui.py::test_real_checkpoint_pause_resume_retained_same_run_and_no_replayed_calls",
+        "tests/test_i2_domains.py::test_real_checkpoint_catalog_and_count_choices"
+      ]
+    },
+    "Q11": {
+      "expected": "currentS1/S2 choices; terminal ID/nameconflict/unknown; vaguecountobject choice",
+      "tests": [
+        "tests/test_i2_domains.py::test_conflicting_unknown_identity_terminal_no_provider_or_sql",
+        "tests/test_i2_domains.py::test_real_checkpoint_catalog_and_count_choices",
+        "tests/test_i2_ui.py::test_current_semester_selection_uses_actual_same_run"
+      ]
+    },
+    "Q12": {
+      "expected": "all16filter subsets,fivegroupkeys,independent discriminatingmutations",
+      "tests": [
+        "tests/test_i2_domains.py::test_all_16_filter_subsets_all_five_groups_and_counts",
+        "tests/test_i2_domains.py::test_compiled_graph_all_16_filter_scopes_means_counts",
+        "tests/test_i2_domains.py::test_compiled_graph_every_group_mutates_independently",
+        "tests/test_i2_domains.py::test_compiled_graph_each_filter_discriminating_mutation",
+        "tests/test_i2_oracle.py::test_every_group_and_filter_mutation_discriminates"
+      ]
+    }
+  },
+  "negative_suites": {
+    "closed_wire_result_NULL_empty_types_units_grain": [
+      "tests/test_i2_contracts.py::test_declared_schema_preserves_nullable_and_empty",
+      "tests/test_i2_contracts.py::test_strict_db_metadata",
+      "tests/test_i2_contracts.py::test_public_answer_reasons_are_closed_and_row_aligned",
+      "tests/test_i2_contracts.py::test_public_envelope_requires_one_exact_status_branch",
+      "tests/test_i2_domains.py::test_spec_registry_closed",
+      "tests/test_i2_domains.py::test_invalid_result_types_components_duplicate_group"
+    ],
+    "static_refs_actual_materialization": [
+      "tests/test_i2_contracts.py::test_bad_static_refs",
+      "tests/test_i2_contracts.py::test_materialized_refs_check_types_dedupe_and_keep_empty",
+      "tests/test_i2_contracts.py::test_dependency_uses_trusted_spec_sorted_and_full_metadata"
+    ],
+    "clarification_reject_replay_expiry_bounds_identity": [
+      "tests/test_i2_continuation.py::test_resume_rejections_before_provider",
+      "tests/test_i2_continuation.py::test_request_replay_and_paused_run_survives_new_run",
+      "tests/test_i2_continuation.py::test_two_pauses_wait_excluded_and_third_pause_terminal",
+      "tests/test_i2_continuation.py::test_schema_and_actual_foreign_agent_isolation",
+      "tests/test_i2_continuation.py::test_counter_corruption_fails_before_any_dispatch",
+      "tests/test_i2_continuation.py::test_replay_revalidates_data_before_cached_result",
+      "tests/test_i2_continuation.py::test_actual_policy_change_ends_pending_run_but_client_stale_does_not"
+    ],
+    "repair_unsafe_provider_accounting": [
+      "tests/test_graph.py::test_one_recoverable_parse_repair",
+      "tests/test_graph.py::test_parse_repair_exhaustion",
+      "tests/test_graph.py::test_graph_unsafe_no_execution",
+      "tests/test_graph.py::test_typed_bad_provider_rejected",
+      "tests/test_i2_continuation.py::test_unknown_usage_and_accounting_stop_never_retry",
+      "tests/test_provider_worker.py::test_stalled_sdk_process_killed_reaped_cost_retained"
+    ],
+    "db_corruption_missing_locked_timeout": [
+      "tests/test_i2_domains.py::test_domain_integrity_and_mutated_grade",
+      "tests/test_i2_domains.py::test_university_owned_reads_locked_classification",
+      "tests/test_i2_core.py::test_locked_database_startup_fails_without_provider",
+      "tests/test_graph.py::test_sql_timeout_graph",
+      "tests/test_i2_ui.py::test_missing_database_safe_error_no_stale_answer"
+    ],
+    "wire_payload_results_trace_bounds": [
+      "tests/test_bounds.py::test_binding_closed_and_byte_bounds",
+      "tests/test_bounds.py::test_sql_size_and_closed_proposal",
+      "tests/test_i2_core.py::test_full_wire_gate_applies_to_scripted_provider",
+      "tests/test_graph.py::test_trace_failure_no_success_or_db",
+      "tests/test_graph.py::test_late_trace_failure_never_publishes_success",
+      "tests/test_graph.py::test_trace_limit_is_error"
+    ],
+    "full_same_run_trace_UI_request_identity": [
+      "tests/test_i2_continuation.py::test_trace_preserves_actual_request_ids_across_resume",
+      "tests/test_i2_ui.py::test_real_checkpoint_pause_resume_retained_same_run_and_no_replayed_calls",
+      "tests/test_i2_ui.py::test_repair_attempts_visible_and_library_zero_not_grade_scaled",
+      "tests/test_i2_ui.py::test_injected_refusal_clears_old_success_and_shows_full_error_trace"
+    ]
+  },
+  "Library": [
+    "tests/test_library.py::test_library_compiled_core_smoke",
+    "tests/test_library.py::test_library_baseline_zero_returned_mutations_and_scale",
+    "tests/test_library.py::test_library_real_checkpoint_ambiguity_and_selected_zero",
+    "tests/test_library.py::test_library_fk_corruption_and_cross_schema",
+    "tests/test_i2_ui.py::test_library_ambiguity_and_schema_switch_cannot_resume_foreign_run",
+    "tests/test_i2_ui.py::test_dataset_switch_clears_answer_and_uses_separate_db"
+  ],
+  "browser": {
+    "attempt1": {
+      "receipt": "docs/operations/H-013/browser/cp-c-attempt1/browser-receipt.json",
+      "status": "blocked before server/browser launch",
+      "cases": [],
+      "source_identity": "per-receipt snapshot; NOT final later candidate SHA"
+    },
+    "attempt2": {
+      "receipt": "docs/operations/H-013/browser/cp-c-attempt2/browser-receipt.json",
+      "status": "passed",
+      "cases": [
+        "success",
+        "clarification-pause",
+        "clarification-resume",
+        "repair",
+        "error"
+      ],
+      "source_identity": "per-receipt snapshot; NOT final later candidate SHA"
+    },
+    "attempt3": {
+      "receipt": "docs/operations/H-013/browser/cp-c-attempt3/browser-receipt.json",
+      "status": "passed",
+      "cases": [
+        "success",
+        "clarification-pause",
+        "clarification-resume",
+        "repair",
+        "error"
+      ],
+      "source_identity": "per-receipt snapshot; NOT final later candidate SHA"
+    }
+  },
+  "independent_oracle": "frozen-oracle.json; independent_oracle.py previously157checks; no productformatter import",
+  "passing_evidence_cutoffs": [
+    "CP-B root209pass/static/sourcehash proof recorded in cp-b-verification.json",
+    "CP-C lane-specific actual checks/failures in core-cp-c.md,domain-cp-c.md,ui-cp-c.md; later edits not retroactively covered"
+  ],
+  "remaining": [
+    "CP-D M1 full real actual-result sensitivity F1/F2/tie/empty/cohort/partialfailure/truncation/idempotency and sameintegratedcore tree proof",
+    "CP-E final frozen-source full browser including M1+Library; cleaner/reverification; independentcode-reviewerAPPROVE/architectCLEAR/configuredgates; fullinvariant/provenance/report/receipts/nativecompletion"
+  ],
+  "live": "not-run; offline/injected is not real-model NL-to-SQL accuracy",
+  "push": "not-run",
+  "integrated_attempt_receipt": "cp-c-integrated-attempts.json"
+}

@@ -164,3 +164,69 @@ def test_dependency_uses_trusted_spec_sorted_and_full_metadata():
         assert error.value.code == (
             "RESULT_TOO_LARGE" if mutation in ("truncated", "oversized") else "DEPENDENCY_INVALID"
         )
+
+
+def test_public_answer_reasons_are_closed_and_row_aligned():
+    from pydantic import ValidationError
+
+    from universitydb.contracts import Answer, RunError
+
+    base = {
+        "text": "undefined",
+        "columns": [{"name": "average", "type": "decimal"}],
+        "rows": [[None]],
+        "scope": "all",
+        "empty_reason": "no_rows",
+        "truncated": False,
+        "row_reasons": ["no_rows"],
+    }
+    Answer.model_validate(base)
+    for change in (
+        {"row_reasons": []},
+        {"row_reasons": ["invented"]},
+        {"rows": [[83.33]]},
+        {"columns": [{"name": "average", "type": "decimal", "nullable": True}]},
+    ):
+        with pytest.raises(ValidationError):
+            Answer.model_validate({**base, **change})
+    for code in ("FOREIGN_SESSION", "CLARIFICATION_EXPIRED", "REQUEST_CONFLICT", "UNKNOWN_ENTITY"):
+        with pytest.raises(ValidationError):
+            RunError(code=code, message="bad alias", failed_node="resume", retryable=False)
+
+
+def test_public_envelope_requires_one_exact_status_branch():
+    from pydantic import ValidationError
+
+    from universitydb.contracts import RunEnvelope
+
+    value = {
+        "version": "1",
+        "run_id": "app-run",
+        "trace_id": "app-run",
+        "status": "error",
+        "answer": None,
+        "clarification": None,
+        "error": {
+            "code": "RESUME_EXPIRED",
+            "message": "expired",
+            "failed_node": "resume",
+            "retryable": False,
+        },
+    }
+    RunEnvelope.model_validate(value)
+    with pytest.raises(ValidationError):
+        RunEnvelope.model_validate({**value, "status": "ok"})
+    with pytest.raises(ValidationError):
+        RunEnvelope.model_validate({**value, "events": []})
+
+
+def test_known_accounting_stop_transient_keeps_primary_error_code():
+    from universitydb.contracts import RunError
+
+    error = RunError(
+        code="PROVIDER_TRANSIENT",
+        message="Unknown usage; dispatch stopped.",
+        failed_node="plan",
+        retryable=False,
+    )
+    assert error.code == "PROVIDER_TRANSIENT"

@@ -5,14 +5,19 @@ are also the closed domain SQL subset; provider SQL is checked, never substitute
 """
 
 import re
-import sqlite3
 from decimal import ROUND_HALF_UP, Decimal
 from fractions import Fraction
 from pathlib import Path
 from typing import Any, ClassVar
 
 from universitydb.contracts import Failure, PlanProposal, ResultSpec, SQLProposal, Step, bindings
-from universitydb.domain_support import clarify, column, normalize_sql, resolve_entities
+from universitydb.domain_support import (
+    clarify,
+    column,
+    normalize_sql,
+    readonly_catalog_connection,
+    resolve_entities,
+)
 
 TABLES = {
     "Students": ["student_id", "name"],
@@ -133,7 +138,7 @@ class University:
 
     def catalog(self, path: Path) -> dict[str, list[dict[str, Any]]]:
         result: dict[str, list[dict[str, Any]]] = {}
-        with sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True) as conn:
+        with readonly_catalog_connection(path) as conn:
             for key, table, label in (
                 ("student_id", "Students", "name"),
                 ("teacher_id", "Teachers", "name"),
@@ -141,16 +146,20 @@ class University:
                 ("semester_id", "Semesters", "semester_id"),
             ):
                 extra = ",code" if table == "Courses" else ""
-                result[key] = [
-                    {"id": r[0], "label": r[1], "aliases": list(dict.fromkeys(r[1:]))}
-                    for r in conn.execute(
-                        f"SELECT {key},{label}{extra} FROM {table} ORDER BY {key}"
+                rows = conn.execute(
+                    f"SELECT {key},{label}{extra} FROM {table} ORDER BY {key} LIMIT 1001"
+                ).fetchall()
+                if len(rows) + sum(len(entries) for entries in result.values()) > 1000:
+                    raise Failure(
+                        "RESOURCE_LIMIT", "Catalog exceeds the supported 1000 entity schema limit."
                     )
+                result[key] = [
+                    {"id": r[0], "label": r[1], "aliases": list(dict.fromkeys(r[1:]))} for r in rows
                 ]
         return result
 
     def inspect_data(self, path: Path) -> None:
-        with sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True) as conn:
+        with readonly_catalog_connection(path) as conn:
             for table, cols in self.tables.items():
                 for col in cols:
                     expected = (
@@ -206,14 +215,76 @@ class University:
         catalog: dict[str, list[dict[str, Any]]] | None = None,
         choices: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
+        assigned_fields = set(re.findall(r"\b([A-Za-z_]\w*_id)\s*=", question))
+        if assigned_fields - set(FILTERS):
+            raise Failure(
+                "INVALID_INPUT", "Unsupported entity filter; no filter is silently ignored."
+            )
         choices = choices or {}
         if re.search(
             r"\b(drop|delete|insert|update|attach|pragma|alter|create)\b", question, re.IGNORECASE
         ):
             raise Failure("INVALID_INPUT", "Only read-only University questions are supported.")
+        if re.search(
+            r"\b(loans?|readers?|books?|borrowed|unreturned)\b", question, re.IGNORECASE
+        ) or not re.search(
+            r"mean|average|средн|count|how many|сколько|list|show|top|highest|best|покаж|спис|наиб",
+            question,
+            re.IGNORECASE,
+        ):
+            raise Failure(
+                "INVALID_INPUT",
+                "Unsupported University query intent; ask for means, enrollment counts/listing or top courses.",
+            )
         scope = resolve_entities(
             question, catalog or {}, choices, FILTERS, {"semester_id": r"\bS\d+\b"}
         )
+        if catalog:
+            # Recognize a bounded name-bearing shorthand instead of silently turning
+            # an unknown requested person into an unfiltered global aggregate.
+            named = re.search(
+                r"\b(?:mean|average)(?:\s+(?:for|of))?\s+([A-Za-z][\w-]*)", question, re.IGNORECASE
+            )
+            if named:
+                token = named.group(1).casefold()
+                semantic = {
+                    "all",
+                    "across",
+                    "grade",
+                    "grades",
+                    "enrollments",
+                    "enrollment",
+                    "student",
+                    "students",
+                    "course",
+                    "courses",
+                    "teacher",
+                    "teachers",
+                    "offering",
+                    "offerings",
+                    "semester",
+                    "semesters",
+                    "current",
+                    "per",
+                    "by",
+                    "in",
+                    "on",
+                    "with",
+                    "each",
+                    "globally",
+                    "overall",
+                }
+                known = {
+                    str(label).casefold()
+                    for entries in catalog.values()
+                    for entry in entries
+                    for label in entry.get("aliases", [entry["label"]])
+                }
+                if token not in semantic and token not in known and not token.endswith("_id"):
+                    raise Failure(
+                        "INVALID_INPUT",
+                        "Unknown name in mean request; use a known catalog name or explicit ID.",
+                    )
         if (
             re.search(r"current semester|текущ\w* семестр", question, re.IGNORECASE)
             and "semester_id" not in scope
@@ -237,6 +308,17 @@ class University:
                 )
             scope["count_object"] = choices["count_object"]
         return scope
+
+    def clarification_options(
+        self, field: str, catalog: dict[str, list[dict[str, Any]]]
+    ) -> list[dict[str, Any]]:
+        if field == "count_object":
+            return [{"value": key, "label": key.replace("_", " ")} for key in COUNT_EXPRESSIONS]
+        if field in FILTERS:
+            return [
+                {"value": entry["id"], "label": entry["label"]} for entry in catalog.get(field, [])
+            ]
+        raise Failure("PLAN_INVALID", "Clarification field is not registered by this adapter.")
 
     def validate_plan(self, plan: PlanProposal) -> None:
         if plan.needs_clarification or plan.clarification_field is not None:

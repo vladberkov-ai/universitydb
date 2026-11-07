@@ -15,3 +15,15 @@ and [SQL request](../docs/operations/H-009/live/s6/request-02.json).
 [offline-s6.json](offline-s6.json) is a newly packaged **scripted transport fixture**
 derived from tests/conftest.py outputs(), not a captured live response. It enables
 free UI/graph/SQLite smoke testing of S6 only and must remain labeled offline/injected.
+
+## H-013 current offline browser examples (not real-model accuracy)
+[CP-C actual browser receipt](../docs/operations/H-013/browser/cp-c-attempt3/browser-receipt.json)
+links injected-proposal Streamlit/compiled-graph/SQLite captures: S6→80.00;
+Alex ambiguity→real same-run checkpoint resume86.67; unknown-column repair→80.00;
+provider refusal→terminal error without stale success. Per-case JSONL, screenshots
+and visible body text are adjacent. Focused SQL/DB/adapted/trace views supplement the
+main screenshot because Streamlit scrolls inside its app container. The owned server
+and browser were stopped; temporary root isolated the actual monetary ledger.
+[Fixture builder](../docs/operations/H-013/offline_ui_fixture.py) supplies SQL proposals,
+not fabricated DB results or a production provider fallback. Historical I1 live
+records above stay unchanged; CP-D/E final M1/Library/frozen-source evidence is separate.

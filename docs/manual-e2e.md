@@ -62,3 +62,22 @@ full same-run JSONL. New questions/errors/dataset changes clear prior answers.
 Checkpoint clarification and browser M1/Library/repair/error proof are later H-013
 checkpoints, **not claimed by this foundation note**. The offline tests use real
 SQLite/compiled graph with scripted proposals; no real-model accuracy is inferred.
+
+### CP-C actual offline continuation and errors
+With a fixture prepared for the requested scope, “What is the average grade for
+Alex?” offers Alex IDs1/3 before generated SQL/provider calls. Select ID1 and click
+“Continue this run”:86.67, same run and a visible resume event. “Current semester”
+offers configured catalog semesters rather than inferring a date; TTL900s and
+server-session/schema/data/policy identities bound continuation. No restart recovery
+is promised. Switching dataset clears the prior answer and uses its own default
+question; Library duplicate labels expose IDs, counts remain unscaled including zero.
+
+The UI SQL panel now shows **proposals as proposals**, including rejected/repaired
+SQL, separately from validated/executed statements. Inspect every attempt plus raw
+rows, adapted results/dependency bindings and full same-run download. Controlled
+refusal/missing-DB/expired continuation errors never display a prior success.
+[CP-C browser receipt](operations/H-013/browser/cp-c-attempt3/browser-receipt.json)
+records actual injected success/clarification/repair/error with focused panels;
+[prior socket-blocked attempt](operations/H-013/browser/cp-c-attempt1/browser-receipt.json)
+remains provenance. These are not live/model-quality claims. Final frozen-candidate
+M1/Library/browser/review proof remains CP-D/E, not conferred by this note.

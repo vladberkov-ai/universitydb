@@ -1,0 +1,73 @@
+{
+  "profile": "offline/injected",
+  "real_provider_called": false,
+  "paid_calls": 0,
+  "base_HEAD": "f522fb4f3b0c56fccd5b8dd404960fef8f88d532",
+  "source_sha256": {
+    "src/universitydb/__init__.py": "f4783354578e7b9ed2f99a68b5454ac621abd61d76b07062a05bf5887dd72dd7",
+    "src/universitydb/agent.py": "a5e96170851322f3808d599229b408008c0f5206fe0702cb07dbb9d04566ce0d",
+    "src/universitydb/config.py": "508b2bef52d2c81c5114b885a6be56f5b22b18774ae5a48674679ea1fdd6b263",
+    "src/universitydb/contracts.py": "318b56e8a0c63cd04834f469b0dca2e0a391d54ba44c7613712ff8aed1dd3625",
+    "src/universitydb/db.py": "5ad77c530df1d6b2b80f438d8b5be4b63f64ed9a14d5d83998af2c20af767f07",
+    "src/universitydb/db_worker.py": "807eff2fe2b8ded359815fd050c93c32eeb14f18778504cd0a98e335d4145d1e",
+    "src/universitydb/domain.py": "247d11ae5e21f75ce11b5ffc2c9fd78526b3e68e790641fc131a315b9b5f0cbd",
+    "src/universitydb/domain_support.py": "211407da912ca737bdc449ce68b098227efad5fdd551c8848796d5c041a71fae",
+    "src/universitydb/library.py": "3bf021558ccd79d8242e30f8fe6906a26c284825fb185849e96e2827c1f1f5b1",
+    "src/universitydb/llm.py": "4b8c80075748a669cb70397ad8aecbad2efbb9dd3ce2a7e9680e918ba10157cb",
+    "src/universitydb/llm_worker.py": "ba0abec6f45197814068c70aa86fb747e4de070cc84f08f1caa6b537b3a5bf9d",
+    "src/universitydb/prompts/plan.txt": "5e01dccf6c0d77531a32787946e055f0dfaa229274883cd621e532a608c9b1e3",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/sql_policy.py": "f0d2c532ad9c053952cc6a4fefba9350585e9826d49f9b05b5d6171b035307ac",
+    "src/universitydb/tracing.py": "7655d8eb5932eb9466536ced1c9e85a34e38c3bee3d4a7bda95ddb79acd58858",
+    "src/universitydb/ui.py": "1894ec3edb3894e93716546b101e6ef7fe822a97b11c1f2f29ad7f5371fd38e4"
+  },
+  "cases": {
+    "success": {
+      "expected": "80.00",
+      "status": "ok",
+      "run_id": "125e140f-1153-4d31-99e6-d55b2e96eb24",
+      "events": 34,
+      "trace_sha256": "4eb1659cd6d64467693c7c4f0da908c57fcf56e2ae8e7febfb574b0ef507d99e",
+      "screenshot_sha256": "8e6cb90629c5876a3f3f330ed04d0c6915764a9177c92bac3a3f44fdd141ec94"
+    },
+    "clarification-pause": {
+      "expected": "Choose",
+      "status": "clarification",
+      "run_id": "d7fd34dc-ba72-4d99-9f1e-503de7a8f999",
+      "events": 9,
+      "trace_sha256": "cc7e941dd48b1b3785c19fdf9fa765776723858d181cdb63a29f87d74c5de791",
+      "screenshot_sha256": "9775ce7035f9cc8cff4876835666f1aa3b9213f7ae63b2d8c73b329bced21db0"
+    },
+    "clarification-resume": {
+      "expected": "86.67",
+      "status": "ok",
+      "run_id": "d7fd34dc-ba72-4d99-9f1e-503de7a8f999",
+      "events": 40,
+      "trace_sha256": "878a9d6b28942263c9ec60fe8483806ac586c3159ff305301724ba6e4c975ee2",
+      "screenshot_sha256": "06ce96e2829121fd94ee26ab5d25849cb6a2ea55841c7d848f074f88e4481f88"
+    },
+    "repair": {
+      "expected": "80.00",
+      "status": "ok",
+      "run_id": "e004ddc2-ff51-4e29-b435-b02939c981ed",
+      "events": 40,
+      "trace_sha256": "e4c2d7f29261132414545dcf812817cc6d5dd7cdf0c439eed713dd55ebce30cf",
+      "screenshot_sha256": "cee01d39597cf7cba10aefcda3b70b5adbba60d1b8db735644f56d0c0a8fb134"
+    },
+    "error": {
+      "expected": "PROVIDER_REFUSAL",
+      "status": "error",
+      "run_id": "5f27a473-ef1d-4ae5-a907-a54c7a163c4a",
+      "events": 14,
+      "trace_sha256": "d8d59b3640ca3c7db488da6916a29b0e26c6ce63931c91863ada16c39846a2dc",
+      "screenshot_sha256": "8a6f95d16dc3acbf3ee0e8ab7fc75acc12abd3e48f4acc1507288bb2e1102a1f"
+    }
+  },
+  "server_stopped": true,
+  "browser_closed": true,
+  "claim": "Actual browser+Streamlit+compiled graph+SQLite with injected proposals, NOT real-model NL-to-SQL accuracy",
+  "fixture_sha256": "2a3835d0a1b845902af7769572cb6c95d8b3d50385110ec23e826a6efe9b69fc",
+  "status": "passed",
+  "temporary_ledger_absent": true,
+  "actual_runtime_unchanged": true
+}

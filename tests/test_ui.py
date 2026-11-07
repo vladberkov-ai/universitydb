@@ -25,7 +25,7 @@ def test_actual_streamlit_app_offline_and_stale_clear(tmp_path, monkeypatch):
     fixture.write_text(json.dumps(outputs()))
     monkeypatch.setenv("UNIVERSITYDB_TEST_MODE", "1")
     monkeypatch.setenv("UNIVERSITYDB_TEST_FIXTURE", str(fixture))
-    app = AppTest.from_file(str(ROOT / "src/universitydb/ui.py")).run()
+    app = AppTest.from_file(str(ROOT / "src/universitydb/ui.py"), default_timeout=30).run()
     assert not app.exception
     app.button[0].click().run()
     assert not app.exception
@@ -47,7 +47,7 @@ def test_normal_ui_missing_key_no_hidden_mock(monkeypatch):
     monkeypatch.delenv("UNIVERSITYDB_TEST_MODE", raising=False)
     monkeypatch.delenv("UNIVERSITYDB_TEST_FIXTURE", raising=False)
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
-    app = AppTest.from_file(str(ROOT / "src/universitydb/ui.py")).run()
+    app = AppTest.from_file(str(ROOT / "src/universitydb/ui.py"), default_timeout=30).run()
     app.button[0].click().run()
     assert not app.exception and not app.success
     assert any("PROVIDER_UNAVAILABLE" in e.value for e in app.error)

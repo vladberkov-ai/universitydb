@@ -129,6 +129,23 @@ def test_ambiguous_name_is_clarification_not_unsupported(database, tmp_path):
     """Accepted I2 semantic change from I1's blanket rejection of 'mean Alex'."""
     provider = ScriptedProvider([])
     result = Agent(University(), database, provider, tmp_path / "trace").run("mean Alex")
-    assert result["error"]["code"] == "CLARIFICATION_REQUIRED"
+    assert result["status"] == "clarification"
+    assert result["error"] is None
+    assert {option["value"] for option in result["clarification"]["options"]} == {1, 3}
     assert provider.calls == 0
     assert not any(e["kind"] == "sql_attempt" for e in result["events"])
+
+
+def test_locked_database_startup_fails_without_provider(database, tmp_path):
+    import sqlite3
+
+    connection = sqlite3.connect(database)
+    connection.execute("BEGIN EXCLUSIVE")
+    try:
+        provider = ScriptedProvider([])
+        result = Agent(University(), database, provider, tmp_path / "locked").run("mean all")
+        assert result["error"]["code"] == "DB_UNAVAILABLE"
+        assert provider.calls == 0 and result["answer"] is None
+    finally:
+        connection.rollback()
+        connection.close()

@@ -14,3 +14,28 @@ University breadth, clarification and dependent M1 share ResultSpec/state change
 
 ## Consequences and verification
 More typed failure cases and continuation identities are explicit, not inferred from successful rows. Independent frozen oracle covers University all groups/filter subsets/mutations, M1 F1/F2/tie/empty and Library 1/1/zero/returned mutation before product tests. Static/ref/wire/NULL/empty safety tests, real SQLite/compiled graph, actual binding sensitivity, AppTest and offline browser/full traces, independent APPROVE+CLEAR/configured gates prove offline DoD. Semantic safety limitations and absence of hard memory isolation remain explicit. Follow [whole brief](../plans/I2-I3-offline-brief.md) and [contract](../plans/I2-I3-offline-contract.md); no live/push/I4–I5/defense authority.
+
+## CP-C implementation note — typed public row reasons
+Before the closed Answer validator, adopt optional `Answer.row_reasons` as a list
+of `null | "no_rows" | "no_grades"`, length exactly equal to normalized answer rows when present.
+Context: H-013 requires per-group no-grades annotation and M1 tie includes a student
+with enrollment but no grade. Keeping that annotation only in step results would
+hide required meaning from public/UI consumers, so that alternative is rejected.
+Scalar `empty_reason` still owns no_rows/no_grades; optional per-row no_rows preserves
+the existing scalar empty proof, not new semantics. Counts/Library may omit the
+extension. Explicit optional compatibility applies to this H-013 representation;
+historical output examples and domain semantics/model/limits are unchanged.
+
+## CP-C implementation note — continuation representation and trust
+Record the actual local closed clarification/binding envelope and API in the
+[current contract](../plans/I2-I3-offline-contract.md#cp-c-actual-in-process-continuation-representation).
+Choose typed int/string option IDs and server-generated Unix-seconds float expiry,
+plus explicit application run/checkpoint/session/schema/data/policy identities.
+Alternative historical proposed opaque option strings/RFC3339/minimal wire is not
+adopted implicitly: local typed choices avoid lossy conversions and explicit
+bindings make same-session checkpoint inspection auditable. The consequence is a
+larger closed envelope and exact echo validation. None of these client-echoed
+values grants authority; retained server Agent/context/checkpointer/current data
+are authoritative. Native OMX ownership and IDs are separate and never exposed
+by this product contract. No authentication, public HTTP or restart-durability
+claim follows from local equality checks.

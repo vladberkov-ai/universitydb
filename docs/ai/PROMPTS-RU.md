@@ -413,3 +413,6 @@ UniversityDB I1, SQL-промпт v1. Генерируй SQLite SQL, а не о�
 
 ## H-013 policy v2 — Russian reader synopsis, not an actual Russian runtime input
 [Plan source](../../src/universitydb/prompts/plan.txt): план из 1–3 зарегистрированных шагов с точными ResultSpec и типизированными ссылками на предыдущие фактические результаты; без выдуманного ответа. [SQL source](../../src/universitydb/prompts/sql.txt): один read-only SELECT по принятому шагу, scope и фактическим dependency bindings, точная схема результата, явные empty/NULL semantics и ограниченное исправление синтаксиса/колонки. [Source hashes/provenance](../operations/H-013/cp-b-prompt-receipt.json). Это отдельно атрибутированный reader synopsis английских source templates, не фактически отправленный русский API-промпт и не live evidence; прежние оригиналы выше сохранены.
+
+### H-013 CP-C plan continuation — reader synopsis only
+[Current English source](../../src/universitydb/prompts/plan.txt) допускает уточнение известного поля с вариантами из серверного каталога, сохранённым планом либо одним новым планом после выбора; общие лимиты не сбрасываются. [Source hashes/provenance](../operations/H-013/cp-c-prompt-receipt.json). Это reader synopsis, не фактически отправленный русский API-промпт и не live evidence; прежние записи сохранены.

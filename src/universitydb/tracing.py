@@ -13,6 +13,7 @@ from universitydb.contracts import Failure
 class Trace:
     def __init__(self, directory: Path, run_id: str, *, limit: int = 1048576) -> None:
         self.run_id = run_id
+        self.request_id = run_id
         self.path = directory / f"{run_id}.jsonl"
         self.events: list[dict[str, Any]] = []
         self.bytes = 0
@@ -29,7 +30,7 @@ class Trace:
             "event_id": str(uuid.uuid4()),
             "seq": len(self.events) + 1,
             "parent_event_id": None,
-            "request_id": self.run_id,
+            "request_id": self.request_id,
             "node": node,
             "kind": kind,
             "attempt": attempt,

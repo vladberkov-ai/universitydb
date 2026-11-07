@@ -1,11 +1,16 @@
 """Library adapter: open loans per reader, including zero; no grade scaling."""
 
-import sqlite3
+import re
 from pathlib import Path
 from typing import Any, ClassVar
 
 from universitydb.contracts import Failure, PlanProposal, ResultSpec, SQLProposal, Step, bindings
-from universitydb.domain_support import column, normalize_sql, resolve_entities
+from universitydb.domain_support import (
+    column,
+    normalize_sql,
+    readonly_catalog_connection,
+    resolve_entities,
+)
 
 SPEC = ResultSpec.model_validate(
     {
@@ -47,16 +52,18 @@ class Library:
         }
 
     def catalog(self, path: Path) -> dict[str, list[dict[str, Any]]]:
-        with sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True) as conn:
-            return {
-                "reader_id": [
-                    {"id": r[0], "label": r[1]}
-                    for r in conn.execute("SELECT reader_id,name FROM Readers ORDER BY reader_id")
-                ]
-            }
+        with readonly_catalog_connection(path) as conn:
+            rows = conn.execute(
+                "SELECT reader_id,name FROM Readers ORDER BY reader_id LIMIT 1001"
+            ).fetchall()
+            if len(rows) > 1000:
+                raise Failure(
+                    "RESOURCE_LIMIT", "Catalog exceeds the supported 1000 entity schema limit."
+                )
+            return {"reader_id": [{"id": r[0], "label": r[1]} for r in rows]}
 
     def inspect_data(self, path: Path) -> None:
-        with sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True) as conn:
+        with readonly_catalog_connection(path) as conn:
             for table, columns in self.tables.items():
                 for col in columns:
                     expected = "text" if col in ("name", "title") else "integer"
@@ -84,7 +91,48 @@ class Library:
         catalog: dict[str, list[dict[str, Any]]] | None = None,
         choices: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
+        assigned_fields = set(re.findall(r"\b([A-Za-z_]\w*_id)\s*=", question))
+        if assigned_fields - {"reader_id"}:
+            raise Failure(
+                "INVALID_INPUT", "Unsupported entity filter; no filter is silently ignored."
+            )
+        if re.search(
+            r"\b(drop|delete|insert|update|attach|pragma|alter|create|grade|grades|student|students|course|courses|teacher|teachers|semester|mean|average)\b",
+            question,
+            re.IGNORECASE,
+        ) or not re.search(r"\b(loans?|borrowed|unreturned)\b", question, re.IGNORECASE):
+            raise Failure(
+                "INVALID_INPUT", "Library supports read-only open-loan counts by reader only."
+            )
+        if not re.search(r"\b(open|unreturned)\b|not returned", question, re.IGNORECASE):
+            raise Failure(
+                "INVALID_INPUT",
+                "Specify open/unreturned loans; other Library metrics are unsupported.",
+            )
+        if catalog:
+            named = re.search(r"\b(?i:loans?)\s+(?:(?i:for)\s+)?([A-Z][\w-]*)", question)
+            known = {str(entry["label"]).casefold() for entry in catalog.get("reader_id", [])}
+            if named and named.group(1).casefold() not in known | {
+                "per",
+                "by",
+                "for",
+                "all",
+                "reader",
+                "readers",
+                "reader_id",
+                "count",
+            }:
+                raise Failure(
+                    "INVALID_INPUT", "Unknown reader name; use a catalog name or reader_id."
+                )
         return resolve_entities(question, catalog or {}, choices or {}, ("reader_id",))
+
+    def clarification_options(
+        self, field: str, catalog: dict[str, list[dict[str, Any]]]
+    ) -> list[dict[str, Any]]:
+        if field != "reader_id":
+            raise Failure("PLAN_INVALID", "Clarification field is not registered by this adapter.")
+        return [{"value": entry["id"], "label": entry["label"]} for entry in catalog.get(field, [])]
 
     def validate_plan(self, plan: PlanProposal) -> None:
         if plan.needs_clarification or plan.clarification_field is not None:

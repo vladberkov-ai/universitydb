@@ -21,9 +21,9 @@ QUESTION = (
     "with Kim (teacher_id=10) in semester S1?"
 )
 # Domain construction/provisioning belongs at the composition root, never graph core.
-DOMAINS: dict[str, tuple[Any, str, str]] = {
-    "University": (University, "university-v1", ""),
-    "Library": (Library, "library-v1", "library"),
+DOMAINS: dict[str, tuple[Any, str, str, str]] = {
+    "University": (University, "university-v1", "", QUESTION),
+    "Library": (Library, "library-v1", "library", "How many open loans does each reader have?"),
 }
 
 
@@ -64,13 +64,24 @@ def render_result(result: dict[str, Any]) -> None:
         st.error(f"{result['error']['code']}: {result['error']['message']}")
     events = result["events"]
     with st.expander("SQL and safe parameters", expanded=True):
-        queries = [e for e in events if e["kind"] in ("sql_validated", "sql_attempt")]
+        queries = []
+        for event in events:
+            payload = event["payload"]
+            if event["kind"] in ("sql_validated", "sql_attempt"):
+                queries.append((event, payload, event["kind"]))
+            elif event["node"] == "generate_sql" and event["kind"] == "node_end":
+                proposed = payload.get("proposal")
+                if isinstance(proposed, dict) and "sql" in proposed:
+                    queries.append((event, proposed, "proposal (not proof of execution)"))
         if not queries:
             st.write("SQL was not executed.")
-        for event in queries:
-            st.caption(f"seq={event['seq']} attempt={event['attempt']} {event['kind']}")
-            st.code(event["payload"]["sql"], language="sql")
-            st.json(event["payload"]["parameters"])
+        for event, query, phase in queries:
+            st.caption(
+                f"seq={event['seq']} attempt={event['attempt']} {phase}; "
+                f"step={query.get('step_id', 'see accepted step in trace')}"
+            )
+            st.code(query["sql"], language="sql", wrap_lines=True)
+            st.json(query["parameters"])
     with st.expander("DB typed rows", expanded=True):
         results = [e["payload"] for e in events if e["kind"] == "db_result"]
         st.json(results) if results else st.write("DB query was not executed.")
@@ -98,7 +109,7 @@ def main() -> None:
     )
     root = Path(os.environ.get("UNIVERSITYDB_ROOT", ".")).resolve()
     label = st.selectbox("Dataset", list(DOMAINS))
-    factory, schema_id, resource_subdir = DOMAINS[label]
+    factory, schema_id, resource_subdir, default_question = DOMAINS[label]
     database = root / "runtime" / f"{schema_id}.db"
     try:
         identity = context_identity(root, schema_id)
@@ -111,7 +122,11 @@ def main() -> None:
             if not database.exists():
                 initialize(database, root / "resources" / resource_subdir)
             st.session_state["agent"] = Agent(
-                factory(), database, selected, root / "runtime" / "traces"
+                factory(),
+                database,
+                selected,
+                root / "runtime" / "traces",
+                session_id=st.session_state["session_id"],
             )
         agent = st.session_state["agent"]
     except (Failure, OSError, ValueError, KeyError, TypeError):
@@ -122,12 +137,16 @@ def main() -> None:
         f"Execution profile: {agent.provider.profile}. Offline/injected is not live model accuracy."
     )
     with st.form("question"):
-        question = st.text_area("Question", QUESTION)
+        question = st.text_area("Question", default_question, key=f"question_{schema_id}")
         submitted = st.form_submit_button("Run")
     if submitted:
         st.session_state.pop("result", None)
         try:
-            st.session_state["result"] = agent.run(question)
+            st.session_state["result"] = agent.run(
+                question,
+                request_id=str(uuid.uuid4()),
+                session_id=st.session_state["session_id"],
+            )
         except (Failure, OSError, ValueError, KeyError, TypeError):
             st.error("Run failed safely; no prior answer is displayed.")
     result = st.session_state.get("result")
@@ -140,15 +159,21 @@ def main() -> None:
                 selection = st.selectbox(
                     "Clarification choice",
                     list(range(len(options))),
-                    format_func=lambda i: options[i]["label"],
+                    format_func=lambda i: f"{options[i]['label']} (ID: {options[i]['value']})",
+                    key=f"clarification_choice_{continuation['clarification_id']}",
                 )
                 resume = st.form_submit_button("Continue this run")
             if resume:
                 st.session_state.pop("result", None)
                 try:
                     st.session_state["result"] = agent.resume(
-                        continuation, options[selection]["value"], request_id=str(uuid.uuid4())
+                        continuation,
+                        options[selection]["value"],
+                        request_id=str(uuid.uuid4()),
+                        session_id=st.session_state["session_id"],
                     )
+                    # Re-render from the saved result without repeating resume effects.
+                    st.rerun()
                 except (Failure, OSError, ValueError, KeyError, TypeError):
                     st.error("Continuation failed safely; no prior answer is displayed.")
                 result = st.session_state.get("result")

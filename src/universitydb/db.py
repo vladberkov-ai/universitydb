@@ -29,7 +29,9 @@ def initialize(path: Path, resources: Path) -> None:
 def inspect(path: Path, tables: dict[str, list[str]]) -> dict[str, Any]:
     """Trusted startup scan, separate from generated SQL request attempts."""
     try:
-        with sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True) as connection:
+        with sqlite3.connect(
+            path.resolve().as_uri() + "?mode=ro", uri=True, timeout=0.5
+        ) as connection:
             if connection.execute("PRAGMA integrity_check").fetchone() != ("ok",):
                 raise Failure("DATA_INCONSISTENT", "Database integrity failed.")
             if connection.execute("PRAGMA foreign_key_check").fetchall():

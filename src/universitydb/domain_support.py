@@ -1,6 +1,10 @@
 """Small shared adapter helpers; schema identifiers/policies are supplied by adapters."""
 
 import re
+import sqlite3
+from collections.abc import Iterator
+from contextlib import contextmanager
+from pathlib import Path
 from typing import Any
 
 import sqlglot
@@ -29,19 +33,22 @@ def resolve_entities(
     for key in fields:
         entries = catalog.get(key, [])
         singular = key.removesuffix("_id")
-        pattern = rf"\b{key}\s*=\s*([A-Za-z0-9]+)\b"
+        pattern = rf"\b{key}\s*=\s*([^\s,)]+)"
         tokens = re.findall(pattern, question, re.IGNORECASE)
         if key not in id_patterns:
             tokens += re.findall(rf"\b{singular}\s*#?\s*(\d+)\b", question, re.IGNORECASE)
         else:
             tokens += re.findall(id_patterns[key], question, re.IGNORECASE)
+        if re.search(rf"\b{key}\s*=", question, re.IGNORECASE) and not tokens:
+            raise Failure("INVALID_INPUT", f"Missing or malformed {key}.")
         ids: list[Any] = []
         for token in tokens:
+            token = token.rstrip("?.!;")
             value: Any = (
                 token.upper() if key in id_patterns else int(token) if token.isdigit() else token
             )
             if entries and not any(e["id"] == value for e in entries):
-                raise Failure("UNKNOWN_ENTITY", f"Unknown {key}: {value}.")
+                raise Failure("INVALID_INPUT", f"Unknown {key}: {value}.")
             if value not in ids:
                 ids.append(value)
         names = []
@@ -54,22 +61,21 @@ def resolve_entities(
             ):
                 names.append(entry)
         candidates = {e["id"]: e for e in names}
+        conflict = len(ids) > 1 or bool(ids and candidates and ids[0] not in candidates)
+        if conflict:
+            raise Failure(
+                "INVALID_INPUT",
+                f"Conflicting {singular} identities; provide one consistent identity.",
+            )
         if key in choices:
             chosen = choices[key]
             allowed = set(candidates) if candidates else {e["id"] for e in entries}
             if type(chosen) not in (int, str) or chosen not in allowed:
-                raise Failure("INVALID_CLARIFICATION", "Choice is not an offered catalog identity.")
+                raise Failure("INVALID_SELECTION", "Choice is not an offered catalog identity.")
             if ids and chosen not in ids:
-                raise Failure("INVALID_CLARIFICATION", "Choice conflicts with explicit ID.")
+                raise Failure("INVALID_SELECTION", "Choice conflicts with explicit ID.")
             scope[key] = chosen
             continue
-        conflict = len(ids) > 1 or bool(ids and candidates and ids[0] not in candidates)
-        if conflict:
-            clarify(
-                key,
-                [{"value": e["id"], "label": e["label"]} for e in entries],
-                f"Conflicting {singular} identities; choose explicitly.",
-            )
         if ids:
             scope[key] = ids[0]
         elif len(candidates) == 1:
@@ -82,10 +88,15 @@ def resolve_entities(
             )
         # Explicit identity labels cannot silently turn unknown names into an absent filter.
         unknown = re.search(
-            rf"\b{singular}(?:_name)?\s*=\s*['\"]?([A-Za-z][\w-]*)", question, re.IGNORECASE
+            rf"\b{singular}(?:_name)?\s*(?:=|named)\s*['\"]?([A-Za-z][\w-]*)",
+            question,
+            re.IGNORECASE,
         )
-        if unknown and not names and not ids:
-            raise Failure("UNKNOWN_ENTITY", f"Unknown {singular} name.")
+        natural_unknown = re.search(
+            rf"\b(?i:{singular})[ \t]+(?:named[ \t]+)?['\"]?([A-Z][\w-]*)", question
+        )
+        if (unknown or natural_unknown) and not names and not ids:
+            raise Failure("INVALID_INPUT", f"Unknown {singular} name.")
     return scope
 
 
@@ -123,3 +134,16 @@ def normalize_sql(sql: str, tables: dict[str, list[str]]) -> exp.Select:
         predicates.sort(key=lambda p: p.sql())
         tree.set("where", exp.Where(this=exp.and_(*predicates)))
     return tree
+
+
+@contextmanager
+def readonly_catalog_connection(path: Path) -> Iterator[sqlite3.Connection]:
+    """Bounded trusted startup reads; generated queries use the separate DB worker."""
+    try:
+        connection = sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True, timeout=0.5)
+        try:
+            yield connection
+        finally:
+            connection.close()
+    except sqlite3.Error as exc:
+        raise Failure("DB_UNAVAILABLE", "Database catalog/integrity scan is unavailable.") from exc

@@ -151,13 +151,13 @@ def test_resolve_catalog_ambiguous_current_conflict_unknown(database):
         "teacher_id": 10,
         "semester_id": "S1",
     }
-    for question in ["Mean current semester", "Mean Bea student_id=1", "How many?"]:
+    for question in ["Mean current semester", "How many?"]:
         with pytest.raises(Failure, match="Choose|Conflicting"):
             domain.resolve(question, catalog)
     for question in ["Mean student_id=99", "Mean student=Nobody"]:
         with pytest.raises(Failure) as caught:
             domain.resolve(question, catalog)
-        assert caught.value.code == "UNKNOWN_ENTITY"
+        assert caught.value.code == "INVALID_INPUT"
     assert domain.resolve("Mean current semester", catalog, {"semester_id": "S2"}) == {
         "semester_id": "S2"
     }
@@ -244,3 +244,290 @@ def test_spec_registry_closed(patch):
     with pytest.raises(Failure) as caught:
         University().accept_spec(spec)
     assert caught.value.code == "RESULT_CONTRACT_INVALID"
+
+
+def graph_result(database, tmp_path, spec, scope, question=None):
+    from universitydb.agent import Agent
+    from universitydb.llm import ScriptedProvider
+
+    p = proposal_for(University(), spec, scope)
+    plan = {
+        "version": "1",
+        "steps": [step_for(spec).model_dump()],
+        "needs_clarification": False,
+        "clarification_field": None,
+    }
+    provider = ScriptedProvider([plan, p.model_dump()])
+    question = question or "Mean all " + " ".join(f"{k}={v}" for k, v in scope.items())
+    agent = Agent(University(), database, provider, tmp_path / "trace")
+    result = agent.run(question)
+    assert result["status"] == "ok", result.get("error")
+    assert provider.calls == 2
+    assert len(result["step_results"]) == 1
+    assert [e for e in result["events"] if e["kind"] == "db_result"]
+    return result
+
+
+@pytest.mark.parametrize("case", ORACLE["scopes"], ids=lambda c: str(c["scope"]))
+def test_compiled_graph_all_16_filter_scopes_means_counts(database, tmp_path, case):
+    mean = graph_result(database, tmp_path, make_spec("grade_mean"), case["scope"])
+    assert mean["answer"]["rows"] == [[case["mean"], *case["raw"][1:]]]
+    counts = graph_result(
+        database,
+        tmp_path,
+        make_spec("enrollment_counts"),
+        case["scope"],
+        "Count enrollments " + " ".join(f"{k}={v}" for k, v in case["scope"].items()),
+    )
+    assert counts["answer"]["rows"] == [[case["raw"][2], case["raw"][1], case["distinct_students"]]]
+
+
+@pytest.mark.parametrize("key", GROUPS)
+def test_compiled_graph_every_group_mutates_independently(database, tmp_path, key):
+    spec = make_spec("grade_mean", key)
+    expected = ORACLE["scopes"][0]["groups"][key]
+    result = graph_result(database, tmp_path, spec, {})
+    assert result["answer"]["rows"] == [[g["key"], g["mean"], *g["raw"][1:]] for g in expected]
+    with sqlite3.connect(database) as conn:
+        conn.execute("UPDATE Enrollments SET grade_units=1000 WHERE student_id=2 AND offering_id=1")
+    expected = ORACLE["mutations"]["grade_2_1_to_1000"]["groups"][key]
+    result = graph_result(database, tmp_path, spec, {})
+    assert result["answer"]["rows"] == [[g["key"], g["mean"], *g["raw"][1:]] for g in expected]
+
+
+@pytest.mark.parametrize(
+    "scope,reason,rows",
+    [
+        ({"course_id": 2, "semester_id": "S2"}, "no_rows", [[None, 0, 0]]),
+        ({"course_id": 3, "semester_id": "S1"}, "no_grades", [[None, 0, 1]]),
+        ({"student_id": 1}, None, [["86.67", 3, 3]]),
+        ({"student_id": 1, "course_id": 1}, None, [["80.00", 2, 2]]),
+        ({"student_id": 1, "course_id": 1, "semester_id": "S2"}, None, [["70.00", 1, 1]]),
+    ],
+)
+def test_compiled_graph_q2_q7_q8_mean_states(database, tmp_path, scope, reason, rows):
+    result = graph_result(database, tmp_path, make_spec("grade_mean"), scope)
+    assert result["answer"]["rows"] == rows
+    assert result["answer"]["empty_reason"] == reason
+
+
+def test_compiled_graph_q3_q6_q8_zero_q9_top_ties(database, tmp_path):
+    scope = {"student_id": 1, "course_id": 1, "teacher_id": 10, "semester_id": "S1"}
+    assert graph_result(database, tmp_path, make_spec("grade_mean"), scope)["answer"]["rows"] == [
+        ["90.00", 1, 1]
+    ]
+    listing = graph_result(
+        database, tmp_path, make_spec("enrollment_rows"), {"course_id": 1, "semester_id": "S1"}
+    )
+    assert [(r[0], r[2], r[-1]) for r in listing["answer"]["rows"]] == [
+        (1, 1, 9000),
+        (2, 1, 6000),
+        (3, 1, None),
+        (2, 5, 10000),
+    ]
+    top = graph_result(
+        database, tmp_path, make_spec("top_course", "course_id"), {"semester_id": "S1"}
+    )
+    assert [r[0] for r in top["answer"]["rows"]] == [2]
+    with sqlite3.connect(database) as conn:
+        conn.execute("UPDATE Enrollments SET grade_units=8000 WHERE student_id=2 AND offering_id=1")
+        conn.execute("UPDATE Enrollments SET grade_units=9000 WHERE student_id=1 AND offering_id=2")
+    top = graph_result(
+        database, tmp_path, make_spec("top_course", "course_id"), {"semester_id": "S1"}
+    )
+    assert top["answer"]["rows"] == [[1, "90.00", 3, 4], [2, "90.00", 1, 1]]
+    with sqlite3.connect(database) as conn:
+        conn.execute("UPDATE Enrollments SET grade_units=0 WHERE student_id=1 AND offering_id=1")
+    assert graph_result(database, tmp_path, make_spec("grade_mean"), scope)["answer"]["rows"] == [
+        ["0.00", 1, 1]
+    ]
+
+
+@pytest.mark.parametrize(
+    "question",
+    [
+        "Mean Bea student_id=1",
+        "Mean student_id=1 student_id=2",
+        "Mean Zed",
+        "Mean for Zed",
+        "Mean student=Zed",
+        "Mean student named Zed",
+        "Mean student_id=-1",
+        "Mean student_id=nope",
+        "Mean student_id=",
+        "Mean reader_id=1",
+        "Mean offering_id=1",
+    ],
+)
+def test_conflicting_unknown_identity_terminal_no_provider_or_sql(database, tmp_path, question):
+    from universitydb.agent import Agent
+    from universitydb.llm import ScriptedProvider
+
+    provider = ScriptedProvider([])
+    result = Agent(University(), database, provider, tmp_path / "trace").run(question)
+    assert result["status"] == "error"
+    assert result["error"]["code"] == "INVALID_INPUT"
+    assert result["clarification"] is None
+    assert provider.calls == 0
+    assert not [e for e in result["events"] if e["kind"] == "sql_attempt"]
+
+
+def test_adapter_clarification_options_are_catalog_grounded(database):
+    domain = University()
+    catalog = domain.catalog(database)
+    assert domain.clarification_options("student_id", catalog) == [
+        {"value": 1, "label": "Alex"},
+        {"value": 2, "label": "Bea"},
+        {"value": 3, "label": "Alex"},
+        {"value": 4, "label": "Dana"},
+    ]
+    assert [o["value"] for o in domain.clarification_options("count_object", catalog)] == [
+        "enrollment_count",
+        "graded_count",
+        "distinct_student_count",
+    ]
+    with pytest.raises(Failure, match="not registered"):
+        domain.clarification_options("untrusted", catalog)
+
+
+@pytest.mark.parametrize("key", ["student_id", "course_id", "teacher_id", "semester_id"])
+def test_compiled_graph_each_filter_discriminating_mutation(database, tmp_path, key):
+    fixed = {"student_id": 2, "course_id": 1, "teacher_id": 10, "semester_id": "S1"}
+    scope = {key: fixed[key]}
+    baseline = next(c for c in ORACLE["scopes"] if c["scope"] == scope)
+    assert (
+        graph_result(database, tmp_path, make_spec("grade_mean"), scope)["answer"]["rows"][0][0]
+        == baseline["mean"]
+    )
+    with sqlite3.connect(database) as conn:
+        conn.execute("UPDATE Enrollments SET grade_units=1000 WHERE student_id=2 AND offering_id=1")
+    expected = ORACLE["mutations"]["grade_2_1_to_1000"]["filter_effects"][key]
+    assert graph_result(database, tmp_path, make_spec("grade_mean"), scope)["answer"]["rows"] == [
+        [expected["mean"], *expected["raw"][1:]]
+    ]
+    assert expected["raw"] != baseline["raw"]
+
+
+@pytest.mark.parametrize(
+    "question,scope,expected",
+    [
+        (
+            "Mean Bea with Kim in DB S1",
+            {"student_id": 2, "course_id": 1, "teacher_id": 10, "semester_id": "S1"},
+            "80.00",
+        ),
+        ("Mean Alex student_id=1", {"student_id": 1}, "86.67"),
+        ("Mean DB", {"course_id": 1}, "80.00"),
+    ],
+)
+def test_compiled_graph_catalog_names_and_id_consistency(
+    database, tmp_path, question, scope, expected
+):
+    assert (
+        graph_result(database, tmp_path, make_spec("grade_mean"), scope, question)["answer"][
+            "rows"
+        ][0][0]
+        == expected
+    )
+
+
+@pytest.mark.parametrize(
+    "question,field,choice,scope,spec,expected",
+    [
+        ("Mean Alex", "student_id", 3, {"student_id": 3}, make_spec("grade_mean"), [[None, 0, 1]]),
+        (
+            "Mean current semester",
+            "semester_id",
+            "S1",
+            {"semester_id": "S1"},
+            make_spec("grade_mean"),
+            [["87.50", 4, 6]],
+        ),
+        (
+            "How many?",
+            "count_object",
+            "distinct_student_count",
+            {"count_object": "distinct_student_count"},
+            make_spec("enrollment_counts"),
+            [[8, 6, 4]],
+        ),
+    ],
+)
+def test_real_checkpoint_catalog_and_count_choices(
+    database, tmp_path, question, field, choice, scope, spec, expected
+):
+    from universitydb.agent import Agent
+    from universitydb.llm import ScriptedProvider
+
+    p = proposal_for(University(), spec, scope)
+    plan = {
+        "version": "1",
+        "steps": [step_for(spec).model_dump()],
+        "needs_clarification": False,
+        "clarification_field": None,
+    }
+    provider = ScriptedProvider([plan, p.model_dump()])
+    agent = Agent(University(), database, provider, tmp_path / "trace")
+    paused = agent.run(question)
+    assert paused["status"] == "clarification" and provider.calls == 0, paused
+    assert paused["clarification"]["field"] == field
+    result = agent.resume(paused["clarification"], choice, request_id="choice")
+    assert result["status"] == "ok", result
+    assert result["answer"]["rows"] == expected
+    assert result["run_id"] == paused["run_id"] and provider.calls == 2
+
+
+@pytest.mark.parametrize(
+    "question",
+    ["Open loan count", "Average books", "DROP TABLE Students", "nonsense", "Mean student Zed"],
+)
+def test_university_unsupported_or_natural_unknown_no_calls(database, tmp_path, question):
+    from universitydb.agent import Agent
+    from universitydb.llm import ScriptedProvider
+
+    provider = ScriptedProvider([])
+    result = Agent(University(), database, provider, tmp_path / "trace").run(question)
+    assert result["status"] == "error"
+    assert result["error"]["code"] == "INVALID_INPUT"
+    assert provider.calls == 0
+    assert not [e for e in result["events"] if e["kind"] == "sql_attempt"]
+
+
+def test_compiled_s1_groups_and_rounded_equal_not_exact_top(database, tmp_path):
+    expected = next(c for c in ORACLE["scopes"] if c["scope"] == {"semester_id": "S1"})["groups"][
+        "course_id"
+    ]
+    result = graph_result(
+        database, tmp_path, make_spec("grade_mean", "course_id"), {"semester_id": "S1"}
+    )
+    assert result["answer"]["rows"] == [[g["key"], g["mean"], *g["raw"][1:]] for g in expected]
+    with sqlite3.connect(database) as conn:
+        conn.execute("UPDATE Enrollments SET grade_units=8333 WHERE student_id=1 AND offering_id=2")
+    result = graph_result(
+        database, tmp_path, make_spec("top_course", "course_id"), {"semester_id": "S1"}
+    )
+    assert result["answer"]["rows"] == [[1, "83.33", 3, 4]]
+
+
+def test_university_catalog_bound_and_owned_reads_missing_fail_closed(database, tmp_path):
+    domain = University()
+    with sqlite3.connect(database) as conn:
+        conn.executemany(
+            "INSERT INTO Students VALUES(?,?)", [(i, f"Name{i}") for i in range(5, 1005)]
+        )
+    with pytest.raises(Failure, match="1000 entity"):
+        domain.catalog(database)
+    for read in [domain.catalog, domain.inspect_data]:
+        with pytest.raises(Failure) as caught:
+            read(tmp_path / "missing.sqlite")
+        assert caught.value.code == "DB_UNAVAILABLE"
+
+
+def test_university_owned_reads_locked_classification(database):
+    domain = University()
+    with sqlite3.connect(database) as conn:
+        conn.execute("BEGIN EXCLUSIVE")
+        for read in [domain.catalog, domain.inspect_data]:
+            with pytest.raises(Failure) as caught:
+                read(database)
+            assert caught.value.code == "DB_UNAVAILABLE"

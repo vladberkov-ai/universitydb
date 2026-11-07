@@ -3,7 +3,7 @@
 import json
 from typing import Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 class Failure(Exception):
@@ -16,6 +16,41 @@ class Failure(Exception):
 
 class Closed(BaseModel):
     model_config = ConfigDict(extra="forbid", strict=True)
+
+
+class RunError(Closed):
+    """Canonical public errors; internal clarification control never escapes as an error."""
+
+    code: Literal[
+        "PLAN_INVALID",
+        "DEPENDENCY_INVALID",
+        "RESULT_CONTRACT_INVALID",
+        "RESOURCE_LIMIT",
+        "INVALID_INPUT",
+        "REPLAY_CONFLICT",
+        "INVALID_SELECTION",
+        "RESUME_FORBIDDEN",
+        "STALE_RESUME",
+        "RESUME_EXPIRED",
+        "CLARIFICATION_LIMIT",
+        "UNSAFE_SQL",
+        "SQL_INVALID",
+        "SQL_TIMEOUT",
+        "DB_UNAVAILABLE",
+        "DATA_INCONSISTENT",
+        "PROVIDER_UNAVAILABLE",
+        "PROVIDER_TRANSIENT",
+        "PROVIDER_REFUSAL",
+        "PROVIDER_INCOMPLETE",
+        "PROVIDER_INVALID_OUTPUT",
+        "BUDGET_EXCEEDED",
+        "RESULT_TOO_LARGE",
+        "TRACE_UNAVAILABLE",
+        "INTERNAL_CONTRACT",
+    ]
+    message: str
+    failed_node: str
+    retryable: bool
 
 
 class ResultColumn(Closed):
@@ -57,9 +92,15 @@ class Step(Closed):
 
 class PlanProposal(Closed):
     version: Literal["1"]
-    steps: list[Step] = Field(min_length=1, max_length=3)
+    steps: list[Step] = Field(min_length=0, max_length=3)
     needs_clarification: bool
     clarification_field: str | None
+
+    @model_validator(mode="after")
+    def executable_or_clarifying(self) -> "PlanProposal":
+        if not self.steps and not self.needs_clarification:
+            raise ValueError("An empty plan must request grounded clarification.")
+        return self
 
 
 class Binding(Closed):
@@ -102,6 +143,8 @@ def bindings(values: list[Binding]) -> dict[str, int | str | None]:
 
 def validate_dag(plan: PlanProposal) -> None:
     """Validate static references without requiring future execution results."""
+    if not plan.steps:
+        raise Failure("PLAN_INVALID", "An executable plan requires at least one step.")
     known: dict[str, Step] = {}
     for step in plan.steps:
         if step.step_id in known:
@@ -221,3 +264,96 @@ def materialize_refs(
             raise Failure("RESULT_TOO_LARGE", "Dependency values exceed byte limit.")
         resolved[ref.bind_as] = sorted(values)
     return resolved
+
+
+class AnswerColumn(Closed):
+    name: str
+    type: Literal["string", "integer", "decimal", "boolean"]
+
+
+class Answer(Closed):
+    text: str
+    columns: list[AnswerColumn]
+    rows: list[list[int | str | bool | None]] = Field(max_length=100)
+    scope: str
+    empty_reason: Literal["no_rows", "no_grades"] | None
+    truncated: Literal[False]
+    row_reasons: list[Literal["no_rows", "no_grades"] | None] | None = None
+
+    @model_validator(mode="after")
+    def typed_rows(self) -> "Answer":
+        import re
+
+        for row in self.rows:
+            if len(row) != len(self.columns):
+                raise ValueError("Answer row width differs from declared columns.")
+            for value, column in zip(row, self.columns, strict=True):
+                if value is None:
+                    continue
+                if column.type == "decimal":
+                    if (
+                        type(value) is not str
+                        or re.fullmatch(r"-?(?:0|[1-9]\d*)\.\d{2}", value) is None
+                    ):
+                        raise ValueError("Answer decimal must be a canonical two-place string.")
+                elif not _typed(value, column.type):
+                    raise ValueError("Answer value differs from declared type.")
+        if self.row_reasons is not None and len(self.row_reasons) != len(self.rows):
+            raise ValueError("Per-row reasons must correspond exactly to answer rows.")
+        return self
+
+
+class ClarificationOption(Closed):
+    value: int | str
+    label: str
+
+
+class Clarification(Closed):
+    field: str
+    options: list[ClarificationOption] = Field(min_length=2, max_length=100)
+    prompt: str
+    clarification_id: str
+    checkpoint_id: str
+    session_id: str
+    run_id: str
+    schema_sha256: str
+    data_sha256: str
+    policy_sha256: str
+    expires_at: float
+
+
+class RunEnvelope(Closed):
+    """Public wire fields, distinct from known local UI/trace extensions."""
+
+    version: Literal["1"]
+    run_id: str
+    trace_id: str
+    status: Literal["ok", "clarification", "error"]
+    answer: Answer | None
+    clarification: Clarification | None
+    error: RunError | None
+
+    @model_validator(mode="after")
+    def one_status_branch(self) -> "RunEnvelope":
+        branches = (self.answer is not None, self.clarification is not None, self.error is not None)
+        expected = {
+            "ok": (True, False, False),
+            "clarification": (False, True, False),
+            "error": (False, False, True),
+        }[self.status]
+        if branches != expected:
+            raise ValueError("Result status does not match its sole populated branch.")
+        return self
+
+
+class StepOutcome(Closed):
+    step_id: str
+    raw: dict[str, Any]
+    answer: Answer
+    dependency_rows: list[list[int | str | bool | None]]
+
+
+class AgentOutput(RunEnvelope):
+    events: list[dict[str, Any]]
+    step_results: list[StepOutcome]
+    execution_profile: str

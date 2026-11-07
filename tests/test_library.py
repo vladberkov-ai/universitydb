@@ -118,3 +118,111 @@ def test_library_wrong_returned_storage_type_detected(library_db):
         conn.execute("UPDATE Loans SET returned='false' WHERE loan_id=1")
     with pytest.raises(Failure, match="column type"):
         Library().inspect_data(library_db)
+
+
+def test_library_real_checkpoint_ambiguity_and_selected_zero(library_db, tmp_path):
+    with sqlite3.connect(library_db) as conn:
+        conn.execute("INSERT INTO Readers VALUES(3,'Ada')")
+    domain = Library()
+    p = proposal_for(domain, SPEC, {"reader_id": 3})
+    plan = {
+        "version": "1",
+        "steps": [step_for(SPEC).model_dump()],
+        "needs_clarification": False,
+        "clarification_field": None,
+    }
+    provider = ScriptedProvider([plan, p.model_dump()])
+    agent = Agent(domain, library_db, provider, tmp_path / "traces")
+    paused = agent.run("Open loans Ada")
+    assert paused["status"] == "clarification" and provider.calls == 0
+    assert [o["value"] for o in paused["clarification"]["options"]] == [1, 3]
+    result = agent.resume(paused["clarification"], 3, request_id="selected-reader")
+    assert result["status"] == "ok", result
+    assert result["answer"]["rows"] == [[3, "Ada", 0]]
+    assert provider.calls == 2 and result["run_id"] == paused["run_id"]
+    assert agent.resume(paused["clarification"], 3, request_id="selected-reader") == result
+    assert provider.calls == 2
+
+
+def test_library_provider_clarification_options_grounded(library_db):
+    domain = Library()
+    assert domain.clarification_options("reader_id", domain.catalog(library_db)) == [
+        {"value": 1, "label": "Ada"},
+        {"value": 2, "label": "Bob"},
+    ]
+    with pytest.raises(Failure, match="not registered"):
+        domain.clarification_options("student_id", domain.catalog(library_db))
+
+
+@pytest.mark.parametrize(
+    "question",
+    [
+        "DROP TABLE Readers",
+        "average grade all",
+        "Mean all students",
+        "List books",
+        "How many readers?",
+        "Count all loans",
+        "Count returned loans",
+        "Open loans student_id=1",
+        "nonsense",
+    ],
+)
+def test_library_unsupported_or_write_intent_no_calls(library_db, tmp_path, question):
+    provider = ScriptedProvider([])
+    result = Agent(Library(), library_db, provider, tmp_path / "traces").run(question)
+    assert result["status"] == "error"
+    assert result["error"]["code"] == "INVALID_INPUT"
+    assert provider.calls == 0
+    assert not [e for e in result["events"] if e["kind"] == "sql_attempt"]
+
+
+@pytest.mark.parametrize(
+    "question", ["Open loans Zed", "Open loans reader named Zed", "Open loans reader_id=-1"]
+)
+def test_library_unknown_name_never_unfilters(library_db, tmp_path, question):
+    provider = ScriptedProvider([])
+    result = Agent(Library(), library_db, provider, tmp_path / "traces").run(question)
+    assert result["error"]["code"] == "INVALID_INPUT"
+    assert provider.calls == 0
+
+
+def test_library_catalog_bound_and_owned_reads_missing_fail_closed(library_db, tmp_path):
+    domain = Library()
+    with sqlite3.connect(library_db) as conn:
+        conn.executemany(
+            "INSERT INTO Readers VALUES(?,?)", [(i, f"Reader{i}") for i in range(3, 1003)]
+        )
+    with pytest.raises(Failure, match="1000 entity"):
+        domain.catalog(library_db)
+    for read in [domain.catalog, domain.inspect_data]:
+        with pytest.raises(Failure) as caught:
+            read(tmp_path / "missing.sqlite")
+        assert caught.value.code == "DB_UNAVAILABLE"
+
+
+def test_library_natural_all_reader_count_does_not_invent_identity(library_db, tmp_path):
+    question = "How many open loans does each reader have?"
+    domain = Library()
+    assert domain.resolve(question, domain.catalog(library_db)) == {}
+    p = proposal_for(domain, SPEC, {})
+    plan = {
+        "version": "1",
+        "steps": [step_for(SPEC).model_dump()],
+        "needs_clarification": False,
+        "clarification_field": None,
+    }
+    provider = ScriptedProvider([plan, p.model_dump()])
+    result = Agent(domain, library_db, provider, tmp_path / "traces").run(question)
+    assert result["status"] == "ok", result
+    assert result["answer"]["rows"] == EXPECTED["expected"]
+
+
+def test_library_owned_reads_locked_classification(library_db):
+    domain = Library()
+    with sqlite3.connect(library_db) as conn:
+        conn.execute("BEGIN EXCLUSIVE")
+        for read in [domain.catalog, domain.inspect_data]:
+            with pytest.raises(Failure) as caught:
+                read(library_db)
+            assert caught.value.code == "DB_UNAVAILABLE"

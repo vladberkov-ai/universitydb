@@ -1,0 +1,41 @@
+{
+  "stage": "CP-C",
+  "execution_source": "Actual root collaboration result; bounded attribution, not full stdout transcript",
+  "attempts": [
+    {
+      "name": "serialized integrated attempt1",
+      "command": "env -u OPENAI_API_KEY UNIVERSITYDB_LIVE_APPROVED=no LANGSMITH_TRACING=false LANGCHAIN_TRACING_V2=false UV_CACHE_DIR=/tmp/h013-uv-cache uv run --locked pytest -q",
+      "exit": 1,
+      "result": "308 passed,2 failed in78.56s",
+      "failures": [
+        {
+          "behavior": "uncertain accounting stop",
+          "expected": "PROVIDER_TRANSIENT (preserve upstream diagnostic and accounting stop)",
+          "actual": "INTERNAL_CONTRACT",
+          "other_observed": "one provider call; no fabricated answer/accounting retry"
+        },
+        {
+          "behavior": "stalled provider active deadline",
+          "expected": "BUDGET_EXCEEDED",
+          "actual": "INTERNAL_CONTRACT",
+          "other_observed": "bounds and no-answer checks passed"
+        }
+      ],
+      "classification": "concrete closed-error representation regressions; not attributed to environment",
+      "static_pipeline": "not-run after pytest exit1",
+      "response": "core owner fixing with two narrow regressions; full root rerun required before checkpoint",
+      "source_identity": "uncommitted CP-C candidate after CP-B; no retrospective sourcehash or passing SHA claim"
+    },
+    {
+      "name": "serialized integrated corrected candidate",
+      "source": "Actual root final pipeline session49314",
+      "pytest_exit": 0,
+      "result": "311 passed in72.19s",
+      "static_pipeline": "RuffcheckPASS,format30files,mypy14sources,compileall,diffcheckPASS,exit0",
+      "fix": "closederrorregistry preserves existingPROVIDER_TRANSIENT terminal accountingstop and original BUDGET_EXCEEDED deadline; no assertion weakening/limitsincrease"
+    }
+  ],
+  "status": "corrected serialized root fullregression/static passed; original failures retained; current source hashes cp-c-verification.json",
+  "live_calls": 0,
+  "push": "not-run"
+}
