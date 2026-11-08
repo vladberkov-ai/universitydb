@@ -231,6 +231,7 @@ class University:
         if re.search(
             r"\b(loans?|readers?|books?|borrowed|unreturned)\b", question, re.IGNORECASE
         ) or not re.search(
+            r"\b(?:display|return|include)\b|"
             r"mean|average|средн|count|how many|сколько|list|show|top|highest|best|покаж|спис|наиб",
             question,
             re.IGNORECASE,

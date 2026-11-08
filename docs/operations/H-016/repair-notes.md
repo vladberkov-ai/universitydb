@@ -182,3 +182,52 @@ shared helper and reported **CLEAR_TO_CHECKPOINT** for all known source findings
 conditional on these checks. Independent architect previously closed the known
 architecture findings through27targeted passing checks; root retains final
 APPROVE/CLEAR/full/browser/clean-run/preservation gates. No final live claim follows.
+
+## CP3 full-suite repair: quantified projection
+
+The first root full pipeline on exact CP2f9251a7 failed2/800cases (D03/D04), with
+all original evidence retained in verification/final-1. Inspected actual public-
+entry JSONL: resolve_scope INVALID_INPUT missingstudent_id,0provider/SQLattempts.
+The shared positive output grammar did not admit `show each student ID`, so this
+is a deterministic parser regression, not a provider failure. The118focused
+proof missed this output form; all64replay cases must accompany edge tests.
+
+Regression-first `quantified-projection-before.txt`:8failed/4passed, comprising
+D03/D04, six independently phrased quantified output-column questions in both
+schemas, and four missing-target negatives. The minimal grammar edit permits an
+optional determiner immediately after a recognized output verb; it does not
+restore a global Show fallback or silently ignore a missing target identity.
+All four H016 modules and relevant old domain/readiness tests run together before
+this iteration's freeze. Root's full/browser/clean-run remain separate gates.
+Cleaner check: same existing helper, no new abstraction/dependency/duplication or
+fallback; no-op cleanup beyond the bounded grammar repair. Historical frozen
+sources/evidence, canonical money, native lifecycle and original locks untouched.
+
+First complete post-fix420test run:419passed/1failed85.60s. D03/D04 and all prior
+replay cases passed. The only failure was the newly authored independent control
+`Display all student IDs...`: actual trace reports pre-existing unsupported
+University query intent, before ID parsing. Correct the *new control's wording*
+to supported `Show all student IDs...`, keeping its all-quantifier, projection,
+scope and assertions unchanged. No historical expectation or product intent guard
+is weakened/expanded. Preserve that attempt in quantified-projection-after.txt;
+rerun all420tests to a unique second log, not overwrite it.
+
+The temporary Show-variant run passed420/420 in86.98s, but root requested an
+independent contract review before accepting a wording substitution. Both real
+reviewer lanes agreed the accepted listing class is not a literal show/list API
+(contract metric/listing sections); shared projection grammar already admits
+Display/Return/Include. **Supersede the temporary substitution decision**:
+restore the Display positive, align University's bounded word-boundary intent
+verbs, add Return/Include positives and cross-domain/write negatives. Do not add
+metrics, SQL operators, generic by/per intents or new aliases. The final run uses
+all four H016 modules plus prior graph/readiness/Library/DB checks; root will run
+the entire repository suite again on the new committed candidate.
+
+Final listing-consistency verification: **328passed/45.21s**, including all four
+H016 modules (all64replay cases, independent NL/edge controls and AppTest), plus
+prior graph/readiness/Library/DB checks. Ruff check/3files format/mypy2production
+modules/compile/diff checks PASS. Source/test/harness component SHA256 values are
+recorded in listing-consistency-components.sha256. Both independent reviewer
+lanes accepted the bounded grammar/intent rationale at source level; root owns
+new exact-SHA full suite, browser, clean-run, preservation and final verdicts.
+The prior f9251a7 full failure and all intermediate attempts remain preserved.

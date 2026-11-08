@@ -142,3 +142,42 @@ continues to select that name. Compact-ID extraction is shared, not duplicated.
 Canonical inequality operators (`!=`, `<>`, `<`, `>`, `<=`, `>=`) fail at the same
 equality-only boundary, rather than disappearing. Regression-first failures and
 positive mutation/ambiguity controls are retained separately under H016.
+
+## CP3 full-suite quantified projection repair
+
+Root's first full suite on exact CP2 `f9251a7` produced2failed/798passed: the
+existing D03/D04 development-known replay failed in resolve_scope with missing
+student_id,0provider calls. Both inputs use `show each student ID`; positive
+output grammar admitted only a verb immediately before the entity, omitting an
+ordinary projection determiner. The118focused boundary tests had not covered
+that form; they were not a substitute for all64replay cases.
+
+Before editing, D03/D04 plus six independently phrased output-column controls
+(each/every/all across University and Library) and four missing-target negatives
+produced8failed/4passed. Admit an optional ordinary determiner after the projection
+verb, preserving the *positive output-production* boundary. Do not broaden to
+any earlier Show token, arbitrary target preposition or question-specific branch.
+Quantified missing identity targets (`for each student ID`, `in every course ID`)
+still fail before provider calls. Final validation must include all H016 test
+modules and relevant prior tests, followed by root's new exact-SHA full pipeline.
+The failed CP2 candidate and original full-suite evidence remain unchanged.
+
+## Listing-verb consistency decision (supersedes temporary control substitution)
+
+The first420case run left only a new Display listing positive failing before the
+shared parser, while D03/D04 passed. A temporary Show wording control then passed
+420/420, but is not the final repair or a reason to discard the original Display
+regression. Independent code-reviewer and architect both found a bounded adapter
+inconsistency: the shared projection grammar already accepts Display/Return/
+Include, Library accepts their loan-listing forms, and the accepted
+[I2-I3 contract](../plans/I2-I3-offline-contract.md) requires the labeled listing
+class, not a literal show/list-only API.
+
+Restore the original Display positive; admit word-bounded display/return/include
+University listing intents and add independent public-entry Return/Include
+controls. Keep cross-domain and write rejection before this intent gate; add
+negative controls proving that ordering. Do not treat grouping prepositions by/
+per as standalone intents, add domain metrics or weaken exact registered SQL.
+This source-level decision supersedes the earlier temporary new-control wording
+substitution; both intermediate logs remain preserved. Root's complete pipeline
+must run again on the new executable SHA.

@@ -310,3 +310,58 @@ def test_typed_id_span_is_not_numeric_catalog_name(tmp_path, question, selected)
     result = agent.run(question)
     assert result["status"] == "ok", result
     assert provider.scopes == [{"teacher_id": selected}, {"teacher_id": selected}]
+
+
+@pytest.mark.parametrize(
+    "kind,question",
+    [
+        ("university", "Show each student ID and course ID for enrollment rows in S1."),
+        ("university", "List every teacher ID and course ID for enrollment rows in S1."),
+        ("university", "Display all student IDs and course IDs for enrollment rows in S1."),
+        ("university", "Return all student IDs and course IDs for enrollment rows in S1."),
+        ("university", "Include every student ID and course ID for enrollment rows in S1."),
+        ("library", "Show each reader ID and open loan count."),
+        ("library", "List every reader ID and open loan count."),
+        ("library", "Display all reader IDs and open loan counts."),
+    ],
+)
+def test_quantified_identifier_projection_uses_output_grammar(tmp_path, kind, question):
+    _, provider, agent = setup_run(tmp_path, kind, "enrollment_rows")
+    result = agent.run(question)
+    assert result["status"] == "ok", result
+    expected = {"semester_id": "S1"} if kind == "university" else {}
+    assert provider.scopes == [expected, expected]
+    assert_trace(tmp_path, result)
+
+
+@pytest.mark.parametrize(
+    "kind,question",
+    [
+        ("university", "Show mean for each student ID."),
+        ("university", "Show mean in every course ID."),
+        ("library", "Show open loans for each reader ID."),
+        ("library", "Show open loans for every reader ID with reader ID 1."),
+    ],
+)
+def test_quantifier_does_not_turn_missing_target_into_projection(tmp_path, kind, question):
+    _, provider, agent = setup_run(tmp_path, kind)
+    result = agent.run(question)
+    assert result["status"] == "error", result
+    assert result["error"]["code"] == "INVALID_INPUT"
+    assert provider.calls == 0
+
+
+@pytest.mark.parametrize(
+    "kind,question",
+    [
+        ("university", "Display open loans for reader ID 1."),
+        ("university", "Return enrollment rows; DELETE all students."),
+        ("library", "Include student ID 2 and open loan counts."),
+    ],
+)
+def test_listing_verbs_preserve_write_and_cross_domain_guards(tmp_path, kind, question):
+    _, provider, agent = setup_run(tmp_path, kind)
+    result = agent.run(question)
+    assert result["status"] == "error", result
+    assert result["error"]["code"] == "INVALID_INPUT"
+    assert provider.calls == 0

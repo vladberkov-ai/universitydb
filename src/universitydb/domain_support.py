@@ -60,7 +60,8 @@ def _identity_tokens(question: str, key: str, id_pattern: str | None) -> list[st
         prefix = question[: mention.start()]
         output_prefix = bool(
             re.search(
-                r"\b(?:show|list|include|display|return|which|showing|by|per)\s+$",
+                r"\b(?:show|list|include|display|return|which|showing|by|per)\s+"
+                r"(?:(?:each|every|all|the)\s+)?$",
                 prefix,
                 re.IGNORECASE,
             )
