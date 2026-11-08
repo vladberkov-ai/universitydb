@@ -12,10 +12,10 @@ conversation pass count, **not pure model accuracy**:38questions never reached t
 provider. Independent actual-data code review now
 **APPROVES** the separate correction and resolves the HIGH **for that assessment
 only**. Independent actual-data architect **CLEAR** covers the full bounded
-measurement and separate v2 assessment. Native COMPLETE/strict remains pending
-at this cutoff; product/service acceptance is not claimed.
+measurement and separate v2 assessment. Root now verifies **native COMPLETE and
+strict PASS5/5** for bounded measurement; product/service acceptance is not claimed.
 
-## Authorized offline continuation — current cutoff
+## Authorized offline continuation — completed bounded assessment
 
 The owner now authorizes a **separate append-only corrected offline assessment**
 of the same retained evidence. [Actual continuation prompt](../ai/omx/H-015-correction-actual-prompt.txt),
@@ -39,8 +39,9 @@ succeeded in the same scope; both outcomes are preserved in that receipt. No
 runtime repair or manual IDs/pointers/locks operation followed. This is not a new
 goal or completed I1/H013/H014 resume. At this documentation
 cutoff, actual-data code review **APPROVES** and architect is **CLEAR** for full
-bounded measurement plus separate corrected assessment; native COMPLETE/strict
-remains pending.
+bounded measurement plus separate corrected assessment. The later terminal
+receipt below verifies native COMPLETE/strict PASS5/5; ACTIVE above is the resume
+cutoff, not the final state.
 Preparation APPROVE/CLEAR is not actual-data approval; the corrected tally below
 comes from the separately executed frozen scorer, not a preassigned10successes.
 
@@ -77,7 +78,7 @@ exit0, after the independent and root gates. The new
 reports48completed/10passes,38mandatory-failure records,0critical-failure records,
 threshold=false. Original scorer/oracle/v1 inputs remain unchanged. Actual-data
 code/architecture approval and limited HIGH resolution are recorded below;
-supported lifecycle completion remains pending. [Selected reviewer prompt
+supported lifecycle completion is now separately verified below. [Selected reviewer prompt
 provenance](../operations/H-015/observer-correction/correction-reviewer-provenance.json)
 separates exact attributed task starters from scope summaries and omitted transcripts.
 
@@ -128,7 +129,34 @@ maps full original H015 bounds and this narrow continuation to concrete proof.
 The [final quality gate](../operations/H-015/corrected-assessment-v2/final-quality-gate.json)
 records cleaner/verification PASS, independent actual-data APPROVE/CLEAR,
 13proved invariants and configured custom gates `[]`. This is not native completion;
-root's fresh lifecycle/strict postconditions remain separate and pending.
+root's actual lifecycle/strict postconditions are separately verified below.
+
+### Actual terminal lifecycle and local checkpoints
+
+Root's [actual native/strict closeout](../operations/H-015/corrected-assessment-v2/native-strict-closeout.json),
+SHA256 `c46f9f8b71eee64b291ea739f7e8b47716a0a97d042b0c9ae41c363a576e3b68`,
+records supported `update_goal(complete)` followed by fresh actual COMPLETE
+snapshots, successful strict G005 checkpoint exit0/ok=true and fresh supported
+**5/5complete, aggregateComplete=true, artifactComplete=true** status. Supported
+resolver completion closes G004's review blocker through G005; historical ledger
+findings remain. The current-owned standalone mode is inactive/phase complete.
+No IDs/pointers/locks were manually changed, and completed I1/H013/H014 were not
+resumed. These are actual root postconditions, not shell/state substitutes.
+
+The assessed evidence/docs C1 local checkpoint is
+**`7b58686e7c89304642c7030cd9730f4f08a54f82`**, parent
+`2121c66f107efb260a7619371e128de7b209fe94`:47explicit reviewed paths, no source
+changes, exact committed-blob checks and tracked/index clean. This terminal-receipt/
+status follow-up is a separate C2 local checkpoint; its exact SHA is read from Git
+after commit rather than guessed or embedded in its own contents. Both checkpoints
+are local only; **push and fresh remote verification not-run**.
+
+After native completion, root again verifies1139original targets and439historical
+H015 operation files unchanged, including canonical monetary SHAdaed87a… and
+completed workflows/locks. The new [terminal documentation validation](../operations/H-015/corrected-assessment-v2/terminal-documentation-validation.json)
+preserves all C1 machine evidence/reviews/quality JSON unchanged. **Bounded measurement DoD
+is complete; quality remains FAIL (10/48), not service acceptance.** Publication,
+owner defense and any proposed product diagnosis/repair remain outside this closeout.
 
 ## Identity, authority and local checkpoints
 
@@ -144,6 +172,8 @@ root's fresh lifecycle/strict postconditions remain separate and pending.
 | Frozen candidate/oracle SHA256 | `af1c7cafce466f58065fb96de9dd997565b2e3b940855fb9f48faa4559753ae5` |
 | Reviewed offline-corrector source/test checkpoint | `f61c0128f3b1f229e4a78e0d3c8908d8b9c928d1`; only2newfiles, not live candidate or actual-data correction |
 | Corrector SHA256 / synthetic test SHA256 | `8560fcb2c7458ab778dbac1d55530f8b634561727f74281b4809c53bf6389908` / `ac296b2ff5ea1815e9fc4a3aad9ea3af4c9ff050d7db914ee310aca21f71dbc0` |
+| Corrected assessment C1 local checkpoint | `7b58686e7c89304642c7030cd9730f4f08a54f82`;47explicit paths, before native completion |
+| Actual terminal native/strict receipt | COMPLETE / PASS5/5; linked closeout records actual root postconditions, not a new product candidate |
 | Late documentation/evidence SHA | `2b7e94c1e255feedd393c4153989e1013207e4e1`;435safe paths, not a new live-tested product |
 
 Actual task / CHAT053/054 / accepted ADR-CHAT007 authorize full48/max240 without
@@ -408,8 +438,9 @@ actual-data gates remain required. Neither author nor reviewer grants new live/p
    bounded measurement and separate assessment; no unresolved blocking finding.
 
 CP-L4/native completion/strict cannot be inferred from collection or a score.
-Current actual-data APPROVE/CLEAR does not erase the original defect or certify
-root-owned lifecycle postconditions or service acceptance.
+Current actual-data APPROVE/CLEAR does not erase the original defect. Root-owned
+lifecycle postconditions are now separately proven by the terminal receipt above;
+service acceptance is not implied.
 
 ### Historical offline instrument preparation — not actual reanalysis
 
@@ -488,8 +519,9 @@ Private sessions/credential paths/raw ledger/backups/locks are not exported.
 
 This cutoff is **complete collection / separate corrected offline score10/48 /
 quality FAIL**. Actual-data code **APPROVE** and architect **CLEAR** are recorded;
-supported native/strict lifecycle completion still requires fresh evidence. Neither lifecycle
-completion nor service acceptance follows from collection or score alone.
+supported **native COMPLETE/strict PASS5/5** is separately proven by the terminal
+receipt. Bounded assessment is complete; neither product quality pass nor service
+acceptance follows from collection, score or lifecycle completion.
 
 ## Proposed next scope — not started
 

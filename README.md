@@ -23,7 +23,10 @@ end-to-end conversation pass count, not pure model accuracy:38questions never
 reached the provider. Actual-data final
 code review APPROVES and resolves the HIGH for this separate assessment only;
 actual-data architect CLEAR covers full bounded H015 measurement plus separatev2.
-Native COMPLETE/strict remains pending; service acceptance is not claimed.
+Root verifies **native COMPLETE/strict PASS5/5** for bounded measurement
+([terminal receipt](docs/operations/H-015/corrected-assessment-v2/native-strict-closeout.json)).
+C1 local checkpoint `7b58686e7c89304642c7030cd9730f4f08a54f82`; service acceptance
+is not claimed. Publication/quality/product diagnosis remain separate; push not-run.
 Preparation APPROVE/CLEAR is not actual-data approval.
 
 Original evidence/ledger/history/locks are preserved. No new provider/API/count/

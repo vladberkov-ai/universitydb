@@ -150,5 +150,9 @@ records unchanged. One unchanged frozen offline scorer then returned10/48:
 A4/J0/D0/C6/E0/L0, mandatory38/critical0/threshold=false. This is post-results
 corrected analysis, not prospective v1 or owner acceptance. Actual-data code review APPROVES and resolves the HIGH for the separate corrected
 assessment only; original v1 defect/REQUEST CHANGES remain. Actual-data architect CLEAR covers full bounded H015 measurement plus separatev2.
-Native completion/strict remains pending at this cutoff, not implied by quality FAIL.
+Root now verifies actual native COMPLETE/strict PASS5/5 in the
+[terminal receipt](../operations/H-015/corrected-assessment-v2/native-strict-closeout.json).
+This closes bounded measurement, not quality FAIL or service acceptance. C1 local
+checkpoint `7b58686e7c89304642c7030cd9730f4f08a54f82`; terminal documentation is a
+separate local follow-up. No live/product repair/publication authority follows.
 No new external calls, monetary mutation or product repair follows.

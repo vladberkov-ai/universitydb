@@ -10,9 +10,10 @@ This supersedes the historical evaluator-rerun/clarification restriction only fo
 this bounded correction. No new provider/API/count/probe, credentials, live UI,
 question replay, product repair, monetary ledger/cap/hold mutation, push or vault
 writes. Root alone owns supported same-H015 lifecycle; no IDs/pointers/locks edits
-or completed I1/H013/H014 resume. COMPLETE/strict requires verified bounded DoD,
-not quality pass. Failed product quality, owner acceptance and publication stay
-separate. See [continuation plan](docs/plans/H-015-offline-correction-continuation.md)
+or completed I1/H013/H014 resume. H015 bounded measurement now has verified
+native COMPLETE/strict PASS5/5; do not resume it for product repair or another
+campaign. See the [actual terminal receipt](docs/operations/H-015/corrected-assessment-v2/native-strict-closeout.json).
+Failed product quality, owner acceptance and publication stay separate. See [continuation plan](docs/plans/H-015-offline-correction-continuation.md)
 and [report](docs/reports/H-015-full-live-eval.md). Earlier live/money authority
 below is historical, not permission for another campaign or mutation now.
 

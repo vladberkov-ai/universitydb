@@ -641,3 +641,14 @@ preparation. The [final quality gate](../operations/H-015/corrected-assessment-v
 records13proved invariants and configured gates `[]`. Original v1 defect/history and
 product quality FAIL remain; native COMPLETE/strict is still pending root proof.
 The earlier pending-architecture paragraph describes the preceding cutoff only.
+
+Terminal cutoff: [actual root native/strict receipt](../operations/H-015/corrected-assessment-v2/native-strict-closeout.json)
+now verifies **COMPLETE/strict PASS5/5**, all5stories complete and standalone mode
+inactive/complete. C1 local checkpoint: `7b58686e7c89304642c7030cd9730f4f08a54f82`;
+this terminal-doc follow-up is a separate local commit whose SHA is read after
+commit. Earlier pending-native paragraphs are historical. Actual independent
+[code APPROVE](../operations/H-015/reviews/v2-final-code-review.md) and
+[architect CLEAR](../operations/H-015/reviews/v2-final-architecture.md) remain
+unchanged selected attributed results, not full private transcripts or author
+self-approval. Original v1, corrected10/48 and quality FAIL remain distinct from
+completed bounded measurement. No API, replay, ledger mutation or push.

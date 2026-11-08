@@ -12,7 +12,10 @@ this exposed sample is not untouched holdout/general accuracy.
 
 Actual-data code review APPROVES and resolves the HIGH for this separate corrected
 assessment only; actual-data architect CLEAR covers full bounded H015 measurement
-plus separatev2. Native COMPLETE/strict remains pending. Earlier preparation APPROVE/CLEAR did not close the actual-data gate. [Continuation plan](plans/H-015-offline-correction-continuation.md)
+plus separatev2. Root verifies **native COMPLETE/strict PASS5/5**
+([terminal receipt](operations/H-015/corrected-assessment-v2/native-strict-closeout.json));
+bounded assessment is complete, not service acceptance. C1 local checkpoint
+`7b58686e7c89304642c7030cd9730f4f08a54f82`. Earlier preparation APPROVE/CLEAR did not close the actual-data gate. [Continuation plan](plans/H-015-offline-correction-continuation.md)
 and new report receipts separate complete collection, corrected assessment and
 service acceptance. No new API/credentials/UI/replay/product repair/money/push.
 

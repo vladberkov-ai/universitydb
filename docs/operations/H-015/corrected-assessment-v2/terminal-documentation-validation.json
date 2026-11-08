@@ -1,0 +1,52 @@
+{
+  "version": "h015-terminal-documentation-validation-v1",
+  "scope": "Terminal documentation/receipt packaging only; no further lifecycle or product/evaluator execution.",
+  "pre_terminal_C1_commit": "7b58686e7c89304642c7030cd9730f4f08a54f82",
+  "C1_parent": "2121c66f107efb260a7619371e128de7b209fe94",
+  "terminal_receipt_sha256": "c46f9f8b71eee64b291ea739f7e8b47716a0a97d042b0c9ae41c363a576e3b68",
+  "actual_status": "Native COMPLETE; strict checkpoint exit0/ok=true,5/5complete aggregateComplete/artifactComplete true; standalone inactive/phase complete.",
+  "measurement": "Bounded H015 assessment complete; original frozen2/48 and separate post-results10/48 retained; product quality FAIL, not service acceptance.",
+  "explicit_stage_paths": [
+    "AGENTS.md",
+    "README.md",
+    "docs/adr/ADR-OMX-014-H015-full-live-eval.md",
+    "docs/ai/PROMPTS-EN.md",
+    "docs/ai/PROMPTS-RU.md",
+    "docs/ai/README.md",
+    "docs/assignment-status.md",
+    "docs/reports/H-015-full-live-eval.md",
+    "docs/operations/H-015/corrected-assessment-v2/native-strict-closeout.json",
+    "docs/operations/H-015/corrected-assessment-v2/terminal-documentation-validation.json"
+  ],
+  "preservation": {
+    "C1_non_status_files_compared_to_committed_blobs": 39,
+    "all_C1_machine_outputs_receipts_reviews_quality_JSON_unchanged": true,
+    "before_after_targets_rehashed": 1139,
+    "original_H015_checkpoint_files_rehashed": 439,
+    "all_unchanged": true,
+    "source_tests_tools_resources_project_lock_unchanged_vs_f61": true,
+    "canonical_money_sha256": "daed87a21b856f0df454fb1378e266fcf9b79504351a873b1dfc39855d6d2e97"
+  },
+  "selected_actual_review_results": {
+    "docs/operations/H-015/reviews/v2-final-code-review.md": "ad5abdb06686e5dfbd9ecd393e9a0f28e9ec8c166bf3ee6e333e73a335fc9e96",
+    "docs/operations/H-015/reviews/v2-final-architecture.md": "6ffe90dfeceb4fed4c058879574ed79535fbfc6937608e04b34a3a6c1ebffb99"
+  },
+  "verification": {
+    "local_Markdown_links": 397,
+    "missing_links": 0,
+    "all48_report_rows_match_retained_score": true,
+    "new_JSON_strict_parse": "PASS",
+    "bounded_privacy_scan": "PASS; no private vault prefix or provider-key pattern in10explicit paths; not universal detection",
+    "git_diff_check": "PASS",
+    "new_code_or_executable_command_examples": 0
+  },
+  "not_run": [
+    "new unit/full suite or browser",
+    "corrector/scorer/application/provider/question execution",
+    "API/count/probe/credential loading/live UI",
+    "product repair or monetary mutation",
+    "runtime lifecycle or Git config/remote changes",
+    "push or fresh remote verification"
+  ],
+  "terminal_commit_sha": "Read from Git only after this separate local commit; not guessed or self-embedded."
+}

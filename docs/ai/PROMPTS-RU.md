@@ -662,3 +662,14 @@ Final actual-data integration cutoff: независимые code-reviewer **APP
 13proved invariants, configured gates `[]`. Original v1/history и product quality
 FAIL сохранены; native COMPLETE/strict ожидают реального root proof. Предыдущий
 абзац pending architecture — более ранний cutoff, не текущий verdict.
+
+Terminal cutoff: [actual root native/strict receipt](../operations/H-015/corrected-assessment-v2/native-strict-closeout.json)
+подтверждает **COMPLETE/strict PASS5/5**, все5stories complete, standalone mode
+inactive/complete. C1 local checkpoint: `7b58686e7c89304642c7030cd9730f4f08a54f82`;
+terminal-doc follow-up — отдельный local commit, его SHA читается после commit.
+Предыдущие pending-native абзацы — исторические cutoffs. Actual независимые
+[code APPROVE](../operations/H-015/reviews/v2-final-code-review.md) и
+[architect CLEAR](../operations/H-015/reviews/v2-final-architecture.md) сохранены
+без изменения как selected attributed results, не полные private transcripts и
+не author self-approval. Original v1, corrected10/48 и quality FAIL не смешиваются
+с completed bounded measurement. API/replay/ledger mutation/push не выполнялись.

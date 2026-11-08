@@ -36,8 +36,9 @@ end-to-end sample, not pure model accuracy:38questions never reached the provide
 [Actual-data code review](../operations/H-015/reviews/v2-final-code-review.md)
 APPROVES and resolves the HIGH for this separate corrected assessment only.
 Original v1 defect/REQUEST CHANGES remain. [Actual-data architect CLEAR](../operations/H-015/reviews/v2-final-architecture.md)
-covers full bounded H015 measurement plus separatev2. Root native/strict postconditions
-remain pending, distinct from preparation-only
+covers full bounded H015 measurement plus separatev2. Root now verifies actual
+**native COMPLETE/strict PASS5/5** in the [terminal receipt](../operations/H-015/corrected-assessment-v2/native-strict-closeout.json),
+distinct from preparation-only
 APPROVE/CLEAR and historical610full/72focused tests. New continuation72targeted/
 static checks and1139+439preservation receipts are linked in the report. Runtime
 prompts are unchanged; no new provider/API/count/probe, credentials, live UI,

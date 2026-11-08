@@ -1,0 +1,144 @@
+{
+  "version": "h015-corrected-assessment-actual-native-strict-closeout-v1",
+  "recorded_at": "2026-11-08T09:07:34.121024+00:00",
+  "scope": "Full original H015 bounded measurement plus CHAT056 separate corrected offline assessment; no service/product acceptance",
+  "actual_native_goal": {
+    "objective": "Complete the durable ultragoal plan in docs/operations/H-015/workflow/.omx/ultragoal/goals.json, including later accepted/appended stories, under the original brief constraints; use docs/operations/H-015/workflow/.omx/ultragoal/ledger.jsonl as the audit trail.",
+    "status": "complete",
+    "tokensUsed": 2253629,
+    "timeUsedSeconds": 3696,
+    "createdAt": 1794119377,
+    "updatedAt": 1794128771
+  },
+  "native_completion_surface": "Root actual update_goal(status complete), then fresh get_goal twice; not shell/state substitution",
+  "strict_checkpoint": {
+    "command": "omx ultragoal checkpoint --goal-id G005-resolve-post-results-observer-instru --status complete --codex-goal-json <fresh actual COMPLETE snapshot> --quality-gate-json /home/dev/projects/universitydb/docs/operations/H-015/corrected-assessment-v2/final-quality-gate.json --strict --json",
+    "working_directory": "/home/dev/projects/universitydb/docs/operations/H-015/workflow",
+    "exit_code": 0,
+    "ok": true,
+    "summary": {
+      "total": 5,
+      "pending": 0,
+      "inProgress": 0,
+      "complete": 5,
+      "failed": 0,
+      "reviewBlocked": 0,
+      "historicalReviewBlocked": 0,
+      "needsUserDecision": 0,
+      "superseded": 0,
+      "steeringBlocked": 0,
+      "aggregateComplete": true,
+      "artifactComplete": true
+    }
+  },
+  "fresh_supported_status": {
+    "total": 5,
+    "pending": 0,
+    "inProgress": 0,
+    "complete": 5,
+    "failed": 0,
+    "reviewBlocked": 0,
+    "historicalReviewBlocked": 0,
+    "needsUserDecision": 0,
+    "superseded": 0,
+    "steeringBlocked": 0,
+    "aggregateComplete": true,
+    "artifactComplete": true
+  },
+  "goals": [
+    {
+      "id": "G001-cp-l1-collector-and-migration",
+      "status": "complete"
+    },
+    {
+      "id": "G002-cp-l2-offline-review-and-prospective",
+      "status": "complete"
+    },
+    {
+      "id": "G003-cp-l3-authorized-sequential-real48",
+      "status": "complete"
+    },
+    {
+      "id": "G004-cp-l4-independent-measurement-and-re",
+      "status": "complete",
+      "reviewBlockerResolution": {
+        "resolverGoalId": "G005-resolve-post-results-observer-instru",
+        "status": "complete",
+        "resolvedAt": "2026-11-08T09:06:31.534Z",
+        "evidence": "Full original H01548terminal measurement plus explicit CHAT056 append-only corrected OFFLINE assessment achieved, product qualityFAIL notserviceacceptance. Actual corrector onceexit0, independentclosedprovenance192+strictpair/fullrecorddelta8/rootmanualgate BEFORE unchanged scorer onceexit0; corrected10of48 A4/J0/D0/C6/E0/L0,mandatory38critical0thresholdfalse. Original2of48/v1defect/REQUESTCHANGES andall427collection/4v1/688history/12completedstate-locktargets/canonicalmoney retained; after1139targets+439oldH015checkpointfiles unchanged.72targeted/staticPASS, boundedcleanerNOOP, fullsourceunchanged. Actual independentcode-reviewerAPPROVE(ad5abdb0)+architectCLEAR(6ffe90df) coveractualdata/full13invariants; HIGHresolvedONLYseparatev2.47explicitpathC1commit7b58686e7c89304642c7030cd9730f4f08a54f82 verifiedtrackedclean, originaluntrackedlocks preserved. Actualrootupdate_goalcomplete/freshCOMPLETEnative snapshot, no newAPI/credentials/appgraph/questionrerun/ledger/productrepair/push. Finalqualitygate27b08e52."
+      }
+    },
+    {
+      "id": "G005-resolve-post-results-observer-instru",
+      "status": "complete"
+    }
+  ],
+  "standalone_mode": {
+    "surface": "supported host omx state write; proven actual current native scope",
+    "exit_code": 0,
+    "active": false,
+    "current_phase": "complete",
+    "success": true
+  },
+  "workflow_hashes": {
+    "docs/operations/H-015/workflow/.omx/ultragoal/brief.md": "36f56d35f14c76e49121cf24493645696f4d96853bc2c3faa3e45f418c04617e",
+    "docs/operations/H-015/workflow/.omx/ultragoal/goals.json": "352e81e3f39a3b00b2212fc2cc5b326eec99a24d115436ac89f39db6262ca9b0",
+    "docs/operations/H-015/workflow/.omx/ultragoal/ledger.jsonl": "7cb5e73039445b5169d67fc4121c260df6135e7d840b739cff2bd2bce6bb6f02"
+  },
+  "pre_native_corrected_assessment_commit": "7b58686e7c89304642c7030cd9730f4f08a54f82",
+  "previous_local_head": "2121c66f107efb260a7619371e128de7b209fe94",
+  "source_identities": {
+    "live_candidate_sha": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+    "corrector_checkpoint_sha": "f61c0128f3b1f229e4a78e0d3c8908d8b9c928d1",
+    "corrector_sha256": "8560fcb2c7458ab778dbac1d55530f8b634561727f74281b4809c53bf6389908",
+    "frozen_observer_sha256": "a47a50f935f493e24796ad353eff88de1a24509979699328f230aa35ecbb7f14",
+    "frozen_scorer_sha256": "a14f11835ff3c67aa6ef6e7a95716613982a3c1799bfa2d734f4038c95a1c811"
+  },
+  "actual_outputs": {
+    "observations-v2.json": "cfede7911e5d6e276e458e936e7b083291dfdd6f2ed35023e87d991d5e73f2c6",
+    "correction-manifest-v2.json": "8bd96e991cb476d7ba35bd320309514561f643b362f22378ae4fe211c76589f4",
+    "score-v2.json": "ff4d794e2718bcffede5b1920e7977f844619e9d9132e435e65ed6c3d4ccd897",
+    "source-receipt.json": "6be34de5801a1e277a160796f4126db23cccc0555f6672a74463738d613908b7",
+    "paired-output-acceptance.json": "59c43cbcd294a3aab304cb9de6005ec9a865bf96b31e1bdd1230cb2cabd3ad15",
+    "root-paired-output-gate.json": "4c2f966d5184c9a8bc058713084325da4255856f1d99773666bb0770f489293c",
+    "final-quality-gate.json": "27b08e5267a61b8a9f7353840fe6a7502d82b105819c71ee58d1309cb92113d8"
+  },
+  "actual_final_reviews": {
+    "docs/operations/H-015/reviews/v2-final-code-review.md": "ad5abdb06686e5dfbd9ecd393e9a0f28e9ec8c166bf3ee6e333e73a335fc9e96",
+    "docs/operations/H-015/reviews/v2-final-architecture.md": "6ffe90dfeceb4fed4c058879574ed79535fbfc6937608e04b34a3a6c1ebffb99"
+  },
+  "preservation_after_native": {
+    "before_targets_checked": 1139,
+    "original_h015_checkpoint_files_checked": 439,
+    "all_unchanged": true,
+    "canonical_money_sha256": "daed87a21b856f0df454fb1378e266fcf9b79504351a873b1dfc39855d6d2e97",
+    "completed_I1_H013_H014_and_original_locks_changed": false
+  },
+  "measurement": {
+    "collection": "48terminal original conversations",
+    "original_frozen_score": "2/48 instrument-limited retained",
+    "separate_corrected_score": "10/48",
+    "categories": [
+      4,
+      0,
+      0,
+      6,
+      0,
+      0
+    ],
+    "mandatory_failures": 38,
+    "critical_failures": 0,
+    "quality": "FAIL",
+    "original_HIGH": "Resolved for separate corrected assessment only; historical v1 defect/REQUESTCHANGES retained",
+    "exposure": "post-results corrected exposed24x2sample; not prospective/untouchedholdout/puremodel/generalaccuracy/serviceacceptance"
+  },
+  "new_external_provider_API_count_probe_calls": 0,
+  "credential_loading": false,
+  "new_application_graph_question_execution": false,
+  "live_UI": "not-run",
+  "monetary_mutation": false,
+  "product_repair": "not-run",
+  "push": "not-run/noauthority",
+  "fresh_remote_verification": "not-run; prior dated07:01:48UTC observation only",
+  "final_receipt_report_commit": "Will be a scoped separate local commit enclosing this receipt; its own SHA is read from Git after commit, not precomputed or self-embedded."
+}
