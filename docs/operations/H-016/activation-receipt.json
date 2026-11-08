@@ -8,11 +8,13 @@
     "combined create+start rejected by auto-review mistaken completion premise; new read-only source evidence established start-only semantics, then separate reviewed calls succeeded"
   ],
   "actual_native_create": "get_goal null before actual create_goal matching aggregate; root owns lifecycle",
-  "current_native_status": "active; no completion attempted",
+  "current_native_status": "actual COMPLETE via root update_goal and fresh get_goal; later snapshot still COMPLETE after supported mode cleanup",
   "CP1": "complete with5bbce8c; fresh actual active snapshot checkpointed",
   "CP2": "complete via supported checkpoint; f925sourcecandidate later rejected by fullsuite and repaired under CP3",
   "manual_ID_pointer_lock_edits": false,
   "completed_workflow_resume": false,
   "new_product_API_count_credentials_monetary_push": "not-run",
-  "CP3": "actual final58f2 archive815/fullstatic/oracle157,8browserstates and1632preservation PASS; awaiting final independent reviews/docs checkpoint"
+  "CP3": "complete via supported checkpoint after f93a5bf docs/evidence commit and actual final verification/reviews",
+  "CP4": "complete via strict supported G004 checkpoint, aggregate/artifact COMPLETE4/4; native-strict-closeout.json",
+  "standalone_mode": "two proven same-owner projections cleared by documented terminal cleanup; active_modes empty, no /goal clear"
 }

@@ -1,0 +1,114 @@
+{
+  "version": "h016-actual-native-strict-closeout-v1",
+  "recorded_at": "2026-11-08T10:34:42.612554+00:00",
+  "scope": "New bounded H016 OFFLINE application repair and verification only; no live/service/publication/defense acceptance",
+  "tested_executable_sha": "58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32",
+  "preterminal_documentation_commit": "f93a5bf464277ba626596707f0761fd0ffbd9df9",
+  "later_terminal_docs_checkpoint": "Follows this receipt; obtain exact SHA from Git/final response, not a self-referential fabricated hash or new full-test claim.",
+  "actual_native_goal": {
+    "objective": "Complete the durable ultragoal plan in docs/operations/H-016/workflow/.omx/ultragoal/goals.json, including later accepted/appended stories, under the original brief constraints; use docs/operations/H-016/workflow/.omx/ultragoal/ledger.jsonl as the audit trail.",
+    "status": "complete",
+    "tokensUsed": 1666703,
+    "timeUsedSeconds": 3203,
+    "createdAt": 1794130747,
+    "updatedAt": 1794133951
+  },
+  "actual_native_completion_surface": "Root actual update_goal(status complete), then fresh get_goal; later fresh get_goal remained COMPLETE after mode cleanup. No shell/state substitution or /goal clear.",
+  "strict_checkpoint": {
+    "command": "omx ultragoal checkpoint --goal-id G004-cp4-verified-local-offline-handoff --status complete --codex-goal-json <fresh actual COMPLETE snapshot> --quality-gate-json /home/dev/projects/universitydb/docs/operations/H-016/final-quality-gate.json --strict --json",
+    "working_directory": "/home/dev/projects/universitydb/docs/operations/H-016/workflow",
+    "exit_code": 0,
+    "ok": true,
+    "summary": {
+      "total": 4,
+      "pending": 0,
+      "inProgress": 0,
+      "complete": 4,
+      "failed": 0,
+      "reviewBlocked": 0,
+      "historicalReviewBlocked": 0,
+      "needsUserDecision": 0,
+      "superseded": 0,
+      "steeringBlocked": 0,
+      "aggregateComplete": true,
+      "artifactComplete": true
+    },
+    "quality_gate_sha256": "f4cb9c086e808c9a2cefbc13e7d6645af1a549ef295cf41432589b4df41db7f0"
+  },
+  "fresh_supported_H016_status": {
+    "total": 4,
+    "pending": 0,
+    "inProgress": 0,
+    "complete": 4,
+    "failed": 0,
+    "reviewBlocked": 0,
+    "historicalReviewBlocked": 0,
+    "needsUserDecision": 0,
+    "superseded": 0,
+    "steeringBlocked": 0,
+    "aggregateComplete": true,
+    "artifactComplete": true
+  },
+  "goals": [
+    {
+      "id": "G001-cp1-regression-first-diagnosis",
+      "status": "complete"
+    },
+    {
+      "id": "G002-cp2-general-repair-and-integration",
+      "status": "complete"
+    },
+    {
+      "id": "G003-cp3-full-independent-verification",
+      "status": "complete"
+    },
+    {
+      "id": "G004-cp4-verified-local-offline-handoff",
+      "status": "complete"
+    }
+  ],
+  "independent_reviews": {
+    "codeReviewer": "APPROVE,0unresolved; actual /root/code_review installed code-reviewer, reviews/code-final.md",
+    "architect": "CLEAR,0unresolvedblockers; actual /root/architecture_review installed architect, reviews/architecture-final.md"
+  },
+  "final_verification": {
+    "full_tests": 815,
+    "full_test_duration_seconds": 118.48,
+    "independent_oracle_checks": 157,
+    "clean_commands_all_exit0": 10,
+    "browser_states": 8,
+    "schemas": [
+      "University",
+      "Library"
+    ],
+    "executable_components_identity": 56,
+    "immutable_files_unchanged": 1632
+  },
+  "terminal_mode_cleanup": {
+    "authority_receipt": "closeout-binding-readiness.json",
+    "initial_attempt": "Auto-review denied combined construction of mode-state payload files before execution; no payload/state changes occurred. Did not bypass rejection.",
+    "supported_recovery": "Loaded cancel skill and read installed CLI; used documented omx state clear terminal cleanup, selectors only, for actual current-native projection and canonical runtime-selected same-owner projection, not constructed state contents. Both cleared successfully. No force/all/goal clear/pointer/lock edit.",
+    "native_projection_cleared": true,
+    "canonical_projection_cleared": true,
+    "supported_automatic_native_stop_cleanup_reported": 1,
+    "active_modes_after": [],
+    "post_cleanup_mode_status": "Both read surfaces inactive/complete from ultragoal-artifacts fallback at root historical .omx/ultragoal/goals.json. That fallback is NOT H016 proof; exact explicit H016 workflow status above is the authoritative H016 terminal receipt. Historical root artifacts remain unchanged."
+  },
+  "workflow_hashes": {
+    "docs/operations/H-016/workflow/.omx/ultragoal/brief.md": "6d04a4d5993331093f2139cf9a28a6633eb72de4340e447ba9043801f237f495",
+    "docs/operations/H-016/workflow/.omx/ultragoal/goals.json": "46ab63e79ec0f66a44bbcca1b6c5f4a2d3fbeced594cb1d7baadda07ad74fed4",
+    "docs/operations/H-016/workflow/.omx/ultragoal/ledger.jsonl": "2ba86c3a09d65e9f4c8cc9e6a0116e4fb8c40dc4fd8c4553c4564cf5152290c1"
+  },
+  "terminal_preservation": "preservation-terminal.json all1632/sets/locks/money unchanged after actual native+strict+supportedcleanup",
+  "historical_measured_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+  "historical_measurement": "original2/48, separatecorrected10/48 qualityFAIL unchanged; not relabelled or rescored",
+  "not_run": [
+    "new product provider/API/count/probe",
+    "credential loading",
+    "live UI generation",
+    "canonical monetary ledger/holds/budget mutation",
+    "push/remote poll/change",
+    "vault writes",
+    "service/publication/defense acceptance"
+  ]
+}

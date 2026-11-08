@@ -1,7 +1,7 @@
 {
   "version": "h016-seven-invariant-audit-v2-before-native",
   "candidate_sha": "58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32",
-  "status": "All7architecture invariants substantively proven, actual independent code APPROVE/architect CLEAR; persisted before ordered root native/strict closeout",
+  "status": "All7invariants proven; actual independent APPROVE+CLEAR; audit/docsCP3persisted before rootactualnative COMPLETE/strict PASS4/4",
   "brief_path": "docs/operations/H-016/workflow/.omx/ultragoal/brief.md",
   "brief_sha256": "6d04a4d5993331093f2139cf9a28a6633eb72de4340e447ba9043801f237f495",
   "requirement_extraction": "Exact text after \"- \" under Architecture invariants; seven lines preserved verbatim. This file does not mutate workflow state or confer lifecycle authority.",
@@ -44,7 +44,7 @@
       "current_bounded_proof": "Shared role-owned quoted/catalog and typed-ID spans feed every extraction/validation path; explicit mentions intersect catalog candidate sets; unknown/malformed/conflicting/unsupported identities fail before provider. All38historical rows map via resolution-coverage.json to19fresh public-entry proofs/traces, plus independent mutation/projection/negative controls. Code APPROVE/architect I1PASS.",
       "independent_final_code_review": "APPROVE /0unresolved; reviews/code-final.md",
       "independent_final_architecture_review": "CLEAR /0unresolvedblockers; reviews/architecture-final.md",
-      "completion_claim": false
+      "completion_claim": true
     },
     {
       "id": "I02",
@@ -73,7 +73,7 @@
       "current_bounded_proof": "Both schemas instantiate ordinary Agent/compiled graph on temporarySQLite; scripted transport consumes actual production scope and upstreamrefs only after resolution. Full815/AppTest/browser filter+globalLibrary proof; no product case-ID/exactquestion/oracleSQL branches. Code APPROVE/architect I2PASS; real-model accuracy explicitly unclaimed.",
       "independent_final_code_review": "APPROVE /0unresolved; reviews/code-final.md",
       "independent_final_architecture_review": "CLEAR /0unresolvedblockers; reviews/architecture-final.md",
-      "completion_claim": false
+      "completion_claim": true
     },
     {
       "id": "I03",
@@ -103,7 +103,7 @@
       "current_bounded_proof": "Accepted ADR006 domain registry/formatter/dependency source remains unchanged outside scope parsing; full815 and157independentSQLite/Fraction/Decimal oracle, natural16filter subsets/5grains/3counts, actualtie/cohort/upstream mutation/empty/NULL/zero/rounding checks and31freshprooftracepairs PASS. Architect I3PASS.",
       "independent_final_code_review": "APPROVE /0unresolved; reviews/code-final.md",
       "independent_final_architecture_review": "CLEAR /0unresolvedblockers; reviews/architecture-final.md",
-      "completion_claim": false
+      "completion_claim": true
     },
     {
       "id": "I04",
@@ -136,7 +136,7 @@
       "current_bounded_proof": "Unchanged read-onlySQL/DB/typedResultSpec/DAG/budgets/deadlines/clarificationTTL/session/replay code plus preserved old expectations pass exact815full; malformed/unsafe/unsupported paths tested, AppTest/browser repair/refusal/continuation verified. Architect I4PASS.",
       "independent_final_code_review": "APPROVE /0unresolved; reviews/code-final.md",
       "independent_final_architecture_review": "CLEAR /0unresolvedblockers; reviews/architecture-final.md",
-      "completion_claim": false
+      "completion_claim": true
     },
     {
       "id": "I05",
@@ -158,7 +158,7 @@
       "current_bounded_proof": "Final baselinecomparison1632of1632immutable hashes identical, H015529/runtime157/locks2protected sets0added0removed; canonicalmoney andlockidentity unchanged; only3authorizedproductmodules changed. Writer/code-reviewer/architect independently rehashed; architect I5PASS.",
       "independent_final_code_review": "APPROVE /0unresolved; reviews/code-final.md",
       "independent_final_architecture_review": "CLEAR /0unresolvedblockers; reviews/architecture-final.md",
-      "completion_claim": false
+      "completion_claim": true
     },
     {
       "id": "I06",
@@ -185,12 +185,12 @@
       "current_bounded_proof": "Exact58f2trackedarchive815pass118.48s/10commands0/static157oracle/bothseedintegrityFK/noreinitwrite/56mapsidentical/importoriginarchive/tempremoved. Actual8statebrowser binds question/newrunUUID/fulltrace, sameUUIDresume; ownedserver/browserstopped,tempmoneyabsent,runtimeunchanged; scriptedoffline/networkdenial explicit. Architect I6PASS; no productAPI/count/credentials/money/push.",
       "independent_final_code_review": "APPROVE /0unresolved; reviews/code-final.md",
       "independent_final_architecture_review": "CLEAR /0unresolvedblockers; reviews/architecture-final.md",
-      "completion_claim": false
+      "completion_claim": true
     },
     {
       "id": "I07",
       "requirement": "Independent final code-reviewer APPROVE and architect CLEAR, cleaner, full verification and invariant audit precede actual native completion and strict checkpoint; offline proof does not grant live/service/publication acceptance.",
-      "status": "preconditions proven; ordered root native/strict closeout pending",
+      "status": "proven including actual ordered native/strict postcondition",
       "implementation_paths": [],
       "test_paths": [],
       "evidence_paths": [
@@ -203,23 +203,23 @@
         "docs/operations/H-016/reviews/code-final.md",
         "docs/operations/H-016/reviews/architecture-final.md",
         "docs/operations/H-016/resolution-coverage.json",
-        "docs/operations/H-016/cleaner-review.json"
+        "docs/operations/H-016/cleaner-review.json",
+        "docs/operations/H-016/native-strict-closeout.json",
+        "docs/operations/H-016/preservation-terminal.json"
       ],
-      "current_bounded_proof": "Performer pre-editplan/regression-first lock and independent cleaner evidence persisted; full/static/oracle/browser/clean/preservation complete after lastsource/harnesspass. Actual finalcodeAPPROVE0issues andarchitectCLEAR0blockers received. All7audit/document/evidence persistence precedes root nativeCOMPLETE/strictcheckpoint; those lifecycle actions remain pending/unclaimed. Architect I7CLEAR_TO_PROCEED; no service/live/publication acceptance.",
+      "current_bounded_proof": "Performer pre-editplan/regression-first lock and independent cleaner evidence persisted; full/static/oracle/browser/clean/preservation complete after lastsource/harnesspass. Actual finalcodeAPPROVE0issues andarchitectCLEAR0blockers received. All7audit/document/evidence persistence precedes root nativeCOMPLETE/strictcheckpoint; CP3audit/docs commitf93a5bf464277ba626596707f0761fd0ffbd9df9 preceded actual rootnativeCOMPLETE/freshget_goal then strictPASS4of4/aggregateComplete/artifactComplete. ExactH016workflow receipt and postcleanup1632preservation confirm closure, not historicalrootstatusfallback. Architect I7CLEAR_TO_PROCEED; no service/live/publication acceptance.",
       "independent_final_code_review": "APPROVE /0unresolved; reviews/code-final.md",
       "independent_final_architecture_review": "CLEAR /0unresolvedblockers; reviews/architecture-final.md",
-      "completion_claim": false
+      "completion_claim": true
     }
   ],
   "rejected_candidate": {
     "sha": "f9251a71fb44766ceb86f701d12e80320dfb906c",
     "result": "798passed2failed D03/D04; source unchanged; verification/final-1 retained, not final proof"
   },
-  "pending_final_evidence": [
-    "Root actual native COMPLETE then supported strict checkpoint after this audit/document checkpoint"
-  ],
-  "native_completion": "not claimed",
-  "strict_completion": "not claimed",
+  "pending_final_evidence": [],
+  "native_completion": "Actual root update_goal complete then fresh get_goal, later snapshot remains complete; native-strict-closeout.json",
+  "strict_completion": "Actual supported G004checkpoint exit0/oktrue PASS4of4, aggregateComplete/artifactComplete true",
   "live_service_publication_acceptance": "not claimed",
   "verification_receipt": "docs/operations/H-016/verification/final-2/receipt.json",
   "browser_attempts": {
@@ -235,5 +235,8 @@
   "actual_independent_final_reviews": {
     "code": "docs/operations/H-016/reviews/code-final.md",
     "architecture": "docs/operations/H-016/reviews/architecture-final.md"
-  }
+  },
+  "terminal_receipt": "docs/operations/H-016/native-strict-closeout.json",
+  "terminal_preservation": "docs/operations/H-016/preservation-terminal.json",
+  "preterminal_documentation_commit": "f93a5bf464277ba626596707f0761fd0ffbd9df9"
 }

@@ -18,7 +18,8 @@ silently rewrite questions to canonical `student_id=2` to avoid the parser.
 The8affected H016 AppTest checks passed at an intermediate pinned source; the3bcfull suite now passed815checks with157independent oracle/static.
 The58f2candidate changes browser readiness/capture only; actual browser attempt3now passed8states with current question/run/trace
 binding and owned process teardown. Exact58f2archive815full/static157oracle/clean-run and1632preservation passed.
-Independent final APPROVE/CLEAR are received; native closeout remains pending. Current repaired executable candidate is `58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32`. Use only owned temporary fixtures/runtime; keep credentials absent, live
+Independent final APPROVE/CLEAR and root actual native COMPLETE/strict PASS4/4
+are confirmed; real-model validation remains pending. Current repaired executable candidate is `58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32`. Use only owned temporary fixtures/runtime; keep credentials absent, live
 approval off and external tracing disabled. Do not read/copy/mutate the canonical
 money ledger. Stop only servers/browser processes launched for this verification.
 Historical H015 corrected10/48 is unchanged; offline regressions never establish

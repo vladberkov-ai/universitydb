@@ -3,8 +3,8 @@
 **Offline verification passed on exact `58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32`:**
 815tests/157independent oracle checks/static, clean tracked-archive reproduction,
 actual8state browser and1632immutable preservation. Independent final code **APPROVE** and architecture **CLEAR** are received,
-0unresolved findings/blockers. Root native/strict closeout remains pending at this
-cutoff. This is
+0unresolved findings/blockers. Root actual **native COMPLETE/strict PASS4/4**
+now closes the bounded H016offline DoD; aggregateComplete/artifactComplete true. This is
 not a new live result, final service acceptance or publication.
 
 ## Authority and immutable historical baseline
@@ -36,7 +36,8 @@ change the frozen H015 executable.
 | `3bc1088ac7403e757df6eddd0e10120d3a69d17b` | Product repair passed815tests/157oracle/static, but browser attempt1 incomplete; not final offline DoD |
 | `6b07be3e74299add79ce439cd8197193a915e7e8` | Harness-only dataset-transition/diagnostic fix; browser attempt2 rejected stale trace capture |
 | `58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32` | Exact tested candidate: archive815pass118.48s/static157oracle; actual browser8states;56source identities unchanged |
-| Later docs-only checkpoint | Pending; must remain distinct from the full-tested executable SHA |
+| `f93a5bf464277ba626596707f0761fd0ffbd9df9` | CP3docs/evidence checkpoint before root actual native/strict closure; not a new executable/full test |
+| Terminal docs-only checkpoint | Contains terminal receipts/status; exact SHA is reported from Git after commit, never self-embedded or a new full-test claim |
 
 Historical original2/48 and separately corrected10/48 remain unchanged. The latter
 has category counts aggregates4/8, JOIN0/8, dependencies0/8, clarification6/8,
@@ -274,8 +275,8 @@ clean checks ran after the last code/harness pass. [Actual final code review](..
 The reviewer independently checked815/static157/8browser/56component identities/
 1632immutable preservation and cleaner/no-bypass facts. [Actual final architecture](../operations/H-016/reviews/architecture-final.md)
 now **CLEAR**,0unresolved blockers, independently confirms all seven invariants
-and the source/data/review ordering. Root native COMPLETE/strict postconditions
-remain pending, not inferred from these substantive approvals. Product/source/tests/resources/tools are identical
+and the source/data/review ordering. Root then completed the actual native/strict postconditions through supported
+tools, separately evidenced below rather than inferred from substantive approval. Product/source/tests/resources/tools are identical
 to3bc; only H016browser harness/documentary notes changed.
 
 A scripted provider is an explicit offline test boundary, never a replacement for
@@ -307,17 +308,31 @@ excludes all workflow runtime/original locks/history; only workflow/.gitignore
 containing .omx/ is included by root request. CP2 committed the10explicit source/test/ADR/browser-harness paths as
 `f9251a71fb44766ceb86f701d12e80320dfb906c`. Root reports supported CP1 and CP2 complete
 checkpoints; CP3 additionally committed quantified/listing repair
-`3bc1088ac7403e757df6eddd0e10120d3a69d17b` after rejecting f925full evidence. CP3 remains in progress and actual native aggregate active. Harness-only
+`3bc1088ac7403e757df6eddd0e10120d3a69d17b` after rejecting f925full evidence. At that earlier cutoff CP3was in progress and the native aggregate active. Harness-only
 6b07then58f2commits preserve product/test/resource/tool identity to3bc; neither
-failed browser attempt is hidden or counted as final acceptance. Final native
-completion/strict terminal receipt remain pending; this report does not substitute
-state files for actual native tools.
+failed browser attempt is hidden or counted as final acceptance. CP3documentation/evidence was committed at `f93a5bf464277ba626596707f0761fd0ffbd9df9` before root
+actual native completion. [Terminal receipt](../operations/H-016/native-strict-closeout.json)
+now records actual root `update_goal(complete)` then fresh `get_goal`, strict
+G004checkpoint exit0/oktrue/**PASS4/4**, all four goals complete and
+aggregateComplete/artifactComplete true. A later fresh native snapshot remained
+COMPLETE (1,666,703tokens/3,203seconds; CLI goal accounting, not monetary usage).
+Exact H016workflow status, not a root historical-artifact fallback, supplies proof.
+
+Root terminalized only two freshly proven same-owner mode projections through
+documented selector-only state clear after the cancel skill. A first combined
+state-payload attempt was denied before execution; supported recovery created no
+manual IDs/pointers/locks, used no force/all or /goal clear, and left active_modes
+empty. Automatic native-stop cleanup reported1; that number is not a broad runtime
+certification. Root historical workflow artifacts remain unchanged. The frozen
+final quality gate retains hash `f4cb9c086e808c9a2cefbc13e7d6645af1a549ef295cf41432589b4df41db7f0`.
 
 [Preclose preservation](../operations/H-016/preservation-preclose.json) currently
 confirms all1632immutable targets unchanged and protected historical file sets
 unchanged; it separately enumerates authorized changes among51product-baseline
 targets. The [final before-native preservation](../operations/H-016/preservation-final.json)
-recheck also passes; root may append a later post-native receipt separately. New
+recheck also passes; the [post-native/cleanup preservation](../operations/H-016/preservation-terminal.json)
+also confirms1632unchanged,0protected-set additions/removals, canonical money and
+original locks unchanged, and0source/test/resource/tool drift since exact58f2. New
 H016 artifacts are neither historical mutation nor an excuse to ignore drift.
 Original untracked lock preservation and stopped owned UI/browser are mandatory.
 
@@ -340,10 +355,11 @@ Global U01 is partial; EN reader translation is not actual English model input.
 context inputs. It is a presence/hash census, not a claim every role read every
 byte, a full transcript, or the final mutable-document freeze.
 
-[Seven-invariant draft audit](../operations/H-016/invariant-audit.json) preserves
+[Seven-invariant audit](../operations/H-016/invariant-audit.json) preserves
 the exact workflow-brief lines and maps source/tests/full/browser/clean/preservation
-evidence. Actual final APPROVE/CLEAR substantiate all seven; persistence precedes root
-native/strict closeout, which remains a pending ordered postcondition.
+evidence. Actual final APPROVE/CLEAR substantiate all seven; audit/docs persistence atCP3
+preceded actual root native/strict closeout. The terminal audit append records
+that ordered postcondition from the actual receipt, not invented completion.
 
 ## Requirement and evidence boundary
 

@@ -1,0 +1,48 @@
+{
+  "stage": "after actual native COMPLETE/strict PASS4of4 and supported exact-scope terminal mode cleanup, before terminal docs-only checkpoint",
+  "observed_head": "f93a5bf464277ba626596707f0761fd0ffbd9df9",
+  "tested_executable_sha": "58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32",
+  "baseline_sha256": "39293fb6f8c6049b1c4ee4ca1cd7a9d0ff16c227a539e7ec063533b42e4b6333",
+  "immutable_count": 1632,
+  "unchanged_count": 1632,
+  "immutable_changes": {},
+  "protected_file_sets": {
+    "docs/operations/H-015": {
+      "baseline_files": 529,
+      "current_files": 529,
+      "added": [],
+      "removed": []
+    },
+    "runtime": {
+      "baseline_files": 157,
+      "current_files": 157,
+      "added": [],
+      "removed": []
+    },
+    ".omx-state-locks": {
+      "baseline_files": 2,
+      "current_files": 2,
+      "added": [],
+      "removed": []
+    }
+  },
+  "authorized_current_product_changes": {
+    "src/universitydb/domain.py": {
+      "before": "0c6dc3a5dcaae4b9db8b723fb673f150e50438765352628909ca47b0f542ea77",
+      "after": "80e70a9a01bc4fa6af29c7bc5a7a5e94ff65e174590d61b855e5ea6353aa98f9"
+    },
+    "src/universitydb/domain_support.py": {
+      "before": "211407da912ca737bdc449ce68b098227efad5fdd551c8848796d5c041a71fae",
+      "after": "7e6eb3d529206731f93b26d80f1ba877926b97c0b42ef719afa75f428ea245d4"
+    },
+    "src/universitydb/library.py": {
+      "before": "0087d38942de432422fdf641ae241ca5928f995c81447296c8b54e6dc7a0a797",
+      "after": "9ee0be5fd13c05d6c0d366755bf6b57e8414e4b16f2d11e8c249f159df7e6ade"
+    }
+  },
+  "canonical_money_sha256": "daed87a21b856f0df454fb1378e266fcf9b79504351a873b1dfc39855d6d2e97",
+  "original_lock_identity_sha256": "50d956e3fbf97b265862cefdbfb54fd809b03ef55b3f7ccd9997864b70d62711",
+  "source_test_resource_tool_changed_since_tested": [],
+  "new_product_API_count_credentials_monetary_push": "not-run",
+  "status": "passed"
+}

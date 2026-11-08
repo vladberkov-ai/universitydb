@@ -10,7 +10,7 @@ installed skill files are context, not additional actual user prompts.
 
 The [selected documentation assignment](../operations/H-016/documentation-task-projection.txt)
 and regression lane [initial task](../operations/H-016/prompts/regression-task.txt) /
-[selected followups](../operations/H-016/prompts/regression-followups.txt) are
+[selected followups](../operations/H-016/prompts/regression-followups.txt),
 and the [exact initial repair task](../operations/H-016/prompts/repair-task.txt) are
 separately attributed in H016 provenance. Preliminary [code](../operations/H-016/reviews/code-preliminary.md) /
 [architecture](../operations/H-016/reviews/architecture-preliminary.md) files are
@@ -293,3 +293,12 @@ H016 final selected result projections: [code APPROVE](../operations/H-016/revie
 received review **results**, not complete reviewer prompts or hidden session
 exports. Root native/strict closure is separate. No new runtime template or
 real-provider request was consumed in this offline task.
+
+H016 terminal status (separate from actual prompt text): root actual native
+COMPLETE/strict PASS4/4, aggregateComplete/artifactComplete true;
+[actual terminal receipt](../operations/H-016/native-strict-closeout.json) and
+[post-cleanup preservation](../operations/H-016/preservation-terminal.json).
+CP3docs/evidence `f93a5bf464277ba626596707f0761fd0ffbd9df9` preceded closure; tested
+executable remains `58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32`, not a later docs SHA.
+No new runtime prompt/live request or full-transcript coverage is implied.
+New API/count/credential loading/monetary mutation/push remain not-run.

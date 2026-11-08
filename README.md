@@ -19,7 +19,8 @@ exact tested candidate **`58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32`**:
 archive reproduction and actual8state University/Library browser all pass.
 All1632immutable historical targets are unchanged; original locks/money retained.
 Independent final code APPROVE/architecture CLEAR have0unresolved issues/blockers;
-root native/strict closeout remains pending at this cutoff. The repair preserves filters, catalog validation, ambiguity,
+root actual native COMPLETE/strict PASS4/4 now closes bounded H016offline DoD
+([terminal receipt](docs/operations/H-016/native-strict-closeout.json)). The repair preserves filters, catalog validation, ambiguity,
 read-only SQL, NULL/zero/empty/ties and actual-result dependencies. Scripted plan/
 SQL tests prove mechanics, not real-model NL→SQL accuracy.
 
@@ -32,7 +33,7 @@ historical, not a fresh poll.
 
 The first H016 candidate `f9251a7` failed its full suite on two quantified
 ID-projection inputs; it is rejected, not a final pass. The new candidate also
-aligns bounded listing verbs with the accepted listing contract. Independent final APPROVE/CLEAR are received; native closeout remains pending; [retained attempts](docs/reports/H-016-scope-repair-offline.md#cp3--verification-and-independent-review)
+aligns bounded listing verbs with the accepted listing contract. Independent final APPROVE/CLEAR and actual native COMPLETE/strict PASS4/4 are received; [retained attempts](docs/reports/H-016-scope-repair-offline.md#cp3--verification-and-independent-review)
 explain the repair without weakening original expectations.
 
 ## Historical H015 measurement and correction

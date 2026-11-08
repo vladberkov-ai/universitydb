@@ -7,8 +7,8 @@ Agent-entry tests. Shared ID extraction/projection intent, not the provider or
 missing catalogs, caused the observed failures. New repaired executable candidate
 `58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32` implements role/typed-span ownership, full quoted
 identity validation and fail-closed unsupported identity constraints. Exact58f2archive815tests/static157oracle, actual8statebrowser, clean tracked-only
-reproduction and1632immutable preservation passed. Independent final APPROVE/CLEAR are received with0unresolved findings; native/
-strict completion remains **pending at this cutoff**. No old readiness claim closes
+reproduction and1632immutable preservation passed. Independent final APPROVE/CLEAR are received with0unresolved findings; root actual
+**native COMPLETE/strict PASS4/4** is confirmed by the [terminal receipt](operations/H-016/native-strict-closeout.json). No old readiness claim closes
 these new gates.
 
 - **R03–08:** current ordinary NL→scope→compiled graph→SQLite/answer/trace/UI

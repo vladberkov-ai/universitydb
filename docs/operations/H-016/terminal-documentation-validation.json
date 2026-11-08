@@ -1,0 +1,42 @@
+{
+  "version": "h016-terminal-docs-validation-v1",
+  "tested_executable_sha": "58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32",
+  "preterminal_docs_commit": "f93a5bf464277ba626596707f0761fd0ffbd9df9",
+  "actual_native_status": "complete",
+  "strict": "PASS4of4/exit0/oktrue/aggregateComplete/artifactComplete",
+  "native_goal_usage": {
+    "tokensUsed": 1666703,
+    "timeUsedSeconds": 3203
+  },
+  "immutable_files_rehashed": 1632,
+  "executable_components_rehashed": 56,
+  "workflow_terminal_hashes_verified": 3,
+  "frozen_quality_gate_hash_unchanged": true,
+  "exact_invariant_lines_preserved": 7,
+  "local_link_targets_checked": 428,
+  "missing_targets": [],
+  "anchors": "not-validated",
+  "bounded_text_privacy_scan": "pass/no private vault prefix or secret-like token; not universal certification",
+  "git_diff_check_exit": 0,
+  "executable_changes": 0,
+  "new_examples_or_commands": 0,
+  "full_suite_rerun": "not-run/docs-only; exact815test result stays58f2",
+  "new_API_count_credentials_money_push": "not-run",
+  "explicit_terminal_paths": [
+    "README.md",
+    "docs/adr/README.md",
+    "docs/ai/PROMPTS-EN.md",
+    "docs/ai/PROMPTS-RU.md",
+    "docs/ai/README.md",
+    "docs/assignment-status.md",
+    "docs/manual-e2e.md",
+    "docs/operations/H-016/activation-receipt.json",
+    "docs/operations/H-016/input-coverage.json",
+    "docs/operations/H-016/invariant-audit.json",
+    "docs/operations/H-016/native-strict-closeout.json",
+    "docs/operations/H-016/preservation-terminal.json",
+    "docs/operations/H-016/prompt-receipt.json",
+    "docs/reports/H-016-scope-repair-offline.md"
+  ],
+  "later_terminal_docs_SHA": "Read Git after commit; not self-embedded."
+}
