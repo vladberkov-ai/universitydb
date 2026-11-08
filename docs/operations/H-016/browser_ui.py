@@ -21,7 +21,8 @@ from urllib.request import urlopen
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "H-013"))
 from offline_ui_fixture import fixture as historical_fixture
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import Error as PlaywrightError
+from playwright.sync_api import expect, sync_playwright
 from ui_fixtures import plan, proposal, step
 
 from universitydb.library import SPEC as LIBRARY_SPEC
@@ -68,6 +69,51 @@ def fixture(full=False):
         *result["library-v1"],
     ]
     return result
+
+
+def wait_for_library_dataset(page, previous_run_id):
+    """Wait for a positive schema-specific render, not absence of a prior name."""
+    question = page.get_by_role("textbox", name="Question", exact=True)
+    expect(question).to_have_value("How many open loans does each reader have?", timeout=120000)
+    expect(page.locator("body")).not_to_contain_text(previous_run_id, timeout=120000)
+    page.get_by_test_id("stStatusWidget").wait_for(state="hidden")
+    return question
+
+
+def capture_failure(page, out, receipt):
+    """Preserve diagnostic state before browser teardown; never mask the failure."""
+    errors = {}
+    for name, capture in (
+        (
+            "body",
+            lambda: (out / "failure-visible.txt").write_text(page.inner_text("body", timeout=5000)),
+        ),
+        (
+            "question",
+            lambda: receipt.update(
+                failure_question=page.get_by_role(
+                    "textbox", name="Question", exact=True
+                ).input_value(timeout=5000)
+            ),
+        ),
+        (
+            "screenshot",
+            lambda: page.screenshot(path=str(out / "failure.png"), full_page=True, timeout=5000),
+        ),
+    ):
+        try:
+            capture()
+        except (OSError, PlaywrightError) as exc:
+            errors[name] = type(exc).__name__
+    try:
+        trace = page.get_by_role("button", name="JSONL trace", exact=True)
+        if trace.count():
+            with page.expect_download(timeout=5000) as download:
+                trace.click(timeout=5000)
+            download.value.save_as(str(out / "failure-current.jsonl"))
+    except (OSError, PlaywrightError) as exc:
+        errors["trace"] = type(exc).__name__
+    receipt["failure_capture_errors"] = errors
 
 
 def digest(path):
@@ -373,12 +419,8 @@ def run(out, full):
                             )
                             page.screenshot(path=str(out / "dataset-options.png"))
                             page.get_by_role("option", name="Library", exact=True).click()
-                            assert (
-                                "Bea"
-                                not in page.get_by_role(
-                                    "textbox", name="Question", exact=True
-                                ).input_value()
-                            )
+                            wait_for_library_dataset(page, receipt["cases"]["error"]["run_id"])
+                            receipt["library_transition_default_verified"] = True
                             submit("library-filter")
                             filtered = capture("library-filter", "Ada")
                             assert [
@@ -391,6 +433,10 @@ def run(out, full):
                             ]
                             assert raw == [[[1, "Ada", 1], [2, "Bob", 1]]]
                         receipt["status"] = "passed"
+                    except BaseException:
+                        if "page" in locals():
+                            capture_failure(page, out, receipt)
+                        raise
                     finally:
                         browser.close()
                         receipt["browser_closed"] = True
@@ -411,6 +457,10 @@ def run(out, full):
                         os.killpg(server.pid, signal.SIGKILL)
                         server.wait(timeout=5)
                 receipt["server_stopped"] = server.poll() is not None
+                log.flush()
+                shutil.copyfile(temp / "server.log", out / "server.log")
+                if receipt.get("status") == "failed" and (temp / "runtime/traces").is_dir():
+                    shutil.copytree(temp / "runtime/traces", out / "failure-runtime-traces")
                 receipt["temporary_ledger_absent"] = not (temp / "runtime/spending.json").exists()
                 after = {
                     str(p.relative_to(ROOT)): digest(p)

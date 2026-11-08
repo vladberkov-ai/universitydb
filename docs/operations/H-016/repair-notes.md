@@ -231,3 +231,37 @@ recorded in listing-consistency-components.sha256. Both independent reviewer
 lanes accepted the bounded grammar/intent rationale at source level; root owns
 new exact-SHA full suite, browser, clean-run, preservation and final verdicts.
 The prior f9251a7 full failure and all intermediate attempts remain preserved.
+
+## Actual browser attempt1: transition harness repair
+
+Attempt1 on3bc1088 passed six University states, then timed out waiting for Ada in
+Library-filter. Its receipt proves owned browser/server stopped, canonical runtime
+unchanged and no temporary spending ledger. Preserve the entire attempt unchanged.
+The failed Library question/body/server log were not retained in that attempt, so
+its exact submitted question and a race as the actual cause cannot be established.
+
+A concrete harness defect is proven independently: the previous error question
+`What is the average grade across all enrollments?` already satisfies the old
+`"Bea" not in textbox` assertion before selecting Library. UI source uses
+schema-specific `question_{schema_id}` keys and clears prior result/agent on schema
+identity change. A focused temporary AppTest reproduced that old guard's false
+positive, then verified the new Library key/default, cleared result and successful
+readerID1→Ada1 execution after the actual synchronous dataset rerender.
+
+NEW H016 harness only: wait positively for the exact Library default question,
+absence of the prior runID in body, and idle render before filling/submitting the
+filter. No arbitrary sleep, retry, skipped question, timeout-ceiling change or
+product code repair. Preserve future failure DOM/body/current question/screenshot
+and available downloaded trace before closing the browser; persist server log and
+failed temporary JSONL traces before removing the temporary directory. Diagnostics
+capture errors are recorded and the original browser failure is re-raised.
+Original H014 harness, product source and attempt1 evidence remain unchanged.
+
+Verification: existing H016 AppTest suite8passed/3.19s; exact prior-error→Library
+transition proof1passed/1.77s. The temporary test's source/output are retained as
+regression evidence (`browser-harness-transition-proof-source.txt` and matching
+output); it is not a new product test or a real browser pass. Ruff/format/compile
+and diff checks pass. Independent code-reviewer reports CLEAR_TO_CHECKPOINT for
+this bounded harness fix; root must run a fresh actual browser attempt and exact-
+SHA clean/full verification before final acceptance. The attempted browser cause
+remains unproven until new diagnostics/evidence, not retrospectively relabeled.
