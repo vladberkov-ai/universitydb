@@ -1,3 +1,11 @@
+## Publication update — 2026-11-08
+
+The owner authorized publishing completed H015/H016 evidence and current English
+reviewer documentation. The tested H016 executable remains `58f2fe9`; later
+documentation commits do not claim a fresh full product run. New product API calls,
+spending changes and a new live campaign remain outside this delivery. Historical
+no-push/pending statements below describe their original cutoffs.
+
 ## Current H016 offline-repair cutoff — 2026-11-08
 
 The [H016 report](reports/H-016-scope-repair-offline.md) separates the new offline

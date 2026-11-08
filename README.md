@@ -5,86 +5,39 @@ typed results and an inspectable Streamlit interface. Two synthetic datasets are
 included: University and Library. This repository contains the assignment code,
 schemas, seed data, tests, decisions, prompt collections and execution evidence.
 
-## Current H016 offline repair
+## Current status
 
-H016 is a separate, authorized **offline product repair**, not a rescore or rerun
-of H015. CP1 maps all38pre-provider failures to a shared identity grammar defect:
-`entity ID N` is not extracted and `ID`/`IDs` projections are mistaken for unknown
-names. Catalog wiring is correct. Independent natural-input regressions first
-failed through the ordinary compiled graph before any product repair.
+**The expanded service is implemented and repaired offline. Real-model validation
+of the repaired version is still pending.** University supports means/counts,
+JOIN listings, grouping, exact ties, optional filters, clarification and dependent
+questions. Library exercises the same graph, SQL safety, tracing and UI core.
 
-[H016 report](docs/reports/H-016-scope-repair-offline.md) records the committed,
-exact tested candidate **`58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32`**:
-**815offline tests/157independent oracle checks**, static checks, clean tracked-
-archive reproduction and actual8state University/Library browser all pass.
-All1632immutable historical targets are unchanged; original locks/money retained.
-Independent final code APPROVE/architecture CLEAR have0unresolved issues/blockers;
-root actual native COMPLETE/strict PASS4/4 now closes bounded H016offline DoD
-([terminal receipt](docs/operations/H-016/native-strict-closeout.json)). The repair preserves filters, catalog validation, ambiguity,
-read-only SQL, NULL/zero/empty/ties and actual-result dependencies. Scripted plan/
-SQL tests prove mechanics, not real-model NL→SQL accuracy.
+The exact tested executable is `58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32`:
+**815 tests, 157 independent SQLite oracle checks, static checks, AppTest,
+eight actual offline browser states and tracked-only clean reproduction passed.**
+Independent code review: APPROVE; architecture: CLEAR. H016 native COMPLETE / strict
+PASS 4/4 closes the offline repair task, not final service acceptance. Clean
+reproduction reused the locked installed environment; it was not a fresh download.
 
-**Latest measured live sample remains corrected10/48, product quality FAIL, on
-historical `ecb7f5c81c705d970dc64adb910ed2a5020cb28b`.** H016 may establish an
-offline-repaired candidate only; real-model validation and service acceptance
-remain pending. No new API/count/probe, credential loading, monetary mutation or
-push is authorized. Publication remains pending; last remote observation below is
-historical, not a fresh poll.
+The shared resolver previously confused numeric ID markers and requested ID
+columns with entity names. H016 fixes extraction, catalog validation, role ownership,
+conflicts and quantified listings without changing the model or runtime prompts.
+[H016 report](docs/reports/H-016-scope-repair-offline.md) ·
+[root cause and decisions](docs/adr/ADR-OMX-015-H016-scope-resolution.md) ·
+[browser evidence](docs/operations/H-016/browser/final-58f2-attempt3/browser-receipt.json).
 
-The first H016 candidate `f9251a7` failed its full suite on two quantified
-ID-projection inputs; it is rejected, not a final pass. The new candidate also
-aligns bounded listing verbs with the accepted listing contract. Independent final APPROVE/CLEAR and actual native COMPLETE/strict PASS4/4 are received; [retained attempts](docs/reports/H-016-scope-repair-offline.md#cp3--verification-and-independent-review)
-explain the repair without weakening original expectations.
-
-## Historical H015 measurement and correction
-
-**H015:48original conversations collected; separate corrected offline score10/48;
-product quality FAIL.** Frozen/tested product
-`ecb7f5c81c705d970dc64adb910ed2a5020cb28b` produced10ok/38scope-resolution
-`INVALID_INPUT` failures before the provider, with20generation calls. No questions
-were rewritten or replayed; all48remain in the denominator.
-
-Original frozen observer/scorer output2/48 is preserved, with eight confirmed
-nullable-mean type false negatives. The authorized post-results correction changes
-only those8type labels, then uses the unchanged frozen scorer after independent
-paired-output acceptance: categories4/8,0/8,0/8,6/8,0/8,0/8; mandatory failures38,
-critical failures0, threshold=false. This is separate corrected analysis, not the
-original prospective result, general accuracy or acceptance. It is an exposed-sample
-end-to-end conversation pass count, not pure model accuracy:38questions never
-reached the provider. Actual-data final
-code review APPROVES and resolves the HIGH for this separate assessment only;
-actual-data architect CLEAR covers full bounded H015 measurement plus separatev2.
-Root verifies **native COMPLETE/strict PASS5/5** for bounded measurement
-([terminal receipt](docs/operations/H-015/corrected-assessment-v2/native-strict-closeout.json)).
-C1 local checkpoint `7b58686e7c89304642c7030cd9730f4f08a54f82`; service acceptance
-is not claimed. Publication/quality/product diagnosis remain separate; push not-run.
-Preparation APPROVE/CLEAR is not actual-data approval.
-
-Original evidence/ledger/history/locks are preserved. No new provider/API/count/
-probe, credentials, live UI, replay, product repair, monetary mutation or push is
-authorized in the correction. Historical610-test/static and72focused preparation
-checks remain distinct from current actual-data review.
+**The latest live measurement remains 10/48 on the older `ecb7f5c` candidate.**
+Thirty-eight conversations failed before the provider. The initial instrument's
+2/48 output is preserved; a separately reviewed post-results correction changed
+eight nullable-type labels, not answers, producing 10/48. This is an exposed-sample
+end-to-end result, not pure model accuracy. It does not score the repaired candidate.
 [H015 report](docs/reports/H-015-full-live-eval.md) ·
-[original collection](docs/operations/H-015/collection-closeout.json) ·
-[independent observation](docs/operations/H-015/observation/independent-observation.md).
+[corrected assessment](docs/operations/H-015/corrected-assessment-v2/score-v2.json).
 
-The exact ecb7candidate passed **576offline tests/157independent oracle checks**
-and static checks before collection. Historical H014 product
-`98345ad6ce5757c71d44ba1ce59a683d46e0d910` passed485tests, clean reproduction,
-AppTest and six offline-browser classes/seven captures, COMPLETE/strict5/5.
-These are separate cutoffs; offline/bounded safety passes do not prove broad live
-query quality. Live M1/ties/count-choice/Library/repair success was not demonstrated
-by this campaign. The exposed24-question×2sample is not an untouched holdout or
-general model-accuracy estimate. Earlier I1 live80.00/90.00 remains historical.
-
-The owner authorized this single no-smoke full eval and history-preserving aggregate
-USD120/dispatch110/reserve10, including old obligations.20new retained reservations
-USD8.528960 plus historicalUSD5.970272 totalUSD14.499232; new observed conservative
-usageUSD0.2776070 is not the invoice or a reservation refund. No extra campaign,
-count/probe/fallback/judge/paid rerun/UI run or push occurred. H015 changes are local;
-the last preserved remote observation was origin/main60e8ffc at2026-11-08T07:01:48UTC
-([receipt](docs/operations/H-015/remote-closeout.json)); no fresh remote check is claimed.
-[Requirement status](docs/assignment-status.md).
+This delivery includes completed H015/H016 results and historical evidence.
+Publication does not authorize another live campaign or spending-policy change.
+Earlier failed attempts remain explicitly labelled in the reports.
+[Assignment coverage](docs/assignment-status.md).
 
 ## Deliverables
 
@@ -98,7 +51,7 @@ the last preserved remote observation was origin/main60e8ffc at2026-11-08T07:01:
 | SQL, provider, tracing and UI | [DB](src/universitydb/db.py), [SQL policy](src/universitydb/sql_policy.py), [provider](src/universitydb/llm.py), [trace](src/universitydb/tracing.py), [UI](src/universitydb/ui.py) |
 | Prompts in two languages | [English](docs/ai/PROMPTS-EN.md), [Russian](docs/ai/PROMPTS-RU.md), [source coverage](docs/ai/README.md) |
 | Automated and manual E2E | [tests](tests), [E2E guide](docs/manual-e2e.md) |
-| Examples, outputs and traces | [examples](examples/README.md), [final M1 proofs](docs/operations/H-014/clean-run-final-attempt3/m1/manifest.json), [browser evidence](docs/operations/H-014/browser/final-983-attempt1/browser-receipt.json) |
+| Examples, outputs and traces | [examples](examples/README.md), [final M1 proofs](docs/operations/H-014/clean-run-final-attempt3/m1/manifest.json), [browser evidence](docs/operations/H-016/browser/final-58f2-attempt3/browser-receipt.json) |
 | Architecture and rationale | [ADR index](docs/adr/README.md), [current contracts/decisions](docs/adr/ADR-OMX-012-I2-I3-offline-contracts.md) |
 | Production considerations | [reliability, security, scaling and deployment](docs/plans/production-considerations.md) |
 
@@ -147,21 +100,31 @@ spending ledger when cleaning up the owned temporary folder.
 ## Automated E2E and regression
 
 ```bash
-env -u OPENAI_API_KEY UNIVERSITYDB_LIVE_APPROVED=no LANGSMITH_TRACING=false LANGCHAIN_TRACING_V2=false uv run --locked pytest -q tests/test_i2_ui.py tests/test_i3_dependencies.py tests/test_library.py tests/test_readiness_scope.py tests/test_readiness_ui_magic.py tests/test_eval_harness.py
+env -u OPENAI_API_KEY UNIVERSITYDB_LIVE_APPROVED=no LANGSMITH_TRACING=false LANGCHAIN_TRACING_V2=false uv run --locked pytest -q tests/test_i2_ui.py tests/test_i3_dependencies.py tests/test_library.py tests/test_h016_natural_scope.py tests/test_h016_resolution_edges.py tests/test_h016_offline_replay.py tests/test_h016_ui.py
 uv run --locked ruff check src tests
 uv run --locked ruff format --check src tests
 uv run --locked mypy src/universitydb --ignore-missing-imports
 uv run --locked python -m compileall -q src tests
 ```
 
-The frozen ecb7candidate passed576tests with the full `pytest -q` command from Install;
-later offline instrument work is a separate validation cutoff. Graph tests
-use compiled LangGraph and real SQLite with injected proposals; UI tests use
-Streamlit AppTest. Actual browser evidence is separate and linked above. The H-014 browser driver dynamically discovers Chromium and records its toolchain.
-Browser automation needs a separately provisioned Playwright/Chromium environment;
-it is not required for pytest/AppTest. Manual browser reproduction uses the ordinary
-local UI sequence above. Clean reproduction already passed with disclosed dependency
-cache/browser reuse; it is not an all-fresh-download claim.
+Run the full `pytest -q` command from Install for the complete suite. The current
+815-test baseline belongs to the exact H016 executable above. Graph tests exercise
+the ordinary natural-question entry, compiled LangGraph and real temporary SQLite;
+provider proposals are injected. UI tests use Streamlit AppTest. They do not measure
+real-model language understanding.
+
+For optional actual browser automation, provision Playwright and a compatible
+Chromium separately, then run from the checkout:
+
+```bash
+browser_evidence="$(mktemp -d)"
+env -u OPENAI_API_KEY UNIVERSITYDB_LIVE_APPROVED=no LANGSMITH_TRACING=false LANGCHAIN_TRACING_V2=false uv run --locked python docs/operations/H-016/browser_ui.py "$browser_evidence" --full
+```
+
+The driver creates isolated fixtures, checks eight states across both schemas,
+binds downloaded traces to current run IDs, and stops its owned server/browser.
+It discovers a provisioned browser; it does not install one. This optional harness
+is separate from pytest/AppTest. See the [E2E guide](docs/manual-e2e.md).
 
 ## Live mode: configuration reference, no new dispatch authority
 

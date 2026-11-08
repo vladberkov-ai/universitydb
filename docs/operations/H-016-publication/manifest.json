@@ -1,0 +1,52 @@
+{
+  "authority": "CHAT-060",
+  "baseline": "1abd17f102a90800ee0ca6c6e1a85248140288f6",
+  "remote_before": "60e8ffcefb3614f7a754459722b14a7a2c6a1074",
+  "tested_executable": "58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32",
+  "outgoing_blobs_scanned": 896,
+  "secret_pattern_hits": [],
+  "private_prefix_findings": [],
+  "required_deliverables": {
+    "resources/schema.sql": "2d459c3592bdf9d0baea14d546540d55be650bb619d3762ee63b85cca9be70f8",
+    "resources/seed.sql": "c355537acc89af8a2ec7b96b65fdab3f37366185539ae16c1b0b9fe62c0d1acb",
+    "resources/library/schema.sql": "b7ea3103b689d4f0797bf398a278c1738ee97bac81cb785a72a9d25081b870f1",
+    "resources/library/seed.sql": "a81701bd8c62379f03f101081739b52e451ffdd0fd74d11f23217b6ecaf9400a",
+    "docs/database.md": "8c1abf3992d167bd694e338a27f897fcd275f92dd8cb50265ca534cb29009245",
+    "docs/plans/production-considerations.md": "5f8e4f7f983bc0ef4c6f434e53d66cd0075f562e9fea36e1eea75f33e980ad68",
+    "docs/ai/PROMPTS-RU.md": "5f6e932f3abaf1e1837d1204d61052e7caf54b40648f41301fb06d2e74432964",
+    "docs/ai/PROMPTS-EN.md": "8176a56a8f350c2bffa9db2722795cfb0504f39f939abca3ba90e552354faaa9",
+    "docs/adr/README.md": "27389d4aceec1907eda9b805b075fb72386b3406be12835e701d399a53367369",
+    "docs/manual-e2e.md": "f78f1603da86d817f60574e513803d8b38b0af342d0e144e6452d84b1cd89920",
+    "examples/README.md": "3c105d3d8c469f9c18f0a396ba074918c362445f1910defbe5d01c90c81fc5c5",
+    "docs/reports/H-015-full-live-eval.md": "f7af6c85dff6d41d9fc3764cd056dff6ba05f62e52d3bb5c6b67967aa177bc66",
+    "docs/reports/H-016-scope-repair-offline.md": "14a8e4255864f05b87873806314b9a3afc2d90313b899e08bc0b5f6eea12228e",
+    "uv.lock": "de36cab6c73d37bde70cc13e019b9eb2552a0747e46fe5c8c3b7cedf5338378d"
+  },
+  "changed_docs": [
+    "README.md",
+    "docs/manual-e2e.md",
+    "docs/assignment-status.md",
+    "docs/ai/README.md",
+    "examples/README.md",
+    "AGENTS.md",
+    "docs/manual-e2e.md",
+    "docs/ai/PROMPTS-RU.md",
+    "docs/ai/PROMPTS-EN.md"
+  ],
+  "original_evidence": "preserved without translation; existing RU/EN reader bundles retained",
+  "product_calls": 0,
+  "push": "pending",
+  "before_doc_hashes": {
+    "README.md": "415cd5e63916451b519ced4363a7fae1ea2be3bc849a569323b464882382fa76",
+    "docs/manual-e2e.md": "b22dd1992531d921e43656f09be6b22d3ad087938a665ca95d3acd3b6b2cb0df",
+    "docs/assignment-status.md": "109c0e626331310fa172da35f29ec90b4d5c8cd9dee797c100766ac1cec09158",
+    "docs/ai/README.md": "f78ba81f027ddec13c2465ff498643bf54c86dd0adb319b49a81b03f7b885779",
+    "examples/README.md": "da4cbcdf35d29e471c674e16ebe1518fb5b96211a1b4cd5eb0d1834a127b1445",
+    "AGENTS.md": "d85479de28c650cb1693bab3c1e4acf852c353dc58efac251d2e4cf6321f3199",
+    "docs/ai/PROMPTS-RU.md": "ac4def78ac4d0177cf2f5eff1f2d5dc05718a37956160eff944e5d3fb4ce134b",
+    "docs/ai/PROMPTS-EN.md": "859291b9b1a03de04ac37d031f398de14b3625be1503ffbbaa2c4e3090320dcd"
+  },
+  "prompt_redactions": [
+    "HTML spaces normalized and trailing spaces trimmed in public RU copy; raw exact text retained privately"
+  ]
+}

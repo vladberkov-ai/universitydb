@@ -1,0 +1,10 @@
+{
+  "targeted_e2e": "205 passed in 31.77s",
+  "preservation_checked": 1632,
+  "all_unchanged": true,
+  "product_diff_from_tested": "empty",
+  "changed_docs_links": "PASS",
+  "diff_check": "PASS after trimming newly added public prompt trailing spaces",
+  "new_product_api": 0,
+  "full_suite": "not repeated; H016815 evidence retained"
+}

@@ -1,3 +1,11 @@
+## Publication update — 2026-11-08
+
+The owner authorized publishing completed H015/H016 evidence and current English
+reviewer documentation. The tested H016 executable remains `58f2fe9`; later
+documentation commits do not claim a fresh full product run. New product API calls,
+spending changes and a new live campaign remain outside this delivery. Historical
+no-push/pending statements below describe their original cutoffs.
+
 ## H016 natural-input repair verification — 2026-11-08
 
 [H016 report](reports/H-016-scope-repair-offline.md) is the current repair/evidence
@@ -109,7 +117,7 @@ Final independent APPROVE/CLEAR received; root actual native COMPLETE/strict PAS
 
 ## Publication checkpoint — 2026-11-08
 
-The current full offline baseline is485tests/157oracle at98345ad. New publication
+At the historical H014 publication, the baseline was 485 tests/157 oracle at 98345ad. New publication
 permission does not authorize real-model calls. In addition to the sequence above,
 run the named-scope/UI-magic/eval-harness regressions:
 
@@ -121,3 +129,13 @@ Unknown named targets must not disappear into global scope. Grouped/each-reader
 questions must retain their valid scope. Open raw/adapted panels must show actual
 values, without DeltaGenerator help dumps or stray None. The eval harness tests
 only offline plan/export/scoring; no live collector or live result is implied.
+
+## Current H016 automated entry points
+
+The README lists the current four H016 regression modules and the optional
+`docs/operations/H-016/browser_ui.py OUTPUT --full` driver. The latter checks
+natural four-filter input, clarification pause/resume, dependency execution, SQL
+repair, refusal and two Library states. Its eight captures include the clarification
+pause and resumed result separately. The original six-step manual fixture above
+remains a reproducible demonstration, not an arbitrary-query model simulator.
+Current full baseline: 815 tests / 157 independent oracle checks on 58f2fe9.
