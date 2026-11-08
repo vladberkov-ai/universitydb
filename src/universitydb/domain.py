@@ -215,7 +215,10 @@ class University:
         catalog: dict[str, list[dict[str, Any]]] | None = None,
         choices: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
-        assigned_fields = set(re.findall(r"\b([A-Za-z_]\w*_id)\s*=", question))
+        assigned_fields = {
+            key.casefold()
+            for key in re.findall(r"\b([A-Za-z_]\w*_id)\s*=", question, re.IGNORECASE)
+        }
         if assigned_fields - set(FILTERS):
             raise Failure(
                 "INVALID_INPUT", "Unsupported entity filter; no filter is silently ignored."
@@ -259,6 +262,7 @@ class University:
                 semantic = {
                     "all",
                     "across",
+                    "over",
                     "grade",
                     "grades",
                     "enrollments",
