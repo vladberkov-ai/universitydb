@@ -1,0 +1,29 @@
+{
+  "version": "h015-correction-input-coverage-v1",
+  "cutoff": "Documentation preparation before actual v2 output review; hashes are this read cutoff, not final invariance claims for mutable report/workflow paths.",
+  "read_context_sha256": {
+    "AGENTS.md": "d81ee3a734292d8f3a403a8b1213b91e034082f8097ba629158ffa662a9ad4b6",
+    "docs/reports/H-015-full-live-eval.md": "b95cebb1e651851e36e16405229dfd58093ac4189e0291227f31586d487981fa",
+    "docs/plans/H-015-full-live-eval-brief.md": "36f56d35f14c76e49121cf24493645696f4d96853bc2c3faa3e45f418c04617e",
+    "docs/plans/H-014-live-eval-protocol.md": "9ca8e039c829552a9010ee59719223a6bb352c6496f962d3c6403a2b41fc1d2b",
+    "docs/operations/H-015/observer-correction/design.md": "138d125907fd1212419facad2567f8d476144f8001ae067ad206542e40504f53",
+    "docs/operations/H-015/observer-correction/test-receipt.json": "6ce527175a625d48a26272480e8330cc1bc10b2597ba238e2b87e49c799833a0",
+    "docs/operations/H-015/reviews/final-code-review.md": "920e76257a7fbc156d76376128cac5fa70dc8a4cff57ff7f2eaf9e8a14cfa1f9",
+    "docs/operations/H-015/reviews/observer-v2-code-review.md": "7e9391d0d5fedf572088315794b3d2f39fad47f2f9bd3c7408ad8eb9ccdd210c",
+    "docs/operations/H-015/reviews/observer-v2-architecture.md": "179f0660637a17bf968b75c183fa724f725dc61c60465a29ecb5abbb097c8057",
+    "docs/operations/H-015/postresults-verification.json": "b3cca2f5363cee48002d48357170dfb8934e30c695e196516689818c1c693dd3",
+    "docs/operations/H-015/registration/collector-registration.json": "413fb669246b10e9112af0cb20d1922b46dc5db9e2bdc858a695e7771ac004d9",
+    "docs/operations/H-015/registration/prospective-freeze.json": "adba96e727cd97b452ed6f2b21f6b7b85c691913edb189e7318b1636e4aef61b",
+    "docs/operations/H-015/workflow/.omx/ultragoal/ledger.jsonl": "b71bf0260452f7e87f5f94d646c4b923e3d0b0a3b44a0b075bd3db74e231800e",
+    "[PRIVATE_VAULT]/raw/chat/CHAT-056.md": "0b15b2b81267ce2fcb6503535dc9506f788b540b071b37fba4712964c896d141",
+    "[PRIVATE_VAULT]/wiki/verification/H-015-review.md": "3d91eb427027fe886eb454a1359f8af52aed5b26da910fdecbc3b6e21ebb67d9"
+  },
+  "owner_authority": "Actual continuation prompt plus CHAT-056 permit separate append-only corrected offline assessment. Earlier authorization-pending statements are historical.",
+  "independent_review_required": true,
+  "new_api_or_credentials_or_ledger_mutation_or_push": false,
+  "private_sources": "Read-only; private source bytes not copied or translated as evidence.",
+  "limitations": [
+    "Root current-owner/native-active observation is attributed; this performer does not own lifecycle.",
+    "No complete private/system/developer/tool/reasoning transcript coverage."
+  ]
+}

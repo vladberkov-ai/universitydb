@@ -23,16 +23,27 @@ System/developer/tools/reasoning/private sessions/credential paths remain omitte
 U01 remains partial globally.
 
 The [report](../reports/H-015-full-live-eval.md) preserves original frozen2/48 as
-instrument-limited output, confirmed8type-only false negatives and38real product
-failures. No corrected tally is preclaimed; append-only same-artifact assessment
-scope is awaiting clarification. No actual later clarification prompt is reconstructed
-or represented as received here. No provider/questions replay or push occurred.
-Future corrector development is synthetic/offline-only: root reports609tests passing,
-then a formatting failure on two new files (history retained). Narrow fixes now
-pass72focused/static checks and future-prep APPROVE/CLEAR; final root610tests/static PASS.
-No actual48correction/scoring is authorized or applied, and no later clarification
-answer is invented. Fresh remote origin/main remains60e8ffc; push not-run.
-Earlier preparation no-live/pending language below is historical cutoff evidence.
+instrument-limited output, eight type-only false negatives and38real product
+failures. The [actual received continuation prompt](omx/H-015-correction-actual-prompt.txt)
+and [receipt](../operations/H-015/observer-correction/correction-prompt-receipt.json)
+now document CHAT-056 authority for separate append-only offline correction.
+The reviewed corrector ran once; after independent paired-output acceptance, the
+unchanged frozen scorer ran once and returned **10/48**, categories4/0/0/6/0/0,
+mandatory38/critical0/threshold=false. Only8mean-type labels changed; originals,
+40other records,38failures and8Library records remain unchanged. This is an exposed
+end-to-end sample, not pure model accuracy:38questions never reached the provider.
+
+[Actual-data code review](../operations/H-015/reviews/v2-final-code-review.md)
+APPROVES and resolves the HIGH for this separate corrected assessment only.
+Original v1 defect/REQUEST CHANGES remain. [Actual-data architect CLEAR](../operations/H-015/reviews/v2-final-architecture.md)
+covers full bounded H015 measurement plus separatev2. Root native/strict postconditions
+remain pending, distinct from preparation-only
+APPROVE/CLEAR and historical610full/72focused tests. New continuation72targeted/
+static checks and1139+439preservation receipts are linked in the report. Runtime
+prompts are unchanged; no new provider/API/count/probe, credentials, live UI,
+question replay, product repair, monetary mutation or push occurred. The last
+preserved remote observation was origin/main60e8ffc at2026-11-08T07:01:48UTC;
+no fresh check is claimed. Earlier pending/no-live language below is historical.
 
 ## H-015 preparation prompt cutoff — 2026-11-08
 
@@ -228,3 +239,18 @@ separates received task from followups and whole-root input coverage. No fictiti
 model transcript, full private export or globally complete U01 history is claimed.
 Current public text redacts private vault prefixes; the initial local audit commit
 preceded redaction, so Git-history-wide private-path absence is not claimed.
+
+## H-015 separate corrected-assessment continuation
+
+The [actual received Russian continuation](omx/H-015-correction-actual-prompt.txt)
+comes from one exact user entry in the supported root-session export, not the
+handoff. [Receipt](../operations/H-015/observer-correction/correction-prompt-receipt.json)
+pins private export, exact input and safe projection hashes, line/timestamp,
+two private-prefix redactions and coverage gaps. The full private export stays
+ignored. [English reader translation](omx/H-015-correction-reader-translation-en.md)
+is not actual English input. Existing RU/EN bundles link this new source; named
+packages are read context, separately hashed. Earlier authorization-pending cutoffs
+are history. No actual-data score/verdict is inferred from preparation review;
+selected reviewer prompts/results need separate attribution. No full tools/private/
+system/developer/reasoning transcript or complete global U01 closure is claimed.
+Runtime prompts are unchanged; this correction makes no new provider request.

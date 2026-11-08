@@ -1,0 +1,166 @@
+{
+  "version": "h015-corrected-actual-assessment-final-quality-v1",
+  "scope": "Full original H015 bounded measurement plus explicitly authorized CHAT056 separate corrected OFFLINE assessment; not product quality acceptance",
+  "live_candidate_sha": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+  "corrector_checkpoint_sha": "f61c0128f3b1f229e4a78e0d3c8908d8b9c928d1",
+  "corrector_sha256": "8560fcb2c7458ab778dbac1d55530f8b634561727f74281b4809c53bf6389908",
+  "aiSlopCleaner": {
+    "status": "passed",
+    "evidence": "corrected-assessment-v2/execution-plan.json regression-first cleanup plan; final-documentation-cleaner-no-op.json actual no-op no executable edits/masking fallback/new abstraction/dependencies;72focused/static PASS unchanged source; after-doc actual delta/preservation/link/privacy/diff verification PASS. Independent writer/reviewer separation."
+  },
+  "verification": {
+    "status": "passed",
+    "commands": [
+      "72focused tests test_h015_observer.py/test_h015_observer_v2.py isolated temp data/key-cleared",
+      "Ruff lint/format2files,strict corrector mypy1,isolated compile",
+      "actual corrector once exit0, independent source192+paired strict full48delta8gate BEFORE frozen scorer once exit0",
+      "root and independent after1139targets+439originalH015checkpointfiles unchanged",
+      "all48 report rows/JSON/local links/privacy/diff checks; source/resources/tests/tools/project/lock Git diff vsf61 empty"
+    ],
+    "evidence": "preparation-verification.json+logs; source/paired/root gate/execution receipts; score-v2.jsonff4d794e; after-preservation.json1e466510; invariant-audit.json13; actual final code/architect reviews. No executable changes justify full suite/browser/provider rerun; historical610/576 evidence separate."
+  },
+  "codeReview": {
+    "recommendation": "APPROVE",
+    "architectStatus": "CLEAR",
+    "evidence": "Actual independent v2_provenance code-reviewer APPROVE (reviews/v2-final-code-review.md) and v2_architecture CLEAR (reviews/v2-final-architecture.md). Actual score10/48 not quality pass; original HIGH resolved only for separatev2, historicalv1/REQUESTCHANGES retained.",
+    "independentReview": {
+      "codeReviewer": {
+        "agentRole": "code-reviewer",
+        "evidence": "Native /root/v2_provenance actual final result APPROVE,0unresolved; finalartifactad5abdb06686e5dfbd9ecd393e9a0f28e9ec8c166bf3ee6e333e73a335fc9e96. Independently verified source/delta/actual score/all48/fullafterpreservation/currentdocs. Not performer/author self-review."
+      },
+      "architect": {
+        "agentRole": "architect",
+        "evidence": "Native /root/v2_architecture actual final CLEAR for full bounded measurement+separatecorrectedassessment;13invariants/delta/actualscore/preservation/currentdocs independently checked; strongest retrospective-selection counterargument disclosed. Root persisted attributed actual selected final result in reviews/v2-final-architecture.md; reviewer read-only."
+      }
+    }
+  },
+  "architectureInvariantGate": {
+    "status": "passed",
+    "sourceArtifacts": [
+      "docs/plans/H-015-full-live-eval-brief.md",
+      "docs/plans/H-015-offline-correction-continuation.md",
+      "docs/operations/H-015/workflow/.omx/ultragoal/brief.md",
+      "docs/operations/H-015/workflow/.omx/ultragoal/ledger.jsonl",
+      "docs/operations/H-015/corrected-assessment-v2/invariant-audit.json",
+      "docs/ai/omx/H-015-correction-actual-prompt.txt"
+    ],
+    "evidence": "13full original/accepted correction requirements audited against implementation, tests/actualartifact verification and both independent actual-data reviews; no shrinking to10 successes or declaring product acceptance. Native strict/COMPLETE remains separately tool-owned postcondition.",
+    "invariants": [
+      {
+        "invariant": "Original48questions/repeat-major order/selections/48terminal statuses retained; ordinary failures remain denominator48; no replacement/best-of or inventedM1/Library success.",
+        "source": "docs/plans/H-015-full-live-eval-brief.md#immutable-bounds",
+        "status": "proved",
+        "implementationEvidence": "collection-closeout.json; registration/prospective-freeze.json; v2-source-provenance.md:48same-run/427files/1088references; score-v2.json48outcomes.",
+        "testEvidence": "Unchanged reviewedsource72focused/static PASS; actual closed provenance192/strict48recorddelta8 BEFOREscoring; actual10/48 score corroborated; after1139+439/48rows/docs/privacy checks as applicable. Full evidence in corrected-assessment-v2/invariant-audit.json (H015-INV-01).",
+        "reviewEvidence": "Actual code-reviewer APPROVE in reviews/v2-final-code-review.md and actual architect CLEAR in reviews/v2-final-architecture.md; architect explicitly reviewed H015-INV-01 in all13requirement matrix; no unresolved blocking finding."
+      },
+      {
+        "invariant": "Historical real normal provider/compiledgraph/SQLite20calls10SQL on frozenecb7f5c, model exactSol/default high/medium/medium; oracle/answers/case metadata excluded from model, complete originalfulltrace/request/response retained. This continuation invokes none of them.",
+        "source": "docs/plans/H-015-full-live-eval-brief.md#architecture-and-verification-contract",
+        "status": "proved",
+        "implementationEvidence": "Original final-code-review.md+collection-closeout knownresponses; frozen source/prompt hashes; all427originalartifacts unchanged; no new product/provider execution receipts.",
+        "testEvidence": "Unchanged reviewedsource72focused/static PASS; actual closed provenance192/strict48recorddelta8 BEFOREscoring; actual10/48 score corroborated; after1139+439/48rows/docs/privacy checks as applicable. Full evidence in corrected-assessment-v2/invariant-audit.json (H015-INV-02).",
+        "reviewEvidence": "Actual code-reviewer APPROVE in reviews/v2-final-code-review.md and actual architect CLEAR in reviews/v2-final-architecture.md; architect explicitly reviewed H015-INV-02 in all13requirement matrix; no unresolved blocking finding."
+      },
+      {
+        "invariant": "Original aggregate120/dispatch110/contingency10 includes14old5.970272, sharedcanonicalledger/history-preservingmigration retained. Current correction makes zero ledger/cap/hold/spend changes; no contingency/hold release.",
+        "source": "docs/plans/H-015-full-live-eval-brief.md#immutable-bounds",
+        "status": "proved",
+        "implementationEvidence": "Original migration-receipt.json+monetary closeout34entries/effective14.499232; before/afterpreservation canonicalSHAdaed87a21b856f0df454fb1378e266fcf9b79504351a873b1dfc39855d6d2e97 identical.",
+        "testEvidence": "Unchanged reviewedsource72focused/static PASS; actual closed provenance192/strict48recorddelta8 BEFOREscoring; actual10/48 score corroborated; after1139+439/48rows/docs/privacy checks as applicable. Full evidence in corrected-assessment-v2/invariant-audit.json (H015-INV-03).",
+        "reviewEvidence": "Actual code-reviewer APPROVE in reviews/v2-final-code-review.md and actual architect CLEAR in reviews/v2-final-architecture.md; architect explicitly reviewed H015-INV-03 in all13requirement matrix; no unresolved blocking finding."
+      },
+      {
+        "invariant": "Existing tool8560fcb2/testac296b2f/frozenobservera47a50f9/scorera14f1183 identities verified; original records bound to historical checkpoint and192exactconsumedoriginalartifact hashes by independent reviewer, not self-consistent manifest alone.",
+        "source": "docs/plans/H-015-offline-correction-continuation.md#ordered-checkpoints-and-stop-conditions",
+        "status": "proved",
+        "implementationEvidence": "before-preservation.json; source-receipt.json6be34de5; v2-source-provenance.md427/192/48/1088checks; originalH015439checkpointfiles unchanged.",
+        "testEvidence": "Unchanged reviewedsource72focused/static PASS; actual closed provenance192/strict48recorddelta8 BEFOREscoring; actual10/48 score corroborated; after1139+439/48rows/docs/privacy checks as applicable. Full evidence in corrected-assessment-v2/invariant-audit.json (H015-INV-04).",
+        "reviewEvidence": "Actual code-reviewer APPROVE in reviews/v2-final-code-review.md and actual architect CLEAR in reviews/v2-final-architecture.md; architect explicitly reviewed H015-INV-04 in all13requirement matrix; no unresolved blocking finding."
+      },
+      {
+        "invariant": "Only scalar registeredu.grade_mean.v1 mean nullable capability changes decimal\u2192decimal?; not oracle-copying/sampleNULL inference. Actual8/observed/types/0 changes,40records unchanged; values/rows/NULL/scope/choices/dependencies/checks/outcomes/IDs/questions fixed,38failures/all8Library unchanged.",
+        "source": "docs/plans/H-015-offline-correction-continuation.md#ordered-checkpoints-and-stop-conditions",
+        "status": "proved",
+        "implementationEvidence": "Actualcorrector source8560fcb2 contractraw/adapted/answerlink; paired-output-acceptance.json strictfullrecursive delta; independentarchitecture same8/192/1139audit;72targetedtests.",
+        "testEvidence": "Unchanged reviewedsource72focused/static PASS; actual closed provenance192/strict48recorddelta8 BEFOREscoring; actual10/48 score corroborated; after1139+439/48rows/docs/privacy checks as applicable. Full evidence in corrected-assessment-v2/invariant-audit.json (H015-INV-05).",
+        "reviewEvidence": "Actual code-reviewer APPROVE in reviews/v2-final-code-review.md and actual architect CLEAR in reviews/v2-final-architecture.md; architect explicitly reviewed H015-INV-05 in all13requirement matrix; no unresolved blocking finding."
+      },
+      {
+        "invariant": "New observations/manifest/score outsidecollection andv1, exclusivecreate; bothcorrector/scorer runonceexit0, allactualcommands/cwd/timestamps/hashes retained; originalv1score2/48 andsourcebug/REQUESTCHANGES not overwritten.",
+        "source": "docs/plans/H-015-offline-correction-continuation.md#ordered-checkpoints-and-stop-conditions",
+        "status": "proved",
+        "implementationEvidence": "corrector-launch/execution.json; scorer-launch/execution.json; newcfede791/8bd96e99/ff4d794e outputs; before/afteroriginal439checkpointbytecomparison.",
+        "testEvidence": "Unchanged reviewedsource72focused/static PASS; actual closed provenance192/strict48recorddelta8 BEFOREscoring; actual10/48 score corroborated; after1139+439/48rows/docs/privacy checks as applicable. Full evidence in corrected-assessment-v2/invariant-audit.json (H015-INV-06).",
+        "reviewEvidence": "Actual code-reviewer APPROVE in reviews/v2-final-code-review.md and actual architect CLEAR in reviews/v2-final-architecture.md; architect explicitly reviewed H015-INV-06 in all13requirement matrix; no unresolved blocking finding."
+      },
+      {
+        "invariant": "Successfulcorrectorexit0,complete strictJSON+closedmanifest/source/receipt/input/output/all192artifacthashes, independentfullrecorddelta approval AND rootmanualacceptance before downstream frozen scorer. Partialpair/self-consistency alone invalid.",
+        "source": "docs/plans/H-015-offline-correction-continuation.md#ordered-checkpoints-and-stop-conditions",
+        "status": "proved",
+        "implementationEvidence": "paired-output-acceptance.json59c43cbc+v2-paired-output-review.md; root-paired-output-gate.json4c2f966d accepted08:56:51UTC before scorer08:57:20UTC; exactlaunchhashchain.",
+        "testEvidence": "Unchanged reviewedsource72focused/static PASS; actual closed provenance192/strict48recorddelta8 BEFOREscoring; actual10/48 score corroborated; after1139+439/48rows/docs/privacy checks as applicable. Full evidence in corrected-assessment-v2/invariant-audit.json (H015-INV-07).",
+        "reviewEvidence": "Actual code-reviewer APPROVE in reviews/v2-final-code-review.md and actual architect CLEAR in reviews/v2-final-architecture.md; architect explicitly reviewed H015-INV-07 in all13requirement matrix; no unresolved blocking finding."
+      },
+      {
+        "invariant": "Unchangedscorer/oracle/cases/rubric44/48+7/8category+mandatory/safety; corrected10/48 A4/J0/D0/C6/E0/L0,mandatory38/critical0/thresholdfalse. Exposed24x2 correlatedsample, retrospective correctedassessment not prospective/untouchedholdout/generalaccuracy or service acceptance.",
+        "source": "docs/plans/H-015-full-live-eval-brief.md#immutable-bounds",
+        "status": "proved",
+        "implementationEvidence": "score-v2.jsonff4d794e; originalscore8b9be780; originalfreeze/protocolhashes; independentcode+architect actualscore calculations withoutscorerinvocation.",
+        "testEvidence": "Unchanged reviewedsource72focused/static PASS; actual closed provenance192/strict48recorddelta8 BEFOREscoring; actual10/48 score corroborated; after1139+439/48rows/docs/privacy checks as applicable. Full evidence in corrected-assessment-v2/invariant-audit.json (H015-INV-08).",
+        "reviewEvidence": "Actual code-reviewer APPROVE in reviews/v2-final-code-review.md and actual architect CLEAR in reviews/v2-final-architecture.md; architect explicitly reviewed H015-INV-08 in all13requirement matrix; no unresolved blocking finding."
+      },
+      {
+        "invariant": "427originalcollection+4v1observations+688historicaloperations+12completedI1/H013/H014/locks targets unchanged, all1139beforetargets andall439oldH015operationcheckpointfiles match; Obsidian read-only.",
+        "source": "docs/plans/H-015-offline-correction-continuation.md#unchanged-bounds",
+        "status": "proved",
+        "implementationEvidence": "before-preservation.json325b3d57; after-preservation.json1e466510; independentfullpreservationchecks; no private ledger/credentialcontents exported.",
+        "testEvidence": "Unchanged reviewedsource72focused/static PASS; actual closed provenance192/strict48recorddelta8 BEFOREscoring; actual10/48 score corroborated; after1139+439/48rows/docs/privacy checks as applicable. Full evidence in corrected-assessment-v2/invariant-audit.json (H015-INV-09).",
+        "reviewEvidence": "Actual code-reviewer APPROVE in reviews/v2-final-code-review.md and actual architect CLEAR in reviews/v2-final-architecture.md; architect explicitly reviewed H015-INV-09 in all13requirement matrix; no unresolved blocking finding."
+      },
+      {
+        "invariant": "No externalprovider/API/count/probe/credential loading/liveUI/appgraph/questionreplay/productrepair/newcampaign/monetarymutation/push in continuation. Localexplicitpathcommits only; remote lastdatedobservation not relabeledfresh. Future38resolve_scope diagnosis proposalonly.",
+        "source": "docs/plans/H-015-offline-correction-continuation.md#unchanged-bounds",
+        "status": "proved",
+        "implementationEvidence": "Executionandscorer receipted stdlib-onlycommands/key-cleared isolatedtests; source/resources/tests/tools equal f61c0128; Gitstagingmanifest/privacy checks and currentreport boundaries.",
+        "testEvidence": "Unchanged reviewedsource72focused/static PASS; actual closed provenance192/strict48recorddelta8 BEFOREscoring; actual10/48 score corroborated; after1139+439/48rows/docs/privacy checks as applicable. Full evidence in corrected-assessment-v2/invariant-audit.json (H015-INV-10).",
+        "reviewEvidence": "Actual code-reviewer APPROVE in reviews/v2-final-code-review.md and actual architect CLEAR in reviews/v2-final-architecture.md; architect explicitly reviewed H015-INV-10 in all13requirement matrix; no unresolved blocking finding."
+      },
+      {
+        "invariant": "Nativeindependent code-reviewer+architect reviewactualprovenance/delta/score/preservation, not only preparation. Explicit HIGH resolution limitedto separatelycorrectedassessment; frozenv1defect/historyretained, qualityFAIL separatedfromboundedmeasurementcompletion.",
+        "source": "docs/plans/H-015-offline-correction-continuation.md#ordered-checkpoints-and-stop-conditions",
+        "status": "proved",
+        "implementationEvidence": "reviews/v2-final-code-review.md actualAPPROVE source-data audit; finalarchitectactualreview pendingintegration at auditcutoff; no nativecompletionclaimed beforebothfinalreviews.",
+        "testEvidence": "Unchanged reviewedsource72focused/static PASS; actual closed provenance192/strict48recorddelta8 BEFOREscoring; actual10/48 score corroborated; after1139+439/48rows/docs/privacy checks as applicable. Full evidence in corrected-assessment-v2/invariant-audit.json (H015-INV-11).",
+        "reviewEvidence": "Actual code-reviewer APPROVE in reviews/v2-final-code-review.md and actual architect CLEAR in reviews/v2-final-architecture.md; architect explicitly reviewed H015-INV-11 in all13requirement matrix; no unresolved blocking finding."
+      },
+      {
+        "invariant": "Actualreceivedcontinuationprompt selectedfromsupportedrootexport, minimalprivate-prefixredaction; readhandoff/wiki/CHAT056 distinguishedascontext/authority. ExistingRU/EN bundles markactualRUvsENreadertranslation/selectedreviewertasks andomissions; Englishcurrentreport separatesv1/v2/lifecyclecutoffs.",
+        "source": "docs/plans/H-015-offline-correction-continuation.md",
+        "status": "proved",
+        "implementationEvidence": "observer-correction/correction-prompt-receipt.json exactc4783669/safe2b5804d7; inputcoverage/reviewerprovenance/authorizationreceipts; actual docsreview pending at cutoff.",
+        "testEvidence": "Unchanged reviewedsource72focused/static PASS; actual closed provenance192/strict48recorddelta8 BEFOREscoring; actual10/48 score corroborated; after1139+439/48rows/docs/privacy checks as applicable. Full evidence in corrected-assessment-v2/invariant-audit.json (H015-INV-12).",
+        "reviewEvidence": "Actual code-reviewer APPROVE in reviews/v2-final-code-review.md and actual architect CLEAR in reviews/v2-final-architecture.md; architect explicitly reviewed H015-INV-12 in all13requirement matrix; no unresolved blocking finding."
+      },
+      {
+        "invariant": "Sameaggregate nativeownerusable/actualACTIVE afterownerresume; existingG005 resumedsupported explicitcwd; no replacementgoal/manualIDs/pointers/locks orcompletedI1/H013/H014resume. NativeCOMPLETE/strict remain separate actualroottoolpostconditions onlyaftercleanfullscopeproof.",
+        "source": "docs/plans/H-015-offline-correction-continuation.md#ordered-checkpoints-and-stop-conditions",
+        "status": "proved",
+        "implementationEvidence": "resume-preflight.json actualget_goal/hostownerAPI/complete-goals+annotation+phasewrite history; finalqualityinput/native-strict-closeout tobecreatedonlyfromactualtools; historicalblockedcutoffsretained.",
+        "testEvidence": "Unchanged reviewedsource72focused/static PASS; actual closed provenance192/strict48recorddelta8 BEFOREscoring; actual10/48 score corroborated; after1139+439/48rows/docs/privacy checks as applicable. Full evidence in corrected-assessment-v2/invariant-audit.json (H015-INV-13).",
+        "reviewEvidence": "Actual code-reviewer APPROVE in reviews/v2-final-code-review.md and actual architect CLEAR in reviews/v2-final-architecture.md; architect explicitly reviewed H015-INV-13 in all13requirement matrix; no unresolved blocking finding."
+      }
+    ]
+  },
+  "configured_gates": [],
+  "native_completion": "Not claimed by this quality input. Root actual update_goal(complete), fresh complete snapshot and strict G005 checkpoint required separately; historical G004 resolved through installed reciprocal resolver gate.",
+  "product_quality": "FAIL;10/48,category4/0/0/6/0/0,mandatory38critical0thresholdfalse",
+  "new_external_product_eval_calls": 0,
+  "monetary_mutation": false,
+  "push": "not-run",
+  "recorded_at": "2026-11-08T09:04:34.880039+00:00",
+  "actual_review_hashes": {
+    "docs/operations/H-015/reviews/v2-final-code-review.md": "ad5abdb06686e5dfbd9ecd393e9a0f28e9ec8c166bf3ee6e333e73a335fc9e96",
+    "docs/operations/H-015/reviews/v2-final-architecture.md": "6ffe90dfeceb4fed4c058879574ed79535fbfc6937608e04b34a3a6c1ebffb99"
+  }
+}

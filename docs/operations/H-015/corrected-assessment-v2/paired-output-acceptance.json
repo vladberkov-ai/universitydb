@@ -1,0 +1,99 @@
+{
+  "version": "h015-v2-independent-paired-output-acceptance-v1",
+  "reviewer": "/root/v2_provenance",
+  "recommendation": "APPROVE",
+  "scope": "BEFORE-SCORING paired-output/source-identity/full-record type-only delta gate; not corrected score/final HIGH closure",
+  "execution_evidence": {
+    "performer": "/root/v2_execution",
+    "launch_receipt_sha256": "548698de3015b1df28a29b1ded61d7b2762601d3bcc3a125045ad920e1b15aa2",
+    "execution_receipt_sha256": "ca7d7998a1ac6da8c22bf1d90e391efe709701378db7aa99e818627f74080bda",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "receipt_exit_code": 0,
+    "basis": "Retained exact launch and performer exit0 receipt corroborated by root handoff; reviewer did not execute or personally observe the process"
+  },
+  "pinned_hashes": {
+    "tools/eval/correct_mean_nullability_v2.py": "8560fcb2c7458ab778dbac1d55530f8b634561727f74281b4809c53bf6389908",
+    "tools/eval/observe.py": "a47a50f935f493e24796ad353eff88de1a24509979699328f230aa35ecbb7f14",
+    "tools/eval/harness.py": "a14f11835ff3c67aa6ef6e7a95716613982a3c1799bfa2d734f4038c95a1c811",
+    "docs/operations/H-015/corrected-assessment-v2/source-receipt.json": "6be34de5801a1e277a160796f4126db23cccc0555f6672a74463738d613908b7",
+    "docs/operations/H-015/observation/observations.json": "6b8b7126f3f20aa9cf6ec94e4d0e66436651e145f2473a150b25690572710c23",
+    "docs/operations/H-015/observation/score.json": "8b9be7800c9c1462d462106c789c47f76a88466adf4871973454ccd1ef7bb86a",
+    "docs/operations/H-015/corrected-assessment-v2/observations-v2.json": "cfede7911e5d6e276e458e936e7b083291dfdd6f2ed35023e87d991d5e73f2c6",
+    "docs/operations/H-015/corrected-assessment-v2/correction-manifest-v2.json": "8bd96e991cb476d7ba35bd320309514561f643b362f22378ae4fe211c76589f4"
+  },
+  "manifest_closed_keys_verified": true,
+  "strict_json_duplicate_nonfinite_rejection": true,
+  "artifacts_compared_with_independent_source_receipt_and_original_closeout": 192,
+  "original_preservation": {
+    "before_receipt_sha256": "325b3d5778a4ae5f5e92e372c1a90ecbaba8670dc54baf7b2f201adcfccfb028",
+    "targets_directly_rehashed": 1139,
+    "all_unchanged": true,
+    "private_content_exported": false
+  },
+  "records": {
+    "original": 48,
+    "corrected": 48,
+    "same_identity_and_order": true,
+    "changed": 8,
+    "unchanged": 40,
+    "original_failures_unchanged": 38,
+    "library_unchanged": 8,
+    "scalar_mean_contract_verified": 10
+  },
+  "actual_changes": [
+    {
+      "run_id": "A01-r1",
+      "field": "/observed/types/0",
+      "old": "decimal",
+      "new": "decimal?"
+    },
+    {
+      "run_id": "A02-r1",
+      "field": "/observed/types/0",
+      "old": "decimal",
+      "new": "decimal?"
+    },
+    {
+      "run_id": "C01-r1",
+      "field": "/observed/types/0",
+      "old": "decimal",
+      "new": "decimal?"
+    },
+    {
+      "run_id": "C03-r1",
+      "field": "/observed/types/0",
+      "old": "decimal",
+      "new": "decimal?"
+    },
+    {
+      "run_id": "A01-r2",
+      "field": "/observed/types/0",
+      "old": "decimal",
+      "new": "decimal?"
+    },
+    {
+      "run_id": "A02-r2",
+      "field": "/observed/types/0",
+      "old": "decimal",
+      "new": "decimal?"
+    },
+    {
+      "run_id": "C01-r2",
+      "field": "/observed/types/0",
+      "old": "decimal",
+      "new": "decimal?"
+    },
+    {
+      "run_id": "C03-r2",
+      "field": "/observed/types/0",
+      "old": "decimal",
+      "new": "decimal?"
+    }
+  ],
+  "full_recursive_strict_delta_equals_manifest": true,
+  "unchanged_fields": "All JSON types/keys/list order and all leaves outside disclosed observed/types decimal->decimal? entries; checks/values/scope/choices/dependencies/status/outcome/calls/trace identities untouched",
+  "reviewer_corrector_runs": 0,
+  "reviewer_scorer_runs": 0,
+  "oracle_read": false,
+  "remaining_gate": "Root may separately release frozen scorer once under current owner authority; actual score and final independent code/architecture reviews required before original HIGH closure or assessment completion"
+}

@@ -1,0 +1,90 @@
+{
+  "version": "h015-v2-preparation-verification-v1",
+  "at_utc": "2026-11-08T08:51:47.473687+00:00",
+  "performer": "/root/v2_execution",
+  "source_sha256": {
+    "tools/eval/correct_mean_nullability_v2.py": "8560fcb2c7458ab778dbac1d55530f8b634561727f74281b4809c53bf6389908",
+    "tests/test_h015_observer_v2.py": "ac296b2ff5ea1815e9fc4a3aad9ea3af4c9ff050d7db914ee310aca21f71dbc0",
+    "tools/eval/observe.py": "a47a50f935f493e24796ad353eff88de1a24509979699328f230aa35ecbb7f14",
+    "tools/eval/harness.py": "a14f11835ff3c67aa6ef6e7a95716613982a3c1799bfa2d734f4038c95a1c811"
+  },
+  "checks": [
+    {
+      "check": "tests",
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "pytest",
+        "tests/test_h015_observer.py",
+        "tests/test_h015_observer_v2.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "/tmp/h015-v2-prep-oc0nnzrf/pytest"
+      ],
+      "exit_code": 0,
+      "output": "docs/operations/H-015/corrected-assessment-v2/preparation-tests.txt",
+      "log_sha256": "86a482273143cc535ab0fe06cf23c6b770a18c473fa557a70cf29c9b95ff69c5"
+    },
+    {
+      "check": "lint",
+      "argv": [
+        ".venv/bin/ruff",
+        "check",
+        "--no-cache",
+        "tools/eval/correct_mean_nullability_v2.py",
+        "tests/test_h015_observer_v2.py"
+      ],
+      "exit_code": 0,
+      "output": "docs/operations/H-015/corrected-assessment-v2/preparation-lint.txt",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "check": "format",
+      "argv": [
+        ".venv/bin/ruff",
+        "format",
+        "--check",
+        "--no-cache",
+        "tools/eval/correct_mean_nullability_v2.py",
+        "tests/test_h015_observer_v2.py"
+      ],
+      "exit_code": 0,
+      "output": "docs/operations/H-015/corrected-assessment-v2/preparation-format.txt",
+      "log_sha256": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938"
+    },
+    {
+      "check": "typecheck",
+      "argv": [
+        ".venv/bin/mypy",
+        "tools/eval/correct_mean_nullability_v2.py",
+        "--follow-imports=skip",
+        "--cache-dir",
+        "/tmp/h015-v2-prep-oc0nnzrf/mypy"
+      ],
+      "exit_code": 0,
+      "output": "docs/operations/H-015/corrected-assessment-v2/preparation-typecheck.txt",
+      "log_sha256": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e"
+    },
+    {
+      "check": "compile",
+      "argv": [
+        ".venv/bin/python",
+        "-c",
+        "import py_compile,sys; [py_compile.compile(p,cfile=sys.argv[1]+\"/file\"+str(i)+\".pyc\",doraise=True) for i,p in enumerate(sys.argv[2:])]",
+        "/tmp/h015-v2-prep-oc0nnzrf",
+        "tools/eval/correct_mean_nullability_v2.py",
+        "tests/test_h015_observer_v2.py"
+      ],
+      "exit_code": 0,
+      "output": "docs/operations/H-015/corrected-assessment-v2/preparation-compile.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "environment": "Inherited credential-like names removed and OPENAI_API_KEY empty; no values/paths printed; temporary test/typecheck/compile data removed; bytecode/cache creation disabled in repo",
+  "code_changed": false,
+  "actual_campaign_corrector_run": false,
+  "scorer_run": false,
+  "cleanup_result": "Bounded no-op; fail-closed validation and grounded exclusive-output fail-safe retained; no abstractions/dependencies/source edits; independent approval not self-claimed"
+}

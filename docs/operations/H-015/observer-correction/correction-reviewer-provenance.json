@@ -1,0 +1,28 @@
+{
+  "version": "h015-correction-selected-reviewer-prompt-provenance-v1",
+  "method": "Root supplied selected actual native task starters and role scopes through collaboration; not a full private transcript or reconstruction.",
+  "lanes": [
+    {
+      "native_lane": "/root/v2_provenance",
+      "role": "code-reviewer",
+      "actual_initial_task_starter": "Independent H-015 OFFLINE v2 provenance reviewer.",
+      "scope_summary_not_verbatim": "Independent original-v1 provenance and closed192artifact source receipt; v2-source-provenance.md.",
+      "actual_followup_task_starter": "Now independent BEFORE-SCORING actualpaired-output/fullrecorddelta gate.",
+      "followup_scope_summary_not_verbatim": "Complete strict paired-output/hash/schema gate and exact independent full-record delta before scoring; paired-output-acceptance.json and v2-paired-output-review.md."
+    },
+    {
+      "native_lane": "/root/v2_architecture",
+      "role": "architect",
+      "actual_initial_task_starter": "Independent architect actual-data review H015 corrected OFFLINE assessment (not mere preparation).",
+      "scope_summary_not_verbatim": "Actual-data provenance/delta/preservation/frozen scorer and explicit original HIGH disposition; no scorer execution by reviewer."
+    }
+  ],
+  "attribution": "Root supplied starters as selected actual text; role requirements/results remain separately evidenced in authored review files. These excerpts do not prove independent execution by themselves.",
+  "omissions": [
+    "rest of actual task texts",
+    "full followups and child/system/developer/tool/reasoning/private transcripts",
+    "encrypted transport plaintext/equality proof"
+  ],
+  "new_product_or_eval_external_API_calls": false,
+  "runtime_prompts_changed": false
+}

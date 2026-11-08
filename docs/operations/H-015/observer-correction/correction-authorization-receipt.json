@@ -1,0 +1,39 @@
+{
+  "version": "h015-offline-correction-authority-v1",
+  "authority_sources": {
+    "actual_received_prompt": {
+      "path": "docs/ai/omx/H-015-correction-actual-prompt.txt",
+      "safe_projection_sha256": "2b5804d7e18e5633421846cc5395668eefa4709ea194730ad58455bf7ae2834a",
+      "exact_received_utf8_sha256": "c4783669d2d3b4c017cb71bf09e2f657ce8cf464dca91a3caaaa739ee77c352b",
+      "provenance_receipt": "correction-prompt-receipt.json"
+    },
+    "CHAT-056": {
+      "private_source": "[PRIVATE_VAULT]/raw/chat/CHAT-056.md",
+      "sha256": "0b15b2b81267ce2fcb6503535dc9506f788b540b071b37fba4712964c896d141",
+      "access": "read-only"
+    }
+  },
+  "supersedes_only": "Prior owner-clarification blocker and evaluator-rerun prohibition only for separate same-original-artifact corrected offline assessment. Historical receipts remain unchanged.",
+  "authorized": [
+    "existing reviewed narrow corrector on original artifacts",
+    "independent source provenance and complete paired-output gate before frozen scoring",
+    "separate corrected observations/manifest/score and actual-data code/architecture reviews",
+    "targeted/static verification and original/ledger/history/lock preservation checks",
+    "English docs and RU/EN actual-input provenance",
+    "scoped local checkpoints after privacy/diff checks",
+    "supported same-H015 root-owned completion only after real bounded DoD and fresh strict proof"
+  ],
+  "prohibited": [
+    "new provider/API/count/probe calls",
+    "credential loading",
+    "live UI or question replay",
+    "product repair or new campaign",
+    "monetary ledger/cap/hold mutation",
+    "push or publication",
+    "manual IDs/pointers/locks or lifecycle bypass",
+    "completed I1/H013/H014 resume"
+  ],
+  "preserved_measurement_contract": "Only contract-owned scalar u.grade_mean.v1 mean type decimal to decimal?; no value/row/NULL/scope/choice/dependency/outcome/check/ID/question/oracle/rubric/denominator changes.",
+  "quality": "FAIL independent of corrected score; neither corrected tally nor actual-data approval is preassigned.",
+  "lifecycle": "Root owned; this receipt grants no performer lifecycle authority and makes no COMPLETE claim."
+}

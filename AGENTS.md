@@ -1,3 +1,21 @@
+# Current H-015 offline correction authority — 2026-11-08
+
+The actual continuation task and read-only CHAT-056 authorize only a separate
+append-only corrected OFFLINE assessment of retained H015 artifacts, independent
+provenance/paired-output acceptance before unchanged frozen scoring, actual-data
+code/architecture reviews, preservation checks and scoped local checkpoints.
+Only contract-owned scalar mean type decimal→decimal? may change; preserve original
+v1 source/observations/score, values, questions, checks, rubric and denominator48.
+This supersedes the historical evaluator-rerun/clarification restriction only for
+this bounded correction. No new provider/API/count/probe, credentials, live UI,
+question replay, product repair, monetary ledger/cap/hold mutation, push or vault
+writes. Root alone owns supported same-H015 lifecycle; no IDs/pointers/locks edits
+or completed I1/H013/H014 resume. COMPLETE/strict requires verified bounded DoD,
+not quality pass. Failed product quality, owner acceptance and publication stay
+separate. See [continuation plan](docs/plans/H-015-offline-correction-continuation.md)
+and [report](docs/reports/H-015-full-live-eval.md). Earlier live/money authority
+below is historical, not permission for another campaign or mutation now.
+
 # Current H-015 full live measurement authority — 2026-11-08
 
 The actual H-015 task / CHAT053/054 / accepted ADR-CHAT007 authorize one bounded

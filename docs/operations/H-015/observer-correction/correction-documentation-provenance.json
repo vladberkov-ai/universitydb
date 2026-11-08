@@ -1,0 +1,43 @@
+{
+  "version": "h015-correction-documentation-selected-task-v1",
+  "source": "Native documentation performer received delegation; selected exact excerpt, not session-exported full child history",
+  "actual_received_excerpt": "H015 narrow OFFLINE correction continuation documentation performer.",
+  "task_scope_summary_not_verbatim": "Documentation/provenance/plan only; independent performers own actual-data outputs/reviews. Root owns lifecycle, metadata and commits. No provider/API/count/probe/credentials/live UI/replay/product repair/monetary mutation/push. Preserve historical receipts.",
+  "root_input_source": "correction-prompt-receipt.json",
+  "full_root_prompt_coverage": "Exact user entry from supported root session export; public safe projection separately pinned.",
+  "child_coverage_omissions": [
+    "remainder of initial delegated task except attributed scope summary",
+    "subsequent collaboration messages unless separately projected",
+    "full private/system/developer/tool/reasoning transcripts",
+    "encrypted transport plaintext/equality proof"
+  ],
+  "reviewer_prompts": "Not fabricated or reconstructed by documentation author. Independent lanes/root must supply attributable selected task/result coverage.",
+  "english_translation": {
+    "path": "docs/ai/omx/H-015-correction-reader-translation-en.md",
+    "sha256": "67250b5c7d1a3ea86796beb325482fff46ff6fb35b1f0db47b648f72deba97d1",
+    "status": "Reader translation, not actual English model input"
+  },
+  "validation": {
+    "new_code_examples": 0,
+    "new_executable_command_examples": 0,
+    "local_markdown_links": 384,
+    "missing_links": 0,
+    "actual_prompt_exact_to_safe_projection_and_RU_embedding": "PASS",
+    "private_prompt_files_ignored": "PASS",
+    "private_vault_prefix_absence_in_checked_docs": "PASS",
+    "all_48_report_rows_against_retained_v2_score": "PASS;10passes/38failures, categories4/0/0/6/0/0",
+    "new_provenance_JSON_parse": "PASS",
+    "git_diff_check": "PASS",
+    "documentation_cleanup": "No-op; scoped edits only, no new layers or source changes",
+    "cutoff": "Actual code APPROVE+architect CLEAR for full bounded measurement+separate corrected assessment; native strict completion pending"
+  },
+  "not_run": [
+    "provider/API/count/probe",
+    "credential loading",
+    "live UI/question replay",
+    "product repair",
+    "monetary mutation",
+    "Git staging/commit/push",
+    "fresh remote check"
+  ]
+}

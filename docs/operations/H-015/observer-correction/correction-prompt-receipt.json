@@ -1,0 +1,28 @@
+{
+  "version": "h015-correction-prompt-provenance-v1",
+  "method": "supported exact root session export; selected actual user entry, not handoff or delegated-task reconstruction",
+  "session_id": "01a1b9d5-673f-76c0-97eb-32b5e26bd5a7",
+  "entry_index": 18,
+  "line_number": 1834,
+  "timestamp": "2026-11-08T08:44:56.414Z",
+  "export_entries": 24,
+  "export_skipped_records": 0,
+  "private_export_sha256": "43dae5b7c931e0da97b163e13d8512d59a655b89587b4d921a59674ee3bc5515",
+  "exact_received_utf8_sha256": "c4783669d2d3b4c017cb71bf09e2f657ce8cf464dca91a3caaaa739ee77c352b",
+  "public_prompt_path": "docs/ai/omx/H-015-correction-actual-prompt.txt",
+  "public_prompt_sha256": "2b5804d7e18e5633421846cc5395668eefa4709ea194730ad58455bf7ae2834a",
+  "redactions": [
+    "private vault prefix replaced with [PRIVATE_VAULT] (2 occurrences); terminal LF normalized"
+  ],
+  "read_context": "Named repo/private package paths are context, not the actual prompt. See correction-input-coverage.json.",
+  "coverage": [
+    "one exact actual continuation user entry; no paraphrase or reconstructed missing root turns"
+  ],
+  "omissions": [
+    "full private session export",
+    "system/developer/tool/reasoning/full child transcripts",
+    "later turns/results beyond export cutoff"
+  ],
+  "runtime_prompts_changed": false,
+  "new_provider_requests": false
+}

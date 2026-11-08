@@ -1,0 +1,321 @@
+{
+  "version": "h015-v2-frozen-scorer-execution-v1",
+  "performer": "/root/v2_execution",
+  "leader": "/root",
+  "release": "One frozen offline scorer run only after independent paired-output APPROVE and root manual gate; no corrector rerun",
+  "cwd": "/home/dev/projects/universitydb",
+  "argv": [
+    ".venv/bin/python",
+    "tools/eval/harness.py",
+    "score",
+    "docs/operations/H-014/eval/heldout-candidate-v1.json",
+    "--root",
+    "/home/dev/projects/universitydb",
+    "--records",
+    "docs/operations/H-015/corrected-assessment-v2/observations-v2.json"
+  ],
+  "command": ".venv/bin/python tools/eval/harness.py score docs/operations/H-014/eval/heldout-candidate-v1.json --root /home/dev/projects/universitydb --records docs/operations/H-015/corrected-assessment-v2/observations-v2.json",
+  "at_utc": "2026-11-08T08:57:20.042575+00:00",
+  "before_sha256": {
+    "docs/operations/H-015/corrected-assessment-v2/root-paired-output-gate.json": "4c2f966d5184c9a8bc058713084325da4255856f1d99773666bb0770f489293c",
+    "docs/operations/H-015/corrected-assessment-v2/paired-output-acceptance.json": "59c43cbcd294a3aab304cb9de6005ec9a865bf96b31e1bdd1230cb2cabd3ad15",
+    "docs/operations/H-015/corrected-assessment-v2/observations-v2.json": "cfede7911e5d6e276e458e936e7b083291dfdd6f2ed35023e87d991d5e73f2c6",
+    "docs/operations/H-015/corrected-assessment-v2/correction-manifest-v2.json": "8bd96e991cb476d7ba35bd320309514561f643b362f22378ae4fe211c76589f4",
+    "tools/eval/harness.py": "a14f11835ff3c67aa6ef6e7a95716613982a3c1799bfa2d734f4038c95a1c811",
+    "docs/operations/H-014/eval/heldout-candidate-v1.json": "af1c7cafce466f58065fb96de9dd997565b2e3b940855fb9f48faa4559753ae5",
+    "docs/operations/H-015/observation/observations.json": "6b8b7126f3f20aa9cf6ec94e4d0e66436651e145f2473a150b25690572710c23",
+    "docs/operations/H-015/observation/score.json": "8b9be7800c9c1462d462106c789c47f76a88466adf4871973454ccd1ef7bb86a",
+    "tools/eval/observe.py": "a47a50f935f493e24796ad353eff88de1a24509979699328f230aa35ecbb7f14",
+    "tools/eval/correct_mean_nullability_v2.py": "8560fcb2c7458ab778dbac1d55530f8b634561727f74281b4809c53bf6389908",
+    "docs/operations/H-015/corrected-assessment-v2/source-receipt.json": "6be34de5801a1e277a160796f4126db23cccc0555f6672a74463738d613908b7"
+  },
+  "stdout_path": "docs/operations/H-015/corrected-assessment-v2/score-v2.json",
+  "stderr_path": "docs/operations/H-015/corrected-assessment-v2/scorer-stderr.txt",
+  "finished_utc": "2026-11-08T08:57:20.091703+00:00",
+  "exit_code": 0,
+  "output_sha256": "ff4d794e2718bcffede5b1920e7977f844619e9d9132e435e65ed6c3d4ccd897",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "inputs_unchanged": {
+    "docs/operations/H-015/corrected-assessment-v2/root-paired-output-gate.json": true,
+    "docs/operations/H-015/corrected-assessment-v2/paired-output-acceptance.json": true,
+    "docs/operations/H-015/corrected-assessment-v2/observations-v2.json": true,
+    "docs/operations/H-015/corrected-assessment-v2/correction-manifest-v2.json": true,
+    "tools/eval/harness.py": true,
+    "docs/operations/H-014/eval/heldout-candidate-v1.json": true,
+    "docs/operations/H-015/observation/observations.json": true,
+    "docs/operations/H-015/observation/score.json": true,
+    "tools/eval/observe.py": true,
+    "tools/eval/correct_mean_nullability_v2.py": true,
+    "docs/operations/H-015/corrected-assessment-v2/source-receipt.json": true
+  },
+  "runs": 1,
+  "corrector_rerun": false,
+  "independent_final_score_review": "Pending; performer does not approve its own assessment",
+  "actual_summary": {
+    "scorer": "h014-eval-v1",
+    "kind": "heldout_candidate",
+    "planned_denominator": 48,
+    "statuses": {
+      "planned": 0,
+      "not-run": 0,
+      "started": 0,
+      "completed": 48
+    },
+    "observed_passes": 10,
+    "category_passes": {
+      "aggregates_null": 4,
+      "joins_filters": 0,
+      "dependencies_ties": 0,
+      "clarification": 6,
+      "empty_negative": 0,
+      "library": 0
+    },
+    "critical_failures": 0,
+    "mandatory_failures": 38,
+    "complete": true,
+    "proposed_threshold_met": false
+  },
+  "actual_outcomes": [
+    {
+      "run_id": "A01-r1",
+      "status": "completed",
+      "pass": true
+    },
+    {
+      "run_id": "A02-r1",
+      "status": "completed",
+      "pass": true
+    },
+    {
+      "run_id": "A03-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "A04-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "J01-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "J02-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "J03-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "J04-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "D01-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "D02-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "D03-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "D04-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "C01-r1",
+      "status": "completed",
+      "pass": true
+    },
+    {
+      "run_id": "C02-r1",
+      "status": "completed",
+      "pass": true
+    },
+    {
+      "run_id": "C03-r1",
+      "status": "completed",
+      "pass": true
+    },
+    {
+      "run_id": "C04-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "E01-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "E02-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "E03-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "E04-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "L01-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "L02-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "L03-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "L04-r1",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "A01-r2",
+      "status": "completed",
+      "pass": true
+    },
+    {
+      "run_id": "A02-r2",
+      "status": "completed",
+      "pass": true
+    },
+    {
+      "run_id": "A03-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "A04-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "J01-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "J02-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "J03-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "J04-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "D01-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "D02-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "D03-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "D04-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "C01-r2",
+      "status": "completed",
+      "pass": true
+    },
+    {
+      "run_id": "C02-r2",
+      "status": "completed",
+      "pass": true
+    },
+    {
+      "run_id": "C03-r2",
+      "status": "completed",
+      "pass": true
+    },
+    {
+      "run_id": "C04-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "E01-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "E02-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "E03-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "E04-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "L01-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "L02-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "L03-r2",
+      "status": "completed",
+      "pass": false
+    },
+    {
+      "run_id": "L04-r2",
+      "status": "completed",
+      "pass": false
+    }
+  ],
+  "frozen_warning_note": "Frozen warning retained verbatim as historical harness metadata; prospective rubric unchanged; offline artifact rescoring is not a new live run or general accuracy/owner acceptance."
+}

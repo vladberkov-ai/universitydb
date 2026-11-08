@@ -599,3 +599,45 @@ not authorized or applied. Original HIGH/fullassessment/
 nativeDoD remain open. [Fresh remote receipt](../operations/H-015/remote-closeout.json)
 confirms origin/main60e8ffc,push not-run. No actual clarification prompt/answer is
 reconstructed.
+
+## H-015 — actual offline-correction continuation
+
+The new actual Russian user entry authorizes the separate same-artifact corrected
+offline assessment; previous waiting-for-clarification language above is historical.
+[Exact safe Russian source](omx/H-015-correction-actual-prompt.txt),
+[English reader translation](omx/H-015-correction-reader-translation-en.md) and
+[hash/coverage receipt](../operations/H-015/observer-correction/correction-prompt-receipt.json)
+are distinct. The English translation is **not actual English model input**.
+The root export, not a handoff/reconstruction, supplies the source; two private
+vault-prefix substitutions and terminal LF normalization are disclosed. Named
+packages are [read context](../operations/H-015/observer-correction/correction-input-coverage.json).
+
+Original v1 artifacts and prior review history remain. Corrected score and actual-data
+APPROVE/CLEAR are not preassigned; paired-output acceptance precedes unchanged
+frozen scoring. Root alone owns lifecycle proof. No new provider/API/count/probe,
+credentials, live UI, replay, product repair, monetary mutation or push. Runtime
+plan/SQL templates are unchanged; no new live consumption. Full private/system/
+developer/tool/reasoning/child transcripts are omitted; U01 remains partial.
+
+Correction review provenance: [selected actual task starters and attributed scopes](../operations/H-015/observer-correction/correction-reviewer-provenance.json)
+cover independent source/paired-output code-reviewer and actual-data architect lanes.
+They are root-supplied selected text, not full task/tool/private transcripts or proof
+of execution; authored reviews separately establish their conclusions. No reviewer
+lane runs the scorer. [Documentation selected-task coverage](../operations/H-015/observer-correction/correction-documentation-provenance.json).
+
+Actual-data cutoff: the separately released unchanged frozen scorer returned10/48
+(A4/J0/D0/C6/E0/L0, mandatory38/critical0/threshold=false) after independent paired
+acceptance. [Actual code review](../operations/H-015/reviews/v2-final-code-review.md)
+APPROVES and resolves HIGH for the separate corrected assessment only; original v1
+and REQUEST CHANGES remain. Final architecture/document integration and root native/
+strict postconditions remain separate. [After preservation](../operations/H-015/corrected-assessment-v2/after-preservation.json)
+records1139targets and439original H015 checkpoint files unchanged. This is not a
+new provider prompt/answer or a prospective/untouched-holdout accuracy claim.
+
+Final actual-data integration cutoff: independent code-reviewer **APPROVE** and
+[architect **CLEAR**](../operations/H-015/reviews/v2-final-architecture.md) now cover
+full bounded H015 measurement plus separate corrected offline assessment, not just
+preparation. The [final quality gate](../operations/H-015/corrected-assessment-v2/final-quality-gate.json)
+records13proved invariants and configured gates `[]`. Original v1 defect/history and
+product quality FAIL remain; native COMPLETE/strict is still pending root proof.
+The earlier pending-architecture paragraph describes the preceding cutoff only.

@@ -596,3 +596,69 @@ Narrow fixes:72focused/static PASS, future-prep-only APPROVE/CLEAR; final root61
 разрешены и не применены. Это не closure исходного HIGH/fullassessment/nativeDoD.
 [Fresh remote receipt](../operations/H-015/remote-closeout.json): origin/main60e8ffc,
 push not-run. Полный actual clarification prompt/answer не реконструируется.
+
+## H-015 — фактический continuation prompt: offline correction
+
+Новый cutoff заменяет только прежнее ожидание разрешения: CHAT-056 и actual
+received prompt разрешают отдельный corrected offline assessment. Старые receipts
+и original v1 не меняются. Ни score10/48, ни actual-data APPROVE/CLEAR, ни native
+COMPLETE не назначены заранее. [Source/hash/coverage receipt](../operations/H-015/observer-correction/correction-prompt-receipt.json),
+[read context](../operations/H-015/observer-correction/correction-input-coverage.json).
+Ниже actual Russian user entry из supported root export, не handoff reconstruction;
+только2private-vault-prefix substitutions и terminal LF normalization.
+
+```text
+Продолжи существующее поручение H-015 в canonical WSL UbuntuD repo /home/dev/projects/universitydb. Это разрешение владельца снять конкретный blocker отдельного исправленного OFFLINE-пересчёта сохранённых результатов, не запускать новую live-кампанию. Используй установленный supported OMX workflow и текущую native-сессию; сначала проверь владельца и актуальный status. Не изменяй IDs/pointers/locks, не обходи lifecycle restrictions, не возобновляй completed I1/H013/H014. Если native resume требует штатного действия владельца, сообщи точное необходимое действие, не подменяй state вручную.
+
+Владелец разрешил: «Разрешаю отдельный исправленный offline-пересчёт с сохранением исходных artifacts и независимым review. Дай готовый промпт для продолжения OMX. Новые API-вызовы и push пока не разрешаю.» Источник: [PRIVATE_VAULT]/raw/chat/CHAT-056.md. Obsidian только читать. Это узкое дополнение к H-015: запрет evaluator rerun снят только для отдельного corrected offline assessment; все прочие границы сохранены. Новых provider/API/count/probe вызовов, credential loading, live UI, повторного исполнения вопросов, изменения денежного ledger, product repair и push нет. Независимые OMX review lanes разрешены и обязательны; запрет API относится к новым внешним вызовам для продукта/eval, не к самому исполнению этого CLI-поручения.
+
+Сначала целиком прочитай repo AGENTS.md, docs/reports/H-015-full-live-eval.md, docs/plans/H-015-full-live-eval-brief.md, docs/plans/H-014-live-eval-protocol.md, docs/operations/H-015/observer-correction/design.md и test-receipt.json, reviews/final-code-review.md, reviews/observer-v2-code-review.md, reviews/observer-v2-architecture.md, postresults-verification.json, исходную registration/freeze и актуальный workflow ledger (пути reviews/receipts относительно docs/operations/H-015). Прочитай [PRIVATE_VAULT]/wiki/verification/H-015-review.md и CHAT-056. Старые инструкции ожидать owner clarification по этой конкретной коррекции теперь superseded явным разрешением выше; старые receipts не переписывать.
+
+Последнее проверенное chat local HEAD 2121c66f107efb260a7619371e128de7b209fe94, tracked clean с исходными untracked locks. Перепроверь текущий Git без отката чужих изменений. Live candidate ecb7f5c81c705d970dc64adb910ed2a5020cb28b; corrector checkpoint f61c0128f3b1f229e4a78e0d3c8908d8b9c928d1. Report/verification ещё содержат старый ACTIVE cutoff; последнее прочитанное workflow событие подтверждает BLOCKED. Синхронизируй итоговое описание с реально наблюдённым статусом, сохрани исторические receipts. Remote last reported 60e8ffc; не утверждай новую remote verification без проверки и не push.
+
+Состояние: 48 terminal conversations, 38 pre-provider errors, 10 product ok, 20 paid calls. Original frozen score 2/48 и восемь подтверждённых observer false negatives decimal vs decimal? сохранены. Product quality FAIL уже неизбежен; 10/48 — не заранее назначенный corrected score. Подготовка corrector уже прошла synthetic tests и отдельные preparation APPROVE/CLEAR; это ещё не review его применения к фактическим данным. Не повторяй подготовку без причины и не создавай ещё один общий observer.
+
+Выполни непрерывно следующие внутренние checkpoints без повторных вопросов о данном разрешении:
+
+1. Зафиксируй before hashes исходной collection, observer-v1 source/observations/score, scorer, oracle/cases/rubric и relevant preservation targets, включая денежный ledger без экспорта private contents. Проверь реальные reviewed identities: tools/eval/correct_mean_nullability_v2.py SHA256 8560fcb2c7458ab778dbac1d55530f8b634561727f74281b4809c53bf6389908; tests/test_h015_observer_v2.py ac296b2ff5ea1815e9fc4a3aad9ea3af4c9ff050d7db914ee310aca21f71dbc0; frozen tools/eval/observe.py a47a50f935f493e24796ad353eff88de1a24509979699328f230aa35ecbb7f14. При drift выясни происхождение и получи настоящий review изменённого инструмента; не откатывай и не объявляй старый verdict применимым автоматически.
+
+2. Независимый reviewer устанавливает происхождение original v1 records и готовит/проверяет closed source receipt для всех consumed artifacts. Примени существующий versioned corrector только к original artifacts. Выходы — новые exclusive-create файлы вне исходной collection, отдельно от v1 observations/score. Сохрани actual command, exit status, source/input/output hashes и manifest всех изменений. Допустимое изменение только contract-owned scalar u.grade_mean.v1 mean type decimal→decimal?. Не менять числа, rows, NULL, scope, choices, dependencies, statuses, checks, IDs, questions, oracle или thresholds. Все 48 остаются в denominator. Другие метрики, Library и 38 failures сохраняются.
+
+3. До scoring полностью выполни mandatory paired-output acceptance gate из design.md: успешный exit0, оба полных strict-JSON файла, closed manifest schema, все source/receipt/input/output/artifact hashes, независимая проверка exact full-record delta. Частичный файл или самосогласованный manifest не доказывает валидность; при несовпадении не использовать выход. Затем разрешён отдельный offline запуск неизменённого frozen scorer по проверенным v2 observations и исходному oracle. Выход — новый corrected score; original score не трогать. Не запускать заново приложение/graph/provider и не генерировать новые ответы. Если narrow correction не устраняет расхождения, сохрани фактический результат и объясни их, не расширяй автоматически постфактум коррекцию.
+
+4. Независимые code-reviewer и architect оценивают фактическую коррекцию/score, происхождение, delta, preservation и выводы; preparation verdict не заменяет actual-data review. Требуется явное решение по исходному HIGH: устранён для отдельной corrected assessment либо остаётся открытым. Исторический v1 дефект и первоначальный REQUEST CHANGES не удаляются. Проверь достаточные targeted tests/static для изменений, не запускай полный suite повторно без новых изменений/оснований. Сохрани after hashes и сравнение оригиналов/ledger/I1/H013/H014/locks.
+
+5. Обнови English docs/reports/H-015-full-live-eval.md и необходимые repo status/docs/ADR: original frozen instrument output отдельно от post-results corrected assessment, scores/categories/failures, exposure caveat, качество FAIL, техническая завершённость оценки отдельно от acceptance сервиса. Не переименовывай corrected analysis в исходный prospective результат. Документируй actual root/reviewer prompt provenance в существующих docs/ai/PROMPTS-RU.md и PROMPTS-EN.md; этот фактически полученный промпт — source, прочитанные пакеты — context. Оригинальные evidence не переводить/переписывать. Scoped local checkpoints разрешены после privacy/diff checks; никаких blanket staging, amend, reset, force или push.
+
+DoD: сохранены original artifacts/hashes; отдельные v2 observations+manifest+score достоверны и independently reviewed; итог H015 честно разделяет complete collection / corrected offline assessment / failed product quality; фактический lifecycle status и local SHAs отражены. При выполнении bounded measurement DoD разрешено корректное native COMPLETE/strict verification установленным способом, несмотря на quality FAIL. Если конкретный gate не пройден, не подделывай COMPLETE/APPROVE и сообщи точную оставшуюся причину. Отдельные product fixes и новая live-кампания не входят в это продолжение.
+
+Верни ссылку на обновлённый H015 report, пути v2 outputs/reviews/preservation receipts, actual scores/categories и delta, frozen/live и corrected-tool identities, local commits, native/strict status и explicit API/ledger mutation/push not-run. После закрытия оценки предложи короткий следующий scope диагностики 38 resolve_scope failures, но не начинай его. Не проси разрешение заново на описанный offline-пересчёт и внутренние checkpoints.
+```
+
+[EN reader translation](omx/H-015-correction-reader-translation-en.md) — не actual
+English input. Review prompts/results публикуются только с attribution/coverage;
+полные private/system/developer/tool/reasoning transcripts не экспортируются.
+Runtime plan/SQL prompts не менялись; новых provider requests нет. U01 globally partial.
+
+[Selected actual reviewer task starters / attributed scopes](../operations/H-015/observer-correction/correction-reviewer-provenance.json)
+получены от root: независимые source/paired-output code-reviewer и actual-data
+architect. Это не полные prompts/transcripts и не доказательство выполнения;
+выводы подтверждают отдельные authored reviews. Scorer reviewer lanes не запускают.
+[Документальный selected-task coverage](../operations/H-015/observer-correction/correction-documentation-provenance.json).
+
+Actual-data cutoff: отдельно разрешённый неизменённый frozen scorer дал10/48
+(A4/J0/D0/C6/E0/L0, mandatory38/critical0/threshold=false) после paired acceptance.
+[Actual code review](../operations/H-015/reviews/v2-final-code-review.md): APPROVE,
+HIGH resolved только для separate corrected assessment; original v1 и REQUEST CHANGES
+сохранены. Final architecture/document integration и root native/strict postconditions
+остаются отдельными. [After preservation](../operations/H-015/corrected-assessment-v2/after-preservation.json):
+1139targets и439original H015 checkpoint files unchanged. Это не новые provider
+prompts/answers и не prospective/untouched-holdout accuracy claim.
+
+Final actual-data integration cutoff: независимые code-reviewer **APPROVE** и
+[architect **CLEAR**](../operations/H-015/reviews/v2-final-architecture.md) относятся
+к full bounded H015 measurement и separate corrected offline assessment, не только
+к preparation. [Final quality gate](../operations/H-015/corrected-assessment-v2/final-quality-gate.json):
+13proved invariants, configured gates `[]`. Original v1/history и product quality
+FAIL сохранены; native COMPLETE/strict ожидают реального root proof. Предыдущий
+абзац pending architecture — более ранний cutoff, не текущий verdict.

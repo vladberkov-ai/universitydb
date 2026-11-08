@@ -1,0 +1,60 @@
+{
+  "version": "h015-v2-execution-preparation-v1",
+  "at_utc": "2026-11-08T08:51:32.482995+00:00",
+  "delegation": {
+    "leader": "/root",
+    "performer": "/root/v2_execution",
+    "role": "executor",
+    "selected_task": "H015 offline correction execution only; preparation released, actual correction/scoring withheld",
+    "lifecycle": "Root owns; performer does not inspect/mutate hidden lifecycle"
+  },
+  "scope": "New execution receipts/logs/outputs in this directory only; source-receipt.json independently reviewer-owned; root preservation metadata excluded",
+  "source_edit_policy": "No source/test/product/frozen observer/scorer changes or new abstractions",
+  "cleanup_plan": {
+    "behavior_lock": "72 existing/synthetic observer regression tests, isolated temporary data, no campaign correction",
+    "passes": [
+      "Inspect fallback/error boundary: explicit fail-closed validation; exclusive-create cleanup is grounded fail-safe, not evidence suppression",
+      "Dead-code/duplication/naming pass: no edits selected; reviewed frozen tool remains unchanged",
+      "Reinforcement: rerun existing focused tests and static gates; independent root reviewer owns approval"
+    ],
+    "ui": "Not applicable",
+    "dependencies": "No additions"
+  },
+  "planned_corrector_argv": [
+    ".venv/bin/python",
+    "tools/eval/correct_mean_nullability_v2.py",
+    "--campaign",
+    "docs/operations/H-015/collection",
+    "--records",
+    "docs/operations/H-015/observation/observations.json",
+    "--source-receipt",
+    "docs/operations/H-015/corrected-assessment-v2/source-receipt.json",
+    "--output",
+    "docs/operations/H-015/corrected-assessment-v2/observations-v2.json",
+    "--manifest",
+    "docs/operations/H-015/corrected-assessment-v2/correction-manifest-v2.json"
+  ],
+  "output_policy": "Both paths new exclusive-create, outside collection and v1; successful exit and separate full paired-output approval required before scoring",
+  "planned_scorer_argv_after_separate_release": [
+    ".venv/bin/python",
+    "tools/eval/harness.py",
+    "score",
+    "docs/operations/H-014/eval/heldout-candidate-v1.json",
+    "--root",
+    "/home/dev/projects/universitydb",
+    "--records",
+    "docs/operations/H-015/corrected-assessment-v2/observations-v2.json"
+  ],
+  "scorer_output": "score-v2.json reserved with exclusive-create; never overwrite original",
+  "gates": [
+    "Independent source provenance approval and root before-hash release before corrector once",
+    "STOP after corrector for independent paired-output/full-record type-only delta approval",
+    "Separate root scorer release after paired-output approval"
+  ],
+  "not_authorized": [
+    "Actual corrector now",
+    "Scorer now",
+    "Provider/API/count/probe/credentials/live UI/app graph/questions",
+    "Ledger/lifecycle/Git/push mutation"
+  ]
+}

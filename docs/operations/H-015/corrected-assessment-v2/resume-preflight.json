@@ -1,0 +1,58 @@
+{
+  "version": "h015-correction-resume-preflight-v1",
+  "actual_goal_after_owner_resume": {
+    "threadId": "01a1b9d5-673f-76c0-97eb-32b5e26bd5a7",
+    "objective": "Complete the durable ultragoal plan in docs/operations/H-015/workflow/.omx/ultragoal/goals.json, including later accepted/appended stories, under the original brief constraints; use docs/operations/H-015/workflow/.omx/ultragoal/ledger.jsonl as the audit trail.",
+    "status": "active",
+    "tokensUsed": 1676018,
+    "timeUsedSeconds": 2787,
+    "createdAt": 1794119377,
+    "updatedAt": 1794127862
+  },
+  "current_owner": {
+    "verification_surface": "installed OMX read-only host APIs readCanonicalSessionBindingSnapshot/readNativeSessionOwnerEvidence/resolveWritableStateScope",
+    "binding_status": "usable",
+    "owner_status": "usable",
+    "same_native_session": true,
+    "cwd": "/home/dev/projects/universitydb"
+  },
+  "supported_existing_workflow_resume": {
+    "command": "OMX_ROOT=/home/dev/projects/universitydb omx ultragoal complete-goals --json",
+    "cwd": "/home/dev/projects/universitydb/docs/operations/H-015/workflow",
+    "exit_code": 0,
+    "resumed": true,
+    "story": "G005-resolve-post-results-observer-instru"
+  },
+  "authority_annotation": {
+    "surface": "supported omx ultragoal steer --kind annotate_ledger",
+    "accepted": true,
+    "cwd": "/home/dev/projects/universitydb/docs/operations/H-015/workflow",
+    "changed_original_brief_or_ids": false
+  },
+  "phase_declaration_history": [
+    {
+      "surface": "sandbox supported omx state write",
+      "exit_code": 1,
+      "error": "canonical mode binding lease helper exited (0)",
+      "claimed_success": false
+    },
+    {
+      "surface": "supported host-escalated omx state write",
+      "exit_code": 0,
+      "success": true,
+      "mode": "ultragoal",
+      "phase": "executing",
+      "scope": "actual current native session"
+    }
+  ],
+  "historical_status": "Earlier active report cutoff and subsequent blocked native snapshot/ledger event remain preserved; owner explicitly resumed existing goal, actual ACTIVE verified before new offline work.",
+  "no_runtime_repair": true,
+  "no_manual_ids_pointers_locks": true,
+  "completed_I1_H013_H014_resumed": false,
+  "new_external_product_eval_calls": 0,
+  "credential_loading": false,
+  "monetary_mutation": false,
+  "push": "not-run",
+  "remote_verification": "not-run this continuation; only prior dated observation retained",
+  "recorded_at": "2026-11-08T08:57:10.539930+00:00"
+}

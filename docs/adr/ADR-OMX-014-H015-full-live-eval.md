@@ -108,7 +108,7 @@ monetary migration/actual usage are the explicit preservation exception, receipt
 separately. Obsidian stays read-only. Local explicit-path checkpoints are allowed;
 **push, final publication and defense are not authorized**.
 
-## Post-results evidence cutoff — disclosed instrument limitation
+## Historical post-results evidence cutoff — disclosed instrument limitation
 
 Original exactecb7f5c collection has48terminal records,20known responses,
 10product ok/38predispatch INVALID_INPUT. The frozen observer/scorer output2/48
@@ -121,3 +121,34 @@ A separately versioned append-only same-artifact offline correction is awaiting
 scope clarification; original code/observations/score remain unchanged and no
 provider/question rerun, product tuning or publication is authorized by this note.
 See [qualified report](../reports/H-015-full-live-eval.md) for actual receipts.
+
+## CHAT-056 authorized offline correction addendum — 2026-11-08
+
+The actual continuation task and read-only CHAT-056 supersede only the previous
+same-artifact offline-correction authorization blocker. Follow the
+[bounded ordered plan](../plans/H-015-offline-correction-continuation.md): independent
+source provenance, existing reviewed corrector, complete paired-output acceptance
+**before** frozen scoring, actual-data code/architecture reviews, preservation,
+targeted/static verification and honest local closeout. No score or actual-data
+approval is preassigned. Original v1 source/observations/score and historical HIGH/
+REQUEST CHANGES/WATCH remain preserved. A separate post-results assessment must
+not be relabelled prospective evidence.
+
+Alternatives rejected: retaining known-invalid unqualified scoring; silently editing
+v1; regenerating answers; or replacing the observer wholesale. A narrow typed
+representation correction preserves the original questions, values, checks, rubric
+and denominator48 while exposing the instrument amendment. Technical completion
+may be valid despite quality FAIL only after actual gates and supported root-owned
+lifecycle proof. No new provider/API/count/probe, credentials, live UI, replay,
+product repair, monetary mutation or push. Accepted ADR006/Sol profile unchanged.
+
+### Actual corrected-score cutoff
+
+Independent provenance and paired-output gates accepted192consumed artifacts and
+exactly8contract-owned nullable-mean labels, leaving40records/38failures/8Library
+records unchanged. One unchanged frozen offline scorer then returned10/48:
+A4/J0/D0/C6/E0/L0, mandatory38/critical0/threshold=false. This is post-results
+corrected analysis, not prospective v1 or owner acceptance. Actual-data code review APPROVES and resolves the HIGH for the separate corrected
+assessment only; original v1 defect/REQUEST CHANGES remain. Actual-data architect CLEAR covers full bounded H015 measurement plus separatev2.
+Native completion/strict remains pending at this cutoff, not implied by quality FAIL.
+No new external calls, monetary mutation or product repair follows.

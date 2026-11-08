@@ -1,0 +1,50 @@
+{
+  "version": "h015-v2-corrector-execution-v1",
+  "performer": "/root/v2_execution",
+  "leader": "/root",
+  "release": "Actual corrector only released by root after independent provenance APPROVE and before-preservation receipt; scorer NOT released",
+  "cwd": "/home/dev/projects/universitydb",
+  "argv": [
+    ".venv/bin/python",
+    "tools/eval/correct_mean_nullability_v2.py",
+    "--campaign",
+    "docs/operations/H-015/collection",
+    "--records",
+    "docs/operations/H-015/observation/observations.json",
+    "--source-receipt",
+    "docs/operations/H-015/corrected-assessment-v2/source-receipt.json",
+    "--output",
+    "docs/operations/H-015/corrected-assessment-v2/observations-v2.json",
+    "--manifest",
+    "docs/operations/H-015/corrected-assessment-v2/correction-manifest-v2.json"
+  ],
+  "command": ".venv/bin/python tools/eval/correct_mean_nullability_v2.py --campaign docs/operations/H-015/collection --records docs/operations/H-015/observation/observations.json --source-receipt docs/operations/H-015/corrected-assessment-v2/source-receipt.json --output docs/operations/H-015/corrected-assessment-v2/observations-v2.json --manifest docs/operations/H-015/corrected-assessment-v2/correction-manifest-v2.json",
+  "before_sha256": {
+    "tools/eval/correct_mean_nullability_v2.py": "8560fcb2c7458ab778dbac1d55530f8b634561727f74281b4809c53bf6389908",
+    "tests/test_h015_observer_v2.py": "ac296b2ff5ea1815e9fc4a3aad9ea3af4c9ff050d7db914ee310aca21f71dbc0",
+    "tools/eval/observe.py": "a47a50f935f493e24796ad353eff88de1a24509979699328f230aa35ecbb7f14",
+    "tools/eval/harness.py": "a14f11835ff3c67aa6ef6e7a95716613982a3c1799bfa2d734f4038c95a1c811",
+    "docs/operations/H-015/corrected-assessment-v2/source-receipt.json": "6be34de5801a1e277a160796f4126db23cccc0555f6672a74463738d613908b7",
+    "docs/operations/H-015/corrected-assessment-v2/before-preservation.json": "325b3d5778a4ae5f5e92e372c1a90ecbaba8670dc54baf7b2f201adcfccfb028",
+    "docs/operations/H-015/observation/observations.json": "6b8b7126f3f20aa9cf6ec94e4d0e66436651e145f2473a150b25690572710c23"
+  },
+  "at_utc": "2026-11-08T08:54:20.319321+00:00",
+  "exit_code": 0,
+  "finished_utc": "2026-11-08T08:54:20.440847+00:00",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "output_sha256": {
+    "docs/operations/H-015/corrected-assessment-v2/observations-v2.json": "cfede7911e5d6e276e458e936e7b083291dfdd6f2ed35023e87d991d5e73f2c6",
+    "docs/operations/H-015/corrected-assessment-v2/correction-manifest-v2.json": "8bd96e991cb476d7ba35bd320309514561f643b362f22378ae4fe211c76589f4"
+  },
+  "inputs_unchanged": {
+    "tools/eval/correct_mean_nullability_v2.py": true,
+    "tests/test_h015_observer_v2.py": true,
+    "tools/eval/observe.py": true,
+    "tools/eval/harness.py": true,
+    "docs/operations/H-015/corrected-assessment-v2/source-receipt.json": true,
+    "docs/operations/H-015/corrected-assessment-v2/before-preservation.json": true,
+    "docs/operations/H-015/observation/observations.json": true
+  },
+  "scorer_executed": false,
+  "acceptance": "NOT independently accepted; STOP before scoring pending root paired-output/delta review"
+}

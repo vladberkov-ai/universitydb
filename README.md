@@ -7,24 +7,29 @@ schemas, seed data, tests, decisions, prompt collections and execution evidence.
 
 ## Current status
 
-**H015 collected all48original conversations; quality FAIL, assessment qualified by
-an observer defect.** On frozen/tested **`ecb7f5c81c705d970dc64adb910ed2a5020cb28b`**,
-10conversations reached normal Sol→compiled LangGraph→SQLite with20generation calls;
-38ended honestly at scope resolution (`INVALID_INPUT`, zero model calls). All48are
-terminal and remain in the denominator. No questions were rewritten or rerun.
+**H015:48original conversations collected; separate corrected offline score10/48;
+product quality FAIL.** Frozen/tested product
+`ecb7f5c81c705d970dc64adb910ed2a5020cb28b` produced10ok/38scope-resolution
+`INVALID_INPUT` failures before the provider, with20generation calls. No questions
+were rewritten or replayed; all48remain in the denominator.
 
-The frozen observer/scorer returned2/48, but a confirmed HIGH nullable-type defect
-falsely rejects8otherwise matching numeric results. **2/48 is original instrument
-output, not valid unqualified semantic accuracy;10product successes are not a
-replacement registered score.** The38real product failures already preclude the
-44/48 and≥7/8/category rubric. Independent final review is REQUEST CHANGES / architect
-WATCH; correct full-evaluation DoD and native COMPLETE/strict are not achieved.
-A separate append-only offline instrument assessment is awaiting clarified scope;
-no corrected score or additional live generation is claimed.
-Later offline corrector preparation passed609tests but then failed formatting on
-two new files (failure retained). Narrow fixes now pass72focused/static checks and
-future-preparation-only APPROVE/CLEAR; final root610tests/static PASS. No
-actual48correction/scoring is applied or authorized; original HIGH remains open.
+Original frozen observer/scorer output2/48 is preserved, with eight confirmed
+nullable-mean type false negatives. The authorized post-results correction changes
+only those8type labels, then uses the unchanged frozen scorer after independent
+paired-output acceptance: categories4/8,0/8,0/8,6/8,0/8,0/8; mandatory failures38,
+critical failures0, threshold=false. This is separate corrected analysis, not the
+original prospective result, general accuracy or acceptance. It is an exposed-sample
+end-to-end conversation pass count, not pure model accuracy:38questions never
+reached the provider. Actual-data final
+code review APPROVES and resolves the HIGH for this separate assessment only;
+actual-data architect CLEAR covers full bounded H015 measurement plus separatev2.
+Native COMPLETE/strict remains pending; service acceptance is not claimed.
+Preparation APPROVE/CLEAR is not actual-data approval.
+
+Original evidence/ledger/history/locks are preserved. No new provider/API/count/
+probe, credentials, live UI, replay, product repair, monetary mutation or push is
+authorized in the correction. Historical610-test/static and72focused preparation
+checks remain distinct from current actual-data review.
 [H015 report](docs/reports/H-015-full-live-eval.md) ·
 [original collection](docs/operations/H-015/collection-closeout.json) ·
 [independent observation](docs/operations/H-015/observation/independent-observation.md).
@@ -43,7 +48,8 @@ USD120/dispatch110/reserve10, including old obligations.20new retained reservati
 USD8.528960 plus historicalUSD5.970272 totalUSD14.499232; new observed conservative
 usageUSD0.2776070 is not the invoice or a reservation refund. No extra campaign,
 count/probe/fallback/judge/paid rerun/UI run or push occurred. H015 changes are local;
-fresh remote origin/main remains60e8ffc ([receipt](docs/operations/H-015/remote-closeout.json)).
+the last preserved remote observation was origin/main60e8ffc at2026-11-08T07:01:48UTC
+([receipt](docs/operations/H-015/remote-closeout.json)); no fresh remote check is claimed.
 [Requirement status](docs/assignment-status.md).
 
 ## Deliverables

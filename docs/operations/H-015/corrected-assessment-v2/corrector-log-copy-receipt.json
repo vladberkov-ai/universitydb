@@ -1,0 +1,14 @@
+{
+  "version": "h015-corrector-log-safe-public-copy-v1",
+  "purpose": "Track-safe .txt copy of the new ignored empty corrector execution log; original and existing execution receipt unchanged.",
+  "original_path": "docs/operations/H-015/corrected-assessment-v2/corrector-execution.log",
+  "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "copy_path": "docs/operations/H-015/corrected-assessment-v2/corrector-execution-log-public.txt",
+  "copy_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "byte_length": 0,
+  "copy_equal": true,
+  "original_execution_receipt": "docs/operations/H-015/corrected-assessment-v2/corrector-execution.json",
+  "execution_receipt_sha256": "ca7d7998a1ac6da8c22bf1d90e391efe709701378db7aa99e818627f74080bda",
+  "redactions": [],
+  "private_data": "Empty file; no credential/private transcript/ledger contents."
+}

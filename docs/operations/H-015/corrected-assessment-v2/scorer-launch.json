@@ -1,0 +1,34 @@
+{
+  "version": "h015-v2-frozen-scorer-launch-v1",
+  "performer": "/root/v2_execution",
+  "leader": "/root",
+  "release": "One frozen offline scorer run only after independent paired-output APPROVE and root manual gate; no corrector rerun",
+  "cwd": "/home/dev/projects/universitydb",
+  "argv": [
+    ".venv/bin/python",
+    "tools/eval/harness.py",
+    "score",
+    "docs/operations/H-014/eval/heldout-candidate-v1.json",
+    "--root",
+    "/home/dev/projects/universitydb",
+    "--records",
+    "docs/operations/H-015/corrected-assessment-v2/observations-v2.json"
+  ],
+  "command": ".venv/bin/python tools/eval/harness.py score docs/operations/H-014/eval/heldout-candidate-v1.json --root /home/dev/projects/universitydb --records docs/operations/H-015/corrected-assessment-v2/observations-v2.json",
+  "at_utc": "2026-11-08T08:57:20.042575+00:00",
+  "before_sha256": {
+    "docs/operations/H-015/corrected-assessment-v2/root-paired-output-gate.json": "4c2f966d5184c9a8bc058713084325da4255856f1d99773666bb0770f489293c",
+    "docs/operations/H-015/corrected-assessment-v2/paired-output-acceptance.json": "59c43cbcd294a3aab304cb9de6005ec9a865bf96b31e1bdd1230cb2cabd3ad15",
+    "docs/operations/H-015/corrected-assessment-v2/observations-v2.json": "cfede7911e5d6e276e458e936e7b083291dfdd6f2ed35023e87d991d5e73f2c6",
+    "docs/operations/H-015/corrected-assessment-v2/correction-manifest-v2.json": "8bd96e991cb476d7ba35bd320309514561f643b362f22378ae4fe211c76589f4",
+    "tools/eval/harness.py": "a14f11835ff3c67aa6ef6e7a95716613982a3c1799bfa2d734f4038c95a1c811",
+    "docs/operations/H-014/eval/heldout-candidate-v1.json": "af1c7cafce466f58065fb96de9dd997565b2e3b940855fb9f48faa4559753ae5",
+    "docs/operations/H-015/observation/observations.json": "6b8b7126f3f20aa9cf6ec94e4d0e66436651e145f2473a150b25690572710c23",
+    "docs/operations/H-015/observation/score.json": "8b9be7800c9c1462d462106c789c47f76a88466adf4871973454ccd1ef7bb86a",
+    "tools/eval/observe.py": "a47a50f935f493e24796ad353eff88de1a24509979699328f230aa35ecbb7f14",
+    "tools/eval/correct_mean_nullability_v2.py": "8560fcb2c7458ab778dbac1d55530f8b634561727f74281b4809c53bf6389908",
+    "docs/operations/H-015/corrected-assessment-v2/source-receipt.json": "6be34de5801a1e277a160796f4126db23cccc0555f6672a74463738d613908b7"
+  },
+  "stdout_path": "docs/operations/H-015/corrected-assessment-v2/score-v2.json",
+  "stderr_path": "docs/operations/H-015/corrected-assessment-v2/scorer-stderr.txt"
+}

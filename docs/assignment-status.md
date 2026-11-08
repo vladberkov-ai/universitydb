@@ -2,30 +2,29 @@
 
 [H015 report](reports/H-015-full-live-eval.md) supersedes earlier current/no-live
 wording below. All48original conversations are terminal on exactecb7f5c:10product
-ok/38INVALID_INPUT before the model,20generation calls. Quality FAIL is established;
-frozen2/48 is limited instrument output because8additional strict mismatches are
-confirmed observer nullability false negatives. No replacement score, correct full
-measurement DoD, native COMPLETE/strict or acceptance is claimed. Final independent
-REQUEST CHANGES/HIGH and architect WATCH remain; separate append-only offline
-assessment scope is awaiting clarification. Original collection/source/score remain.
+ok/38INVALID_INPUT before the provider,20generation calls. Original frozen2/48
+is instrument-limited; separate authorized **post-results corrected score10/48**
+follows independent provenance/paired-output acceptance and one unchanged offline
+scorer run. Categories4/8,0/8,0/8,6/8,0/8,0/8; mandatory failures38, critical0,
+threshold=false. Only8nullable-mean type labels changed;40records,38failures,
+8Library records and original artifacts remain unchanged. Product quality **FAIL**;
+this exposed sample is not untouched holdout/general accuracy.
 
-New sourceecb7f5c passed576offline tests/static/157oracle; historical H01498345ad
-485/clean/browser/strict5/5 remains distinct. R03/R08 have real pipeline evidence,
-not broad accuracy pass. R04–07 retain offline breadth/shared-core/trace/safety proof,
-not live M1/ties/count/Library/repair success. R13/U04 use ADR014; U01 selected actual
-prompts/RU+EN coverage remains partial; U06 local333b0fe/ecb7checkpoints. R15 H015
-publication pending separate authority,push not-run,publishedbaseline60e8ffc;
-R16/17 owner defense deferred. Monetary history was preserved through authorized
-migration/usage, not unchanged byte-for-byte. Earlier H014 and H013 sections below
-retain their historical scopes; their proposed/no-live language is not new authority.
+Actual-data code review APPROVES and resolves the HIGH for this separate corrected
+assessment only; actual-data architect CLEAR covers full bounded H015 measurement
+plus separatev2. Native COMPLETE/strict remains pending. Earlier preparation APPROVE/CLEAR did not close the actual-data gate. [Continuation plan](plans/H-015-offline-correction-continuation.md)
+and new report receipts separate complete collection, corrected assessment and
+service acceptance. No new API/credentials/UI/replay/product repair/money/push.
 
-Future corrector preparation is offline-only: root reports609tests passing but the
-following format gate failed on two new files (history retained). Narrow fixes now
-pass72focused/static checks and future-prep APPROVE/CLEAR; final root610tests/static PASS.
-Original HIGH/full-assessment/native DoD remain open; no actual48-record correction
-or rescoring is authorized/applied. [Fresh remote receipt](operations/H-015/remote-closeout.json)
-confirms origin/main60e8ffc unchanged; push not-run. Live-cutoff68hash checks are
-historical evidence, not a claim later report updates leave those docs unchanged.
+R03/R08 have real pipeline evidence, not broad accuracy pass; R04–07 retain offline
+breadth/shared-core/trace/safety proof, not live M1/ties/count/Library/repair success.
+R13/U04 use ADR014; U01 actual root/selected reviewer/RU+EN coverage remains partial.
+R15 H015 publication awaits separate authority; R16/17 defense remains deferred.
+Original monetary migration/usage is historical and receipted; this continuation
+makes no monetary mutation. The last [remote observation](operations/H-015/remote-closeout.json)
+was origin/main60e8ffc at2026-11-08T07:01:48UTC, not a fresh check here; push not-run.
+Original576test/157oracle live candidate, later610test/static corrector preparation
+and completed H01498345ad485/clean/browser/strict5/5 remain distinct cutoffs.
 
 ## Published H-014 readiness checkpoint — 2026-11-08
 

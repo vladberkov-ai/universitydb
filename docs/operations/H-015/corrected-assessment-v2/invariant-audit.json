@@ -1,0 +1,115 @@
+{
+  "version": "h015-v2-root-requirement-evidence-audit-v1",
+  "recorded_at": "2026-11-08T09:00:09.302563+00:00",
+  "status": "evidence ready; final independent integration review and native strict postconditions still required",
+  "scope": "Full original H015 bounded measurement plus explicit CHAT056 corrected offline assessment; quality FAIL is not reduced scope or acceptance",
+  "invariants": [
+    {
+      "id": "H015-INV-01",
+      "invariant": "Original bounded collection and denominator",
+      "source": "docs/plans/H-015-full-live-eval-brief.md#immutable-bounds",
+      "requirement": "Original48questions/repeat-major order/selections/48terminal statuses retained; ordinary failures remain denominator48; no replacement/best-of or inventedM1/Library success.",
+      "evidence": "collection-closeout.json; registration/prospective-freeze.json; v2-source-provenance.md:48same-run/427files/1088references; score-v2.json48outcomes.",
+      "evidence_state": "ready_for_final_independent_review"
+    },
+    {
+      "id": "H015-INV-02",
+      "invariant": "Exact runtime/model and evidence separation",
+      "source": "docs/plans/H-015-full-live-eval-brief.md#architecture-and-verification-contract",
+      "requirement": "Historical real normal provider/compiledgraph/SQLite20calls10SQL on frozenecb7f5c, model exactSol/default high/medium/medium; oracle/answers/case metadata excluded from model, complete originalfulltrace/request/response retained. This continuation invokes none of them.",
+      "evidence": "Original final-code-review.md+collection-closeout knownresponses; frozen source/prompt hashes; all427originalartifacts unchanged; no new product/provider execution receipts.",
+      "evidence_state": "ready_for_final_independent_review"
+    },
+    {
+      "id": "H015-INV-03",
+      "invariant": "Shared monetary history and current immutability",
+      "source": "docs/plans/H-015-full-live-eval-brief.md#immutable-bounds",
+      "requirement": "Original aggregate120/dispatch110/contingency10 includes14old5.970272, sharedcanonicalledger/history-preservingmigration retained. Current correction makes zero ledger/cap/hold/spend changes; no contingency/hold release.",
+      "evidence": "Original migration-receipt.json+monetary closeout34entries/effective14.499232; before/afterpreservation canonicalSHAdaed87a21b856f0df454fb1378e266fcf9b79504351a873b1dfc39855d6d2e97 identical.",
+      "evidence_state": "ready_for_final_independent_review"
+    },
+    {
+      "id": "H015-INV-04",
+      "invariant": "Reviewed immutable correction identity and provenance",
+      "source": "docs/plans/H-015-offline-correction-continuation.md#ordered-checkpoints-and-stop-conditions",
+      "requirement": "Existing tool8560fcb2/testac296b2f/frozenobservera47a50f9/scorera14f1183 identities verified; original records bound to historical checkpoint and192exactconsumedoriginalartifact hashes by independent reviewer, not self-consistent manifest alone.",
+      "evidence": "before-preservation.json; source-receipt.json6be34de5; v2-source-provenance.md427/192/48/1088checks; originalH015439checkpointfiles unchanged.",
+      "evidence_state": "ready_for_final_independent_review"
+    },
+    {
+      "id": "H015-INV-05",
+      "invariant": "Contract-owned type-only change",
+      "source": "docs/plans/H-015-offline-correction-continuation.md#ordered-checkpoints-and-stop-conditions",
+      "requirement": "Only scalar registeredu.grade_mean.v1 mean nullable capability changes decimal\u2192decimal?; not oracle-copying/sampleNULL inference. Actual8/observed/types/0 changes,40records unchanged; values/rows/NULL/scope/choices/dependencies/checks/outcomes/IDs/questions fixed,38failures/all8Library unchanged.",
+      "evidence": "Actualcorrector source8560fcb2 contractraw/adapted/answerlink; paired-output-acceptance.json strictfullrecursive delta; independentarchitecture same8/192/1139audit;72targetedtests.",
+      "evidence_state": "ready_for_final_independent_review"
+    },
+    {
+      "id": "H015-INV-06",
+      "invariant": "Separate exclusive outputs, originals retained",
+      "source": "docs/plans/H-015-offline-correction-continuation.md#ordered-checkpoints-and-stop-conditions",
+      "requirement": "New observations/manifest/score outsidecollection andv1, exclusivecreate; bothcorrector/scorer runonceexit0, allactualcommands/cwd/timestamps/hashes retained; originalv1score2/48 andsourcebug/REQUESTCHANGES not overwritten.",
+      "evidence": "corrector-launch/execution.json; scorer-launch/execution.json; newcfede791/8bd96e99/ff4d794e outputs; before/afteroriginal439checkpointbytecomparison.",
+      "evidence_state": "ready_for_final_independent_review"
+    },
+    {
+      "id": "H015-INV-07",
+      "invariant": "Paired-output acceptance precedes scorer",
+      "source": "docs/plans/H-015-offline-correction-continuation.md#ordered-checkpoints-and-stop-conditions",
+      "requirement": "Successfulcorrectorexit0,complete strictJSON+closedmanifest/source/receipt/input/output/all192artifacthashes, independentfullrecorddelta approval AND rootmanualacceptance before downstream frozen scorer. Partialpair/self-consistency alone invalid.",
+      "evidence": "paired-output-acceptance.json59c43cbc+v2-paired-output-review.md; root-paired-output-gate.json4c2f966d accepted08:56:51UTC before scorer08:57:20UTC; exactlaunchhashchain.",
+      "evidence_state": "ready_for_final_independent_review"
+    },
+    {
+      "id": "H015-INV-08",
+      "invariant": "Frozen rubric, actual score and exposure",
+      "source": "docs/plans/H-015-full-live-eval-brief.md#immutable-bounds",
+      "requirement": "Unchangedscorer/oracle/cases/rubric44/48+7/8category+mandatory/safety; corrected10/48 A4/J0/D0/C6/E0/L0,mandatory38/critical0/thresholdfalse. Exposed24x2 correlatedsample, retrospective correctedassessment not prospective/untouchedholdout/generalaccuracy or service acceptance.",
+      "evidence": "score-v2.jsonff4d794e; originalscore8b9be780; originalfreeze/protocolhashes; independentcode+architect actualscore calculations withoutscorerinvocation.",
+      "evidence_state": "ready_for_final_independent_review"
+    },
+    {
+      "id": "H015-INV-09",
+      "invariant": "Preservation and read-only external sources",
+      "source": "docs/plans/H-015-offline-correction-continuation.md#unchanged-bounds",
+      "requirement": "427originalcollection+4v1observations+688historicaloperations+12completedI1/H013/H014/locks targets unchanged, all1139beforetargets andall439oldH015operationcheckpointfiles match; Obsidian read-only.",
+      "evidence": "before-preservation.json325b3d57; after-preservation.json1e466510; independentfullpreservationchecks; no private ledger/credentialcontents exported.",
+      "evidence_state": "ready_for_final_independent_review"
+    },
+    {
+      "id": "H015-INV-10",
+      "invariant": "No unauthorized execution or publication",
+      "source": "docs/plans/H-015-offline-correction-continuation.md#unchanged-bounds",
+      "requirement": "No externalprovider/API/count/probe/credential loading/liveUI/appgraph/questionreplay/productrepair/newcampaign/monetarymutation/push in continuation. Localexplicitpathcommits only; remote lastdatedobservation not relabeledfresh. Future38resolve_scope diagnosis proposalonly.",
+      "evidence": "Executionandscorer receipted stdlib-onlycommands/key-cleared isolatedtests; source/resources/tests/tools equal f61c0128; Gitstagingmanifest/privacy checks and currentreport boundaries.",
+      "evidence_state": "ready_for_final_independent_review"
+    },
+    {
+      "id": "H015-INV-11",
+      "invariant": "Independent actual-data review, historical HIGH preserved",
+      "source": "docs/plans/H-015-offline-correction-continuation.md#ordered-checkpoints-and-stop-conditions",
+      "requirement": "Nativeindependent code-reviewer+architect reviewactualprovenance/delta/score/preservation, not only preparation. Explicit HIGH resolution limitedto separatelycorrectedassessment; frozenv1defect/historyretained, qualityFAIL separatedfromboundedmeasurementcompletion.",
+      "evidence": "reviews/v2-final-code-review.md actualAPPROVE source-data audit; finalarchitectactualreview pendingintegration at auditcutoff; no nativecompletionclaimed beforebothfinalreviews.",
+      "evidence_state": "ready_for_final_independent_review"
+    },
+    {
+      "id": "H015-INV-12",
+      "invariant": "Actual prompt and documentary provenance",
+      "source": "docs/plans/H-015-offline-correction-continuation.md",
+      "requirement": "Actualreceivedcontinuationprompt selectedfromsupportedrootexport, minimalprivate-prefixredaction; readhandoff/wiki/CHAT056 distinguishedascontext/authority. ExistingRU/EN bundles markactualRUvsENreadertranslation/selectedreviewertasks andomissions; Englishcurrentreport separatesv1/v2/lifecyclecutoffs.",
+      "evidence": "observer-correction/correction-prompt-receipt.json exactc4783669/safe2b5804d7; inputcoverage/reviewerprovenance/authorizationreceipts; actual docsreview pending at cutoff.",
+      "evidence_state": "ready_for_final_independent_review"
+    },
+    {
+      "id": "H015-INV-13",
+      "invariant": "Root-owned supported lifecycle",
+      "source": "docs/plans/H-015-offline-correction-continuation.md#ordered-checkpoints-and-stop-conditions",
+      "requirement": "Sameaggregate nativeownerusable/actualACTIVE afterownerresume; existingG005 resumedsupported explicitcwd; no replacementgoal/manualIDs/pointers/locks orcompletedI1/H013/H014resume. NativeCOMPLETE/strict remain separate actualroottoolpostconditions onlyaftercleanfullscopeproof.",
+      "evidence": "resume-preflight.json actualget_goal/hostownerAPI/complete-goals+annotation+phasewrite history; finalqualityinput/native-strict-closeout tobecreatedonlyfromactualtools; historicalblockedcutoffsretained.",
+      "evidence_state": "ready_for_final_independent_review"
+    }
+  ],
+  "source_or_dependency_changes": false,
+  "source_identity_check": "git diff f61c0128 -- src tests tools resources pyproject.toml uv.lock: empty",
+  "native_complete_claimed": false
+}
