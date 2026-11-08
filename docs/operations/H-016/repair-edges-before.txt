@@ -1,0 +1,298 @@
+FFF....F........F.F......F.F                                             [100%]
+=================================== FAILURES ===================================
+_ test_identity_syntax_variants_use_actual_scope[university-Show mean for course ID: 2.-scope0] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1015/test_identity_syntax_variants_0')
+kind = 'university', question = 'Show mean for course ID: 2.'
+scope = {'course_id': 2}
+
+    @pytest.mark.parametrize(
+        "kind,question,scope",
+        [
+            ("university", "Show mean for course ID: 2.", {"course_id": 2}),
+            ("university", "Show mean for student ID=2!", {"student_id": 2}),
+            ("university", "Show mean for teacher ID #11?", {"teacher_id": 11}),
+            ("university", "Show mean for STUDENT_ID=2.", {"student_id": 2}),
+            ("university", "Mean for course #2.", {"course_id": 2}),
+            ("university", "Mean for course 2, COURSE id 2.", {"course_id": 2}),
+            ("university", "Mean for Bea, student ID 2.", {"student_id": 2}),
+            ("library", "Count open loans for reader ID: 2.", {"reader_id": 2}),
+            ("library", "Count open loans for READER_ID=1!", {"reader_id": 1}),
+            ("library", "Count open loans for reader #1, reader ID 1.", {"reader_id": 1}),
+        ],
+    )
+    def test_identity_syntax_variants_use_actual_scope(tmp_path, kind, question, scope):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '5886c0f3-623a-474d-9332-b73269a2e066', 'trace_id': '5886c0f3-623a-474d-9332-b73269a2e066', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E
+E         - ok
+E         + error
+
+tests/test_h016_resolution_edges.py:25: AssertionError
+_ test_identity_syntax_variants_use_actual_scope[university-Show mean for student ID=2!-scope1] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1015/test_identity_syntax_variants_1')
+kind = 'university', question = 'Show mean for student ID=2!'
+scope = {'student_id': 2}
+
+    @pytest.mark.parametrize(
+        "kind,question,scope",
+        [
+            ("university", "Show mean for course ID: 2.", {"course_id": 2}),
+            ("university", "Show mean for student ID=2!", {"student_id": 2}),
+            ("university", "Show mean for teacher ID #11?", {"teacher_id": 11}),
+            ("university", "Show mean for STUDENT_ID=2.", {"student_id": 2}),
+            ("university", "Mean for course #2.", {"course_id": 2}),
+            ("university", "Mean for course 2, COURSE id 2.", {"course_id": 2}),
+            ("university", "Mean for Bea, student ID 2.", {"student_id": 2}),
+            ("library", "Count open loans for reader ID: 2.", {"reader_id": 2}),
+            ("library", "Count open loans for READER_ID=1!", {"reader_id": 1}),
+            ("library", "Count open loans for reader #1, reader ID 1.", {"reader_id": 1}),
+        ],
+    )
+    def test_identity_syntax_variants_use_actual_scope(tmp_path, kind, question, scope):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '0d6f059b-32ba-477a-91af-f93ba05a2585', 'trace_id': '0d6f059b-32ba-477a-91af-f93ba05a2585', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E
+E         - ok
+E         + error
+
+tests/test_h016_resolution_edges.py:25: AssertionError
+_ test_identity_syntax_variants_use_actual_scope[university-Show mean for teacher ID #11?-scope2] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1015/test_identity_syntax_variants_2')
+kind = 'university', question = 'Show mean for teacher ID #11?'
+scope = {'teacher_id': 11}
+
+    @pytest.mark.parametrize(
+        "kind,question,scope",
+        [
+            ("university", "Show mean for course ID: 2.", {"course_id": 2}),
+            ("university", "Show mean for student ID=2!", {"student_id": 2}),
+            ("university", "Show mean for teacher ID #11?", {"teacher_id": 11}),
+            ("university", "Show mean for STUDENT_ID=2.", {"student_id": 2}),
+            ("university", "Mean for course #2.", {"course_id": 2}),
+            ("university", "Mean for course 2, COURSE id 2.", {"course_id": 2}),
+            ("university", "Mean for Bea, student ID 2.", {"student_id": 2}),
+            ("library", "Count open loans for reader ID: 2.", {"reader_id": 2}),
+            ("library", "Count open loans for READER_ID=1!", {"reader_id": 1}),
+            ("library", "Count open loans for reader #1, reader ID 1.", {"reader_id": 1}),
+        ],
+    )
+    def test_identity_syntax_variants_use_actual_scope(tmp_path, kind, question, scope):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '8f2f8874-c200-4949-a729-7cc926ac4a3e', 'trace_id': '8f2f8874-c200-4949-a729-7cc926ac4a3e', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E
+E         - ok
+E         + error
+
+tests/test_h016_resolution_edges.py:25: AssertionError
+_ test_identity_syntax_variants_use_actual_scope[library-Count open loans for reader ID: 2.-scope7] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1015/test_identity_syntax_variants_7')
+kind = 'library', question = 'Count open loans for reader ID: 2.'
+scope = {'reader_id': 2}
+
+    @pytest.mark.parametrize(
+        "kind,question,scope",
+        [
+            ("university", "Show mean for course ID: 2.", {"course_id": 2}),
+            ("university", "Show mean for student ID=2!", {"student_id": 2}),
+            ("university", "Show mean for teacher ID #11?", {"teacher_id": 11}),
+            ("university", "Show mean for STUDENT_ID=2.", {"student_id": 2}),
+            ("university", "Mean for course #2.", {"course_id": 2}),
+            ("university", "Mean for course 2, COURSE id 2.", {"course_id": 2}),
+            ("university", "Mean for Bea, student ID 2.", {"student_id": 2}),
+            ("library", "Count open loans for reader ID: 2.", {"reader_id": 2}),
+            ("library", "Count open loans for READER_ID=1!", {"reader_id": 1}),
+            ("library", "Count open loans for reader #1, reader ID 1.", {"reader_id": 1}),
+        ],
+    )
+    def test_identity_syntax_variants_use_actual_scope(tmp_path, kind, question, scope):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'b0270222-627f-42d5-8d0a-de3cf792cada', 'trace_id': 'b0270222-627f-42d5-8d0a-de3cf792cada', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E
+E         - ok
+E         + error
+
+tests/test_h016_resolution_edges.py:25: AssertionError
+_ test_every_explicit_identity_is_validated_before_provider[university-Mean for student named Zephyr and Bea.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1015/test_every_explicit_identity_i6')
+kind = 'university', question = 'Mean for student named Zephyr and Bea.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Mean for course ID 2abc."),
+            ("university", "Mean for course ID 2.5."),
+            ("university", "Mean for course ID +2."),
+            ("university", "Mean for course ID: nope."),
+            ("university", "Mean for course ID."),
+            ("university", "Mean for course_id=1 and course_id=."),
+            ("university", "Mean for student named Zephyr and Bea."),
+            ("university", "Mean for student named Zephyr, student ID 2."),
+            ("university", "Mean for Bea, student ID 2 and student ID nope."),
+            ("library", "Count open loans for reader ID 1abc."),
+            ("library", "Count open loans for reader ID 1.5."),
+            ("library", "Count open loans for reader ID +1."),
+            ("library", "Count open loans for reader ID: nope."),
+            ("library", "Count open loans for reader ID."),
+            ("library", "Count open loans for reader_id=1 and reader_id=."),
+            ("library", "Count open loans for Ada, reader named Zephyr."),
+            ("library", "Count open loans for reader named Zephyr, reader ID 1."),
+            ("library", "Count open loans for Ada, reader ID 1 and reader ID nope."),
+        ],
+    )
+    def test_every_explicit_identity_is_validated_before_provider(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '5d8878ba-0b0d-4f5b-9142-25f149a1a14d', 'trace_id': '5d8878ba-0b0d-4f5b-9142-25f149a1a14d', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:56: AssertionError
+_ test_every_explicit_identity_is_validated_before_provider[university-Mean for Bea, student ID 2 and student ID nope.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1015/test_every_explicit_identity_i8')
+kind = 'university'
+question = 'Mean for Bea, student ID 2 and student ID nope.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Mean for course ID 2abc."),
+            ("university", "Mean for course ID 2.5."),
+            ("university", "Mean for course ID +2."),
+            ("university", "Mean for course ID: nope."),
+            ("university", "Mean for course ID."),
+            ("university", "Mean for course_id=1 and course_id=."),
+            ("university", "Mean for student named Zephyr and Bea."),
+            ("university", "Mean for student named Zephyr, student ID 2."),
+            ("university", "Mean for Bea, student ID 2 and student ID nope."),
+            ("library", "Count open loans for reader ID 1abc."),
+            ("library", "Count open loans for reader ID 1.5."),
+            ("library", "Count open loans for reader ID +1."),
+            ("library", "Count open loans for reader ID: nope."),
+            ("library", "Count open loans for reader ID."),
+            ("library", "Count open loans for reader_id=1 and reader_id=."),
+            ("library", "Count open loans for Ada, reader named Zephyr."),
+            ("library", "Count open loans for reader named Zephyr, reader ID 1."),
+            ("library", "Count open loans for Ada, reader ID 1 and reader ID nope."),
+        ],
+    )
+    def test_every_explicit_identity_is_validated_before_provider(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': 'b9bf9204-68af-474a-86f4-80451584ce1c', 'trace_id': 'b9bf9204-68af-474a-86f4-80451584ce1c', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:56: AssertionError
+_ test_every_explicit_identity_is_validated_before_provider[library-Count open loans for Ada, reader named Zephyr.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1015/test_every_explicit_identity_i15')
+kind = 'library', question = 'Count open loans for Ada, reader named Zephyr.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Mean for course ID 2abc."),
+            ("university", "Mean for course ID 2.5."),
+            ("university", "Mean for course ID +2."),
+            ("university", "Mean for course ID: nope."),
+            ("university", "Mean for course ID."),
+            ("university", "Mean for course_id=1 and course_id=."),
+            ("university", "Mean for student named Zephyr and Bea."),
+            ("university", "Mean for student named Zephyr, student ID 2."),
+            ("university", "Mean for Bea, student ID 2 and student ID nope."),
+            ("library", "Count open loans for reader ID 1abc."),
+            ("library", "Count open loans for reader ID 1.5."),
+            ("library", "Count open loans for reader ID +1."),
+            ("library", "Count open loans for reader ID: nope."),
+            ("library", "Count open loans for reader ID."),
+            ("library", "Count open loans for reader_id=1 and reader_id=."),
+            ("library", "Count open loans for Ada, reader named Zephyr."),
+            ("library", "Count open loans for reader named Zephyr, reader ID 1."),
+            ("library", "Count open loans for Ada, reader ID 1 and reader ID nope."),
+        ],
+    )
+    def test_every_explicit_identity_is_validated_before_provider(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '2bb920d4-a8c2-4277-9ae3-b9058a397760', 'trace_id': '2bb920d4-a8c2-4277-9ae3-b9058a397760', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:56: AssertionError
+_ test_every_explicit_identity_is_validated_before_provider[library-Count open loans for Ada, reader ID 1 and reader ID nope.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1015/test_every_explicit_identity_i17')
+kind = 'library'
+question = 'Count open loans for Ada, reader ID 1 and reader ID nope.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Mean for course ID 2abc."),
+            ("university", "Mean for course ID 2.5."),
+            ("university", "Mean for course ID +2."),
+            ("university", "Mean for course ID: nope."),
+            ("university", "Mean for course ID."),
+            ("university", "Mean for course_id=1 and course_id=."),
+            ("university", "Mean for student named Zephyr and Bea."),
+            ("university", "Mean for student named Zephyr, student ID 2."),
+            ("university", "Mean for Bea, student ID 2 and student ID nope."),
+            ("library", "Count open loans for reader ID 1abc."),
+            ("library", "Count open loans for reader ID 1.5."),
+            ("library", "Count open loans for reader ID +1."),
+            ("library", "Count open loans for reader ID: nope."),
+            ("library", "Count open loans for reader ID."),
+            ("library", "Count open loans for reader_id=1 and reader_id=."),
+            ("library", "Count open loans for Ada, reader named Zephyr."),
+            ("library", "Count open loans for reader named Zephyr, reader ID 1."),
+            ("library", "Count open loans for Ada, reader ID 1 and reader ID nope."),
+        ],
+    )
+    def test_every_explicit_identity_is_validated_before_provider(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': 'e41e0f36-6fbc-4417-a6fe-89b2f108247f', 'trace_id': 'e41e0f36-6fbc-4417-a6fe-89b2f108247f', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:56: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_h016_resolution_edges.py::test_identity_syntax_variants_use_actual_scope[university-Show mean for course ID: 2.-scope0]
+FAILED tests/test_h016_resolution_edges.py::test_identity_syntax_variants_use_actual_scope[university-Show mean for student ID=2!-scope1]
+FAILED tests/test_h016_resolution_edges.py::test_identity_syntax_variants_use_actual_scope[university-Show mean for teacher ID #11?-scope2]
+FAILED tests/test_h016_resolution_edges.py::test_identity_syntax_variants_use_actual_scope[library-Count open loans for reader ID: 2.-scope7]
+FAILED tests/test_h016_resolution_edges.py::test_every_explicit_identity_is_validated_before_provider[university-Mean for student named Zephyr and Bea.]
+FAILED tests/test_h016_resolution_edges.py::test_every_explicit_identity_is_validated_before_provider[university-Mean for Bea, student ID 2 and student ID nope.]
+FAILED tests/test_h016_resolution_edges.py::test_every_explicit_identity_is_validated_before_provider[library-Count open loans for Ada, reader named Zephyr.]
+FAILED tests/test_h016_resolution_edges.py::test_every_explicit_identity_is_validated_before_provider[library-Count open loans for Ada, reader ID 1 and reader ID nope.]
+8 failed, 20 passed in 6.08s

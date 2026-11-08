@@ -1,0 +1,11 @@
+{
+  "method": "Root read-only installed readCanonicalSessionBindingSnapshot/readNativeSessionOwnerEvidence/resolveWritableStateScope, explicit canonical cwd, supported host permission",
+  "canonical": {"status":"usable","liveness":"usable","rootSource":"session-authority"},
+  "currentNative": {"status":"usable","actualNativeMatches":true,"threadMatches":true,"ownerCanonicalProcessSame":true},
+  "writable": {"source":"session","canonicalOwnerMatches":true},
+  "sandbox_observation": "stale-dead due PID namespace view; no authority inferred from this recovery or OMX_ROOT",
+  "scope":"docs/operations/H-016/workflow",
+  "manual_id_pointer_lock_edits":false,
+  "get_goal_before":null,
+  "initial_create_attempt": "exit1 before mutation: relative preparation writes from nested cwd could not find paths; explicit absolute brief used on retry"
+}

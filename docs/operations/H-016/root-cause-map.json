@@ -1,0 +1,4885 @@
+{
+  "version": "h016-root-cause-map-v1",
+  "purpose": "Read-only causal diagnosis of retained historical errors, not replay or rescore. Extraction diagnostics reproduce frozen lexical patterns, not a new provider run.",
+  "summary": {
+    "historical_failures": 38,
+    "cases": 19,
+    "repeats_per_case": 2,
+    "unique_natural_strings": 13,
+    "failing_entities": {
+      "course": 16,
+      "student": 12,
+      "teacher": 2,
+      "reader": 8
+    },
+    "families": {
+      "ID_MARKER_MISCLASSIFIED_AS_NAME": 18,
+      "ID_PROJECTION_MISCLASSIFIED_AS_NAME": 20
+    }
+  },
+  "important": "Persisted scope absent means resolve_scope raised before returning scope. Lexical diagnostics are independently recomputed from frozen patterns and read-only actual fixture catalog, not claimed recorded runtime tokens. Only first failing field is historical; other diagnostics identify additional masked fields.",
+  "rows": [
+    {
+      "run_id": "A03-r1",
+      "case_id": "A03",
+      "repeat": 1,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "Mean grade for course ID 3 in S1?",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "course",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown course name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve course_id=3 and semester_id=S1; reach plan/SQL and preserve no_grades (NULL) semantics.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/A03-r1/graph-state.json": "117d75f50bb4d1865cb802e00b1bff404c4a753d61c1112dfc619359f05b5371",
+        "docs/operations/H-015/collection/A03-r1/completed.json": "4f2e39dd7ef7471d60d1a38969af18f3c2fab5e7dd7d29484e12965d3b1ef1d2",
+        "docs/operations/H-015/collection/A03-r1/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "A03-r2",
+      "case_id": "A03",
+      "repeat": 2,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "Mean grade for course ID 3 in S1?",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "course",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown course name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve course_id=3 and semester_id=S1; reach plan/SQL and preserve no_grades (NULL) semantics.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/A03-r2/graph-state.json": "175fc904b15e15eec3309091c9f4ed6f6113b0fd5437f0c0afd9bbc768531b49",
+        "docs/operations/H-015/collection/A03-r2/completed.json": "08961c8a36d17d87464eb393ef03e00129c22542f38683666b9f787688ae7be8",
+        "docs/operations/H-015/collection/A03-r2/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "A04-r1",
+      "case_id": "A04",
+      "repeat": 1,
+      "domain": "university",
+      "fixture": "zero",
+      "natural_input": "Mean grade for course ID 3 in S1?",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "course",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown course name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve course_id=3 and semester_id=S1; reach plan/SQL and preserve numeric zero, not NULL.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/A04-r1/graph-state.json": "2a8e9a1366702e90cfa925314bc652aac53e3b1f7c8c3cd1f614177eb7c27ea4",
+        "docs/operations/H-015/collection/A04-r1/completed.json": "3a245525fae8419a11dffc491e1a827d490fc02801971566b0941b3dc0bba595",
+        "docs/operations/H-015/collection/A04-r1/fixture.sqlite3": "6bd0f24990c3822e0d395ba4b4e247f49308c846472eed2f962692031c1e30c5"
+      }
+    },
+    {
+      "run_id": "A04-r2",
+      "case_id": "A04",
+      "repeat": 2,
+      "domain": "university",
+      "fixture": "zero",
+      "natural_input": "Mean grade for course ID 3 in S1?",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "course",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown course name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve course_id=3 and semester_id=S1; reach plan/SQL and preserve numeric zero, not NULL.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/A04-r2/graph-state.json": "82bc439ffc81884f82b737299f227ec793233634dd1f535c980b871bd9228df7",
+        "docs/operations/H-015/collection/A04-r2/completed.json": "b50f10ae13ca66a3b7ca27d7f8ff779d10cdcef6bb1d2ada387da6cd42838888",
+        "docs/operations/H-015/collection/A04-r2/fixture.sqlite3": "6bd0f24990c3822e0d395ba4b4e247f49308c846472eed2f962692031c1e30c5"
+      }
+    },
+    {
+      "run_id": "C04-r1",
+      "case_id": "C04",
+      "repeat": 1,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "How many for course ID 1 in S1?",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "course",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown course name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve course_id=1 and semester_id=S1; request bounded metric clarification instead of unknown-name error.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/C04-r1/graph-state.json": "e5bee1a9d158d76c3d0e104a5e458585d1b378389d8cf36d7d0bb913187d054a",
+        "docs/operations/H-015/collection/C04-r1/completed.json": "16945097ad4ce664d9bdf1ef6a54cea7611bcbf40cd922b625f5229af4acda99",
+        "docs/operations/H-015/collection/C04-r1/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "C04-r2",
+      "case_id": "C04",
+      "repeat": 2,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "How many for course ID 1 in S1?",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "course",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown course name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve course_id=1 and semester_id=S1; request bounded metric clarification instead of unknown-name error.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/C04-r2/graph-state.json": "3fb1e69e99746cf4287526c9c5177d1bce3b6b939034efe419bac7209dbfb6a9",
+        "docs/operations/H-015/collection/C04-r2/completed.json": "d7f074856b694758a1a6922cd16babd747e90d8580c2d5b9aebf1d58da27b77c",
+        "docs/operations/H-015/collection/C04-r2/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "D01-r1",
+      "case_id": "D01",
+      "repeat": 1,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "Which course IDs have the highest mean grade in S1? Include all exact ties.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "IDs"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "course",
+      "captured_token": "IDs",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown course name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve semester_id=S1 only; course IDs denote projection; compute exact top course including all ties.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/D01-r1/graph-state.json": "34b17c64ca86ebfc5d64365f6fdc452e6773622a81d4350f54ffd796d170be84",
+        "docs/operations/H-015/collection/D01-r1/completed.json": "89612d5aab13055e5f3bb0b0f5f18962177b4d316495e95f7e9212e9c67b64ba",
+        "docs/operations/H-015/collection/D01-r1/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "D01-r2",
+      "case_id": "D01",
+      "repeat": 2,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "Which course IDs have the highest mean grade in S1? Include all exact ties.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "IDs"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "course",
+      "captured_token": "IDs",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown course name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve semester_id=S1 only; course IDs denote projection; compute exact top course including all ties.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/D01-r2/graph-state.json": "36ac7f4790a5b7d7143df17919700034fc5e830cd363f6b05b9fe9ea553e6597",
+        "docs/operations/H-015/collection/D01-r2/completed.json": "582f737e786fa3feafb6fdfdae080cdf0bd0421f930c5b9102892ec75ddea80f",
+        "docs/operations/H-015/collection/D01-r2/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "D02-r1",
+      "case_id": "D02",
+      "repeat": 1,
+      "domain": "university",
+      "fixture": "tie",
+      "natural_input": "Which course IDs have the highest mean grade in S1? Include all exact ties.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "IDs"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "course",
+      "captured_token": "IDs",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown course name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve semester_id=S1 only; course IDs denote projection; compute all exact ties on changed fixture.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/D02-r1/graph-state.json": "52f63dd6c12c33a98265ad7690ec7d0cfb8dfe9d87350455905c5eb73b4b0b9f",
+        "docs/operations/H-015/collection/D02-r1/completed.json": "3d48d58047151e5a8dba743ceaf52a9158fa07f6a68d1ae73a657fcbf50ef903",
+        "docs/operations/H-015/collection/D02-r1/fixture.sqlite3": "0fb3d354725a781c46e22645c8f4aa56ce01fc4a5b0f48658a4f3180ecfd6681"
+      }
+    },
+    {
+      "run_id": "D02-r2",
+      "case_id": "D02",
+      "repeat": 2,
+      "domain": "university",
+      "fixture": "tie",
+      "natural_input": "Which course IDs have the highest mean grade in S1? Include all exact ties.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "IDs"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "course",
+      "captured_token": "IDs",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown course name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve semester_id=S1 only; course IDs denote projection; compute all exact ties on changed fixture.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/D02-r2/graph-state.json": "8cd233ce7a963bdc48ce4361355750e205516ab10047a91e56505661f845aa16",
+        "docs/operations/H-015/collection/D02-r2/completed.json": "213ef0653f6423f94b1fbbaa365540706a08b7bbb0285dcd439c844e53ac5b14",
+        "docs/operations/H-015/collection/D02-r2/fixture.sqlite3": "0fb3d354725a781c46e22645c8f4aa56ce01fc4a5b0f48658a4f3180ecfd6681"
+      }
+    },
+    {
+      "run_id": "D03-r1",
+      "case_id": "D03",
+      "repeat": 1,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "For students enrolled in the course with the highest mean in S1, show each student ID and mean across all S1 courses, including all tied courses.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1",
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "student",
+      "captured_token": "ID",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown student name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve semester_id=S1 only; student ID denotes projection; bind actual top-course results and actual student union into downstream grouped means.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/D03-r1/graph-state.json": "0d4c43de044cad9b1cdc744acf392d32d0b941b07cdf70a19181da66f22c24c9",
+        "docs/operations/H-015/collection/D03-r1/completed.json": "dfcae8c4883abdc39f13005e847f96bc16fd6b8a40de7b6da3d7430896ccbb8c",
+        "docs/operations/H-015/collection/D03-r1/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "D03-r2",
+      "case_id": "D03",
+      "repeat": 2,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "For students enrolled in the course with the highest mean in S1, show each student ID and mean across all S1 courses, including all tied courses.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1",
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "student",
+      "captured_token": "ID",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown student name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve semester_id=S1 only; student ID denotes projection; bind actual top-course results and actual student union into downstream grouped means.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/D03-r2/graph-state.json": "1000fe0f38cff21ab739b90260ccb77acf9c82ef35f1d21b211e551497460eb5",
+        "docs/operations/H-015/collection/D03-r2/completed.json": "e7df02a2c35c5c5b7542eeec3187d582f21ade840a9f1fde4c5a3e93b453fd67",
+        "docs/operations/H-015/collection/D03-r2/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "D04-r1",
+      "case_id": "D04",
+      "repeat": 1,
+      "domain": "university",
+      "fixture": "f2",
+      "natural_input": "For students enrolled in the course with the highest mean in S1, show each student ID and mean across all S1 courses, including all tied courses.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1",
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "student",
+      "captured_token": "ID",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown student name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve semester_id=S1 only; student ID denotes projection; preserve all tied-course and actual upstream student-union dependency bindings.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/D04-r1/graph-state.json": "7f50fbc84a856f0f5e68148e1a21f2abd81d05ddaed3d76032ab02db7980cca0",
+        "docs/operations/H-015/collection/D04-r1/completed.json": "b9464a4ae5e43666a2659ecf789f196e3863beb4ed9091bf6102405a667294b2",
+        "docs/operations/H-015/collection/D04-r1/fixture.sqlite3": "08e579f94975ec8465c3cf20159354080434bc75484d72702d8ddfaf73424739"
+      }
+    },
+    {
+      "run_id": "D04-r2",
+      "case_id": "D04",
+      "repeat": 2,
+      "domain": "university",
+      "fixture": "f2",
+      "natural_input": "For students enrolled in the course with the highest mean in S1, show each student ID and mean across all S1 courses, including all tied courses.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1",
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "student",
+      "captured_token": "ID",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown student name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve semester_id=S1 only; student ID denotes projection; preserve all tied-course and actual upstream student-union dependency bindings.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/D04-r2/graph-state.json": "d06ad3c9389efd33b9b55828af81896b654db4be1fc5ef5b6305a72c1d1973e7",
+        "docs/operations/H-015/collection/D04-r2/completed.json": "1028c1407517ac0461e181bf3f77811bf6c96b5c5238422a3aae170ec9b706de",
+        "docs/operations/H-015/collection/D04-r2/fixture.sqlite3": "08e579f94975ec8465c3cf20159354080434bc75484d72702d8ddfaf73424739"
+      }
+    },
+    {
+      "run_id": "E01-r1",
+      "case_id": "E01",
+      "repeat": 1,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "Mean grade for course ID 2 in S2?",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S2"
+          ],
+          "catalog_name_matches": [
+            "S2"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "course",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown course name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve course_id=2 and semester_id=S2; reach SQL and return expected no_rows, not entity error.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/E01-r1/graph-state.json": "e0c244878f454ff6a76cdd3714ce1da75bf2783c1e4b9ed536a39f57ae7cf3ef",
+        "docs/operations/H-015/collection/E01-r1/completed.json": "952da0a07979dfb9e8475964bbd0a87fa7af3cb5b1fba82372bc416bd970cbcf",
+        "docs/operations/H-015/collection/E01-r1/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "E01-r2",
+      "case_id": "E01",
+      "repeat": 2,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "Mean grade for course ID 2 in S2?",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S2"
+          ],
+          "catalog_name_matches": [
+            "S2"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "course",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown course name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve course_id=2 and semester_id=S2; reach SQL and return expected no_rows, not entity error.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/E01-r2/graph-state.json": "25890481a32b134796a57a431aae15f6649e882ea7d64e983dc85446a61b3b64",
+        "docs/operations/H-015/collection/E01-r2/completed.json": "5f0d4cc11cf8d6d6592fd3d95437da80f10a6b85f5932ad7ec770d18ce9f546e",
+        "docs/operations/H-015/collection/E01-r2/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "E02-r1",
+      "case_id": "E02",
+      "repeat": 1,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "Mean grade for teacher ID 10 in S2?",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S2"
+          ],
+          "catalog_name_matches": [
+            "S2"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "teacher",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown teacher name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve teacher_id=10 and semester_id=S2; reach SQL and preserve no_grades distinction.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/E02-r1/graph-state.json": "3458a34669ec795b59bbd725b4b001ea923c6ae70cacf1be75b8b1c24c722567",
+        "docs/operations/H-015/collection/E02-r1/completed.json": "ac10fa68d4e5611adb8cf63cfbe571ffb76265c5ec5850e4cedd9ccc0decae92",
+        "docs/operations/H-015/collection/E02-r1/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "E02-r2",
+      "case_id": "E02",
+      "repeat": 2,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "Mean grade for teacher ID 10 in S2?",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S2"
+          ],
+          "catalog_name_matches": [
+            "S2"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "teacher",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown teacher name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve teacher_id=10 and semester_id=S2; reach SQL and preserve no_grades distinction.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/E02-r2/graph-state.json": "b81d2362cd6e46448de77b92e2ed723d7ee53e380163b0102763632858ab76b3",
+        "docs/operations/H-015/collection/E02-r2/completed.json": "0118fc2e13e96eb1342cbc5c1a033801939b10c05b7cead4168b9bd5e3a5fa08",
+        "docs/operations/H-015/collection/E02-r2/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "E03-r1",
+      "case_id": "E03",
+      "repeat": 1,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "List student IDs, offering IDs and grades for course ID 2 in S2.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "IDs"
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S2"
+          ],
+          "catalog_name_matches": [
+            "S2"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "student",
+      "captured_token": "IDs",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown student name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve course_id=2 and semester_id=S2; student IDs are projection; return typed empty listing.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/E03-r1/graph-state.json": "1f82ce06149ebe853d00515f3809c8373cb6e24a8f8077651232b9c3bbecf63e",
+        "docs/operations/H-015/collection/E03-r1/completed.json": "62ac0e8da552c059fb2968142b4817b04d5f31dfabac9786e8d5fa38d8eaa824",
+        "docs/operations/H-015/collection/E03-r1/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "E03-r2",
+      "case_id": "E03",
+      "repeat": 2,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "List student IDs, offering IDs and grades for course ID 2 in S2.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "IDs"
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S2"
+          ],
+          "catalog_name_matches": [
+            "S2"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "student",
+      "captured_token": "IDs",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown student name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve course_id=2 and semester_id=S2; student IDs are projection; return typed empty listing.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/E03-r2/graph-state.json": "794c7b00d763705624994b2fcd6df5459f2385e59263f176b8a11a8e244c8f45",
+        "docs/operations/H-015/collection/E03-r2/completed.json": "bd8d0305e025a028d5f9d32ef8c0c500c4f2feacba52d536486caea83357e51f",
+        "docs/operations/H-015/collection/E03-r2/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "E04-r1",
+      "case_id": "E04",
+      "repeat": 1,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "For course ID 2 in S2, count enrollments, graded enrollments and distinct students.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S2"
+          ],
+          "catalog_name_matches": [
+            "S2"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "course",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown course name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve course_id=2 and semester_id=S2; reach SQL and return zero counts for empty set.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/E04-r1/graph-state.json": "f98caeec10361545d9424de4bba5f76205ebf1be3b0380561f15b134ae282bc2",
+        "docs/operations/H-015/collection/E04-r1/completed.json": "9e8e613ebc1e28a1ab605d71f5b0ba350ec2628df25498fe6a459113e4ffa457",
+        "docs/operations/H-015/collection/E04-r1/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "E04-r2",
+      "case_id": "E04",
+      "repeat": 2,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "For course ID 2 in S2, count enrollments, graded enrollments and distinct students.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S2"
+          ],
+          "catalog_name_matches": [
+            "S2"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "course",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown course name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve course_id=2 and semester_id=S2; reach SQL and return zero counts for empty set.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/E04-r2/graph-state.json": "716c37cf330eee9d62881cf82dde1894d85a558156e461362b0c204a28809eeb",
+        "docs/operations/H-015/collection/E04-r2/completed.json": "094da7731117a6ec540e2eaf89d9a2b106f3cec674a72979cc6bb18f3f2098f1",
+        "docs/operations/H-015/collection/E04-r2/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "J01-r1",
+      "case_id": "J01",
+      "repeat": 1,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "Mean grade for student ID 2, course ID 1, teacher ID 10, semester S1?",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": "S1"
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "student",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown student name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve student_id=2, course_id=1, teacher_id=10 and semester_id=S1; retain every combined filter.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/J01-r1/graph-state.json": "65defcef2c9e792b4c5eb70248d1ec16a3a505bbb55d166b1d971cd60f14c8d2",
+        "docs/operations/H-015/collection/J01-r1/completed.json": "e95d9ba6827709a8f260199bc67050f3bc22c0b33d64798a6b77c2040516c913",
+        "docs/operations/H-015/collection/J01-r1/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "J01-r2",
+      "case_id": "J01",
+      "repeat": 2,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "Mean grade for student ID 2, course ID 1, teacher ID 10, semester S1?",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": "S1"
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "student",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown student name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve student_id=2, course_id=1, teacher_id=10 and semester_id=S1; retain every combined filter.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/J01-r2/graph-state.json": "9a229b2a395b8361efb439fd45fc2d2137d0e817750d4b0ffd69fa9817e12f28",
+        "docs/operations/H-015/collection/J01-r2/completed.json": "64d2488e2b092ef5e19f4ade952d22c1c7243f1dbf690e6999359fae04f15f5f",
+        "docs/operations/H-015/collection/J01-r2/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "J02-r1",
+      "case_id": "J02",
+      "repeat": 1,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "Mean grade for student ID 1 in course ID 1 across all offerings and all semesters?",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "student",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown student name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve student_id=1 and course_id=1; absent semester means all semesters and all offerings.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/J02-r1/graph-state.json": "d8151b461672e7127534a9018e8819932ffc8568b3e6cd2858019f3cb7f2e22a",
+        "docs/operations/H-015/collection/J02-r1/completed.json": "c172bd36c04909aafe53451c8676fb1e1e1e2b01788d0bb60b7e39170d5216b1",
+        "docs/operations/H-015/collection/J02-r1/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "J02-r2",
+      "case_id": "J02",
+      "repeat": 2,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "Mean grade for student ID 1 in course ID 1 across all offerings and all semesters?",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "student",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown student name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve student_id=1 and course_id=1; absent semester means all semesters and all offerings.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/J02-r2/graph-state.json": "b24d970069010c80c4db91e3db1d2a5d721c0ab5c18098e52856735f2855f6c1",
+        "docs/operations/H-015/collection/J02-r2/completed.json": "b2f5b315d04cb6099fe5f7151fe5273843b76ef6d070ce12a825e0bfb7039963",
+        "docs/operations/H-015/collection/J02-r2/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "J03-r1",
+      "case_id": "J03",
+      "repeat": 1,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "For course ID 1 in S1, count enrollments, graded enrollments and distinct students.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "course",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown course name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve course_id=1 and semester_id=S1; preserve enrollment/graded/distinct count contracts.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/J03-r1/graph-state.json": "86ead52a64b99720aad9ddc4bc0bbce0a0e7a84bac965888b6c5120451f16566",
+        "docs/operations/H-015/collection/J03-r1/completed.json": "45420b7b66b7143e9d8118ec903eda72a46b8a633910f0ed01ad9b85998ff09a",
+        "docs/operations/H-015/collection/J03-r1/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "J03-r2",
+      "case_id": "J03",
+      "repeat": 2,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "For course ID 1 in S1, count enrollments, graded enrollments and distinct students.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "course",
+      "captured_token": "ID",
+      "root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown course name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve course_id=1 and semester_id=S1; preserve enrollment/graded/distinct count contracts.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/J03-r2/graph-state.json": "4627b91e96dbde72b6f090bc36cfed0c8f362ae394f6f086777d0397cb7b6d08",
+        "docs/operations/H-015/collection/J03-r2/completed.json": "5d0fb5365d089c09d3813a1e6f2f424fb1618db41391a092a0814bb60d60901f",
+        "docs/operations/H-015/collection/J03-r2/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "J04-r1",
+      "case_id": "J04",
+      "repeat": 1,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "List student IDs, offering IDs and grades for course ID 1 in S1, including ungraded enrollments.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "IDs"
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "student",
+      "captured_token": "IDs",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown student name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve course_id=1 and semester_id=S1; student IDs are projection; preserve rows, JOIN fields and nullable grades.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/J04-r1/graph-state.json": "0b263ed0da55606ec996d715180f5bdc58629b048fa77bc88ddd74ef4aecc3fa",
+        "docs/operations/H-015/collection/J04-r1/completed.json": "dc79a955daebe5f5fc65b28cd9954a00b3d64f4b892b37cb66f46a64a0ade4d9",
+        "docs/operations/H-015/collection/J04-r1/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "J04-r2",
+      "case_id": "J04",
+      "repeat": 2,
+      "domain": "university",
+      "fixture": "u",
+      "natural_input": "List student IDs, offering IDs and grades for course ID 1 in S1, including ungraded enrollments.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "student_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "IDs"
+        },
+        "course_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        },
+        "teacher_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": null
+        },
+        "semester_id": {
+          "legacy_explicit_id_tokens": [
+            "S1"
+          ],
+          "catalog_name_matches": [
+            "S1"
+          ],
+          "natural_unknown_capture": null
+        }
+      },
+      "catalog_read_only": {
+        "student_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bea"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Alex"
+            ]
+          },
+          {
+            "id": 4,
+            "labels": [
+              "Dana"
+            ]
+          }
+        ],
+        "course_id": [
+          {
+            "id": 1,
+            "labels": [
+              "DB",
+              "C1"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "AI",
+              "C2"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Ethics",
+              "C3"
+            ]
+          }
+        ],
+        "teacher_id": [
+          {
+            "id": 10,
+            "labels": [
+              "Kim"
+            ]
+          },
+          {
+            "id": 11,
+            "labels": [
+              "Lee"
+            ]
+          }
+        ],
+        "semester_id": [
+          {
+            "id": "S1",
+            "labels": [
+              "S1"
+            ]
+          },
+          {
+            "id": "S2",
+            "labels": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "student",
+      "captured_token": "IDs",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown student name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "Resolve course_id=1 and semester_id=S1; student IDs are projection; preserve rows, JOIN fields and nullable grades.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/J04-r2/graph-state.json": "3d779f28aab7625bbc608214c98b05930193fadc7e5ff6e5d7f4620f1ecb37d5",
+        "docs/operations/H-015/collection/J04-r2/completed.json": "aaa18aaa7d9eefb29ddfb3bc4df89ba065b9d4786375254d57b6fe7098165d93",
+        "docs/operations/H-015/collection/J04-r2/fixture.sqlite3": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+      }
+    },
+    {
+      "run_id": "L01-r1",
+      "case_id": "L01",
+      "repeat": 1,
+      "domain": "library",
+      "fixture": "l",
+      "natural_input": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "reader_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        }
+      },
+      "catalog_read_only": {
+        "reader_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Ada"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bob"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "reader",
+      "captured_token": "ID",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown reader name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "No reader filter; reader ID is projection; shared core computes unreturned counts for every reader including zero.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/L01-r1/graph-state.json": "e19c7870f8e5a9e50f5212978a80d1fc5e7ae891c138ed39973f87a2344d76c6",
+        "docs/operations/H-015/collection/L01-r1/completed.json": "95a63fa4031b84b39ca3c2758980794d68d5dca6e1a43336607a8bcbbb3c545e",
+        "docs/operations/H-015/collection/L01-r1/fixture.sqlite3": "a8dcc9b77ccea2f6f1726a4ef649ee0c576e88f1643b1f981be9eb38cf38d217"
+      }
+    },
+    {
+      "run_id": "L01-r2",
+      "case_id": "L01",
+      "repeat": 2,
+      "domain": "library",
+      "fixture": "l",
+      "natural_input": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "reader_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        }
+      },
+      "catalog_read_only": {
+        "reader_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Ada"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bob"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "reader",
+      "captured_token": "ID",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown reader name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "No reader filter; reader ID is projection; shared core computes unreturned counts for every reader including zero.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/L01-r2/graph-state.json": "6a1bcd8a9fb6f357510a2facf6f8ec4d0ec1b47240d117ae96829611b87ea2b6",
+        "docs/operations/H-015/collection/L01-r2/completed.json": "065bd593c7bad53e8da628f260c0f89a42c395bdfdffb9e73f7d31c8f7ac4081",
+        "docs/operations/H-015/collection/L01-r2/fixture.sqlite3": "a8dcc9b77ccea2f6f1726a4ef649ee0c576e88f1643b1f981be9eb38cf38d217"
+      }
+    },
+    {
+      "run_id": "L02-r1",
+      "case_id": "L02",
+      "repeat": 1,
+      "domain": "library",
+      "fixture": "no_loans",
+      "natural_input": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "reader_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        }
+      },
+      "catalog_read_only": {
+        "reader_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Ada"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bob"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Cy"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "reader",
+      "captured_token": "ID",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown reader name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "No reader filter; reader ID is projection; shared core includes added no-loan reader with zero.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/L02-r1/graph-state.json": "f6335999817918be3cc10ae1a5032e5f0d2b915e98f9e9a81c92ab17e31ad59d",
+        "docs/operations/H-015/collection/L02-r1/completed.json": "4d89c9389bf58ce77265572dac5c10b908c6b52be0b35da233bae0c75041e1c5",
+        "docs/operations/H-015/collection/L02-r1/fixture.sqlite3": "6b9191abffe97bab3377a95122b4fc5a2188e05508a5b9ede2d08add46adf62e"
+      }
+    },
+    {
+      "run_id": "L02-r2",
+      "case_id": "L02",
+      "repeat": 2,
+      "domain": "library",
+      "fixture": "no_loans",
+      "natural_input": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "reader_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        }
+      },
+      "catalog_read_only": {
+        "reader_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Ada"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bob"
+            ]
+          },
+          {
+            "id": 3,
+            "labels": [
+              "Cy"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "reader",
+      "captured_token": "ID",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown reader name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "No reader filter; reader ID is projection; shared core includes added no-loan reader with zero.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/L02-r2/graph-state.json": "ab0a8cd7ca7d8ad648da6a34475af5a0af4d9f7482c43e4a4c06bcf1e3e1e7f1",
+        "docs/operations/H-015/collection/L02-r2/completed.json": "3d5053e4c0675addf4a0b397ee0eff7a95c293d1d51f3c15740fe34c8bf69af7",
+        "docs/operations/H-015/collection/L02-r2/fixture.sqlite3": "6b9191abffe97bab3377a95122b4fc5a2188e05508a5b9ede2d08add46adf62e"
+      }
+    },
+    {
+      "run_id": "L03-r1",
+      "case_id": "L03",
+      "repeat": 1,
+      "domain": "library",
+      "fixture": "returned",
+      "natural_input": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "reader_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        }
+      },
+      "catalog_read_only": {
+        "reader_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Ada"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bob"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "reader",
+      "captured_token": "ID",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown reader name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "No reader filter; reader ID is projection; returned-loan mutation changes only appropriate open counts.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/L03-r1/graph-state.json": "052245918bd94f78485de9c39003f5814e52eb704be16636e5760483220b726a",
+        "docs/operations/H-015/collection/L03-r1/completed.json": "92c084c64ff6a30cfe9563cee53c39bb4d61ffc6e27102165421b135b07ccf24",
+        "docs/operations/H-015/collection/L03-r1/fixture.sqlite3": "7fec034401da41bac1e877d82ee01243cf2d9b5a0f456d96f3ecde5a63f336b4"
+      }
+    },
+    {
+      "run_id": "L03-r2",
+      "case_id": "L03",
+      "repeat": 2,
+      "domain": "library",
+      "fixture": "returned",
+      "natural_input": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "reader_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        }
+      },
+      "catalog_read_only": {
+        "reader_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Ada"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bob"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "reader",
+      "captured_token": "ID",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown reader name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "No reader filter; reader ID is projection; returned-loan mutation changes only appropriate open counts.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/L03-r2/graph-state.json": "f0a5586a48ec3e95afdc77513d8594e9d388190c0fe6d36ec62db47d59855faf",
+        "docs/operations/H-015/collection/L03-r2/completed.json": "28d4e57e77cbd50ed5416664df3bf83bc38977d49c61e89500e71b487aff2026",
+        "docs/operations/H-015/collection/L03-r2/fixture.sqlite3": "7fec034401da41bac1e877d82ee01243cf2d9b5a0f456d96f3ecde5a63f336b4"
+      }
+    },
+    {
+      "run_id": "L04-r1",
+      "case_id": "L04",
+      "repeat": 1,
+      "domain": "library",
+      "fixture": "all_returned",
+      "natural_input": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "reader_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        }
+      },
+      "catalog_read_only": {
+        "reader_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Ada"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bob"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "reader",
+      "captured_token": "ID",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown reader name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "No reader filter; reader ID is projection; additional open-loan mutation changes actual counts.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/L04-r1/graph-state.json": "c595fadd5cb205c8bc375ff8144e87405c146dee76aa2e379b3a1164e0574962",
+        "docs/operations/H-015/collection/L04-r1/completed.json": "bca9f2e021033f0fc79e425a91f61ce8f6d1fc1d6a17e0f9f821a26c6ab37216",
+        "docs/operations/H-015/collection/L04-r1/fixture.sqlite3": "cce834c4f448ef201bbb1dce138a44cfc077bc0cde092d0ea0f66c2ebd75498e"
+      }
+    },
+    {
+      "run_id": "L04-r2",
+      "case_id": "L04",
+      "repeat": 2,
+      "domain": "library",
+      "fixture": "all_returned",
+      "natural_input": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+      "persisted_scope": null,
+      "scope_was_committed": false,
+      "lexical_diagnostics_from_frozen_patterns": {
+        "reader_id": {
+          "legacy_explicit_id_tokens": [],
+          "catalog_name_matches": [],
+          "natural_unknown_capture": "ID"
+        }
+      },
+      "catalog_read_only": {
+        "reader_id": [
+          {
+            "id": 1,
+            "labels": [
+              "Ada"
+            ]
+          },
+          {
+            "id": 2,
+            "labels": [
+              "Bob"
+            ]
+          }
+        ]
+      },
+      "failing_entity": "reader",
+      "captured_token": "ID",
+      "root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "failure": {
+        "code": "INVALID_INPUT",
+        "failed_node": "resolve_scope",
+        "message": "Unknown reader name.",
+        "retryable": false
+      },
+      "exact_failure_site": {
+        "frozen_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+        "path": "src/universitydb/domain_support.py",
+        "extraction_lines": [
+          36,
+          41
+        ],
+        "unknown_name_lines": [
+          91,
+          99
+        ],
+        "raise_line": 99
+      },
+      "expected_contract_behavior": "No reader filter; reader ID is projection; additional open-loan mutation changes actual counts.",
+      "provider_calls": 0,
+      "sql_attempts": 0,
+      "source_artifacts": {
+        "docs/operations/H-015/collection/L04-r2/graph-state.json": "425893d4453c024c1c397873a40a2e2022eb0a5b7f04e9043fd9931864d5fd80",
+        "docs/operations/H-015/collection/L04-r2/completed.json": "6a16d30497b29bf21c0717441f83afa9568b30a011d901cd49d73eb9df8b47c9",
+        "docs/operations/H-015/collection/L04-r2/fixture.sqlite3": "cce834c4f448ef201bbb1dce138a44cfc077bc0cde092d0ea0f66c2ebd75498e"
+      }
+    }
+  ]
+}
