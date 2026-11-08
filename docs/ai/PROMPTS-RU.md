@@ -518,3 +518,14 @@ Live/API generation, count calls, загрузка credentials, изменени
 
 Сохрани именно этот фактически полученный prompt, H-пакет как read context. Верни docs/reports/H-014-readiness-offline.md, exact tested SHA, clean-run/browser/trace evidence, проверки и not-run, реальные independent verdicts, локальные checkpoint SHAs, preservation hashes и свежий remote status; push not-run. Public docs English, prompts в существующих RU/EN bundles, original evidence неизменны.
 ```
+
+
+## Фактический запрос публикации H-014 (HTML-пробелы нормализованы)
+
+Сначала сохрани всё в Wiki и оба репозитория (локальный и удалённый). Порядок действий тот же:
+
+1. Зафиксируй результат в LLM-Wiki.
+2. Обнови в README.md текущее состояние сервиса, способ его запуска, и как его проверить через e2e-тесты.
+3. Помести в репозиторий всё, что требуется по условиям тестового задания (в том числе список промптов, seed базы данных и прочее).
+
+Промпты - помести в два уже имеющихся в репозитории файла: на русском языке и на английском. README.md и всё остальное переведи на английский и отправь на GitHub именно в таком виде.

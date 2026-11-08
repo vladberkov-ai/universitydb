@@ -1,3 +1,12 @@
+## Published H-014 readiness checkpoint — 2026-11-08
+
+Current tested product98345ad:485offline tests,157oracle, clean tracked-only
+University/Library reproduction, real offline browser7captures, APPROVE/CLEAR and
+native COMPLETE/strict PASS5/5. Named-scope and UI-magic regressions are repaired.
+H-013410-test/earlier candidate statements below are historical. This checkpoint
+is authorized for publication; real-model quality and owner defense remain pending.
+Live protocol/budget are proposed, not accepted or executed.
+
 # Assignment deliverables and verification status
 
 Updated2026-11-08 for the published I2+I3 offline checkpoint. The four-page assignment

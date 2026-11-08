@@ -1,0 +1,81 @@
+{
+  "date": "2026-11-08",
+  "authority": "Owner explicitly requests H-014 publication after closeout discussion",
+  "baseline_local": "c051a8a16abd92f6e0859d5551c35c3106528b50",
+  "baseline_remote": "6cc7ad3af426d0da6818281b035c5e683806f357",
+  "tested_product": "98345ad6ce5757c71d44ba1ce59a683d46e0d910",
+  "changes": {
+    "README.md": {
+      "before": "b94fdf0c517d30f804d20c45cfccb87f1caf1d449680bea3eb22d2673caff237",
+      "after": "10074b599a80cdef1a9b65bdc18721e11f7c16fae8e0dff0b6054c46c43b49ba"
+    },
+    "docs/manual-e2e.md": {
+      "before": "3eecae2134f8cd9d97ca234afd9940610278532d8e347b0d4656b0182bd212da",
+      "after": "5a1de8f6a25146f1ee53d7d9cfbfae3cbd2891288a66998ea33a7ce6c96bc4bf"
+    },
+    "docs/assignment-status.md": {
+      "before": "ba4f7bc97a11186d6fb3f0c58ecc413cca5131a023e4a481b26a1417da198961",
+      "after": "150bb0141da3ea1d7a8b5a658e2c353b0a982205a6c345150e8178ffdc932a6d"
+    },
+    "examples/README.md": {
+      "before": "9c4e96c767ac5a9014e5f0c1b058b13c7744225cd1631a490060ec9db44d89de",
+      "after": "da4cbcdf35d29e471c674e16ebe1518fb5b96211a1b4cd5eb0d1834a127b1445"
+    },
+    "AGENTS.md": {
+      "before": "9715843b556ed131291aa257d8529888b3196ff66a40d0de879d013272cb4c77",
+      "after": "fb3ac653e2c8c1dc888b575dd8f371a7f74f38e70365d5715918914cb3360f83"
+    },
+    "docs/ai/PROMPTS-RU.md": {
+      "before": "4952bd02f8097cbb1ea8020d66f1543deee2fd50b2b91eb23faa26b812642604",
+      "after": "23bb8cc38dd8fcb0adc4eba5a633d71f406bd8824b9eea11e4489156e7c85a3c"
+    },
+    "docs/ai/PROMPTS-EN.md": {
+      "before": "8afe04fb2f81a8019063c8b1bae50f1b823d0a26726751c3a6f0da088cb34dd4",
+      "after": "ed624d26df0637053269d398e054648e3f368e7f0ac74e4590917afa38f9e827"
+    },
+    "docs/ai/README.md": {
+      "before": "e6f701c7e3ae93bd537f57903cdded6d9a76f4282132f9ecdc46ec58bbc1d972",
+      "after": "d7aa49783f4f93d449fdcadc8b9714f648be33e5e520f58f851696725c54c693"
+    }
+  },
+  "required_files": [
+    "resources/schema.sql",
+    "resources/seed.sql",
+    "resources/library/schema.sql",
+    "resources/library/seed.sql",
+    "docs/ai/PROMPTS-RU.md",
+    "docs/ai/PROMPTS-EN.md",
+    "docs/adr/ADR-OMX-013-readiness-scope-boundary.md",
+    "docs/plans/production-considerations.md",
+    "docs/reports/H-014-readiness-offline.md",
+    "docs/plans/H-014-live-eval-protocol.md",
+    "docs/plans/H-014-live-eval-budget.md",
+    "tools/eval/harness.py",
+    "uv.lock"
+  ],
+  "source_hashes_unchanged": 45,
+  "preservation_hashes_match": 10,
+  "history_scan": {
+    "outgoing_blobs": 360,
+    "secret_pattern_hits": 0,
+    "nonsecret_vault_prefix_blobs": [
+      {
+        "blob": "00f933260cf96c3a1fe99085ed2bd3479c11a90c",
+        "path": "docs/operations/H-014/reviews/cp-r1-code-audit.md"
+      }
+    ],
+    "decision": "Preserve original commit history under owner publication request following explicit disclosure. Prefix is a local directory name, not its private contents or credentials; current projection already redacted. No history-wide absence claim."
+  },
+  "language": "Current prose English; RU/EN prompt bundles; original source evidence retained.",
+  "links": "PASS",
+  "live_calls": 0,
+  "push": "pending at creation",
+  "publication_checks": {
+    "targeted_tests": 75,
+    "seconds": 11.48,
+    "exit": 0,
+    "command": "pytest -q tests/test_readiness_scope.py tests/test_readiness_ui_magic.py tests/test_eval_harness.py",
+    "diff_check": "PASS",
+    "full485": "previous exact98345ad run; not repeated for docs-only changes"
+  }
+}

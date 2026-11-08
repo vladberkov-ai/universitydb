@@ -516,3 +516,14 @@ The goal ends with the full H-014v2 offline DoD and a reviewable live package; m
 
 Preserve this actual received prompt and identify the H-package as read context. Return docs/reports/H-014-readiness-offline.md, exact tested SHA, clean-run/browser/trace evidence, checks and not-run checks, actual independent verdicts, local checkpoint SHAs, preservation hashes and fresh remote status; push not-run. Public docs English, prompts in existing RU/EN bundles, original evidence unchanged.
 ```
+
+
+## H-014 publication request (reader translation, not actual English input)
+
+First save everything in the Wiki and both repositories (local and remote). Follow the same order:
+
+1. Record the result in LLM-Wiki.
+2. Update README.md with the current service status, how to launch it and how to verify it through E2E tests.
+3. Include all assignment deliverables in the repository, including the prompt list, database seed and other required material.
+
+Put the prompts in the two existing repository files, in Russian and English. Translate README.md and other documentation into English and push that version to GitHub.

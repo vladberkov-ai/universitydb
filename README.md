@@ -7,37 +7,29 @@ schemas, seed data, tests, decisions, prompt collections and execution evidence.
 
 ## Current status
 
-**H-014 offline readiness checkpoint:** [current report](docs/reports/H-014-readiness-offline.md)
-tracks the independent audit, scoped named-target repair, clean reproduction and
-[proposed live protocol](docs/plans/H-014-live-eval-protocol.md)/[budget](docs/plans/H-014-live-eval-budget.md).
-The331eb5a clean run passed457tests/static but fresh group-by E2E found a
-blocking regression. Candidatec631 passed482tests/static/157oracle but independent
-visual review found UI magic/help output. UI-repaired source98345ad is frozen;
-its fresh final clean/browser gates now passed485tests80.36s/157oracle and six
-browser classes/seven captures with focused typed rows/no help/None. Independent
-final APPROVE/CLEAR received; actual native COMPLETE/strict PASS5/5 now verified. Old captures are not final proof.
-New live calls and push are forbidden; historical results below remain unchanged.
+**Implementation and offline readiness are complete.** University supports means,
+three count objects, JOIN listings, grouping, exact top-course ties, optional
+student/course/teacher/semester filters, clarification and dependent multi-step
+questions. Library uses the same graph, DB safety, provider, trace and UI core.
 
+The current tested product is **`98345ad6ce5757c71d44ba1ce59a683d46e0d910`**:
+**485 tests, 157 independent oracle checks**, static checks, tracked-only clean
+reproduction, AppTest and six real offline-browser scenario classes/seven captures
+passed. Independent reviews returned APPROVE/CLEAR; H-014 closed native COMPLETE,
+strict PASS5/5. Scope-loss and Streamlit magic-output regressions were fixed and
+retested; rejected candidates remain documented, not presented as final passes.
+[Final report](docs/reports/H-014-readiness-offline.md) ·
+[clean-run summary](docs/operations/H-014/clean-run-final-attempt3/final-summary.json) ·
+[browser evidence](docs/operations/H-014/browser/final-983-attempt1/browser-receipt.json).
 
-**I2+I3 implementation is complete and verified offline.** University supports
-means, enrollment/graded/distinct-student counts, JOIN listings, grouping, exact
-top-course ties, optional student/course/teacher/semester filters, ambiguous-name
-clarification, and dependent multi-step questions. Library uses the same core to
-answer open-loan counts. The UI shows every step's SQL, bindings, raw/adapted rows,
-errors, repair attempts and full JSONL trace.
-
-Product commit `f4b775ce2680f6282ebd2f9c449d1f27a2c85ee0` passed **410 tests,
-157 independent oracle checks**, static checks, AppTest and six actual offline-browser
-scenario classes. Independent reviews returned APPROVE/CLEAR; the development goal
-closed COMPLETE with strict PASS (13/13). Later documentation commits do not change
-that tested product identity. [Report and evidence](docs/reports/H-013-I2-I3-offline.md).
-
-**Offline verification is not real-model NL→SQL accuracy.** The earlier I1 slice has
-real Sol evidence for 80.00 and 90.00; the expanded service still needs broad real-model
-evaluation. H014 clean-environment offline verification now passes at exact
-98345ad6ce5757c71d44ba1ce59a683d46e0d910; offline DoD achieved with APPROVE/CLEAR; actual native COMPLETE/strict PASS5/5 now verified. Publication makes these
-results available; it does not certify those remaining checks or production readiness.
-[Requirement-by-requirement status](docs/assignment-status.md).
+**Real-model accuracy for the expanded service is still unverified.** Offline
+providers are injected; they execute real LangGraph and SQLite but do not measure
+NL→SQL generation quality. Earlier I1 live results80.00/90.00 remain historical.
+The [live protocol](docs/plans/H-014-live-eval-protocol.md) and
+[budget](docs/plans/H-014-live-eval-budget.md) are proposals, not spending approval
+or executed evaluation. Publication of this checkpoint is authorized; new live
+calls, budget migration and subsequent pushes require separate authority.
+[Requirement status](docs/assignment-status.md).
 
 ## Deliverables
 
@@ -51,7 +43,7 @@ results available; it does not certify those remaining checks or production read
 | SQL, provider, tracing and UI | [DB](src/universitydb/db.py), [SQL policy](src/universitydb/sql_policy.py), [provider](src/universitydb/llm.py), [trace](src/universitydb/tracing.py), [UI](src/universitydb/ui.py) |
 | Prompts in two languages | [English](docs/ai/PROMPTS-EN.md), [Russian](docs/ai/PROMPTS-RU.md), [source coverage](docs/ai/README.md) |
 | Automated and manual E2E | [tests](tests), [E2E guide](docs/manual-e2e.md) |
-| Examples, outputs and traces | [examples](examples/README.md), [final M1 proofs](docs/operations/H-013/m1-final/manifest.json), [browser evidence](docs/operations/H-013/browser/cp-e-final-attempt2/browser-receipt.json) |
+| Examples, outputs and traces | [examples](examples/README.md), [final M1 proofs](docs/operations/H-014/clean-run-final-attempt3/m1/manifest.json), [browser evidence](docs/operations/H-014/browser/final-983-attempt1/browser-receipt.json) |
 | Architecture and rationale | [ADR index](docs/adr/README.md), [current contracts/decisions](docs/adr/ADR-OMX-012-I2-I3-offline-contracts.md) |
 | Production considerations | [reliability, security, scaling and deployment](docs/plans/production-considerations.md) |
 
@@ -100,20 +92,20 @@ spending ledger when cleaning up the owned temporary folder.
 ## Automated E2E and regression
 
 ```bash
-env -u OPENAI_API_KEY UNIVERSITYDB_LIVE_APPROVED=no LANGSMITH_TRACING=false LANGCHAIN_TRACING_V2=false uv run --locked pytest -q tests/test_i2_ui.py tests/test_i3_dependencies.py tests/test_library.py
+env -u OPENAI_API_KEY UNIVERSITYDB_LIVE_APPROVED=no LANGSMITH_TRACING=false LANGCHAIN_TRACING_V2=false uv run --locked pytest -q tests/test_i2_ui.py tests/test_i3_dependencies.py tests/test_library.py tests/test_readiness_scope.py tests/test_readiness_ui_magic.py tests/test_eval_harness.py
 uv run --locked ruff check src tests
 uv run --locked ruff format --check src tests
 uv run --locked mypy src/universitydb --ignore-missing-imports
 uv run --locked python -m compileall -q src tests
 ```
 
-Run the full `pytest -q` command from Install for all410 current tests. Graph tests
+Run the full `pytest -q` command from Install for all485 current tests. Graph tests
 use compiled LangGraph and real SQLite with injected proposals; UI tests use
-Streamlit AppTest. Actual browser evidence is separate and linked above. The
-historical Playwright capture harness has a machine-specific browser path; it is
-not required for these portable test commands. Manual browser reproduction uses
-the ordinary local UI and the sequence above. New browser automation portability
-and clean-install verification belong to the next readiness block.
+Streamlit AppTest. Actual browser evidence is separate and linked above. The H-014 browser driver dynamically discovers Chromium and records its toolchain.
+Browser automation needs a separately provisioned Playwright/Chromium environment;
+it is not required for pytest/AppTest. Manual browser reproduction uses the ordinary
+local UI sequence above. Clean reproduction already passed with disclosed dependency
+cache/browser reuse; it is not an all-fresh-download claim.
 
 ## Live mode: configuration reference, no new evaluation claim
 

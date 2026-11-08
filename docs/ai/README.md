@@ -1,3 +1,12 @@
+## H-014 publication coverage — 2026-11-08
+
+Both existing language bundles contain the complete safe H-014 root task, with
+Russian original/English reader-translation attribution, and the current publication
+request. Current runtime plan/SQL templates are unchanged and remain fully included
+with their original hashes. Child projections and missing private/opaque messages
+remain explicitly bounded; this is not a full-transcript claim. Current prose is
+English; original prompts/traces/screenshots retain source language and bytes.
+
 ## Current reader bundle update — 2026-11-08
 
 Full current runtime templates and H-011/H-013 root tasks are included in both existing language bundles below. English translations and Russian runtime translations are reader derivatives, not newly submitted model inputs. Original task/receipt bytes remain unchanged. H-013 child task projections stay linked with explicit coverage; missing private/opaque messages are not reconstructed. The H013 publication authority was exercised; H014 has no new push/live authority.

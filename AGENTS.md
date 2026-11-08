@@ -1,3 +1,12 @@
+# Current publication authority — 2026-11-08
+
+The owner's new request authorizes saving and publishing all completed H-014 results
+to the existing local/remote repository, with English documentation and the existing
+RU/EN prompt bundles. This supersedes the H-014 no-push rule only for this delivery.
+No new live/API/count/credentials/budget changes, goal execution or next stage.
+Preserve original evidence, completed state, ledger and locks. Historical conditions
+below retain their original scope; publication is not real-model acceptance.
+
 # Current delivery boundary — 2026-11-08
 
 The owner explicitly authorizes packaging and pushing the completed I2+I3 offline results to the existing GitHub origin before H-014 starts. Update English reviewer docs and both existing RU/EN prompt bundles; preserve original evidence, locks, completed goals and monetary ledger. No new live/API/count calls or spending changes. This delivery authority supersedes earlier no-push restrictions only for this publication. H-014 readiness is not started by this task. The history below retains its original scope.

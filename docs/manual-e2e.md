@@ -23,8 +23,8 @@ question, selection, answer/error and trace when reporting a failure.
 
 M1 mutation/tie proofs and replay/no-extra-calls tests are automated in
 [test_i3_dependencies.py](../tests/test_i3_dependencies.py). The fixed browser fixture
-checks visibility, not dynamic generation sensitivity. [Final dynamic proofs](operations/H-013/m1-final/manifest.json)
-cover F1/F2/tie and same-core Library. [Actual browser receipt](operations/H-013/browser/cp-e-final-attempt2/browser-receipt.json)
+checks visibility, not dynamic generation sensitivity. [Final dynamic proofs](operations/H-014/clean-run-final-attempt3/m1/manifest.json)
+cover F1/F2/tie and same-core Library. [Actual browser receipt](operations/H-014/browser/final-983-attempt1/browser-receipt.json)
 records six classes/seven captures on the frozen candidate. Those historical passes
 do not claim that a new reviewer has already reproduced them.
 
@@ -79,3 +79,18 @@ passed six classes/seven captures with focused raw/adapted rows and no help/None
 Exact tested product98345ad6ce5757c71d44ba1ce59a683d46e0d910, not a later docs SHA.
 Full values checked in DOM+trace, not all cells fit one screenshot. Processes stopped.
 Final independent APPROVE/CLEAR received; root actual native COMPLETE/strict PASS5/5; live/push/defense not-run.
+
+## Publication checkpoint — 2026-11-08
+
+The current full offline baseline is485tests/157oracle at98345ad. New publication
+permission does not authorize real-model calls. In addition to the sequence above,
+run the named-scope/UI-magic/eval-harness regressions:
+
+```bash
+env -u OPENAI_API_KEY UNIVERSITYDB_LIVE_APPROVED=no LANGSMITH_TRACING=false LANGCHAIN_TRACING_V2=false uv run --locked pytest -q tests/test_readiness_scope.py tests/test_readiness_ui_magic.py tests/test_eval_harness.py
+```
+
+Unknown named targets must not disappear into global scope. Grouped/each-reader
+questions must retain their valid scope. Open raw/adapted panels must show actual
+values, without DeltaGenerator help dumps or stray None. The eval harness tests
+only offline plan/export/scoring; no live collector or live result is implied.
