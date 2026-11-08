@@ -1,0 +1,239 @@
+{
+  "version": "h015-input-coverage-v1",
+  "recorded_at": "2026-11-08T06:32:14.967131+00:00",
+  "baseline_receipt": "docs/operations/H-015/baseline.json",
+  "method": "Current file hashes independently compared with root baseline; reading claims below attributed by lane, never inferred from hashes alone.",
+  "private_inputs": [
+    {
+      "source_id": "wiki/index.md",
+      "baseline_sha256": "e61d89a0a0374a137f8cb001402f2e8b56c33ab72d23d2b98730a99df939269b",
+      "current_sha256": "e61d89a0a0374a137f8cb001402f2e8b56c33ab72d23d2b98730a99df939269b",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "wiki/overview.md",
+      "baseline_sha256": "566f2de0a2c5b77bb375f379771dcd36ee36f88dbc416309bba35f9aebf328ed",
+      "current_sha256": "566f2de0a2c5b77bb375f379771dcd36ee36f88dbc416309bba35f9aebf328ed",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "wiki/requirements.md",
+      "baseline_sha256": "1fb68b328b0c2862c1e11e52cf9bebb383f2419abcb1c5e9c85afd16195b3d24",
+      "current_sha256": "1fb68b328b0c2862c1e11e52cf9bebb383f2419abcb1c5e9c85afd16195b3d24",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "wiki/planning/combined-delivery-plan.md",
+      "baseline_sha256": "02f99f5d338aa0b94e115afab01df4ce34959441656716a25615fe94b891b830",
+      "current_sha256": "02f99f5d338aa0b94e115afab01df4ce34959441656716a25615fe94b891b830",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "wiki/verification/H-014-closeout-review.md",
+      "baseline_sha256": "6237bf3b046329237c72243ec0f934cf9233a14cafddf5b10c30043765fd9b5f",
+      "current_sha256": "6237bf3b046329237c72243ec0f934cf9233a14cafddf5b10c30043765fd9b5f",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "wiki/delivery/H-014-publication.md",
+      "baseline_sha256": "6c6429a23ab598fb04fbc194b6a89bbfbaba1601b50e23c5e9c7802f7e3b3f50",
+      "current_sha256": "6c6429a23ab598fb04fbc194b6a89bbfbaba1601b50e23c5e9c7802f7e3b3f50",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "wiki/operations/git-protocol.md",
+      "baseline_sha256": "d7aa9bc0b8de8859cb3c922e8f1d84ed399f068cde8ba947864ae02367afa644",
+      "current_sha256": "d7aa9bc0b8de8859cb3c922e8f1d84ed399f068cde8ba947864ae02367afa644",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "wiki/operations/repo-map.md",
+      "baseline_sha256": "7b5c5d3e88896f01c5c1407211ec85178169a4a400710c9c8be8210c66ef7049",
+      "current_sha256": "7b5c5d3e88896f01c5c1407211ec85178169a4a400710c9c8be8210c66ef7049",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "wiki/operations/omx-workflow.md",
+      "baseline_sha256": "1c87d3abdf662317c39cc061806765595c9a2dd11e261f40fa3f47405435b591",
+      "current_sha256": "1c87d3abdf662317c39cc061806765595c9a2dd11e261f40fa3f47405435b591",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "wiki/prompts/register.md",
+      "baseline_sha256": "ce566fccb1476d99159e9cdee1114908b2828f7ac5b70314b4caefcf7fb6333d",
+      "current_sha256": "ce566fccb1476d99159e9cdee1114908b2828f7ac5b70314b4caefcf7fb6333d",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "wiki/decisions/ADR-CHAT-002-result-scope.md",
+      "baseline_sha256": "d9ba42c284c39ada7409c70191ab4b56be29fa2af21ed2f98146184c45e5930d",
+      "current_sha256": "d9ba42c284c39ada7409c70191ab4b56be29fa2af21ed2f98146184c45e5930d",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "wiki/decisions/ADR-CHAT-004-service-model-profile.md",
+      "baseline_sha256": "1396cc7450fe088575e3b60a28f3f292bb9a9e846a6d3dd70928acda1b2195e5",
+      "current_sha256": "1396cc7450fe088575e3b60a28f3f292bb9a9e846a6d3dd70928acda1b2195e5",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "wiki/decisions/ADR-CHAT-005-I1-practical-budget.md",
+      "baseline_sha256": "f7c6ab0cbacd2df0de7201904095a18b4f16458121dd62cfe4b0e6775f1d2a11",
+      "current_sha256": "f7c6ab0cbacd2df0de7201904095a18b4f16458121dd62cfe4b0e6775f1d2a11",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "wiki/decisions/ADR-CHAT-006-I2-semantics-and-clarification.md",
+      "baseline_sha256": "aa1d3c53aec0d2d198c394ee04f4ead64502e5ba53b151279780a4ed12e22f07",
+      "current_sha256": "aa1d3c53aec0d2d198c394ee04f4ead64502e5ba53b151279780a4ed12e22f07",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "wiki/decisions/ADR-CHAT-007-full-live-eval-budget.md",
+      "baseline_sha256": "7ae320ba125aafae2080bb62fa912b652024c526935ffb099eeaa8d2cebaa3dd",
+      "current_sha256": "7ae320ba125aafae2080bb62fa912b652024c526935ffb099eeaa8d2cebaa3dd",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "raw/chat/CHAT-053.md",
+      "baseline_sha256": "f14d06de68ecd8bd2d719f65f73d1de2644190d22db8fe295bd272ab91f5f92a",
+      "current_sha256": "f14d06de68ecd8bd2d719f65f73d1de2644190d22db8fe295bd272ab91f5f92a",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "raw/chat/CHAT-054.md",
+      "baseline_sha256": "10c8b11f844645b88eb5408c061bf4a0dedfc8de0506fc06f508de278b3c3ef8",
+      "current_sha256": "10c8b11f844645b88eb5408c061bf4a0dedfc8de0506fc06f508de278b3c3ef8",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "raw/assignment/extracted.txt",
+      "baseline_sha256": "d71f3d2737059b857d4710a30acdbb4288c84b800e1f15fe85695e529b89f25c",
+      "current_sha256": "d71f3d2737059b857d4710a30acdbb4288c84b800e1f15fe85695e529b89f25c",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "raw/assignment/provenance.json",
+      "baseline_sha256": "6bae340063c847d372ea8c47879b8a1a360690af90d207141df49243ca5ce76d",
+      "current_sha256": "6bae340063c847d372ea8c47879b8a1a360690af90d207141df49243ca5ce76d",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "raw/assignment/HW Task 1.pdf",
+      "baseline_sha256": "f60e6212307812a27430b2e28ad3bb027b752f50609f76d0bcb8578116ed7550",
+      "current_sha256": "f60e6212307812a27430b2e28ad3bb027b752f50609f76d0bcb8578116ed7550",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "handoffs/H-015-full-live-eval.md",
+      "baseline_sha256": "0be43e604169fd5ed503251607cda6f0e0b4ea03ba7494bd8d6b6405516f9789",
+      "current_sha256": "0be43e604169fd5ed503251607cda6f0e0b4ea03ba7494bd8d6b6405516f9789",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "handoffs/H-015-inputs.json",
+      "baseline_sha256": "18bfae21e8224daa5b8ee71d227bb10804f6b6334aec281e53df8e96efcd85c3",
+      "current_sha256": "18bfae21e8224daa5b8ee71d227bb10804f6b6334aec281e53df8e96efcd85c3",
+      "matches_baseline": true,
+      "content_exported": false
+    },
+    {
+      "source_id": "handoffs/H-015-start-prompt.txt",
+      "baseline_sha256": "3355aaf4d31f150fea030f6356850878ab764f957729ab2473c39530af1454c6",
+      "current_sha256": "3355aaf4d31f150fea030f6356850878ab764f957729ab2473c39530af1454c6",
+      "matches_baseline": true,
+      "content_exported": false
+    }
+  ],
+  "root_reported_content_read": [
+    "H015 handoff",
+    "CHAT053/054",
+    "ADR-CHAT002/004/005/006/007",
+    "wiki overview/requirements/index",
+    "combined delivery plan",
+    "H014 closeout/publication",
+    "git-protocol/repo-map/omx-workflow/prompts register",
+    "assignment extracted text (all four extracted pages) and provenance",
+    "H015-inputs.json",
+    "current README/manual/assignment-status/requirements matrix/production notes",
+    "ADR-OMX008–013",
+    "existing RU/EN bundles",
+    "full H014 protocol/budget/harness/rates and principal receipts"
+  ],
+  "root_read_limitations": [
+    "Original PDF hash verified; no new PDF image viewing.",
+    "H015 starter hashed only; read context, not actual prompt.",
+    "Some initial combined outputs truncated; root reports rereading omitted combined plan, omx-workflow, ADR005 and repo-map tail.",
+    "uv.lock parsed as 77-package dependency metadata and hash presence, not manual reading of every wheel digest.",
+    "Candidate fixture/case data require prospective offline validation/freeze; manually exhaustive case interpretation is not claimed at this cutoff."
+  ],
+  "explorer_reported_source_read": [
+    "config.py",
+    "llm.py",
+    "llm_worker.py",
+    "agent.py",
+    "contracts.py",
+    "domain.py",
+    "library.py",
+    "tracing.py",
+    "ui.py",
+    "runtime prompts",
+    ".env.example public template",
+    "tests/conftest.py",
+    "bounds/practical_budget/provider_worker/sol_profile/eval_harness tests"
+  ],
+  "writing_lane_content_read": [
+    "H015 handoff",
+    "CHAT053/054 and ADR-CHAT007",
+    "accepted ADR-CHAT002/004/005/006",
+    "H014 closeout/publication/combined plan",
+    "full H014 protocol and budget",
+    "H015 brief/migration design/official-rates/binding receipt",
+    "actual public root prompt and prompt receipt",
+    "ADR013/report/style/index and selected existing prompt coverage"
+  ],
+  "public_context_hashes": {
+    "docs/plans/H-014-live-eval-protocol.md": "9ca8e039c829552a9010ee59719223a6bb352c6496f962d3c6403a2b41fc1d2b",
+    "docs/plans/H-014-live-eval-budget.md": "2bb0e1f3632769981af6fbddfac88d84c9301d9c13d88583b8023e9bf0c312e4",
+    "docs/operations/H-014/eval/package-manifest.json": "65a10bf19adc56b1033a0e8d6af950ad0ef86265ac10b30f6b1cd91e95030a2a",
+    "docs/operations/H-014/eval/heldout-candidate-v1.json": "af1c7cafce466f58065fb96de9dd997565b2e3b940855fb9f48faa4559753ae5",
+    "docs/operations/H-014/eval/planned-runs-v1.json": "972c134e4fa82682f0a16d87b71c0c1ed693888248d662f63280cde4fcff3424",
+    "docs/operations/H-014/eval/dev-v1.json": "0915ca1f5c3a2c199e6bd85b1ff34ad859c61676d8c6d0713e2748f8a16803ff",
+    "docs/plans/H-015-full-live-eval-brief.md": "36f56d35f14c76e49121cf24493645696f4d96853bc2c3faa3e45f418c04617e",
+    "docs/operations/H-015/migration-design.md": "b9d7fe4bb89e985b86b3b93c6f9e35fcd5e7dbeba7a9447bb29a0f045b6cc2be",
+    "docs/operations/H-015/official-rates.md": "6bb5714b22b0ad2595b9d88851f060ed93e4b4893ecc43625aabcedab59cf4c1"
+  },
+  "original_h014_package_manifest": "All listed current file hashes checked and matched at this documentation cutoff; original not overwritten.",
+  "prompt_provenance": {
+    "root": "Supported exact root export; selected actual user entry and prefix-redacted public projection, see prompt-receipt.json.",
+    "handoff": "Read context; not substituted for received task.",
+    "children": "Selected attributed role assignments/results only; no complete child transcript claim.",
+    "runtime": "Existing plan/sql templates; actual H015 requests pending collection."
+  },
+  "privacy": "Vault read-only; only source IDs/hashes and scoped consequences published. Full private vault/raw/credentials/session contents are not exported.",
+  "limitations": [
+    "This receipt is not whole-history/full-transcript coverage.",
+    "Source read/hash verification does not itself establish live readiness, tested frozen candidate or real-model accuracy."
+  ]
+}

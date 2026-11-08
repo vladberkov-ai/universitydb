@@ -1,3 +1,13 @@
+## Current H-015 scoped decision — 2026-11-08
+
+[ADR-OMX-014](ADR-OMX-014-H015-full-live-eval.md) records prospective collector and
+atomic history-preserving shared budget-policy migration choices under actual
+H015/CHAT053/054/ADR-CHAT007. Full48/max240,aggregate120/dispatch110/reserve10 include
+historic5.970272/14entries; no smoke or new push authority. Implementation/measurement
+proof is pending in the [H015 report](../reports/H-015-full-live-eval.md). Accepted
+ADR006/Sol unchanged; ADR003–007 remain proposed. Earlier current-stage headers
+below are preserved historical cutoffs, not new H015 restrictions.
+
 ## Current H-011 scope
 I1 is complete (native completion and strict checkpoint recorded in H009 postcheckpoint receipt). ADR-CHAT-006 is accepted for I2-offline by CHAT-043; [ADR011](ADR-OMX-011-I2-offline-semantics.md) adopts only that scope. ADR003–007 remain proposed, not blanket approvals. No live or push authority.
 

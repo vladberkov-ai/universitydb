@@ -1,3 +1,26 @@
+# Current H-015 full live measurement authority — 2026-11-08
+
+The actual H-015 task / CHAT053/054 / accepted ADR-CHAT007 authorize one bounded
+CP-L1–L4 collector+atomic history-preserving migration, offline checks/independent
+reviews/prospective freeze, full original48conversations/max240attempts without
+smoke, independent observation/scoring and local checkpoints. Aggregate USD120 /
+dispatch110 / contingency10 INCLUDE historical5.970272/14entries. Preserve history;
+no automatic contingency use/hold release/limit increase. One canonical spending
+ledger across fixture DBs; oracle/answers/case metadata never enter model payloads.
+Exact Sol/default high/medium/medium and ADR006 unchanged. No paid probes/count,
+fallback/LLM judge/evaluator reruns/best-of/extra paid UI/repair campaign/push.
+Stop on budget/unknown spend/model-tier mismatch or critical safety/privacy.
+Rubric44/48 AND≥7/8category plus mandatory/safety gates is prospective; exposed
+sample, not untouched holdout/general accuracy or final owner acceptance.
+Use [brief](docs/plans/H-015-full-live-eval-brief.md), [ADR014](docs/adr/ADR-OMX-014-H015-full-live-eval.md)
+and [report](docs/reports/H-015-full-live-eval.md). Root alone owns new supported
+workflow lifecycle with explicit cwd. Do not resume/overwrite completed I1/H013/H014
+or edit IDs/pointers/locks. Monetary migration/actual usage are authorized changes
+with preserved-history receipts; original evidence/completed state/locks stay
+unchanged. Obsidian read-only; new push/publication/defense not authorized.
+Earlier restrictions retain historical scoped meaning; this override supersedes
+only H015 live and aggregate monetary limits, not unrelated boundaries.
+
 # Current publication authority — 2026-11-08
 
 The owner's new request authorizes saving and publishing all completed H-014 results

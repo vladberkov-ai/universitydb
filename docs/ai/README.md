@@ -1,3 +1,19 @@
+## Current H-015 prompt coverage — 2026-11-08
+
+[Actual received task](omx/H-015-actual-prompt.txt) is selected from the supported
+root export, not reconstructed from the handoff/starter. [Receipt](../operations/H-015/prompt-receipt.json)
+pins exact/private/public hashes, cutoff and one private-prefix redaction. The
+H-package is read context; [input coverage](../operations/H-015/input-coverage.json)
+attributes root/explorer/writer reads and explicit omissions. Both existing
+[RU](PROMPTS-RU.md) and [EN](PROMPTS-EN.md) bundles include the safe actual Russian
+text and labelled English reader translation, not an actual English model input.
+Selected role assignments/results are attributed only when captured; no full child
+or whole-history transcript is claimed. Existing runtime plan/SQL templates remain
+separate from actual H015 full requests, pending live collection at this cutoff.
+U01 remains partial. [H015 report](../reports/H-015-full-live-eval.md) records current
+measurement status. H015 grants bounded live/full evaluation after gates, **not push**;
+earlier no-live/publication statements below retain their historical scope.
+
 ## H-014 publication coverage — 2026-11-08
 
 Both existing language bundles contain the complete safe H-014 root task, with

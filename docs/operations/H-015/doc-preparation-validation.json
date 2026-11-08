@@ -1,0 +1,24 @@
+{
+  "recorded_at": "2026-11-08T06:33:46.705494+00:00",
+  "scope": "CP-L1 prospective documentation only",
+  "checks": {
+    "git_diff_check": "PASS",
+    "current_h015_json_parse": "PASS",
+    "relative_local_links_in_changed_docs": "PASS",
+    "exact_public_actual_prompt_in_RU_bundle": "PASS",
+    "public_prompt_hash_equals_supported_export_receipt": "PASS",
+    "all48_report_planned_run_ids_equal_original_plan": "PASS",
+    "private_input_hashes_match_baseline": "23/23 PASS",
+    "original_h014_package_manifest_hashes": "all matched at check; not overwritten",
+    "scoped_vault_path_and_credential_pattern_scan": "PASS"
+  },
+  "code_examples_added": 0,
+  "executable_command_examples_added": 0,
+  "actual_prompt_fence": "Provenance quote, not a runnable example",
+  "application_tests": "not run by documentation lane; source verification remains implementation/root responsibility",
+  "independent_review": "not performed by author; pending genuine independent lanes",
+  "live_calls_by_documentation_lane": 0,
+  "canonical_monetary_mutations_by_documentation_lane": 0,
+  "workflow_mutations_by_documentation_lane": 0,
+  "push": "not-run"
+}

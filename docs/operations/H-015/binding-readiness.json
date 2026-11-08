@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-11-08T06:29:06.690315+00:00",
+  "canonical": {
+    "status": "usable",
+    "liveness": "usable",
+    "rootSource": "session-authority",
+    "recordedCwd": "/home/dev/projects/universitydb"
+  },
+  "currentNative": {
+    "ownerEvidenceStatus": "usable",
+    "actualNativeMatches": true,
+    "threadMatches": true,
+    "processIdentitySame": true
+  },
+  "writableScope": {
+    "source": "session",
+    "canonicalOwnerMatches": true
+  },
+  "pointerNativeMatchesCurrent": false,
+  "method": "actual root read-only installed API check under supported host permission; sandbox stale-dead was PID namespace view, not authority",
+  "new_scope": "docs/operations/H-015/workflow",
+  "historical_scope_mutations": false
+}

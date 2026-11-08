@@ -527,3 +527,34 @@ First save everything in the Wiki and both repositories (local and remote). Foll
 3. Include all assignment deliverables in the repository, including the prompt list, database seed and other required material.
 
 Put the prompts in the two existing repository files, in Russian and English. Translate README.md and other documentation into English and push that version to GitHub.
+
+
+## H-015 — complete actual root task, reader translation
+
+Source: [actual Russian task](omx/H-015-actual-prompt.txt),
+[receipt](../operations/H-015/prompt-receipt.json). This is an English reader
+translation, **not an actual English input**. The actual task came from the
+supported root export, not the starter/handoff. One private vault-prefix is
+redacted; the H-package is read context. Full private/child transcripts are not claimed.
+
+```text
+$ultragoal
+
+Execute the single assignment [PRIVATE_VAULT]/handoffs/H-015-full-live-eval.md: prepare and verify the live collector and a history-preserving budget-policy migration, then conduct the full real-model eval and independent evaluation. First read the entire package and all inputs. Canonical WSL UbuntuD /home/dev/projects/universitydb; Obsidian is read-only.
+
+The owner explicitly authorized live and chose THE FULL EVAL IMMEDIATELY, WITHOUT SMOKE:48conversations, at most240generation calls; aggregate cap$120, dispatch$110, reserve$10. Include prior accounted$5.970272/14entries, not120additional; do not spend the reserve automatically. Authority CHAT053/054 and ADR-CHAT007 are in the package. Do not reconfirm accepted Sol high/medium/medium and ADR006. No new push permission.
+
+Published baseline60e8ffcefb3614f7a754459722b14a7a2c6a1074; tested product98345ad; H014 offline COMPLETE/strict5/5. Recheck Git/source/ledger/current-owner. Do not resume/overwrite completed I1/H013/H014 or change IDs/pointers/locks. Use installed supported skills for a new bounded workflow; explicit cwd for every lifecycle mutation.
+
+Continuously execute CP-L1–L4: collector/atomic history-preserving migration → synthetic/full offline checks and genuine independent reviews → prospective freeze of candidate/cases/rubric/rates/policy → authorized migration/secure credentials → sequential real48 → independent observation/scoring/report. Do not stop at internal CPs to request consent already granted. Verify fresh rates/account routing without paid probes; the first call must be the useful first eval case. Count endpoint/fallback/LLM judge/evaluator reruns are forbidden.
+
+Use one canonical spending ledger for all temporary fixture DBs. Oracle/answers/case metadata must not reach the model. Preserve exact H014v1questions/run order, all failures/started/not-run and full traces; no best-of or rewriting inconvenient questions. Before results, fix the H014 rubric44/48 and≥7/8category plus mandatory/safety gates; this measures an exposed acceptance sample, not an untouched holdout or general accuracy. Eval completion is separate from quality pass.
+
+Stop on budget/unknown-spend/model-tier mismatch or critical safety/privacy; do not release holds/use contingency/increase limits. All ordinary terminal failures stay in the denominator. No additional smoke/live UI reruns, paid repair campaign or push. Document legitimate monetary history changes; preserve completed workflow state and original evidence.
+
+Return docs/reports/H-015-full-live-eval.md with exact frozen/tested SHA,48statuses/score/categories,call counts/cost/holds,trace evidence,independent verdicts,actual prompts/RU+EN coverage,local checkpoints and remote status/push not-run. Do not label failed/partial eval as acceptance or invent results. Preserve this exact actual received prompt; the H-package is read context.
+```
+
+Coverage cutoff: CP-L1 preparation. Runtime plan/SQL templates above are unchanged;
+actual H015 provider requests and selected independent role results are pending
+capture/attribution, not reconstructed here. U01 remains partial globally.

@@ -1,0 +1,23 @@
+{
+  "method": "supported exact root session export; selected actual user entry, not handoff/starter reconstruction",
+  "session_id": "01a1b9d5-673f-76c0-97eb-32b5e26bd5a7",
+  "entry_index": 1,
+  "line_number": 9,
+  "timestamp": "2026-11-08T06:25:42.057Z",
+  "export_entries": 5,
+  "export_skipped_records": 0,
+  "private_export_sha256": "a7c9237516fb74f9134129f41cfc60b33ba70ca3ca882088137baad5deb2f823",
+  "exact_received_utf8_sha256": "a26fa57c45174c843b195e72fa3b735565845df8c61222605b987216589b6fb5",
+  "public_prompt_sha256": "3f2474e8e289e3f420131ebd4ffcd6620dc15bef33e5f0f06986d8622e716939",
+  "redactions": [
+    "one private vault prefix substitution; public projection has terminal LF"
+  ],
+  "read_context": [
+    "H-015 handoff and enumerated inputs, not actual prompt"
+  ],
+  "omissions": [
+    "system/developer/tool/reasoning/full child transcripts",
+    "later turns/results beyond cutoff"
+  ],
+  "runtime_prompts_changed": false
+}

@@ -1,0 +1,109 @@
+{
+  "version": "h015-authorization-v1",
+  "recorded_at": "2026-11-08T06:32:14.967131+00:00",
+  "status": "authorized scope; execution gates pending",
+  "authority": [
+    {
+      "source_id": "raw/chat/CHAT-053.md",
+      "sha256": "f14d06de68ecd8bd2d719f65f73d1de2644190d22db8fe295bd272ab91f5f92a"
+    },
+    {
+      "source_id": "raw/chat/CHAT-054.md",
+      "sha256": "10c8b11f844645b88eb5408c061bf4a0dedfc8de0506fc06f508de278b3c3ef8"
+    },
+    {
+      "source_id": "wiki/decisions/ADR-CHAT-007-full-live-eval-budget.md",
+      "sha256": "7ae320ba125aafae2080bb62fa912b652024c526935ffb099eeaa8d2cebaa3dd"
+    },
+    {
+      "source_id": "handoffs/H-015-full-live-eval.md",
+      "sha256": "0be43e604169fd5ed503251607cda6f0e0b4ea03ba7494bd8d6b6405516f9789"
+    }
+  ],
+  "actual_prompt": {
+    "path": "docs/ai/omx/H-015-actual-prompt.txt",
+    "sha256": "3f2474e8e289e3f420131ebd4ffcd6620dc15bef33e5f0f06986d8622e716939",
+    "receipt": "docs/operations/H-015/prompt-receipt.json",
+    "handoff_is": "read context, not actual received prompt"
+  },
+  "scope": {
+    "conversations": 48,
+    "cases": 24,
+    "repeats": 2,
+    "maximum_generation_attempts": 240,
+    "per_conversation_generation_attempts": 5,
+    "per_conversation_sql_attempts": 4,
+    "order": "H014v1 repeat-major original questions/order",
+    "smoke": false
+  },
+  "aggregate_budget_usd": {
+    "cap": "120",
+    "dispatch_threshold": "110",
+    "contingency": "10",
+    "includes_historical_obligations": true,
+    "historical_accounted": "5.970272",
+    "historical_entries": 14,
+    "historical_observed_not_credit": "0.1648460",
+    "historical_ledger_sha256": "2753fe2fdf1dc366ffecdb5a86dcd9cf184d83707a00da0de62a8a4e4963f125",
+    "contingency_automatic_use": false,
+    "release_historical_holds": false,
+    "policy": "practical conservative reservation, not BILLING_VERIFIED/invoice ceiling"
+  },
+  "model": {
+    "exact_id": "gpt-6.1-sol",
+    "requested_tier": "default",
+    "efforts": {
+      "plan": "high",
+      "sql": "medium",
+      "repair": "medium"
+    },
+    "fallback": false,
+    "accepted_semantics": "ADR-CHAT006 unchanged"
+  },
+  "prospective_rubric": {
+    "overall_minimum": 44,
+    "denominator": 48,
+    "category_minimum": 7,
+    "category_denominator": 8,
+    "zero_unsafe_privacy_fabricated_success": true,
+    "all_applicable_mandatory_behavior": true,
+    "owner_scope_budget_explicit": true,
+    "each_rubric_phrase_independently_verbatim_approved": false,
+    "exposure": "exposed acceptance sample, not untouched holdout/general accuracy",
+    "measurement_completion_separate_from_quality_pass": true
+  },
+  "gates_before_live": [
+    "synthetic and full offline/static verification",
+    "independent code-reviewer and architect review",
+    "freeze exact tested candidate and code/prompt/scorer/case/oracle/fixture/rate/policy hashes",
+    "fresh official rates and direct Standard account routing without paid probes",
+    "actual current-native-owner new bounded active scope",
+    "tested hash-guarded atomic history-preserving canonical migration",
+    "secure executor-only credentials"
+  ],
+  "stops": [
+    "budget",
+    "unknown spend",
+    "model/tier mismatch",
+    "critical safety/privacy/integrity"
+  ],
+  "forbidden": [
+    "count endpoint",
+    "access/paid probe",
+    "evaluator reruns",
+    "best-of",
+    "LLM judge",
+    "extra smoke/live UI generation",
+    "paid repair campaign",
+    "automatic contingency use",
+    "budget increase",
+    "push",
+    "Obsidian writes",
+    "completed I1/H013/H014 state mutation"
+  ],
+  "local_checkpoints_authorized": true,
+  "new_push_authority": false,
+  "real_migration_applied_at_receipt": false,
+  "h015_live_generation_calls_at_receipt": 0,
+  "privacy": "Private sources read/hash only; no private source content, credentials, credential paths, raw sessions, ledger backup or locks exported."
+}
