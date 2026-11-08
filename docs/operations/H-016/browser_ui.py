@@ -8,6 +8,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import shutil
 import signal
 import socket
@@ -78,6 +79,25 @@ def wait_for_library_dataset(page, previous_run_id):
     expect(page.locator("body")).not_to_contain_text(previous_run_id, timeout=120000)
     page.get_by_test_id("stStatusWidget").wait_for(state="hidden")
     return question
+
+
+def submit_new_run(page, question):
+    """Wait for a new rendered run identity, even when answer text stays equal."""
+    pattern = re.compile(r"^Run: ([0-9a-f-]{36}); profile: ")
+    caption = page.get_by_text(pattern)
+    assert caption.count() <= 1
+    previous = pattern.match(caption.inner_text()).group(1) if caption.count() else None
+    textbox = page.get_by_role("textbox", name="Question", exact=True)
+    textbox.fill(question)
+    expect(textbox).to_have_value(question)
+    page.get_by_role("button", name="Run", exact=True).click()
+    if previous is not None:
+        expect(page.locator("body")).not_to_contain_text(previous, timeout=120000)
+    expect(caption).to_have_text(pattern, timeout=120000)
+    page.get_by_test_id("stStatusWidget").wait_for(state="hidden")
+    current = pattern.match(caption.inner_text()).group(1)
+    assert current != previous
+    return current
 
 
 def capture_failure(page, out, receipt):
@@ -220,6 +240,7 @@ def run(out, full):
                         ).wait_for()
 
                         seen_runs = {}
+                        submitted_runs = {}
 
                         def capture(case, expected, status="ok"):
                             # Grouped means have a summary alert; exact values are in the
@@ -241,10 +262,11 @@ def run(out, full):
                             run_ids = {event["run_id"] for event in events}
                             assert len(run_ids) == 1
                             run_id = next(iter(run_ids))
-                            assert [e["seq"] for e in events] == list(range(1, len(events) + 1))
                             question_key = (
                                 "clarification" if case.startswith("clarification-") else case
                             )
+                            assert run_id == submitted_runs[question_key]
+                            assert [e["seq"] for e in events] == list(range(1, len(events) + 1))
                             expected_question = QUESTIONS.get(
                                 question_key, "How many open loans does each reader have?"
                             )
@@ -383,10 +405,7 @@ def run(out, full):
                             return events
 
                         def submit(case):
-                            page.get_by_role("textbox", name="Question", exact=True).fill(
-                                QUESTIONS[case]
-                            )
-                            page.get_by_role("button", name="Run", exact=True).click()
+                            submitted_runs[case] = submit_new_run(page, QUESTIONS[case])
 
                         submit("success")
                         capture("success", "80.00")

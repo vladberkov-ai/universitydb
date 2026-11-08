@@ -265,3 +265,30 @@ and diff checks pass. Independent code-reviewer reports CLEAR_TO_CHECKPOINT for
 this bounded harness fix; root must run a fresh actual browser attempt and exact-
 SHA clean/full verification before final acceptance. The attempted browser cause
 remains unproven until new diagnostics/evidence, not retrospectively relabeled.
+
+## Actual browser attempt2: generic new-run capture boundary
+
+Attempt2 preserved diagnostics prove a different harness defect: seven states,
+including readerID1→Ada, passed; `library.jsonl` still contains that prior filtered
+question/runID while failure_question is the newly filled all-reader question.
+Both results contain Ada, so matching the expected alert and observing an already
+idle status widget can accept stale pre-submit output. No product failure is
+inferred from that stale downloaded trace. Attempt2 evidence remains unchanged.
+
+Repair every new-run submission through one helper: retain the currently rendered
+run UUID, fill/verify the question, click Run, wait for the previous UUID to leave
+the rendered body, positively await a run caption, then await idle and require a
+different UUID. Retain that submitted UUID and require the downloaded trace to
+match it in addition to existing question/outcome/sequence checks. First runs
+require a positive caption too. Clarification resume remains deliberately outside
+this new-run helper and must keep its original run UUID. No sleeps, retries,
+question edits, product edits, weaker assertions or timeout increase.
+
+Focused scheduling regression executes the actual helper AST with a fake browser
+that keeps the prior Ada result visible after click:2passed/0.77s (same-answer
+replacement and initial submission), with source/output preserved under
+regressions/browser-new-run-proof*. This tests harness control flow, not an actual
+browser pass. Ruff/format/compile/diff pass. Root owns fresh actual browser and
+tracked-archive full/static/oracle/seed/preservation verification on the new SHA.
+Independent code-reviewer inspected the generic UUID readiness/binding delta and
+reported conditional CLEAR_TO_CHECKPOINT; final real browser evidence is pending.
