@@ -33,7 +33,7 @@ that proposed instrument-only analysis. Publication and owner defense are separa
 | Frozen observer / unchanged scorer SHA256 | `a47a50f935f493e24796ad353eff88de1a24509979699328f230aa35ecbb7f14` / `a14f11835ff3c67aa6ef6e7a95716613982a3c1799bfa2d734f4038c95a1c811` |
 | Frozen candidate/oracle SHA256 | `af1c7cafce466f58065fb96de9dd997565b2e3b940855fb9f48faa4559753ae5` |
 | Future offline-corrector source/test checkpoint | `f61c0128f3b1f229e4a78e0d3c8908d8b9c928d1`; only2newfiles, not live candidate or actual-data correction |
-| Late documentation/evidence SHA | Pending actual reviewed evidence commit; not a new live-tested product |
+| Late documentation/evidence SHA | `2b7e94c1e255feedd393c4153989e1013207e4e1`;435safe paths, not a new live-tested product |
 
 Actual task / CHAT053/054 / accepted ADR-CHAT007 authorize full48/max240 without
 smoke and aggregate120/dispatch110/contingency10 **including** history. See
@@ -342,8 +342,10 @@ Private sessions/credential paths/raw ledger/backups/locks are not exported.
   688history files and original locks preserved; Obsidian read-only. Monetary changes
   are legitimate receipted migration/usage, not a claim of unchanged money bytes.
 - U06: prospective docs333b0fe / tested live candidateecb7f5c / future-corrector-only
-  f61c0128 local checkpoints; final evidence commit identity pending actual commit,
-  all not pushed.
+  f61c0128 local checkpoints; actual435path evidence checkpoint `2b7e94c1e255feedd393c4153989e1013207e4e1`.
+  [Local checkpoint receipt](../operations/H-015/local-checkpoints.json) records the
+  distinct identities. All remain local, not pushed. This small receipt/report
+  follow-up records prior commit IDs without amending or rewriting history.
 - R15: published baseline60e8ffc remains distinct; new H015 publication awaits
   separate authority. **Push not-run**. [Fresh closeout remote receipt](../operations/H-015/remote-closeout.json)
   records actual `git ls-remote` at2026-11-08T07:01:48UTC: origin/main remains

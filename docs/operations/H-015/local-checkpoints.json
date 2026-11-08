@@ -1,0 +1,42 @@
+{
+  "version": "h015-local-checkpoints-v1",
+  "recorded_at": "2026-11-08T07:13:12.042808+00:00",
+  "actual_frozen_live_tested_sha": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+  "historical_h014_product": "98345ad6ce5757c71d44ba1ce59a683d46e0d910",
+  "published_baseline_remote": "60e8ffcefb3614f7a754459722b14a7a2c6a1074",
+  "commits": [
+    {
+      "sha": "333b0fe8e198331eb26eb2891158aee21d6ef730",
+      "purpose": "prospective H015 authority/design/actual-prompt docs",
+      "paths": 20
+    },
+    {
+      "sha": "f61c0128f3b1f229e4a78e0d3c8908d8b9c928d1",
+      "parent": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+      "purpose": "future offline correction preparation only;not applied to original48",
+      "paths": [
+        "tests/test_h015_observer_v2.py",
+        "tools/eval/correct_mean_nullability_v2.py"
+      ]
+    },
+    {
+      "sha": "2b7e94c1e255feedd393c4153989e1013207e4e1",
+      "parent": "f61c0128f3b1f229e4a78e0d3c8908d8b9c928d1",
+      "purpose": "qualified original collection/assessment and future-preparation evidence docs",
+      "paths_count": 435,
+      "explicit_path_manifest": "report-draft-receipt.json"
+    }
+  ],
+  "followup": "This receipt and report record actual preceding commit identities in a separate small local commit;its own SHA must be read from Git after commit,not guessed/self-embedded.",
+  "safety": {
+    "push": "not-run/noauthority",
+    "new_provider_calls": 0,
+    "actual_correction_or_rescoring": false,
+    "48ignored_sqlite_originals": "retainedlocal,nottracked",
+    "private_runtime_ledger_credentials_backups_locks": "excluded",
+    "history_rewrite_or_amend": "notrun"
+  },
+  "assessment": "Original2/48instrumentlimited;qualityFAIL;HIGH/WATCHopen;nativeACTIVE,G004review_blocked,G005in_progress,noCOMPLETE/strict",
+  "final_offline_verification": "610PASS146.05s/static;preparation-onlyAPPROVE/CLEAR;notactualreanalysis",
+  "remaining": "Ownerclarificationforappend-onlysameimmutableartifactassessment;notinferauthorityfrombudgetheadroom,sourceprep,Gitorruntimepaths"
+}

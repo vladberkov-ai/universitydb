@@ -1,7 +1,7 @@
 {
   "recorded_at": "2026-11-08T07:01:34.448784+00:00",
   "version": "h015-report-draft-qualified-v1",
-  "status": "Verified qualified evidence package; explicit local checkpoints authorized; push not authorized",
+  "status": "Qualified evidence package committed locally; prior draft-cutoff history remains; no push",
   "actual_selected_received_instruction": {
     "method": "writer self-projection of selected exact received collaboration sentence, not whole root/child transcript",
     "text": "Resume final H015 docs/report drafting, NO commit yet.",
@@ -32,7 +32,7 @@
     "postresults-verification.json": "b3cca2f5363cee48002d48357170dfb8934e30c695e196516689818c1c693dd3"
   },
   "changed_docs": {
-    "docs/reports/H-015-full-live-eval.md": "d43b67a178b4f23fa4745d23f459cc5392a67f4e48173548c01605bd5fef5d2f",
+    "docs/reports/H-015-full-live-eval.md": "b95cebb1e651851e36e16405229dfd58093ac4189e0291227f31586d487981fa",
     "README.md": "fd8bf2a373ebeffa077a1f37aaec0af3341fd4f4d11fd82f1536bdf6d54af53d",
     "docs/assignment-status.md": "8cc1ddb8d2d37242327c095695b1935731f108831bb167eea3cf74181ed1b327",
     "docs/plans/requirements-test-matrix.md": "bde9122c402b70b67ebd88a4b3800035a3a473885ee9cacf014bc8cb477b4ea0",
@@ -57,7 +57,7 @@
     "native_status": "ACTIVE,G004review_blocked,G005in_progress;attemptedG005blockedcheckpointauto-reviewrejectedbeforeexecution,notretried;no nativeCOMPLETE/strict",
     "review": "final code REQUEST CHANGES/HIGH; architect WATCH; prelive APPROVE/CLEAR preserved",
     "corrected_assessment_scope": "awaiting clarification; no future actual prompt/answer reconstructed",
-    "late_documentation_sha": "pending actual evidence commit; future-corrector-only code checkpointf61c0128f3b1f229e4a78e0d3c8908d8b9c928d1 is not livecandidateecb7",
+    "late_documentation_sha": "2b7e94c1e255feedd393c4153989e1013207e4e1",
     "remote": "Fresh supported git ls-remote at2026-11-08T07:01:48.963828UTC:origin/main60e8ffcefb3614f7a754459722b14a7a2c6a1074 unchanged;no push/fetch/reset/remote-config change"
   },
   "prompt_coverage": {
@@ -96,7 +96,7 @@
   "code_examples_added": 0,
   "command_examples_added": 0,
   "application_tests_or_scorer_reruns": "not run by writing lane; original test/scorer receipts read only",
-  "updated_at": "2026-11-08T07:12:35.347395+00:00",
+  "updated_at": "2026-11-08T07:13:12.042389+00:00",
   "packaged_safe_root_logs": {
     "docs/operations/H-015/verification/postresults-full-offline.txt": {
       "source": ".omx/artifacts/H-015/postresults-full-offline.log",
@@ -151,7 +151,7 @@
   "preservation_caveat": "68freeze hashes verified atlive/review cutoff;later authorized docs updates are not claimed byte-identical.427collection incl48ignoredlocalSQLite binaries/4v1observationfiles/H014history/money preserved. Nottracked-onlyportablecampaignreproduction.",
   "review_attribution": "Code reviewer direct427collection/68freeze/monetary/1088annotationrefs;observer direct427collection;root direct12nonmonetary/688history/4v1/427incl48DB/money;architect corroboration attributed separately. Notbothdirectlycheckedall.",
   "prospective_explicit_checkpoint_manifest": {
-    "status": "Explicit reviewed paths; code checkpoint done, evidence checkpoint authorized and pending; no push",
+    "status": "Recorded435path manifest committed as2b7e94c;code2pathsf61c0128;notanewlivecandidate",
     "first_code_checkpoint": [
       "tools/eval/correct_mean_nullability_v2.py",
       "tests/test_h015_observer_v2.py"
@@ -609,8 +609,10 @@
       "tools/eval/correct_mean_nullability_v2.py",
       "tests/test_h015_observer_v2.py"
     ],
-    "evidence_commit": "pending",
-    "push": "not-run/no authority"
+    "evidence_commit": "2b7e94c1e255feedd393c4153989e1013207e4e1",
+    "push": "not-run/no authority",
+    "evidence_paths_committed": 435,
+    "followup": "Small report/receipt checkpoint records actual preceding IDs;noamend/historyrewrite/push"
   },
   "no_product_frozen_source_ledger_state_credentials_live_mutations_by_writer": true
 }
