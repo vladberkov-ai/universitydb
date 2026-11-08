@@ -1,0 +1,20 @@
+{
+  "version": "h015-root-postresults-preservation-v1",
+  "recorded_at": "2026-11-08T07:07:41.646519+00:00",
+  "performed_by": "root direct local hash verification; not attributed to both independent reviewers",
+  "collection_artifact_count": 427,
+  "local_ignored_fixture_database_count": 48,
+  "historical_file_count": 688,
+  "nonmonetary_preservation_target_count": 12,
+  "v1_observation_hashes": {
+    "reviews.json": "a035b32b42264c6a7766e2f639219c4a708f94d76639bd17a4e749c4f9c62d96",
+    "observations.json": "6b8b7126f3f20aa9cf6ec94e4d0e66436651e145f2473a150b25690572710c23",
+    "score.json": "8b9be7800c9c1462d462106c789c47f76a88466adf4871973454ccd1ef7bb86a",
+    "independent-observation.md": "951090b11306811e833694c936ad2b6f10de2e78da8f43ce335c04425074dad4"
+  },
+  "ledger_sha256": "daed87a21b856f0df454fb1378e266fcf9b79504351a873b1dfc39855d6d2e97",
+  "errors": [],
+  "all_checked_hashes_match": true,
+  "live_cutoff_freeze_note": "68 hashes were verified before/at collection; legitimate late documentation changes are not represented as unchanged current freeze files",
+  "authority_boundary": "No correction/rescoring, paid calls, ledger mutation, Git operation or completed-workflow mutation"
+}

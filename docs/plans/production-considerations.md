@@ -1,3 +1,31 @@
+## H015 live evidence and instrument limitation — 2026-11-08
+
+The [H015 report](../reports/H-015-full-live-eval.md) records48terminal conversations
+on exactecb7f5c:38honest pre-provider scope failures and10product successes/20calls.
+The frozen2/48 strict score has a confirmed HIGH observer nullability defect affecting
+8otherwise matching numeric results; no corrected tally/full-DoD claim is made at
+this cutoff. Quality FAIL is certain from38product failures. Prelive APPROVE/CLEAR
+missed this defect; final REQUEST CHANGES/architect WATCH are retained. Therefore
+neither576offline tests nor observed safe execution certifies semantic reliability.
+This exposed correlated sample is not general accuracy or production certification.
+
+The reviewed fixed H015 monetary policy preserves historical authorization/rate
+segments and all14old entries, uses one shared canonical ledger across fixture DBs,
+atomic stable-lock migration/reservation/settlement and retained max(reservation,
+observed). Actual total retained14.499232 includes historic5.970272; aggregate
+observed conservative0.4424530 is not an invoice or released credit. Aggregate cap120,
+dispatch110,reserve10 remain; reserve untouched,unknown0,stopnull. No environment-only
+cap reset, per-fixture budget, paid rerun campaign/count/judge/fallback or push is
+authorized. Corrected instrument-only analysis scope remains a separate pending
+clarification, never permission to change original measurements or call the provider.
+Later offline corrector preparation is distinct: root reports609tests passing,
+then a format failure on exactly two new files (history retained). Narrow fixes now
+pass72focused/static checks and future-prep APPROVE/CLEAR; final root610tests/static PASS. No actual48-record correction/scoring is authorized or applied,
+and original HIGH/full-assessment/native DoD remain open. Fresh remote origin/main
+is60e8ffc, push not-run ([receipt](../operations/H-015/remote-closeout.json)).
+Original evidence and closed workflows remain preserved. Final publication/defense
+are not complete. Historical offline-stage no-live clauses below keep their scope.
+
 # Production considerations — current I1 and future work
 
 ## Implemented I1 baseline (2026-11-07)

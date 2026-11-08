@@ -1,0 +1,39 @@
+{
+  "received_at": "2026-11-08T06:59:04.369334+00:00",
+  "role": "architect",
+  "status": "WATCH",
+  "cutoff": "post-results instrument-limited assessment; final report review pending",
+  "attribution": "Actual native prelive_architecture followup messages received by root; selected projection, not self-approval or full transcript. Reviewer read-only.",
+  "prelive_status": "CLEAR",
+  "prelive_missed_defect_acknowledged": true,
+  "defect": {
+    "severity": "HIGH",
+    "source": "tools/eval/observe.py109-120",
+    "description": "Computed mean nullability inferred from current NULL cell presence, but scalar grade_mean can return None for other data; nullable is schema capability.",
+    "contract_evidence": [
+      "domain.py507-526",
+      "contracts.py269-277,290-292"
+    ],
+    "affected": "A01/A02/C01/C03 both repeats; exactly8 only types differ decimal vsdecimal?; C02 both match"
+  },
+  "verified": {
+    "collection_artifacts": 427,
+    "active_freeze_files": 68,
+    "annotation_evidence_refs": 1088,
+    "historical_files": 688,
+    "nonmonetary_preservation_targets": 12,
+    "terminal_runs": 48,
+    "known_responses": 20,
+    "scope_behavior_false_cases": 38,
+    "critical_failures": 0,
+    "frozen_strict_score": "2/48"
+  },
+  "recommendation": "Preserve frozen source/observations/score unchanged. Instrument-limited report with exact field-diff appendix is honest, but does not satisfy correct full-evaluation/native completion. Offline fix may be prepared; do not infer authority to rerun evaluator/replace campaign score.",
+  "remaining": "Owner clarification pending on append-only corrected offline analysis of same artifacts without any model/question/API rerun; final DoD blocked until valid assessment or explicit scoped disposition.",
+  "not_certified": [
+    "unqualified product semantic accuracy",
+    "quality pass",
+    "correct full H015 assessment/nativeCOMPLETE",
+    "publication authority"
+  ]
+}

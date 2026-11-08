@@ -1,0 +1,140 @@
+unformatted: File would be reformatted
+   --> tests/test_h015_observer_v2.py:33:15
+    |
+32  |     }
+    -     events = [{"kind": "db_result", "payload": step["raw"]},
+    -               {"kind": "adapted_result", "payload": {k: v for k, v in step.items() if k != "raw"}},
+    -               {"kind": "answer", "payload": answer}]
+33  +     events = [
+34  +         {"kind": "db_result", "payload": step["raw"]},
+35  +         {"kind": "adapted_result", "payload": {k: v for k, v in step.items() if k != "raw"}},
+36  +         {"kind": "answer", "payload": answer},
+37  +     ]
+38  |     final = {
+--------------------------------------------------------------------------------
+136 | def test_grouped_and_other_registered_metrics_untouched():
+    -     for metric, groups in [("u.grade_mean.v1", ["student_id"]), ("u.top_course.v1", []),
+    -                            ("u.enrollment_counts.v1", []), ("u.student_ids.v1", []),
+    -                            ("u.enrollment_rows.v1", [])]:
+137 +     for metric, groups in [
+138 +         ("u.grade_mean.v1", ["student_id"]),
+139 +         ("u.top_course.v1", []),
+140 +         ("u.enrollment_counts.v1", []),
+141 +         ("u.student_ids.v1", []),
+142 +         ("u.enrollment_rows.v1", []),
+143 +     ]:
+144 |         record, state, exchanges = fixture()
+--------------------------------------------------------------------------------
+244 |
+    - @pytest.mark.parametrize("outcome,code", [("failure", "INVALID_INPUT"),
+    -                                          ("timeout", "SQL_TIMEOUT"),
+    -                                          ("refusal", "PROVIDER_REFUSAL")])
+245 + @pytest.mark.parametrize(
+246 +     "outcome,code",
+247 +     [("failure", "INVALID_INPUT"), ("timeout", "SQL_TIMEOUT"), ("refusal", "PROVIDER_REFUSAL")],
+248 + )
+249 | def test_failure_records_and_checks_unchanged(outcome, code):
+--------------------------------------------------------------------------------
+268 |     campaign, records, receipt = synthetic_campaign(tmp_path)
+    -     values = [{"run_id": "untouched", "status": "not-run"},
+    -               {"run_id": "unknown-charge", "status": "started"}]
+269 +     values = [
+270 +         {"run_id": "untouched", "status": "not-run"},
+271 +         {"run_id": "unknown-charge", "status": "started"},
+272 +     ]
+273 |     records.write_text(json.dumps(values))
+--------------------------------------------------------------------------------
+315 |     completed = subprocess.run(
+    -         [sys.executable, str(ROOT / "tools/eval/correct_mean_nullability_v2.py"),
+    -          "--campaign", str(campaign), "--records", str(records),
+    -          "--source-receipt", str(receipt), "--output", str(output), "--manifest", str(manifest)],
+    -         capture_output=True, text=True, check=False,
+316 +         [
+317 +             sys.executable,
+318 +             str(ROOT / "tools/eval/correct_mean_nullability_v2.py"),
+319 +             "--campaign",
+320 +             str(campaign),
+321 +             "--records",
+322 +             str(records),
+323 +             "--source-receipt",
+324 +             str(receipt),
+325 +             "--output",
+326 +             str(output),
+327 +             "--manifest",
+328 +             str(manifest),
+329 +         ],
+330 +         capture_output=True,
+331 +         text=True,
+332 +         check=False,
+333 |     )
+    |
+
+unformatted: File would be reformatted
+   --> tools/eval/correct_mean_nullability_v2.py:79:20
+    |
+78  |
+    - def correct_record(record: dict[str, Any], state: dict[str, Any],
+    -                    exchanges: list[dict[str, Any]]) -> tuple[dict[str, Any], list[dict[str, str]]]:
+79  + def correct_record(
+80  +     record: dict[str, Any], state: dict[str, Any], exchanges: list[dict[str, Any]]
+81  + ) -> tuple[dict[str, Any], list[dict[str, str]]]:
+82  |     """Return a copy plus exact field deltas; never infer nullability from values."""
+--------------------------------------------------------------------------------
+88  |
+    - def _correct_record(record: dict[str, Any], state: dict[str, Any],
+    -                     exchanges: list[dict[str, Any]]) -> tuple[dict[str, Any], list[dict[str, str]]]:
+89  + def _correct_record(
+90  +     record: dict[str, Any], state: dict[str, Any], exchanges: list[dict[str, Any]]
+91  + ) -> tuple[dict[str, Any], list[dict[str, str]]]:
+92  |     require(
+--------------------------------------------------------------------------------
+151 |     events = final["events"]
+    -     require(equal([e["payload"] for e in events if e["kind"] == "answer"], [answer])
+    -             and equal([e["payload"] for e in events if e["kind"] == "db_result"
+    -                        and e["payload"].get("step_id") == step["step_id"]], [step["raw"]])
+    -             and equal([e["payload"] for e in events if e["kind"] == "adapted_result"
+    -                        and e["payload"].get("step_id") == step["step_id"]],
+    -                       [{k: v for k, v in step.items() if k != "raw"}]),
+    -             "Original raw/adapted/answer event provenance mismatch")
+152 +     require(
+153 +         equal([e["payload"] for e in events if e["kind"] == "answer"], [answer])
+154 +         and equal(
+155 +             [
+156 +                 e["payload"]
+157 +                 for e in events
+158 +                 if e["kind"] == "db_result" and e["payload"].get("step_id") == step["step_id"]
+159 +             ],
+160 +             [step["raw"]],
+161 +         )
+162 +         and equal(
+163 +             [
+164 +                 e["payload"]
+165 +                 for e in events
+166 +                 if e["kind"] == "adapted_result" and e["payload"].get("step_id") == step["step_id"]
+167 +             ],
+168 +             [{k: v for k, v in step.items() if k != "raw"}],
+169 +         ),
+170 +         "Original raw/adapted/answer event provenance mismatch",
+171 +     )
+172 |
+--------------------------------------------------------------------------------
+231 |
+    - def run(campaign: Path, records_path: Path, receipt_path: Path,
+    -         output: Path, manifest: Path) -> dict[str, Any]:
+232 + def run(
+233 +     campaign: Path, records_path: Path, receipt_path: Path, output: Path, manifest: Path
+234 + ) -> dict[str, Any]:
+235 |     """Hash-bound local artifacts only. Caller supplies reviewed provenance receipt."""
+--------------------------------------------------------------------------------
+319 |         events = [
+    -             json.loads(line, object_pairs_hook=unique_object,
+    -                            parse_constant=lambda _: require(False, "Nonfinite JSON"))
+320 +             json.loads(
+321 +                 line,
+322 +                 object_pairs_hook=unique_object,
+323 +                 parse_constant=lambda _: require(False, "Nonfinite JSON"),
+324 +             )
+325 |             for line in trace.read_text().splitlines()
+    |
+
+2 files would be reformatted, 41 files already formatted

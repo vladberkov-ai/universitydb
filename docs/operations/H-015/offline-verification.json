@@ -1,0 +1,58 @@
+{
+  "recorded_at": "2026-11-08T06:45:45.765686+00:00",
+  "tested_sha": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+  "source_blob_identity_count": 45,
+  "source_blob_identity_match": true,
+  "root_verification": {
+    "full_pytest": {
+      "passed": 576,
+      "duration_seconds": 150.83,
+      "exit_code": 0
+    },
+    "ruff": "PASS",
+    "format": "41 files PASS",
+    "mypy": "14source files PASS",
+    "compileall": "PASS",
+    "independent_oracle": {
+      "checks": 157,
+      "product_imports": false,
+      "temporary_sqlite": true,
+      "historical_main_not_called": true
+    },
+    "diff_check": "PASS"
+  },
+  "logs": {
+    "docs/operations/H-015/verification/cp-l1-targeted.txt": "3f246ccdab10074c5a3cec0bdd92c3e4ea992d500f81d8a74b034856f0da445d",
+    "docs/operations/H-015/verification/full-offline.txt": "aedade7e134283e7d53c7ff034b0a45151a7f878d1614a0a7238224636279fa8",
+    "docs/operations/H-015/verification/ruff.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs/operations/H-015/verification/format.txt": "ec547b9784fec079a852c1a1af13bb56a8339603c43bdd8375f459e5927a5145",
+    "docs/operations/H-015/verification/mypy.txt": "fe22d95914d7fdd98483ace256b7f2708db4be1255737e5d7cca4d16703ca242",
+    "docs/operations/H-015/verification/oracle-check.txt": "0fe14ff113710f39602138b37713fa25e0d9c0de7a27a05ad10871f796021d60"
+  },
+  "freeze_sha256": "21a1eeb16fb6bff8cd1e807938adf8cfa4a272531e3ec5c79295df173c85eb67",
+  "freeze_entries": 68,
+  "preservation": {
+    "targets": 13,
+    "unchanged": true,
+    "historical_operation_files": 688,
+    "all_unchanged": true,
+    "vault_inputs": 23,
+    "all_inputs_unchanged": true,
+    "eval_package_entries": 17,
+    "all_match": true
+  },
+  "cleaner": {
+    "monetary": "regression-first84lock; masked empty raw_response fallback removed; atomic writer reused; final90focused pass; independent review separate",
+    "collector": "19regression lock no-op; later genuine replay/durability fixes22PASS; independent re-review",
+    "observer": "38regression lock no-op inspection; Ruff/format pass; reviewer separate"
+  },
+  "not_run": [
+    "live_generation",
+    "count_endpoint",
+    "access_probe",
+    "credentials_loading",
+    "real_monetary_migration",
+    "push"
+  ],
+  "review_verdicts": "await actual final independent lanes, not self-approval"
+}

@@ -1,0 +1,43 @@
+{
+  "recorded_at": "2026-11-08T06:48:42.475912+00:00",
+  "scope": "H015 prelive ready; actual full48 not yet collected",
+  "tested_frozen_sha": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+  "native_root_actual_status": "active",
+  "native_root_matching_aggregate": true,
+  "owner_evidence": "prelive-owner-readiness.json",
+  "offline_evidence": "offline-verification.json",
+  "code_review": "APPROVE",
+  "architect": "CLEAR",
+  "independent_lanes": true,
+  "configured_gates": [],
+  "reviews": {
+    "reviews/prelive-code-review.md": "29f97657de2c52c6d4d2ab219af5af7ee0a7bd6a3f20aef5c511a7bdcec7d0dc",
+    "reviews/prelive-architecture.json": "27f01e0c2909278d5e58ef2636e4c7cf4018d2b9db4a6171fcf05dcb3f8b701e",
+    "reviews/prelive-architecture-metadata-v2.json": "17933dd026cb556212a5d64adde0970c4ceec627fe70c0656a920fcef89129b0"
+  },
+  "registration_sha256": "413fb669246b10e9112af0cb20d1922b46dc5db9e2bdc858a695e7771ac004d9",
+  "freeze_sha256": "adba96e727cd97b452ed6f2b21f6b7b85c691913edb189e7318b1636e4aef61b",
+  "metadata_amendment": "registration/registration-amendment-v2.json",
+  "full_source_tests": "576PASS150.83s; staticPASS;157oracle; unchanged ecb7source for metadata-v2",
+  "first_useful_run": "A01-r1",
+  "conversations": 48,
+  "max_generation_attempts": 240,
+  "aggregate_cap_usd": "120",
+  "dispatch_usd": "110",
+  "contingency_usd": "10",
+  "old_accounted_usd": "5.970272",
+  "old_entries": 14,
+  "old_ledger_sha256": "2753fe2fdf1dc366ffecdb5a86dcd9cf184d83707a00da0de62a8a4e4963f125",
+  "no_smoke_count_probe_fallback_judge_rerun_push": true,
+  "live_authority_source": "actual user received H015 task; CHAT053/054 acceptedADR-CHAT007; this receipt adds no authority",
+  "gates_ready": true,
+  "still_not_executed": [
+    "real migration",
+    "credential loading",
+    "API generation",
+    "full48",
+    "live artifact scoring/review"
+  ],
+  "root_owns_lifecycle": true,
+  "original_completed_workflows_unchanged": true
+}

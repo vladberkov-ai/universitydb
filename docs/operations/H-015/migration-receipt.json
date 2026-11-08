@@ -1,0 +1,28 @@
+{
+  "recorded_at": "2026-11-08T06:50:01.638472+00:00",
+  "migration": {
+    "replayed": false,
+    "before_sha256": "2753fe2fdf1dc366ffecdb5a86dcd9cf184d83707a00da0de62a8a4e4963f125",
+    "after_sha256": "0386fe5505add172e4c624742539531fc3b62ca1b1ee558dbd6e91396ad57211",
+    "policy_sha256": "c98022114f8ca10781cdc22c644ea1c85b8b36df24f5eaf28ea444d0ad8fe6c0"
+  },
+  "historical_entries_preserved": true,
+  "historical_profile_preserved": true,
+  "historical_original_bytes_preserved": true,
+  "backup_sha256": "2753fe2fdf1dc366ffecdb5a86dcd9cf184d83707a00da0de62a8a4e4963f125",
+  "backup_mode": "0600",
+  "private_parent_mode": "0700",
+  "canonical_authority": true,
+  "inspection": {
+    "policy_sha256": "c98022114f8ca10781cdc22c644ea1c85b8b36df24f5eaf28ea444d0ad8fe6c0",
+    "stop": null,
+    "uncertain_attempts": [],
+    "calls": 14,
+    "campaign_calls": 0,
+    "reserved_usd": "5.970272",
+    "observed_usd": "0.1648460",
+    "effective_usd": "5.970272"
+  },
+  "raw_ledger_exported": false,
+  "credential_values_or_paths_exported": false
+}

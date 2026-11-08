@@ -1,0 +1,61 @@
+{
+  "version": "h015-no-network-readiness-v1",
+  "recorded_at": "2026-11-08T06:44:24.759331+00:00",
+  "candidate_sha": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+  "validation": {
+    "collector_closed_registration": "PASS",
+    "source_hashes": "PASS",
+    "repeat_major_original48_question_selection_identity": "PASS",
+    "fixture_descriptors_schema_seed_hashes": "PASS",
+    "collector_oracle_file_map_exclusion": "PASS",
+    "first_run": "A01-r1",
+    "calls_max": 240,
+    "rubric_frozen_before_results": true,
+    "canonical_ledger_hash_unchanged": true
+  },
+  "installed_openai_version": "3.46.0",
+  "routing": {
+    "base_url": "https://api.openai.com/v1",
+    "service_tier": "default",
+    "sdk_max_retries": 0,
+    "paid_tools": false,
+    "inherited_variables_present": {
+      "OPENAI_BASE_URL": false,
+      "OPENAI_ORG_ID": false,
+      "OPENAI_PROJECT_ID": false,
+      "HTTP_PROXY": false,
+      "HTTPS_PROXY": false,
+      "ALL_PROXY": false,
+      "LANGCHAIN_TRACING_V2": false,
+      "LANGSMITH_TRACING": false,
+      "LANGSMITH_ENDPOINT": false,
+      "OTEL_EXPORTER_OTLP_ENDPOINT": false,
+      "OPENAI_LOG": false,
+      "OPENAI_CUSTOM_HEADERS": false
+    },
+    "credential_present": false,
+    "account_access_proven": false
+  },
+  "external_calls": {
+    "generation": 0,
+    "count": 0,
+    "access_probe": 0
+  },
+  "mutations": {
+    "real_ledger": false,
+    "campaign_marker": false,
+    "collection_directory": false,
+    "credentials_loaded": false,
+    "git_commit": false
+  },
+  "freeze_path": "docs/operations/H-015/registration/prospective-freeze.json",
+  "freeze_sha256": "21a1eeb16fb6bff8cd1e807938adf8cfa4a272531e3ec5c79295df173c85eb67",
+  "pending_root_gates": [
+    "fresh same-owner actual ACTIVE",
+    "full offline/static evidence and independent final APPROVE+CLEAR",
+    "root release of migration and credential gates",
+    "reviewed hash-guarded migration and private immutable backup",
+    "secure launching shell credentials; no paid access probe"
+  ],
+  "interpretation": "Metadata/schema validation only; no mocked live output, no candidate product execution, no live score."
+}

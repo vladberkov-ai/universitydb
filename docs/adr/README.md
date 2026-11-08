@@ -3,8 +3,8 @@
 [ADR-OMX-014](ADR-OMX-014-H015-full-live-eval.md) records prospective collector and
 atomic history-preserving shared budget-policy migration choices under actual
 H015/CHAT053/054/ADR-CHAT007. Full48/max240,aggregate120/dispatch110/reserve10 include
-historic5.970272/14entries; no smoke or new push authority. Implementation/measurement
-proof is pending in the [H015 report](../reports/H-015-full-live-eval.md). Accepted
+historic5.970272/14entries; no smoke or new push authority. Original48terminal collection is now recorded in the [H015 report](../reports/H-015-full-live-eval.md);
+quality FAIL and a HIGH observer defect prevent unqualified full-assessment approval. Accepted
 ADR006/Sol unchanged; ADR003–007 remain proposed. Earlier current-stage headers
 below are preserved historical cutoffs, not new H015 restrictions.
 

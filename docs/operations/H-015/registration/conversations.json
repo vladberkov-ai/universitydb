@@ -1,0 +1,450 @@
+[
+  {
+    "run_id": "A01-r1",
+    "case_id": "A01",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "Mean grade across all enrollments and all semesters?",
+    "selections": []
+  },
+  {
+    "run_id": "A02-r1",
+    "case_id": "A02",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "Mean grade in S1 across all students, courses and teachers?",
+    "selections": []
+  },
+  {
+    "run_id": "A03-r1",
+    "case_id": "A03",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "Mean grade for course ID 3 in S1?",
+    "selections": []
+  },
+  {
+    "run_id": "A04-r1",
+    "case_id": "A04",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "zero",
+    "question": "Mean grade for course ID 3 in S1?",
+    "selections": []
+  },
+  {
+    "run_id": "J01-r1",
+    "case_id": "J01",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "Mean grade for student ID 2, course ID 1, teacher ID 10, semester S1?",
+    "selections": []
+  },
+  {
+    "run_id": "J02-r1",
+    "case_id": "J02",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "Mean grade for student ID 1 in course ID 1 across all offerings and all semesters?",
+    "selections": []
+  },
+  {
+    "run_id": "J03-r1",
+    "case_id": "J03",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "For course ID 1 in S1, count enrollments, graded enrollments and distinct students.",
+    "selections": []
+  },
+  {
+    "run_id": "J04-r1",
+    "case_id": "J04",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "List student IDs, offering IDs and grades for course ID 1 in S1, including ungraded enrollments.",
+    "selections": []
+  },
+  {
+    "run_id": "D01-r1",
+    "case_id": "D01",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "Which course IDs have the highest mean grade in S1? Include all exact ties.",
+    "selections": []
+  },
+  {
+    "run_id": "D02-r1",
+    "case_id": "D02",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "tie",
+    "question": "Which course IDs have the highest mean grade in S1? Include all exact ties.",
+    "selections": []
+  },
+  {
+    "run_id": "D03-r1",
+    "case_id": "D03",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "For students enrolled in the course with the highest mean in S1, show each student ID and mean across all S1 courses, including all tied courses.",
+    "selections": []
+  },
+  {
+    "run_id": "D04-r1",
+    "case_id": "D04",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "f2",
+    "question": "For students enrolled in the course with the highest mean in S1, show each student ID and mean across all S1 courses, including all tied courses.",
+    "selections": []
+  },
+  {
+    "run_id": "C01-r1",
+    "case_id": "C01",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "What is Alex's mean grade across all courses and all semesters?",
+    "selections": [
+      1
+    ]
+  },
+  {
+    "run_id": "C02-r1",
+    "case_id": "C02",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "What is Alex's mean grade across all courses and all semesters?",
+    "selections": [
+      3
+    ]
+  },
+  {
+    "run_id": "C03-r1",
+    "case_id": "C03",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "What is the mean grade in the current semester?",
+    "selections": [
+      "S1"
+    ]
+  },
+  {
+    "run_id": "C04-r1",
+    "case_id": "C04",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "How many for course ID 1 in S1?",
+    "selections": [
+      "enrollment_count"
+    ]
+  },
+  {
+    "run_id": "E01-r1",
+    "case_id": "E01",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "Mean grade for course ID 2 in S2?",
+    "selections": []
+  },
+  {
+    "run_id": "E02-r1",
+    "case_id": "E02",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "Mean grade for teacher ID 10 in S2?",
+    "selections": []
+  },
+  {
+    "run_id": "E03-r1",
+    "case_id": "E03",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "List student IDs, offering IDs and grades for course ID 2 in S2.",
+    "selections": []
+  },
+  {
+    "run_id": "E04-r1",
+    "case_id": "E04",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "For course ID 2 in S2, count enrollments, graded enrollments and distinct students.",
+    "selections": []
+  },
+  {
+    "run_id": "L01-r1",
+    "case_id": "L01",
+    "repeat": 1,
+    "domain": "library",
+    "fixture": "l",
+    "question": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+    "selections": []
+  },
+  {
+    "run_id": "L02-r1",
+    "case_id": "L02",
+    "repeat": 1,
+    "domain": "library",
+    "fixture": "no_loans",
+    "question": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+    "selections": []
+  },
+  {
+    "run_id": "L03-r1",
+    "case_id": "L03",
+    "repeat": 1,
+    "domain": "library",
+    "fixture": "returned",
+    "question": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+    "selections": []
+  },
+  {
+    "run_id": "L04-r1",
+    "case_id": "L04",
+    "repeat": 1,
+    "domain": "library",
+    "fixture": "all_returned",
+    "question": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+    "selections": []
+  },
+  {
+    "run_id": "A01-r2",
+    "case_id": "A01",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "u",
+    "question": "Mean grade across all enrollments and all semesters?",
+    "selections": []
+  },
+  {
+    "run_id": "A02-r2",
+    "case_id": "A02",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "u",
+    "question": "Mean grade in S1 across all students, courses and teachers?",
+    "selections": []
+  },
+  {
+    "run_id": "A03-r2",
+    "case_id": "A03",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "u",
+    "question": "Mean grade for course ID 3 in S1?",
+    "selections": []
+  },
+  {
+    "run_id": "A04-r2",
+    "case_id": "A04",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "zero",
+    "question": "Mean grade for course ID 3 in S1?",
+    "selections": []
+  },
+  {
+    "run_id": "J01-r2",
+    "case_id": "J01",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "u",
+    "question": "Mean grade for student ID 2, course ID 1, teacher ID 10, semester S1?",
+    "selections": []
+  },
+  {
+    "run_id": "J02-r2",
+    "case_id": "J02",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "u",
+    "question": "Mean grade for student ID 1 in course ID 1 across all offerings and all semesters?",
+    "selections": []
+  },
+  {
+    "run_id": "J03-r2",
+    "case_id": "J03",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "u",
+    "question": "For course ID 1 in S1, count enrollments, graded enrollments and distinct students.",
+    "selections": []
+  },
+  {
+    "run_id": "J04-r2",
+    "case_id": "J04",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "u",
+    "question": "List student IDs, offering IDs and grades for course ID 1 in S1, including ungraded enrollments.",
+    "selections": []
+  },
+  {
+    "run_id": "D01-r2",
+    "case_id": "D01",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "u",
+    "question": "Which course IDs have the highest mean grade in S1? Include all exact ties.",
+    "selections": []
+  },
+  {
+    "run_id": "D02-r2",
+    "case_id": "D02",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "tie",
+    "question": "Which course IDs have the highest mean grade in S1? Include all exact ties.",
+    "selections": []
+  },
+  {
+    "run_id": "D03-r2",
+    "case_id": "D03",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "u",
+    "question": "For students enrolled in the course with the highest mean in S1, show each student ID and mean across all S1 courses, including all tied courses.",
+    "selections": []
+  },
+  {
+    "run_id": "D04-r2",
+    "case_id": "D04",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "f2",
+    "question": "For students enrolled in the course with the highest mean in S1, show each student ID and mean across all S1 courses, including all tied courses.",
+    "selections": []
+  },
+  {
+    "run_id": "C01-r2",
+    "case_id": "C01",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "u",
+    "question": "What is Alex's mean grade across all courses and all semesters?",
+    "selections": [
+      1
+    ]
+  },
+  {
+    "run_id": "C02-r2",
+    "case_id": "C02",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "u",
+    "question": "What is Alex's mean grade across all courses and all semesters?",
+    "selections": [
+      3
+    ]
+  },
+  {
+    "run_id": "C03-r2",
+    "case_id": "C03",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "u",
+    "question": "What is the mean grade in the current semester?",
+    "selections": [
+      "S1"
+    ]
+  },
+  {
+    "run_id": "C04-r2",
+    "case_id": "C04",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "u",
+    "question": "How many for course ID 1 in S1?",
+    "selections": [
+      "enrollment_count"
+    ]
+  },
+  {
+    "run_id": "E01-r2",
+    "case_id": "E01",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "u",
+    "question": "Mean grade for course ID 2 in S2?",
+    "selections": []
+  },
+  {
+    "run_id": "E02-r2",
+    "case_id": "E02",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "u",
+    "question": "Mean grade for teacher ID 10 in S2?",
+    "selections": []
+  },
+  {
+    "run_id": "E03-r2",
+    "case_id": "E03",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "u",
+    "question": "List student IDs, offering IDs and grades for course ID 2 in S2.",
+    "selections": []
+  },
+  {
+    "run_id": "E04-r2",
+    "case_id": "E04",
+    "repeat": 2,
+    "domain": "university",
+    "fixture": "u",
+    "question": "For course ID 2 in S2, count enrollments, graded enrollments and distinct students.",
+    "selections": []
+  },
+  {
+    "run_id": "L01-r2",
+    "case_id": "L01",
+    "repeat": 2,
+    "domain": "library",
+    "fixture": "l",
+    "question": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+    "selections": []
+  },
+  {
+    "run_id": "L02-r2",
+    "case_id": "L02",
+    "repeat": 2,
+    "domain": "library",
+    "fixture": "no_loans",
+    "question": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+    "selections": []
+  },
+  {
+    "run_id": "L03-r2",
+    "case_id": "L03",
+    "repeat": 2,
+    "domain": "library",
+    "fixture": "returned",
+    "question": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+    "selections": []
+  },
+  {
+    "run_id": "L04-r2",
+    "case_id": "L04",
+    "repeat": 2,
+    "domain": "library",
+    "fixture": "all_returned",
+    "question": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+    "selections": []
+  }
+]

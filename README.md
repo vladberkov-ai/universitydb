@@ -7,28 +7,43 @@ schemas, seed data, tests, decisions, prompt collections and execution evidence.
 
 ## Current status
 
-**Implementation and offline readiness are complete.** University supports means,
-three count objects, JOIN listings, grouping, exact top-course ties, optional
-student/course/teacher/semester filters, clarification and dependent multi-step
-questions. Library uses the same graph, DB safety, provider, trace and UI core.
+**H015 collected all48original conversations; quality FAIL, assessment qualified by
+an observer defect.** On frozen/tested **`ecb7f5c81c705d970dc64adb910ed2a5020cb28b`**,
+10conversations reached normal Sol→compiled LangGraph→SQLite with20generation calls;
+38ended honestly at scope resolution (`INVALID_INPUT`, zero model calls). All48are
+terminal and remain in the denominator. No questions were rewritten or rerun.
 
-The current tested product is **`98345ad6ce5757c71d44ba1ce59a683d46e0d910`**:
-**485 tests, 157 independent oracle checks**, static checks, tracked-only clean
-reproduction, AppTest and six real offline-browser scenario classes/seven captures
-passed. Independent reviews returned APPROVE/CLEAR; H-014 closed native COMPLETE,
-strict PASS5/5. Scope-loss and Streamlit magic-output regressions were fixed and
-retested; rejected candidates remain documented, not presented as final passes.
-[Final report](docs/reports/H-014-readiness-offline.md) ·
-[clean-run summary](docs/operations/H-014/clean-run-final-attempt3/final-summary.json) ·
-[browser evidence](docs/operations/H-014/browser/final-983-attempt1/browser-receipt.json).
+The frozen observer/scorer returned2/48, but a confirmed HIGH nullable-type defect
+falsely rejects8otherwise matching numeric results. **2/48 is original instrument
+output, not valid unqualified semantic accuracy;10product successes are not a
+replacement registered score.** The38real product failures already preclude the
+44/48 and≥7/8/category rubric. Independent final review is REQUEST CHANGES / architect
+WATCH; correct full-evaluation DoD and native COMPLETE/strict are not achieved.
+A separate append-only offline instrument assessment is awaiting clarified scope;
+no corrected score or additional live generation is claimed.
+Later offline corrector preparation passed609tests but then failed formatting on
+two new files (failure retained). Narrow fixes now pass72focused/static checks and
+future-preparation-only APPROVE/CLEAR; final root610tests/static PASS. No
+actual48correction/scoring is applied or authorized; original HIGH remains open.
+[H015 report](docs/reports/H-015-full-live-eval.md) ·
+[original collection](docs/operations/H-015/collection-closeout.json) ·
+[independent observation](docs/operations/H-015/observation/independent-observation.md).
 
-**Real-model accuracy for the expanded service is still unverified.** Offline
-providers are injected; they execute real LangGraph and SQLite but do not measure
-NL→SQL generation quality. Earlier I1 live results80.00/90.00 remain historical.
-The [live protocol](docs/plans/H-014-live-eval-protocol.md) and
-[budget](docs/plans/H-014-live-eval-budget.md) are proposals, not spending approval
-or executed evaluation. Publication of this checkpoint is authorized; new live
-calls, budget migration and subsequent pushes require separate authority.
+The exact ecb7candidate passed **576offline tests/157independent oracle checks**
+and static checks before collection. Historical H014 product
+`98345ad6ce5757c71d44ba1ce59a683d46e0d910` passed485tests, clean reproduction,
+AppTest and six offline-browser classes/seven captures, COMPLETE/strict5/5.
+These are separate cutoffs; offline/bounded safety passes do not prove broad live
+query quality. Live M1/ties/count-choice/Library/repair success was not demonstrated
+by this campaign. The exposed24-question×2sample is not an untouched holdout or
+general model-accuracy estimate. Earlier I1 live80.00/90.00 remains historical.
+
+The owner authorized this single no-smoke full eval and history-preserving aggregate
+USD120/dispatch110/reserve10, including old obligations.20new retained reservations
+USD8.528960 plus historicalUSD5.970272 totalUSD14.499232; new observed conservative
+usageUSD0.2776070 is not the invoice or a reservation refund. No extra campaign,
+count/probe/fallback/judge/paid rerun/UI run or push occurred. H015 changes are local;
+fresh remote origin/main remains60e8ffc ([receipt](docs/operations/H-015/remote-closeout.json)).
 [Requirement status](docs/assignment-status.md).
 
 ## Deliverables
@@ -99,7 +114,8 @@ uv run --locked mypy src/universitydb --ignore-missing-imports
 uv run --locked python -m compileall -q src tests
 ```
 
-Run the full `pytest -q` command from Install for all485 current tests. Graph tests
+The frozen ecb7candidate passed576tests with the full `pytest -q` command from Install;
+later offline instrument work is a separate validation cutoff. Graph tests
 use compiled LangGraph and real SQLite with injected proposals; UI tests use
 Streamlit AppTest. Actual browser evidence is separate and linked above. The H-014 browser driver dynamically discovers Chromium and records its toolchain.
 Browser automation needs a separately provisioned Playwright/Chromium environment;
@@ -107,7 +123,7 @@ it is not required for pytest/AppTest. Manual browser reproduction uses the ordi
 local UI sequence above. Clean reproduction already passed with disclosed dependency
 cache/browser reuse; it is not an all-fresh-download claim.
 
-## Live mode: configuration reference, no new evaluation claim
+## Live mode: configuration reference, no new dispatch authority
 
 The normal provider uses `gpt-6.1-sol`: planning high, SQL/repair medium, no fallback.
 Unset `UNIVERSITYDB_TEST_MODE` and `UNIVERSITYDB_TEST_FIXTURE` before using it. Follow
@@ -115,13 +131,16 @@ the documented settings in [.env.example](.env.example); `.env` is not auto-load
 The local credential helpers under `tools/local-credentials/` store the key outside
 Git. Never print keys or include them in traces/issues.
 
-Live use requires your own explicit spending authority and applicable rate review;
-historical owner approval is not permission for a reviewer's account or this expanded
-evaluation. The shipped policy is the earlier I1 cap$10/admission$8/contingency$2,
-with a pinned shared `runtime/spending.json`; it must not be reset or bypassed by a new
-checkout. Current expanded live evaluation is **not authorized/run**. See the
-[dated budget policy](docs/adr/ADR-OMX-010-I1-practical-budget-policy.md). The controller
-is conservative local accounting, not a guarantee about the final provider invoice.
+Live use requires explicit spending authority and applicable rate review; H015's
+single-campaign owner authority is not permission for a reviewer's account or more
+experiments. The original I1 policy remains a historical segment; the reviewed
+H015 policy is aggregate$120/dispatch$110/contingency$10 including all history,
+with one canonical `runtime/spending.json` independent of fixture roots. Migration
+preserves history; it is not an environment-only cap override, account reset or
+permission to release holds/spend contingency. See [ADR014](docs/adr/ADR-OMX-014-H015-full-live-eval.md)
+and [actual accounting](docs/reports/H-015-full-live-eval.md#calls-usage-retained-obligations-and-limits).
+Do not rerun the completed collection. The controller is conservative practical
+accounting, not strict BILLING_VERIFIED or a provider-invoice guarantee.
 Requests may use a plan plus up to three SQL steps, repair/retry sharing the maximum
 five-call budget. Starting the UI does not establish model accuracy.
 

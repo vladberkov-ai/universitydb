@@ -1,0 +1,26 @@
+{
+  "version": "h015-registration-amendment-v2",
+  "recorded_at": "2026-11-08T06:47:14.541961+00:00",
+  "reason": "Prospective dependency-input hardening: runtime collector revalidation now also pins uv.lock and pyproject.toml; no source/rubric/case/policy change.",
+  "before_results": true,
+  "old_registration_sha256": "19caf7743671ec79ae648d43034114c8634b5dc141306ba9fe8164334b637856",
+  "new_registration_sha256": "413fb669246b10e9112af0cb20d1922b46dc5db9e2bdc858a695e7771ac004d9",
+  "old_freeze_sha256": "21a1eeb16fb6bff8cd1e807938adf8cfa4a272531e3ec5c79295df173c85eb67",
+  "new_freeze_sha256": "adba96e727cd97b452ed6f2b21f6b7b85c691913edb189e7318b1636e4aef61b",
+  "added_collector_files": {
+    "uv.lock": "de36cab6c73d37bde70cc13e019b9eb2552a0747e46fe5c8c3b7cedf5338378d",
+    "pyproject.toml": "00522db5a7513ed6a19804487591996a65a31c5f1b40559362d6587dbbfe9644"
+  },
+  "validation": {
+    "collector_registration": "PASS",
+    "external_frozen_files": "PASS",
+    "original48_order_identity": "PASS",
+    "candidate_head_unchanged": true,
+    "canonical_ledger_hash_unchanged": true
+  },
+  "live_gate": "CLOSED",
+  "credentials_loaded": false,
+  "calls": 0,
+  "migration": false,
+  "git_commit": false
+}

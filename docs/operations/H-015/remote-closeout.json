@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-11-08T07:01:48.963828+00:00",
+  "method": "actual supported escalated git ls-remote origin refs/heads/main,exit0",
+  "remote": "origin",
+  "remote_main": "60e8ffcefb3614f7a754459722b14a7a2c6a1074",
+  "published_start_unchanged": true,
+  "new_h015_push": "not-run/no authority",
+  "remote_config_changed": false,
+  "no_fetch_or_reset": true,
+  "actual_live_source_sha": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+  "late_local_checkpoint": "pending",
+  "api_campaign_calls_after_closeout": 0,
+  "ledger_sha256": "daed87a21b856f0df454fb1378e266fcf9b79504351a873b1dfc39855d6d2e97"
+}

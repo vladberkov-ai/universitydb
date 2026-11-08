@@ -107,3 +107,17 @@ I1/H013/H014 state, original evidence and locks remain unchanged. Authorized
 monetary migration/actual usage are the explicit preservation exception, receipted
 separately. Obsidian stays read-only. Local explicit-path checkpoints are allowed;
 **push, final publication and defense are not authorized**.
+
+## Post-results evidence cutoff — disclosed instrument limitation
+
+Original exactecb7f5c collection has48terminal records,20known responses,
+10product ok/38predispatch INVALID_INPUT. The frozen observer/scorer output2/48
+is instrument-limited: eight additional numeric results otherwise match but computed
+mean nullability is wrongly inferred from current cells. Final independent code
+review REQUEST CHANGES/HIGH and architect WATCH supersede unqualified prelive
+approval; prior APPROVE/CLEAR history remains. Quality FAIL is certain independently
+from38product failures. No corrected score/full-DoD/native-completion claim follows.
+A separately versioned append-only same-artifact offline correction is awaiting
+scope clarification; original code/observations/score remain unchanged and no
+provider/question rerun, product tuning or publication is authorized by this note.
+See [qualified report](../reports/H-015-full-live-eval.md) for actual receipts.

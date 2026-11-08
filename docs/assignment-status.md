@@ -1,3 +1,32 @@
+## Current H015 assessment cutoff — 2026-11-08
+
+[H015 report](reports/H-015-full-live-eval.md) supersedes earlier current/no-live
+wording below. All48original conversations are terminal on exactecb7f5c:10product
+ok/38INVALID_INPUT before the model,20generation calls. Quality FAIL is established;
+frozen2/48 is limited instrument output because8additional strict mismatches are
+confirmed observer nullability false negatives. No replacement score, correct full
+measurement DoD, native COMPLETE/strict or acceptance is claimed. Final independent
+REQUEST CHANGES/HIGH and architect WATCH remain; separate append-only offline
+assessment scope is awaiting clarification. Original collection/source/score remain.
+
+New sourceecb7f5c passed576offline tests/static/157oracle; historical H01498345ad
+485/clean/browser/strict5/5 remains distinct. R03/R08 have real pipeline evidence,
+not broad accuracy pass. R04–07 retain offline breadth/shared-core/trace/safety proof,
+not live M1/ties/count/Library/repair success. R13/U04 use ADR014; U01 selected actual
+prompts/RU+EN coverage remains partial; U06 local333b0fe/ecb7checkpoints. R15 H015
+publication pending separate authority,push not-run,publishedbaseline60e8ffc;
+R16/17 owner defense deferred. Monetary history was preserved through authorized
+migration/usage, not unchanged byte-for-byte. Earlier H014 and H013 sections below
+retain their historical scopes; their proposed/no-live language is not new authority.
+
+Future corrector preparation is offline-only: root reports609tests passing but the
+following format gate failed on two new files (history retained). Narrow fixes now
+pass72focused/static checks and future-prep APPROVE/CLEAR; final root610tests/static PASS.
+Original HIGH/full-assessment/native DoD remain open; no actual48-record correction
+or rescoring is authorized/applied. [Fresh remote receipt](operations/H-015/remote-closeout.json)
+confirms origin/main60e8ffc unchanged; push not-run. Live-cutoff68hash checks are
+historical evidence, not a claim later report updates leave those docs unchanged.
+
 ## Published H-014 readiness checkpoint — 2026-11-08
 
 Current tested product98345ad:485offline tests,157oracle, clean tracked-only

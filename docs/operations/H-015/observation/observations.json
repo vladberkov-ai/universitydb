@@ -1,0 +1,1406 @@
+[
+  {
+    "run_id": "A01-r1",
+    "status": "completed",
+    "outcome": "success",
+    "observed": {
+      "scope": {},
+      "columns": [
+        "mean",
+        "graded_count",
+        "enrollment_count"
+      ],
+      "types": [
+        "decimal",
+        "integer",
+        "integer"
+      ],
+      "rows": [
+        [
+          "83.33",
+          6,
+          8
+        ]
+      ],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": true,
+      "behavior_complete": true,
+      "nonfabricated": true
+    },
+    "calls": 2,
+    "trace_sha256": "dfa8fdb06212435f5011e6975a9b4e003522793a96bfebad78fa245aea55561d",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/A01-r1/traces/8de40f10-738d-4252-8553-379c7494b352.jsonl"
+  },
+  {
+    "run_id": "A02-r1",
+    "status": "completed",
+    "outcome": "success",
+    "observed": {
+      "scope": {
+        "semester_id": "S1"
+      },
+      "columns": [
+        "mean",
+        "graded_count",
+        "enrollment_count"
+      ],
+      "types": [
+        "decimal",
+        "integer",
+        "integer"
+      ],
+      "rows": [
+        [
+          "87.50",
+          4,
+          6
+        ]
+      ],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": true,
+      "behavior_complete": true,
+      "nonfabricated": true
+    },
+    "calls": 2,
+    "trace_sha256": "635c825caf39637a5b5ba5c333fd1838ad47b12ff0e506108b8ddfd9dbdd7426",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/A02-r1/traces/26b22268-b9c2-4f1f-ad14-23e286f048c5.jsonl"
+  },
+  {
+    "run_id": "A03-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "23aaffb734d30fb8d07afdaa235405de26b3252d1463fbed971dc64ff37a9f1f",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/A03-r1/traces/81492828-f896-43ee-bdd2-d03b5fa49ead.jsonl"
+  },
+  {
+    "run_id": "A04-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "9932006ff9eebbf83c14a1c29c8097193149344081a43f93071f6403df9620b3",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/A04-r1/traces/b79c3504-4c37-4add-9575-0d18c0926f03.jsonl"
+  },
+  {
+    "run_id": "J01-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "98be364f2a36099038bb3cfcfa8adaeed1c5f903bfd1f5d3b295113bf59366d9",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/J01-r1/traces/a1926c80-e835-475f-83a7-7d63b4b715cf.jsonl"
+  },
+  {
+    "run_id": "J02-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "ea41d4fc7c7f311fa0dcdbfa4750d6a06537406a7a126e5e8666d0ccf39b2ae2",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/J02-r1/traces/6c1aa6dd-7033-4762-881f-c005e2063b95.jsonl"
+  },
+  {
+    "run_id": "J03-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "42e7009717446127eb5852da0bd5e377e1f3c8e853d70f366af51b0282e67919",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/J03-r1/traces/322bc18a-5fb0-4e1c-b788-377965fc597d.jsonl"
+  },
+  {
+    "run_id": "J04-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "bbd42a074a3df55572a11e1e3a3021d677ce40723071301bfe6e6c8b4056f0a5",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/J04-r1/traces/8033a5f4-df68-4dba-9261-39602c9adc2c.jsonl"
+  },
+  {
+    "run_id": "D01-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "1a904dade3d76fb7f6ccfcd485b7f28fb7371477832972b6c030680aeadf7029",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/D01-r1/traces/c2480545-dcbc-4773-824a-22a82d71cc36.jsonl"
+  },
+  {
+    "run_id": "D02-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "a82be8249c36d7d02c348c861897601a67d05a9bea2220094a6a7bddf5708b9f",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/D02-r1/traces/8e5e7c3e-566a-4e41-9414-5fa075e7b53d.jsonl"
+  },
+  {
+    "run_id": "D03-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "6ab55ed743725ed7ba5beeb1fbced2d019a505f381ba1713e5c8826210e01fc1",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/D03-r1/traces/eafef47e-1e82-4108-aa95-1d66c7baf9f2.jsonl"
+  },
+  {
+    "run_id": "D04-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "f6c81d0556a8e8768b88347a61f018da2b95846f776d5ff8d627b6d06b22fcfe",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/D04-r1/traces/086535a7-27d7-49e7-92b1-9473bfbb6e00.jsonl"
+  },
+  {
+    "run_id": "C01-r1",
+    "status": "completed",
+    "outcome": "success",
+    "observed": {
+      "scope": {
+        "student_id": 1
+      },
+      "columns": [
+        "mean",
+        "graded_count",
+        "enrollment_count"
+      ],
+      "types": [
+        "decimal",
+        "integer",
+        "integer"
+      ],
+      "rows": [
+        [
+          "86.67",
+          3,
+          3
+        ]
+      ],
+      "empty_reason": null,
+      "choices": [
+        {
+          "field": "student_id",
+          "values": [
+            1,
+            3
+          ]
+        }
+      ],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": true,
+      "behavior_complete": true,
+      "nonfabricated": true
+    },
+    "calls": 2,
+    "trace_sha256": "4bb4219a040822d62b5167bd96582cd476c7eb687348bc8d92ac02c548cf9e89",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/C01-r1/traces/d6541723-c606-49a2-9941-db9bec94972a.jsonl"
+  },
+  {
+    "run_id": "C02-r1",
+    "status": "completed",
+    "outcome": "success",
+    "observed": {
+      "scope": {
+        "student_id": 3
+      },
+      "columns": [
+        "mean",
+        "graded_count",
+        "enrollment_count"
+      ],
+      "types": [
+        "decimal?",
+        "integer",
+        "integer"
+      ],
+      "rows": [
+        [
+          null,
+          0,
+          1
+        ]
+      ],
+      "empty_reason": "no_grades",
+      "choices": [
+        {
+          "field": "student_id",
+          "values": [
+            1,
+            3
+          ]
+        }
+      ],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": true,
+      "behavior_complete": true,
+      "nonfabricated": true
+    },
+    "calls": 2,
+    "trace_sha256": "a15654514f6e301e39bbc63f94370ac4466e4d60936d115a1849cdb4862f85af",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/C02-r1/traces/e3178c21-44c4-4523-98c2-e000b6d80b6e.jsonl"
+  },
+  {
+    "run_id": "C03-r1",
+    "status": "completed",
+    "outcome": "success",
+    "observed": {
+      "scope": {
+        "semester_id": "S1"
+      },
+      "columns": [
+        "mean",
+        "graded_count",
+        "enrollment_count"
+      ],
+      "types": [
+        "decimal",
+        "integer",
+        "integer"
+      ],
+      "rows": [
+        [
+          "87.50",
+          4,
+          6
+        ]
+      ],
+      "empty_reason": null,
+      "choices": [
+        {
+          "field": "semester_id",
+          "values": [
+            "S1",
+            "S2"
+          ]
+        }
+      ],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": true,
+      "behavior_complete": true,
+      "nonfabricated": true
+    },
+    "calls": 2,
+    "trace_sha256": "0f91827ec660f43f1ba944f9eb342c76e3ea1ba9b4d442cc050787c2e3034a86",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/C03-r1/traces/c5871786-8fed-440d-a780-8c68fdf734ec.jsonl"
+  },
+  {
+    "run_id": "C04-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "c26c8a77d0b74e561797b26d1b6033430eda871f835a88dbdaa922b99ef688ef",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/C04-r1/traces/c3e7db9e-c789-4d04-8cc7-32dcda8aa69c.jsonl"
+  },
+  {
+    "run_id": "E01-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "12a39726cfce9e4818dfce65b0607de99bfc36e6e545a319888a4e298d4be0eb",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/E01-r1/traces/6914b933-c734-4bcd-9f51-ea6e011f5c96.jsonl"
+  },
+  {
+    "run_id": "E02-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "f50036b262e81c8ad3ff630ab8ce00e0b062bb25c613968f712de7c03c07facf",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/E02-r1/traces/0766cd7a-5d56-466a-a209-9b448c5dc182.jsonl"
+  },
+  {
+    "run_id": "E03-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "7eac7afeb0aac2cfa4daa2c246ae4f600a863b676ce08d543855103f9ae4bb93",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/E03-r1/traces/4d3f67df-e48c-4957-ad60-aa8f4363d509.jsonl"
+  },
+  {
+    "run_id": "E04-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "a1e0a785784329dc562448ce1fcee38f5056df850ee711ae62eae2ac88f791ed",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/E04-r1/traces/d948e66a-8d6c-4fb2-8980-2017cc5a2100.jsonl"
+  },
+  {
+    "run_id": "L01-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "bf79c409bc3ea192ef0ac4a0f87293f521d6caa00451a8f1cc5084dccb0aa117",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/L01-r1/traces/e0e73fc9-9931-409d-8012-835c63659b24.jsonl"
+  },
+  {
+    "run_id": "L02-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "11201bf33e622357b074bea470bbbeac82d99b09751236f9d904675744afafc6",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/L02-r1/traces/955a3103-3323-4d0a-a94c-577a3e7c2ac5.jsonl"
+  },
+  {
+    "run_id": "L03-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "1ea382a7381a79fec692cb935efaafd71ab6080deb29aa76a7156459fdb1f25a",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/L03-r1/traces/f512eaca-09b5-41da-9b2e-24c4aa627f91.jsonl"
+  },
+  {
+    "run_id": "L04-r1",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "7de4cf8235bee9b83c80b2ef889f6726793e7e1b0fa264cbbf89d5e58780532c",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/L04-r1/traces/c5baeb56-2d28-4893-8877-b29c8c196e70.jsonl"
+  },
+  {
+    "run_id": "A01-r2",
+    "status": "completed",
+    "outcome": "success",
+    "observed": {
+      "scope": {},
+      "columns": [
+        "mean",
+        "graded_count",
+        "enrollment_count"
+      ],
+      "types": [
+        "decimal",
+        "integer",
+        "integer"
+      ],
+      "rows": [
+        [
+          "83.33",
+          6,
+          8
+        ]
+      ],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": true,
+      "behavior_complete": true,
+      "nonfabricated": true
+    },
+    "calls": 2,
+    "trace_sha256": "f7ec14cabcc9730f6104607d1de22e215a03113abc2ab8c7b9421604b938016e",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/A01-r2/traces/1e19db4d-d918-4056-a8cb-c833c352a59a.jsonl"
+  },
+  {
+    "run_id": "A02-r2",
+    "status": "completed",
+    "outcome": "success",
+    "observed": {
+      "scope": {
+        "semester_id": "S1"
+      },
+      "columns": [
+        "mean",
+        "graded_count",
+        "enrollment_count"
+      ],
+      "types": [
+        "decimal",
+        "integer",
+        "integer"
+      ],
+      "rows": [
+        [
+          "87.50",
+          4,
+          6
+        ]
+      ],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": true,
+      "behavior_complete": true,
+      "nonfabricated": true
+    },
+    "calls": 2,
+    "trace_sha256": "a164de5d82377ab2d196eda99c32903f0080efb90ed7e0fbc109dd7f5267fa68",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/A02-r2/traces/d2c308db-2017-432e-80cf-c4f0056d8c47.jsonl"
+  },
+  {
+    "run_id": "A03-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "a165295692a7353a1c993a4b05d51c6d7fd1475c36d5894272eeff6e175040b9",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/A03-r2/traces/3597884e-ba8f-49f3-9506-2a3a4240bfe6.jsonl"
+  },
+  {
+    "run_id": "A04-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "1e17de7cb2e532d6fc30e771e9fe1f19698089d7a9ac2ae30929ce5622939c98",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/A04-r2/traces/ddd559cc-6cde-4ec0-8f5c-390f64bfcbca.jsonl"
+  },
+  {
+    "run_id": "J01-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "3f8e24980a4bb1f74f13cbeb57870c59487e297cc3614635ab5c92a1dde2d57a",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/J01-r2/traces/5088025d-5135-4280-9004-a8743d793b54.jsonl"
+  },
+  {
+    "run_id": "J02-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "47c9c36c0b0ae1498c513aaa37e7de80827979dfba8cdc640027681695266ae8",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/J02-r2/traces/ec473272-b174-464a-a8fe-7a46c62a45ca.jsonl"
+  },
+  {
+    "run_id": "J03-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "43bebeb24e4bd4d708ac9981d148a049fa2108df222be0c2f45be3231d781e6e",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/J03-r2/traces/54a167cc-8a51-48d3-b5bc-0f2200431ca3.jsonl"
+  },
+  {
+    "run_id": "J04-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "2472412dd743fe3865d58b325c2ab52a7a523c0fc4ac9c2907a790c044cc5393",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/J04-r2/traces/74b7930e-08a4-40a1-852d-6a21ae210758.jsonl"
+  },
+  {
+    "run_id": "D01-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "2510dec510ee22df1b04934a6dc1a5a20a152765e077706945682b1e8ee8e26c",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/D01-r2/traces/357a142f-e44e-4837-b79e-d7b6c4122bb5.jsonl"
+  },
+  {
+    "run_id": "D02-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "b5c322c36faab5e288f0c9a5c923d5982916ccdce1f36ab7d33e55e4e80adbbc",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/D02-r2/traces/35553351-ecf7-4fb8-b89b-66a224595674.jsonl"
+  },
+  {
+    "run_id": "D03-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "d7095f587460b429ec3a5b2a33131a592f9dd183bd71acf54d666f69cd4585e0",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/D03-r2/traces/3c2d8f3d-32d0-4862-af75-81f615c85ab4.jsonl"
+  },
+  {
+    "run_id": "D04-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "69582ecca9157747f3a78373f1836518840bf0bb425022cc5ba350871cb65d8e",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/D04-r2/traces/6225727d-799d-4aef-8ccc-1d490c145a7e.jsonl"
+  },
+  {
+    "run_id": "C01-r2",
+    "status": "completed",
+    "outcome": "success",
+    "observed": {
+      "scope": {
+        "student_id": 1
+      },
+      "columns": [
+        "mean",
+        "graded_count",
+        "enrollment_count"
+      ],
+      "types": [
+        "decimal",
+        "integer",
+        "integer"
+      ],
+      "rows": [
+        [
+          "86.67",
+          3,
+          3
+        ]
+      ],
+      "empty_reason": null,
+      "choices": [
+        {
+          "field": "student_id",
+          "values": [
+            1,
+            3
+          ]
+        }
+      ],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": true,
+      "behavior_complete": true,
+      "nonfabricated": true
+    },
+    "calls": 2,
+    "trace_sha256": "4fa6f923b8124dd0ddccbfd93c162917bee262f141eb94b9d377c045c1ca3af1",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/C01-r2/traces/9a550673-65c6-4ee1-b366-7c5075e52d6f.jsonl"
+  },
+  {
+    "run_id": "C02-r2",
+    "status": "completed",
+    "outcome": "success",
+    "observed": {
+      "scope": {
+        "student_id": 3
+      },
+      "columns": [
+        "mean",
+        "graded_count",
+        "enrollment_count"
+      ],
+      "types": [
+        "decimal?",
+        "integer",
+        "integer"
+      ],
+      "rows": [
+        [
+          null,
+          0,
+          1
+        ]
+      ],
+      "empty_reason": "no_grades",
+      "choices": [
+        {
+          "field": "student_id",
+          "values": [
+            1,
+            3
+          ]
+        }
+      ],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": true,
+      "behavior_complete": true,
+      "nonfabricated": true
+    },
+    "calls": 2,
+    "trace_sha256": "bfb45e4760225ba17ba547928977e37eb4d8d2800285ba984758cdeaf761a882",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/C02-r2/traces/103d1d6b-5d43-4bcd-a5a5-3934a4c43684.jsonl"
+  },
+  {
+    "run_id": "C03-r2",
+    "status": "completed",
+    "outcome": "success",
+    "observed": {
+      "scope": {
+        "semester_id": "S1"
+      },
+      "columns": [
+        "mean",
+        "graded_count",
+        "enrollment_count"
+      ],
+      "types": [
+        "decimal",
+        "integer",
+        "integer"
+      ],
+      "rows": [
+        [
+          "87.50",
+          4,
+          6
+        ]
+      ],
+      "empty_reason": null,
+      "choices": [
+        {
+          "field": "semester_id",
+          "values": [
+            "S1",
+            "S2"
+          ]
+        }
+      ],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": true,
+      "behavior_complete": true,
+      "nonfabricated": true
+    },
+    "calls": 2,
+    "trace_sha256": "c8a4414fa049d68c693763b576be7a2cf8d41b098ce9b0306394e45ca2cb3f8e",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/C03-r2/traces/c4ba3cbb-0120-4f6e-8d87-73e88582faf6.jsonl"
+  },
+  {
+    "run_id": "C04-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "889ff518ebe778aee7ff6ab444fbffda19059917f587caa5b02edeaad8c4bb3f",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/C04-r2/traces/2b275af4-7728-4df7-908c-c69dc7995db7.jsonl"
+  },
+  {
+    "run_id": "E01-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "d3e0d7acb71982450ea05ea9a72085f0b47cc19952d5f95ca12a8f9c4d636acb",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/E01-r2/traces/f1b3a881-425e-44c8-b226-fdea0c33e40d.jsonl"
+  },
+  {
+    "run_id": "E02-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "6c4316cf7d117224965e6d5a853e65190f2fc5201e09f407c2f0bd6bd75fb7ee",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/E02-r2/traces/37b51bb3-af86-45bc-9de6-9f5d4e35596e.jsonl"
+  },
+  {
+    "run_id": "E03-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "c5faa54fe5e98b3122d74e8e836e2592c77657de41288431375f1cc44b92c4d5",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/E03-r2/traces/77a9a8c9-54a9-4b97-b092-fa752bd6a205.jsonl"
+  },
+  {
+    "run_id": "E04-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "e443a43f4fc45f18b80db70fce56eef0c2f797c84694ad66284dad0d6f413d7e",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/E04-r2/traces/eed4658e-7903-4207-9b01-4a9122323807.jsonl"
+  },
+  {
+    "run_id": "L01-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "a272bd02aebcacda584fb326fda9c7406310bd93e67d0272d10d9fae023e90af",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/L01-r2/traces/9b90e1b7-5dbb-4863-9f07-ded92d57c50d.jsonl"
+  },
+  {
+    "run_id": "L02-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "47b49641c941f798df80a4d15cf667970d79bdaa5a63457f3a54c2bbf968349f",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/L02-r2/traces/d245cca0-8e91-4db9-9f57-f70a56fb3150.jsonl"
+  },
+  {
+    "run_id": "L03-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "aad3c61ee6c1cf4d1b4a6d69fc66a1a9f3a98373e49f6ec00f7765dc27e72168",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/L03-r2/traces/dd32d5d5-a722-42dd-a708-ee020b13db2d.jsonl"
+  },
+  {
+    "run_id": "L04-r2",
+    "status": "completed",
+    "outcome": "failure",
+    "observed": {
+      "scope": null,
+      "columns": [],
+      "types": [],
+      "rows": [],
+      "empty_reason": null,
+      "choices": [],
+      "dependencies": {}
+    },
+    "checks": {
+      "safe": true,
+      "private": true,
+      "trace_complete": true,
+      "scope_explicit": false,
+      "behavior_complete": false,
+      "nonfabricated": true
+    },
+    "calls": 0,
+    "trace_sha256": "55c818ca37a51d8265e7196080af8748c8236d7ef5a3c0a65014ac51d1a02336",
+    "trace_path": "/home/dev/projects/universitydb/docs/operations/H-015/collection/L04-r2/traces/ea885876-dcc1-4f55-a058-ebda050e679f.jsonl"
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "version": "h015-root-final-development-verification-v1",
+  "actual_live_candidate": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+  "future_corrector_sha256": "8560fcb2c7458ab778dbac1d55530f8b634561727f74281b4809c53bf6389908",
+  "future_tests_sha256": "ac296b2ff5ea1815e9fc4a3aad9ea3af4c9ff050d7db914ee310aca21f71dbc0",
+  "validation": {
+    "tests": "610 passed in146.05s",
+    "ruff": "PASS",
+    "format": "43files already formatted",
+    "mypy_src": "14files PASS",
+    "mypy_corrector": "1file strict PASS",
+    "compileall": "PASS",
+    "diff_check": "PASS",
+    "process_exit": 0
+  },
+  "prior_diagnostic": "Separate earlier609test pass followed by format failure on2newfiles retained; not overwritten",
+  "actual_campaign_correction_or_rescoring": false,
+  "native_goal": {
+    "threadId": "01a1b9d5-673f-76c0-97eb-32b5e26bd5a7",
+    "objective": "Complete the durable ultragoal plan in docs/operations/H-015/workflow/.omx/ultragoal/goals.json, including later accepted/appended stories, under the original brief constraints; use docs/operations/H-015/workflow/.omx/ultragoal/ledger.jsonl as the audit trail.",
+    "status": "active",
+    "tokensUsed": 1512581,
+    "timeUsedSeconds": 2486,
+    "createdAt": 1794119377,
+    "updatedAt": 1794121864
+  },
+  "workflow": {
+    "g001": "complete",
+    "g002": "complete",
+    "g003": "complete",
+    "g004": "review_blocked",
+    "g005": "in_progress"
+  },
+  "lifecycle_attempt": {
+    "executed": false,
+    "action": "supported G005 story blocked checkpoint, explicit nested cwd",
+    "rejection": "Auto-review treated requested blocked transition as native blocked requiring3consecutive goal turns; process creation rejected, no command execution. Not retried or bypassed.",
+    "native_status_unchanged": "active"
+  },
+  "remaining_gap": "Owner clarification before any append-only corrected actual-artifact analysis; original HIGH/REQUEST CHANGES and WATCH unresolved. Full evaluation/native completion not claimed.",
+  "new_paid_calls": 0,
+  "push": "not-run/no authority",
+  "recorded_at": "2026-11-08T07:11:14.906992+00:00",
+  "private_log_hashes": {
+    "postresults-final-ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "postresults-final-corrector-mypy.log": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e",
+    "postresults-final-format.log": "d6675b63a4767317d34641fb3901c01a3e6f8536bb9289fd7d0bdf7ae2bfe59b",
+    "postresults-final-mypy.log": "fe22d95914d7fdd98483ace256b7f2708db4be1255737e5d7cca4d16703ca242",
+    "postresults-final-full-offline.log": "1e74246adf0d4b96e289bf66db17384c8e1653d98b4b60cfdbdf9504016c7c30"
+  }
+}

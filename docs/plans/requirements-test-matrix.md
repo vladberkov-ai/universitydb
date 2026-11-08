@@ -1,3 +1,32 @@
+## Current H015 evidence mapping — 2026-11-08
+
+[Qualified assessment report](../reports/H-015-full-live-eval.md): exactecb7f5c
+576offline tests/static/157oracle and original48terminal collection,20real calls,
+10product successes/38predispatch failures. Frozen2/48 is not valid unqualified
+semantic accuracy: confirmed HIGH observer type defect adds8false negatives.
+No corrected registered score/full-evaluation DoD/native COMPLETE/strict is claimed;
+quality FAIL remains certain independently. Final REQUEST CHANGES/architect WATCH.
+
+R03/R08: actual normal-provider/compiled-graph/SQLite/traces now measured, but broad
+quality fails. R04–07: offline invariant evidence retained; no live M1/ties/count/
+Library/repair pass inferred. R13/U04: scoped ADR014/rationale/history preserved.
+U01: actual root plus selected role/runtime-request provenance, RUoriginal/ENreader
+translation, full private history unclaimed. U03/U05: supported new root workflow,
+completed states/locks/history preserved; receipted monetary migration/usage is the
+explicit exception. U06 local docs333b0fe and codeecb7; late commit pending.
+R15 new publication pending,remote baseline60e8ffc,push not-run. R16/17/U08 defense
+later,U02 deadline not invented,U07 historical. The earlier future-evidence rows
+and48/48/sealed-sample proposals below are historical, not the current acceptance
+rubric. Current sample is exposed24×2; threshold44/48 AND≥7/8/category plus gates.
+
+Future corrector preparation is offline-only: root reports609tests passing but the
+following format gate failed on two new files (history retained). Narrow fixes now
+pass72focused/static checks and future-prep APPROVE/CLEAR; final root610tests/static PASS.
+Original HIGH/full-assessment/native DoD remain open; no actual48-record correction
+or rescoring is authorized/applied. [Fresh remote receipt](../operations/H-015/remote-closeout.json)
+confirms origin/main60e8ffc unchanged; push not-run. Live-cutoff68hash checks are
+historical evidence, not a claim later report updates leave those docs unchanged.
+
 ## Current H-011 mapping (all original R/U rows retained below)
 I1 complete; accepted I2-offline improves R01–04/06–09/11–14 with mean/count/list/group/top, four optional filters, typed contracts, corruption/safety, checkpoint clarification, failures, complete trace/UI and offline independent reviews. Implementation evidence pending; offline tests are not live accuracy. R04 multi-step and R05 dependent/second-schema proof → I3. R10 production notes remain at the implemented I1 baseline until I2 exists; no production claim. R15 publication pending (push forbidden). R16/R17 defense after service. U01 prompt coverage stays partial with actual root/child records; U04 accepted scoped ADR011; U03 separate supported OMX scope; U05 vault read-only; U06 CP1–CP4 explicit staging/receipts; U02 exact deadline open; U07 historical verified; U08 deferred. Old 48/48/$2/Luna proposals below are not current acceptance.
 

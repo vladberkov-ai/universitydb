@@ -1,0 +1,55 @@
+{
+  "received_at": "2026-11-08T06:47:17.209497+00:00",
+  "role": "architect",
+  "verdict": "CLEAR",
+  "candidate_sha": "ecb7f5c81c705d970dc64adb910ed2a5020cb28b",
+  "scope": "H015 bounded prelive architecture only",
+  "attribution": "Actual native prelive_architecture final result received by root; selected attributed projection, not root self-approval/full transcript. Reviewer was read-only and returned text.",
+  "initial_verdict": "BLOCK",
+  "initial_findings": [
+    "Append-plus marker read at EOF permitted second campaign",
+    "Marker/campaign/case ancestor directory links needed fsync before action",
+    "Provider wall timeout is unknown-spend started/abort, not completed timeout"
+  ],
+  "resolved_evidence": [
+    "collector.py seek(0) underflock, file+parent fsync",
+    "campaign/case parent fsync before started/provider",
+    "startup normal/KeyboardInterrupt second invocation and durability spies",
+    "observer timeout docs corrected"
+  ],
+  "unresolved_architectural_findings": 0,
+  "verified": {
+    "full_suite": "576 passed150.83s",
+    "static": "Ruff/format/mypy14/compileall/diff PASS",
+    "independent_oracle_checks": 157,
+    "independently_hashed_verification_logs": 6,
+    "independently_hashed_freeze_files": 68,
+    "collector_sha256": "257225495bcd22efaa697d7a8038820294c0f595bc1fa366e2d937cbd3038081",
+    "observer_sha256": "a47a50f935f493e24796ad353eff88de1a24509979699328f230aa35ecbb7f14"
+  },
+  "boundaries": [
+    "canonical monetary path independent of fixture roots; source checkout scope plus operational canonical cwd freeze, not account-global cryptography",
+    "legacy original source/14entries/rates/auth preserved and fixed successor aggregate120/110/10",
+    "same stablelock/atomicfsync; max reservation or observed retained; global240",
+    "same full-wire builder; no SDK retry; unknown/profile stops; known errors ordinary",
+    "fixed48/order/freshDELETEfixture; only question/selection model input",
+    "oracle separate; actual typed observation/choices/dependencies; six false absent independent hash-bound attestations",
+    "unchanged strict H014scorer/semantics/prompts/Solprofile"
+  ],
+  "counterargument": "Financial headroom alone is not experiment authorization; hashes alone do not prove reviewer truth. Retain independent campaign identity/accounting/artifact review.",
+  "remaining_root_gates": [
+    "fresh actual native ACTIVE/currentowner",
+    "secure launching shell routing/credentialpresence",
+    "hash-guarded actual migration and preservation receipt",
+    "sequential collection then independent original-artifact observation/scoring/reviews"
+  ],
+  "not_certified": [
+    "model/account access",
+    "actual migration",
+    "live48 completion",
+    "quality pass",
+    "owner acceptance",
+    "publication authority"
+  ],
+  "metadata_followup": "Root identified uv.lock/pyproject not in runtime collector file map although in external freeze; prospective metadata-only strengthening underway before results, no source change."
+}

@@ -559,3 +559,40 @@ Stop при budget/unknown-spend/model-tier mismatch или critical safety/priv
 Coverage cutoff: CP-L1 preparation. Runtime plan/SQL templates above are unchanged;
 actual H015 provider requests and selected independent role results are pending
 capture/attribution, not reconstructed here. U01 remains partial globally.
+
+
+## H-015 — последующий actual request/result cutoff
+
+Actual root original выше и [receipt](../operations/H-015/prompt-receipt.json) не менялись.
+H-пакет — read context.20actual полных provider requests/20responses/48traces
+сохранены в [original collection manifest](../operations/H-015/collection-closeout.json).
+Неизменённые runtime templates реально использованы:10plan/10SQL/0repair.
+Plan SHA256 `0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43`;
+SQL SHA256 `79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb`.
+Это не live-подтверждение M1/Library/repair;38conversations завершились до модели.
+
+Выборочное покрытие child prompts/results, не полный transcript:
+[actual research task/result](../operations/H-015/official-rates.md),
+[monetary task projection](../operations/H-015/monetary-implementation.md),
+[collector assignment scope](../operations/H-015/collector-design.md),
+[independent observer result](../operations/H-015/observation/independent-observation.md),
+[final code review](../operations/H-015/reviews/final-code-review.md),
+[actual architect follow-up projection](../operations/H-015/reviews/postresults-architecture-watch.json).
+Source attribution и omissions в [documentation receipt](../operations/H-015/report-draft-receipt.json).
+Full private sessions/system/developer/tools/reasoning/credential paths не публикуются;
+U01 остаётся partial, missing transcripts не восстанавливаются из шаблонов.
+
+Cutoff:48terminal, quality FAIL; frozen2/48 — исторический instrument output,
+не корректная unqualified semantic accuracy. Подтверждены8type-only false negatives
+nullable mean и38real product failures. Final REQUEST CHANGES/HIGH, architect WATCH;
+corrected score/full DoD/native COMPLETE/strict не заявлены. Уточнение границы
+append-only corrected offline assessment тех же immutable artifacts ожидается;
+неизвестный будущий actual prompt не реконструирован. Provider/question rerun и push
+не выполнялись. [Qualified report](../reports/H-015-full-live-eval.md).
+
+Последующий preparation cutoff: future corrector — только synthetic/offline.
+Root609testsPASS146.34s, затем formatFAIL ровно2новыхфайла; исходный failure сохранён.
+Narrow fixes:72focused/static PASS, future-prep-only APPROVE/CLEAR; final root610tests/static PASS. actual48correction/scoring не
+разрешены и не применены. Это не closure исходного HIGH/fullassessment/nativeDoD.
+[Fresh remote receipt](../operations/H-015/remote-closeout.json): origin/main60e8ffc,
+push not-run. Полный actual clarification prompt/answer не реконструируется.

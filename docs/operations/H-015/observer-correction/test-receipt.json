@@ -1,0 +1,57 @@
+{
+  "version": "h015-observer-correction-development-v2",
+  "scope": "Synthetic/development only; no original campaign read/execution or corrected score",
+  "source_hashes": {
+    "tools/eval/correct_mean_nullability_v2.py": "8560fcb2c7458ab778dbac1d55530f8b634561727f74281b4809c53bf6389908",
+    "tests/test_h015_observer_v2.py": "ac296b2ff5ea1815e9fc4a3aad9ea3af4c9ff050d7db914ee310aca21f71dbc0",
+    "docs/operations/H-015/observer-correction/design.md": "138d125907fd1212419facad2567f8d476144f8001ae067ad206542e40504f53",
+    "tools/eval/observe.py": "a47a50f935f493e24796ad353eff88de1a24509979699328f230aa35ecbb7f14",
+    "tests/test_h015_observer.py": "e67daa994b6a799dcf191f9b963be12a39c8cd5557095d0cfb5ddedd4cb014af"
+  },
+  "validation": {
+    "tests": {
+      "command": ".venv/bin/python -m pytest tests/test_h015_observer.py tests/test_h015_observer_v2.py -q",
+      "result": "72 passed (38 existing observer + 34 new synthetic correction tests)"
+    },
+    "lint": {
+      "command": ".venv/bin/ruff check tools/eval/correct_mean_nullability_v2.py tests/test_h015_observer_v2.py",
+      "result": "All checks passed"
+    },
+    "typecheck": {
+      "command": ".venv/bin/mypy tools/eval/correct_mean_nullability_v2.py --follow-imports=skip",
+      "result": "Success: no issues found in 1 source file (strict project configuration)"
+    },
+    "compile": {
+      "command": ".venv/bin/python -m compileall -q tools/eval/correct_mean_nullability_v2.py tests/test_h015_observer_v2.py",
+      "result": "PASS"
+    },
+    "cli": "--help and one fabricated temporary campaign via test_synthetic_cli PASS",
+    "format": {
+      "command": ".venv/bin/ruff format --check tools/eval/correct_mean_nullability_v2.py tests/test_h015_observer_v2.py",
+      "result": "PASS: 2 files already formatted"
+    }
+  },
+  "not_run": [
+    "Actual campaign correction",
+    "Observer/scorer rerun",
+    "Corrected assessment/score",
+    "Full repository suite/build/browser",
+    "Independent code/architecture reviews (root-owned)"
+  ],
+  "boundaries": {
+    "actual_campaign_or_oracle_read": false,
+    "product_or_frozen_source_changed": false,
+    "numeric_answers_or_checks_changed": false,
+    "paid_api_count_calls_or_credentials": false,
+    "ledger_lifecycle_git_push_operations": false
+  },
+  "remaining_gates": [
+    "Owner clarification before actual use",
+    "Independent code reviewer and architect review",
+    "Root final integration/verification"
+  ],
+  "cleanup": "No masking fallback/observer duplication/monkeypatch/dependency; bounded map/lambda simplification; independent approval pending",
+  "supersedes_development_verification_only": "Earlier development source/test hashes retained in agent/root history; independent-review follow-up adds known Library unchanged path and Ruff formatting. No actual application.",
+  "prior_diagnostics": "Root full 609-test run passed; its format --check failed on two new Python files. Narrow subsequent formatting and Library repair verified by focused 72 tests and fresh lint/format/mypy/compile checks; no claim of fresh full-suite validation here.",
+  "manual_gate": "No automated activation helper. Future downstream use requires separately authorized root receipt: CLI exit0; complete strict closed manifest; verify output/input/source/receipt/frozen observer/all artifact hashes; independently verify type-only deltas. Missing/partial manifest blocks use regardless of scorer acceptance."
+}

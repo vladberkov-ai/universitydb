@@ -1,4 +1,40 @@
-## Current H-015 prompt coverage — 2026-11-08
+## Current H015 actual request/result coverage — 2026-11-08
+
+The [actual root prompt](omx/H-015-actual-prompt.txt)/[export receipt](../operations/H-015/prompt-receipt.json)
+remain unchanged; Russian original and labelled English reader translation are in
+existing RU/EN bundles. H-package/private inputs are read context, not that prompt.
+Original H015 collection now has20actual full wire requests/20responses/48traces:
+[hash-bound closeout](../operations/H-015/collection-closeout.json). Unchanged
+runtime plan/SQL templates were consumed10times each; repair0. Template hashes:
+plan `0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43`,
+SQL `79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb`.
+No live M1/Library/repair success is implied.
+
+Bounded selected role coverage: [research actual delegation and result](../operations/H-015/official-rates.md),
+[monetary implementation task projection](../operations/H-015/monetary-implementation.md),
+[collector lane scope](../operations/H-015/collector-design.md),
+[independent observer result](../operations/H-015/observation/independent-observation.md),
+[final code-review result](../operations/H-015/reviews/final-code-review.md) and
+[architect actual follow-up projection](../operations/H-015/reviews/postresults-architecture-watch.json).
+These are selected attributed assignments/results, not full child/root/private
+transcripts or equality to opaque delegation transport. [Draft coverage receipt](../operations/H-015/report-draft-receipt.json)
+records the documentation lane's actual selected instruction and cutoff.
+System/developer/tools/reasoning/private sessions/credential paths remain omitted;
+U01 remains partial globally.
+
+The [report](../reports/H-015-full-live-eval.md) preserves original frozen2/48 as
+instrument-limited output, confirmed8type-only false negatives and38real product
+failures. No corrected tally is preclaimed; append-only same-artifact assessment
+scope is awaiting clarification. No actual later clarification prompt is reconstructed
+or represented as received here. No provider/questions replay or push occurred.
+Future corrector development is synthetic/offline-only: root reports609tests passing,
+then a formatting failure on two new files (history retained). Narrow fixes now
+pass72focused/static checks and future-prep APPROVE/CLEAR; final root610tests/static PASS.
+No actual48correction/scoring is authorized or applied, and no later clarification
+answer is invented. Fresh remote origin/main remains60e8ffc; push not-run.
+Earlier preparation no-live/pending language below is historical cutoff evidence.
+
+## H-015 preparation prompt cutoff — 2026-11-08
 
 [Actual received task](omx/H-015-actual-prompt.txt) is selected from the supported
 root export, not reconstructed from the handoff/starter. [Receipt](../operations/H-015/prompt-receipt.json)

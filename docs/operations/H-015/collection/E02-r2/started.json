@@ -1,0 +1,1 @@
+{"ledger": {"calls": 34, "campaign_calls": 20, "effective_usd": "14.499232", "observed_usd": "0.4424530", "policy_sha256": "c98022114f8ca10781cdc22c644ea1c85b8b36df24f5eaf28ea444d0ad8fe6c0", "reserved_usd": "14.499232", "stop": null, "uncertain_attempts": []}, "run_id": "E02-r2", "status": "started"}

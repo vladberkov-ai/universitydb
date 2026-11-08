@@ -558,3 +558,44 @@ Return docs/reports/H-015-full-live-eval.md with exact frozen/tested SHA,48statu
 Coverage cutoff: CP-L1 preparation. Runtime plan/SQL templates above are unchanged;
 actual H015 provider requests and selected independent role results are pending
 capture/attribution, not reconstructed here. U01 remains partial globally.
+
+
+## H-015 — later actual request/result cutoff
+
+The actual Russian root original and [receipt](../operations/H-015/prompt-receipt.json)
+remain unchanged; its English version above is reader translation, not actual input.
+The H-package is read context. [Original collection manifest](../operations/H-015/collection-closeout.json)
+retains20actual complete wire requests/20responses/48traces. Unchanged runtime
+templates were consumed10plan/10SQL/0repair times. Plan SHA256
+`0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43`;
+SQL SHA256 `79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb`.
+This does not prove live M1/Library/repair success;38conversations failed before the model.
+
+Selected child assignments/results, not complete transcripts:
+[actual research task/result](../operations/H-015/official-rates.md),
+[monetary task projection](../operations/H-015/monetary-implementation.md),
+[collector assignment scope](../operations/H-015/collector-design.md),
+[independent observer result](../operations/H-015/observation/independent-observation.md),
+[final code review](../operations/H-015/reviews/final-code-review.md),
+[actual architect follow-up projection](../operations/H-015/reviews/postresults-architecture-watch.json).
+[Documentation receipt](../operations/H-015/report-draft-receipt.json) records selected
+actual instruction, attribution and omissions. Full private sessions/system/developer/
+tools/reasoning/credential paths are not exported; U01 remains partial. Missing
+transcripts are not reconstructed from templates or opaque transport.
+
+Cutoff:48terminal, quality FAIL; frozen2/48 is historical instrument output, not valid
+unqualified semantic accuracy. Confirmed8nullable-type false negatives and38real
+product failures remain distinct. Final REQUEST CHANGES/HIGH and architect WATCH;
+no corrected score/full DoD/native COMPLETE/strict claimed. Clarification of separate
+append-only corrected offline assessment over the same immutable artifacts is pending;
+no future actual prompt is reconstructed. No provider/question rerun or push occurred.
+[Qualified report](../reports/H-015-full-live-eval.md).
+
+Later preparation cutoff: the future corrector remains synthetic/offline-only.
+Root609testsPASS146.34s was followed by formatFAIL on exactly2newfiles; the initial
+failure is preserved. Narrow fixes now pass72focused/static checks and future-prep
+APPROVE/CLEAR; final root610tests/static PASS. Actual48correction/scoring is
+not authorized or applied. Original HIGH/fullassessment/
+nativeDoD remain open. [Fresh remote receipt](../operations/H-015/remote-closeout.json)
+confirms origin/main60e8ffc,push not-run. No actual clarification prompt/answer is
+reconstructed.
