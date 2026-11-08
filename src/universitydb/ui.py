@@ -14,7 +14,7 @@ from universitydb.contracts import Failure
 from universitydb.db import initialize
 from universitydb.domain import University
 from universitydb.library import Library
-from universitydb.llm import OpenAIProvider, Provider, ScriptedProvider
+from universitydb.llm import OpenAIProvider, Provider, ScriptedProvider, canonical_budget_path
 
 QUESTION = (
     "What is the average grade for Bea (student_id=2) in DB (course_id=1) "
@@ -40,7 +40,7 @@ def provider(root: Path, schema_id: str) -> Provider:
             for value in values
         ]
         return ScriptedProvider(outputs)
-    return OpenAIProvider(Path(__file__).parent / "prompts", root / "runtime" / "spending.json")
+    return OpenAIProvider(Path(__file__).parent / "prompts", canonical_budget_path())
 
 
 def context_identity(root: Path, schema_id: str) -> str:

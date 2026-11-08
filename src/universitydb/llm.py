@@ -22,6 +22,8 @@ from universitydb.config import (
     BUFFER_USD,
     CAP_USD,
     DISPATCH_THRESHOLD_USD,
+    H015_AUTHORIZATION,
+    H015_POLICY,
     PROFILE,
     logical_operation,
     payload_estimate,
@@ -128,6 +130,24 @@ class Spending:
             "output_tokens": output_tokens,
         }
 
+    def _validate_record(self, record: Any) -> dict[str, Any]:
+        if not isinstance(record, dict) or record.get("profile") != self.profile:
+            raise ValueError("invalid or changed approval profile")
+        attempts = record.get("attempts")
+        if not isinstance(attempts, list):
+            raise TypeError("invalid attempts")
+        totals = self._totals(attempts)
+        extras = {"policy", "stop"} if "policy" in record else set()
+        if extras and (not self.practical or record["policy"] != BUDGET_POLICY):
+            raise ValueError("policy downgrade or drift")
+        if extras and record["stop"] is not None and not isinstance(record["stop"], dict):
+            raise ValueError("invalid stop")
+        if set(record) != {"profile", "attempts", *totals, *extras} or any(
+            record[k] != v for k, v in totals.items()
+        ):
+            raise ValueError("invalid ledger totals")
+        return record
+
     @contextmanager
     def _transaction(self) -> Iterator[dict[str, Any]]:
         self.path.parent.mkdir(parents=True, exist_ok=True)
@@ -137,26 +157,7 @@ class Spending:
             with lock_path.open("a+") as lock:
                 fcntl.flock(lock, fcntl.LOCK_EX)
                 if self.path.exists():
-                    record = json.loads(self.path.read_text())
-                    if not isinstance(record, dict) or record.get("profile") != self.profile:
-                        raise ValueError("invalid or changed approval profile")
-                    attempts = record.get("attempts")
-                    if not isinstance(attempts, list):
-                        raise ValueError("invalid attempts")
-                    totals = self._totals(attempts)
-                    extras = {"policy", "stop"} if "policy" in record else set()
-                    if extras and (not self.practical or record["policy"] != BUDGET_POLICY):
-                        raise ValueError("policy downgrade or drift")
-                    if (
-                        extras
-                        and record["stop"] is not None
-                        and not isinstance(record["stop"], dict)
-                    ):
-                        raise ValueError("invalid stop")
-                    if set(record) != {"profile", "attempts", *totals, *extras} or any(
-                        record[k] != v for k, v in totals.items()
-                    ):
-                        raise ValueError("invalid ledger totals")
+                    record = self._validate_record(json.loads(self.path.read_text()))
                 elif lock_existed:
                     raise ValueError("existing ledger is missing")
                 else:
@@ -167,25 +168,7 @@ class Spending:
                         record["stop"] = {"reason": "legacy_unreconciled_hold"}
                 yield record
                 record.update(self._totals(record["attempts"]))
-                temporary: str | None = None
-                try:
-                    with tempfile.NamedTemporaryFile(
-                        mode="w", dir=self.path.parent, prefix=self.path.name + ".", delete=False
-                    ) as stream:
-                        temporary = stream.name
-                        json.dump(record, stream)
-                        stream.flush()
-                        os.fsync(stream.fileno())
-                    os.replace(temporary, self.path)
-                    temporary = None
-                    directory = os.open(self.path.parent, os.O_RDONLY | os.O_DIRECTORY)
-                    try:
-                        os.fsync(directory)
-                    finally:
-                        os.close(directory)
-                finally:
-                    if temporary is not None:
-                        Path(temporary).unlink(missing_ok=True)
+                _atomic_json(self.path, record)
         except (OSError, ValueError, TypeError, KeyError, ArithmeticError) as exc:
             raise Failure(
                 "BUDGET_EXCEEDED", "Spending ledger unavailable or invalid; dispatch stopped."
@@ -259,11 +242,309 @@ class Spending:
                 record["stop"] = {"attempt_id": attempt_id, "reason": reason, "facts": facts}
 
 
+def canonical_budget_path() -> Path:
+    """Source checkout authority, independent of database/UI fixture root; no env override."""
+    root = Path(__file__).resolve().parents[2]
+    if not (root / "pyproject.toml").is_file() or not (root / "src/universitydb").is_dir():
+        raise Failure("PROVIDER_UNAVAILABLE", "Canonical checkout authority unavailable.")
+    return root / "runtime/spending.json"
+
+
+def _json_hash(value: Any) -> str:
+    return hashlib.sha256(
+        json.dumps(value, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
+
+
+H015_POLICY_SHA256 = _json_hash(H015_AUTHORIZATION)
+
+
+def _atomic_json(path: Path, record: dict[str, Any]) -> None:
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w", dir=path.parent, prefix=path.name + ".", delete=False
+        ) as stream:
+            temporary = stream.name
+            json.dump(record, stream)
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(temporary, path)
+        temporary = None
+        directory = os.open(path.parent, os.O_RDONLY | os.O_DIRECTORY)
+        try:
+            os.fsync(directory)
+        finally:
+            os.close(directory)
+    finally:
+        if temporary is not None:
+            Path(temporary).unlink(missing_ok=True)
+
+
+class H015Spending(Spending):
+    """Explicit migrated authority; original entries retain original rate interpretation."""
+
+    def __init__(self, path: Path) -> None:
+        super().__init__(
+            path, PROFILE.model, Decimal(10), Decimal("5.50"), Decimal(11), practical=True
+        )
+        self.cap = Decimal(H015_AUTHORIZATION["cap_usd"])
+        self.threshold = Decimal(H015_AUTHORIZATION["dispatch_threshold_usd"])
+        self.legacy_count = 0
+        self.legacy: Spending | None = None
+
+    def _totals(self, attempts: list[dict[str, Any]]) -> dict[str, Any]:
+        if self.legacy is None:
+            raise ValueError("missing historical rate segment")
+        old = self.legacy._totals(attempts[: self.legacy_count])
+        new = super()._totals(attempts[self.legacy_count :])
+        # Validate IDs across both segments, not merely within each.
+        if len({a["id"] for a in attempts}) != len(attempts):
+            raise ValueError("duplicate attempt identity")
+        return {
+            k: str(Decimal(old[k]) + Decimal(new[k])) if k.endswith("_usd") else old[k] + new[k]
+            for k in old
+        }
+
+    def _validate_record(self, record: Any) -> dict[str, Any]:
+        if not isinstance(record, dict) or record.get("policy") != H015_POLICY:
+            raise ValueError("H015 requires explicit migration")
+        auth = record["authorizations"]
+        if (
+            not isinstance(auth, list)
+            or len(auth) != 2
+            or _json_hash(auth[1]) != H015_POLICY_SHA256
+        ):
+            raise ValueError("authorization drift")
+        historical = auth[0]
+        if set(historical) != {
+            "profile",
+            "policy",
+            "stop",
+            "calls",
+            "entries_sha256",
+            "source_sha256",
+            "source_json",
+        }:
+            raise ValueError("historical segment shape")
+        p = historical["profile"]
+        self.legacy = Spending(
+            self.path,
+            PROFILE.model,
+            Decimal(10),
+            Decimal(p["input_rate"]),
+            Decimal(p["output_rate"]),
+            practical=True,
+        )
+        if (
+            _json_hash(self.legacy.profile) != _json_hash(p)
+            or historical["policy"] != BUDGET_POLICY
+        ):
+            raise ValueError("legacy approval drift")
+        if not isinstance(historical["source_json"], str):
+            raise TypeError("invalid historical source bytes")
+        original_bytes = historical["source_json"].encode("utf-8")
+        if hashlib.sha256(original_bytes).hexdigest() != historical["source_sha256"]:
+            raise ValueError("historical source hash drift")
+        original = self.legacy._validate_record(json.loads(original_bytes))
+        if (
+            _json_hash(original["profile"]) != _json_hash(p)
+            or original["policy"] != historical["policy"]
+            or original["stop"] != historical["stop"]
+            or original["calls"] != historical["calls"]
+            or _json_hash(original["attempts"]) != historical["entries_sha256"]
+        ):
+            raise ValueError("historical authorization source drift")
+        self.profile = p
+        self.legacy_count = historical["calls"]
+        if type(self.legacy_count) is not int or self.legacy_count < 0:
+            raise ValueError("legacy count invalid")
+        attempts = record["attempts"]
+        if not isinstance(attempts, list) or len(attempts) < self.legacy_count:
+            raise ValueError("history truncated")
+        if _json_hash(attempts[: self.legacy_count]) != historical["entries_sha256"]:
+            raise ValueError("legacy entries drift")
+        if _json_hash(record["profile"]) != _json_hash(p):
+            raise ValueError("profile drift")
+        totals = self._totals(attempts)
+        if set(record) != {"profile", "attempts", "policy", "stop", "authorizations", *totals}:
+            raise ValueError("ledger fields invalid")
+        if any(_json_hash(record[k]) != _json_hash(v) for k, v in totals.items()):
+            raise ValueError("ledger totals invalid")
+        if record["stop"] is not None and not isinstance(record["stop"], dict):
+            raise ValueError("stop invalid")
+        if any(a["observed_usd"] is None for a in attempts) and record["stop"] is None:
+            raise ValueError("unsettled hold without stop")
+        if historical["stop"] is not None and record["stop"] != historical["stop"]:
+            raise ValueError("historical stop cannot be released")
+        if record["calls"] - self.legacy_count > H015_AUTHORIZATION["max_generation_calls"]:
+            raise ValueError("campaign call bound exceeded")
+        return record
+
+    def inspect(self) -> dict[str, Any]:
+        record = self.snapshot()
+        return {
+            "policy_sha256": H015_POLICY_SHA256,
+            "stop": record["stop"],
+            "uncertain_attempts": [
+                a["id"] for a in record["attempts"] if a["observed_usd"] is None
+            ],
+            "calls": record["calls"],
+            "campaign_calls": record["calls"] - self.legacy_count,
+            **{k: record[k] for k in ("reserved_usd", "observed_usd", "effective_usd")},
+        }
+
+    def snapshot(self) -> dict[str, Any]:
+        """Locked validated read; does not rewrite any ledger bytes."""
+        try:
+            with self.path.with_name(self.path.name + ".lock").open("a+") as lock:
+                fcntl.flock(lock, fcntl.LOCK_EX)
+                return self._validate_record(json.loads(self.path.read_bytes()))
+        except (OSError, ValueError, TypeError, KeyError, ArithmeticError) as exc:
+            raise Failure("BUDGET_EXCEEDED", "H015 monetary authority invalid; stopped.") from exc
+
+    @contextmanager
+    def _transaction(self) -> Iterator[dict[str, Any]]:
+        # Existing ledger is mandatory; never bootstrap a new fixture balance.
+        try:
+            with self.path.with_name(self.path.name + ".lock").open("a+") as lock:
+                fcntl.flock(lock, fcntl.LOCK_EX)
+                record = self._validate_record(json.loads(self.path.read_bytes()))
+                yield record
+                record.update(self._totals(record["attempts"]))
+                self._validate_record(record)
+                _atomic_json(self.path, record)
+        except (OSError, ValueError, TypeError, KeyError, ArithmeticError) as exc:
+            raise Failure("BUDGET_EXCEEDED", "H015 monetary authority invalid; stopped.") from exc
+
+    def reserve(self, input_tokens: int = 12000, output_tokens: int = 32768) -> Reservation:
+        # Per-attempt fixed envelope, no tiny caller-selected reservation bypass.
+        if (input_tokens, output_tokens) != (12000, 32768):
+            raise Failure("BUDGET_EXCEEDED", "H015 requires the fixed dispatch envelope.")
+        return super().reserve(input_tokens, output_tokens)
+
+
+def load_h015(path: Path) -> H015Spending:
+    spending = H015Spending(path)
+    spending.snapshot()
+    return spending
+
+
+def migrate_h015(
+    path: Path,
+    expected_sha256: str,
+    backup_path: Path,
+    *,
+    expected_calls: int = 14,
+    expected_effective_usd: str = "5.970272",
+) -> dict[str, Any]:
+    """Exact-hash guarded migration. Caller freezes baseline; never silently credits/reset."""
+    try:
+        if backup_path.resolve() == path.resolve():
+            raise ValueError("backup cannot replace authority")
+        with path.with_name(path.name + ".lock").open("a+") as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            raw = path.read_bytes()
+            record = json.loads(raw)
+            if not isinstance(record, dict):
+                raise TypeError("invalid legacy ledger shape")
+            if record.get("policy") == H015_POLICY:
+                H015Spending(path)._validate_record(record)
+                if (
+                    record["authorizations"][0]["source_sha256"] != expected_sha256
+                    or backup_path.stat().st_mode & 0o077
+                    or hashlib.sha256(backup_path.read_bytes()).hexdigest() != expected_sha256
+                    or record["authorizations"][0]["calls"] != expected_calls
+                    or json.loads(backup_path.read_bytes())["effective_usd"]
+                    != expected_effective_usd
+                ):
+                    raise ValueError("migration replay drift")
+                return {
+                    "replayed": True,
+                    "before_sha256": expected_sha256,
+                    "after_sha256": hashlib.sha256(raw).hexdigest(),
+                    "policy_sha256": H015_POLICY_SHA256,
+                }
+            if hashlib.sha256(raw).hexdigest() != expected_sha256:
+                raise ValueError("stale monetary baseline")
+            p = record["profile"]
+            old = Spending(
+                path,
+                PROFILE.model,
+                Decimal(10),
+                Decimal(p["input_rate"]),
+                Decimal(p["output_rate"]),
+                practical=True,
+            )
+            old._validate_record(record)
+            if record.get("policy") != BUDGET_POLICY or record["calls"] != expected_calls:
+                raise ValueError("legacy baseline policy/count mismatch")
+            if record["effective_usd"] != expected_effective_usd:
+                raise ValueError("legacy obligations mismatch")
+            # Immutable original bytes stored privately before any replacement; crash replay safe.
+            if backup_path.exists():
+                if backup_path.read_bytes() != raw or backup_path.stat().st_mode & 0o077:
+                    raise ValueError("backup mismatch or unsafe permissions")
+            else:
+                fd = os.open(backup_path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+                with os.fdopen(fd, "wb") as stream:
+                    stream.write(raw)
+                    stream.flush()
+                    os.fsync(stream.fileno())
+                directory = os.open(backup_path.parent, os.O_RDONLY | os.O_DIRECTORY)
+                try:
+                    os.fsync(directory)
+                finally:
+                    os.close(directory)
+            record["authorizations"] = [
+                {
+                    "profile": dict(p),
+                    "policy": record["policy"],
+                    "stop": record["stop"],
+                    "calls": record["calls"],
+                    "entries_sha256": _json_hash(record["attempts"]),
+                    "source_sha256": expected_sha256,
+                    "source_json": raw.decode("utf-8"),
+                },
+                dict(H015_AUTHORIZATION),
+            ]
+            record["policy"] = H015_POLICY
+            H015Spending(path)._validate_record(record)
+            _atomic_json(path, record)
+            return {
+                "replayed": False,
+                "before_sha256": expected_sha256,
+                "after_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+                "policy_sha256": H015_POLICY_SHA256,
+            }
+    except (OSError, ValueError, TypeError, KeyError, ArithmeticError) as exc:
+        raise Failure("BUDGET_EXCEEDED", "Migration rejected; no dispatch authorized.") from exc
+
+
 class OpenAIProvider:
     profile = "live"
 
-    def __init__(self, prompts: Path, budget_path: Path) -> None:
+    def __init__(
+        self, prompts: Path, budget_path: Path, *, evidence_dir: Path | None = None
+    ) -> None:
         self.prompts, self.budget_path = prompts, budget_path
+        self.evidence_dir = evidence_dir
+
+    def _evidence(self, attempt_id: str, kind: str, value: Any) -> dict[str, Any]:
+        if self.evidence_dir is None:
+            return {}
+        self.evidence_dir.mkdir(parents=True, exist_ok=True)
+        path = self.evidence_dir / f"{attempt_id}-{kind}.json"
+        raw = json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()
+        fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+        with os.fdopen(fd, "wb") as stream:
+            stream.write(raw)
+            stream.flush()
+            os.fsync(stream.fileno())
+        return {
+            f"evidence_{kind}_path": str(path),
+            f"evidence_{kind}_sha256": hashlib.sha256(raw).hexdigest(),
+        }
 
     def call(
         self,
@@ -287,8 +568,9 @@ class OpenAIProvider:
             )
         if os.environ.get("UNIVERSITYDB_LIVE_APPROVED") != "yes":
             raise Failure("PROVIDER_UNAVAILABLE", "Live spending is not explicitly enabled.")
+        h015 = os.environ.get("UNIVERSITYDB_BUDGET_POLICY") == H015_POLICY
         if (
-            os.environ.get("UNIVERSITYDB_BUDGET_POLICY") != BUDGET_POLICY
+            os.environ.get("UNIVERSITYDB_BUDGET_POLICY") not in (BUDGET_POLICY, H015_POLICY)
             or os.environ.get("UNIVERSITYDB_RATES_CONFIRMED") != "yes"
         ):
             raise Failure(
@@ -296,14 +578,25 @@ class OpenAIProvider:
                 "Explicit practical policy and current applicable rates required.",
             )
         try:
-            spending = Spending(
-                self.budget_path,
-                model,
-                Decimal(os.environ["UNIVERSITYDB_CAP_USD"]),
-                Decimal(os.environ["UNIVERSITYDB_INPUT_USD_PER_MILLION"]),
-                Decimal(os.environ["UNIVERSITYDB_OUTPUT_USD_PER_MILLION"]),
-                practical=True,
-            )
+            if h015:
+                if self.budget_path.resolve() != canonical_budget_path().resolve():
+                    raise ValueError("H015 requires canonical shared monetary authority")
+                spending: Spending = load_h015(self.budget_path)
+                if (
+                    os.environ["UNIVERSITYDB_CAP_USD"] != "120"
+                    or Decimal(os.environ["UNIVERSITYDB_INPUT_USD_PER_MILLION"]) != Decimal("5.50")
+                    or Decimal(os.environ["UNIVERSITYDB_OUTPUT_USD_PER_MILLION"]) != Decimal(11)
+                ):
+                    raise ValueError("H015 fixed policy/rate drift")
+            else:
+                spending = Spending(
+                    self.budget_path,
+                    model,
+                    Decimal(os.environ["UNIVERSITYDB_CAP_USD"]),
+                    Decimal(os.environ["UNIVERSITYDB_INPUT_USD_PER_MILLION"]),
+                    Decimal(os.environ["UNIVERSITYDB_OUTPUT_USD_PER_MILLION"]),
+                    practical=True,
+                )
         except (KeyError, ValueError, ArithmeticError) as exc:
             raise Failure(
                 "PROVIDER_UNAVAILABLE", "Approved cap and verified model rates required."
@@ -319,10 +612,11 @@ class OpenAIProvider:
         reservation = spending.reserve(PROFILE.input_tokens, policy.output_tokens)
         reserved = reservation.amount
         dispatch = {
-            "budget_policy": BUDGET_POLICY,
-            "cap_usd": CAP_USD,
-            "dispatch_threshold_usd": DISPATCH_THRESHOLD_USD,
-            "buffer_usd": BUFFER_USD,
+            "attempt_id": reservation.attempt_id,
+            "budget_policy": H015_POLICY if h015 else BUDGET_POLICY,
+            "cap_usd": "120" if h015 else CAP_USD,
+            "dispatch_threshold_usd": "110" if h015 else DISPATCH_THRESHOLD_USD,
+            "buffer_usd": "10" if h015 else BUFFER_USD,
             "input_estimate_method": "UTF-8 full wire JSON bytes + 1024 framing; not a bound",
             "payload_bytes": payload_bytes,
             "estimated_payload_input_tokens": estimated_input,
@@ -350,6 +644,14 @@ class OpenAIProvider:
             "timeout": wall_timeout,
         }
         try:
+            try:
+                dispatch.update(self._evidence(reservation.attempt_id, "request", wire))
+            except OSError as exc:
+                raise Failure(
+                    "PROVIDER_UNAVAILABLE",
+                    "Request evidence unavailable; dispatch stopped.",
+                    details=dispatch,
+                ) from exc
             try:
                 with subprocess.Popen(
                     [sys.executable, "-m", "universitydb.llm_worker"],
@@ -383,6 +685,14 @@ class OpenAIProvider:
             except (ValueError, TypeError) as exc:
                 raise Failure(
                     "PROVIDER_INVALID_OUTPUT", "Provider worker response invalid.", details=dispatch
+                ) from exc
+            try:
+                dispatch.update(self._evidence(reservation.attempt_id, "response", data))
+            except OSError as exc:
+                raise Failure(
+                    "PROVIDER_UNAVAILABLE",
+                    "Response evidence unavailable; hold retained.",
+                    details=dispatch,
                 ) from exc
             if "usage" not in data:
                 raise Failure(
@@ -465,9 +775,20 @@ class OpenAIProvider:
                 "accounting": "practical estimate; max(reservation, usage) retained",
             }
         except Failure as exc:
-            spending.stop(reservation.attempt_id, exc.code, exc.details or dispatch)
+            ordinary = (
+                h015
+                and dispatch["usage_status"] == "known"
+                and exc.code
+                in {"PROVIDER_REFUSAL", "PROVIDER_INCOMPLETE", "PROVIDER_INVALID_OUTPUT"}
+                and not excess
+                and not mismatch
+            )
+            if not ordinary:
+                spending.stop(reservation.attempt_id, exc.code, exc.details or dispatch)
             raise Failure(
-                exc.code, exc.message, details={**dispatch, **exc.details, "accounting_stop": True}
+                exc.code,
+                exc.message,
+                details={**dispatch, **exc.details, "accounting_stop": not ordinary},
             ) from exc
 
 

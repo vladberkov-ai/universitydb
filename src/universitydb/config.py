@@ -2,7 +2,7 @@
 
 import json
 from dataclasses import dataclass
-from typing import Any, Literal
+from typing import Any, Literal, TypedDict
 
 from universitydb.contracts import Failure, PlanProposal, SQLProposal
 
@@ -87,3 +87,40 @@ def payload_estimate(payload: dict[str, Any]) -> tuple[int, int]:
     """UTF-8 JSON bytes plus framing estimate; engineering estimate, never a bound."""
     size = len(json.dumps(payload, ensure_ascii=False).encode())
     return size, size + FRAMING_ESTIMATE
+
+
+# H015 is an explicit fixed successor authorization, never an environment cap override.
+H015_POLICY: Literal["h015-practical-v1"] = "h015-practical-v1"
+
+
+class H015Authorization(TypedDict):
+    version: Literal[2]
+    policy: Literal["h015-practical-v1"]
+    authority: str
+    cap_usd: Literal["120"]
+    dispatch_threshold_usd: Literal["110"]
+    buffer_usd: Literal["10"]
+    model: str
+    service_tier: Literal["default"]
+    input_rate: Literal["5.50"]
+    output_rate: Literal["11"]
+    max_generation_calls: Literal[240]
+    reserved_input_tokens: Literal[12000]
+    reserved_output_tokens: Literal[32768]
+
+
+H015_AUTHORIZATION: H015Authorization = {
+    "version": 2,
+    "policy": H015_POLICY,
+    "authority": "CHAT053/CHAT054/ADR-CHAT007",
+    "cap_usd": "120",
+    "dispatch_threshold_usd": "110",
+    "buffer_usd": "10",
+    "model": PROFILE.model,
+    "service_tier": PROFILE.service_tier,
+    "input_rate": "5.50",
+    "output_rate": "11",
+    "max_generation_calls": 240,
+    "reserved_input_tokens": 12000,
+    "reserved_output_tokens": 32768,
+}

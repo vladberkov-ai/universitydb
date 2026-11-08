@@ -53,6 +53,7 @@ def request(payload: dict[str, Any]) -> dict[str, Any]:
             output_tokens=response.usage.output_tokens,
             total_tokens=response.usage.total_tokens,
         )
+    raw = {"raw_response": response.model_dump(mode="json")}
     failure = None
     if response.status == "incomplete":
         failure = ("PROVIDER_INCOMPLETE", "Provider output was incomplete.")
@@ -67,16 +68,17 @@ def request(payload: dict[str, Any]) -> dict[str, Any]:
     elif response.usage is None:
         failure = ("BUDGET_EXCEEDED", "Provider usage missing; reservation retained.")
     if failure:
-        return {"error": failure[0], "message": failure[1], "usage": usage}
+        return {**raw, "error": failure[0], "message": failure[1], "usage": usage}
     try:
         parsed = output_type.model_validate_json(response.output_text)
     except (ValidationError, ValueError):
         return {
+            **raw,
             "error": "PROVIDER_INVALID_OUTPUT",
             "message": "Provider output did not match strict schema.",
             "usage": usage,
         }
-    return {"output": parsed.model_dump(), "usage": usage}
+    return {**raw, "output": parsed.model_dump(), "usage": usage}
 
 
 def main() -> None:

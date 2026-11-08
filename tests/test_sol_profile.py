@@ -31,6 +31,7 @@ def test_exact_sdk_payload(logical, effort, index):
         model=PROFILE.model,
         service_tier="default",
         id="offline",
+        model_dump=lambda **kwargs: {"id": "offline", "status": "completed"},
     )
     policy = PROFILE.operation(logical)
     with patch("universitydb.llm_worker.OpenAI") as sdk:
@@ -250,6 +251,7 @@ def test_worker_failed_response_preserves_known_usage(kind):
         model=PROFILE.model,
         service_tier="default",
         id="offline-failure",
+        model_dump=lambda **kwargs: {"id": "offline-failure", "status": kind},
         usage=SimpleNamespace(input_tokens=100, output_tokens=32768, total_tokens=32868),
     )
     with patch("universitydb.llm_worker.OpenAI") as sdk:
