@@ -1,0 +1,962 @@
+..FFFFFFFFFF...FFFFFFFFFFFFFFFF                                          [100%]
+=================================== FAILURES ===================================
+__________________ test_development_known_offline_replay[A03] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline2')
+case = {'run_id': 'A03-r1', 'case_id': 'A03', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'ab887b59-d4f1-4f6c-b25d-efecb07ef3c2', 'trace_id': 'ab887b59-d4f1-4f6c-b25d-efecb07ef3c2', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[A04] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline3')
+case = {'run_id': 'A04-r1', 'case_id': 'A04', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'b0a333ad-5119-47f9-a4ba-c0a106b1d89b', 'trace_id': 'b0a333ad-5119-47f9-a4ba-c0a106b1d89b', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[J01] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline4')
+case = {'run_id': 'J01-r1', 'case_id': 'J01', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'ecb937c5-37eb-4c25-a78f-59a586b5b5ce', 'trace_id': 'ecb937c5-37eb-4c25-a78f-59a586b5b5ce', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[J02] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline5')
+case = {'run_id': 'J02-r1', 'case_id': 'J02', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '076eb6a9-6c5c-4d02-9f01-87b956950b1f', 'trace_id': '076eb6a9-6c5c-4d02-9f01-87b956950b1f', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[J03] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline6')
+case = {'run_id': 'J03-r1', 'case_id': 'J03', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '179f87fa-858e-4ca8-9056-9f45d8befb59', 'trace_id': '179f87fa-858e-4ca8-9056-9f45d8befb59', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[J04] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline7')
+case = {'run_id': 'J04-r1', 'case_id': 'J04', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '37fbc63e-5326-4609-bce5-0b7e706ff2e0', 'trace_id': '37fbc63e-5326-4609-bce5-0b7e706ff2e0', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[D01] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline8')
+case = {'run_id': 'D01-r1', 'case_id': 'D01', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '140bbda2-b5a0-4ed7-b6b5-64aacad9d89a', 'trace_id': '140bbda2-b5a0-4ed7-b6b5-64aacad9d89a', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[D02] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline9')
+case = {'run_id': 'D02-r1', 'case_id': 'D02', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '5ccd0d4b-eb6f-435b-be49-a2a2d04c6164', 'trace_id': '5ccd0d4b-eb6f-435b-be49-a2a2d04c6164', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[D03] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline10')
+case = {'run_id': 'D03-r1', 'case_id': 'D03', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'cab9bf81-a8ac-4f3a-b05c-878fc747b51d', 'trace_id': 'cab9bf81-a8ac-4f3a-b05c-878fc747b51d', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[D04] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline11')
+case = {'run_id': 'D04-r1', 'case_id': 'D04', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '687fae3d-3586-46fd-9f62-15a5f6db4d51', 'trace_id': '687fae3d-3586-46fd-9f62-15a5f6db4d51', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[C04] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline15')
+case = {'run_id': 'C04-r1', 'case_id': 'C04', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+>           assert result["status"] == "clarification", result
+E           AssertionError: {'version': '1', 'run_id': '7efcb9ff-8bc5-48c8-b90d-586241c3c421', 'trace_id': '7efcb9ff-8bc5-48c8-b90d-586241c3c421', 'status': 'error', ...}
+E           assert 'error' == 'clarification'
+E             
+E             - clarification
+E             + error
+
+tests/test_h016_offline_replay.py:302: AssertionError
+__________________ test_development_known_offline_replay[E01] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline16')
+case = {'run_id': 'E01-r1', 'case_id': 'E01', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'a8a26e57-90d0-4182-a466-adb42f44eb0d', 'trace_id': 'a8a26e57-90d0-4182-a466-adb42f44eb0d', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[E02] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline17')
+case = {'run_id': 'E02-r1', 'case_id': 'E02', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '7baf6b1b-b36e-44cc-9831-2cc8b36cd247', 'trace_id': '7baf6b1b-b36e-44cc-9831-2cc8b36cd247', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[E03] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline18')
+case = {'run_id': 'E03-r1', 'case_id': 'E03', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'b9aad42a-670f-428a-9837-938a2d52de95', 'trace_id': 'b9aad42a-670f-428a-9837-938a2d52de95', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[E04] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline19')
+case = {'run_id': 'E04-r1', 'case_id': 'E04', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'a507a82f-518a-4dfa-8d1b-3d0b2727525e', 'trace_id': 'a507a82f-518a-4dfa-8d1b-3d0b2727525e', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[L01] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline20')
+case = {'run_id': 'L01-r1', 'case_id': 'L01', 'repeat': 1, 'domain': 'library', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'a92ac601-5c74-4fdd-a047-5db620487669', 'trace_id': 'a92ac601-5c74-4fdd-a047-5db620487669', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[L02] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline21')
+case = {'run_id': 'L02-r1', 'case_id': 'L02', 'repeat': 1, 'domain': 'library', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '48a2d3a7-27f0-4c80-8f5e-08611f63221a', 'trace_id': '48a2d3a7-27f0-4c80-8f5e-08611f63221a', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[L03] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline22')
+case = {'run_id': 'L03-r1', 'case_id': 'L03', 'repeat': 1, 'domain': 'library', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '5254bd18-a7f3-4850-b255-c89854e8e3b5', 'trace_id': '5254bd18-a7f3-4850-b255-c89854e8e3b5', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[L04] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline23')
+case = {'run_id': 'L04-r1', 'case_id': 'L04', 'repeat': 1, 'domain': 'library', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '184c866f-b7a1-4a0e-8f41-132ed98c9e9b', 'trace_id': '184c866f-b7a1-4a0e-8f41-132ed98c9e9b', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+_________________ test_development_known_offline_replay[X-M1] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline24')
+case = {'case_id': 'X-M1', 'domain': 'university', 'fixture': 'f2', 'question': 'Show student IDs and their mean in S1 for students of the highest-mean course in S1, keeping all tied courses.', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '2b9b3f95-78c3-4bc0-bef2-bfd07eb28f8c', 'trace_id': '2b9b3f95-78c3-4bc0-bef2-bfd07eb28f8c', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+_______________ test_development_known_offline_replay[X-M1-TIE] ________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline25')
+case = {'case_id': 'X-M1-TIE', 'domain': 'university', 'fixture': 'tie', 'question': 'For students in all courses tied for top mean in S1, list student ID with mean over every S1 enrollment.', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '1812b9f5-b7bf-4254-a5a6-5218b9f13a14', 'trace_id': '1812b9f5-b7bf-4254-a5a6-5218b9f13a14', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+_________________ test_development_known_offline_replay[X-TOP] _________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline26')
+case = {'case_id': 'X-TOP', 'domain': 'university', 'fixture': 'tie', 'question': 'Show course ID and top mean for S1; preserve exact ties.', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '487cff3b-d689-4f53-9b3f-673deb0acd34', 'trace_id': '487cff3b-d689-4f53-9b3f-673deb0acd34', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+______________ test_development_known_offline_replay[X-COMBINED] _______________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline27')
+case = {'case_id': 'X-COMBINED', 'domain': 'university', 'fixture': 'u', 'question': 'Average grades for Bea, course ID 1, teacher ID 10, semester S1.', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'a4fb4c46-1daa-4df6-bc28-d87924fe0ff8', 'trace_id': 'a4fb4c46-1daa-4df6-bc28-d87924fe0ff8', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+________________ test_development_known_offline_replay[X-COUNT] ________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline28')
+case = {'case_id': 'X-COUNT', 'domain': 'university', 'fixture': 'u', 'question': 'Show enrollment count, graded count and distinct student count for course ID 1 in S1.', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'c2f7a2a2-d258-45e4-804d-9b81d99b019b', 'trace_id': 'c2f7a2a2-d258-45e4-804d-9b81d99b019b', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+________________ test_development_known_offline_replay[X-LIST] _________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline29')
+case = {'case_id': 'X-LIST', 'domain': 'university', 'fixture': 'u', 'question': 'Show student IDs, course IDs and enrollment grades in course ID 2, S2.', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '055dbb65-5cb8-428c-adf2-dc0962a5a48a', 'trace_id': '055dbb65-5cb8-428c-adf2-dc0962a5a48a', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+_______________ test_development_known_offline_replay[X-LIBRARY] _______________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1016/test_development_known_offline30')
+case = {'case_id': 'X-LIBRARY', 'domain': 'library', 'fixture': 'all_returned', 'question': 'Show reader ID and open-loan count for reader ID 2.', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '7ea7af13-1949-4321-86e3-e585e03674e4', 'trace_id': '7ea7af13-1949-4321-86e3-e585e03674e4', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[A03]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[A04]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[J01]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[J02]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[J03]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[J04]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[D01]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[D02]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[D03]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[D04]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[C04]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[E01]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[E02]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[E03]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[E04]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[L01]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[L02]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[L03]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[L04]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[X-M1]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[X-M1-TIE]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[X-TOP]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[X-COMBINED]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[X-COUNT]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[X-LIST]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[X-LIBRARY]
+26 failed, 5 passed in 5.02s

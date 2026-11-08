@@ -1,0 +1,100 @@
+FFF.                                                                     [100%]
+=================================== FAILURES ===================================
+_ test_typed_id_span_is_not_numeric_catalog_name[Show mean for teacher ID 11.-11] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1046/test_typed_id_span_is_not_nume0')
+question = 'Show mean for teacher ID 11.', selected = 11
+
+    @pytest.mark.parametrize(
+        "question,selected",
+        [
+            ("Show mean for teacher ID 11.", 11),
+            ("Show mean for teacher_id=11.", 11),
+            ("Show mean for teacher 11.", 11),
+            ('Show mean for teacher named "11".', 10),
+        ],
+    )
+    def test_typed_id_span_is_not_numeric_catalog_name(tmp_path, question, selected):
+        from universitydb.agent import Agent
+        from universitydb.domain import University
+    
+        path, provider, _ = setup_run(tmp_path, "university")
+        with sqlite3.connect(path) as connection:
+            connection.execute("UPDATE Teachers SET name='11' WHERE teacher_id=10")
+        agent = Agent(University(), path, provider, tmp_path / "typed-spans")
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '2be344f7-7e9b-461a-9bb7-b034ec308a93', 'trace_id': '2be344f7-7e9b-461a-9bb7-b034ec308a93', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_resolution_edges.py:311: AssertionError
+_ test_typed_id_span_is_not_numeric_catalog_name[Show mean for teacher_id=11.-11] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1046/test_typed_id_span_is_not_nume1')
+question = 'Show mean for teacher_id=11.', selected = 11
+
+    @pytest.mark.parametrize(
+        "question,selected",
+        [
+            ("Show mean for teacher ID 11.", 11),
+            ("Show mean for teacher_id=11.", 11),
+            ("Show mean for teacher 11.", 11),
+            ('Show mean for teacher named "11".', 10),
+        ],
+    )
+    def test_typed_id_span_is_not_numeric_catalog_name(tmp_path, question, selected):
+        from universitydb.agent import Agent
+        from universitydb.domain import University
+    
+        path, provider, _ = setup_run(tmp_path, "university")
+        with sqlite3.connect(path) as connection:
+            connection.execute("UPDATE Teachers SET name='11' WHERE teacher_id=10")
+        agent = Agent(University(), path, provider, tmp_path / "typed-spans")
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '32534684-06fb-4da3-a8cb-e96318b1a420', 'trace_id': '32534684-06fb-4da3-a8cb-e96318b1a420', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_resolution_edges.py:311: AssertionError
+_ test_typed_id_span_is_not_numeric_catalog_name[Show mean for teacher 11.-11] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1046/test_typed_id_span_is_not_nume2')
+question = 'Show mean for teacher 11.', selected = 11
+
+    @pytest.mark.parametrize(
+        "question,selected",
+        [
+            ("Show mean for teacher ID 11.", 11),
+            ("Show mean for teacher_id=11.", 11),
+            ("Show mean for teacher 11.", 11),
+            ('Show mean for teacher named "11".', 10),
+        ],
+    )
+    def test_typed_id_span_is_not_numeric_catalog_name(tmp_path, question, selected):
+        from universitydb.agent import Agent
+        from universitydb.domain import University
+    
+        path, provider, _ = setup_run(tmp_path, "university")
+        with sqlite3.connect(path) as connection:
+            connection.execute("UPDATE Teachers SET name='11' WHERE teacher_id=10")
+        agent = Agent(University(), path, provider, tmp_path / "typed-spans")
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '41618a5b-5440-401d-ad4f-a6a8b0db8c71', 'trace_id': '41618a5b-5440-401d-ad4f-a6a8b0db8c71', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_resolution_edges.py:311: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_h016_resolution_edges.py::test_typed_id_span_is_not_numeric_catalog_name[Show mean for teacher ID 11.-11]
+FAILED tests/test_h016_resolution_edges.py::test_typed_id_span_is_not_numeric_catalog_name[Show mean for teacher_id=11.-11]
+FAILED tests/test_h016_resolution_edges.py::test_typed_id_span_is_not_numeric_catalog_name[Show mean for teacher 11.-11]
+3 failed, 1 passed, 78 deselected in 0.71s

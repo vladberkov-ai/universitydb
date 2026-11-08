@@ -1,0 +1,169 @@
+{
+  "profile": "development-known OFFLINE regression; NOT live score",
+  "case": {
+    "run_id": "L04-r1",
+    "case_id": "L04",
+    "repeat": 1,
+    "domain": "library",
+    "fixture": "all_returned",
+    "question": "For every reader show reader ID, name and count of unreturned loans, including readers with zero open loans.",
+    "selections": []
+  },
+  "expected_scope": {},
+  "pauses": [],
+  "answer": {
+    "text": "reader_id=all: open loans [[1, 'Ada', 0], [2, 'Bob', 0]].",
+    "columns": [
+      {
+        "name": "reader_id",
+        "type": "integer"
+      },
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "open_count",
+        "type": "integer"
+      }
+    ],
+    "rows": [
+      [
+        1,
+        "Ada",
+        0
+      ],
+      [
+        2,
+        "Bob",
+        0
+      ]
+    ],
+    "scope": "reader_id=all",
+    "empty_reason": null,
+    "truncated": false
+  },
+  "steps": [
+    {
+      "step_id": "s0",
+      "raw": {
+        "result_spec": {
+          "metric_id": "l.open_count.v1",
+          "shape": "aggregate",
+          "group_keys": [
+            "reader_id"
+          ],
+          "columns": [
+            {
+              "name": "reader_id",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "open_count",
+              "type": "integer",
+              "nullable": false
+            }
+          ],
+          "components": {
+            "sum": null,
+            "denominator": null,
+            "count": "open_count"
+          },
+          "unit": "count",
+          "scale": 1
+        },
+        "step_id": "s0",
+        "columns": [
+          {
+            "name": "reader_id",
+            "type": "integer"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "open_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            1,
+            "Ada",
+            0
+          ],
+          [
+            2,
+            "Bob",
+            0
+          ]
+        ],
+        "row_count": 2,
+        "truncated": false,
+        "elapsed_ms": 0
+      },
+      "answer": {
+        "text": "reader_id=all: open loans [[1, 'Ada', 0], [2, 'Bob', 0]].",
+        "columns": [
+          {
+            "name": "reader_id",
+            "type": "integer"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "open_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            1,
+            "Ada",
+            0
+          ],
+          [
+            2,
+            "Bob",
+            0
+          ]
+        ],
+        "scope": "reader_id=all",
+        "empty_reason": null,
+        "truncated": false
+      },
+      "dependency_rows": [
+        [
+          1,
+          "Ada",
+          0
+        ],
+        [
+          2,
+          "Bob",
+          0
+        ]
+      ]
+    }
+  ],
+  "provider_calls": 2,
+  "actual_provider_scopes": [
+    {},
+    {}
+  ],
+  "actual_sql_refs": [
+    {}
+  ],
+  "fixture_before_sha256": "cce834c4f448ef201bbb1dce138a44cfc077bc0cde092d0ea0f66c2ebd75498e",
+  "fixture_after_sha256": "cce834c4f448ef201bbb1dce138a44cfc077bc0cde092d0ea0f66c2ebd75498e",
+  "trace_sha256": "97e11103aea4b3aa2bc28bc723c5ad8c13c1c3e4e523404cfda2654f2eaae282"
+}

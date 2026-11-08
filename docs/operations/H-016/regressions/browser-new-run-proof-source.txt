@@ -1,0 +1,54 @@
+"""Focused control-flow regression; fake browser scheduling is not browser evidence."""
+import ast
+import re
+from pathlib import Path
+
+SOURCE = Path('/home/dev/projects/universitydb/docs/operations/H-016/browser_ui.py')
+node = next(n for n in ast.parse(SOURCE.read_text()).body if isinstance(n, ast.FunctionDef) and n.name == 'submit_new_run')
+OLD = '1f101a2d-d5c8-43c9-a772-855294dec9ab'
+NEW = '2f101a2d-d5c8-43c9-a772-855294dec9ab'
+
+class Locator:
+    def __init__(self, page, kind): self.page, self.kind = page, kind
+    def count(self): return int(self.page.run is not None)
+    def inner_text(self): return f'Run: {self.page.run}; profile: offline/injected'
+    def fill(self, question): self.page.question = question
+    def click(self): self.page.events.append('click_old_Ada_still_visible')
+    def wait_for(self, state):
+        assert self.page.run == NEW and state == 'hidden'
+        self.page.events.append('idle')
+
+class Page:
+    def __init__(self, previous): self.run, self.question, self.events = previous, None, []
+    def get_by_text(self, pattern): return Locator(self, 'caption')
+    def get_by_role(self, role, **kwargs): return Locator(self, role)
+    def get_by_test_id(self, name): return Locator(self, 'status')
+    def locator(self, name): return Locator(self, name)
+
+class Expect:
+    def __init__(self, locator): self.locator = locator
+    def to_have_value(self, question): assert self.locator.page.question == question
+    def not_to_contain_text(self, previous, **kwargs):
+        assert previous == OLD and self.locator.page.run == OLD
+        self.locator.page.events.append('wait_old_run_absent')
+        self.locator.page.run = NEW
+    def to_have_text(self, pattern, **kwargs):
+        if self.locator.page.run is None: self.locator.page.run = NEW
+        assert pattern.match(self.locator.inner_text())
+        self.locator.page.events.append('wait_new_caption_present')
+
+namespace = {'re': re, 'expect': Expect}
+exec(compile(ast.Module(body=[node], type_ignores=[]), str(SOURCE), 'exec'), namespace)
+submit = namespace['submit_new_run']
+
+
+def test_same_expected_answer_waits_new_identity_before_return():
+    page = Page(OLD)
+    assert submit(page, 'Show reader IDs, names and open loan counts per reader.') == NEW
+    assert page.events == ['click_old_Ada_still_visible', 'wait_old_run_absent', 'wait_new_caption_present', 'idle']
+
+
+def test_initial_submission_requires_positive_caption_and_idle():
+    page = Page(None)
+    assert submit(page, 'Mean for course ID 1.') == NEW
+    assert page.events == ['click_old_Ada_still_visible', 'wait_new_caption_present', 'idle']

@@ -1,0 +1,254 @@
+FFF..................................................................... [ 63%]
+..........................................                               [100%]
+=================================== FAILURES ===================================
+_ test_identity_syntax_variants_use_actual_scope[university-Show mean for course ID: 2.-scope0] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1044/test_identity_syntax_variants_0')
+kind = 'university', question = 'Show mean for course ID: 2.'
+scope = {'course_id': 2}
+
+    @pytest.mark.parametrize(
+        "kind,question,scope",
+        [
+            ("university", "Show mean for course ID: 2.", {"course_id": 2}),
+            ("university", "Show mean for student ID=2!", {"student_id": 2}),
+            ("university", "Show mean for teacher ID #11?", {"teacher_id": 11}),
+            ("university", "Show mean for STUDENT_ID=2.", {"student_id": 2}),
+            ("university", "Mean for course #2.", {"course_id": 2}),
+            ("university", "Mean for semester ID s1.", {"semester_id": "S1"}),
+            ("university", "Mean for course 2, COURSE id 2.", {"course_id": 2}),
+            ("university", "Mean for Bea, student ID 2.", {"student_id": 2}),
+            ("library", "Count open loans for reader ID: 2.", {"reader_id": 2}),
+            ("library", "Count open loans for READER_ID=1!", {"reader_id": 1}),
+            ("library", "Count open loans for reader #1, reader ID 1.", {"reader_id": 1}),
+        ],
+    )
+    def test_identity_syntax_variants_use_actual_scope(tmp_path, kind, question, scope):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '28aea7ed-430a-4bae-8634-070870442963', 'trace_id': '28aea7ed-430a-4bae-8634-070870442963', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_resolution_edges.py:28: AssertionError
+_ test_identity_syntax_variants_use_actual_scope[university-Show mean for student ID=2!-scope1] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1044/test_identity_syntax_variants_1')
+kind = 'university', question = 'Show mean for student ID=2!'
+scope = {'student_id': 2}
+
+    @pytest.mark.parametrize(
+        "kind,question,scope",
+        [
+            ("university", "Show mean for course ID: 2.", {"course_id": 2}),
+            ("university", "Show mean for student ID=2!", {"student_id": 2}),
+            ("university", "Show mean for teacher ID #11?", {"teacher_id": 11}),
+            ("university", "Show mean for STUDENT_ID=2.", {"student_id": 2}),
+            ("university", "Mean for course #2.", {"course_id": 2}),
+            ("university", "Mean for semester ID s1.", {"semester_id": "S1"}),
+            ("university", "Mean for course 2, COURSE id 2.", {"course_id": 2}),
+            ("university", "Mean for Bea, student ID 2.", {"student_id": 2}),
+            ("library", "Count open loans for reader ID: 2.", {"reader_id": 2}),
+            ("library", "Count open loans for READER_ID=1!", {"reader_id": 1}),
+            ("library", "Count open loans for reader #1, reader ID 1.", {"reader_id": 1}),
+        ],
+    )
+    def test_identity_syntax_variants_use_actual_scope(tmp_path, kind, question, scope):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'a4d2708f-92bb-48cb-9c90-5f955d619276', 'trace_id': 'a4d2708f-92bb-48cb-9c90-5f955d619276', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_resolution_edges.py:28: AssertionError
+_ test_identity_syntax_variants_use_actual_scope[university-Show mean for teacher ID #11?-scope2] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1044/test_identity_syntax_variants_2')
+kind = 'university', question = 'Show mean for teacher ID #11?'
+scope = {'teacher_id': 11}
+
+    @pytest.mark.parametrize(
+        "kind,question,scope",
+        [
+            ("university", "Show mean for course ID: 2.", {"course_id": 2}),
+            ("university", "Show mean for student ID=2!", {"student_id": 2}),
+            ("university", "Show mean for teacher ID #11?", {"teacher_id": 11}),
+            ("university", "Show mean for STUDENT_ID=2.", {"student_id": 2}),
+            ("university", "Mean for course #2.", {"course_id": 2}),
+            ("university", "Mean for semester ID s1.", {"semester_id": "S1"}),
+            ("university", "Mean for course 2, COURSE id 2.", {"course_id": 2}),
+            ("university", "Mean for Bea, student ID 2.", {"student_id": 2}),
+            ("library", "Count open loans for reader ID: 2.", {"reader_id": 2}),
+            ("library", "Count open loans for READER_ID=1!", {"reader_id": 1}),
+            ("library", "Count open loans for reader #1, reader ID 1.", {"reader_id": 1}),
+        ],
+    )
+    def test_identity_syntax_variants_use_actual_scope(tmp_path, kind, question, scope):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '65620f28-e541-4024-a2ca-bafbacf7ac89', 'trace_id': '65620f28-e541-4024-a2ca-bafbacf7ac89', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_resolution_edges.py:28: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_h016_resolution_edges.py::test_identity_syntax_variants_use_actual_scope[university-Show mean for course ID: 2.-scope0]
+FAILED tests/test_h016_resolution_edges.py::test_identity_syntax_variants_use_actual_scope[university-Show mean for student ID=2!-scope1]
+FAILED tests/test_h016_resolution_edges.py::test_identity_syntax_variants_use_actual_scope[university-Show mean for teacher ID #11?-scope2]
+3 failed, 111 passed in 182.05s (0:03:02)
+ror
+
+tests/test_h016_natural_scope.py:123: AssertionError
+_ test_natural_numeric_ids_reach_real_sql[Mean for course ID 2 and teacher ID 10.-scope9] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1043/test_natural_numeric_ids_reach9')
+question = 'Mean for course ID 2 and teacher ID 10.'
+scope = {'course_id': 2, 'teacher_id': 10}
+
+    @pytest.mark.parametrize(
+        "question,scope",
+        [
+            ("Show the mean grade for course ID 2.", {"course_id": 2}),
+            ("Average grade: student ID 2!", {"student_id": 2}),
+            ("What is the mean for teacher ID 11?", {"teacher_id": 11}),
+            ("Show mean for COURSE id 1.", {"course_id": 1}),
+            ("Show mean for student Id 4.", {"student_id": 4}),
+            ("Mean for course ID 3 in semester S1.", {"course_id": 3, "semester_id": "S1"}),
+            ("Mean for student ID 1 and teacher ID 11.", {"student_id": 1, "teacher_id": 11}),
+            (
+                "Mean for student ID 2, course ID 1, teacher ID 10 in S1.",
+                {"student_id": 2, "course_id": 1, "teacher_id": 10, "semester_id": "S1"},
+            ),
+            (
+                "Mean for Bea in course ID 1 with teacher Kim, S1.",
+                {"student_id": 2, "course_id": 1, "teacher_id": 10, "semester_id": "S1"},
+            ),
+            ("Mean for course ID 2 and teacher ID 10.", {"course_id": 2, "teacher_id": 10}),
+        ],
+    )
+    def test_natural_numeric_ids_reach_real_sql(tmp_path, question, scope):
+        path, provider, agent = setup_run(tmp_path, "university")
+        before = db.file_hash(path)
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'c6530df7-7c0a-4aea-aa09-739bacd9e138', 'trace_id': 'c6530df7-7c0a-4aea-aa09-739bacd9e138', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_natural_scope.py:123: AssertionError
+_ test_projection_ids_are_not_unknown_names[Show enrollment rows with student IDs and course IDs.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1043/test_projection_ids_are_not_un0')
+question = 'Show enrollment rows with student IDs and course IDs.'
+
+    @pytest.mark.parametrize(
+        "question",
+        [
+            "Show enrollment rows with student IDs and course IDs.",
+            "List enrollments with course ID, teacher ID, and student ID.",
+            "Show student ID and course ID for enrollments in S1.",
+            "List enrollment rows showing teacher IDs for course ID 1.",
+        ],
+    )
+    def test_projection_ids_are_not_unknown_names(tmp_path, question):
+        path, provider, agent = setup_run(tmp_path, "university", "enrollment_rows")
+        scope = (
+            {"semester_id": "S1"}
+            if "S1" in question
+            else {"course_id": 1}
+            if "ID 1" in question
+            else {}
+        )
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '641f5ccf-93e6-403f-9920-20c83e197d7c', 'trace_id': '641f5ccf-93e6-403f-9920-20c83e197d7c', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_natural_scope.py:150: AssertionError
+_ test_projection_ids_are_not_unknown_names[List enrollments with course ID, teacher ID, and student ID.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1043/test_projection_ids_are_not_un1')
+question = 'List enrollments with course ID, teacher ID, and student ID.'
+
+    @pytest.mark.parametrize(
+        "question",
+        [
+            "Show enrollment rows with student IDs and course IDs.",
+            "List enrollments with course ID, teacher ID, and student ID.",
+            "Show student ID and course ID for enrollments in S1.",
+            "List enrollment rows showing teacher IDs for course ID 1.",
+        ],
+    )
+    def test_projection_ids_are_not_unknown_names(tmp_path, question):
+        path, provider, agent = setup_run(tmp_path, "university", "enrollment_rows")
+        scope = (
+            {"semester_id": "S1"}
+            if "S1" in question
+            else {"course_id": 1}
+            if "ID 1" in question
+            else {}
+        )
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'e4b53e56-ee15-4b39-9184-eb8ac911afe3', 'trace_id': 'e4b53e56-ee15-4b39-9184-eb8ac911afe3', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_natural_scope.py:150: AssertionError
+_ test_projection_ids_are_not_unknown_names[Show student ID and course ID for enrollments in S1.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1043/test_projection_ids_are_not_un2')
+question = 'Show student ID and course ID for enrollments in S1.'
+
+    @pytest.mark.parametrize(
+        "question",
+        [
+            "Show enrollment rows with student IDs and course IDs.",
+            "List enrollments with course ID, teacher ID, and student ID.",
+            "Show student ID and course ID for enrollments in S1.",
+            "List enrollment rows showing teacher IDs for course ID 1.",
+        ],
+    )
+    def test_projection_ids_are_not_unknown_names(tmp_path, question):
+        path, provider, agent = setup_run(tmp_path, "university", "enrollment_rows")
+        scope = (
+            {"semester_id": "S1"}
+            if "S1" in question
+            else {"course_id": 1}
+            if "ID 1" in question
+            else {}
+        )
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'ffeb9354-152e-40d7-9da0-656dde45395f', 'trace_id': 'ffeb9354-152e-40d7-9da0-656dde45395f', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_natural_scope.py:150: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_h016_natural_scope.py::test_natural_numeric_ids_reach_real_sql[Mean for student ID 1 and teacher ID 11.-scope6]
+FAILED tests/test_h016_natural_scope.py::test_natural_numeric_ids_reach_real_sql[Mean for student ID 2, course ID 1, teacher ID 10 in S1.-scope7]
+FAILED tests/test_h016_natural_scope.py::test_natural_numeric_ids_reach_real_sql[Mean for Bea in course ID 1 with teacher Kim, S1.-scope8]
+FAILED tests/test_h016_natural_scope.py::test_natural_numeric_ids_reach_real_sql[Mean for course ID 2 and teacher ID 10.-scope9]
+FAILED tests/test_h016_natural_scope.py::test_projection_ids_are_not_unknown_names[Show enrollment rows with student IDs and course IDs.]
+FAILED tests/test_h016_natural_scope.py::test_projection_ids_are_not_unknown_names[List enrollments with course ID, teacher ID, and student ID.]
+FAILED tests/test_h016_natural_scope.py::test_projection_ids_are_not_unknown_names[Show student ID and course ID for enrollments in S1.]
+7 failed, 107 passed in 295.84s (0:04:55)

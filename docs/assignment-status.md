@@ -1,3 +1,35 @@
+## Current H016 offline-repair cutoff — 2026-11-08
+
+The [H016 report](reports/H-016-scope-repair-offline.md) separates the new offline
+candidate from historical H015 measurement. CP1 explains all38pre-provider failures
+(19cases×2,13distinct strings) with pinned evidence and independent regression-first
+Agent-entry tests. Shared ID extraction/projection intent, not the provider or
+missing catalogs, caused the observed failures. New repaired executable candidate
+`58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32` implements role/typed-span ownership, full quoted
+identity validation and fail-closed unsupported identity constraints. Exact58f2archive815tests/static157oracle, actual8statebrowser, clean tracked-only
+reproduction and1632immutable preservation passed. Independent final APPROVE/CLEAR are received with0unresolved findings; native/
+strict completion remains **pending at this cutoff**. No old readiness claim closes
+these new gates.
+
+- **R03–08:** current ordinary NL→scope→compiled graph→SQLite/answer/trace/UI
+  mechanisms now have815test/oracle/browser/clean proof for both schemas; historical10/48 remains
+  latest real-model measurement. Offline scripts do not prove model interpretation,
+  new live44/48 or final service acceptance.
+- **R13/U04:** [ADR015](adr/ADR-OMX-015-H016-scope-resolution.md) records extraction,
+  catalog validation and confirmation separation, alternatives and rationale.
+- **U01:** actual H016 root prompt is exported separately from read context;
+  RU original/labelled EN translation and selected child coverage remain partial,
+  not complete hidden/private transcripts.
+- **U06:** CP1 `5bbce8c54f7ec9d92cfc16cae3935e0b04a52374`; CP2 `f9251a71fb44766ceb86f701d12e80320dfb906c` failed its first full suite; repaired candidate
+  `58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32` has exact full/browser/clean proof; docs-only SHA stays separate.
+- **R15:** H015/H016 publication pending separate authorization; push not-run.
+- **R16/17:** defense/owner rehearsal later, not an offline implementation gate.
+
+H016 permits offline repair/local checkpoints, not new API/count/probe/credentials,
+canonical monetary changes, vault writes or live generation. Completed H015
+native COMPLETE/strict5/5 is bounded measurement, not H016 completion. Earlier
+current-stage sections below retain their historical cutoffs.
+
 ## Current H015 assessment cutoff — 2026-11-08
 
 [H015 report](reports/H-015-full-live-eval.md) supersedes earlier current/no-live

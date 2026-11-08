@@ -1,3 +1,34 @@
+## Current H016 actual prompt and offline scope — 2026-11-08
+
+The [actual root task](omx/H-016-actual-prompt.txt) comes from the supported exact
+root-session export, not a handoff reconstruction. [Receipt](../operations/H-016/prompt-receipt.json)
+pins the actual user entry and public hash, one private vault-prefix replacement
+and added terminal LF. The existing [RU](PROMPTS-RU.md)/[EN](PROMPTS-EN.md) bundles
+include its Russian original and explicitly labelled English reader translation;
+the English text was not an actual English model input. Read source/wiki/ADR/
+installed skill files are context, not additional actual user prompts.
+
+The [selected documentation assignment](../operations/H-016/documentation-task-projection.txt)
+and regression lane [initial task](../operations/H-016/prompts/regression-task.txt) /
+[selected followups](../operations/H-016/prompts/regression-followups.txt) are
+and the [exact initial repair task](../operations/H-016/prompts/repair-task.txt) are
+separately attributed in H016 provenance. Preliminary [code](../operations/H-016/reviews/code-preliminary.md) /
+[architecture](../operations/H-016/reviews/architecture-preliminary.md) files are
+selected actual review results, not full reviewer input/session exports.
+Selected task/result projections do not establish full worker session or opaque
+transport coverage. System/developer instructions, reasoning, full tools/private
+transcripts and credentials remain omitted; global U01 is partial. Root owns
+workflow/runtime identity, not the documentation lane.
+
+Runtime plan/SQL templates are unchanged: plan
+`0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43`, SQL
+`79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb`.
+Their existing complete bundle copies remain separate from actual requests;
+H016 uses offline scripted plan/SQL only, not new real-provider consumption.
+[H016 report](../reports/H-016-scope-repair-offline.md) distinguishes new product
+repair from preserved H015 original2/48/corrected10/48 and bounded native closure.
+No new API/count/probe, credential loading, monetary mutation or push authority.
+
 ## Current H015 actual request/result coverage — 2026-11-08
 
 The [actual root prompt](omx/H-015-actual-prompt.txt)/[export receipt](../operations/H-015/prompt-receipt.json)
@@ -255,3 +286,10 @@ are history. No actual-data score/verdict is inferred from preparation review;
 selected reviewer prompts/results need separate attribution. No full tools/private/
 system/developer/reasoning transcript or complete global U01 closure is claimed.
 Runtime prompts are unchanged; this correction makes no new provider request.
+
+H016 final selected result projections: [code APPROVE](../operations/H-016/reviews/code-final.md) /
+[architecture CLEAR](../operations/H-016/reviews/architecture-final.md),
+0unresolved findings/blockers for the bounded offline candidate. These are actual
+received review **results**, not complete reviewer prompts or hidden session
+exports. Root native/strict closure is separate. No new runtime template or
+real-provider request was consumed in this offline task.

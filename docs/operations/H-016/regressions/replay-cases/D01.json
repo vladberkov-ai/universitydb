@@ -1,0 +1,194 @@
+{
+  "profile": "development-known OFFLINE regression; NOT live score",
+  "case": {
+    "run_id": "D01-r1",
+    "case_id": "D01",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "Which course IDs have the highest mean grade in S1? Include all exact ties.",
+    "selections": []
+  },
+  "expected_scope": {
+    "semester_id": "S1"
+  },
+  "pauses": [],
+  "answer": {
+    "text": "student_id=all; course_id=all; teacher_id=all; semester_id=S1: top_course: 1 rows.",
+    "columns": [
+      {
+        "name": "course_id",
+        "type": "integer"
+      },
+      {
+        "name": "average",
+        "type": "decimal"
+      },
+      {
+        "name": "graded_count",
+        "type": "integer"
+      },
+      {
+        "name": "enrollment_count",
+        "type": "integer"
+      }
+    ],
+    "rows": [
+      [
+        2,
+        "100.00",
+        1,
+        1
+      ]
+    ],
+    "scope": "student_id=all; course_id=all; teacher_id=all; semester_id=S1",
+    "empty_reason": null,
+    "row_reasons": [
+      null
+    ],
+    "truncated": false
+  },
+  "steps": [
+    {
+      "step_id": "s0",
+      "raw": {
+        "result_spec": {
+          "metric_id": "u.top_course.v1",
+          "shape": "top",
+          "group_keys": [
+            "course_id"
+          ],
+          "columns": [
+            {
+              "name": "course_id",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "sum_units",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "graded_count",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "enrollment_count",
+              "type": "integer",
+              "nullable": false
+            }
+          ],
+          "components": {
+            "sum": "sum_units",
+            "denominator": "graded_count",
+            "count": "enrollment_count"
+          },
+          "unit": "grade_hundredth",
+          "scale": 100
+        },
+        "step_id": "s0",
+        "columns": [
+          {
+            "name": "course_id",
+            "type": "integer"
+          },
+          {
+            "name": "sum_units",
+            "type": "integer"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            1,
+            25000,
+            3,
+            4
+          ],
+          [
+            2,
+            10000,
+            1,
+            1
+          ],
+          [
+            3,
+            0,
+            0,
+            1
+          ]
+        ],
+        "row_count": 3,
+        "truncated": false,
+        "elapsed_ms": 0
+      },
+      "answer": {
+        "text": "student_id=all; course_id=all; teacher_id=all; semester_id=S1: top_course: 1 rows.",
+        "columns": [
+          {
+            "name": "course_id",
+            "type": "integer"
+          },
+          {
+            "name": "average",
+            "type": "decimal"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            2,
+            "100.00",
+            1,
+            1
+          ]
+        ],
+        "scope": "student_id=all; course_id=all; teacher_id=all; semester_id=S1",
+        "empty_reason": null,
+        "row_reasons": [
+          null
+        ],
+        "truncated": false
+      },
+      "dependency_rows": [
+        [
+          2,
+          10000,
+          1,
+          1
+        ]
+      ]
+    }
+  ],
+  "provider_calls": 2,
+  "actual_provider_scopes": [
+    {
+      "semester_id": "S1"
+    },
+    {
+      "semester_id": "S1"
+    }
+  ],
+  "actual_sql_refs": [
+    {}
+  ],
+  "fixture_before_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+  "fixture_after_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+  "trace_sha256": "8c644e58ec340165543f4464f8e7c3eefc54f1b27d174c07de7b3b5ecfe28748"
+}

@@ -1,0 +1,429 @@
+{
+  "profile": "development-known OFFLINE regression; NOT live score",
+  "case": {
+    "run_id": "J04-r1",
+    "case_id": "J04",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "List student IDs, offering IDs and grades for course ID 1 in S1, including ungraded enrollments.",
+    "selections": []
+  },
+  "expected_scope": {
+    "course_id": 1,
+    "semester_id": "S1"
+  },
+  "pauses": [],
+  "answer": {
+    "text": "student_id=all; course_id=1; teacher_id=all; semester_id=S1: enrollment_rows: 4 rows.",
+    "columns": [
+      {
+        "name": "student_id",
+        "type": "integer"
+      },
+      {
+        "name": "student_name",
+        "type": "string"
+      },
+      {
+        "name": "offering_id",
+        "type": "integer"
+      },
+      {
+        "name": "course_id",
+        "type": "integer"
+      },
+      {
+        "name": "course_title",
+        "type": "string"
+      },
+      {
+        "name": "teacher_id",
+        "type": "integer"
+      },
+      {
+        "name": "teacher_name",
+        "type": "string"
+      },
+      {
+        "name": "semester_id",
+        "type": "string"
+      },
+      {
+        "name": "grade_units",
+        "type": "integer"
+      }
+    ],
+    "rows": [
+      [
+        1,
+        "Alex",
+        1,
+        1,
+        "DB",
+        10,
+        "Kim",
+        "S1",
+        9000
+      ],
+      [
+        2,
+        "Bea",
+        1,
+        1,
+        "DB",
+        10,
+        "Kim",
+        "S1",
+        6000
+      ],
+      [
+        3,
+        "Alex",
+        1,
+        1,
+        "DB",
+        10,
+        "Kim",
+        "S1",
+        null
+      ],
+      [
+        2,
+        "Bea",
+        5,
+        1,
+        "DB",
+        10,
+        "Kim",
+        "S1",
+        10000
+      ]
+    ],
+    "scope": "student_id=all; course_id=1; teacher_id=all; semester_id=S1",
+    "empty_reason": null,
+    "row_reasons": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "truncated": false
+  },
+  "steps": [
+    {
+      "step_id": "s0",
+      "raw": {
+        "result_spec": {
+          "metric_id": "u.enrollment_rows.v1",
+          "shape": "rows",
+          "group_keys": [
+            "student_id",
+            "offering_id"
+          ],
+          "columns": [
+            {
+              "name": "student_id",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "student_name",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "offering_id",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "course_id",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "course_title",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "teacher_id",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "teacher_name",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "semester_id",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "grade_units",
+              "type": "integer",
+              "nullable": true
+            }
+          ],
+          "components": {
+            "sum": null,
+            "denominator": null,
+            "count": null
+          },
+          "unit": "grade_hundredth",
+          "scale": 100
+        },
+        "step_id": "s0",
+        "columns": [
+          {
+            "name": "student_id",
+            "type": "integer"
+          },
+          {
+            "name": "student_name",
+            "type": "string"
+          },
+          {
+            "name": "offering_id",
+            "type": "integer"
+          },
+          {
+            "name": "course_id",
+            "type": "integer"
+          },
+          {
+            "name": "course_title",
+            "type": "string"
+          },
+          {
+            "name": "teacher_id",
+            "type": "integer"
+          },
+          {
+            "name": "teacher_name",
+            "type": "string"
+          },
+          {
+            "name": "semester_id",
+            "type": "string"
+          },
+          {
+            "name": "grade_units",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            1,
+            "Alex",
+            1,
+            1,
+            "DB",
+            10,
+            "Kim",
+            "S1",
+            9000
+          ],
+          [
+            2,
+            "Bea",
+            1,
+            1,
+            "DB",
+            10,
+            "Kim",
+            "S1",
+            6000
+          ],
+          [
+            3,
+            "Alex",
+            1,
+            1,
+            "DB",
+            10,
+            "Kim",
+            "S1",
+            null
+          ],
+          [
+            2,
+            "Bea",
+            5,
+            1,
+            "DB",
+            10,
+            "Kim",
+            "S1",
+            10000
+          ]
+        ],
+        "row_count": 4,
+        "truncated": false,
+        "elapsed_ms": 0
+      },
+      "answer": {
+        "text": "student_id=all; course_id=1; teacher_id=all; semester_id=S1: enrollment_rows: 4 rows.",
+        "columns": [
+          {
+            "name": "student_id",
+            "type": "integer"
+          },
+          {
+            "name": "student_name",
+            "type": "string"
+          },
+          {
+            "name": "offering_id",
+            "type": "integer"
+          },
+          {
+            "name": "course_id",
+            "type": "integer"
+          },
+          {
+            "name": "course_title",
+            "type": "string"
+          },
+          {
+            "name": "teacher_id",
+            "type": "integer"
+          },
+          {
+            "name": "teacher_name",
+            "type": "string"
+          },
+          {
+            "name": "semester_id",
+            "type": "string"
+          },
+          {
+            "name": "grade_units",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            1,
+            "Alex",
+            1,
+            1,
+            "DB",
+            10,
+            "Kim",
+            "S1",
+            9000
+          ],
+          [
+            2,
+            "Bea",
+            1,
+            1,
+            "DB",
+            10,
+            "Kim",
+            "S1",
+            6000
+          ],
+          [
+            3,
+            "Alex",
+            1,
+            1,
+            "DB",
+            10,
+            "Kim",
+            "S1",
+            null
+          ],
+          [
+            2,
+            "Bea",
+            5,
+            1,
+            "DB",
+            10,
+            "Kim",
+            "S1",
+            10000
+          ]
+        ],
+        "scope": "student_id=all; course_id=1; teacher_id=all; semester_id=S1",
+        "empty_reason": null,
+        "row_reasons": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "truncated": false
+      },
+      "dependency_rows": [
+        [
+          1,
+          "Alex",
+          1,
+          1,
+          "DB",
+          10,
+          "Kim",
+          "S1",
+          9000
+        ],
+        [
+          2,
+          "Bea",
+          1,
+          1,
+          "DB",
+          10,
+          "Kim",
+          "S1",
+          6000
+        ],
+        [
+          3,
+          "Alex",
+          1,
+          1,
+          "DB",
+          10,
+          "Kim",
+          "S1",
+          null
+        ],
+        [
+          2,
+          "Bea",
+          5,
+          1,
+          "DB",
+          10,
+          "Kim",
+          "S1",
+          10000
+        ]
+      ]
+    }
+  ],
+  "provider_calls": 2,
+  "actual_provider_scopes": [
+    {
+      "course_id": 1,
+      "semester_id": "S1"
+    },
+    {
+      "course_id": 1,
+      "semester_id": "S1"
+    }
+  ],
+  "actual_sql_refs": [
+    {}
+  ],
+  "fixture_before_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+  "fixture_after_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+  "trace_sha256": "3d39fe884016c6d9b84c422c1a98c24dfef1a177e60203aadedb29c8879cbbe3"
+}

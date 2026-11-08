@@ -1,0 +1,242 @@
+{
+  "tested_sha": "3bc1088ac7403e757df6eddd0e10120d3a69d17b",
+  "profile": "OFFLINE/scripted, not real-model accuracy",
+  "before_sha256": {
+    "docs/operations/H-016/browser_ui.py": "e3b059b80440f7c49b3b22b89df6527e8e634db1bab2a0336a2bfba3353801dd",
+    "pyproject.toml": "00522db5a7513ed6a19804487591996a65a31c5f1b40559362d6587dbbfe9644",
+    "resources/library/schema.sql": "b7ea3103b689d4f0797bf398a278c1738ee97bac81cb785a72a9d25081b870f1",
+    "resources/library/seed.sql": "a81701bd8c62379f03f101081739b52e451ffdd0fd74d11f23217b6ecaf9400a",
+    "resources/schema.sql": "2d459c3592bdf9d0baea14d546540d55be650bb619d3762ee63b85cca9be70f8",
+    "resources/seed.sql": "c355537acc89af8a2ec7b96b65fdab3f37366185539ae16c1b0b9fe62c0d1acb",
+    "src/universitydb/__init__.py": "f4783354578e7b9ed2f99a68b5454ac621abd61d76b07062a05bf5887dd72dd7",
+    "src/universitydb/agent.py": "af3191e82c247f647661411224383fced8456fd5142cb5a61e81f2a1d51edbd2",
+    "src/universitydb/config.py": "c5c0215f820fc30a60da11946cfcec3d53741f86eeb9db2eafdfc169ebfdb5a5",
+    "src/universitydb/contracts.py": "14715a2b7ed31457eba35acce6e568bcd67c72a55371822f6c9243bbacb619dc",
+    "src/universitydb/db.py": "a1650dad66a7c8ad49210bb3ab4850deff8e9f7bfc5c3f2ca65c84e632d80cc8",
+    "src/universitydb/db_worker.py": "64c17b84c0d68e97d5587c849734640fccd89ace1c12238f08105bf8201a2c05",
+    "src/universitydb/domain.py": "80e70a9a01bc4fa6af29c7bc5a7a5e94ff65e174590d61b855e5ea6353aa98f9",
+    "src/universitydb/domain_support.py": "7e6eb3d529206731f93b26d80f1ba877926b97c0b42ef719afa75f428ea245d4",
+    "src/universitydb/library.py": "9ee0be5fd13c05d6c0d366755bf6b57e8414e4b16f2d11e8c249f159df7e6ade",
+    "src/universitydb/llm.py": "b5559fd7a7d3ddecedc9637e850773f431c682a388790007b3b0338388639482",
+    "src/universitydb/llm_worker.py": "dc6369b1ae15393f134bd239935ad3b398c9f84eece1bc379a59f6a6a9b1940e",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/sql_policy.py": "f0d2c532ad9c053952cc6a4fefba9350585e9826d49f9b05b5d6171b035307ac",
+    "src/universitydb/tracing.py": "32a8b49dc56b0e2acf59b836361ef03abb70c4c549c312a1c914c8b646e8a96b",
+    "src/universitydb/ui.py": "e80a70cdbf7447220eca967e4f9c870ca3e71bb0095696f651c6ae4153d1f52e",
+    "tests/conftest.py": "46131f0dc3214ea8c1364efa4579539bd1f6c8d85367585c3544eab3f7155989",
+    "tests/test_bounds.py": "08ce4aa953be0188ca5588b426eb3b1f3ffe61d7449ef7fe5f01ac7561b03218",
+    "tests/test_db_domain.py": "bea5452a16496b183a5a5eb790219e4d3009ffe9478fc886e616b13e78c4bfda",
+    "tests/test_eval_harness.py": "0e077f83f5b236139cf44ad3f295658b034947b37aee19e8b2573ce1064b0d60",
+    "tests/test_graph.py": "613792b9f8e4252cb7b6364f94caa9fe0b7857d929b3fc49af9e8c0d733414fb",
+    "tests/test_h015_budget.py": "99eb65aae1e9be4e7c5a080c8596825f3d8f4942b7c512f8ff64cdefae6cb02e",
+    "tests/test_h015_collector.py": "f98cf10c177e12ed3afdcb11d161fdbe8accad3929c718b35fcf2410be8bf086",
+    "tests/test_h015_observer.py": "e67daa994b6a799dcf191f9b963be12a39c8cd5557095d0cfb5ddedd4cb014af",
+    "tests/test_h015_observer_v2.py": "ac296b2ff5ea1815e9fc4a3aad9ea3af4c9ff050d7db914ee310aca21f71dbc0",
+    "tests/test_h016_natural_scope.py": "5b90b8a38325e6d8b292dd8d84dc26c9547aad785349e286011d3b03acc65d2d",
+    "tests/test_h016_offline_replay.py": "ceef63a9226a0233c105875e03f16599deb8ae1f69503d8b8ad6d81326d5b333",
+    "tests/test_h016_resolution_edges.py": "a93f20b20f01da49772cb321eea9c413f9c088db503f8e949730ba5d64876ee0",
+    "tests/test_h016_ui.py": "8aed8c3cd2793ab9f7f320690c2a543c059c4f81e61d6b2a0ce58e5056d68ab9",
+    "tests/test_i2_continuation.py": "7b3399feca7546f3187123f5aa21850d8a983811791481fbad5b6bce09b56567",
+    "tests/test_i2_contracts.py": "a6f4e688cd3caf1ebb2fc1a6366cf93435297ace7b0a4e7e8219f6ef001a158e",
+    "tests/test_i2_core.py": "fb47d23e92cf88980f5d74030fb1c1c7497b86fbd45ec938d4ffd8ef01b4da11",
+    "tests/test_i2_domains.py": "a2cb355ec4792275f2170ee43d80b53943480e9916dfc5cc710a6d01480fa140",
+    "tests/test_i2_oracle.py": "02596ca334cd669e02e6481a5a5bb0490c570a455ad8cd64f7bf71f2d638c17d",
+    "tests/test_i2_ui.py": "27d04b94ea5483f96d1c0874acfb77a46042e70ff61d0568b37c14b5fa5c60d8",
+    "tests/test_i3_dependencies.py": "ec4c9a05e93e00443638b4567cdceff4e1f8cbc93e7ad84e0a8e1dcd000caf7d",
+    "tests/test_library.py": "6831b286f6a9340711e409d2909a044071c2a259b7710b823ca036970d21f8c2",
+    "tests/test_practical_budget.py": "710a064e1ce59977aeebcca6f994ace65015a17e65e9b83b386ec3cfd44c125a",
+    "tests/test_provider_worker.py": "92a5b390e89ecac1f41ac58b6872fc80d1e038d4a44a592ed619ea08fbf56c34",
+    "tests/test_readiness_scope.py": "461f3443a3152114c6a5fab93ba196ce9da5d862a9a66a60e1df0e5dc5884833",
+    "tests/test_readiness_ui_magic.py": "f0550efd39870c390873c4218198546fa7d1a56903e3e206bcad229b9480cade",
+    "tests/test_review_repairs.py": "b046f70137bb5b47e412ac2a6ad4a7be987225df15fa9a3e2ce75eebdf366e62",
+    "tests/test_sol_profile.py": "c736f4a0511fee56d36746dce2b0deae32a93a3c44118ed27518defa93c8b516",
+    "tests/test_ui.py": "0c949af5eb030ee1f8cac7f42e7aa828c52570acff4138a2161c30920297009e",
+    "tests/ui_fixtures.py": "210fd65439244a2a9abfddc20f3c871ba8830f4990c74e6ace954e9ccd72b09d",
+    "tools/eval/collector.py": "257225495bcd22efaa697d7a8038820294c0f595bc1fa366e2d937cbd3038081",
+    "tools/eval/correct_mean_nullability_v2.py": "8560fcb2c7458ab778dbac1d55530f8b634561727f74281b4809c53bf6389908",
+    "tools/eval/harness.py": "a14f11835ff3c67aa6ef6e7a95716613982a3c1799bfa2d734f4038c95a1c811",
+    "tools/eval/observe.py": "a47a50f935f493e24796ad353eff88de1a24509979699328f230aa35ecbb7f14",
+    "uv.lock": "de36cab6c73d37bde70cc13e019b9eb2552a0747e46fe5c8c3b7cedf5338378d"
+  },
+  "commands": [
+    {
+      "command": [
+        ".venv/bin/pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "seconds": 118.448,
+      "log": "docs/operations/H-016/verification/final-2/01-output.txt",
+      "log_sha256": "29a10fe24e1342b91ead266b1cbb091ed5a69f9813ee529ce114962793d51947"
+    },
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "check",
+        "src",
+        "tests"
+      ],
+      "exit_code": 0,
+      "seconds": 0.009,
+      "log": "docs/operations/H-016/verification/final-2/02-output.txt",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "format",
+        "--check",
+        "src",
+        "tests"
+      ],
+      "exit_code": 0,
+      "seconds": 0.007,
+      "log": "docs/operations/H-016/verification/final-2/03-output.txt",
+      "log_sha256": "d6675b63a4767317d34641fb3901c01a3e6f8536bb9289fd7d0bdf7ae2bfe59b"
+    },
+    {
+      "command": [
+        ".venv/bin/mypy",
+        "src/universitydb",
+        "--ignore-missing-imports"
+      ],
+      "exit_code": 0,
+      "seconds": 25.259,
+      "log": "docs/operations/H-016/verification/final-2/04-output.txt",
+      "log_sha256": "fe22d95914d7fdd98483ace256b7f2708db4be1255737e5d7cca4d16703ca242"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "tests"
+      ],
+      "exit_code": 0,
+      "seconds": 0.042,
+      "log": "docs/operations/H-016/verification/final-2/05-output.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "docs/operations/H-013/independent_oracle.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.047,
+      "log": "docs/operations/H-016/verification/final-2/06-output.txt",
+      "log_sha256": "7c0cf19b9fec4d0ff12fc571dfcc19c66c4d949fd43ce0887322a1e56737603a"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "docs/operations/H-014/readiness_e2e.py",
+        "/home/dev/projects/universitydb/docs/operations/H-016/verification/final-2/readiness"
+      ],
+      "exit_code": 0,
+      "seconds": 1.151,
+      "log": "docs/operations/H-016/verification/final-2/07-output.txt",
+      "log_sha256": "ebf02f897bd9db9e278e8e1e8ff9f553af9ef475a39462109c044458c9afcba5"
+    },
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "check",
+        "docs/operations/H-016/browser_ui.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.007,
+      "log": "docs/operations/H-016/verification/final-2/08-output.txt",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "format",
+        "--check",
+        "docs/operations/H-016/browser_ui.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.006,
+      "log": "docs/operations/H-016/verification/final-2/09-output.txt",
+      "log_sha256": "fd2299c9f1c6dc869070883e281051bfe93aacf66c1a3b0069f45b4aa410ca50"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.006,
+      "log": "docs/operations/H-016/verification/final-2/10-output.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "status": "passed",
+  "credential_loading": false,
+  "new_external_product_calls": 0,
+  "after_sha256": {
+    "docs/operations/H-016/browser_ui.py": "e3b059b80440f7c49b3b22b89df6527e8e634db1bab2a0336a2bfba3353801dd",
+    "pyproject.toml": "00522db5a7513ed6a19804487591996a65a31c5f1b40559362d6587dbbfe9644",
+    "resources/library/schema.sql": "b7ea3103b689d4f0797bf398a278c1738ee97bac81cb785a72a9d25081b870f1",
+    "resources/library/seed.sql": "a81701bd8c62379f03f101081739b52e451ffdd0fd74d11f23217b6ecaf9400a",
+    "resources/schema.sql": "2d459c3592bdf9d0baea14d546540d55be650bb619d3762ee63b85cca9be70f8",
+    "resources/seed.sql": "c355537acc89af8a2ec7b96b65fdab3f37366185539ae16c1b0b9fe62c0d1acb",
+    "src/universitydb/__init__.py": "f4783354578e7b9ed2f99a68b5454ac621abd61d76b07062a05bf5887dd72dd7",
+    "src/universitydb/agent.py": "af3191e82c247f647661411224383fced8456fd5142cb5a61e81f2a1d51edbd2",
+    "src/universitydb/config.py": "c5c0215f820fc30a60da11946cfcec3d53741f86eeb9db2eafdfc169ebfdb5a5",
+    "src/universitydb/contracts.py": "14715a2b7ed31457eba35acce6e568bcd67c72a55371822f6c9243bbacb619dc",
+    "src/universitydb/db.py": "a1650dad66a7c8ad49210bb3ab4850deff8e9f7bfc5c3f2ca65c84e632d80cc8",
+    "src/universitydb/db_worker.py": "64c17b84c0d68e97d5587c849734640fccd89ace1c12238f08105bf8201a2c05",
+    "src/universitydb/domain.py": "80e70a9a01bc4fa6af29c7bc5a7a5e94ff65e174590d61b855e5ea6353aa98f9",
+    "src/universitydb/domain_support.py": "7e6eb3d529206731f93b26d80f1ba877926b97c0b42ef719afa75f428ea245d4",
+    "src/universitydb/library.py": "9ee0be5fd13c05d6c0d366755bf6b57e8414e4b16f2d11e8c249f159df7e6ade",
+    "src/universitydb/llm.py": "b5559fd7a7d3ddecedc9637e850773f431c682a388790007b3b0338388639482",
+    "src/universitydb/llm_worker.py": "dc6369b1ae15393f134bd239935ad3b398c9f84eece1bc379a59f6a6a9b1940e",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/sql_policy.py": "f0d2c532ad9c053952cc6a4fefba9350585e9826d49f9b05b5d6171b035307ac",
+    "src/universitydb/tracing.py": "32a8b49dc56b0e2acf59b836361ef03abb70c4c549c312a1c914c8b646e8a96b",
+    "src/universitydb/ui.py": "e80a70cdbf7447220eca967e4f9c870ca3e71bb0095696f651c6ae4153d1f52e",
+    "tests/conftest.py": "46131f0dc3214ea8c1364efa4579539bd1f6c8d85367585c3544eab3f7155989",
+    "tests/test_bounds.py": "08ce4aa953be0188ca5588b426eb3b1f3ffe61d7449ef7fe5f01ac7561b03218",
+    "tests/test_db_domain.py": "bea5452a16496b183a5a5eb790219e4d3009ffe9478fc886e616b13e78c4bfda",
+    "tests/test_eval_harness.py": "0e077f83f5b236139cf44ad3f295658b034947b37aee19e8b2573ce1064b0d60",
+    "tests/test_graph.py": "613792b9f8e4252cb7b6364f94caa9fe0b7857d929b3fc49af9e8c0d733414fb",
+    "tests/test_h015_budget.py": "99eb65aae1e9be4e7c5a080c8596825f3d8f4942b7c512f8ff64cdefae6cb02e",
+    "tests/test_h015_collector.py": "f98cf10c177e12ed3afdcb11d161fdbe8accad3929c718b35fcf2410be8bf086",
+    "tests/test_h015_observer.py": "e67daa994b6a799dcf191f9b963be12a39c8cd5557095d0cfb5ddedd4cb014af",
+    "tests/test_h015_observer_v2.py": "ac296b2ff5ea1815e9fc4a3aad9ea3af4c9ff050d7db914ee310aca21f71dbc0",
+    "tests/test_h016_natural_scope.py": "5b90b8a38325e6d8b292dd8d84dc26c9547aad785349e286011d3b03acc65d2d",
+    "tests/test_h016_offline_replay.py": "ceef63a9226a0233c105875e03f16599deb8ae1f69503d8b8ad6d81326d5b333",
+    "tests/test_h016_resolution_edges.py": "a93f20b20f01da49772cb321eea9c413f9c088db503f8e949730ba5d64876ee0",
+    "tests/test_h016_ui.py": "8aed8c3cd2793ab9f7f320690c2a543c059c4f81e61d6b2a0ce58e5056d68ab9",
+    "tests/test_i2_continuation.py": "7b3399feca7546f3187123f5aa21850d8a983811791481fbad5b6bce09b56567",
+    "tests/test_i2_contracts.py": "a6f4e688cd3caf1ebb2fc1a6366cf93435297ace7b0a4e7e8219f6ef001a158e",
+    "tests/test_i2_core.py": "fb47d23e92cf88980f5d74030fb1c1c7497b86fbd45ec938d4ffd8ef01b4da11",
+    "tests/test_i2_domains.py": "a2cb355ec4792275f2170ee43d80b53943480e9916dfc5cc710a6d01480fa140",
+    "tests/test_i2_oracle.py": "02596ca334cd669e02e6481a5a5bb0490c570a455ad8cd64f7bf71f2d638c17d",
+    "tests/test_i2_ui.py": "27d04b94ea5483f96d1c0874acfb77a46042e70ff61d0568b37c14b5fa5c60d8",
+    "tests/test_i3_dependencies.py": "ec4c9a05e93e00443638b4567cdceff4e1f8cbc93e7ad84e0a8e1dcd000caf7d",
+    "tests/test_library.py": "6831b286f6a9340711e409d2909a044071c2a259b7710b823ca036970d21f8c2",
+    "tests/test_practical_budget.py": "710a064e1ce59977aeebcca6f994ace65015a17e65e9b83b386ec3cfd44c125a",
+    "tests/test_provider_worker.py": "92a5b390e89ecac1f41ac58b6872fc80d1e038d4a44a592ed619ea08fbf56c34",
+    "tests/test_readiness_scope.py": "461f3443a3152114c6a5fab93ba196ce9da5d862a9a66a60e1df0e5dc5884833",
+    "tests/test_readiness_ui_magic.py": "f0550efd39870c390873c4218198546fa7d1a56903e3e206bcad229b9480cade",
+    "tests/test_review_repairs.py": "b046f70137bb5b47e412ac2a6ad4a7be987225df15fa9a3e2ce75eebdf366e62",
+    "tests/test_sol_profile.py": "c736f4a0511fee56d36746dce2b0deae32a93a3c44118ed27518defa93c8b516",
+    "tests/test_ui.py": "0c949af5eb030ee1f8cac7f42e7aa828c52570acff4138a2161c30920297009e",
+    "tests/ui_fixtures.py": "210fd65439244a2a9abfddc20f3c871ba8830f4990c74e6ace954e9ccd72b09d",
+    "tools/eval/collector.py": "257225495bcd22efaa697d7a8038820294c0f595bc1fa366e2d937cbd3038081",
+    "tools/eval/correct_mean_nullability_v2.py": "8560fcb2c7458ab778dbac1d55530f8b634561727f74281b4809c53bf6389908",
+    "tools/eval/harness.py": "a14f11835ff3c67aa6ef6e7a95716613982a3c1799bfa2d734f4038c95a1c811",
+    "tools/eval/observe.py": "a47a50f935f493e24796ad353eff88de1a24509979699328f230aa35ecbb7f14",
+    "uv.lock": "de36cab6c73d37bde70cc13e019b9eb2552a0747e46fe5c8c3b7cedf5338378d"
+  },
+  "source_unchanged_during_verification": true,
+  "exported_replay_pairs": 31
+}

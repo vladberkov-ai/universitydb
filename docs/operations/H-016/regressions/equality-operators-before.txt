@@ -1,0 +1,108 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+_ test_explicit_identity_non_equality_operators_reject[university-Show mean for student_id!=2.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1042/test_explicit_identity_non_equ0')
+kind = 'university', question = 'Show mean for student_id!=2.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show mean for student_id!=2."),
+            ("university", "Show mean for course_id<>1."),
+            ("university", "Show mean for teacher_id<=10."),
+            ("library", "Count open loans for reader_id>1."),
+        ],
+    )
+    def test_explicit_identity_non_equality_operators_reject(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': 'a6bf9f7e-4584-490a-95de-68610bb96bbd', 'trace_id': 'a6bf9f7e-4584-490a-95de-68610bb96bbd', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:283: AssertionError
+_ test_explicit_identity_non_equality_operators_reject[university-Show mean for course_id<>1.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1042/test_explicit_identity_non_equ1')
+kind = 'university', question = 'Show mean for course_id<>1.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show mean for student_id!=2."),
+            ("university", "Show mean for course_id<>1."),
+            ("university", "Show mean for teacher_id<=10."),
+            ("library", "Count open loans for reader_id>1."),
+        ],
+    )
+    def test_explicit_identity_non_equality_operators_reject(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '591df34e-6b32-4f99-a4a5-1731da0c830a', 'trace_id': '591df34e-6b32-4f99-a4a5-1731da0c830a', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:283: AssertionError
+_ test_explicit_identity_non_equality_operators_reject[university-Show mean for teacher_id<=10.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1042/test_explicit_identity_non_equ2')
+kind = 'university', question = 'Show mean for teacher_id<=10.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show mean for student_id!=2."),
+            ("university", "Show mean for course_id<>1."),
+            ("university", "Show mean for teacher_id<=10."),
+            ("library", "Count open loans for reader_id>1."),
+        ],
+    )
+    def test_explicit_identity_non_equality_operators_reject(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '98c24366-8281-4f86-ad06-b7332b9ae263', 'trace_id': '98c24366-8281-4f86-ad06-b7332b9ae263', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:283: AssertionError
+_ test_explicit_identity_non_equality_operators_reject[library-Count open loans for reader_id>1.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1042/test_explicit_identity_non_equ3')
+kind = 'library', question = 'Count open loans for reader_id>1.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show mean for student_id!=2."),
+            ("university", "Show mean for course_id<>1."),
+            ("university", "Show mean for teacher_id<=10."),
+            ("library", "Count open loans for reader_id>1."),
+        ],
+    )
+    def test_explicit_identity_non_equality_operators_reject(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '34bf91c0-2b94-4f98-a13f-e5a5c10dfd55', 'trace_id': '34bf91c0-2b94-4f98-a13f-e5a5c10dfd55', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:283: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_h016_resolution_edges.py::test_explicit_identity_non_equality_operators_reject[university-Show mean for student_id!=2.]
+FAILED tests/test_h016_resolution_edges.py::test_explicit_identity_non_equality_operators_reject[university-Show mean for course_id<>1.]
+FAILED tests/test_h016_resolution_edges.py::test_explicit_identity_non_equality_operators_reject[university-Show mean for teacher_id<=10.]
+FAILED tests/test_h016_resolution_edges.py::test_explicit_identity_non_equality_operators_reject[library-Count open loans for reader_id>1.]
+4 failed, 71 deselected in 1.33s

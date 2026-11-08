@@ -1,0 +1,27 @@
+"""Temporary focused transition proof; production UI and temporary SQLite only."""
+from test_i2_ui import app_with
+from test_i2_ui import isolated_app as isolated_app
+from ui_fixtures import plan, proposal, step
+from universitydb.library import Library, SPEC
+
+
+def test_schema_key_default_and_filtered_entry_after_prior_error(isolated_app):
+    _, fixture = isolated_app
+    app = app_with(fixture, {
+        "university-v1": [{"injected_error": {"code": "PROVIDER_REFUSAL", "message": "offline refusal"}}],
+        "library-v1": [plan(step(SPEC)), proposal(Library(), SPEC, {"reader_id": 1})],
+    })
+    previous_question = "What is the average grade across all enrollments?"
+    app.text_area[0].set_value(previous_question)
+    app.button[0].click().run()
+    assert app.session_state["result"]["error"]["code"] == "PROVIDER_REFUSAL"
+    assert app.text_area[0].key == "question_university-v1"
+    assert "Bea" not in app.text_area[0].value  # old browser guard already true BEFORE switch
+    app.selectbox[0].select("Library").run()
+    assert app.text_area[0].key == "question_library-v1"
+    assert app.text_area[0].value == "How many open loans does each reader have?"
+    assert "result" not in app.session_state
+    app.text_area[0].set_value("How many open loans for reader ID 1?")
+    app.button[0].click().run()
+    assert not app.exception
+    assert app.session_state["result"]["answer"]["rows"] == [[1, "Ada", 1]]

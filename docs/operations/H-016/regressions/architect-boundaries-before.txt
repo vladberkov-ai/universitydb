@@ -1,0 +1,253 @@
+FFFFF.FFF                                                                [100%]
+=================================== FAILURES ===================================
+_ test_architect_boundary_findings_fail_closed[university-Show mean for course -1.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1031/test_architect_boundary_findin0')
+kind = 'university', question = 'Show mean for course -1.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show mean for course -1."),
+            ("university", "Show mean for course #abc."),
+            ("library", "Count open loans for reader -1."),
+            ("library", "Count open loans for reader #abc."),
+            ("university", "Show mean for offering ID 1."),
+            ("library", "Count open loans for book ID 1."),
+            ("university", "Show mean for teacher Lee and teacher Kim, teacher ID 11."),
+            ("university", 'Show mean for student named "Bea Nobody".'),
+            ("library", 'Count open loans for reader named "Ada Nobody".'),
+        ],
+    )
+    def test_architect_boundary_findings_fail_closed(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '3e3e6894-683d-49a9-be6e-35e41d0dbea3', 'trace_id': '3e3e6894-683d-49a9-be6e-35e41d0dbea3', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:130: AssertionError
+_ test_architect_boundary_findings_fail_closed[university-Show mean for course #abc.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1031/test_architect_boundary_findin1')
+kind = 'university', question = 'Show mean for course #abc.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show mean for course -1."),
+            ("university", "Show mean for course #abc."),
+            ("library", "Count open loans for reader -1."),
+            ("library", "Count open loans for reader #abc."),
+            ("university", "Show mean for offering ID 1."),
+            ("library", "Count open loans for book ID 1."),
+            ("university", "Show mean for teacher Lee and teacher Kim, teacher ID 11."),
+            ("university", 'Show mean for student named "Bea Nobody".'),
+            ("library", 'Count open loans for reader named "Ada Nobody".'),
+        ],
+    )
+    def test_architect_boundary_findings_fail_closed(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '3568c732-0c0e-43c1-90cf-b835a7596590', 'trace_id': '3568c732-0c0e-43c1-90cf-b835a7596590', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:130: AssertionError
+_ test_architect_boundary_findings_fail_closed[library-Count open loans for reader -1.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1031/test_architect_boundary_findin2')
+kind = 'library', question = 'Count open loans for reader -1.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show mean for course -1."),
+            ("university", "Show mean for course #abc."),
+            ("library", "Count open loans for reader -1."),
+            ("library", "Count open loans for reader #abc."),
+            ("university", "Show mean for offering ID 1."),
+            ("library", "Count open loans for book ID 1."),
+            ("university", "Show mean for teacher Lee and teacher Kim, teacher ID 11."),
+            ("university", 'Show mean for student named "Bea Nobody".'),
+            ("library", 'Count open loans for reader named "Ada Nobody".'),
+        ],
+    )
+    def test_architect_boundary_findings_fail_closed(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': 'e70e57b9-3d4d-404a-9d7b-58ee107747ef', 'trace_id': 'e70e57b9-3d4d-404a-9d7b-58ee107747ef', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:130: AssertionError
+_ test_architect_boundary_findings_fail_closed[library-Count open loans for reader #abc.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1031/test_architect_boundary_findin3')
+kind = 'library', question = 'Count open loans for reader #abc.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show mean for course -1."),
+            ("university", "Show mean for course #abc."),
+            ("library", "Count open loans for reader -1."),
+            ("library", "Count open loans for reader #abc."),
+            ("university", "Show mean for offering ID 1."),
+            ("library", "Count open loans for book ID 1."),
+            ("university", "Show mean for teacher Lee and teacher Kim, teacher ID 11."),
+            ("university", 'Show mean for student named "Bea Nobody".'),
+            ("library", 'Count open loans for reader named "Ada Nobody".'),
+        ],
+    )
+    def test_architect_boundary_findings_fail_closed(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': 'c6a6b8e7-cd4e-4c62-9c4c-3f5665fabbbe', 'trace_id': 'c6a6b8e7-cd4e-4c62-9c4c-3f5665fabbbe', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:130: AssertionError
+_ test_architect_boundary_findings_fail_closed[university-Show mean for offering ID 1.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1031/test_architect_boundary_findin4')
+kind = 'university', question = 'Show mean for offering ID 1.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show mean for course -1."),
+            ("university", "Show mean for course #abc."),
+            ("library", "Count open loans for reader -1."),
+            ("library", "Count open loans for reader #abc."),
+            ("university", "Show mean for offering ID 1."),
+            ("library", "Count open loans for book ID 1."),
+            ("university", "Show mean for teacher Lee and teacher Kim, teacher ID 11."),
+            ("university", 'Show mean for student named "Bea Nobody".'),
+            ("library", 'Count open loans for reader named "Ada Nobody".'),
+        ],
+    )
+    def test_architect_boundary_findings_fail_closed(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '6a74ed1a-822a-4e19-9d47-02f6f8bd20bb', 'trace_id': '6a74ed1a-822a-4e19-9d47-02f6f8bd20bb', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:130: AssertionError
+_ test_architect_boundary_findings_fail_closed[university-Show mean for teacher Lee and teacher Kim, teacher ID 11.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1031/test_architect_boundary_findin6')
+kind = 'university'
+question = 'Show mean for teacher Lee and teacher Kim, teacher ID 11.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show mean for course -1."),
+            ("university", "Show mean for course #abc."),
+            ("library", "Count open loans for reader -1."),
+            ("library", "Count open loans for reader #abc."),
+            ("university", "Show mean for offering ID 1."),
+            ("library", "Count open loans for book ID 1."),
+            ("university", "Show mean for teacher Lee and teacher Kim, teacher ID 11."),
+            ("university", 'Show mean for student named "Bea Nobody".'),
+            ("library", 'Count open loans for reader named "Ada Nobody".'),
+        ],
+    )
+    def test_architect_boundary_findings_fail_closed(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '6645713e-aa6c-406d-a58a-e4e6a817e5d7', 'trace_id': '6645713e-aa6c-406d-a58a-e4e6a817e5d7', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:130: AssertionError
+_ test_architect_boundary_findings_fail_closed[university-Show mean for student named "Bea Nobody".] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1031/test_architect_boundary_findin7')
+kind = 'university', question = 'Show mean for student named "Bea Nobody".'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show mean for course -1."),
+            ("university", "Show mean for course #abc."),
+            ("library", "Count open loans for reader -1."),
+            ("library", "Count open loans for reader #abc."),
+            ("university", "Show mean for offering ID 1."),
+            ("library", "Count open loans for book ID 1."),
+            ("university", "Show mean for teacher Lee and teacher Kim, teacher ID 11."),
+            ("university", 'Show mean for student named "Bea Nobody".'),
+            ("library", 'Count open loans for reader named "Ada Nobody".'),
+        ],
+    )
+    def test_architect_boundary_findings_fail_closed(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': 'd306d709-6386-4a0f-8562-4c03d66f6616', 'trace_id': 'd306d709-6386-4a0f-8562-4c03d66f6616', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:130: AssertionError
+_ test_architect_boundary_findings_fail_closed[library-Count open loans for reader named "Ada Nobody".] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1031/test_architect_boundary_findin8')
+kind = 'library', question = 'Count open loans for reader named "Ada Nobody".'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show mean for course -1."),
+            ("university", "Show mean for course #abc."),
+            ("library", "Count open loans for reader -1."),
+            ("library", "Count open loans for reader #abc."),
+            ("university", "Show mean for offering ID 1."),
+            ("library", "Count open loans for book ID 1."),
+            ("university", "Show mean for teacher Lee and teacher Kim, teacher ID 11."),
+            ("university", 'Show mean for student named "Bea Nobody".'),
+            ("library", 'Count open loans for reader named "Ada Nobody".'),
+        ],
+    )
+    def test_architect_boundary_findings_fail_closed(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '3e55cd4e-3bfe-489d-9ff3-b18e0140a5c6', 'trace_id': '3e55cd4e-3bfe-489d-9ff3-b18e0140a5c6', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:130: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_h016_resolution_edges.py::test_architect_boundary_findings_fail_closed[university-Show mean for course -1.]
+FAILED tests/test_h016_resolution_edges.py::test_architect_boundary_findings_fail_closed[university-Show mean for course #abc.]
+FAILED tests/test_h016_resolution_edges.py::test_architect_boundary_findings_fail_closed[library-Count open loans for reader -1.]
+FAILED tests/test_h016_resolution_edges.py::test_architect_boundary_findings_fail_closed[library-Count open loans for reader #abc.]
+FAILED tests/test_h016_resolution_edges.py::test_architect_boundary_findings_fail_closed[university-Show mean for offering ID 1.]
+FAILED tests/test_h016_resolution_edges.py::test_architect_boundary_findings_fail_closed[university-Show mean for teacher Lee and teacher Kim, teacher ID 11.]
+FAILED tests/test_h016_resolution_edges.py::test_architect_boundary_findings_fail_closed[university-Show mean for student named "Bea Nobody".]
+FAILED tests/test_h016_resolution_edges.py::test_architect_boundary_findings_fail_closed[library-Count open loans for reader named "Ada Nobody".]
+8 failed, 1 passed, 46 deselected in 2.18s

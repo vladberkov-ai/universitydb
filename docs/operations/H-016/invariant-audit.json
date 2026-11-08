@@ -1,0 +1,239 @@
+{
+  "version": "h016-seven-invariant-audit-v2-before-native",
+  "candidate_sha": "58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32",
+  "status": "All7architecture invariants substantively proven, actual independent code APPROVE/architect CLEAR; persisted before ordered root native/strict closeout",
+  "brief_path": "docs/operations/H-016/workflow/.omx/ultragoal/brief.md",
+  "brief_sha256": "6d04a4d5993331093f2139cf9a28a6633eb72de4340e447ba9043801f237f495",
+  "requirement_extraction": "Exact text after \"- \" under Architecture invariants; seven lines preserved verbatim. This file does not mutate workflow state or confer lifecycle authority.",
+  "requirements": [
+    "Ordinary natural-language input reaches production extraction, catalog validation and user clarification before planning; unknown/conflicting entities fail closed without silently absent filters.",
+    "University and Library use the same bounded compiled core; SQL/plan scripted fixtures are an explicit offline boundary, never real-model accuracy or runtime NL-to-SQL replacement.",
+    "Accepted ADR006 equal graded-enrollment weights/all offerings, NULL versus zero, HALF_UP, explicit all-semester scope, all exact top ties and actual-result typed dependency bindings remain unchanged.",
+    "Read-only SQL safety, typed ResultSpec/DAG, per-run deadlines/calls/SQL ceilings and session-bound clarification ownership/TTL/replay remain unchanged.",
+    "Historical H015 collection/fixtures/observations/scores/reviews/registration, frozen observer/scorer/corrector, original monetary ledger and completed I1/H013/H014/H015 workflow states and locks remain byte-identical.",
+    "Offline regression/clean-run/AppTest/browser use temporary DB/runtime/ledger and no network product dispatch; new API/count/probe/credential loading/monetary mutation/push are not-run.",
+    "Independent final code-reviewer APPROVE and architect CLEAR, cleaner, full verification and invariant audit precede actual native completion and strict checkpoint; offline proof does not grant live/service/publication acceptance."
+  ],
+  "audit": [
+    {
+      "id": "I01",
+      "requirement": "Ordinary natural-language input reaches production extraction, catalog validation and user clarification before planning; unknown/conflicting entities fail closed without silently absent filters.",
+      "status": "proven",
+      "implementation_paths": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py",
+        "src/universitydb/library.py"
+      ],
+      "test_paths": [
+        "tests/test_h016_natural_scope.py",
+        "tests/test_h016_resolution_edges.py",
+        "tests/test_h016_offline_replay.py",
+        "tests/test_h016_ui.py"
+      ],
+      "evidence_paths": [
+        "docs/operations/H-016/root-cause-map.json",
+        "docs/operations/H-016/regressions/listing-consistency-final.txt",
+        "docs/operations/H-016/clean-run/final-58f2fe9b/receipt.json",
+        "docs/operations/H-016/browser/final-58f2-attempt3/browser-receipt.json",
+        "docs/operations/H-016/preservation-final.json",
+        "docs/operations/H-016/reviews/code-final.md",
+        "docs/operations/H-016/reviews/architecture-final.md",
+        "docs/operations/H-016/resolution-coverage.json",
+        "docs/operations/H-016/cleaner-review.json"
+      ],
+      "current_bounded_proof": "Shared role-owned quoted/catalog and typed-ID spans feed every extraction/validation path; explicit mentions intersect catalog candidate sets; unknown/malformed/conflicting/unsupported identities fail before provider. All38historical rows map via resolution-coverage.json to19fresh public-entry proofs/traces, plus independent mutation/projection/negative controls. Code APPROVE/architect I1PASS.",
+      "independent_final_code_review": "APPROVE /0unresolved; reviews/code-final.md",
+      "independent_final_architecture_review": "CLEAR /0unresolvedblockers; reviews/architecture-final.md",
+      "completion_claim": false
+    },
+    {
+      "id": "I02",
+      "requirement": "University and Library use the same bounded compiled core; SQL/plan scripted fixtures are an explicit offline boundary, never real-model accuracy or runtime NL-to-SQL replacement.",
+      "status": "proven",
+      "implementation_paths": [
+        "src/universitydb/agent.py",
+        "src/universitydb/domain.py",
+        "src/universitydb/library.py"
+      ],
+      "test_paths": [
+        "tests/test_library.py",
+        "tests/test_h016_offline_replay.py",
+        "tests/test_h016_ui.py"
+      ],
+      "evidence_paths": [
+        "docs/operations/H-016/regressions/replay-coverage.md",
+        "docs/operations/H-016/clean-run/final-58f2fe9b/receipt.json",
+        "docs/operations/H-016/browser/final-58f2-attempt3/browser-receipt.json",
+        "docs/operations/H-016/preservation-final.json",
+        "docs/operations/H-016/reviews/code-final.md",
+        "docs/operations/H-016/reviews/architecture-final.md",
+        "docs/operations/H-016/resolution-coverage.json",
+        "docs/operations/H-016/cleaner-review.json"
+      ],
+      "current_bounded_proof": "Both schemas instantiate ordinary Agent/compiled graph on temporarySQLite; scripted transport consumes actual production scope and upstreamrefs only after resolution. Full815/AppTest/browser filter+globalLibrary proof; no product case-ID/exactquestion/oracleSQL branches. Code APPROVE/architect I2PASS; real-model accuracy explicitly unclaimed.",
+      "independent_final_code_review": "APPROVE /0unresolved; reviews/code-final.md",
+      "independent_final_architecture_review": "CLEAR /0unresolvedblockers; reviews/architecture-final.md",
+      "completion_claim": false
+    },
+    {
+      "id": "I03",
+      "requirement": "Accepted ADR006 equal graded-enrollment weights/all offerings, NULL versus zero, HALF_UP, explicit all-semester scope, all exact top ties and actual-result typed dependency bindings remain unchanged.",
+      "status": "proven",
+      "implementation_paths": [
+        "src/universitydb/domain.py",
+        "src/universitydb/contracts.py"
+      ],
+      "test_paths": [
+        "tests/test_i2_domains.py",
+        "tests/test_i2_oracle.py",
+        "tests/test_i3_dependencies.py",
+        "tests/test_h016_offline_replay.py"
+      ],
+      "evidence_paths": [
+        "docs/adr/ADR-OMX-015-H016-scope-resolution.md",
+        "docs/operations/H-016/regressions/replay-coverage.md",
+        "docs/operations/H-016/clean-run/final-58f2fe9b/receipt.json",
+        "docs/operations/H-016/browser/final-58f2-attempt3/browser-receipt.json",
+        "docs/operations/H-016/preservation-final.json",
+        "docs/operations/H-016/reviews/code-final.md",
+        "docs/operations/H-016/reviews/architecture-final.md",
+        "docs/operations/H-016/resolution-coverage.json",
+        "docs/operations/H-016/cleaner-review.json"
+      ],
+      "current_bounded_proof": "Accepted ADR006 domain registry/formatter/dependency source remains unchanged outside scope parsing; full815 and157independentSQLite/Fraction/Decimal oracle, natural16filter subsets/5grains/3counts, actualtie/cohort/upstream mutation/empty/NULL/zero/rounding checks and31freshprooftracepairs PASS. Architect I3PASS.",
+      "independent_final_code_review": "APPROVE /0unresolved; reviews/code-final.md",
+      "independent_final_architecture_review": "CLEAR /0unresolvedblockers; reviews/architecture-final.md",
+      "completion_claim": false
+    },
+    {
+      "id": "I04",
+      "requirement": "Read-only SQL safety, typed ResultSpec/DAG, per-run deadlines/calls/SQL ceilings and session-bound clarification ownership/TTL/replay remain unchanged.",
+      "status": "proven",
+      "implementation_paths": [
+        "src/universitydb/agent.py",
+        "src/universitydb/contracts.py",
+        "src/universitydb/sql_policy.py",
+        "src/universitydb/db.py",
+        "src/universitydb/config.py"
+      ],
+      "test_paths": [
+        "tests/test_bounds.py",
+        "tests/test_i2_contracts.py",
+        "tests/test_i2_continuation.py",
+        "tests/test_i3_dependencies.py",
+        "tests/test_review_repairs.py"
+      ],
+      "evidence_paths": [
+        "docs/operations/H-016/verification/final-2/receipt.json",
+        "docs/operations/H-016/clean-run/final-58f2fe9b/receipt.json",
+        "docs/operations/H-016/browser/final-58f2-attempt3/browser-receipt.json",
+        "docs/operations/H-016/preservation-final.json",
+        "docs/operations/H-016/reviews/code-final.md",
+        "docs/operations/H-016/reviews/architecture-final.md",
+        "docs/operations/H-016/resolution-coverage.json",
+        "docs/operations/H-016/cleaner-review.json"
+      ],
+      "current_bounded_proof": "Unchanged read-onlySQL/DB/typedResultSpec/DAG/budgets/deadlines/clarificationTTL/session/replay code plus preserved old expectations pass exact815full; malformed/unsafe/unsupported paths tested, AppTest/browser repair/refusal/continuation verified. Architect I4PASS.",
+      "independent_final_code_review": "APPROVE /0unresolved; reviews/code-final.md",
+      "independent_final_architecture_review": "CLEAR /0unresolvedblockers; reviews/architecture-final.md",
+      "completion_claim": false
+    },
+    {
+      "id": "I05",
+      "requirement": "Historical H015 collection/fixtures/observations/scores/reviews/registration, frozen observer/scorer/corrector, original monetary ledger and completed I1/H013/H014/H015 workflow states and locks remain byte-identical.",
+      "status": "proven",
+      "implementation_paths": [],
+      "test_paths": [],
+      "evidence_paths": [
+        "docs/operations/H-016/baseline.json",
+        "docs/operations/H-016/root-cause-map.json",
+        "docs/operations/H-016/clean-run/final-58f2fe9b/receipt.json",
+        "docs/operations/H-016/browser/final-58f2-attempt3/browser-receipt.json",
+        "docs/operations/H-016/preservation-final.json",
+        "docs/operations/H-016/reviews/code-final.md",
+        "docs/operations/H-016/reviews/architecture-final.md",
+        "docs/operations/H-016/resolution-coverage.json",
+        "docs/operations/H-016/cleaner-review.json"
+      ],
+      "current_bounded_proof": "Final baselinecomparison1632of1632immutable hashes identical, H015529/runtime157/locks2protected sets0added0removed; canonicalmoney andlockidentity unchanged; only3authorizedproductmodules changed. Writer/code-reviewer/architect independently rehashed; architect I5PASS.",
+      "independent_final_code_review": "APPROVE /0unresolved; reviews/code-final.md",
+      "independent_final_architecture_review": "CLEAR /0unresolvedblockers; reviews/architecture-final.md",
+      "completion_claim": false
+    },
+    {
+      "id": "I06",
+      "requirement": "Offline regression/clean-run/AppTest/browser use temporary DB/runtime/ledger and no network product dispatch; new API/count/probe/credential loading/monetary mutation/push are not-run.",
+      "status": "proven",
+      "implementation_paths": [
+        "docs/operations/H-016/browser_ui.py"
+      ],
+      "test_paths": [
+        "tests/test_h016_offline_replay.py",
+        "tests/test_h016_ui.py"
+      ],
+      "evidence_paths": [
+        "docs/operations/H-016/regressions/replay-coverage.md",
+        "docs/operations/H-016/next-live-plan.md",
+        "docs/operations/H-016/clean-run/final-58f2fe9b/receipt.json",
+        "docs/operations/H-016/browser/final-58f2-attempt3/browser-receipt.json",
+        "docs/operations/H-016/preservation-final.json",
+        "docs/operations/H-016/reviews/code-final.md",
+        "docs/operations/H-016/reviews/architecture-final.md",
+        "docs/operations/H-016/resolution-coverage.json",
+        "docs/operations/H-016/cleaner-review.json"
+      ],
+      "current_bounded_proof": "Exact58f2trackedarchive815pass118.48s/10commands0/static157oracle/bothseedintegrityFK/noreinitwrite/56mapsidentical/importoriginarchive/tempremoved. Actual8statebrowser binds question/newrunUUID/fulltrace, sameUUIDresume; ownedserver/browserstopped,tempmoneyabsent,runtimeunchanged; scriptedoffline/networkdenial explicit. Architect I6PASS; no productAPI/count/credentials/money/push.",
+      "independent_final_code_review": "APPROVE /0unresolved; reviews/code-final.md",
+      "independent_final_architecture_review": "CLEAR /0unresolvedblockers; reviews/architecture-final.md",
+      "completion_claim": false
+    },
+    {
+      "id": "I07",
+      "requirement": "Independent final code-reviewer APPROVE and architect CLEAR, cleaner, full verification and invariant audit precede actual native completion and strict checkpoint; offline proof does not grant live/service/publication acceptance.",
+      "status": "preconditions proven; ordered root native/strict closeout pending",
+      "implementation_paths": [],
+      "test_paths": [],
+      "evidence_paths": [
+        "docs/operations/H-016/reviews/code-preliminary.md",
+        "docs/operations/H-016/reviews/architecture-preliminary.md",
+        "docs/operations/H-016/repair-notes.md",
+        "docs/operations/H-016/clean-run/final-58f2fe9b/receipt.json",
+        "docs/operations/H-016/browser/final-58f2-attempt3/browser-receipt.json",
+        "docs/operations/H-016/preservation-final.json",
+        "docs/operations/H-016/reviews/code-final.md",
+        "docs/operations/H-016/reviews/architecture-final.md",
+        "docs/operations/H-016/resolution-coverage.json",
+        "docs/operations/H-016/cleaner-review.json"
+      ],
+      "current_bounded_proof": "Performer pre-editplan/regression-first lock and independent cleaner evidence persisted; full/static/oracle/browser/clean/preservation complete after lastsource/harnesspass. Actual finalcodeAPPROVE0issues andarchitectCLEAR0blockers received. All7audit/document/evidence persistence precedes root nativeCOMPLETE/strictcheckpoint; those lifecycle actions remain pending/unclaimed. Architect I7CLEAR_TO_PROCEED; no service/live/publication acceptance.",
+      "independent_final_code_review": "APPROVE /0unresolved; reviews/code-final.md",
+      "independent_final_architecture_review": "CLEAR /0unresolvedblockers; reviews/architecture-final.md",
+      "completion_claim": false
+    }
+  ],
+  "rejected_candidate": {
+    "sha": "f9251a71fb44766ceb86f701d12e80320dfb906c",
+    "result": "798passed2failed D03/D04; source unchanged; verification/final-1 retained, not final proof"
+  },
+  "pending_final_evidence": [
+    "Root actual native COMPLETE then supported strict checkpoint after this audit/document checkpoint"
+  ],
+  "native_completion": "not claimed",
+  "strict_completion": "not claimed",
+  "live_service_publication_acceptance": "not claimed",
+  "verification_receipt": "docs/operations/H-016/verification/final-2/receipt.json",
+  "browser_attempts": {
+    "attempt1": "sixstates/Librarytimeout; insufficient failure diagnostics; precise cause unproven",
+    "attempt2": "sevenstates then demonstrated stale prior trace capture; rejected",
+    "attempt3": "58f2PASS8states; currentquestion/run/outcome/fulltrace; owned browser/server stopped; runtime unchanged; temporary money absent"
+  },
+  "browser_receipt": "docs/operations/H-016/browser/final-58f2-attempt3/browser-receipt.json",
+  "preclose_preservation": "docs/operations/H-016/preservation-preclose.json",
+  "clean_run_receipt": "docs/operations/H-016/clean-run/final-58f2fe9b/receipt.json",
+  "final_preservation": "docs/operations/H-016/preservation-final.json",
+  "cleaner_review": "docs/operations/H-016/cleaner-review.json",
+  "actual_independent_final_reviews": {
+    "code": "docs/operations/H-016/reviews/code-final.md",
+    "architecture": "docs/operations/H-016/reviews/architecture-final.md"
+  }
+}

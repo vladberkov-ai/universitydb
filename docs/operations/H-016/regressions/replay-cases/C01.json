@@ -1,0 +1,184 @@
+{
+  "profile": "development-known OFFLINE regression; NOT live score",
+  "case": {
+    "run_id": "C01-r1",
+    "case_id": "C01",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "What is Alex's mean grade across all courses and all semesters?",
+    "selections": [
+      1
+    ]
+  },
+  "expected_scope": {
+    "student_id": 1
+  },
+  "pauses": [
+    {
+      "field": "student_id",
+      "options": [
+        {
+          "value": 1,
+          "label": "Alex"
+        },
+        {
+          "value": 3,
+          "label": "Alex"
+        }
+      ],
+      "prompt": "Choose the intended student identity.",
+      "clarification_id": "42d2a6b2-8eef-482d-99a0-da8e266ecf4a",
+      "session_id": "5a810efe-a8aa-40fa-8441-00b8c68533ef",
+      "run_id": "5390b429-c0a5-4535-9aaf-8edb25a6aede",
+      "checkpoint_id": "1f1db593-9a9b-6adb-8003-c05a0123beb7",
+      "schema_sha256": "89b7c664b89f0229c71a78f61c4fb58a8468bc8e089968c70a1b8f485bb265e7",
+      "data_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+      "policy_sha256": "dc784f6a7bb00f099fde0ecb9dc3a647d889e3d4229056ce23a173eb94b2433d",
+      "expires_at": 1794132069.103154
+    }
+  ],
+  "answer": {
+    "text": "student_id=1; course_id=all; teacher_id=all; semester_id=all: mean 86.67 (3 grades; 3 enrollments).",
+    "columns": [
+      {
+        "name": "average",
+        "type": "decimal"
+      },
+      {
+        "name": "graded_count",
+        "type": "integer"
+      },
+      {
+        "name": "enrollment_count",
+        "type": "integer"
+      }
+    ],
+    "rows": [
+      [
+        "86.67",
+        3,
+        3
+      ]
+    ],
+    "scope": "student_id=1; course_id=all; teacher_id=all; semester_id=all",
+    "empty_reason": null,
+    "row_reasons": [
+      null
+    ],
+    "truncated": false
+  },
+  "steps": [
+    {
+      "step_id": "s0",
+      "raw": {
+        "result_spec": {
+          "metric_id": "u.grade_mean.v1",
+          "shape": "aggregate",
+          "group_keys": [],
+          "columns": [
+            {
+              "name": "sum_units",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "graded_count",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "enrollment_count",
+              "type": "integer",
+              "nullable": false
+            }
+          ],
+          "components": {
+            "sum": "sum_units",
+            "denominator": "graded_count",
+            "count": "enrollment_count"
+          },
+          "unit": "grade_hundredth",
+          "scale": 100
+        },
+        "step_id": "s0",
+        "columns": [
+          {
+            "name": "sum_units",
+            "type": "integer"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            26000,
+            3,
+            3
+          ]
+        ],
+        "row_count": 1,
+        "truncated": false,
+        "elapsed_ms": 0
+      },
+      "answer": {
+        "text": "student_id=1; course_id=all; teacher_id=all; semester_id=all: mean 86.67 (3 grades; 3 enrollments).",
+        "columns": [
+          {
+            "name": "average",
+            "type": "decimal"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            "86.67",
+            3,
+            3
+          ]
+        ],
+        "scope": "student_id=1; course_id=all; teacher_id=all; semester_id=all",
+        "empty_reason": null,
+        "row_reasons": [
+          null
+        ],
+        "truncated": false
+      },
+      "dependency_rows": [
+        [
+          26000,
+          3,
+          3
+        ]
+      ]
+    }
+  ],
+  "provider_calls": 2,
+  "actual_provider_scopes": [
+    {
+      "student_id": 1
+    },
+    {
+      "student_id": 1
+    }
+  ],
+  "actual_sql_refs": [
+    {}
+  ],
+  "fixture_before_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+  "fixture_after_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+  "trace_sha256": "8acd51fb57bae6e05bf694b19deb00e99e2c557de834e2ed23912059d7b6d218"
+}

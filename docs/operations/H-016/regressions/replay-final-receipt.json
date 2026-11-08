@@ -1,0 +1,272 @@
+{
+  "profile": "development-known OFFLINE regression, NOT live score",
+  "command": "H016_REPLAY_EVIDENCE=docs/operations/H-016/regressions/replay-final-cases .venv/bin/pytest -q tests/test_h016_offline_replay.py",
+  "head_at_completion": "5bbce8c54f7ec9d92cfc16cae3935e0b04a52374",
+  "output": "replay-final.txt",
+  "before_sha256": {
+    "src/universitydb/__init__.py": "f4783354578e7b9ed2f99a68b5454ac621abd61d76b07062a05bf5887dd72dd7",
+    "src/universitydb/agent.py": "af3191e82c247f647661411224383fced8456fd5142cb5a61e81f2a1d51edbd2",
+    "src/universitydb/config.py": "c5c0215f820fc30a60da11946cfcec3d53741f86eeb9db2eafdfc169ebfdb5a5",
+    "src/universitydb/contracts.py": "14715a2b7ed31457eba35acce6e568bcd67c72a55371822f6c9243bbacb619dc",
+    "src/universitydb/db.py": "a1650dad66a7c8ad49210bb3ab4850deff8e9f7bfc5c3f2ca65c84e632d80cc8",
+    "src/universitydb/db_worker.py": "64c17b84c0d68e97d5587c849734640fccd89ace1c12238f08105bf8201a2c05",
+    "src/universitydb/domain.py": "66734555c774aa4090650a12fafdcb0dc1273b3bd89eb61772d2948eea3fd26c",
+    "src/universitydb/domain_support.py": "c7e9f57ed5e17ceac260305734143edce687f2df0b984e7032399551fecef300",
+    "src/universitydb/library.py": "9ee0be5fd13c05d6c0d366755bf6b57e8414e4b16f2d11e8c249f159df7e6ade",
+    "src/universitydb/llm.py": "b5559fd7a7d3ddecedc9637e850773f431c682a388790007b3b0338388639482",
+    "src/universitydb/llm_worker.py": "dc6369b1ae15393f134bd239935ad3b398c9f84eece1bc379a59f6a6a9b1940e",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/sql_policy.py": "f0d2c532ad9c053952cc6a4fefba9350585e9826d49f9b05b5d6171b035307ac",
+    "src/universitydb/tracing.py": "32a8b49dc56b0e2acf59b836361ef03abb70c4c549c312a1c914c8b646e8a96b",
+    "src/universitydb/ui.py": "e80a70cdbf7447220eca967e4f9c870ca3e71bb0095696f651c6ae4153d1f52e",
+    "tests/test_h016_natural_scope.py": "5b90b8a38325e6d8b292dd8d84dc26c9547aad785349e286011d3b03acc65d2d",
+    "tests/test_h016_offline_replay.py": "ceef63a9226a0233c105875e03f16599deb8ae1f69503d8b8ad6d81326d5b333",
+    "tests/test_h016_ui.py": "8aed8c3cd2793ab9f7f320690c2a543c059c4f81e61d6b2a0ce58e5056d68ab9"
+  },
+  "after_sha256": {
+    "src/universitydb/__init__.py": "f4783354578e7b9ed2f99a68b5454ac621abd61d76b07062a05bf5887dd72dd7",
+    "src/universitydb/agent.py": "af3191e82c247f647661411224383fced8456fd5142cb5a61e81f2a1d51edbd2",
+    "src/universitydb/config.py": "c5c0215f820fc30a60da11946cfcec3d53741f86eeb9db2eafdfc169ebfdb5a5",
+    "src/universitydb/contracts.py": "14715a2b7ed31457eba35acce6e568bcd67c72a55371822f6c9243bbacb619dc",
+    "src/universitydb/db.py": "a1650dad66a7c8ad49210bb3ab4850deff8e9f7bfc5c3f2ca65c84e632d80cc8",
+    "src/universitydb/db_worker.py": "64c17b84c0d68e97d5587c849734640fccd89ace1c12238f08105bf8201a2c05",
+    "src/universitydb/domain.py": "66734555c774aa4090650a12fafdcb0dc1273b3bd89eb61772d2948eea3fd26c",
+    "src/universitydb/domain_support.py": "c7e9f57ed5e17ceac260305734143edce687f2df0b984e7032399551fecef300",
+    "src/universitydb/library.py": "9ee0be5fd13c05d6c0d366755bf6b57e8414e4b16f2d11e8c249f159df7e6ade",
+    "src/universitydb/llm.py": "b5559fd7a7d3ddecedc9637e850773f431c682a388790007b3b0338388639482",
+    "src/universitydb/llm_worker.py": "dc6369b1ae15393f134bd239935ad3b398c9f84eece1bc379a59f6a6a9b1940e",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/sql_policy.py": "f0d2c532ad9c053952cc6a4fefba9350585e9826d49f9b05b5d6171b035307ac",
+    "src/universitydb/tracing.py": "32a8b49dc56b0e2acf59b836361ef03abb70c4c549c312a1c914c8b646e8a96b",
+    "src/universitydb/ui.py": "e80a70cdbf7447220eca967e4f9c870ca3e71bb0095696f651c6ae4153d1f52e",
+    "tests/test_h016_natural_scope.py": "5b90b8a38325e6d8b292dd8d84dc26c9547aad785349e286011d3b03acc65d2d",
+    "tests/test_h016_offline_replay.py": "ceef63a9226a0233c105875e03f16599deb8ae1f69503d8b8ad6d81326d5b333",
+    "tests/test_h016_ui.py": "8aed8c3cd2793ab9f7f320690c2a543c059c4f81e61d6b2a0ce58e5056d68ab9"
+  },
+  "stable_during_run": true,
+  "exported_trace_checks": {
+    "L01": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "C03": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 40
+    },
+    "J02": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "L04": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "E04": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "X-M1": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 68
+    },
+    "D02": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "J01": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "L02": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "E01": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "A01": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "J04": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "C01": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 40
+    },
+    "D03": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 68
+    },
+    "A02": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "E02": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "X-M1-TIE": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 68
+    },
+    "X-COMBINED": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "D01": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "C04": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 40
+    },
+    "D04": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 68
+    },
+    "J03": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "X-TOP": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "A03": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "X-LIBRARY": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "L03": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "X-COUNT": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "A04": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "E03": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "X-LIST": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 34
+    },
+    "C02": {
+      "hash_matches_proof": true,
+      "terminal_run_end": true,
+      "events": 40
+    }
+  },
+  "artifacts": {
+    "docs/operations/H-016/regressions/replay-final-cases/A01.json": "aacf113c306f7066e1c0acfaee3b2facc2514524e0b6e083526e922e12455ef6",
+    "docs/operations/H-016/regressions/replay-final-cases/A01.jsonl": "3439176a9ba0f0b4ec17272feeb1378362bef183928807054223563af6bfd0d0",
+    "docs/operations/H-016/regressions/replay-final-cases/A02.json": "0f93e708af4aef2bcb22351d19310fcbc8c7f5ce98dfeeb4470afee9684d8437",
+    "docs/operations/H-016/regressions/replay-final-cases/A02.jsonl": "a783043f2bda842616b8f5ef25b3a73910359f5598d902f048090403e37a0c8a",
+    "docs/operations/H-016/regressions/replay-final-cases/A03.json": "c33813b9b6c9122f9fb9a9558b9e5adb05b2f24d8d8bcf3f780396229f9b01b2",
+    "docs/operations/H-016/regressions/replay-final-cases/A03.jsonl": "969ad621218674d52147deab521fa11957dab2a40ce0dea0a80b0c806da435c2",
+    "docs/operations/H-016/regressions/replay-final-cases/A04.json": "3a4493a45e27f703a0ba034a1096dcbf39d3cd1c86caf595fba1d99ff0c061c9",
+    "docs/operations/H-016/regressions/replay-final-cases/A04.jsonl": "caaf31cac287ceac969222e3e420179a631a03506b22436c02efa6d528c10dd2",
+    "docs/operations/H-016/regressions/replay-final-cases/C01.json": "2ba4ae7fdbe55752463ff3acc79a9cbcc3c5d75c8c81c0fdfe3be0970981cd6b",
+    "docs/operations/H-016/regressions/replay-final-cases/C01.jsonl": "b1539006e937c1703822202a7f5eae5d58385f46575495008550eb3749884c00",
+    "docs/operations/H-016/regressions/replay-final-cases/C02.json": "d322c4ab4ed104d1eacc252c0565d4e6ba52082dd3509bf10b498b6a88f22b71",
+    "docs/operations/H-016/regressions/replay-final-cases/C02.jsonl": "2d37096d66d09867f58ccd5ee7330804f96113661327e889309617130aac87ad",
+    "docs/operations/H-016/regressions/replay-final-cases/C03.json": "9d569c4eb274f235bd4e2d6e53197003e2e2611fef900e17e909bd44d822ce40",
+    "docs/operations/H-016/regressions/replay-final-cases/C03.jsonl": "5368195bac68f7da1f10827af0c088ed068c5073977de5468522c84215460543",
+    "docs/operations/H-016/regressions/replay-final-cases/C04.json": "e2f7b856c4d0b93763f42eb62065fdb2a63b8d981d0d8f2471700a6910b9ecb4",
+    "docs/operations/H-016/regressions/replay-final-cases/C04.jsonl": "5ae8df8a429210cd022a719b897d625d1758c79e686d34f10b23d00798152afb",
+    "docs/operations/H-016/regressions/replay-final-cases/D01.json": "ed46a366d6ba689066ca58f33a1ccd1a1a81f29eb5eb1fb252e2f68912084992",
+    "docs/operations/H-016/regressions/replay-final-cases/D01.jsonl": "219987f07039423e3e3ad1c7b3228191c15e54f700efd4d0a3831b1e48fd26f2",
+    "docs/operations/H-016/regressions/replay-final-cases/D02.json": "e2db98f68272217697c5006ed3e668a419c49ad7c64ccc1c6c347383a901aac2",
+    "docs/operations/H-016/regressions/replay-final-cases/D02.jsonl": "f7cace01c88ca88e6691a8e4f8e072e791d20374b92facf81b6be725e1f051e9",
+    "docs/operations/H-016/regressions/replay-final-cases/D03.json": "8514c9978b1fcf229c36fce072a640b4db308da990880289874474b51feccbcf",
+    "docs/operations/H-016/regressions/replay-final-cases/D03.jsonl": "f8a2dd5da8bf36dd3050cff335ad658dd821950b6a4f568032317d766689e150",
+    "docs/operations/H-016/regressions/replay-final-cases/D04.json": "81a7f0bf02eccf4f629c8bd83f109dd5ac50be9fa14359dc857e350fb0729594",
+    "docs/operations/H-016/regressions/replay-final-cases/D04.jsonl": "34fc34563c83aff933f7cea91fed67cee0b54be682f566236ad758788fa6e611",
+    "docs/operations/H-016/regressions/replay-final-cases/E01.json": "386d694819799d557624cbe3c677c65e67927f91a7f1b3253311a2971a2647ee",
+    "docs/operations/H-016/regressions/replay-final-cases/E01.jsonl": "f4e7a7ba9dc3f2a18e9eed2789800f8e92a199e08a2a752088667c99dcbd3b27",
+    "docs/operations/H-016/regressions/replay-final-cases/E02.json": "a30325ff758545500fab2ff380bad57c5f79aaa8fb53a50f110b8222a3a275a3",
+    "docs/operations/H-016/regressions/replay-final-cases/E02.jsonl": "83ac56012b420b3f5b7f4b0dac665e0f9724729804d8aa5995815e15decc67ce",
+    "docs/operations/H-016/regressions/replay-final-cases/E03.json": "efec8db83aee2b61fcd5a14084bfe5df7087bd5a50e7c372ffa4b2540be58f5e",
+    "docs/operations/H-016/regressions/replay-final-cases/E03.jsonl": "10b2c424f10cb948cae569dc3618939786966f5c371f72548838fd71f23192eb",
+    "docs/operations/H-016/regressions/replay-final-cases/E04.json": "b45308b53a5330a35da0afaaf1e15cf4fe55f9f69717fbdfcb31809bab864300",
+    "docs/operations/H-016/regressions/replay-final-cases/E04.jsonl": "41ccc321fd48a066a22eac73fab115f6b7f0ac465891a610a971490c07f09e02",
+    "docs/operations/H-016/regressions/replay-final-cases/J01.json": "2002211ea2d1334635db17d52d0823da2efcfce4c76f6c5397509d03cd2ecca5",
+    "docs/operations/H-016/regressions/replay-final-cases/J01.jsonl": "d56fa604f17efe75dcc90675983e322a275f11e7328b05bd83f809186932855c",
+    "docs/operations/H-016/regressions/replay-final-cases/J02.json": "b3168589dbb8871e986818aa113bf4fcb071d1b7b0ec862c7e10fbeca0f3c10f",
+    "docs/operations/H-016/regressions/replay-final-cases/J02.jsonl": "ece7f5c6346837b6b165bbad34fb0d185171b13a57b24b8ec093b557fa2a926e",
+    "docs/operations/H-016/regressions/replay-final-cases/J03.json": "cd61ea8f3d4371d6174261099aa1699d32661407ed52bcffec34d31a8bd3fce7",
+    "docs/operations/H-016/regressions/replay-final-cases/J03.jsonl": "5511b60722bf918deece7ac3c5422e0af61f7731ff5ec22ebbe19a6ae978c06e",
+    "docs/operations/H-016/regressions/replay-final-cases/J04.json": "06c69a4c5d5735f9c840da002822eba771ea1dba53b211d82df52053c748aa0e",
+    "docs/operations/H-016/regressions/replay-final-cases/J04.jsonl": "29801be47599a37df1a69fd23161bbbafd030493003237db1f08093e18986a24",
+    "docs/operations/H-016/regressions/replay-final-cases/L01.json": "55b0670108a7b2fe889115f20ac1d81b005b2595a7a568edb7a918119f344c48",
+    "docs/operations/H-016/regressions/replay-final-cases/L01.jsonl": "e0f4f84600977279dc1f3501571988b16bd8e54c5847d1a34471451db1858e6e",
+    "docs/operations/H-016/regressions/replay-final-cases/L02.json": "d3b893276c1989932c73196f2088e55bb83835bad8f89fa18cc1d5de60a90d69",
+    "docs/operations/H-016/regressions/replay-final-cases/L02.jsonl": "024117fa95b97ec47b7fb3b3d0824608eb347fb755e40a8963994aaa95d6cc62",
+    "docs/operations/H-016/regressions/replay-final-cases/L03.json": "5067c95a20eecf2018165b9004c63b6dc2f4be571206e386c6e635bc43dea8a7",
+    "docs/operations/H-016/regressions/replay-final-cases/L03.jsonl": "fcf42a3d997e486b519a34181bc9e2cb8315f7d8348f3104d1c266478fe3cc08",
+    "docs/operations/H-016/regressions/replay-final-cases/L04.json": "431df633f607c0fafa89971d9d003432ff7a2dadb5409a66d72144d20ce3defc",
+    "docs/operations/H-016/regressions/replay-final-cases/L04.jsonl": "70cba4997d9ac884ed31e68438cb5133fc18be436ec8f526885531e1b9899bfa",
+    "docs/operations/H-016/regressions/replay-final-cases/X-COMBINED.json": "1bd52634f530b536d176c8efa12dd86ecd6bdd4a3be9e697d4dab2dd58f0fc89",
+    "docs/operations/H-016/regressions/replay-final-cases/X-COMBINED.jsonl": "0321cd8ed4bb1b46238d24e7a9c4b13cec0a30cece58d22ae493968904e7978a",
+    "docs/operations/H-016/regressions/replay-final-cases/X-COUNT.json": "5661975da33d356a88698cff02b23de771b4067a6a593d5bbbc8e09a84bf1532",
+    "docs/operations/H-016/regressions/replay-final-cases/X-COUNT.jsonl": "75cbf046a4925fd537896406b5b0cc3080aea08ef0dc1fa20f7777c2c07d78ef",
+    "docs/operations/H-016/regressions/replay-final-cases/X-LIBRARY.json": "5f126a1494943c4608145f8a6af29daaf5bf837a0f6f6a4ecad653671b7f7702",
+    "docs/operations/H-016/regressions/replay-final-cases/X-LIBRARY.jsonl": "50c60a80036f226f5a293391ffe1c6665e8d4ea1d04ed56c63d3741b9f868558",
+    "docs/operations/H-016/regressions/replay-final-cases/X-LIST.json": "aaa1253e8bc52af5154be8787742a39c0b9640c4045b2332e5a66085b84c9235",
+    "docs/operations/H-016/regressions/replay-final-cases/X-LIST.jsonl": "8a3cc3f83eb35f81d9cccb582e66022dd14995318870762c2673f2bccdb3fd58",
+    "docs/operations/H-016/regressions/replay-final-cases/X-M1-TIE.json": "08420b6e4db4ec88cc72800832ca2cd30ad27c97de28471757d84e010136d5aa",
+    "docs/operations/H-016/regressions/replay-final-cases/X-M1-TIE.jsonl": "e606a40cf7fd456e2393de1f045d49512a41c903cd74e1a14d5d1db878e42c5f",
+    "docs/operations/H-016/regressions/replay-final-cases/X-M1.json": "c38de29ff58a372b7b474f1b372a1900f03e13950c1cd55d586920340106ffd8",
+    "docs/operations/H-016/regressions/replay-final-cases/X-M1.jsonl": "912e494e751f8a36b54449134b983e9a569d40959ad1288b05954e58a89c62f6",
+    "docs/operations/H-016/regressions/replay-final-cases/X-TOP.json": "fa2b9a31237e2b38dbbf7996b90420a6110ff8eccb6acd8aee28aba015b5485b",
+    "docs/operations/H-016/regressions/replay-final-cases/X-TOP.jsonl": "d55d2aa4efbaf9cb6a876f01eaac53d6eb1bc6f390f1f0d4ce154f5e8b57ccd0"
+  },
+  "result": "64 passed in 17.60s",
+  "pytest_exit": 0
+}

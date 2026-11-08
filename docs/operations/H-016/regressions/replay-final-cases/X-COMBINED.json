@@ -1,0 +1,166 @@
+{
+  "profile": "development-known OFFLINE regression; NOT live score",
+  "case": {
+    "case_id": "X-COMBINED",
+    "domain": "university",
+    "fixture": "u",
+    "question": "Average grades for Bea, course ID 1, teacher ID 10, semester S1.",
+    "selections": []
+  },
+  "expected_scope": {
+    "student_id": 2,
+    "course_id": 1,
+    "teacher_id": 10,
+    "semester_id": "S1"
+  },
+  "pauses": [],
+  "answer": {
+    "text": "student_id=2; course_id=1; teacher_id=10; semester_id=S1: mean 80.00 (2 grades; 2 enrollments).",
+    "columns": [
+      {
+        "name": "average",
+        "type": "decimal"
+      },
+      {
+        "name": "graded_count",
+        "type": "integer"
+      },
+      {
+        "name": "enrollment_count",
+        "type": "integer"
+      }
+    ],
+    "rows": [
+      [
+        "80.00",
+        2,
+        2
+      ]
+    ],
+    "scope": "student_id=2; course_id=1; teacher_id=10; semester_id=S1",
+    "empty_reason": null,
+    "row_reasons": [
+      null
+    ],
+    "truncated": false
+  },
+  "steps": [
+    {
+      "step_id": "s0",
+      "raw": {
+        "result_spec": {
+          "metric_id": "u.grade_mean.v1",
+          "shape": "aggregate",
+          "group_keys": [],
+          "columns": [
+            {
+              "name": "sum_units",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "graded_count",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "enrollment_count",
+              "type": "integer",
+              "nullable": false
+            }
+          ],
+          "components": {
+            "sum": "sum_units",
+            "denominator": "graded_count",
+            "count": "enrollment_count"
+          },
+          "unit": "grade_hundredth",
+          "scale": 100
+        },
+        "step_id": "s0",
+        "columns": [
+          {
+            "name": "sum_units",
+            "type": "integer"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            16000,
+            2,
+            2
+          ]
+        ],
+        "row_count": 1,
+        "truncated": false,
+        "elapsed_ms": 1
+      },
+      "answer": {
+        "text": "student_id=2; course_id=1; teacher_id=10; semester_id=S1: mean 80.00 (2 grades; 2 enrollments).",
+        "columns": [
+          {
+            "name": "average",
+            "type": "decimal"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            "80.00",
+            2,
+            2
+          ]
+        ],
+        "scope": "student_id=2; course_id=1; teacher_id=10; semester_id=S1",
+        "empty_reason": null,
+        "row_reasons": [
+          null
+        ],
+        "truncated": false
+      },
+      "dependency_rows": [
+        [
+          16000,
+          2,
+          2
+        ]
+      ]
+    }
+  ],
+  "provider_calls": 2,
+  "actual_provider_scopes": [
+    {
+      "student_id": 2,
+      "course_id": 1,
+      "teacher_id": 10,
+      "semester_id": "S1"
+    },
+    {
+      "student_id": 2,
+      "course_id": 1,
+      "teacher_id": 10,
+      "semester_id": "S1"
+    }
+  ],
+  "actual_sql_refs": [
+    {}
+  ],
+  "fixture_before_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+  "fixture_after_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+  "trace_sha256": "0321cd8ed4bb1b46238d24e7a9c4b13cec0a30cece58d22ae493968904e7978a"
+}

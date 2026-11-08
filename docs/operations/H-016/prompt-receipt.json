@@ -1,0 +1,91 @@
+{
+  "version": "h016-actual-prompt-receipt-v1",
+  "method": "Supported omx session export exact current root ID, JSON format, without --include-tools; selected actual user entry by content. Full export retained privately outside repository.",
+  "session_id": "01a1ba83-586f-7f51-badf-301128bb8404",
+  "source_entry_line": 9,
+  "source_entry_timestamp": "2026-11-08T09:35:47.814Z",
+  "source_text_sha256": "f0446ad8513ff8dfdfe5c51ee155a3be41a3073b21c16ec496f2621bd2c2c658",
+  "public_projection": "docs/ai/omx/H-016-actual-prompt.txt",
+  "public_file_sha256": "49e0a28e690066ab1e9e040930870f0263b36e559b31a7642a9ccde8db57d33b",
+  "redactions": [
+    {
+      "private_prefix": "Private authoritative vault absolute prefix (not published)",
+      "replacement": "<PRIVATE_VAULT>",
+      "occurrences": 1
+    }
+  ],
+  "normalization": "Added final LF only; full selected task retained apart from one private-prefix replacement.",
+  "coverage": "Actual root task, not installed skill, read context, handoff, summary or an actual English input.",
+  "omissions": [
+    "Full root transcript",
+    "Full child sessions and opaque delegation transport",
+    "System/developer instructions",
+    "Reasoning",
+    "Tool arguments/results (default export)",
+    "Credential values/paths",
+    "Private source documents"
+  ],
+  "runtime_templates": {
+    "src/universitydb/prompts/sql.txt": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+    "src/universitydb/prompts/plan.txt": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43"
+  },
+  "runtime_consumption": "No new real-provider execution; offline scripted tests are separately labeled; unchanged templates do not prove live consumption.",
+  "english_reader_translation": {
+    "path": "docs/ai/omx/H-016-prompt-reader-translation-EN.md",
+    "sha256": "014ecac62806fbaf384688b6c7cba906b92fe448871b24fb8627989a10ed7c5b",
+    "actual_English_model_input": false
+  },
+  "selected_child_task_projections": [
+    {
+      "path": "docs/operations/H-016/documentation-task-projection.txt",
+      "sha256": "d69d1338484a13420e7badde927189d1ed44a3af50f0e40e490250b37cb8dbb8",
+      "role": "writer",
+      "coverage": "Exact initial task received by this lane, terminal LF added. Subsequent explicit root instruction authorized CP1 commit; this initial no-commit cutoff is historical, not current prohibition."
+    },
+    {
+      "path": "docs/operations/H-016/regressions/independent-coverage.md",
+      "role": "test-engineer",
+      "coverage": "Author-attributed selected assignment/result scope, not exact full transcript."
+    },
+    {
+      "path": "docs/operations/H-016/prompts/regression-task.txt",
+      "role": "test-engineer",
+      "coverage": "Exact initial assignment captured by regression lane; see its explicit omissions."
+    },
+    {
+      "path": "docs/operations/H-016/prompts/regression-followups.txt",
+      "role": "test-engineer",
+      "coverage": "Selected exact replay/UI/matrix assignments captured by regression lane; not full session."
+    },
+    {
+      "path": "docs/operations/H-016/prompts/repair-task.txt",
+      "sha256": "fe6636a6bd3feff047c940ef52da3b2b2fec3963fcc26e3586bf74e3e1b28265",
+      "role": "executor",
+      "coverage": "Exact initial assignment saved by repair lane. Later followups summarized in repair-notes.md, not complete transcript."
+    }
+  ],
+  "selected_review_results": [
+    {
+      "path": "docs/operations/H-016/reviews/code-preliminary.md",
+      "role": "independent code-reviewer",
+      "coverage": "Selected actual preliminary findings/review result, not reviewer input or final APPROVE."
+    },
+    {
+      "path": "docs/operations/H-016/reviews/architecture-preliminary.md",
+      "role": "independent architect",
+      "coverage": "Selected actual preliminary findings/review result, not reviewer input or final CLEAR."
+    },
+    {
+      "path": "docs/operations/H-016/reviews/code-final.md",
+      "role": "independent code-reviewer",
+      "coverage": "Actual received final answer projected by root; not complete reviewer prompt/session. Bounded offline APPROVE0unresolved; lifecycle separate."
+    },
+    {
+      "path": "docs/operations/H-016/reviews/architecture-final.md",
+      "role": "independent architect",
+      "coverage": "Actual received final answer projected by root; not full reviewer prompt/session. CLEAR0blockers, substantive7invariants; ordered lifecycle still separate."
+    }
+  ],
+  "completion_limits": "Exact58f2archive815/static157/8browser/56identity/1632preservation/cleaner and actual finalAPPROVE+CLEAR proven; orderedrootnative/strict pending.",
+  "later_followups_coverage": "Repair notes summarize role/typed-span and quantified-listing iterations plus browser transition/UUID repairs. Only selected initial/followup assignments were captured verbatim; root/worker full coordination not claimed."
+}

@@ -1,0 +1,330 @@
+{
+  "version": "h016-required-input-hash-inventory-v1",
+  "cutoff": "After CP2 candidate, before final verification. Mutable current docs hashes will change during final documentation; this is a retained cutoff, not a source freeze.",
+  "meaning": "Presence/hash census of requested source inputs, not a claim every author read every byte. Root/performer source inspection and separate causal/test/review evidence establish actual findings. No full old chat history loaded/copied.",
+  "vault_access": "Read-only; contents remain private and not exported.",
+  "required_vault_inputs": [
+    {
+      "path": "<PRIVATE_VAULT>/wiki/index.md",
+      "sha256": "97f69f6105b8d9aa68e3e1b9e7b934c956ee989fd7c4262ca3dc871e307d2883",
+      "bytes": 13041,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "<PRIVATE_VAULT>/wiki/overview.md",
+      "sha256": "bd4229e3f276be5e44ed86bab88e6345a0838e79afff2bd7cd9d730c325880ff",
+      "bytes": 18371,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "<PRIVATE_VAULT>/wiki/requirements.md",
+      "sha256": "b28910ea20336ff0663c82feddfe7740fbbefeccacd6afef58d05a8ad4d26f44",
+      "bytes": 17351,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "<PRIVATE_VAULT>/wiki/planning/combined-delivery-plan.md",
+      "sha256": "b73bbddba06060624148b073d552b7b09df83aad37e7dd8d11db0d7cb8bc6dcf",
+      "bytes": 16530,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "<PRIVATE_VAULT>/wiki/decisions/ADR-CHAT-006-I2-semantics-and-clarification.md",
+      "sha256": "aa1d3c53aec0d2d198c394ee04f4ead64502e5ba53b151279780a4ed12e22f07",
+      "bytes": 5589,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "<PRIVATE_VAULT>/wiki/decisions/ADR-CHAT-007-full-live-eval-budget.md",
+      "sha256": "7ae320ba125aafae2080bb62fa912b652024c526935ffb099eeaa8d2cebaa3dd",
+      "bytes": 3511,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "<PRIVATE_VAULT>/wiki/operations/git-protocol.md",
+      "sha256": "d7aa9bc0b8de8859cb3c922e8f1d84ed399f068cde8ba947864ae02367afa644",
+      "bytes": 9332,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "<PRIVATE_VAULT>/wiki/operations/omx-workflow.md",
+      "sha256": "1c87d3abdf662317c39cc061806765595c9a2dd11e261f40fa3f47405435b591",
+      "bytes": 18897,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "<PRIVATE_VAULT>/wiki/verification/H-015-review.md",
+      "sha256": "100bdc6f73ee5adb10beabfac2c06501912b440228f52867eeaa4306f4680cfb",
+      "bytes": 7007,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "<PRIVATE_VAULT>/raw/chat/CHAT-058.md",
+      "sha256": "cd2a323151386d2629c813ce240c9bb7d0df7a1784d2d031b80b601fdaee73de",
+      "bytes": 191,
+      "role": "read context, not actual prompt"
+    }
+  ],
+  "repo_context_inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d85479de28c650cb1693bab3c1e4acf852c353dc58efac251d2e4cf6321f3199",
+      "bytes": 21087,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "README.md",
+      "sha256": "88d74b6de87fcb7bbb75d8c1c7935d5d3b4bfc23fedfa30c784c95b4eec1b92a",
+      "bytes": 12790,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/assignment-status.md",
+      "sha256": "4b7060b9fc2127e7be63575759eaebf92a81d1382c991d6a4e5a5663d94df3e9",
+      "bytes": 8730,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/adr/README.md",
+      "sha256": "b99ff482a2bf6f9fd9e5bb2d393f800e13f7e030ab457bbf2f910acc0cf410df",
+      "bytes": 6509,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/reports/H-013-I2-I3-offline.md",
+      "sha256": "c75bf05b5eb0c07e9c055617e12bc91343461089d9f9e49dea58a9fda475695a",
+      "bytes": 17104,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/reports/H-014-readiness-offline.md",
+      "sha256": "1220ad2096540dff20db6d705e447636e549cdd41f5d08c66a1711cf1912f8a5",
+      "bytes": 17686,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/reports/H-015-full-live-eval.md",
+      "sha256": "f7af6c85dff6d41d9fc3764cd056dff6ba05f62e52d3bb5c6b67967aa177bc66",
+      "bytes": 39486,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/plans/H-014-live-eval-protocol.md",
+      "sha256": "9ca8e039c829552a9010ee59719223a6bb352c6496f962d3c6403a2b41fc1d2b",
+      "bytes": 10753,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/operations/H-015/observation/observations.json",
+      "sha256": "6b8b7126f3f20aa9cf6ec94e4d0e66436651e145f2473a150b25690572710c23",
+      "bytes": 36621,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/operations/H-015/observation/score.json",
+      "sha256": "8b9be7800c9c1462d462106c789c47f76a88466adf4871973454ccd1ef7bb86a",
+      "bytes": 4828,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/operations/H-015/corrected-assessment-v2/observations-v2.json",
+      "sha256": "cfede7911e5d6e276e458e936e7b083291dfdd6f2ed35023e87d991d5e73f2c6",
+      "bytes": 36629,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/operations/H-015/corrected-assessment-v2/score-v2.json",
+      "sha256": "ff4d794e2718bcffede5b1920e7977f844619e9d9132e435e65ed6c3d4ccd897",
+      "bytes": 4821,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/operations/H-015/reviews/v2-final-code-review.md",
+      "sha256": "ad5abdb06686e5dfbd9ecd393e9a0f28e9ec8c166bf3ee6e333e73a335fc9e96",
+      "bytes": 15583,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/operations/H-015/reviews/v2-final-architecture.md",
+      "sha256": "6ffe90dfeceb4fed4c058879574ed79535fbfc6937608e04b34a3a6c1ebffb99",
+      "bytes": 5244,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/operations/H-015/corrected-assessment-v2/native-strict-closeout.json",
+      "sha256": "c46f9f8b71eee64b291ea739f7e8b47716a0a97d042b0c9ae41c363a576e3b68",
+      "bytes": 7370,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/operations/H-015/registration/conversations.json",
+      "sha256": "a9e1e69810d3ea2bbe4c2117258dcb6dcc5cfb8f262b2a1fd31c672363cfb125",
+      "bytes": 11509,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/operations/H-016/root-cause-map.json",
+      "sha256": "e9532076600b406dd07abcca23166889e0236cd7de1efba8c840cee5a5db23f5",
+      "bytes": 128823,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/operations/H-016/repair-notes.md",
+      "sha256": "a840c4e45214b588ed252c52add6ffda5d3d7ddcc9139c1b7d09f2e0df1c59de",
+      "bytes": 11583,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "src/universitydb/domain_support.py",
+      "sha256": "56b1a223dbf6a04c2c49432e24bd81bcb191d298cf1ee253ebdf9a5cf2f68938",
+      "bytes": 14722,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "src/universitydb/domain.py",
+      "sha256": "66734555c774aa4090650a12fafdcb0dc1273b3bd89eb61772d2948eea3fd26c",
+      "bytes": 25721,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "src/universitydb/library.py",
+      "sha256": "9ee0be5fd13c05d6c0d366755bf6b57e8414e4b16f2d11e8c249f159df7e6ade",
+      "bytes": 9868,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "src/universitydb/agent.py",
+      "sha256": "af3191e82c247f647661411224383fced8456fd5142cb5a61e81f2a1d51edbd2",
+      "bytes": 46621,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "src/universitydb/ui.py",
+      "sha256": "e80a70cdbf7447220eca967e4f9c870ca3e71bb0095696f651c6ae4153d1f52e",
+      "bytes": 8247,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "src/universitydb/config.py",
+      "sha256": "c5c0215f820fc30a60da11946cfcec3d53741f86eeb9db2eafdfc169ebfdb5a5",
+      "bytes": 3927,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "src/universitydb/prompts/plan.txt",
+      "sha256": "0b0260ee18016fc4716336d8e23230afb5484ffedab3ce79efd716bc4610af43",
+      "bytes": 1062,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "src/universitydb/prompts/sql.txt",
+      "sha256": "79fb9fb583d9e459d17a3cc0c57a2bb443df5e9dbdba2ab43d9ba18d6ac50adb",
+      "bytes": 991,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "tests/test_h016_natural_scope.py",
+      "sha256": "5b90b8a38325e6d8b292dd8d84dc26c9547aad785349e286011d3b03acc65d2d",
+      "bytes": 10148,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "tests/test_h016_resolution_edges.py",
+      "sha256": "40e02b7df2f95b2da81383eee6b98d795dd2231e655620c2d4738764906d8e9c",
+      "bytes": 13465,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "tests/test_h016_offline_replay.py",
+      "sha256": "ceef63a9226a0233c105875e03f16599deb8ae1f69503d8b8ad6d81326d5b333",
+      "bytes": 19727,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "tests/test_h016_ui.py",
+      "sha256": "8aed8c3cd2793ab9f7f320690c2a543c059c4f81e61d6b2a0ce58e5056d68ab9",
+      "bytes": 7150,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-009-Sol-operation-profile.md",
+      "sha256": "ef59ef012c1be623f79bc93a9334be5c799672a83b54a60e92a8d9018b436ccc",
+      "bytes": 7086,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-011-I2-offline-semantics.md",
+      "sha256": "efb0349e558553dc9a08b1887cd112faeb160928c962ee75b7638126d58cc8a7",
+      "bytes": 4348,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-015-H016-scope-resolution.md",
+      "sha256": "8099b8528f5c5520e486dc40064cbc7b47a45c70d21014f1ea82aada01e46df5",
+      "bytes": 9017,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-012-I2-I3-offline-contracts.md",
+      "sha256": "1117833f3ec52f25acf96ce9ac4975d3e91ef261983d6936a21bb3709e5c50ff",
+      "bytes": 10213,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-008-I1-scoped-implementation.md",
+      "sha256": "67f7771644388c55d7c9d5a9856f1d1053ef6702fa5a3d1d5a8968d249e7201a",
+      "bytes": 10334,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-010-I1-practical-budget-policy.md",
+      "sha256": "68cc22934d18f5be199404089c8aa4ef62fa75b493519b692225a9f23fc22459",
+      "bytes": 5414,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-014-H015-full-live-eval.md",
+      "sha256": "78aacd4a745179814d9922f317e98243d9b7dee1c70e15783a0abdf4384bb3f3",
+      "bytes": 10174,
+      "role": "read context, not actual prompt"
+    },
+    {
+      "path": "docs/adr/ADR-OMX-013-readiness-scope-boundary.md",
+      "sha256": "4171047aaa15b754364df89351a5ca50c27a382616fed7b57004d7f46cdcb82f",
+      "bytes": 4462,
+      "role": "read context, not actual prompt"
+    }
+  ],
+  "installed_skill": {
+    "path": "<INSTALLED_SKILLS>/ultragoal/SKILL.md",
+    "sha256": "1778555ec9831e6d51f8e9adb0ef0f03f59e3c905d78ba8950d00090cc3fc6d4",
+    "bytes": 4614,
+    "role": "read context, not actual prompt"
+  },
+  "actual_prompt": "docs/ai/omx/H-016-actual-prompt.txt with separate export receipt; files in this inventory are context",
+  "historical_diagnostic_inputs": {
+    "source": "docs/operations/H-016/root-cause-map.json",
+    "graph_states": 38,
+    "completed_receipts": 38,
+    "read_only_fixtures": 38,
+    "per_artifact_hashes": "Each row pins graph/completed/fixture hashes. Literal original questions and catalogs extracted read-only; no evaluator/provider execution."
+  },
+  "explicit_limits": [
+    "No wholesale vault/raw chat export",
+    "Hash inventory is not full transcript or full-read attestation",
+    "H015 originals remain read-only",
+    "Current user/system/developer messages and runtime binding are not reconstructed from this inventory"
+  ],
+  "new_product_API_count_credentials_money_push": "not-run",
+  "current_candidate_identity": {
+    "sha": "58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32",
+    "source_test_resource_tool_identity_to": "3bc1088ac7403e757df6eddd0e10120d3a69d17b",
+    "read_only_git_diff_result": "No changed paths under src/tests/resources/tools/eval/pyproject.toml/uv.lock",
+    "harness": {
+      "path": "docs/operations/H-016/browser_ui.py",
+      "sha256": "338c97b1b2a1f6d206760c5e93ad5096f9632b6131f83d0b24ebd0d48a9d5da5"
+    },
+    "verification_status": "Exact58f2archive815/static157oracle/8browser/56identities/1632preservation andactualindependentAPPROVE+CLEAR proven; rootnative/strict pending",
+    "later_current_docs_hashes": "Not frozen here; prior hash census remains its original before-final-doc cutoff."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "version": "h016-documentation-before-native-validation-v1",
+  "cutoff": "Actual full/browser/clean/preservation/cleaner+APPROVE+CLEAR proved; explicit CP3docs/evidence commit; rootnative/strictpending",
+  "files": [
+    "AGENTS.md",
+    "README.md",
+    "docs/assignment-status.md",
+    "docs/adr/README.md",
+    "docs/manual-e2e.md",
+    "docs/ai/README.md",
+    "docs/ai/PROMPTS-RU.md",
+    "docs/ai/PROMPTS-EN.md",
+    "docs/reports/H-016-scope-repair-offline.md"
+  ],
+  "local_link_targets_checked": 436,
+  "missing_targets": [],
+  "anchor_validation": "not-run",
+  "ru_actual_prompt_verbatim_in_bundle": true,
+  "en_translation_verbatim_in_bundle": true,
+  "root_prompt_file_matches_receipt": true,
+  "runtime_prompt_hashes_unchanged": true,
+  "private_vault_prefix_absent_in_selected_docs": true,
+  "examples_or_commands_added": 0,
+  "new_api_count_credentials_money_push": "not-run",
+  "cp1": "5bbce8c54f7ec9d92cfc16cae3935e0b04a52374",
+  "final_tested_sha": "pending",
+  "candidate_sha": "58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32",
+  "writer_read_only_hash_audit": {
+    "clean_log_hashes": 10,
+    "equal_component_maps": 56,
+    "immutable_hashes": 1632,
+    "browser_trace_hashes": 8,
+    "all_passed": true
+  }
+}

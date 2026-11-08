@@ -1,0 +1,194 @@
+{
+  "profile": "development-known OFFLINE regression; NOT live score",
+  "case": {
+    "run_id": "C04-r1",
+    "case_id": "C04",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "How many for course ID 1 in S1?",
+    "selections": [
+      "enrollment_count"
+    ]
+  },
+  "expected_scope": {
+    "course_id": 1,
+    "semester_id": "S1",
+    "count_object": "enrollment_count"
+  },
+  "pauses": [
+    {
+      "field": "count_object",
+      "options": [
+        {
+          "value": "enrollment_count",
+          "label": "enrollment count"
+        },
+        {
+          "value": "graded_count",
+          "label": "graded count"
+        },
+        {
+          "value": "distinct_student_count",
+          "label": "distinct student count"
+        }
+      ],
+      "prompt": "Choose the count object.",
+      "clarification_id": "9af646be-60a7-49c2-89e2-3628c7e58e45",
+      "session_id": "4554566d-00a8-4941-84d5-8e8798518734",
+      "run_id": "f124355a-5914-4bef-ab64-be862bb5aef9",
+      "checkpoint_id": "1f1db5ca-8271-6784-8003-228cfcbc0396",
+      "schema_sha256": "89b7c664b89f0229c71a78f61c4fb58a8468bc8e089968c70a1b8f485bb265e7",
+      "data_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+      "policy_sha256": "dc784f6a7bb00f099fde0ecb9dc3a647d889e3d4229056ce23a173eb94b2433d",
+      "expires_at": 1794133542.9665287
+    }
+  ],
+  "answer": {
+    "text": "student_id=all; course_id=1; teacher_id=all; semester_id=S1: enrollment_counts: 1 rows.",
+    "columns": [
+      {
+        "name": "enrollment_count",
+        "type": "integer"
+      },
+      {
+        "name": "graded_count",
+        "type": "integer"
+      },
+      {
+        "name": "distinct_student_count",
+        "type": "integer"
+      }
+    ],
+    "rows": [
+      [
+        4,
+        3,
+        3
+      ]
+    ],
+    "scope": "student_id=all; course_id=1; teacher_id=all; semester_id=S1",
+    "empty_reason": null,
+    "row_reasons": [
+      null
+    ],
+    "truncated": false
+  },
+  "steps": [
+    {
+      "step_id": "s0",
+      "raw": {
+        "result_spec": {
+          "metric_id": "u.enrollment_counts.v1",
+          "shape": "aggregate",
+          "group_keys": [],
+          "columns": [
+            {
+              "name": "enrollment_count",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "graded_count",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "distinct_student_count",
+              "type": "integer",
+              "nullable": false
+            }
+          ],
+          "components": {
+            "sum": null,
+            "denominator": null,
+            "count": "enrollment_count"
+          },
+          "unit": "count",
+          "scale": 1
+        },
+        "step_id": "s0",
+        "columns": [
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "distinct_student_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            4,
+            3,
+            3
+          ]
+        ],
+        "row_count": 1,
+        "truncated": false,
+        "elapsed_ms": 0
+      },
+      "answer": {
+        "text": "student_id=all; course_id=1; teacher_id=all; semester_id=S1: enrollment_counts: 1 rows.",
+        "columns": [
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "distinct_student_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            4,
+            3,
+            3
+          ]
+        ],
+        "scope": "student_id=all; course_id=1; teacher_id=all; semester_id=S1",
+        "empty_reason": null,
+        "row_reasons": [
+          null
+        ],
+        "truncated": false
+      },
+      "dependency_rows": [
+        [
+          4,
+          3,
+          3
+        ]
+      ]
+    }
+  ],
+  "provider_calls": 2,
+  "actual_provider_scopes": [
+    {
+      "course_id": 1,
+      "semester_id": "S1",
+      "count_object": "enrollment_count"
+    },
+    {
+      "course_id": 1,
+      "semester_id": "S1",
+      "count_object": "enrollment_count"
+    }
+  ],
+  "actual_sql_refs": [
+    {}
+  ],
+  "fixture_before_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+  "fixture_after_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+  "trace_sha256": "b9609a7c3a4fe5956e846cbaf8a636c00e89af6db6d593bc3260a72cb2ab8c97"
+}

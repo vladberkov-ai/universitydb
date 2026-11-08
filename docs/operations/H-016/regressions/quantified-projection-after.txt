@@ -1,0 +1,38 @@
+........................................................................ [ 17%]
+................................................F....................... [ 34%]
+........................................................................ [ 51%]
+........................................................................ [ 68%]
+........................................................................ [ 85%]
+............................................................             [100%]
+=================================== FAILURES ===================================
+_ test_quantified_identifier_projection_uses_output_grammar[university-Display all student IDs and course IDs for enrollment rows in S1.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1050/test_quantified_identifier_pro2')
+kind = 'university'
+question = 'Display all student IDs and course IDs for enrollment rows in S1.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show each student ID and course ID for enrollment rows in S1."),
+            ("university", "List every teacher ID and course ID for enrollment rows in S1."),
+            ("university", "Display all student IDs and course IDs for enrollment rows in S1."),
+            ("library", "Show each reader ID and open loan count."),
+            ("library", "List every reader ID and open loan count."),
+            ("library", "Display all reader IDs and open loan counts."),
+        ],
+    )
+    def test_quantified_identifier_projection_uses_output_grammar(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind, "enrollment_rows")
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '15ec160b-eb0a-460b-9dcc-32cfe6daf439', 'trace_id': '15ec160b-eb0a-460b-9dcc-32cfe6daf439', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_resolution_edges.py:329: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_h016_resolution_edges.py::test_quantified_identifier_projection_uses_output_grammar[university-Display all student IDs and course IDs for enrollment rows in S1.]
+1 failed, 419 passed in 85.60s (0:01:25)

@@ -1,0 +1,22 @@
+{
+  "method": "Fresh installed read-only binding/owner/writable APIs; current native identity from actual get_goal.threadId, explicit canonical cwd; no manual pointer/ID/lock writes",
+  "canonical": {
+    "status": "usable",
+    "liveness": "usable",
+    "rootSource": "session-authority"
+  },
+  "currentNative": {
+    "status": "usable",
+    "nativeSessionMatches": true,
+    "sessionMatches": true,
+    "canonicalSamePid": true,
+    "canonicalSameProcessIdentity": true
+  },
+  "writable": {
+    "canonicalSource": "session",
+    "nativeSource": "explicit",
+    "nativeScopeMatches": true
+  },
+  "diagnostic": "Initial probe compared optional nonexistent owner.state.thread_id and printed false; owner sidecar has native_session_id/session_id, both actually match actual goal.threadId. No owner mismatch or fallback inferred.",
+  "purpose": "Prove canonical and actual-native mode projections owned before supported terminalization; actual native goal remains active until final gates."
+}

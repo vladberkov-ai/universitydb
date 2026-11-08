@@ -1,0 +1,1178 @@
+{
+  "profile": "H016-only general repair verification links, not rewritten H015 measurement",
+  "tested_sha": "58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32",
+  "historical_rows": 38,
+  "distinct_cases": 19,
+  "independent_generalization_controls": [
+    "tests/test_h016_natural_scope.py",
+    "tests/test_h016_resolution_edges.py",
+    "tests/test_h016_offline_replay.py::test_independent_natural_all_filter_subsets",
+    "tests/test_h016_offline_replay.py::test_independent_natural_grouping_with_id_projections",
+    "tests/test_h016_ui.py"
+  ],
+  "correctness": "Supported questions resolve and execute with actual scope/upstream bindings; negatives retain contract errors/clarification/empty states. Scripted proposals are test boundary only.",
+  "rows": [
+    {
+      "historical_run_id": "A03-r1",
+      "case_id": "A03",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[A03]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/A03.json",
+      "proof_sha256": "68a56b51dbd417e9aea0e9ab38da2084cdcad0be3c08a676194fd55a1fdf5d6c",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/A03.jsonl",
+      "trace_sha256": "913aade61d59aa57381a5e7b46a0cddda3f79598eaa411ff12e4e53836a4fcd8",
+      "expected_scope": {
+        "course_id": 3,
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "course_id": 3,
+          "semester_id": "S1"
+        },
+        {
+          "course_id": 3,
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "A03-r2",
+      "case_id": "A03",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[A03]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/A03.json",
+      "proof_sha256": "68a56b51dbd417e9aea0e9ab38da2084cdcad0be3c08a676194fd55a1fdf5d6c",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/A03.jsonl",
+      "trace_sha256": "913aade61d59aa57381a5e7b46a0cddda3f79598eaa411ff12e4e53836a4fcd8",
+      "expected_scope": {
+        "course_id": 3,
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "course_id": 3,
+          "semester_id": "S1"
+        },
+        {
+          "course_id": 3,
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "A04-r1",
+      "case_id": "A04",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[A04]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/A04.json",
+      "proof_sha256": "8bb4b417c4cdb5fe67b6031d33d56b1f7b25d77d08e8b4be43c2aabd5cbe0ae7",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/A04.jsonl",
+      "trace_sha256": "30f62bc3bb605a49905a2c6d337fd6dc32bb8c6697288e2768e613235b90939c",
+      "expected_scope": {
+        "course_id": 3,
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "course_id": 3,
+          "semester_id": "S1"
+        },
+        {
+          "course_id": 3,
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "A04-r2",
+      "case_id": "A04",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[A04]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/A04.json",
+      "proof_sha256": "8bb4b417c4cdb5fe67b6031d33d56b1f7b25d77d08e8b4be43c2aabd5cbe0ae7",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/A04.jsonl",
+      "trace_sha256": "30f62bc3bb605a49905a2c6d337fd6dc32bb8c6697288e2768e613235b90939c",
+      "expected_scope": {
+        "course_id": 3,
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "course_id": 3,
+          "semester_id": "S1"
+        },
+        {
+          "course_id": 3,
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "C04-r1",
+      "case_id": "C04",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[C04]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/C04.json",
+      "proof_sha256": "87be5b205e303d498611cc98ee6c89c0dc423c6b2c741dd062bf49e0eebcc214",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/C04.jsonl",
+      "trace_sha256": "0b282e613c11fdbc3167e882e12ef85fa8ccad6c100c4355486581d549614b02",
+      "expected_scope": {
+        "course_id": 1,
+        "semester_id": "S1",
+        "count_object": "enrollment_count"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "course_id": 1,
+          "semester_id": "S1",
+          "count_object": "enrollment_count"
+        },
+        {
+          "course_id": 1,
+          "semester_id": "S1",
+          "count_object": "enrollment_count"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 1,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "C04-r2",
+      "case_id": "C04",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[C04]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/C04.json",
+      "proof_sha256": "87be5b205e303d498611cc98ee6c89c0dc423c6b2c741dd062bf49e0eebcc214",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/C04.jsonl",
+      "trace_sha256": "0b282e613c11fdbc3167e882e12ef85fa8ccad6c100c4355486581d549614b02",
+      "expected_scope": {
+        "course_id": 1,
+        "semester_id": "S1",
+        "count_object": "enrollment_count"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "course_id": 1,
+          "semester_id": "S1",
+          "count_object": "enrollment_count"
+        },
+        {
+          "course_id": 1,
+          "semester_id": "S1",
+          "count_object": "enrollment_count"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 1,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "D01-r1",
+      "case_id": "D01",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[D01]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/D01.json",
+      "proof_sha256": "5fd5147d61fbf4d0edef6e3639ce884f37707452815b597ad70b24fbfc4844b5",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/D01.jsonl",
+      "trace_sha256": "8a497608a444dbf526cbac6ad1f8384b90dcbaae3e91789a2c918641bee19ca6",
+      "expected_scope": {
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "semester_id": "S1"
+        },
+        {
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "D01-r2",
+      "case_id": "D01",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[D01]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/D01.json",
+      "proof_sha256": "5fd5147d61fbf4d0edef6e3639ce884f37707452815b597ad70b24fbfc4844b5",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/D01.jsonl",
+      "trace_sha256": "8a497608a444dbf526cbac6ad1f8384b90dcbaae3e91789a2c918641bee19ca6",
+      "expected_scope": {
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "semester_id": "S1"
+        },
+        {
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "D02-r1",
+      "case_id": "D02",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[D02]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/D02.json",
+      "proof_sha256": "ad72dafda97df191138ba91e807ffe0e6d4310eb0e8e91ecded36fdefaaefe76",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/D02.jsonl",
+      "trace_sha256": "e7936e0f5b53de1a80a5144c291124bd669ad45d9a7b80552c2facf531402716",
+      "expected_scope": {
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "semester_id": "S1"
+        },
+        {
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "D02-r2",
+      "case_id": "D02",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[D02]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/D02.json",
+      "proof_sha256": "ad72dafda97df191138ba91e807ffe0e6d4310eb0e8e91ecded36fdefaaefe76",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/D02.jsonl",
+      "trace_sha256": "e7936e0f5b53de1a80a5144c291124bd669ad45d9a7b80552c2facf531402716",
+      "expected_scope": {
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "semester_id": "S1"
+        },
+        {
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "D03-r1",
+      "case_id": "D03",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[D03]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/D03.json",
+      "proof_sha256": "00512ada74261ce5038b296ce3ebf49c719b33693aa2cc0f8aa96b12c17c87f0",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/D03.jsonl",
+      "trace_sha256": "d95af5d8f644a7ad8acd5919bd0d724ac3b436a04be11a41c6a8962eaae12716",
+      "expected_scope": {
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "semester_id": "S1"
+        },
+        {
+          "semester_id": "S1"
+        },
+        {
+          "semester_id": "S1"
+        },
+        {
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "D03-r2",
+      "case_id": "D03",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[D03]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/D03.json",
+      "proof_sha256": "00512ada74261ce5038b296ce3ebf49c719b33693aa2cc0f8aa96b12c17c87f0",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/D03.jsonl",
+      "trace_sha256": "d95af5d8f644a7ad8acd5919bd0d724ac3b436a04be11a41c6a8962eaae12716",
+      "expected_scope": {
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "semester_id": "S1"
+        },
+        {
+          "semester_id": "S1"
+        },
+        {
+          "semester_id": "S1"
+        },
+        {
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "D04-r1",
+      "case_id": "D04",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[D04]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/D04.json",
+      "proof_sha256": "92c8a47c9f9c13094e620630b127637d0280d56b5536195b3629a3d4dbd0a543",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/D04.jsonl",
+      "trace_sha256": "5166bd5f4ae5d8c13a709984e4490d5ac3402b353009e5cf5c51955f4c56c074",
+      "expected_scope": {
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "semester_id": "S1"
+        },
+        {
+          "semester_id": "S1"
+        },
+        {
+          "semester_id": "S1"
+        },
+        {
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "D04-r2",
+      "case_id": "D04",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[D04]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/D04.json",
+      "proof_sha256": "92c8a47c9f9c13094e620630b127637d0280d56b5536195b3629a3d4dbd0a543",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/D04.jsonl",
+      "trace_sha256": "5166bd5f4ae5d8c13a709984e4490d5ac3402b353009e5cf5c51955f4c56c074",
+      "expected_scope": {
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "semester_id": "S1"
+        },
+        {
+          "semester_id": "S1"
+        },
+        {
+          "semester_id": "S1"
+        },
+        {
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "E01-r1",
+      "case_id": "E01",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[E01]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/E01.json",
+      "proof_sha256": "fb342194bfda830201fdacd9e47c164752c034e62f880d4e903557f8bc52b0f5",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/E01.jsonl",
+      "trace_sha256": "fd021691c434a28a7cb19e54317df6fe4bf813d9b6ea005ef02cbb42fa342c5c",
+      "expected_scope": {
+        "course_id": 2,
+        "semester_id": "S2"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "course_id": 2,
+          "semester_id": "S2"
+        },
+        {
+          "course_id": 2,
+          "semester_id": "S2"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "E01-r2",
+      "case_id": "E01",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[E01]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/E01.json",
+      "proof_sha256": "fb342194bfda830201fdacd9e47c164752c034e62f880d4e903557f8bc52b0f5",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/E01.jsonl",
+      "trace_sha256": "fd021691c434a28a7cb19e54317df6fe4bf813d9b6ea005ef02cbb42fa342c5c",
+      "expected_scope": {
+        "course_id": 2,
+        "semester_id": "S2"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "course_id": 2,
+          "semester_id": "S2"
+        },
+        {
+          "course_id": 2,
+          "semester_id": "S2"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "E02-r1",
+      "case_id": "E02",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[E02]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/E02.json",
+      "proof_sha256": "a8f451eca44b5f71d523d0d167bce92061d4254bdda56090995eebc103847d9e",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/E02.jsonl",
+      "trace_sha256": "1e0ab0f71f2a8aae05c9777626c7ee2d688660674497d5afbbb2bb395a4c4f33",
+      "expected_scope": {
+        "teacher_id": 10,
+        "semester_id": "S2"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "teacher_id": 10,
+          "semester_id": "S2"
+        },
+        {
+          "teacher_id": 10,
+          "semester_id": "S2"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "E02-r2",
+      "case_id": "E02",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[E02]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/E02.json",
+      "proof_sha256": "a8f451eca44b5f71d523d0d167bce92061d4254bdda56090995eebc103847d9e",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/E02.jsonl",
+      "trace_sha256": "1e0ab0f71f2a8aae05c9777626c7ee2d688660674497d5afbbb2bb395a4c4f33",
+      "expected_scope": {
+        "teacher_id": 10,
+        "semester_id": "S2"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "teacher_id": 10,
+          "semester_id": "S2"
+        },
+        {
+          "teacher_id": 10,
+          "semester_id": "S2"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "E03-r1",
+      "case_id": "E03",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[E03]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/E03.json",
+      "proof_sha256": "6364414f34e9abe4df15aa4889d50a5bdb3a8b43a621f760e71b5ea97fab0b09",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/E03.jsonl",
+      "trace_sha256": "cd85003fd356c6cf89eb13eb47e8cbd0a7016ec6875fdb4226a43fcb976f0a8e",
+      "expected_scope": {
+        "course_id": 2,
+        "semester_id": "S2"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "course_id": 2,
+          "semester_id": "S2"
+        },
+        {
+          "course_id": 2,
+          "semester_id": "S2"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "E03-r2",
+      "case_id": "E03",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[E03]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/E03.json",
+      "proof_sha256": "6364414f34e9abe4df15aa4889d50a5bdb3a8b43a621f760e71b5ea97fab0b09",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/E03.jsonl",
+      "trace_sha256": "cd85003fd356c6cf89eb13eb47e8cbd0a7016ec6875fdb4226a43fcb976f0a8e",
+      "expected_scope": {
+        "course_id": 2,
+        "semester_id": "S2"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "course_id": 2,
+          "semester_id": "S2"
+        },
+        {
+          "course_id": 2,
+          "semester_id": "S2"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "E04-r1",
+      "case_id": "E04",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[E04]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/E04.json",
+      "proof_sha256": "491551385160f5739befe9b8ac0dddd4f1c6521e0c47d274aee32b950c51c1c9",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/E04.jsonl",
+      "trace_sha256": "9d0b39dc0f0243424cfe023ac663e2b9e08392826bc61fb43412daf4d62cf7f1",
+      "expected_scope": {
+        "course_id": 2,
+        "semester_id": "S2"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "course_id": 2,
+          "semester_id": "S2"
+        },
+        {
+          "course_id": 2,
+          "semester_id": "S2"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "E04-r2",
+      "case_id": "E04",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[E04]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/E04.json",
+      "proof_sha256": "491551385160f5739befe9b8ac0dddd4f1c6521e0c47d274aee32b950c51c1c9",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/E04.jsonl",
+      "trace_sha256": "9d0b39dc0f0243424cfe023ac663e2b9e08392826bc61fb43412daf4d62cf7f1",
+      "expected_scope": {
+        "course_id": 2,
+        "semester_id": "S2"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "course_id": 2,
+          "semester_id": "S2"
+        },
+        {
+          "course_id": 2,
+          "semester_id": "S2"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "J01-r1",
+      "case_id": "J01",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[J01]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/J01.json",
+      "proof_sha256": "f9da6958cbfd7bc21e99d3e4f249bbd56c6cb8b8bc69c3221e7764cd0aa95180",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/J01.jsonl",
+      "trace_sha256": "3b8378a292ac607d43a0189d2bea876210277ee985aa99a329091e83b003fb62",
+      "expected_scope": {
+        "student_id": 2,
+        "course_id": 1,
+        "teacher_id": 10,
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "student_id": 2,
+          "course_id": 1,
+          "teacher_id": 10,
+          "semester_id": "S1"
+        },
+        {
+          "student_id": 2,
+          "course_id": 1,
+          "teacher_id": 10,
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "J01-r2",
+      "case_id": "J01",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[J01]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/J01.json",
+      "proof_sha256": "f9da6958cbfd7bc21e99d3e4f249bbd56c6cb8b8bc69c3221e7764cd0aa95180",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/J01.jsonl",
+      "trace_sha256": "3b8378a292ac607d43a0189d2bea876210277ee985aa99a329091e83b003fb62",
+      "expected_scope": {
+        "student_id": 2,
+        "course_id": 1,
+        "teacher_id": 10,
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "student_id": 2,
+          "course_id": 1,
+          "teacher_id": 10,
+          "semester_id": "S1"
+        },
+        {
+          "student_id": 2,
+          "course_id": 1,
+          "teacher_id": 10,
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "J02-r1",
+      "case_id": "J02",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[J02]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/J02.json",
+      "proof_sha256": "be75741fd2ad411ed8cf2299ab2696decd26880941d8aea2692a5697b6ddc8bd",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/J02.jsonl",
+      "trace_sha256": "8c35e7bd7c50e61b726b2e67857159dae345d8f83edd4d1b80ab3e5f25817f01",
+      "expected_scope": {
+        "student_id": 1,
+        "course_id": 1
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "student_id": 1,
+          "course_id": 1
+        },
+        {
+          "student_id": 1,
+          "course_id": 1
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "J02-r2",
+      "case_id": "J02",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[J02]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/J02.json",
+      "proof_sha256": "be75741fd2ad411ed8cf2299ab2696decd26880941d8aea2692a5697b6ddc8bd",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/J02.jsonl",
+      "trace_sha256": "8c35e7bd7c50e61b726b2e67857159dae345d8f83edd4d1b80ab3e5f25817f01",
+      "expected_scope": {
+        "student_id": 1,
+        "course_id": 1
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "student_id": 1,
+          "course_id": 1
+        },
+        {
+          "student_id": 1,
+          "course_id": 1
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "J03-r1",
+      "case_id": "J03",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[J03]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/J03.json",
+      "proof_sha256": "2fa979e73308c31f60dc7cb0e75092e3dc73d8aee80f32f87aab79893c116d64",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/J03.jsonl",
+      "trace_sha256": "a387eae424735adecf2f1c86f83483b5164a804b707435688b872ac8fc23e809",
+      "expected_scope": {
+        "course_id": 1,
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "course_id": 1,
+          "semester_id": "S1"
+        },
+        {
+          "course_id": 1,
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "J03-r2",
+      "case_id": "J03",
+      "historical_root_cause_family": "ID_MARKER_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[J03]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/J03.json",
+      "proof_sha256": "2fa979e73308c31f60dc7cb0e75092e3dc73d8aee80f32f87aab79893c116d64",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/J03.jsonl",
+      "trace_sha256": "a387eae424735adecf2f1c86f83483b5164a804b707435688b872ac8fc23e809",
+      "expected_scope": {
+        "course_id": 1,
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "course_id": 1,
+          "semester_id": "S1"
+        },
+        {
+          "course_id": 1,
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "J04-r1",
+      "case_id": "J04",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[J04]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/J04.json",
+      "proof_sha256": "c96e4120b7c100da7846857e454b27ad0e514ceab041c4d9b4fc14321c41e0ec",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/J04.jsonl",
+      "trace_sha256": "4da5e23bdb80da2158651d033197a75c89d424e8e4478988dd79a07003f9cf77",
+      "expected_scope": {
+        "course_id": 1,
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "course_id": 1,
+          "semester_id": "S1"
+        },
+        {
+          "course_id": 1,
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "J04-r2",
+      "case_id": "J04",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/domain.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[J04]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/J04.json",
+      "proof_sha256": "c96e4120b7c100da7846857e454b27ad0e514ceab041c4d9b4fc14321c41e0ec",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/J04.jsonl",
+      "trace_sha256": "4da5e23bdb80da2158651d033197a75c89d424e8e4478988dd79a07003f9cf77",
+      "expected_scope": {
+        "course_id": 1,
+        "semester_id": "S1"
+      },
+      "actual_scripted_provider_scopes": [
+        {
+          "course_id": 1,
+          "semester_id": "S1"
+        },
+        {
+          "course_id": 1,
+          "semester_id": "S1"
+        }
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "L01-r1",
+      "case_id": "L01",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/library.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[L01]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/L01.json",
+      "proof_sha256": "5ad620c1271c58aac6b1a4f9da2319036a7d2bc9e157c400f265dd482d0c6e38",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/L01.jsonl",
+      "trace_sha256": "d5188f28786f959bc8482cb4079e0ed87e1b7ff1a5cb024a420d145773c1aa6b",
+      "expected_scope": {},
+      "actual_scripted_provider_scopes": [
+        {},
+        {}
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "L01-r2",
+      "case_id": "L01",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/library.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[L01]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/L01.json",
+      "proof_sha256": "5ad620c1271c58aac6b1a4f9da2319036a7d2bc9e157c400f265dd482d0c6e38",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/L01.jsonl",
+      "trace_sha256": "d5188f28786f959bc8482cb4079e0ed87e1b7ff1a5cb024a420d145773c1aa6b",
+      "expected_scope": {},
+      "actual_scripted_provider_scopes": [
+        {},
+        {}
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "L02-r1",
+      "case_id": "L02",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/library.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[L02]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/L02.json",
+      "proof_sha256": "e7c4e1cc7f87065d5af6f306a06d092280a4d66bc58ad14f83da8dda775da010",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/L02.jsonl",
+      "trace_sha256": "9535000ec84989d8f9fe87b662645ab3edb2c8da016345b9a5240a8ab6debc02",
+      "expected_scope": {},
+      "actual_scripted_provider_scopes": [
+        {},
+        {}
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "L02-r2",
+      "case_id": "L02",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/library.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[L02]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/L02.json",
+      "proof_sha256": "e7c4e1cc7f87065d5af6f306a06d092280a4d66bc58ad14f83da8dda775da010",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/L02.jsonl",
+      "trace_sha256": "9535000ec84989d8f9fe87b662645ab3edb2c8da016345b9a5240a8ab6debc02",
+      "expected_scope": {},
+      "actual_scripted_provider_scopes": [
+        {},
+        {}
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "L03-r1",
+      "case_id": "L03",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/library.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[L03]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/L03.json",
+      "proof_sha256": "d87fcdbdb389e373419b24b56b2c920afd1f5091a9f4fb0b7e262861ec18157b",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/L03.jsonl",
+      "trace_sha256": "9b4dcecfc5189d8dfdfe5fa092e8924e68e3dd34887d93c040c1456509bc0946",
+      "expected_scope": {},
+      "actual_scripted_provider_scopes": [
+        {},
+        {}
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "L03-r2",
+      "case_id": "L03",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/library.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[L03]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/L03.json",
+      "proof_sha256": "d87fcdbdb389e373419b24b56b2c920afd1f5091a9f4fb0b7e262861ec18157b",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/L03.jsonl",
+      "trace_sha256": "9b4dcecfc5189d8dfdfe5fa092e8924e68e3dd34887d93c040c1456509bc0946",
+      "expected_scope": {},
+      "actual_scripted_provider_scopes": [
+        {},
+        {}
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "L04-r1",
+      "case_id": "L04",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/library.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[L04]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/L04.json",
+      "proof_sha256": "6e9eed66b3db2476b3b8c228bf7694913cfb454d3dfa981deb293062b6a0b647",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/L04.jsonl",
+      "trace_sha256": "b0a1007bab8226ec1d460172652019651ef23ac09c2fae05a3017bf2ee374787",
+      "expected_scope": {},
+      "actual_scripted_provider_scopes": [
+        {},
+        {}
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    },
+    {
+      "historical_run_id": "L04-r2",
+      "case_id": "L04",
+      "historical_root_cause_family": "ID_PROJECTION_MISCLASSIFIED_AS_NAME",
+      "repair_implementation": [
+        "src/universitydb/domain_support.py",
+        "src/universitydb/library.py"
+      ],
+      "public_entry_regression": "tests/test_h016_offline_replay.py::test_development_known_offline_replay[L04]",
+      "fresh_offline_proof": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/L04.json",
+      "proof_sha256": "6e9eed66b3db2476b3b8c228bf7694913cfb454d3dfa981deb293062b6a0b647",
+      "fresh_offline_full_trace": "docs/operations/H-016/clean-run/final-58f2fe9b/replay/L04.jsonl",
+      "trace_sha256": "b0a1007bab8226ec1d460172652019651ef23ac09c2fae05a3017bf2ee374787",
+      "expected_scope": {},
+      "actual_scripted_provider_scopes": [
+        {},
+        {}
+      ],
+      "terminal_outcome": "ok",
+      "error_codes": [],
+      "pause_count": 0,
+      "interpretation": "Same one offline development-known case proof links both historical repetitions; not two independent repaired-defect counts or historical rescore."
+    }
+  ]
+}

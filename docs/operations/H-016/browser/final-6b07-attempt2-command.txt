@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/dev/projects/universitydb/docs/operations/H-016/browser_ui.py", line 489, in <module>
+    run(args.output, args.full)
+  File "/home/dev/projects/universitydb/docs/operations/H-016/browser_ui.py", line 430, in run
+    library = capture("library", "Ada")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dev/projects/universitydb/docs/operations/H-016/browser_ui.py", line 252, in capture
+    assert events[0]["payload"]["question"] == expected_question
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

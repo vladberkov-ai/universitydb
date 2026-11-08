@@ -1,0 +1,247 @@
+FF.FFFFF                                                                 [100%]
+=================================== FAILURES ===================================
+_______ test_combined_natural_id_filters_visible_answer_scope_and_trace ________
+
+isolated_app = (PosixPath('/tmp/pytest-of-dev/pytest-1017/test_combined_natural_id_filte0/app'), PosixPath('/tmp/pytest-of-dev/pytest-1017/test_combined_natural_id_filte0/injected.json'))
+
+    def test_combined_natural_id_filters_visible_answer_scope_and_trace(isolated_app):
+        _, fixture = isolated_app
+        spec = make_spec("grade_mean")
+        scope = {"student_id": 2, "course_id": 1, "teacher_id": 10, "semester_id": "S1"}
+        app = app_with(fixture, [plan(step(spec)), proposal(University(), spec, scope)])
+        question = "Mean for student ID 2, course ID 1, teacher ID 10, in semester S1."
+        app.text_area[0].set_value(question)
+        app.button[0].click().run()
+>       assert not app.exception and app.success, app.session_state["result"].get("error")
+E       AssertionError: {'code': 'INVALID_INPUT', 'message': 'Unknown student name.', 'failed_node': 'resolve_scope', 'retryable': False}
+E       assert (not ElementList() and ElementList())
+E        +  where ElementList() = AppTest(\n    _script_path='/home/dev/projects/universitydb/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).exception
+E        +  and   ElementList() = AppTest(\n    _script_path='/home/dev/projects/universitydb/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).success
+
+tests/test_h016_ui.py:37: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 11:42:08.176 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+____________ test_natural_output_id_projection_reaches_real_listing ____________
+
+isolated_app = (PosixPath('/tmp/pytest-of-dev/pytest-1017/test_natural_output_id_project0/app'), PosixPath('/tmp/pytest-of-dev/pytest-1017/test_natural_output_id_project0/injected.json'))
+
+    def test_natural_output_id_projection_reaches_real_listing(isolated_app):
+        _, fixture = isolated_app
+        spec = make_spec("enrollment_rows")
+        app = app_with(fixture, [plan(step(spec)), proposal(University(), spec, {"course_id": 1})])
+        app.text_area[0].set_value("List student IDs, course ID and grades for course ID 1.")
+        app.button[0].click().run()
+>       assert not app.exception and app.success, app.session_state["result"].get("error")
+E       AssertionError: {'code': 'INVALID_INPUT', 'message': 'Unknown student name.', 'failed_node': 'resolve_scope', 'retryable': False}
+E       assert (not ElementList() and ElementList())
+E        +  where ElementList() = AppTest(\n    _script_path='/home/dev/projects/universitydb/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).exception
+E        +  and   ElementList() = AppTest(\n    _script_path='/home/dev/projects/universitydb/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).success
+
+tests/test_h016_ui.py:54: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 11:42:08.649 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+____________ test_library_natural_filter_then_global_id_projection _____________
+
+isolated_app = (PosixPath('/tmp/pytest-of-dev/pytest-1017/test_library_natural_filter_th0/app'), PosixPath('/tmp/pytest-of-dev/pytest-1017/test_library_natural_filter_th0/injected.json'))
+
+    def test_library_natural_filter_then_global_id_projection(isolated_app):
+        _, fixture = isolated_app
+        domain = Library()
+        values = [
+            plan(step(LIBRARY_SPEC)),
+            proposal(domain, LIBRARY_SPEC, {"reader_id": 2}),
+            plan(step(LIBRARY_SPEC)),
+            proposal(domain, LIBRARY_SPEC, {}),
+        ]
+        app = app_with(fixture, {"university-v1": [], "library-v1": values})
+        app.selectbox[0].select("Library").run()
+        app.text_area[0].set_value("Count open loans for reader ID 2.")
+        app.button[0].click().run()
+>       assert not app.exception and app.success, app.session_state["result"].get("error")
+E       AssertionError: {'code': 'INVALID_INPUT', 'message': 'Unknown reader name.', 'failed_node': 'resolve_scope', 'retryable': False}
+E       assert (not ElementList() and ElementList())
+E        +  where ElementList() = AppTest(\n    _script_path='/home/dev/projects/universitydb/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).exception
+E        +  and   ElementList() = AppTest(\n    _script_path='/home/dev/projects/universitydb/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).success
+
+tests/test_h016_ui.py:105: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 11:42:09.526 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+_ test_unknown_and_conflicting_natural_ids_clear_previous_success[university-Mean for student ID 999.] _
+
+isolated_app = (PosixPath('/tmp/pytest-of-dev/pytest-1017/test_unknown_and_conflicting_n0/app'), PosixPath('/tmp/pytest-of-dev/pytest-1017/test_unknown_and_conflicting_n0/injected.json'))
+kind = 'university', negative = 'Mean for student ID 999.'
+
+    @pytest.mark.parametrize(
+        "kind,negative",
+        [
+            ("university", "Mean for student ID 999."),
+            ("university", "Mean for Bea, student ID 1."),
+            ("library", "Count open loans for reader ID 999."),
+            ("library", "Count open loans for Ada, reader ID 2."),
+        ],
+    )
+    def test_unknown_and_conflicting_natural_ids_clear_previous_success(isolated_app, kind, negative):
+        _, fixture = isolated_app
+        if kind == "university":
+            spec, domain, scope = make_spec("grade_mean"), University(), {"student_id": 2}
+            question = "Mean for student ID 2."
+        else:
+            spec, domain, scope = LIBRARY_SPEC, Library(), {"reader_id": 2}
+            question = "Count open loans for reader ID 2."
+        values = [plan(step(spec)), proposal(domain, spec, scope)]
+        app = app_with(
+            fixture, values if kind == "university" else {"university-v1": [], "library-v1": values}
+        )
+        if kind == "library":
+            app.selectbox[0].select("Library").run()
+        app.text_area[0].set_value(question)
+        app.button[0].click().run()
+>       assert not app.exception and app.success, app.session_state["result"].get("error")
+E       AssertionError: {'code': 'INVALID_INPUT', 'message': 'Unknown student name.', 'failed_node': 'resolve_scope', 'retryable': False}
+E       assert (not ElementList() and ElementList())
+E        +  where ElementList() = AppTest(\n    _script_path='/home/dev/projects/universitydb/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).exception
+E        +  and   ElementList() = AppTest(\n    _script_path='/home/dev/projects/universitydb/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).success
+
+tests/test_h016_ui.py:146: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 11:42:09.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+_ test_unknown_and_conflicting_natural_ids_clear_previous_success[university-Mean for Bea, student ID 1.] _
+
+isolated_app = (PosixPath('/tmp/pytest-of-dev/pytest-1017/test_unknown_and_conflicting_n1/app'), PosixPath('/tmp/pytest-of-dev/pytest-1017/test_unknown_and_conflicting_n1/injected.json'))
+kind = 'university', negative = 'Mean for Bea, student ID 1.'
+
+    @pytest.mark.parametrize(
+        "kind,negative",
+        [
+            ("university", "Mean for student ID 999."),
+            ("university", "Mean for Bea, student ID 1."),
+            ("library", "Count open loans for reader ID 999."),
+            ("library", "Count open loans for Ada, reader ID 2."),
+        ],
+    )
+    def test_unknown_and_conflicting_natural_ids_clear_previous_success(isolated_app, kind, negative):
+        _, fixture = isolated_app
+        if kind == "university":
+            spec, domain, scope = make_spec("grade_mean"), University(), {"student_id": 2}
+            question = "Mean for student ID 2."
+        else:
+            spec, domain, scope = LIBRARY_SPEC, Library(), {"reader_id": 2}
+            question = "Count open loans for reader ID 2."
+        values = [plan(step(spec)), proposal(domain, spec, scope)]
+        app = app_with(
+            fixture, values if kind == "university" else {"university-v1": [], "library-v1": values}
+        )
+        if kind == "library":
+            app.selectbox[0].select("Library").run()
+        app.text_area[0].set_value(question)
+        app.button[0].click().run()
+>       assert not app.exception and app.success, app.session_state["result"].get("error")
+E       AssertionError: {'code': 'INVALID_INPUT', 'message': 'Unknown student name.', 'failed_node': 'resolve_scope', 'retryable': False}
+E       assert (not ElementList() and ElementList())
+E        +  where ElementList() = AppTest(\n    _script_path='/home/dev/projects/universitydb/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).exception
+E        +  and   ElementList() = AppTest(\n    _script_path='/home/dev/projects/universitydb/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).success
+
+tests/test_h016_ui.py:146: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 11:42:10.069 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+_ test_unknown_and_conflicting_natural_ids_clear_previous_success[library-Count open loans for reader ID 999.] _
+
+isolated_app = (PosixPath('/tmp/pytest-of-dev/pytest-1017/test_unknown_and_conflicting_n2/app'), PosixPath('/tmp/pytest-of-dev/pytest-1017/test_unknown_and_conflicting_n2/injected.json'))
+kind = 'library', negative = 'Count open loans for reader ID 999.'
+
+    @pytest.mark.parametrize(
+        "kind,negative",
+        [
+            ("university", "Mean for student ID 999."),
+            ("university", "Mean for Bea, student ID 1."),
+            ("library", "Count open loans for reader ID 999."),
+            ("library", "Count open loans for Ada, reader ID 2."),
+        ],
+    )
+    def test_unknown_and_conflicting_natural_ids_clear_previous_success(isolated_app, kind, negative):
+        _, fixture = isolated_app
+        if kind == "university":
+            spec, domain, scope = make_spec("grade_mean"), University(), {"student_id": 2}
+            question = "Mean for student ID 2."
+        else:
+            spec, domain, scope = LIBRARY_SPEC, Library(), {"reader_id": 2}
+            question = "Count open loans for reader ID 2."
+        values = [plan(step(spec)), proposal(domain, spec, scope)]
+        app = app_with(
+            fixture, values if kind == "university" else {"university-v1": [], "library-v1": values}
+        )
+        if kind == "library":
+            app.selectbox[0].select("Library").run()
+        app.text_area[0].set_value(question)
+        app.button[0].click().run()
+>       assert not app.exception and app.success, app.session_state["result"].get("error")
+E       AssertionError: {'code': 'INVALID_INPUT', 'message': 'Unknown reader name.', 'failed_node': 'resolve_scope', 'retryable': False}
+E       assert (not ElementList() and ElementList())
+E        +  where ElementList() = AppTest(\n    _script_path='/home/dev/projects/universitydb/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).exception
+E        +  and   ElementList() = AppTest(\n    _script_path='/home/dev/projects/universitydb/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).success
+
+tests/test_h016_ui.py:146: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 11:42:10.232 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+_ test_unknown_and_conflicting_natural_ids_clear_previous_success[library-Count open loans for Ada, reader ID 2.] _
+
+isolated_app = (PosixPath('/tmp/pytest-of-dev/pytest-1017/test_unknown_and_conflicting_n3/app'), PosixPath('/tmp/pytest-of-dev/pytest-1017/test_unknown_and_conflicting_n3/injected.json'))
+kind = 'library', negative = 'Count open loans for Ada, reader ID 2.'
+
+    @pytest.mark.parametrize(
+        "kind,negative",
+        [
+            ("university", "Mean for student ID 999."),
+            ("university", "Mean for Bea, student ID 1."),
+            ("library", "Count open loans for reader ID 999."),
+            ("library", "Count open loans for Ada, reader ID 2."),
+        ],
+    )
+    def test_unknown_and_conflicting_natural_ids_clear_previous_success(isolated_app, kind, negative):
+        _, fixture = isolated_app
+        if kind == "university":
+            spec, domain, scope = make_spec("grade_mean"), University(), {"student_id": 2}
+            question = "Mean for student ID 2."
+        else:
+            spec, domain, scope = LIBRARY_SPEC, Library(), {"reader_id": 2}
+            question = "Count open loans for reader ID 2."
+        values = [plan(step(spec)), proposal(domain, spec, scope)]
+        app = app_with(
+            fixture, values if kind == "university" else {"university-v1": [], "library-v1": values}
+        )
+        if kind == "library":
+            app.selectbox[0].select("Library").run()
+        app.text_area[0].set_value(question)
+        app.button[0].click().run()
+>       assert not app.exception and app.success, app.session_state["result"].get("error")
+E       AssertionError: {'code': 'INVALID_INPUT', 'message': 'Unknown reader name.', 'failed_node': 'resolve_scope', 'retryable': False}
+E       assert (not ElementList() and ElementList())
+E        +  where ElementList() = AppTest(\n    _script_path='/home/dev/projects/universitydb/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).exception
+E        +  and   ElementList() = AppTest(\n    _script_path='/home/dev/projects/universitydb/src/universitydb/ui.py',\n    default_timeout=30,\n    _sessi...SpecialBlock(\n            type='sidebar'\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).success
+
+tests/test_h016_ui.py:146: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2026-11-08 11:42:10.462 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:522 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+=========================== short test summary info ============================
+FAILED tests/test_h016_ui.py::test_combined_natural_id_filters_visible_answer_scope_and_trace
+FAILED tests/test_h016_ui.py::test_natural_output_id_projection_reaches_real_listing
+FAILED tests/test_h016_ui.py::test_library_natural_filter_then_global_id_projection
+FAILED tests/test_h016_ui.py::test_unknown_and_conflicting_natural_ids_clear_previous_success[university-Mean for student ID 999.]
+FAILED tests/test_h016_ui.py::test_unknown_and_conflicting_natural_ids_clear_previous_success[university-Mean for Bea, student ID 1.]
+FAILED tests/test_h016_ui.py::test_unknown_and_conflicting_natural_ids_clear_previous_success[library-Count open loans for reader ID 999.]
+FAILED tests/test_h016_ui.py::test_unknown_and_conflicting_natural_ids_clear_previous_success[library-Count open loans for Ada, reader ID 2.]
+7 failed, 1 passed in 3.00s

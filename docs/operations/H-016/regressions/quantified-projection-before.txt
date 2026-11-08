@@ -1,0 +1,249 @@
+FFFFFFFF....                                                             [100%]
+=================================== FAILURES ===================================
+__________________ test_development_known_offline_replay[D03] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1049/test_development_known_offline0')
+case = {'run_id': 'D03-r1', 'case_id': 'D03', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'f56d6220-328a-4d6e-8905-ff0d11cdb45b', 'trace_id': 'f56d6220-328a-4d6e-8905-ff0d11cdb45b', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:310: AssertionError
+__________________ test_development_known_offline_replay[D04] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1049/test_development_known_offline1')
+case = {'run_id': 'D04-r1', 'case_id': 'D04', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'b9b90ff3-d852-47b9-a334-90f310c9cdd7', 'trace_id': 'b9b90ff3-d852-47b9-a334-90f310c9cdd7', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:310: AssertionError
+_ test_quantified_identifier_projection_uses_output_grammar[university-Show each student ID and course ID for enrollment rows in S1.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1049/test_quantified_identifier_pro0')
+kind = 'university'
+question = 'Show each student ID and course ID for enrollment rows in S1.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show each student ID and course ID for enrollment rows in S1."),
+            ("university", "List every teacher ID and course ID for enrollment rows in S1."),
+            ("university", "Display all student IDs and course IDs for enrollment rows in S1."),
+            ("library", "Show each reader ID and open loan count."),
+            ("library", "List every reader ID and open loan count."),
+            ("library", "Display all reader IDs and open loan counts."),
+        ],
+    )
+    def test_quantified_identifier_projection_uses_output_grammar(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind, "enrollment_rows")
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '379e1a01-4356-4492-bc9f-192c8ddd0737', 'trace_id': '379e1a01-4356-4492-bc9f-192c8ddd0737', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_resolution_edges.py:329: AssertionError
+_ test_quantified_identifier_projection_uses_output_grammar[university-List every teacher ID and course ID for enrollment rows in S1.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1049/test_quantified_identifier_pro1')
+kind = 'university'
+question = 'List every teacher ID and course ID for enrollment rows in S1.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show each student ID and course ID for enrollment rows in S1."),
+            ("university", "List every teacher ID and course ID for enrollment rows in S1."),
+            ("university", "Display all student IDs and course IDs for enrollment rows in S1."),
+            ("library", "Show each reader ID and open loan count."),
+            ("library", "List every reader ID and open loan count."),
+            ("library", "Display all reader IDs and open loan counts."),
+        ],
+    )
+    def test_quantified_identifier_projection_uses_output_grammar(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind, "enrollment_rows")
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '0b4d9890-efc6-4d9b-848f-99005c128791', 'trace_id': '0b4d9890-efc6-4d9b-848f-99005c128791', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_resolution_edges.py:329: AssertionError
+_ test_quantified_identifier_projection_uses_output_grammar[university-Display all student IDs and course IDs for enrollment rows in S1.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1049/test_quantified_identifier_pro2')
+kind = 'university'
+question = 'Display all student IDs and course IDs for enrollment rows in S1.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show each student ID and course ID for enrollment rows in S1."),
+            ("university", "List every teacher ID and course ID for enrollment rows in S1."),
+            ("university", "Display all student IDs and course IDs for enrollment rows in S1."),
+            ("library", "Show each reader ID and open loan count."),
+            ("library", "List every reader ID and open loan count."),
+            ("library", "Display all reader IDs and open loan counts."),
+        ],
+    )
+    def test_quantified_identifier_projection_uses_output_grammar(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind, "enrollment_rows")
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '5ee757f7-c72e-4131-b733-58d2c4fa7e4c', 'trace_id': '5ee757f7-c72e-4131-b733-58d2c4fa7e4c', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_resolution_edges.py:329: AssertionError
+_ test_quantified_identifier_projection_uses_output_grammar[library-Show each reader ID and open loan count.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1049/test_quantified_identifier_pro3')
+kind = 'library', question = 'Show each reader ID and open loan count.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show each student ID and course ID for enrollment rows in S1."),
+            ("university", "List every teacher ID and course ID for enrollment rows in S1."),
+            ("university", "Display all student IDs and course IDs for enrollment rows in S1."),
+            ("library", "Show each reader ID and open loan count."),
+            ("library", "List every reader ID and open loan count."),
+            ("library", "Display all reader IDs and open loan counts."),
+        ],
+    )
+    def test_quantified_identifier_projection_uses_output_grammar(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind, "enrollment_rows")
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'ad0b4110-cad6-4f09-8e01-03d5a41ab2eb', 'trace_id': 'ad0b4110-cad6-4f09-8e01-03d5a41ab2eb', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_resolution_edges.py:329: AssertionError
+_ test_quantified_identifier_projection_uses_output_grammar[library-List every reader ID and open loan count.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1049/test_quantified_identifier_pro4')
+kind = 'library', question = 'List every reader ID and open loan count.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show each student ID and course ID for enrollment rows in S1."),
+            ("university", "List every teacher ID and course ID for enrollment rows in S1."),
+            ("university", "Display all student IDs and course IDs for enrollment rows in S1."),
+            ("library", "Show each reader ID and open loan count."),
+            ("library", "List every reader ID and open loan count."),
+            ("library", "Display all reader IDs and open loan counts."),
+        ],
+    )
+    def test_quantified_identifier_projection_uses_output_grammar(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind, "enrollment_rows")
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'c9fa2a70-0a5c-4ecc-9b3b-dae2334b3164', 'trace_id': 'c9fa2a70-0a5c-4ecc-9b3b-dae2334b3164', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_resolution_edges.py:329: AssertionError
+_ test_quantified_identifier_projection_uses_output_grammar[library-Display all reader IDs and open loan counts.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1049/test_quantified_identifier_pro5')
+kind = 'library', question = 'Display all reader IDs and open loan counts.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", "Show each student ID and course ID for enrollment rows in S1."),
+            ("university", "List every teacher ID and course ID for enrollment rows in S1."),
+            ("university", "Display all student IDs and course IDs for enrollment rows in S1."),
+            ("library", "Show each reader ID and open loan count."),
+            ("library", "List every reader ID and open loan count."),
+            ("library", "Display all reader IDs and open loan counts."),
+        ],
+    )
+    def test_quantified_identifier_projection_uses_output_grammar(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind, "enrollment_rows")
+        result = agent.run(question)
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '526c1572-a477-4ff0-8e26-dc6f2a35aecf', 'trace_id': '526c1572-a477-4ff0-8e26-dc6f2a35aecf', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_resolution_edges.py:329: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[D03]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[D04]
+FAILED tests/test_h016_resolution_edges.py::test_quantified_identifier_projection_uses_output_grammar[university-Show each student ID and course ID for enrollment rows in S1.]
+FAILED tests/test_h016_resolution_edges.py::test_quantified_identifier_projection_uses_output_grammar[university-List every teacher ID and course ID for enrollment rows in S1.]
+FAILED tests/test_h016_resolution_edges.py::test_quantified_identifier_projection_uses_output_grammar[university-Display all student IDs and course IDs for enrollment rows in S1.]
+FAILED tests/test_h016_resolution_edges.py::test_quantified_identifier_projection_uses_output_grammar[library-Show each reader ID and open loan count.]
+FAILED tests/test_h016_resolution_edges.py::test_quantified_identifier_projection_uses_output_grammar[library-List every reader ID and open loan count.]
+FAILED tests/test_h016_resolution_edges.py::test_quantified_identifier_projection_uses_output_grammar[library-Display all reader IDs and open loan counts.]
+8 failed, 4 passed, 144 deselected in 0.83s

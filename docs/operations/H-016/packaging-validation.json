@@ -1,0 +1,286 @@
+{
+  "version": "h016-packaging-draft-check-v1",
+  "status": "Final explicit503path equality/privacy/hash/link checks passed; Gitexit2 only172retainedrawwhitespace warnings across14capturefiles, no authoredprose/source warning.",
+  "explicit_paths": 503,
+  "text_files": 389,
+  "png_files": 109,
+  "privacy_scan_alerts": [],
+  "privacy_limits": "Bounded text scan, not universal secret detection; screenshots are synthetic offline application evidence, not a claim of exhaustive vision review.",
+  "trailing_whitespace_files": [
+    {
+      "path": "docs/operations/H-016/regressions/architect-boundaries-before.txt",
+      "lines": [
+        28,
+        58,
+        88,
+        118,
+        148,
+        179,
+        209,
+        239
+      ],
+      "policy": "Preserve raw pinned evidence, disclose exception; not silently normalized."
+    },
+    {
+      "path": "docs/operations/H-016/regressions/code-review-boundaries-before.txt",
+      "lines": [
+        24,
+        50,
+        77,
+        104,
+        130
+      ],
+      "policy": "Preserve raw pinned evidence, disclose exception; not silently normalized."
+    },
+    {
+      "path": "docs/operations/H-016/regressions/equality-operators-before.txt",
+      "lines": [
+        23,
+        48,
+        73,
+        98
+      ],
+      "policy": "Preserve raw pinned evidence, disclose exception; not silently normalized."
+    },
+    {
+      "path": "docs/operations/H-016/regressions/quantified-projection-after.txt",
+      "lines": [
+        31
+      ],
+      "policy": "Preserve raw pinned evidence, disclose exception; not silently normalized."
+    },
+    {
+      "path": "docs/operations/H-016/regressions/quantified-projection-before.txt",
+      "lines": [
+        34,
+        70,
+        98,
+        126,
+        154,
+        181,
+        208,
+        235
+      ],
+      "policy": "Preserve raw pinned evidence, disclose exception; not silently normalized."
+    },
+    {
+      "path": "docs/operations/H-016/regressions/replay-initial.txt",
+      "lines": [
+        34,
+        70,
+        106,
+        142,
+        178,
+        214,
+        250,
+        286,
+        322,
+        358,
+        390,
+        426,
+        462,
+        498,
+        534,
+        570,
+        606,
+        642,
+        678,
+        714,
+        750,
+        786,
+        822,
+        858,
+        894,
+        930
+      ],
+      "policy": "Preserve raw pinned evidence, disclose exception; not silently normalized."
+    },
+    {
+      "path": "docs/operations/H-016/regressions/replay-matrix-initial.txt",
+      "lines": [
+        34,
+        70,
+        106,
+        142,
+        178,
+        214,
+        250,
+        286,
+        322,
+        358,
+        390,
+        426,
+        462,
+        498,
+        534,
+        570,
+        606,
+        642,
+        678,
+        714,
+        750,
+        786,
+        822,
+        858,
+        894,
+        930,
+        958,
+        959,
+        977,
+        1005,
+        1006,
+        1024,
+        1052,
+        1053,
+        1071,
+        1099,
+        1100,
+        1118,
+        1146,
+        1147,
+        1165,
+        1193,
+        1194,
+        1212,
+        1240,
+        1241,
+        1259,
+        1287,
+        1288,
+        1306,
+        1334,
+        1335,
+        1353,
+        1381,
+        1382,
+        1400,
+        1428,
+        1429,
+        1447,
+        1475,
+        1476,
+        1494,
+        1522,
+        1523,
+        1541,
+        1569,
+        1570,
+        1588,
+        1606,
+        1607,
+        1625,
+        1643,
+        1644,
+        1662,
+        1680,
+        1681,
+        1699,
+        1717,
+        1718,
+        1736,
+        1758,
+        1759,
+        1777,
+        1799,
+        1800,
+        1818,
+        1840,
+        1841,
+        1859
+      ],
+      "policy": "Preserve raw pinned evidence, disclose exception; not silently normalized."
+    },
+    {
+      "path": "docs/operations/H-016/regressions/replay-postrepair.txt",
+      "lines": [
+        42,
+        78,
+        114,
+        150,
+        181,
+        212,
+        243
+      ],
+      "policy": "Preserve raw pinned evidence, disclose exception; not silently normalized."
+    },
+    {
+      "path": "docs/operations/H-016/regressions/role-ownership-before.txt",
+      "lines": [
+        12,
+        33,
+        47,
+        68
+      ],
+      "policy": "Preserve raw pinned evidence, disclose exception; not silently normalized."
+    },
+    {
+      "path": "docs/operations/H-016/regressions/typed-id-name-before.txt",
+      "lines": [
+        20,
+        29,
+        51,
+        60,
+        82,
+        91
+      ],
+      "policy": "Preserve raw pinned evidence, disclose exception; not silently normalized."
+    },
+    {
+      "path": "docs/operations/H-016/regressions/unified-ownership-before.txt",
+      "lines": [
+        21,
+        44,
+        58,
+        73
+      ],
+      "policy": "Preserve raw pinned evidence, disclose exception; not silently normalized."
+    },
+    {
+      "path": "docs/operations/H-016/regressions/unified-ownership-focused-after.txt",
+      "lines": [
+        32,
+        65,
+        98,
+        145,
+        177,
+        209,
+        241
+      ],
+      "policy": "Preserve raw pinned evidence, disclose exception; not silently normalized."
+    },
+    {
+      "path": "docs/operations/H-016/verification/final-1/01-output.txt",
+      "lines": [
+        45,
+        81
+      ],
+      "policy": "Preserve raw pinned evidence, disclose exception; not silently normalized."
+    }
+  ],
+  "NUL_files": [],
+  "NUL_policy": "Known invalid overlapping unified log retained as rejected preliminary evidence, not final passing proof.",
+  "whitespace_policy": "Raw pinned logs preserved byte-identically. New authored prose must be clean; staged Git diff output/exception validation follows final explicit staging.",
+  "workflow_runtime_excluded": true,
+  "original_locks_excluded": true,
+  "commit": "Authorized scoped CP3docs/evidence checkpoint; actualSHA reported from Git after commit, not selfembedded.",
+  "workflow_exception": "Only workflow/.gitignore containing .omx/; no workflow runtime contents staged.",
+  "actual_staged_diff_check": "docs/operations/H-016/packaging-staged-diff-check.json",
+  "git_diff_check_exit": 2,
+  "git_raw_capture_paths": [
+    "docs/operations/H-016/browser/final-3bc-attempt1-command.txt",
+    "docs/operations/H-016/regressions/architect-boundaries-before.txt",
+    "docs/operations/H-016/regressions/code-review-boundaries-before.txt",
+    "docs/operations/H-016/regressions/equality-operators-before.txt",
+    "docs/operations/H-016/regressions/quantified-projection-after.txt",
+    "docs/operations/H-016/regressions/quantified-projection-before.txt",
+    "docs/operations/H-016/regressions/replay-initial.txt",
+    "docs/operations/H-016/regressions/replay-matrix-initial.txt",
+    "docs/operations/H-016/regressions/replay-postrepair.txt",
+    "docs/operations/H-016/regressions/role-ownership-before.txt",
+    "docs/operations/H-016/regressions/typed-id-name-before.txt",
+    "docs/operations/H-016/regressions/unified-ownership-before.txt",
+    "docs/operations/H-016/regressions/unified-ownership-focused-after.txt",
+    "docs/operations/H-016/verification/final-1/01-output.txt"
+  ],
+  "git_whitespace_findings": 172
+}

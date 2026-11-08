@@ -1,0 +1,82 @@
+FFF.                                                                     [100%]
+=================================== FAILURES ===================================
+_ test_every_explicit_quoted_name_validates_whole_value[university-Show mean for student "Bea Nobody".] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1040/test_every_explicit_quoted_nam0')
+kind = 'university', question = 'Show mean for student "Bea Nobody".'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", 'Show mean for student "Bea Nobody".'),
+            ("library", 'Count open loans for reader "Ada Nobody".'),
+        ],
+    )
+    def test_every_explicit_quoted_name_validates_whole_value(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '81b570c2-bfe2-4027-8049-799ba3d726d7', 'trace_id': '81b570c2-bfe2-4027-8049-799ba3d726d7', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:246: AssertionError
+_ test_every_explicit_quoted_name_validates_whole_value[library-Count open loans for reader "Ada Nobody".] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1040/test_every_explicit_quoted_nam1')
+kind = 'library', question = 'Count open loans for reader "Ada Nobody".'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("university", 'Show mean for student "Bea Nobody".'),
+            ("library", 'Count open loans for reader "Ada Nobody".'),
+        ],
+    )
+    def test_every_explicit_quoted_name_validates_whole_value(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '2a10e03a-7b4e-45b9-a059-1905541cd66f', 'trace_id': '2a10e03a-7b4e-45b9-a059-1905541cd66f', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:246: AssertionError
+________ test_owned_quoted_text_id_name_is_not_a_semester_filter[False] ________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1040/test_owned_quoted_text_id_name0')
+separate_semester = False
+
+    @pytest.mark.parametrize("separate_semester", [False, True])
+    def test_owned_quoted_text_id_name_is_not_a_semester_filter(tmp_path, separate_semester):
+        from universitydb.agent import Agent
+        from universitydb.domain import University
+    
+        path, provider, _ = setup_run(tmp_path, "university")
+        with sqlite3.connect(path) as connection:
+            connection.execute("UPDATE Teachers SET name='S1' WHERE teacher_id=11")
+        question = 'Show mean for teacher named "S1".'
+        if separate_semester:
+            question += " In semester S1."
+        agent = Agent(University(), path, provider, tmp_path / "text-id-traces")
+        result = agent.run(question)
+        expected = {"teacher_id": 11}
+        if separate_semester:
+            expected["semester_id"] = "S1"
+        assert result["status"] == "ok", result
+>       assert provider.scopes == [expected, expected]
+E       AssertionError: assert [{'teacher_id...er_id': 'S1'}] == [{'teacher_id...cher_id': 11}]
+E         
+E         At index 0 diff: {'teacher_id': 11, 'semester_id': 'S1'} != {'teacher_id': 11}
+E         Use -v to get more diff
+
+tests/test_h016_resolution_edges.py:268: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_h016_resolution_edges.py::test_every_explicit_quoted_name_validates_whole_value[university-Show mean for student "Bea Nobody".]
+FAILED tests/test_h016_resolution_edges.py::test_every_explicit_quoted_name_validates_whole_value[library-Count open loans for reader "Ada Nobody".]
+FAILED tests/test_h016_resolution_edges.py::test_owned_quoted_text_id_name_is_not_a_semester_filter[False]
+3 failed, 1 passed, 67 deselected in 1.50s

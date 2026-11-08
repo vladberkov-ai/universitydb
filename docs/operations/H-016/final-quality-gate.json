@@ -1,0 +1,102 @@
+{
+  "aiSlopCleaner": {
+    "status": "passed",
+    "evidence": "docs/operations/H-016/repair-notes.md pre-edit cleanup plan/regression-first and bounded passes; cleaner-review.json independent plan/result classification/no masking fallback, final postpass fullverification"
+  },
+  "verification": {
+    "status": "passed",
+    "commands": [
+      "Tracked archive exact58f2: python -m pytest -q ->815passed118.48s",
+      "ruff check src tests; ruff format --check src tests ->PASS",
+      "mypy src/universitydb --ignore-missing-imports; compileall src tests ->PASS",
+      "independent_oracle.py ->157checksPASS",
+      "Real offline Playwright/Streamlit browser --full ->8statesPASS, both schemas",
+      "Archive import-origin/56componenthashes/temporary bothseedFKintegrity/nooverwrite ->PASS",
+      "preservation-final.json ->1632unchanged/protectedsets0add/remove"
+    ],
+    "evidence": "docs/operations/H-016/clean-run/final-58f2fe9b/receipt.json all10commands0/31freshprooftracepairs, browser/final-58f2-attempt3/browser-receipt.json, preservation-final.json; executabletestedSHA58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32. Reusedlockedvenv/noinstall, nonrepoarchive; scriptedtestboundary NOT real-modelaccuracy."
+  },
+  "codeReview": {
+    "recommendation": "APPROVE",
+    "architectStatus": "CLEAR",
+    "evidence": "docs/operations/H-016/reviews/code-final.md actual independent native code-reviewer APPROVE; docs/operations/H-016/reviews/architecture-final.md actual independent native architect CLEAR,0unresolved blockers",
+    "independentReview": {
+      "codeReviewer": {
+        "agentRole": "code-reviewer",
+        "evidence": "Actual native /root/code_review finalanswer preserved reviews/code-final.md; independent read-only source/test/actualdata/fullclean/browser/preservation review APPROVE0unresolved"
+      },
+      "architect": {
+        "agentRole": "architect",
+        "evidence": "Actual native /root/architecture_review finalanswer preserved reviews/architecture-final.md;7invariants reviewed CLEAR0unresolved; rootnativeclosure must follow these gates"
+      }
+    }
+  },
+  "architectureInvariantGate": {
+    "status": "passed",
+    "sourceArtifacts": [
+      ".omx/ultragoal/brief.md",
+      "docs/operations/H-016/workflow/.omx/ultragoal/brief.md",
+      "docs/adr/ADR-OMX-015-H016-scope-resolution.md",
+      "docs/operations/H-016/invariant-audit.json"
+    ],
+    "evidence": "Exact7brief requirements persisted invariant-audit.json with actualsource/test/review/preservation evidence. I07 ordering prerequisites complete before root native completion/strict; no live/service/publication acceptance. Later rootterminalreceipt proves actualclosure rather than preclaiming it here.",
+    "invariants": [
+      {
+        "invariant": "Ordinary natural-language input reaches production extraction, catalog validation and user clarification before planning; unknown/conflicting entities fail closed without silently absent filters.",
+        "source": ".omx/ultragoal/brief.md#architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "src/universitydb/domain_support.py; src/universitydb/domain.py; src/universitydb/library.py",
+        "testEvidence": "tests/test_h016_natural_scope.py; tests/test_h016_resolution_edges.py; tests/test_h016_offline_replay.py; tests/test_h016_ui.py; docs/operations/H-016/root-cause-map.json; docs/operations/H-016/regressions/listing-consistency-final.txt; docs/operations/H-016/clean-run/final-58f2fe9b/receipt.json; docs/operations/H-016/browser/final-58f2-attempt3/browser-receipt.json; docs/operations/H-016/preservation-final.json; docs/operations/H-016/reviews/code-final.md; docs/operations/H-016/reviews/architecture-final.md; docs/operations/H-016/resolution-coverage.json; docs/operations/H-016/cleaner-review.json; Shared role-owned quoted/catalog and typed-ID spans feed every extraction/validation path; explicit mentions intersect catalog candidate sets; unknown/malformed/conflicting/unsupported identities fail before provider. All38historical rows map via resolution-coverage.json to19fresh public-entry proofs/traces, plus independent mutation/projection/negative controls. Code APPROVE/architect I1PASS.",
+        "reviewEvidence": "docs/operations/H-016/reviews/code-final.md actual independent native code-reviewer APPROVE; docs/operations/H-016/reviews/architecture-final.md actual independent native architect CLEAR,0unresolved blockers"
+      },
+      {
+        "invariant": "University and Library use the same bounded compiled core; SQL/plan scripted fixtures are an explicit offline boundary, never real-model accuracy or runtime NL-to-SQL replacement.",
+        "source": ".omx/ultragoal/brief.md#architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "src/universitydb/agent.py; src/universitydb/domain.py; src/universitydb/library.py",
+        "testEvidence": "tests/test_library.py; tests/test_h016_offline_replay.py; tests/test_h016_ui.py; docs/operations/H-016/regressions/replay-coverage.md; docs/operations/H-016/clean-run/final-58f2fe9b/receipt.json; docs/operations/H-016/browser/final-58f2-attempt3/browser-receipt.json; docs/operations/H-016/preservation-final.json; docs/operations/H-016/reviews/code-final.md; docs/operations/H-016/reviews/architecture-final.md; docs/operations/H-016/resolution-coverage.json; docs/operations/H-016/cleaner-review.json; Both schemas instantiate ordinary Agent/compiled graph on temporarySQLite; scripted transport consumes actual production scope and upstreamrefs only after resolution. Full815/AppTest/browser filter+globalLibrary proof; no product case-ID/exactquestion/oracleSQL branches. Code APPROVE/architect I2PASS; real-model accuracy explicitly unclaimed.",
+        "reviewEvidence": "docs/operations/H-016/reviews/code-final.md actual independent native code-reviewer APPROVE; docs/operations/H-016/reviews/architecture-final.md actual independent native architect CLEAR,0unresolved blockers"
+      },
+      {
+        "invariant": "Accepted ADR006 equal graded-enrollment weights/all offerings, NULL versus zero, HALF_UP, explicit all-semester scope, all exact top ties and actual-result typed dependency bindings remain unchanged.",
+        "source": ".omx/ultragoal/brief.md#architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "src/universitydb/domain.py; src/universitydb/contracts.py",
+        "testEvidence": "tests/test_i2_domains.py; tests/test_i2_oracle.py; tests/test_i3_dependencies.py; tests/test_h016_offline_replay.py; docs/adr/ADR-OMX-015-H016-scope-resolution.md; docs/operations/H-016/regressions/replay-coverage.md; docs/operations/H-016/clean-run/final-58f2fe9b/receipt.json; docs/operations/H-016/browser/final-58f2-attempt3/browser-receipt.json; docs/operations/H-016/preservation-final.json; docs/operations/H-016/reviews/code-final.md; docs/operations/H-016/reviews/architecture-final.md; docs/operations/H-016/resolution-coverage.json; docs/operations/H-016/cleaner-review.json; Accepted ADR006 domain registry/formatter/dependency source remains unchanged outside scope parsing; full815 and157independentSQLite/Fraction/Decimal oracle, natural16filter subsets/5grains/3counts, actualtie/cohort/upstream mutation/empty/NULL/zero/rounding checks and31freshprooftracepairs PASS. Architect I3PASS.",
+        "reviewEvidence": "docs/operations/H-016/reviews/code-final.md actual independent native code-reviewer APPROVE; docs/operations/H-016/reviews/architecture-final.md actual independent native architect CLEAR,0unresolved blockers"
+      },
+      {
+        "invariant": "Read-only SQL safety, typed ResultSpec/DAG, per-run deadlines/calls/SQL ceilings and session-bound clarification ownership/TTL/replay remain unchanged.",
+        "source": ".omx/ultragoal/brief.md#architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "src/universitydb/agent.py; src/universitydb/contracts.py; src/universitydb/sql_policy.py; src/universitydb/db.py; src/universitydb/config.py",
+        "testEvidence": "tests/test_bounds.py; tests/test_i2_contracts.py; tests/test_i2_continuation.py; tests/test_i3_dependencies.py; tests/test_review_repairs.py; docs/operations/H-016/verification/final-2/receipt.json; docs/operations/H-016/clean-run/final-58f2fe9b/receipt.json; docs/operations/H-016/browser/final-58f2-attempt3/browser-receipt.json; docs/operations/H-016/preservation-final.json; docs/operations/H-016/reviews/code-final.md; docs/operations/H-016/reviews/architecture-final.md; docs/operations/H-016/resolution-coverage.json; docs/operations/H-016/cleaner-review.json; Unchanged read-onlySQL/DB/typedResultSpec/DAG/budgets/deadlines/clarificationTTL/session/replay code plus preserved old expectations pass exact815full; malformed/unsafe/unsupported paths tested, AppTest/browser repair/refusal/continuation verified. Architect I4PASS.",
+        "reviewEvidence": "docs/operations/H-016/reviews/code-final.md actual independent native code-reviewer APPROVE; docs/operations/H-016/reviews/architecture-final.md actual independent native architect CLEAR,0unresolved blockers"
+      },
+      {
+        "invariant": "Historical H015 collection/fixtures/observations/scores/reviews/registration, frozen observer/scorer/corrector, original monetary ledger and completed I1/H013/H014/H015 workflow states and locks remain byte-identical.",
+        "source": ".omx/ultragoal/brief.md#architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "Installed supported root-owned H016 separate workflow, actual native get_goal active; reviewed implementation and gates persisted before completion, no lifecycle state fabrication.",
+        "testEvidence": "docs/operations/H-016/baseline.json; docs/operations/H-016/root-cause-map.json; docs/operations/H-016/clean-run/final-58f2fe9b/receipt.json; docs/operations/H-016/browser/final-58f2-attempt3/browser-receipt.json; docs/operations/H-016/preservation-final.json; docs/operations/H-016/reviews/code-final.md; docs/operations/H-016/reviews/architecture-final.md; docs/operations/H-016/resolution-coverage.json; docs/operations/H-016/cleaner-review.json; Final baselinecomparison1632of1632immutable hashes identical, H015529/runtime157/locks2protected sets0added0removed; canonicalmoney andlockidentity unchanged; only3authorizedproductmodules changed. Writer/code-reviewer/architect independently rehashed; architect I5PASS.",
+        "reviewEvidence": "docs/operations/H-016/reviews/code-final.md actual independent native code-reviewer APPROVE; docs/operations/H-016/reviews/architecture-final.md actual independent native architect CLEAR,0unresolved blockers"
+      },
+      {
+        "invariant": "Offline regression/clean-run/AppTest/browser use temporary DB/runtime/ledger and no network product dispatch; new API/count/probe/credential loading/monetary mutation/push are not-run.",
+        "source": ".omx/ultragoal/brief.md#architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "docs/operations/H-016/browser_ui.py",
+        "testEvidence": "tests/test_h016_offline_replay.py; tests/test_h016_ui.py; docs/operations/H-016/regressions/replay-coverage.md; docs/operations/H-016/next-live-plan.md; docs/operations/H-016/clean-run/final-58f2fe9b/receipt.json; docs/operations/H-016/browser/final-58f2-attempt3/browser-receipt.json; docs/operations/H-016/preservation-final.json; docs/operations/H-016/reviews/code-final.md; docs/operations/H-016/reviews/architecture-final.md; docs/operations/H-016/resolution-coverage.json; docs/operations/H-016/cleaner-review.json; Exact58f2trackedarchive815pass118.48s/10commands0/static157oracle/bothseedintegrityFK/noreinitwrite/56mapsidentical/importoriginarchive/tempremoved. Actual8statebrowser binds question/newrunUUID/fulltrace, sameUUIDresume; ownedserver/browserstopped,tempmoneyabsent,runtimeunchanged; scriptedoffline/networkdenial explicit. Architect I6PASS; no productAPI/count/credentials/money/push.",
+        "reviewEvidence": "docs/operations/H-016/reviews/code-final.md actual independent native code-reviewer APPROVE; docs/operations/H-016/reviews/architecture-final.md actual independent native architect CLEAR,0unresolved blockers"
+      },
+      {
+        "invariant": "Independent final code-reviewer APPROVE and architect CLEAR, cleaner, full verification and invariant audit precede actual native completion and strict checkpoint; offline proof does not grant live/service/publication acceptance.",
+        "source": ".omx/ultragoal/brief.md#architecture-invariants",
+        "status": "proved",
+        "implementationEvidence": "Installed supported root-owned H016 separate workflow, actual native get_goal active; reviewed implementation and gates persisted before completion, no lifecycle state fabrication.",
+        "testEvidence": "docs/operations/H-016/reviews/code-preliminary.md; docs/operations/H-016/reviews/architecture-preliminary.md; docs/operations/H-016/repair-notes.md; docs/operations/H-016/clean-run/final-58f2fe9b/receipt.json; docs/operations/H-016/browser/final-58f2-attempt3/browser-receipt.json; docs/operations/H-016/preservation-final.json; docs/operations/H-016/reviews/code-final.md; docs/operations/H-016/reviews/architecture-final.md; docs/operations/H-016/resolution-coverage.json; docs/operations/H-016/cleaner-review.json; Performer pre-editplan/regression-first lock and independent cleaner evidence persisted; full/static/oracle/browser/clean/preservation complete after lastsource/harnesspass. Actual finalcodeAPPROVE0issues andarchitectCLEAR0blockers received. All7audit/document/evidence persistence precedes root nativeCOMPLETE/strictcheckpoint; those lifecycle actions remain pending/unclaimed. Architect I7CLEAR_TO_PROCEED; no service/live/publication acceptance.",
+        "reviewEvidence": "docs/operations/H-016/reviews/code-final.md actual independent native code-reviewer APPROVE; docs/operations/H-016/reviews/architecture-final.md actual independent native architect CLEAR,0unresolved blockers"
+      }
+    ]
+  }
+}

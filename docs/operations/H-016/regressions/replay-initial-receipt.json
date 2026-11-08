@@ -1,0 +1,47 @@
+{
+  "profile": "H016 development-known OFFLINE regression; NOT live score",
+  "receipt_head": "5bbce8c54f7ec9d92cfc16cae3935e0b04a52374",
+  "receipt_source_diff_sha256": "c4c3c28ddbd54111392cca24c49341242cda4e1025b1acaeb4d63a2d027aac09",
+  "receipt_sha256": {
+    "docs/operations/H-015/registration/conversations.json": "a9e1e69810d3ea2bbe4c2117258dcb6dcc5cfb8f262b2a1fd31c672363cfb125",
+    "docs/operations/H-015/registration/fixtures.json": "8113c4027469b30f68857a5fb99fa96554e8bc7df1d2db602cc5c50f264865e0",
+    "src/universitydb/__init__.py": "f4783354578e7b9ed2f99a68b5454ac621abd61d76b07062a05bf5887dd72dd7",
+    "src/universitydb/agent.py": "af3191e82c247f647661411224383fced8456fd5142cb5a61e81f2a1d51edbd2",
+    "src/universitydb/config.py": "c5c0215f820fc30a60da11946cfcec3d53741f86eeb9db2eafdfc169ebfdb5a5",
+    "src/universitydb/contracts.py": "14715a2b7ed31457eba35acce6e568bcd67c72a55371822f6c9243bbacb619dc",
+    "src/universitydb/db.py": "a1650dad66a7c8ad49210bb3ab4850deff8e9f7bfc5c3f2ca65c84e632d80cc8",
+    "src/universitydb/db_worker.py": "64c17b84c0d68e97d5587c849734640fccd89ace1c12238f08105bf8201a2c05",
+    "src/universitydb/domain.py": "4c127bb920a42c21d034422153a18827397429bb11c27171648263b2f9b6870c",
+    "src/universitydb/domain_support.py": "b782a945ece6a83c5be03ceebc5416a14e3a4aa75919c06caf17ae1408778e2f",
+    "src/universitydb/library.py": "10c5dde49786e2d3d191487d407e47e48adf1b89e69602350051bc23a35a18b8",
+    "src/universitydb/llm.py": "b5559fd7a7d3ddecedc9637e850773f431c682a388790007b3b0338388639482",
+    "src/universitydb/llm_worker.py": "dc6369b1ae15393f134bd239935ad3b398c9f84eece1bc379a59f6a6a9b1940e",
+    "src/universitydb/sql_policy.py": "f0d2c532ad9c053952cc6a4fefba9350585e9826d49f9b05b5d6171b035307ac",
+    "src/universitydb/tracing.py": "32a8b49dc56b0e2acf59b836361ef03abb70c4c549c312a1c914c8b646e8a96b",
+    "src/universitydb/ui.py": "e80a70cdbf7447220eca967e4f9c870ca3e71bb0095696f651c6ae4153d1f52e",
+    "tests/test_h016_offline_replay.py": "5559483179c9cb63e90f1a03422edfc6129605ade2741c65941715f8c5df79d8",
+    "tests/test_h016_ui.py": "8aed8c3cd2793ab9f7f320690c2a543c059c4f81e61d6b2a0ce58e5056d68ab9"
+  },
+  "hash_timing": "Captured after initial runs, not an assertion that these source hashes existed throughout runs. First31-case replay had src clean after completion; expanded run overlapped authorized repair and is diagnostic only. Final stable-source rerun required.",
+  "runs": [
+    {
+      "command": ".venv/bin/pytest -q tests/test_h016_offline_replay.py",
+      "scope": "24original+7independent paraphrases",
+      "output": "replay-initial.txt",
+      "result": "26 failed,5 passed in5.02s"
+    },
+    {
+      "command": ".venv/bin/pytest -q tests/test_h016_ui.py",
+      "scope": "8affected path AppTests",
+      "output": "replay-ui-initial.txt",
+      "result": "7 failed,1 passed in3.00s"
+    },
+    {
+      "command": ".venv/bin/pytest -q tests/test_h016_offline_replay.py",
+      "scope": "24original+7paraphrases+16filter subsets+5groups+3count objects",
+      "output": "replay-matrix-initial.txt",
+      "result": "47 failed,8 passed in6.40s"
+    }
+  ],
+  "authority": "no source edits, old artifact mutation, collectors/scorers/correctors, product network, credential loading, canonical money or git writes by this lane"
+}

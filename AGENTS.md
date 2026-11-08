@@ -1,3 +1,24 @@
+# Current H-016 offline product-repair authority — 2026-11-08
+
+The actual H016 task / CHAT-058 authorize one continuous bounded offline workflow:
+CP1 causal reproduction, CP2 general shared scope repair and downstream fixes,
+CP3 meaningful University/Library graph/DB/UI/regression/clean-run plus independent
+reviews, CP4 verified local candidate and English documentation/RU+EN provenance.
+This supersedes older stage-only product-repair prohibitions only for H016.
+No new product provider/API/count/probe, credential loading, live UI generation,
+canonical monetary ledger/hold/budget mutation, push or vault writes. CLI/OMX and
+its independent review roles are not a product API campaign. Root alone owns the
+supported current-owner-bound H016 lifecycle with explicit cwd at
+`docs/operations/H-016/workflow`; completed I1/H013/H014/H015 and original locks
+remain immutable. Preserve H015 original/corrected evidence, frozen instruments,
+values/rubric/denominator and historical10/48; new product edits are a separate
+candidate, not the old frozen source. No manual IDs/pointers/locks or history
+rewrite. Offline scripted evidence is not real-model accuracy or service
+acceptance. See [H016 report](docs/reports/H-016-scope-repair-offline.md) and
+[ADR015](docs/adr/ADR-OMX-015-H016-scope-resolution.md). Future live validation and
+publication each require separate authority; remaining historical cap is not
+permission to dispatch.
+
 # Current H-015 offline correction authority — 2026-11-08
 
 The actual continuation task and read-only CHAT-056 authorize only a separate

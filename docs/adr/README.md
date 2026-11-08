@@ -1,3 +1,18 @@
+## Current H016 offline repair decision — 2026-11-08
+
+[ADR-OMX-015](ADR-OMX-015-H016-scope-resolution.md) records the shared natural-ID
+extraction/projection boundary repair, including rejected permissive/model-based
+alternatives, catalog validation and user confirmation. It was recorded before
+product implementation under actual H016 / CHAT-058. Independent preliminary
+BLOCK/HIGH findings prompted regression-first role-owned/typed source spans,
+complete quoted-name validation and fail-closed unsupported filters/operators.
+Current repaired candidate `58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32` is committed; 815tests/static157oracle/8statebrowser/clean/preservation now pass; independent final APPROVE/CLEAR received; native closeout remains pending. Accepted ADR006/Sol profile,
+semantic/safety/resource limits and ADR003–007 proposed status remain unchanged.
+This is a new offline candidate, not a rewrite of historical H015 evidence or a
+new live/publication authority. [H016 report](../reports/H-016-scope-repair-offline.md)
+tracks actual completion gates. Historical H015 HIGH is resolved for its separate
+corrected assessment only; original v1 finding remains retained.
+
 ## Current H-015 scoped decision — 2026-11-08
 
 [ADR-OMX-014](ADR-OMX-014-H015-full-live-eval.md) records prospective collector and

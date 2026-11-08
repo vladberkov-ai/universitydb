@@ -1,0 +1,11 @@
+1 0 /home/dev/projects/universitydb/docs/operations/H-016/clean-run/final-58f2fe9b/01-output.txt
+2 0 /home/dev/projects/universitydb/docs/operations/H-016/clean-run/final-58f2fe9b/02-output.txt
+3 0 /home/dev/projects/universitydb/docs/operations/H-016/clean-run/final-58f2fe9b/03-output.txt
+4 0 /home/dev/projects/universitydb/docs/operations/H-016/clean-run/final-58f2fe9b/04-output.txt
+5 0 /home/dev/projects/universitydb/docs/operations/H-016/clean-run/final-58f2fe9b/05-output.txt
+6 0 /home/dev/projects/universitydb/docs/operations/H-016/clean-run/final-58f2fe9b/06-output.txt
+7 0 /home/dev/projects/universitydb/docs/operations/H-016/clean-run/final-58f2fe9b/07-output.txt
+8 0 /home/dev/projects/universitydb/docs/operations/H-016/clean-run/final-58f2fe9b/08-output.txt
+9 0 /home/dev/projects/universitydb/docs/operations/H-016/clean-run/final-58f2fe9b/09-output.txt
+10 0 /home/dev/projects/universitydb/docs/operations/H-016/clean-run/final-58f2fe9b/10-output.txt
+{"status": "passed", "tested_sha": "58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32", "temporary_tree_removed": true}

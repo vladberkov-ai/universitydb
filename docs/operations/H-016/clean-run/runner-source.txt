@@ -1,0 +1,75 @@
+"""Root verification orchestration; tracked archive, no Git checkout/install/network."""
+import hashlib, io, json, os, subprocess, sys, tarfile, tempfile, time
+from pathlib import Path
+ROOT=Path('/home/dev/projects/universitydb')
+SHA=sys.argv[1]
+OUT=ROOT/'docs/operations/H-016/clean-run'/('final-'+SHA[:8])
+OUT.mkdir(exist_ok=False)
+def digest(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+def hashes(root):
+    paths=[]
+    for top in ('src','tests','resources','tools/eval'):
+        paths += [p for p in (root/top).rglob('*') if p.is_file() and '__pycache__' not in p.parts]
+    paths += [root/p for p in ('pyproject.toml','uv.lock','docs/operations/H-016/browser_ui.py')]
+    return {str(p.relative_to(root)):digest(p) for p in sorted(paths)}
+r={'tested_sha':SHA,'profile':'OFFLINE scripted boundary, not real-model accuracy','method':'git archive to temporary non-repository directory, no clone/worktree/second repository','dependencies':'Reuse existing locked canonical .venv, no fresh installation or download; uv.lock unchanged','commands':[],'status':'running','credential_loading':False,'new_external_product_calls':0}
+def save(): (OUT/'receipt.json').write_text(json.dumps(r,indent=2)+'\n')
+save()
+archive=subprocess.check_output(['git','archive','--format=tar',SHA],cwd=ROOT)
+r['readiness_helper_boundary']='Immutable H014 helper requires git rev-parse HEAD and is not run in nonrepo archive. Root final-2 ran it on3bc; archive full suite includes grouped/top/dependencies/NL proof and31 exported trace pairs, plus independent157 oracle. No fake Git or historical edit.'
+r['archive_sha256']=hashlib.sha256(archive).hexdigest()
+r['canonical_before_sha256']=hashes(ROOT)
+with tempfile.TemporaryDirectory(prefix='h016-tracked-archive-') as tmp:
+    tree=Path(tmp)/'tree';tree.mkdir()
+    with tarfile.open(fileobj=io.BytesIO(archive),mode='r:') as tar:
+        tar.extractall(tree,filter='data')
+    assert not (tree/'.git').exists() and not (tree/'runtime').exists()
+    r['archive_before_sha256']=hashes(tree)
+    assert r['archive_before_sha256']==r['canonical_before_sha256']
+    env=os.environ.copy()
+    for key in ('OPENAI_API_KEY','UNIVERSITYDB_ROOT','UNIVERSITYDB_TEST_MODE','UNIVERSITYDB_TEST_FIXTURE'):
+        env.pop(key,None)
+    env.update(PYTHONPATH=str(tree/'src')+os.pathsep+str(tree/'tests'),UNIVERSITYDB_LIVE_APPROVED='no',LANGSMITH_TRACING='false',LANGCHAIN_TRACING_V2='false',H016_REPLAY_EVIDENCE=str(OUT/'replay'))
+    py=str(ROOT/'.venv/bin/python');ruff=str(ROOT/'.venv/bin/ruff');mypy=str(ROOT/'.venv/bin/mypy')
+    commands=[
+      [py,'-c',"import universitydb, pathlib, importlib.metadata as m, json; origin=pathlib.Path(universitydb.__file__).resolve(); assert origin.is_relative_to(pathlib.Path.cwd()/'src'),origin; print(json.dumps({'import_origin':str(origin),'dependencies':{n:m.version(n) for n in ['langgraph','openai','streamlit','sqlglot','pydantic','pytest','ruff','mypy']}},indent=2))"],
+      [py,'-m','pytest','-q'],
+      [ruff,'check','src','tests'],[ruff,'format','--check','src','tests'],
+      [mypy,'src/universitydb','--ignore-missing-imports'],[py,'-m','compileall','-q','src','tests'],
+      [py,'docs/operations/H-013/independent_oracle.py'],
+      [ruff,'check','docs/operations/H-016/browser_ui.py'],[ruff,'format','--check','docs/operations/H-016/browser_ui.py'],
+      [py,'-c',"""import hashlib,json,sqlite3,tempfile
+from pathlib import Path
+from universitydb.db import initialize
+from universitydb.contracts import Failure
+result={}
+with tempfile.TemporaryDirectory(prefix='h016-seed-check-') as td:
+ for name,res in [('university',Path('resources')),('library',Path('resources/library'))]:
+  path=Path(td)/(name+'.db');initialize(path,res);before=hashlib.sha256(path.read_bytes()).hexdigest()
+  with sqlite3.connect(path) as db:
+   assert db.execute('PRAGMA integrity_check').fetchone()==('ok',)
+   assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+   tables=[r[0] for r in db.execute(\"SELECT name FROM sqlite_master WHERE type='table' ORDER BY name\")]
+   counts={t:db.execute('SELECT COUNT(*) FROM \"'+t+'\"').fetchone()[0] for t in tables}
+  try: initialize(path,res)
+  except Failure as e: assert e.code=='DB_UNAVAILABLE'
+  else: raise AssertionError('repeat init overwrote DB')
+  assert hashlib.sha256(path.read_bytes()).hexdigest()==before
+  result[name]={'integrity':'ok','foreign_keys':[],'row_counts':counts,'repeat_init':'refused, bytes unchanged','sha256':before}
+print(json.dumps(result,indent=2))"""],
+    ]
+    for i,cmd in enumerate(commands,1):
+        start=time.monotonic();log=OUT/f'{i:02}-output.txt'
+        with log.open('w') as f: run=subprocess.run(cmd,cwd=tree,env=env,stdout=f,stderr=subprocess.STDOUT)
+        r['commands'].append({'command':cmd,'exit_code':run.returncode,'seconds':round(time.monotonic()-start,3),'log':str(log.relative_to(ROOT)),'log_sha256':digest(log)})
+        save();print(i,run.returncode,log,flush=True)
+        if run.returncode: r['status']='failed';break
+    else: r['status']='passed'
+    r['archive_after_sha256']=hashes(tree)
+    assert r['archive_before_sha256']==r['archive_after_sha256']
+r['temporary_tree_removed']=not Path(tmp).exists()
+r['canonical_after_sha256']=hashes(ROOT)
+assert r['canonical_before_sha256']==r['canonical_after_sha256']
+save()
+print(json.dumps({'status':r['status'],'tested_sha':SHA,'temporary_tree_removed':r['temporary_tree_removed']}),flush=True)
+sys.exit(0 if r['status']=='passed' else 1)

@@ -1,0 +1,256 @@
+...........................................FFF...............F.......... [ 66%]
+.......................F.FF.........                                     [100%]
+=================================== FAILURES ===================================
+__________________ test_development_known_offline_replay[J04] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1023/test_development_known_offline7')
+case = {'run_id': 'J04-r1', 'case_id': 'J04', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+        assert result["status"] == "ok", result
+        scope = expected_scope(case["case_id"])
+        assert all(call["payload"]["scope"] == scope for call in provider.history)
+        refs = {}
+        with sqlite3.connect(path) as connection:
+            for index, spec in enumerate(specs):
+                raw = oracle_rows(connection, spec, scope, refs)
+                step = result["step_results"][index]
+>               assert step["raw"]["rows"] == raw
+E               AssertionError: assert [[1, 'Alex', ...DB', 10, ...]] == [[1, 'Alex', ...DB', 10, ...]]
+E                 
+E                 Left contains one more item: [2, 'Bea', 5, 1, 'DB', 10, ...]
+E                 Use -v to get more diff
+
+tests/test_h016_offline_replay.py:314: AssertionError
+__________________ test_development_known_offline_replay[D01] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1023/test_development_known_offline8')
+case = {'run_id': 'D01-r1', 'case_id': 'D01', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '2d11d91d-90ed-4350-bac9-8a36d2e23596', 'trace_id': '2d11d91d-90ed-4350-bac9-8a36d2e23596', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+__________________ test_development_known_offline_replay[D02] __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1023/test_development_known_offline9')
+case = {'run_id': 'D02-r1', 'case_id': 'D02', 'repeat': 1, 'domain': 'university', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': '76d34d10-e8c9-4ffe-8011-975c1edc9a77', 'trace_id': '76d34d10-e8c9-4ffe-8011-975c1edc9a77', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+_______________ test_development_known_offline_replay[X-M1-TIE] ________________
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1023/test_development_known_offline25')
+case = {'case_id': 'X-M1-TIE', 'domain': 'university', 'fixture': 'tie', 'question': 'For students in all courses tied for top mean in S1, list student ID with mean over every S1 enrollment.', ...}
+
+    @pytest.mark.parametrize("case", CASES + EXTRA, ids=lambda case: case["case_id"])
+    def test_development_known_offline_replay(tmp_path, case):
+        descriptor = FIXTURES[case["fixture"]]
+        path = tmp_path / "private-fixture.sqlite"
+        with sqlite3.connect(path) as connection:
+            for key in ("schema", "seed"):
+                connection.executescript((ROOT / descriptor[key]).read_text())
+            for statement in descriptor["mutations"]:
+                connection.executescript(statement)
+            assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
+        domain = University() if case["domain"] == "university" else Library()
+        specs = family(case["case_id"])
+        provider = ReplayTransport(domain, specs)
+        agent = Agent(domain, path, provider, tmp_path / "traces")
+        assert isinstance(agent.compiled, CompiledStateGraph)
+        before = db.file_hash(path)
+        result = agent.run(case["question"])
+        pauses = []
+        for index, selection in enumerate(case["selections"]):
+            assert result["status"] == "clarification", result
+            assert provider.calls == 0
+            pauses.append(deepcopy(result["clarification"]))
+            result = agent.resume(result["clarification"], selection, request_id=f"selection-{index}")
+>       assert result["status"] == "ok", result
+E       AssertionError: {'version': '1', 'run_id': 'fc8aad3a-58d8-4d5c-b6a5-b6828e02c749', 'trace_id': 'fc8aad3a-58d8-4d5c-b6a5-b6828e02c749', 'status': 'error', ...}
+E       assert 'error' == 'ok'
+E         
+E         - ok
+E         + error
+
+tests/test_h016_offline_replay.py:306: AssertionError
+_ test_malformed_identity_not_hidden_by_other_valid_scope[Mean for semester ID nonsense in S1.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1023/test_malformed_identity_not_hi4')
+question = 'Mean for semester ID nonsense in S1.'
+
+    @pytest.mark.parametrize(
+        "question",
+        [
+            "Show mean for course ID",
+            "Mean for course ID and teacher ID 10.",
+            "Mean for course ID for teacher ID 10.",
+            "Mean for course ID with teacher ID 10.",
+            "Mean for semester ID nonsense in S1.",
+            "Mean for semester ID S999 in S1.",
+            "Mean for semester ID -1 in S1.",
+            "Mean for semester ID = in S1.",
+        ],
+    )
+    def test_malformed_identity_not_hidden_by_other_valid_scope(tmp_path, question):
+        path = tmp_path / "private.sqlite"
+        db.initialize(path, ROOT / "resources")
+        provider = ReplayTransport(University(), [make_spec("grade_mean")])
+        result = Agent(University(), path, provider, tmp_path / "traces").run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': 'e03234ca-ed07-4930-b480-072eac98ba4f', 'trace_id': 'e03234ca-ed07-4930-b480-072eac98ba4f', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_offline_replay.py:447: AssertionError
+_ test_malformed_identity_not_hidden_by_other_valid_scope[Mean for semester ID -1 in S1.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1023/test_malformed_identity_not_hi6')
+question = 'Mean for semester ID -1 in S1.'
+
+    @pytest.mark.parametrize(
+        "question",
+        [
+            "Show mean for course ID",
+            "Mean for course ID and teacher ID 10.",
+            "Mean for course ID for teacher ID 10.",
+            "Mean for course ID with teacher ID 10.",
+            "Mean for semester ID nonsense in S1.",
+            "Mean for semester ID S999 in S1.",
+            "Mean for semester ID -1 in S1.",
+            "Mean for semester ID = in S1.",
+        ],
+    )
+    def test_malformed_identity_not_hidden_by_other_valid_scope(tmp_path, question):
+        path = tmp_path / "private.sqlite"
+        db.initialize(path, ROOT / "resources")
+        provider = ReplayTransport(University(), [make_spec("grade_mean")])
+        result = Agent(University(), path, provider, tmp_path / "traces").run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '345f6a12-be32-4e09-9ce7-fb7d4e560aa6', 'trace_id': '345f6a12-be32-4e09-9ce7-fb7d4e560aa6', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_offline_replay.py:447: AssertionError
+_ test_malformed_identity_not_hidden_by_other_valid_scope[Mean for semester ID = in S1.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1023/test_malformed_identity_not_hi7')
+question = 'Mean for semester ID = in S1.'
+
+    @pytest.mark.parametrize(
+        "question",
+        [
+            "Show mean for course ID",
+            "Mean for course ID and teacher ID 10.",
+            "Mean for course ID for teacher ID 10.",
+            "Mean for course ID with teacher ID 10.",
+            "Mean for semester ID nonsense in S1.",
+            "Mean for semester ID S999 in S1.",
+            "Mean for semester ID -1 in S1.",
+            "Mean for semester ID = in S1.",
+        ],
+    )
+    def test_malformed_identity_not_hidden_by_other_valid_scope(tmp_path, question):
+        path = tmp_path / "private.sqlite"
+        db.initialize(path, ROOT / "resources")
+        provider = ReplayTransport(University(), [make_spec("grade_mean")])
+        result = Agent(University(), path, provider, tmp_path / "traces").run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '82187c4a-cd28-42d6-8323-6b4e2b79f107', 'trace_id': '82187c4a-cd28-42d6-8323-6b4e2b79f107', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_offline_replay.py:447: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[J04]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[D01]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[D02]
+FAILED tests/test_h016_offline_replay.py::test_development_known_offline_replay[X-M1-TIE]
+FAILED tests/test_h016_offline_replay.py::test_malformed_identity_not_hidden_by_other_valid_scope[Mean for semester ID nonsense in S1.]
+FAILED tests/test_h016_offline_replay.py::test_malformed_identity_not_hidden_by_other_valid_scope[Mean for semester ID -1 in S1.]
+FAILED tests/test_h016_offline_replay.py::test_malformed_identity_not_hidden_by_other_valid_scope[Mean for semester ID = in S1.]
+7 failed, 101 passed in 27.18s

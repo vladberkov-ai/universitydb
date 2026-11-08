@@ -1,0 +1,184 @@
+{
+  "profile": "development-known OFFLINE regression; NOT live score",
+  "case": {
+    "run_id": "C03-r1",
+    "case_id": "C03",
+    "repeat": 1,
+    "domain": "university",
+    "fixture": "u",
+    "question": "What is the mean grade in the current semester?",
+    "selections": [
+      "S1"
+    ]
+  },
+  "expected_scope": {
+    "semester_id": "S1"
+  },
+  "pauses": [
+    {
+      "field": "semester_id",
+      "options": [
+        {
+          "value": "S1",
+          "label": "S1"
+        },
+        {
+          "value": "S2",
+          "label": "S2"
+        }
+      ],
+      "prompt": "Choose an explicit semester.",
+      "clarification_id": "d767bbe3-8cf6-432c-af9c-8af796f1d5b7",
+      "session_id": "da0a4c9a-6606-4c88-8ef7-df391a8bc48a",
+      "run_id": "9005990c-0b1a-46f7-9566-623acd92ad8a",
+      "checkpoint_id": "1f1db593-9faa-6529-8003-ec611287d712",
+      "schema_sha256": "89b7c664b89f0229c71a78f61c4fb58a8468bc8e089968c70a1b8f485bb265e7",
+      "data_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+      "policy_sha256": "dc784f6a7bb00f099fde0ecb9dc3a647d889e3d4229056ce23a173eb94b2433d",
+      "expires_at": 1794132069.6318865
+    }
+  ],
+  "answer": {
+    "text": "student_id=all; course_id=all; teacher_id=all; semester_id=S1: mean 87.50 (4 grades; 6 enrollments).",
+    "columns": [
+      {
+        "name": "average",
+        "type": "decimal"
+      },
+      {
+        "name": "graded_count",
+        "type": "integer"
+      },
+      {
+        "name": "enrollment_count",
+        "type": "integer"
+      }
+    ],
+    "rows": [
+      [
+        "87.50",
+        4,
+        6
+      ]
+    ],
+    "scope": "student_id=all; course_id=all; teacher_id=all; semester_id=S1",
+    "empty_reason": null,
+    "row_reasons": [
+      null
+    ],
+    "truncated": false
+  },
+  "steps": [
+    {
+      "step_id": "s0",
+      "raw": {
+        "result_spec": {
+          "metric_id": "u.grade_mean.v1",
+          "shape": "aggregate",
+          "group_keys": [],
+          "columns": [
+            {
+              "name": "sum_units",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "graded_count",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "enrollment_count",
+              "type": "integer",
+              "nullable": false
+            }
+          ],
+          "components": {
+            "sum": "sum_units",
+            "denominator": "graded_count",
+            "count": "enrollment_count"
+          },
+          "unit": "grade_hundredth",
+          "scale": 100
+        },
+        "step_id": "s0",
+        "columns": [
+          {
+            "name": "sum_units",
+            "type": "integer"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            35000,
+            4,
+            6
+          ]
+        ],
+        "row_count": 1,
+        "truncated": false,
+        "elapsed_ms": 0
+      },
+      "answer": {
+        "text": "student_id=all; course_id=all; teacher_id=all; semester_id=S1: mean 87.50 (4 grades; 6 enrollments).",
+        "columns": [
+          {
+            "name": "average",
+            "type": "decimal"
+          },
+          {
+            "name": "graded_count",
+            "type": "integer"
+          },
+          {
+            "name": "enrollment_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            "87.50",
+            4,
+            6
+          ]
+        ],
+        "scope": "student_id=all; course_id=all; teacher_id=all; semester_id=S1",
+        "empty_reason": null,
+        "row_reasons": [
+          null
+        ],
+        "truncated": false
+      },
+      "dependency_rows": [
+        [
+          35000,
+          4,
+          6
+        ]
+      ]
+    }
+  ],
+  "provider_calls": 2,
+  "actual_provider_scopes": [
+    {
+      "semester_id": "S1"
+    },
+    {
+      "semester_id": "S1"
+    }
+  ],
+  "actual_sql_refs": [
+    {}
+  ],
+  "fixture_before_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+  "fixture_after_sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2",
+  "trace_sha256": "a94d6a92328b3d79aeb13290237c86249026658a85c2cfdfd460a0098a8aa24c"
+}

@@ -1,0 +1,141 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+_ test_code_review_additional_fail_closed_findings[library-Count open loans for "Zephyr".] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1033/test_code_review_additional_fa0')
+kind = 'library', question = 'Count open loans for "Zephyr".'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("library", 'Count open loans for "Zephyr".'),
+            ("university", "Show mean in course ID with teacher ID 10."),
+            ("university", "Show mean for course ID 1 excluding student ID 2."),
+            ("university", "Show mean for all students except student ID 2."),
+            ("library", "Count open loans excluding reader ID 1."),
+        ],
+    )
+    def test_code_review_additional_fail_closed_findings(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '3d698564-a597-4a35-a910-19a05b9d42dc', 'trace_id': '3d698564-a597-4a35-a910-19a05b9d42dc', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:182: AssertionError
+_ test_code_review_additional_fail_closed_findings[university-Show mean in course ID with teacher ID 10.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1033/test_code_review_additional_fa1')
+kind = 'university', question = 'Show mean in course ID with teacher ID 10.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("library", 'Count open loans for "Zephyr".'),
+            ("university", "Show mean in course ID with teacher ID 10."),
+            ("university", "Show mean for course ID 1 excluding student ID 2."),
+            ("university", "Show mean for all students except student ID 2."),
+            ("library", "Count open loans excluding reader ID 1."),
+        ],
+    )
+    def test_code_review_additional_fail_closed_findings(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': 'b33567e9-2d00-45ee-a6bb-b236ba10284d', 'trace_id': 'b33567e9-2d00-45ee-a6bb-b236ba10284d', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:182: AssertionError
+_ test_code_review_additional_fail_closed_findings[university-Show mean for course ID 1 excluding student ID 2.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1033/test_code_review_additional_fa2')
+kind = 'university'
+question = 'Show mean for course ID 1 excluding student ID 2.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("library", 'Count open loans for "Zephyr".'),
+            ("university", "Show mean in course ID with teacher ID 10."),
+            ("university", "Show mean for course ID 1 excluding student ID 2."),
+            ("university", "Show mean for all students except student ID 2."),
+            ("library", "Count open loans excluding reader ID 1."),
+        ],
+    )
+    def test_code_review_additional_fail_closed_findings(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '56ab60f9-52ae-4d08-ade3-23bf24d79564', 'trace_id': '56ab60f9-52ae-4d08-ade3-23bf24d79564', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:182: AssertionError
+_ test_code_review_additional_fail_closed_findings[university-Show mean for all students except student ID 2.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1033/test_code_review_additional_fa3')
+kind = 'university'
+question = 'Show mean for all students except student ID 2.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("library", 'Count open loans for "Zephyr".'),
+            ("university", "Show mean in course ID with teacher ID 10."),
+            ("university", "Show mean for course ID 1 excluding student ID 2."),
+            ("university", "Show mean for all students except student ID 2."),
+            ("library", "Count open loans excluding reader ID 1."),
+        ],
+    )
+    def test_code_review_additional_fail_closed_findings(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '3903e22e-aba4-406e-9d7b-332d4e266346', 'trace_id': '3903e22e-aba4-406e-9d7b-332d4e266346', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:182: AssertionError
+_ test_code_review_additional_fail_closed_findings[library-Count open loans excluding reader ID 1.] _
+
+tmp_path = PosixPath('/tmp/pytest-of-dev/pytest-1033/test_code_review_additional_fa4')
+kind = 'library', question = 'Count open loans excluding reader ID 1.'
+
+    @pytest.mark.parametrize(
+        "kind,question",
+        [
+            ("library", 'Count open loans for "Zephyr".'),
+            ("university", "Show mean in course ID with teacher ID 10."),
+            ("university", "Show mean for course ID 1 excluding student ID 2."),
+            ("university", "Show mean for all students except student ID 2."),
+            ("library", "Count open loans excluding reader ID 1."),
+        ],
+    )
+    def test_code_review_additional_fail_closed_findings(tmp_path, kind, question):
+        _, provider, agent = setup_run(tmp_path, kind)
+        result = agent.run(question)
+>       assert result["status"] == "error", result
+E       AssertionError: {'version': '1', 'run_id': '8e243340-66dc-47c4-9510-d849b3d9bd62', 'trace_id': '8e243340-66dc-47c4-9510-d849b3d9bd62', 'status': 'ok', ...}
+E       assert 'ok' == 'error'
+E         
+E         - error
+E         + ok
+
+tests/test_h016_resolution_edges.py:182: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_h016_resolution_edges.py::test_code_review_additional_fail_closed_findings[library-Count open loans for "Zephyr".]
+FAILED tests/test_h016_resolution_edges.py::test_code_review_additional_fail_closed_findings[university-Show mean in course ID with teacher ID 10.]
+FAILED tests/test_h016_resolution_edges.py::test_code_review_additional_fail_closed_findings[university-Show mean for course ID 1 excluding student ID 2.]
+FAILED tests/test_h016_resolution_edges.py::test_code_review_additional_fail_closed_findings[university-Show mean for all students except student ID 2.]
+FAILED tests/test_h016_resolution_edges.py::test_code_review_additional_fail_closed_findings[library-Count open loans excluding reader ID 1.]
+5 failed, 58 deselected in 1.50s

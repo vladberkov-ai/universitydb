@@ -1,0 +1,153 @@
+{
+  "profile": "development-known OFFLINE regression; NOT live score",
+  "case": {
+    "case_id": "X-LIBRARY",
+    "domain": "library",
+    "fixture": "all_returned",
+    "question": "Show reader ID and open-loan count for reader ID 2.",
+    "selections": []
+  },
+  "expected_scope": {
+    "reader_id": 2
+  },
+  "pauses": [],
+  "answer": {
+    "text": "reader_id=2: open loans [[2, 'Bob', 0]].",
+    "columns": [
+      {
+        "name": "reader_id",
+        "type": "integer"
+      },
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "open_count",
+        "type": "integer"
+      }
+    ],
+    "rows": [
+      [
+        2,
+        "Bob",
+        0
+      ]
+    ],
+    "scope": "reader_id=2",
+    "empty_reason": null,
+    "truncated": false
+  },
+  "steps": [
+    {
+      "step_id": "s0",
+      "raw": {
+        "result_spec": {
+          "metric_id": "l.open_count.v1",
+          "shape": "aggregate",
+          "group_keys": [
+            "reader_id"
+          ],
+          "columns": [
+            {
+              "name": "reader_id",
+              "type": "integer",
+              "nullable": false
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "nullable": false
+            },
+            {
+              "name": "open_count",
+              "type": "integer",
+              "nullable": false
+            }
+          ],
+          "components": {
+            "sum": null,
+            "denominator": null,
+            "count": "open_count"
+          },
+          "unit": "count",
+          "scale": 1
+        },
+        "step_id": "s0",
+        "columns": [
+          {
+            "name": "reader_id",
+            "type": "integer"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "open_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            2,
+            "Bob",
+            0
+          ]
+        ],
+        "row_count": 1,
+        "truncated": false,
+        "elapsed_ms": 0
+      },
+      "answer": {
+        "text": "reader_id=2: open loans [[2, 'Bob', 0]].",
+        "columns": [
+          {
+            "name": "reader_id",
+            "type": "integer"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "open_count",
+            "type": "integer"
+          }
+        ],
+        "rows": [
+          [
+            2,
+            "Bob",
+            0
+          ]
+        ],
+        "scope": "reader_id=2",
+        "empty_reason": null,
+        "truncated": false
+      },
+      "dependency_rows": [
+        [
+          2,
+          "Bob",
+          0
+        ]
+      ]
+    }
+  ],
+  "provider_calls": 2,
+  "actual_provider_scopes": [
+    {
+      "reader_id": 2
+    },
+    {
+      "reader_id": 2
+    }
+  ],
+  "actual_sql_refs": [
+    {}
+  ],
+  "fixture_before_sha256": "cce834c4f448ef201bbb1dce138a44cfc077bc0cde092d0ea0f66c2ebd75498e",
+  "fixture_after_sha256": "cce834c4f448ef201bbb1dce138a44cfc077bc0cde092d0ea0f66c2ebd75498e",
+  "trace_sha256": "3653bbba20d9d789da518ef5532059fec2c5ad5ee348a275c70dfcdf2fafa662"
+}

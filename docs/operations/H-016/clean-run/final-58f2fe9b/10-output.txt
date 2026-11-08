@@ -1,0 +1,27 @@
+{
+  "university": {
+    "integrity": "ok",
+    "foreign_keys": [],
+    "row_counts": {
+      "Courses": 3,
+      "Enrollments": 8,
+      "Offerings": 5,
+      "Semesters": 2,
+      "Students": 4,
+      "Teachers": 2
+    },
+    "repeat_init": "refused, bytes unchanged",
+    "sha256": "63c9c168538d284b794a8ca3d043c283f53c3452b369b14e964ec5184f506eb2"
+  },
+  "library": {
+    "integrity": "ok",
+    "foreign_keys": [],
+    "row_counts": {
+      "Books": 2,
+      "Loans": 3,
+      "Readers": 2
+    },
+    "repeat_init": "refused, bytes unchanged",
+    "sha256": "a8dcc9b77ccea2f6f1726a4ef649ee0c576e88f1643b1f981be9eb38cf38d217"
+  }
+}

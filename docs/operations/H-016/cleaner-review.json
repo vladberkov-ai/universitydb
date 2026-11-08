@@ -1,0 +1,30 @@
+{
+  "workflow": "bounded ai-slop-cleaner inside H016 ultragoal",
+  "status": "passed",
+  "scope": [
+    "src/universitydb/domain_support.py",
+    "src/universitydb/domain.py",
+    "src/universitydb/library.py",
+    "tests/test_h016_natural_scope.py",
+    "tests/test_h016_resolution_edges.py",
+    "tests/test_h016_offline_replay.py",
+    "tests/test_h016_ui.py",
+    "docs/operations/H-016/browser_ui.py"
+  ],
+  "plan_and_behavior_lock": "repair-notes.md pre-edit cleanup plan and regression-first logs; independent RED21fail15pass plus review-driven RED controls; source/harness changes verified after each stable pass",
+  "passes": {
+    "fallback_resolution_gate": "No product bypass/permissive unknown fallback; full-span catalog validation fails closed. Browser diagnostic catches only OSError/PlaywrightError, records errors and reraises original failure.",
+    "dead_code": "No debug/dead artifact in new production code; no extra edit warranted.",
+    "duplication": "Reused compact-ID grammar, shared typed/role span logic; removed redundant per-role scan and harness question mapping.",
+    "naming_error_handling": "Explicit identity versus projection and full quoted validation; harness failures retain diagnostics, never treated as pass.",
+    "test_reinforcement": "Independent NL/edge/replay/AppTest plus fresh current-run UUID harness proof; all final full checks follow last code pass."
+  },
+  "writer_reviewer_separation": "Performer repair authored plan/edits; actual native code-reviewer independently reviewed plan/result and final harness, reported no cleaner finding and narrow evidence-preserving fail-safe. Root records judgment, does not self-approve product.",
+  "UI_design": "No UI product design changes; existing typed evidence view used; no cosmetic refactor.",
+  "dependencies_added": false,
+  "verification": "Root product3bcfull815/static10commands/oracle157PASS; exact final58f2browser8statesPASS, trackedarchive815PASS118.48s+all10commands0/static/oracle157/bothschema seedintegrity/nooverwritePASS,56hashmapsidentical; all after final cleanup/harness pass.",
+  "remaining_risks": [
+    "Finite supported NL grammar, not universal language comprehension; real-model planning/SQL generation remains untested after repair."
+  ],
+  "notes_sha256": "5bad256d876595a4c04e57e92d35a9778a3b6bafa1d67bf7c8ad60f2e4b28ff1"
+}

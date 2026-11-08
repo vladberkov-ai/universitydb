@@ -1,3 +1,29 @@
+## H016 natural-input repair verification — 2026-11-08
+
+[H016 report](reports/H-016-scope-repair-offline.md) is the current repair/evidence
+index; the H013/H014 sequences below remain historical scripted fixtures, not
+proof that arbitrary natural questions work. H016 tests must start with the
+original natural question at `Agent.run` or the UI, without injecting expected
+scope. The explicitly scripted boundary is provider plan/SQL only. A valid run
+retains every filter, validates catalog identity, executes the compiled graph on
+a temporary DB, and exposes actual SQL/bindings/raw/adapted rows and full trace.
+
+The regression matrix includes numeric ID markers (case/punctuation/combined
+filters), ID/IDs output projections, conflicting/unknown identities, ambiguous
+names with session-bound resume, NULL/zero/empty results, all top ties and actual
+upstream dependencies, University and Library. Unknown/malformed inputs should
+fail correctly before provider calls, not be coerced to successful SQL. Do not
+silently rewrite questions to canonical `student_id=2` to avoid the parser.
+
+The8affected H016 AppTest checks passed at an intermediate pinned source; the3bcfull suite now passed815checks with157independent oracle/static.
+The58f2candidate changes browser readiness/capture only; actual browser attempt3now passed8states with current question/run/trace
+binding and owned process teardown. Exact58f2archive815full/static157oracle/clean-run and1632preservation passed.
+Independent final APPROVE/CLEAR are received; native closeout remains pending. Current repaired executable candidate is `58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32`. Use only owned temporary fixtures/runtime; keep credentials absent, live
+approval off and external tracing disabled. Do not read/copy/mutate the canonical
+money ledger. Stop only servers/browser processes launched for this verification.
+Historical H015 corrected10/48 is unchanged; offline regressions never establish
+a replacement live score or authorize another campaign.
+
 # E2E verification — current University and Library service
 
 Use the full offline fixture and isolated root in the README. This exact sequence
