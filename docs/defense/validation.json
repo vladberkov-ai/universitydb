@@ -1,0 +1,15 @@
+{
+  "slides": 24,
+  "native_tables": 16,
+  "speaker_notes": 24,
+  "sha256": "3cf75c07a8fee360f45f0e69475b46ece68f002018c3e78bf69156ad885e45ea",
+  "bytes": 109273,
+  "package_integrity": "PASS",
+  "layout_geometry": "PASS; zero findings/warnings",
+  "first_party_import": "PASS",
+  "visual_review": "all24slides; repaired reviewer label and graph edge ordering then re-rendered",
+  "native_powerpoint": "not tested",
+  "authoring": "Artifact Tool; local fallback after live kernel assets error",
+  "source_checkpoint": "f43c2b1158f480e59f1a3d9cc33c3f632c91a747",
+  "tested_executable": "58f2fe9b955eb25cb5a0ee2a9e1d967a60cdcc32"
+}

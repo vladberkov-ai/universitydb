@@ -39,6 +39,15 @@ Publication does not authorize another live campaign or spending-policy change.
 Earlier failed attempts remain explicitly labelled in the reports.
 [Assignment coverage](docs/assignment-status.md).
 
+## Defense presentation
+
+[Editable English slide deck](docs/defense/UniversityDB-defense.pptx) ·
+[Speaker notes and demo guidance](docs/defense/speaker-notes.md) ·
+[Presentation overview](docs/defense/README.md).
+
+The deck explains architecture, development decisions and evidence, including the
+difference between offline verification and the pending new-candidate live check.
+
 ## Deliverables
 
 | Item | Files |
